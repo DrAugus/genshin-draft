@@ -3,6 +3,7 @@
 - 别盟尧/男/1996
 - 本科/沈阳农业大学/计算机科学与技术
 - 工作年限/经验：2年
+- 技术博客：[第三方sdk接入](https://www.jianshu.com/p/b3cb543034fb)
 - Github：https://github.com/draugus <button style="text-transform: none; margin: 15px; display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; user-select: none; border: 1px solid #17a2b8; padding: 8px 8px; font-size: 16px; line-height: 16px; border-radius: 2.5px; color: #17a2b8; background-color: transparent; background-image: none; border-color: #17a2b8;">
 [DrAugus](https://github.com/draugus) </button>
 
