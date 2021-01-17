@@ -3,10 +3,6 @@
 - 别盟尧/男/1996
 - 本科/沈阳农业大学/计算机科学与技术
 - 工作年限/经验：2年
-- 技术博客：[第三方sdk接入](https://www.jianshu.com/p/b3cb543034fb)
-- Github：https://github.com/draugus <button style="text-transform: none; margin: 15px; display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; user-select: none; border: 1px solid #17a2b8; padding: 8px 8px; font-size: 16px; line-height: 16px; border-radius: 2.5px; color: #17a2b8; background-color: transparent; background-image: none; border-color: #17a2b8;">
-[DrAugus](https://github.com/draugus) </button>
-
 - 期望职位：C++后端程序员/工程师
 - 期望薪资：税前月薪12k~16k
 - 期望城市：成都
@@ -23,7 +19,9 @@
 
 ### 十三水项目
 
-负责公司所有十三水项目的开发，入职至今开发了36款十三水。负责所有服务器逻辑及客户端逻辑设计，封装十三水公共逻辑供其他同事参考。在项目设计过程中，遇到的最大困难是百变牌的设计及打枪动画自动旋转，前者我采用缺什么牌就用百变牌填充替换，最后结果如何；后者采用笛卡尔坐标系旋转变换，根据玩家相对位置实现精准打枪，既让代码清晰明了，亦让玩家体验更好。
+- 负责公司所有十三水项目的开发，入职至今开发了36款十三水。  
+- 负责所有服务器逻辑及客户端逻辑设计，封装十三水公共逻辑供其他同事参考。
+- 系统全面的优化了游戏流程，如在游戏开始玩家切牌响应动作分开执行  在项目设计过程中，遇到的最大困难是百变牌的设计及打枪动画自动旋转，前者我采用缺什么牌就用百变牌填充替换，最后结果如何；后者采用笛卡尔坐标系旋转变换，根据玩家相对位置实现精准打枪，既让代码清晰明了，亦让玩家体验更好。
 
 ### 510K项目
 
