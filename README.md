@@ -13,13 +13,13 @@
 - Email：bramlye@outlook.com
 - QQ/微信号：980652196
 
-# 专业技能
+# 🌌  专业技能
 
 - 熟练使用C++、Javascript，灵活运用lambda表达式
 - 熟练使用[JetBrains](https://www.jetbrains.com/?from=augus) 的 [IntelliJ IDEA](https://www.jetbrains.com/idea/?from=augus)
   , [WebStorm](https://www.jetbrains.com/webstorm/?from=augus), [CLion](https://www.jetbrains.com/clion/?from=augus)
   , [DataGrip](https://www.jetbrains.com/datagrip/?from=augus) 等开发环境   
-  [<img src=".res/jetbrains-variant-3.png" width="200"/>](https://www.jetbrains.com/?from=augus)
+  [<img src="./res/jetbrains-variant-3.png" width="200"/>](https://www.jetbrains.com/?from=augus)
 - 了解php, python, java, kotlin, go等编程语言
 
 # 💫 工作经历
