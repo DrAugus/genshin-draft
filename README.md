@@ -13,14 +13,16 @@
 - QQ：`980652196`
 
 # 专业技能
-- 熟练使用```C++``` ```Javascript```，灵活运用```lambda```表达式及函数式编程
+- 熟练使用```C++``` ```Javascript``` 灵活运用```lambda```表达式及函数式编程
+- 熟练使用`Cocos Creator`开发工具
 - 熟练使用[```IntelliJ IDEA```](https://www.jetbrains.com/idea/?from=augus) [```WebStorm```](https://www.jetbrains.com/webstorm/?from=augus) [```CLion```](https://www.jetbrains.com/clion/?from=augus) [```DataGrip```](https://www.jetbrains.com/datagrip/?from=augus)
 等开发环境
 - 了解```php``` ```python``` ```java``` ```kotlin```等编程语言
 
 # 工作经历
-## 辽宁创胜网络
-### 技术部-软件开发工程师  `2019年5月~至今`
+## 辽宁创胜网络科技有限公司
+### 技术部-软件开发工程师  
+####2019年5月~2020年7月 `沈阳` 2020年8月~至今 `成都`
 
 ### 十三水项目
 >游戏介绍：每位玩家需将手上的十三张牌分成三副牌，第一副牌三张，第二、三副牌各五张，后一副牌牌型需大于或等于前一副牌牌型。比牌方式为先比牌型，大者为胜；如为同一牌型，则比所持牌张点数大小，如全部相同则为和局
@@ -38,7 +40,7 @@
 - 相关技术 ```C++``` ```JavaScript``` ```SQL server``` ```Cocos Creator```
 
 
-#### 引领新人融入开发流程
+#### 引领新人
 - 负责公司游戏环境搭建文档的编写以及维护，定期 Review 新人的代码，与其共同学习、成⻓。
 - 入职至今先后培养了6位新员工。负责新员工的服务器、客户端逻辑及游戏流程的熟悉，引导新员工熟悉、掌握cocos的控件使用、脚本控制。
 
