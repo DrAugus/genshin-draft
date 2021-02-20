@@ -12,10 +12,24 @@
 
 ## <span id = "content1">C++</span> <button style="text-transform: none; margin: 15px; display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; user-select: none; border: 1px solid #17a2b8; padding: 8px 8px; font-size: 16px; line-height: 16px; border-radius: 2.5px; color: #17a2b8; background-color: transparent; background-image: none; border-color: #17a2b8;">[back to content](#content)</button>
 
+- C 和 C++ 的区别
+  <a href="javascript;" title="悬停的文字">将鼠标移到这个标签上，就会显示"悬停的文字"</a>
+
+[comment]: <> (<div @mouseenter="enter&#40;&#41;" @mouseleave="leave&#40;&#41;" id="div1" is="method.ts">)
+
+[comment]: <> (	<p>待确认</p>)
+
+[comment]: <> (<script type="text/typescript" src="method.ts"></script>)
+
+[comment]: <> (</div>  )
+
 - 简述 C++ 右值引用与转移语义
+- 左值和右值
 - 简述 new 与 malloc 的区别
+- malloc 和 new，free 和 delete 的区别
 - 变量的声明和定义有什么区别？
 - C++ 11 有什么新特性
+- C++ 20 有什么新特性
 - 深拷贝与浅拷贝区别是什么？
 - 编译时链接有几种方式？静态链接和动态链接的区别是什么？
 - 简述 C++ 从代码到可执行二进制文件的过程
@@ -24,6 +38,17 @@
 - const、static 关键字有什么区别
 - 简述 C++ 的内联函数
 - lambda 函数的特点，和普通函数相比有什么优点？
+- extern C 的作用
+- volatile 关键字的作用
+- 有哪几种强制类型转换以及使用场景
+- 如何避免循环依赖
+- unique_ptr 中 std::move() 作用
+- static 关键字的使用
+- const 关键字的使用
+- define 和 online 的区别
+- 面向对象的设计原则
+- C++ 编译过程
+- 函数调用的具体实现
 
 #### 指针
 
@@ -61,13 +86,17 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了智
 - C++ 中智能指针和指针的区别是什么？
 - 指针和引用的区别是什么？
 
-#### 特性 多态 继承
+#### 特性 多态 继承 封装 抽象
 
 - C++ 中虚函数与纯虚函数的区别
 - C++ 的重载和重写是如何实现的？
 - C++ 中什么是菱形继承问题？
 - 父类和子类是不是在同一个虚函数表
 - C++ 中多态是怎么实现的
+- 虚表指针的大小
+- 虚函数表的存放内容
+- 构造函数可以是虚函数吗
+- 析构函数可以是虚函数吗
 
 ```markdown
 在基类的函数前加上virtual关键字，在派生类中重写该函数，运行时将会根据对象的实际类型来调用相应的函数。       
@@ -83,6 +112,7 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了智
 
 #### STL
 
+- 常用的容器有哪些
 - 简述 vector 的实现原理
 - STL 中 vector 与 list 具体是怎么实现的？常见操作的时间复杂度是多少？
 - C++ 的 vector 和 list中，如果删除末尾的元素，其指针和迭代器如何变化？若删除的是中间的元素呢？
@@ -90,6 +120,7 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了智
 
 #### 类
 
+- 一个空类会生成哪些函数
 - 类默认的构造函数是什么？
 - 只定义析构函数，会自动生成哪些构造函数？
 
@@ -193,6 +224,17 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了智
 - 常用的限流算法有哪些？简述令牌桶算法原理
 - 简述布隆过滤器原理及其使用场景
 - Hash 表常见操作的时间复杂度是多少？遇到 Hash 冲突是如何解决的？
+
+- 什么是跳表
+- 一个两层的跳表查询时可以降低倒多大的复杂度
+- vector 和 list 的区别
+- vector 的扩容原理
+- map 底层实现
+- map 和 unordered_map 的区别
+- 如何计算循环链表的长度
+- 二叉搜索树和平衡二叉树，红黑树的区别
+- 红黑树删除数据是怎么调整的
+- stl sort 函数的实现
 
 ## <span id = "content3">操作系统</span> <button style="text-transform: none; margin: 15px; display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; user-select: none; border: 1px solid #17a2b8; padding: 8px 8px; font-size: 16px; line-height: 16px; border-radius: 2.5px; color: #17a2b8; background-color: transparent; background-image: none; border-color: #17a2b8;">[back to content](#content)</button>
 
