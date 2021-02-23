@@ -141,6 +141,10 @@
       `typedef void(*)() voidFuncPtr;`
       ` *((voidFuncPtr)0x100000)();`
 - 变量的声明和定义有什么区别？
+
+- 如何实现仿函数？为什么需要通过继承自unary_function 或者 binary_function来实现仿函数？
+    * function object就是重载了函数调用操作符 operator()的一个struct或者class 所有内置一元仿函数均继承自unary_function，所有内置二元仿函数均继承自binary_function
+      继承自unary_function和binary_function的仿函数可以成为“可配接“的仿函数。可配接的仿函数，能够与其他STL组件更”和谐“地协同工作。
 - C++ 11 有什么新特性
     * lambda
     * 线程库
@@ -160,6 +164,45 @@
 - 简述 C++ 编译的过程
 - 什么是字节对齐，为什么要采用这种机制？
 - const、static 关键字有什么区别
+- 如何初始化const和static数据成员？  
+  通常在类外初始化static数据成员，但是 static const 的整型(ool，char，int，long)可以再类声明中初始化， static const的其他类型也必须在类外初始化(包括整型的数组)。
+- 如何在const成员函数中赋值？
+    * 使用`mutable`去掉const的成员函数的const性质
+        * 为什么要有这种去除常量标志的需求？
+            * 两个概念：物理常量性和逻辑常量性
+                * 物理常量性：实际上就是常量。
+                * 逻辑常量性：对用户而言是常量，但在用户不能访问的细节上不是常量。
+- const_cast和mutable的比较
+    * const_cast:
+        * 强制去掉对象的const属性。
+        * 缺点：对const对象，调用包含const_cast的const成员函数，属于未定义行为。
+    * mutable:
+        * 使用场景：对可能要发生变化的成员前，加上存储描述符mutable。
+        * 实质：对加了mutable的成员，无视所有const声明。
+- 两种常用的实现隐式类类型转换的方式是什么？如何避免隐式类型转换？
+    1.
+        * 使用单参数的构造函数或N个参数中有N-1个是默认参数的构造函数，
+            ```c++
+            class A {
+            public:
+                A(string s);
+                A(string s, int a = 0);
+            };
+            ```
+
+        * 使用operator what_you_want_to_convert_type() const
+            ```c++
+            class A {
+            public:
+                operator char *() const {
+                return data;//当从其他类型转换到char*时自动调用
+            }
+            private:
+                char *data; 
+            };
+            ```
+
+    2. 在单参数的构造函数或N个参数中有N-1个是默认参数的构造函数声明之前加上explicit。
 - 简述 C++ 的内联函数
 - lambda 函数的特点，和普通函数相比有什么优点？
 - extern C 的作用
@@ -367,15 +410,10 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
 另外指针的释放时机也是非常有考究的，多次释放同一个指针会造成程序崩溃，这些都可以通过智能指针来解决。     
 智能指针还有一个作用是把值语义转换成引用语义(<a href = "/others.md#Semantics" title="关于Java和C++语义不同">语义不同</a>)
 
-
-
-<p><span style="color: red; "> 在实际的 C++ 开发中，我们经常会遇到诸如程序运行中突然崩溃、程序运行所用内存越来越多最终不得不重启等问题，这些问题往往都是内存资源管理不当造成的。比如：</span>
-<li><span style="color: green; ">有些内存资源已经被释放，但指向它的指针并没有改变指向（成为了野指针），并且后续还在使用；</span></li>
-<li><span style="color: green; ">有些内存资源已经被释放，后期又试图再释放一次（重复释放同一块内存会导致程序运行崩溃）；</span></li>
-<li><span style="color: green; ">没有及时释放不再使用的内存资源，造成内存泄漏，程序占用的内存资源越来越多。</span></li></p>
-
 - C++ 中智能指针和指针的区别是什么？
-- 指针和引用的区别是什么？
+- 指针和引用的区别是什么？   
+  本质：指针是一个变量，存储内容是一个地址，指向内存的一个存储单元。而引用是原变量的一个别名，实质上和原变量是一个东西，是某块内存的别名。  
+  指针的值可以为空，且非const指针可以被重新赋值以指向另一个不同的对象。而引用的值不能为空，并且引用在定义的时候必须初始化，一旦初始化，就和原变量“绑定”，不能更改这个绑定关系。
     * 引用必须被初始化，指针不必。
 
     * 引用初始化以后不能被改变，指针可以改变所指的对象。
@@ -422,6 +460,16 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
 
 抽象类中不仅包括纯虚函数，也可包括虚函数。抽象类必须用作派生其他类的基类，而不能用于直接创建对象实例。但仍可使用指向抽象类的指针支持运行时多态性。
 
+| 继承描述符 |    父public成员|父protected成员|    父private成员|
+|  :----:  | :----:  | :----:  | :----:  |
+|public    |子public成员|    子protected成员|    -|
+|protected    |子protected成员|    子protected成员|    -|
+|private|    子private成员    |子private成员    |-|
+
+1. `public`：只继承基类的接口。当继承是接口的一部分时，就选用public继承。
+2. `private`：只继承基类的实现。当继承是实现细节时，就选用private继承。
+3. `protected`：当继承是面向派生类而不是面向用户接口中的一部分时，就选用protected继承。 private意味着”根据某物实现出“的语义。和复合拥有同样的语义。
+
 - C++ 中虚函数与纯虚函数的区别
 - C++ 的重载和重写是如何实现的？
 - C++ 中什么是菱形继承问题？
@@ -444,6 +492,15 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
     * 当类中的数据成员需要动态分配存储空间时，不可以依赖`default copy constructor`。当`default copy constructor`
       被因编译器需要而合成时，将执行`default memberwise copy`语义。   
       此时如果类中有动态分配的存储空间时，将会发生惨重的灾情。 在需要时（包括这种对象要赋值、这种对象作为函数参数要传递、函数返回值为这种对象等情况），要考虑到自定义拷贝构造函数。
+- 如果在构造函数和析构函数中抛出异常会发生什么？什么是栈展开？
+    * 构造函数抛异常：不会发生资源泄漏。假设在operator new()时抛出异常，那么将会因异常而结束此次调用，内存分配失败，不可能存在内存泄露。假设在别处(operator new() )
+      执行之后抛出异常，此时析构函数调用，已构造的对象将得以正确释放，且自动调用operator delete()释放内存 析构函数抛异常： 可以抛出异常，但该异常必须留在析构函数；若析构函数因异常退出，情况会很糟糕(all
+      kinds of bad things are likely to happen)
+        * 可能使得已分配的对象未能正常析构，造成内存泄露；
+        * 例如在对像数组的析构时，如果对象的析构函数抛出异常，释放代码将引发未定义行为。考虑一个对象数组的中间部分在析构时抛出异常，它无法传播，因为传播的话将使得后续部分不能正常释放；它也无法吸收，因为这违反了”异常中立“原则(
+          异常中立，就是指任何底层的异常都会抛出到上层，也就相当于是异常透明的)。
+    * 抛出异常时，将暂停当前函数的执行，开始查找匹配的catch子句。  
+      首先检查throw本身是否在try块内部如果是，检查与该try相关的catch子句，看是否可以处理该异常。如果不能处理，就退出当前函数，并且释放当前函数的内存并销毁局部对象，继续到上层的调用函数中查找，直到找到一个可以处理该异常的catch。
 - virtual函数能声明为内联吗？为什么？
     * 通常情况下是不能的
     * 原因：inline是编译期决定，他意味着在执行前就将调用动作替换为被调用函数的本体； virtual是运行期决定，他意味着直道运行期才决定调用哪个函数。 这两者之间通常是冲突的。
@@ -481,7 +538,41 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
 - 简述 vector 的实现原理
 - STL 中 vector 与 list 具体是怎么实现的？常见操作的时间复杂度是多少？
 - C++ 的 vector 和 list中，如果删除末尾的元素，其指针和迭代器如何变化？若删除的是中间的元素呢？
+- vector的reserve和capacity的区别?
+    * reserve()用于让容器预留空间，避免再次内存分配；capacity() 返回在重新进行内存分配以前所能容纳的元素数量。
+- auto_ptr能作为vector的元素吗？为什么？  
+  不可以。 当复制一个auto_ptr时，它所指向的对象的所有权被交到复制的auto_ptr上面，而它自身将被设置为null。复制一个auto_ptr意味着改变它的值。
+- STL中的vector：增减元素对迭代器的影响
+- 在模板中，如何声明嵌套从属类型(即模板嵌套类型)？
+    * template内出现的类型如果依赖于某个template参数，则称之为从属类型；如果从属类型在class内呈嵌套状，则称之为嵌套从属类型。
+
+      ```c++
+      template<typename C>
+      void doSomething(const C& container)
+      {
+      if(container.size() > 0)
+      C::iterator iter(container.begin());
+      }
+      ```
+
+      此时，根据C++的规则，编译器先假设C::iterator不是一个类型。然而iter的声明只有在C::iterator是一个类型时才合理。因此需要我们自己告诉编译器。 那么，就需要再C::
+      iterator之前加上typename，告诉编译器C::iterator是一个类型。
+
+      ```c++
+      template<typename C>
+      void doSomething(const C& container)
+      {
+      if(container.size() > 0)
+      typename C::iterator iter(container.begin());
+      }
+      ```
+
+      如上就是。
 - 简述 STL 中的 map 的实现原理
+
+- STL中排序算法的实现是什么
+    * STL中的sort()，在数据量大时，采用quicksort，分段递归排序；一旦分段后的数量小于某个门限值，改用Insertion
+      sort，避免quicksort深度递归带来的过大的额外负担，如果递归层次过深，还会改用heapsort。
 - 函数模板特化与重载决议中的陷阱
     * 模板特化
         * 非特化的模板也被称为主模板；
@@ -509,6 +600,11 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
     f(p);
     ```
   这里a是第一个主模板，b是第一个主模板a的全特化，c是第二个主模板。在f(p)调用时，发生重载决议，同样会无视特化存在，在主模板a和c中决议出c，而c并无全特化版本，因此直接调用c。
+- 相等和等价的区别？哪些类型的容器使用相等或等价？
+    * 相等(equality)是以operator==为基础，如果x==y为真，则判定x和y相等。
+    * 等价(equavalence)是以operator<为基础，如果!(x < y) && !(y < x)为真，则判定x和y等价。
+
+  通常，关联容器采用“等价”，而顺序容器采用“相等”。
 
 #### <span id = "content1-5">类</span> [back](#content1)
 
@@ -546,6 +642,38 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
     ```
 
 #### <span id = "content1-6">异常</span> 内存管理 [back](#content1)
+
+<p><span style="color: red; "> 在实际的 C++ 开发中，我们经常会遇到诸如程序运行中突然崩溃、程序运行所用内存越来越多最终不得不重启等问题，这些问题往往都是内存资源管理不当造成的。比如：</span>
+<li><span style="color: green; ">有些内存资源已经被释放，但指向它的指针并没有改变指向（成为了野指针），并且后续还在使用；</span></li>
+<li><span style="color: green; ">有些内存资源已经被释放，后期又试图再释放一次（重复释放同一块内存会导致程序运行崩溃）；</span></li>
+<li><span style="color: green; ">没有及时释放不再使用的内存资源，造成内存泄漏，程序占用的内存资源越来越多。</span></li></p>
+
+- C++如何避免内存泄漏
+  > 这其实可以看做是一个编程风格的问题。
+
+    * 使用RAII(Resource Acquisition Is Initialization,资源获取即初始化)技法，以构造函数获取资源(内存),析构函数释放。
+    * 相比于使用原生指针，更建议使用智能指针，尤其是C++11标准化后的智能指针。
+    * 注意delete和delete[]的使用方法。
+    * 这是很复杂的一种情况，是关于类的copy constructor的。首先先介绍一些概念。
+
+  同default constructor一样，标准保证，如果类作者没有为class声明一个copy constructor，那么编译器会在需要的时候产生出来(这也是一个常考点：问道”如果类作者未定义出default/copy
+  constructor，编译器会自动产生一个吗？”答案是否定的)
+  不过请注意！！这里编译器即使产生出来，也是为满足它的需求，而非类作者的需求！！   
+  而什么时候是编译器”需要”的时候呢？是在当这个class 【不表现出】bitwise copy semantics(位逐次拷贝，即浅拷贝)
+  的时候。 在4中情况下class【不表现出】bitwise copy semantics
+    * 当class内含一个member object且该member object声明了一个copy constructor(无论该copy ctor是类作者自己生明的还是编译器合成的)；
+    * 当class继承自一个base class且该base class有一个copy constructor(无论该copy ctor是类作者自己生明的还是编译器合成的)；
+    * 当class声明了virtual function；
+    * 当class派生自一个继承链，且该链中存在virtual base class时。
+
+  言归正传，如果class中仅仅是一些普通资源，那么default memberwise copy是完全够用的；然而，挡在该class中存在了一块动态分配的内存，并且在之后执行了bitwise copy
+  semantics后，将会有一个按位拷贝的对象和原来class中的某个成员指向同一块heap空间，当执行它们的析构函数后，该内存将被释放两次，这是未定义的行为。因此，在必要的时候需要使用user-defined explicit
+  copy constructor，来避免内存泄露。
+
+- 如何确保对象在抛出异常时也能被删除？什么是RAII？  
+  总的思想是RAII：设计一个class，令他的构造函数和析构函数分别获取和释放资源。 有两个方法：
+    * 利用“函数的局部对象无论函数以何种方式(包括因异常)结束都会被析构”这一特性，将“一定要释放的资源”放进局部对象的析构函数；
+    * 使用智能指针。
 
 - 简述 C++ 的内存分区
 - 简述 C++ 中内存对齐的使用场景
@@ -835,6 +963,36 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
 
 - 实现单例设计模式（懒汉，饿汉）
 - 简述常见的工厂模式以及单例模式的使用场景
+- 如何实现单例模式？如何避免发生对象的用户复制行为？如何实现线程安全的单例模式？DCLP是什么，有什么问题？
+    * 将构造函数、析构函数、复制构造函数、赋值操作符声明为私有，即可实现单例模式   
+      单例模式实现代码通常为：
+
+      ```c++
+          class Singleton
+          {
+          public:
+              static Singleton* Instance();
+          protected:
+              Singleton();
+          private:
+              static Singleton* _instance;
+          };
+          Singleton::Singleton(){}
+          Singleton* Singleton::_instance = nullptr;
+          Singleton* Singleton::Instance()
+          {
+              if(_instance == nullptr)
+              _instance = new Singleton;
+              return _instance;
+          }
+      ```
+    * 避免用户的复制行为，可以将复制构造函数声明为private或者使用C++11中的delete语法。
+    * 实现线程安全的单例模式：上面实现中的GetInstance()不是线程安全的，因为在单例的静态初始化中存在竞争条件。如果碰巧有多个线程在同时调用该方法，那么就有可能被构造多次。
+
+  `比较简单`的做法是在存在竞争条件的地方加上互斥锁。这样做的代价是开销比较高。因为每次方法调用时都需要加锁。  
+  `比较常用`的做法是使用双重检查锁定模式(DCLP)
+  。但是DCLP并不能保证在所有编译器和处理器内存模型下都能正常工作。如，共享内存的对称多处理器通常突发式提交内存写操作，这会造成不同线程的写操作重新排序。这种情况通常可以采用volatile解决，他能将读写操作同步到易变数据中，但这样在多线程环境下仍旧存在问题。
+
 - 手写生产者消费者模型
 - 如何设计 Java 的异常体系？
 
@@ -970,41 +1128,3 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
 - 对加班有什么看法？
 - 你用过...吗？说说对对...的看法，使用上有哪些优缺点
 
-#### 一些程序题
-
-1.
-
-```c++
-  int a = 4;
-
-  int &f(int x) {
-    a = a + x;
-    return a;
-  }
-  
-  int main() {
-    int t = 5;
-    cout << f(t) << endl; //a = 9
-    f(t) = 20; //a = 20
-    cout << f(t) << endl; //a = 25
-    t = f(t); //a = 30 t = 30
-    cout << f(t) << endl; // a = 60
-  }
-```
-
-2.求下面函数的返回值
-
-```c++
-int func(int x) {
-  int countx = 0;
-  while (x) {
-    countx++;
-    x = x & (x - 1);
-  }
-  return countx;
-}
-```
-
-假定x = 9999。 答案：8
-
-思路：将x转化为2进制，看含有的1的个数。
