@@ -134,6 +134,16 @@
       `typedef void(*)() voidFuncPtr;`
       ` *((voidFuncPtr)0x100000)();`
 - 变量的声明和定义有什么区别？
+    *   **声明**告诉编译器，这个变量或函数已经在程序其他地方存在了，所以我正在把这个信息告诉你，下面我要调用的时候请放行。但请不要为我分配任何内存空间，因为已经这个步骤在变量或函数定义的地方进行分配了
+        而**定义**则很清楚了，就是要求分配内存空间。
+        很多时候，声明和定义是合而为一的。
+        ```c++
+        int a;
+        void func() {};
+        ```
+        这里同时声明且定义了一个变量和一个函数。
+    *   声明可以进行多次，定义只能进行一次
+    *   <a href="https://www.jianshu.com/p/92e81ecc8737" title="点我啊" >想要参考更多关于声明定义请点我</a>
 
 - 如何实现仿函数？为什么需要通过继承自unary_function 或者 binary_function来实现仿函数？
     * function object就是重载了函数调用操作符 operator()的一个struct或者class 所有内置一元仿函数均继承自unary_function，所有内置二元仿函数均继承自binary_function
@@ -143,7 +153,31 @@
     * 线程库
     * 智能指针
     * auto
-- C++ 20 有什么新特性
+        * 自动类型推导
+        * 当与`const`结合使用时
+            *   当类型不为引用时，auto 的推导结果将不保留表达式的 const 属性；
+            *   当类型为引用时，auto 的推导结果将保留表达式的 const 属性。
+        *   auto的限制
+            *   使用 auto 的时候必须对变量进行初始化
+            *   auto 不能在函数的参数中使用 
+                *   这个很容易理解，我们在定义函数的时候只是对参数进行了声明，指明了参数的类型，但并没有给它赋值，只有在实际调用函数的时候才会给参数赋值；而 auto 要求必须对变量进行初始化，所以这是矛盾的。
+            *   auto 不能作用于类的非静态成员变量（也就是没有 static 关键字修饰的成员变量）中
+                *    可以用`decltype`定义，如下就可以写成`decltype(T().begin()) m_it;`
+                ```c++
+                template <typename T>
+                class A {
+                private:
+                    typename T::iterator m_it;
+                }       
+                ```
+            *   auto 关键字不能定义数组
+            *    auto 不能作用于模板参数
+        *   auto常用
+            *   使用 auto 定义迭代器
+            *   auto 用于泛型编程
+    * 使用`using`定义别名（替代`typedef`）
+    * 支持函数模板的默认模板参数
+-  <a href="http://jimmysue.me/c-20-features/" title="真是amazing啊"><u>C++ 20 有什么新特性</u></a>
 - 深拷贝与浅拷贝区别是什么？
     * `浅拷贝`：如果在类中没有显式地声明一个[拷贝构造函数](#copyConstructor)，那么，编译器将会根据需要生成一个默认的[拷贝构造函数](#copyConstructor)，完成对象之间的位拷贝。default
       memberwise copy即称为浅拷贝。 此处需要注意，并非像大多数人认为的“如果class未定义出copy constructor，那么编译器就会为之合成一个执行default memberwise copy语义的copy
