@@ -23,7 +23,7 @@
 
 ### body
 
-- C 和 C++ 的区别
+- <span style="border-bottom:2px dashed green;">C 和 C++ 的区别</span>
     * 标准：分别隶属于两个不同的标准委员会。C以C99标准为主流，C11已经发布；C++以C++98/03为主流，C++11/14也日趋流行。
     * 语言本身：
         * C++是面向对象语言，C是面向过程语言。
@@ -67,14 +67,6 @@
             * 基于auto——decltype的自动类型推导。
             * lambda函数(一种局部、匿名函数，高效方便地出现在需要局部、匿名语义的地方)。
             * 标准规范后的多线程库。
-
-[comment]: <> (<div @mouseenter="enter&#40;&#41;" @mouseleave="leave&#40;&#41;" id="div1" is="method.ts">)
-
-[comment]: <> (	<p>待确认</p>)
-
-[comment]: <> (<script type="text/typescript" src="method.ts"></script>)
-
-[comment]: <> (</div>  )
 
 - 转移语义(<span id = "Move Semantics">Move Semantics</span>)
 - 左值和右值
