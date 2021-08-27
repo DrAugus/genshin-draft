@@ -23,8 +23,8 @@
   <a href="https://www.jetbrains.com/webstorm/?from=augus" target="_blank"><img height="30" src="https://resources.jetbrains.com/storage/products/company/brand/logos/WebStorm_icon.svg" alt="WebStorm logo."></a>
   <a href="https://www.jetbrains.com/rider/?from=augus" target="_blank"><img height="30" src="https://resources.jetbrains.com/storage/products/company/brand/logos/Rider_icon.svg" alt="Rider logo."></a>
   <a href="https://www.jetbrains.com/pycharm/?from=augus" target="_blank"><img height="30" src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg" alt="PyCharm logo."></a>等开发环境
-- 了解`php` `python` `java` `kotlin`等编程语言
-- 了解`MySQL` `Oracle` `mongoDB` `SQL Server`等数据库操作
+- 了解`PHP` `Python` `Java` `Kotlin` `C#` `Go`等编程语言
+- 了解`MySQL` `Oracle` `MongoDB` `SQL Server`等数据库操作
 
 <h1>工作经历</h1>
 
