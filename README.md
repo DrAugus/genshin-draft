@@ -5,7 +5,6 @@
 <li>工作年限/经验：2年</li>
 </ul>
 
-
 <h1>联系方式</h1>
 
 - 邮箱：`980652196@qq.com`
@@ -25,6 +24,8 @@
   <a href="https://www.jetbrains.com/pycharm/?from=augus" target="_blank"><img height="30" src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.svg" alt="PyCharm logo."></a>等开发环境
 - 了解`PHP` `Python` `Java` `Kotlin` `C#` `Go`等编程语言
 - 了解`MySQL` `Oracle` `MongoDB` `SQL Server`等数据库操作
+
+
 
 <h1>工作经历</h1>
 
@@ -71,10 +72,12 @@
 
 
 
-
+<!--
 
 <h1><a href="resume.md">RESUME</a></h1>
 <h1><a href="problem.md">PROBLEM</a></h1>
 <h2><a href="code.md">code</a></h2>
 <h2><a href="method.ts">ts method</a></h2>
 <h2><a href="others.md">others</a></h2>
+
+-->
