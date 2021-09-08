@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>VirtualBox该何去何从</title>
+		<title>HTML学习笔记</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../style-matter/assets/css/main.css" />
@@ -52,27 +52,36 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>重装系统后如何重新启用Virtual Box</h1>
+							<h1>HTML Record</h1>
 							<span class="image main"><img src="../style-matter/images/pic13.jpg" alt="" /></span>
-							<p>避免后面出现如下报错信息，请先检查<code>vboxdrv</code>服务是否正常运行</p>
-							<blockquote>
-								NtCreateFile(\Device\VBoxDrvStub) failed: 0xc000000034
-								STATUS_OBJECT_NAME_NOT_FOUND (0 retries) (rc=-101)<br>
-								Make sure the kernel module has been loaded successfully.
-							</blockquote>
-							<details>
-								<summary>vboxdrv服务</summary><br>
-								<ul>
-									<li>cmd键入<code>sc.exe query vboxdrv</code>检测其运行状态</li>
-									<li>若未启动，键入<code>sc start vboxdrv</code>进行启动</li>
-									<li>启动失败则需要重新安装，进入安装路径<code>C:\Program Files\Oracle\VirtualBox\drivers\vboxdrv</code>, 右击VBoxDrv.inf，选安装，然后重启。</li>
-								</ul>
-							</details>
-							<br>
-							<p>下面我们开始恢复</p>
-							<p>重现你当时安装所选的配置，在到虚拟硬盘的步骤时，选择使用现有文件，找到你之前的vdi文件，点击创建，大功告成</p>
-							<p><span style="text-align: center;display:block;"><img src="./images/vmSign.png" alt="" /></span></p>
-							<br>
+							<br><details><summary>HTML &lt;a&gt; 标签的 target 属性</summary><br>
+							<table class="dataintable">
+								<tr>
+									<th>值</th>
+									<th>描述</th>
+								</tr>
+								<tr>
+									<td>_blank</td>
+									<td>在新窗口中打开被链接文档。</td>
+								</tr>
+								<tr>
+									<td>_self</td>
+									<td>默认。在相同的框架中打开被链接文档。</td>
+								</tr>
+								<tr>
+									<td>_parent</td>
+									<td>在父框架集中打开被链接文档。</td>
+								</tr>
+								<tr>
+									<td>_top</td>
+									<td>在整个窗口中打开被链接文档。</td>
+								</tr>
+								<tr>
+									<td><i>framename</i></td>
+									<td>在指定的框架中打开被链接文档。</td>
+								</tr>
+							</table></details>
+							<p></p>
 						</div>
 					</div>
 
