@@ -1,4 +1,2 @@
 
-[Open the Door !](./style/index.html)
-
-[test](index.html)
+# [TRULY PAGE](./style/index.html)
