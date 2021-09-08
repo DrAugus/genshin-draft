@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Syntax Highlighting Test"
-date:   2017-03-24 01:30:13 +0800
+date:   2017-03-24 01:30:13 
 categories: default
 tags: test syntax
 ---

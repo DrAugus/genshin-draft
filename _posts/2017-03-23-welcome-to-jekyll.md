@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-date:   2017-03-23 01:30:13 +0800
+date:   2017-03-23 01:30:13 
 categories: Default
 tags: test Test
 comments: 1
