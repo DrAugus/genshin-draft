@@ -15,16 +15,16 @@ theme: jekyll-theme-cayman
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MatJek
+title: AUGUS
 description: > # this means to ignore newlines until "baseurl:"
   Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
-#baseurl: "/matjek"
-#url: "https://shawnteoh.github.io"
+#baseurl: "/resume"
+#url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
-#repository: ShawnTeoh/matjek
+#repository: draugus/resume
 paginate: 5
 
-# MatJek specific configurations
+# specific configurations
 github_profile: "https://github.com/DrAugus"
 user: "Augus"
 user_email: "bramlye@outlook.com"
