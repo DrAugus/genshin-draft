@@ -31,10 +31,20 @@ body
   h6
     font-size: 1.1rem
 
+
+
 a
-  color: #52d9e5
+  -moz-transition: border-bottom-color 0.2s ease, color 0.2s ease
+  -webkit-transition: border-bottom-color 0.2s ease, color 0.2s ease
+  -ms-transition: border-bottom-color 0.2s ease, color 0.2s ease
+  transition: border-bottom-color 0.2s ease, color 0.2s ease
+  text-decoration: none
+  color: #585858
+  border-bottom: dotted 1px rgba(88, 88, 88, 0.5)
 
   &:hover
+    color: #f2849e !important
+    border-bottom-color: transparent
     text-decoration: underline
 
   &:active
