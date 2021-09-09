@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
 
-<!--    {% for css in main.css %}-->
-<!--    {% if css contains "//" %}-->
-<!--    <link rel="stylesheet" href="{{css}}">-->
-<!--    {% else %}-->
-<!--    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">-->
-<!--    {% endif %}-->
-<!--    {% endfor %}-->
+    {% for css in main.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
 
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
