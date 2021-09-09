@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
@@ -42,6 +43,22 @@
     <header>
       <nav class="top-nav teal">
         <div class="nav-wrapper">
+
+          <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+          <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+          {% if site.github.is_project_page %}
+          <a href="{{ site.github.repository_url }}" class="btn">SOURCE</a>
+          {% endif %}
+          <!--直奔主题 -->
+          <a href="{{site.baseurl}}/style/index.html" title="我现在坏掉了没法跳转" class="btn">INTRO</a>
+          <a href="{{site.baseurl}}/style-matter/index.html" title="我现在坏掉了没法跳转" class="btn">MATTERS</a>
+          {% if site.show_downloads %}
+          <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
+          <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
+          {% endif %}
+
+
+
           <!-- 并不会放图片 在右上角-->
 <!--          <div class="align-right"><img src="{{site.baseurl}}/assets/res/loser.jpg" height="30px" style="right:0;top:0"/></div>-->
           <div class="container">
