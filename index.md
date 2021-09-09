@@ -1,2 +1,3 @@
+# NEW WORLD
 
-# [TRULY PAGE](./style/index.html)
+welcome to [new world](./style/index.html)
