@@ -14,15 +14,20 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-
-    {% for css in main.css %}
+    {% for css in layout.css %}
     {% if css contains "//" %}
     <link rel="stylesheet" href="{{css}}">
     {% else %}
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
     {% endif %}
     {% endfor %}
-
+    {% for css in page.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
     {% seo title=false %}
@@ -31,14 +36,18 @@
     <header>
       <nav class="top-nav teal">
         <div class="nav-wrapper">
+          <!-- 并不会放图片 在右上角-->
+<!--          <div class="align-right"><img src="{{site.baseurl}}/assets/res/loser.jpg" height="30px" style="right:0;top:0"/></div>-->
           <div class="container">
             <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
-            <p class="head-message">下饭&nbsp;&nbsp;下饭&nbsp;&nbsp;还是下饭</p>
-            <ul>
-              <li><a href="#">Blog</a></li>
-              <li><a href="{{site.baseurl}}/style/index.html">Intro</a></li>
-              <li><a href="{{site.baseurl}}/style-matter/index.html">Matter</a></li>
-            </ul>
+            <p class="head-message">下饭&nbsp;&nbsp;下饭&nbsp;&nbsp;还是下饭&nbsp;&nbsp;看懂再改，未懂勿改！懂咩？</p>
+            <div class="head-bar">
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="{{site.baseurl}}/style/index.html">Intro</a></li>
+                <li><a href="{{site.baseurl}}/style-matter/index.html">Matter</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -50,10 +59,10 @@
       <ul id="slide-out" class="side-nav fixed">
         <li>
           <div class="userView">
-            <div class="background"></div>
             <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpeg"></a>
-            <span class="white-text name">{{site.user}}</span>
-            <span class="white-text email">{{site.user_email}}</span>
+            <!-- TODO icon此css暂无 等待后续合并css -->
+            <a href="{{site.github_profile}}" target="_blank" class="icon brands fa-github"><span class="green-text name">{{site.user}}</span></a>
+            <a href="mailto:{{site.user_email}}" class="icon solid style2 fa-envelope"><span class="green-text email">{{site.user_email}}</span></a>
           </div>
         </li>
         <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">home</i>Home</a></li>
