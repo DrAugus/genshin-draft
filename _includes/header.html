@@ -13,7 +13,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/favicon.ico">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+    <!--移除main.css共用page.css-->
+<!--    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">-->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/page.css">
     {% for css in layout.css %}
     {% if css contains "//" %}
     <link rel="stylesheet" href="{{css}}">
@@ -21,13 +23,17 @@
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
     {% endif %}
     {% endfor %}
-    {% for css in page.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}">
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
-    {% endif %}
-    {% endfor %}
+
+    <!--并不知道下面注释是在写什么-->
+<!--    {% for css in page.css %}-->
+<!--    {% if css contains "//" %}-->
+<!--    <link rel="stylesheet" href="{{css}}">-->
+<!--    {% else %}-->
+<!--    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">-->
+<!--    {% endif %}-->
+<!--    {% endfor %}-->
+
+
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
     {% seo title=false %}
