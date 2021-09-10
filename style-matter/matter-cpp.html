@@ -19,10 +19,10 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-				<link rel="import" href="{{site.baseurl}}/style-matter/public/matter-header.html">
+				<div class="matter-header"></div>
 
 				<!-- Menu -->
-				<link rel="import" href="{{site.baseurl}}/style-matter/public/matter-menu.html">
+				<div class="matter-menu"></div>
 
 
 				<!-- Main -->
@@ -153,6 +153,16 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src='assets/js/slot-script.js'></script>
+			<script>
+				$(function(){
+					/*公共部分
+					 * menu
+					 * header
+					 */
+					$(".matter-header").load(".public/matter-header.html");
+					$(".matter-menu").load(".public/matter-menu.html");
+				});
+			</script>
 
 	</body>
 </html>
