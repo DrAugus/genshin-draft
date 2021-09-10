@@ -12,17 +12,48 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
-				<div class="matter-header"></div>
+				<header id="header">
+					<div class="inner">
+
+						<!-- Logo -->
+						<a href="./index.html" class="logo">
+							<span class="symbol"><img src="./images/logo.svg" alt=""/></span><span class="title">Phantom</span>
+						</a>
+
+						<!-- Nav -->
+						<nav>
+							<ul>
+								<li><a href="#menu">Menu</a></li>
+							</ul>
+						</nav>
+
+					</div>
+				</header>
 
 				<!-- Menu -->
-				<div class="matter-menu"></div>
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="./index.html">Home</a></li>
+						<li><a href="./matter-cpp.html">C++</a></li>
+						<li><a href="./matter-algorithm.html">Algorithm</a></li>
+						<li><a href="./matter-protocol.html">Network Protocol</a></li>
+						<li><a href="./matter-os.html">OS</a></li>
+						<li><a href="./matter-system-design.html">System Design</a></li>
+						<li><a href="./matter-database.html">Database</a></li>
+						<li><a href="./matter-java.html">Java</a></li>
+						<li><a href="./matter-front-end.html">Front-end</a></li>
+						<li><a href="./matter-else.html">Non-technological problems</a></li>
+						<li><a href="../solution/list.html">问题列表</a></li>
+					</ul>
+				</nav>
 
 
 				<!-- Main -->
@@ -153,16 +184,18 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src='assets/js/slot-script.js'></script>
-			<script>
-				$(function(){
-					/*公共部分
-					 * menu
-					 * header
-					 */
-					$(".matter-header").load("matter-header.html");
-					$(".matter-menu").load("matter-menu.html");
-				});
-			</script>
+
+		<!-- 无法使用的公共部分 -->
+<!--			<script>-->
+<!--				$(function(){-->
+<!--					/*公共部分-->
+<!--					 * menu-->
+<!--					 * header-->
+<!--					 */-->
+<!--					$(".matter-header").load("pu.html");-->
+<!--					$(".matter-menu").load("pu.html");-->
+<!--				});-->
+<!--			</script>-->
 
 	</body>
 </html>
