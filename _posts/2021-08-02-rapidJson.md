@@ -3,7 +3,7 @@ layout: post
 title:  "rapidJson::Document doc"
 date:   2021-08-02 15:00:03 
 categories: C++
-tags: JSON C++
+tags: RapidJSON C++
 ---
 
 `RapidJSON`是一个C++的JSON解析器及生成器。
