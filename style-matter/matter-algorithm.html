@@ -12,6 +12,30 @@
 		<link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/augus.ico"/>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+		<!-- 自动生成导航目录 -->
+		<script language="JavaScript" src="js/jquery-1.8.3.min.js"></script>
+		<style>
+			#auto-content-bar{padding-right: 102px;}
+			.auto-menu{width: 90px; background: #fff; border: 1px #32c6c6 solid; border-radius: 4px; position: fixed;right: 0; padding: 0 6px;}
+			.auto-menu a{width: 100%;height: 30px;line-height: 30px; display: inline-block;}
+		</style>
+		<script>
+			$(document).ready(function (e) {
+				$("#auto-content-bar").children().each(function (index, element) {
+					var tagName = $(this).get(0).tagName;
+					if (tagName.substr(0, 1).toUpperCase() === "H") {
+						var contentH = $(this).html();//获取内容
+						var markID = "mark-" + tagName + "-" + index.toString();
+						$(this).attr("id", markID);//为当前h标签设置ID
+						$(".auto-menu").append("<a href='#" + markID + "'>" + contentH + "</a>");//在目标div中加入内容
+					}
+				});
+			});
+		</script>
+
+
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -55,15 +79,40 @@
 					</nav>
 
 				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+				<div id="main">
+					<div class="inner">
+
+						<div class="auto-menu"></div>
+						<div id="auto-content-bar">
+
+
 							<h1>Generic Page</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<span class="image main"><img src="images/pic13.jpg" alt=""/></span>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+								Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam,
+								vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit
+								amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex,
+								lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget
+								turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+							<h2>Generic2 Page</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis.
+								Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+								himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id
+								vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus,
+								blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in
+								aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus
+								et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus.
+								Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
+							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis
+								dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim
+								auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien
+								risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis,
+								hendrerit tristique lorem ipsum dolor.</p>
+
+
 						</div>
 					</div>
+				</div>
 
 				<!-- Footer -->
 					<footer id="footer">
