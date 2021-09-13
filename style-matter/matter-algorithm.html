@@ -24,7 +24,8 @@
 			$(document).ready(function (e) {
 				$("#auto-content-bar").children().each(function (index, element) {
 					var tagName = $(this).get(0).tagName;
-					if (tagName.substr(0, 1).toUpperCase() === "H") {
+					if (tagName.substr(0, 1).toUpperCase() == "H") {
+						console.log("############",tagName.substr(0, 1));
 						var contentH = $(this).html();//获取内容
 						var markID = "mark-" + tagName + "-" + index.toString();
 						$(this).attr("id", markID);//为当前h标签设置ID
