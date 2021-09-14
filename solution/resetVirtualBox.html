@@ -75,6 +75,22 @@
 							<p>重现你当时安装所选的配置，在到虚拟硬盘的步骤时，选择使用现有文件，找到你之前的vdi文件，点击创建，大功告成</p>
 							<p><span style="text-align: center;display:block;"><img src="./images/vmSign.png" alt="" /></span></p>
 							<br>
+
+							<p>一些坑...</p>
+							<ul>
+								<li>
+									<p>一定要把网络设置为桥接网卡</p>
+									<p><span style="text-align: center;display:block;"><img src="./images/bridge.png" alt="" /></span></p>
+								</li>
+								<li>
+									检查linux网卡配置
+									<ul>
+										<li><code>vim /etc/sysconfig/network-scripts/ifcfg-enp0s3 </code></li>
+										<li><code>vim /etc/resolv.conf</code></li>
+									</ul>
+								</li>
+							</ul>
+
 						</div>
 					</div>
 
