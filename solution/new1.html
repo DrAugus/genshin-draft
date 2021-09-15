@@ -17,7 +17,8 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<embed type="text/html" src="sol-header.html">
+<!--					<embed type="text/html" src="sol-header.html">-->
+					<div class="header-page"></div>
 
 				<!-- Menu -->
 					<nav id="menu">
@@ -42,7 +43,8 @@
 					</div>
 
 				<!-- Footer -->
-					<embed type="text/html" src="sol-footer.html">
+<!--					<embed type="text/html" src="sol-footer.html">-->
+					<div class="footer-page"></div>
 
 			</div>
 
@@ -52,6 +54,17 @@
 			<script src="../style-matter/assets/js/breakpoints.min.js"></script>
 			<script src="../style-matter/assets/js/util.js"></script>
 			<script src="../style-matter/assets/js/main.js"></script>
+
+			<script>
+				$(function(){
+					/*公共部分
+					 * 导航栏
+					 * footer CopyRight
+					 */
+					$(".header-page").load("sol-header.html");
+					$(".footer-page").load("sol-footer.html");
+				});
+			</script>
 
 	</body>
 </html>
