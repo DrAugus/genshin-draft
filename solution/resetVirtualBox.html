@@ -1,148 +1,100 @@
 <!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>VirtualBox该何去何从</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../style-matter/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="../style-matter/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <head>
+        <title>VirtualBox该何去何从</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="../style-matter/assets/css/main.css"/>
+        <noscript><link rel="stylesheet" href="../style-matter/assets/css/noscript.css"/></noscript>
+    </head>
+    <body class="is-preload">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+        <!-- Header -->
+        <div class="header-page"></div>
 
-							<!-- Logo -->
-							<!--
-								<a href="../style-matter/index.html" class="logo">
-									<span class="symbol"><img src="../style-matter/images/logo.svg" alt="" /></span><span class="title">Phantom</span>
-								</a>
-							-->
+        <!-- Wrapper -->
+        <div id="wrapper">
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+            <!-- Menu -->
+            <nav id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="../style-matter/index.html">Home</a></li>
+                    <li><a href="list.html">问题列表</a></li>
+                    <li><a href="resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
+                    <li><a href="htmlNotes.html">HTML Record</a></li>
+                    <li><a href="webRecord.html">网站记录</a></li>
+                    <li><a href="new1.html">备用1</a></li>
+                    <li><a href="../style-matter/elements.html">Elements</a></li>
+                </ul>
+            </nav>
 
-						</div>
-					</header>
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+                    <h1>重装系统后如何重新启用Virtual Box</h1>
+                    <span class="image main"><img src="../style-matter/images/pic13.jpg" alt=""/></span>
+                    <p>避免后面出现如下报错信息，请先检查<code>vboxdrv</code>服务是否正常运行</p>
+                    <blockquote>
+                        NtCreateFile(\Device\VBoxDrvStub) failed: 0xc000000034
+                        STATUS_OBJECT_NAME_NOT_FOUND (0 retries) (rc=-101)<br>
+                        Make sure the kernel module has been loaded successfully.
+                    </blockquote>
+                    <details>
+                        <summary>vboxdrv服务</summary>
+                        <br>
+                        <ul>
+                            <li>cmd键入<code>sc.exe query vboxdrv</code>检测其运行状态</li>
+                            <li>若未启动，键入<code>sc start vboxdrv</code>进行启动</li>
+                            <li>启动失败则需要重新安装，进入安装路径<code>C:\Program Files\Oracle\VirtualBox\drivers\vboxdrv</code>,
+                                右击VBoxDrv.inf，选安装，然后重启。
+                            </li>
+                        </ul>
+                    </details>
+                    <br>
+                    <p>下面我们开始恢复</p>
+                    <p>重现你当时安装所选的配置，在到虚拟硬盘的步骤时，选择使用现有文件，找到你之前的vdi文件，点击创建，大功告成</p>
+                    <p><span style="text-align: center;display:block;"><img src="./images/vmSign.png" alt=""/></span>
+                    </p>
+                    <br>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="../style-matter/index.html">Home</a></li>
-							<li><a href="list.html">问题列表</a></li>
-							<li><a href="resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
-							<li><a href="htmlNotes.html">HTML Record</a></li>
-							<li><a href="webRecord.html">网站记录</a></li>
-							<li><a href="new1.html">备用1</a></li>
-							<li><a href="../style-matter/elements.html">Elements</a></li>
-						</ul>
-					</nav>
+                    <p>一些坑...</p>
+                    <ul>
+                        <li>
+                            <p>一定要把网络设置为桥接网卡</p>
+                            <p><span style="text-align: center;display:block;"><img src="./images/bridge.png"
+                                                                                    alt=""/></span></p>
+                        </li>
+                        <li>
+                            检查linux网卡配置
+                            <ul>
+                                <li><code>vim /etc/sysconfig/network-scripts/ifcfg-enp0s3 </code></li>
+                                <li><code>vim /etc/resolv.conf</code></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>重装系统后如何重新启用Virtual Box</h1>
-							<span class="image main"><img src="../style-matter/images/pic13.jpg" alt="" /></span>
-							<p>避免后面出现如下报错信息，请先检查<code>vboxdrv</code>服务是否正常运行</p>
-							<blockquote>
-								NtCreateFile(\Device\VBoxDrvStub) failed: 0xc000000034
-								STATUS_OBJECT_NAME_NOT_FOUND (0 retries) (rc=-101)<br>
-								Make sure the kernel module has been loaded successfully.
-							</blockquote>
-							<details>
-								<summary>vboxdrv服务</summary><br>
-								<ul>
-									<li>cmd键入<code>sc.exe query vboxdrv</code>检测其运行状态</li>
-									<li>若未启动，键入<code>sc start vboxdrv</code>进行启动</li>
-									<li>启动失败则需要重新安装，进入安装路径<code>C:\Program Files\Oracle\VirtualBox\drivers\vboxdrv</code>, 右击VBoxDrv.inf，选安装，然后重启。</li>
-								</ul>
-							</details>
-							<br>
-							<p>下面我们开始恢复</p>
-							<p>重现你当时安装所选的配置，在到虚拟硬盘的步骤时，选择使用现有文件，找到你之前的vdi文件，点击创建，大功告成</p>
-							<p><span style="text-align: center;display:block;"><img src="./images/vmSign.png" alt="" /></span></p>
-							<br>
+                </div>
+            </div>
 
-							<p>一些坑...</p>
-							<ul>
-								<li>
-									<p>一定要把网络设置为桥接网卡</p>
-									<p><span style="text-align: center;display:block;"><img src="./images/bridge.png" alt="" /></span></p>
-								</li>
-								<li>
-									检查linux网卡配置
-									<ul>
-										<li><code>vim /etc/sysconfig/network-scripts/ifcfg-enp0s3 </code></li>
-										<li><code>vim /etc/resolv.conf</code></li>
-									</ul>
-								</li>
-							</ul>
+        </div>
 
-						</div>
-					</div>
+        <!-- Footer -->
+        <div class="footer-page"></div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-<!--									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>-->
-<!--									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-<!--									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>-->
-<!--									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-									<li><a href="https://github.com/DrAugus" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-<!--									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>-->
-<!--									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>-->
-									<li><a href="mailto:bramlye@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<p class="copyright">&#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Design:<a href="https://github.com/DrAugus">AUGUS</a>.</p>
-							</ul>
-						</div>
-					</footer>
+        <!-- Scripts -->
+        <script src="../style-matter/assets/js/jquery.min.js"></script>
+        <script src="../style-matter/assets/js/browser.min.js"></script>
+        <script src="../style-matter/assets/js/breakpoints.min.js"></script>
+        <script src="../style-matter/assets/js/util.js"></script>
+        <script src="../style-matter/assets/js/main.js"></script>
 
-			</div>
+        <script>
+            $(function () {
+                $(".header-page").load("sol-header.html");
+                $(".footer-page").load("sol-footer.html");
+            });
+        </script>
 
-		<!-- Scripts -->
-			<script src="../style-matter/assets/js/jquery.min.js"></script>
-			<script src="../style-matter/assets/js/browser.min.js"></script>
-			<script src="../style-matter/assets/js/breakpoints.min.js"></script>
-			<script src="../style-matter/assets/js/util.js"></script>
-			<script src="../style-matter/assets/js/main.js"></script>
-
-	</body>
+    </body>
 </html>
