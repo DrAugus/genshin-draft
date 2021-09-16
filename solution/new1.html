@@ -13,12 +13,23 @@
 		<noscript><link rel="stylesheet" href="../style-matter/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+
+	<!-- 原本的结构为 -->
+	<!-- Wrapper -->
+	<!-- 	Header -->
+	<!-- 	Menu -->
+	<!-- 	Main -->
+	<!-- 	Footer -->
+
+	<!-- 改为Wrapper包裹每一个部分 -->
+    <!-- Header Footer 在对应的html内已包裹 -->
+
+
+        <!-- Header -->
+            <div class="header-page"></div>
+
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-				<!-- Header -->
-<!--					<embed type="text/html" src="sol-header.html">-->
-					<div class="header-page"></div>
 
 				<!-- Menu -->
 					<nav id="menu">
@@ -42,11 +53,12 @@
 						</div>
 					</div>
 
-				<!-- Footer -->
-<!--					<embed type="text/html" src="sol-footer.html">-->
-					<div class="footer-page"></div>
-
 			</div>
+
+        <!-- Footer -->
+            <div class="footer-page"></div>
+
+
 
 		<!-- Scripts -->
 			<script src="../style-matter/assets/js/jquery.min.js"></script>
