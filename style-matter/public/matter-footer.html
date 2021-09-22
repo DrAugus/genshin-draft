@@ -39,8 +39,12 @@
                 </span>
             </section>
             <ul class="copyright">
-                <p class="copyright">&#xA9; <fmt:formatDate value="<%=new java.util.Date()%>" pattern="yyyy"/>. All rights reserved. Design:<a
+                <p class="copyright">&#xA9; <span id="currentFullYear"></span>. All rights reserved. Design:<a
                         href="https://github.com/DrAugus">AUGUS</a>.</p>
+                <script type="text/javascript">
+                    var currentFullYear = (new Date()).getFullYear();
+                    document.getElementById('currentFullYear').innerHTML = currentFullYear;
+                </script>
             </ul>
         </div>
     </footer>
