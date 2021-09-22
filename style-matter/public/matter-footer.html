@@ -33,8 +33,13 @@
                     <li><a href="mailto:bramlye@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
                 </ul>
             </section>
+            <section>
+                <span class="STYLE1" id=jnkc>
+                    <script>setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());",1000);</script>
+                </span>
+            </section>
             <ul class="copyright">
-                <p class="copyright">&#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Design:<a
+                <p class="copyright">&#xA9; <fmt:formatDate value="<%=new java.util.Date()%>" pattern="yyyy"/>. All rights reserved. Design:<a
                         href="https://github.com/DrAugus">AUGUS</a>.</p>
             </ul>
         </div>
