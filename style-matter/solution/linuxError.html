@@ -1,26 +1,14 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>备用页</title>
+        <title>Generic - Phantom by HTML5 UP</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
         <link rel="stylesheet" href="../assets/css/main.css"/>
-        <noscript>
-            <link rel="stylesheet" href="../assets/css/noscript.css"/>
-        </noscript>
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css"/></noscript>
     </head>
     <body class="is-preload">
-
-        <!-- 原本的结构为 -->
-        <!-- Wrapper -->
-        <!-- 	Header -->
-        <!-- 	Menu -->
-        <!-- 	Main -->
-        <!-- 	Footer -->
-
-        <!-- 改为Wrapper包裹每一个部分 -->
-        <!-- Header Footer 在对应的html内已包裹 -->
-
 
         <!-- Header -->
         <div class="header-page"></div>
@@ -46,9 +34,24 @@
             <!-- Main -->
             <div id="main">
                 <div class="inner">
-                    <h1>备用页</h1>
-                    <span class="image main"><img src="../images/pic13.jpg" alt=""/></span>
-                    <p>备用页备用页备用页备用页备用页备用页备用页备用页备用页</p>
+                    <h1>解决linux的-bash: ./xx: Permission denied</h1>
+                    <p>在linux下执行sh文件时提示下面信息：</p>
+                    <blockquote><code>-bash: ./xx.sh: Permission denied</code></blockquote>
+                    <p>解决：</p><code>chmod 777 xx.sh</code>
+
+                    <h1>g++: command not found</h1>
+                    <p>G++没有装或却没有更新</p>
+                    <p>查看：</p>
+                    <code>g++ --version</code>
+                    <blockquote>
+                        <p>centos：</p>
+                        <p><code>yum -y update gcc  (更新)</code></p>
+                        <p><code>yum -y install gcc+ gcc-c++</code></p>
+                        <p>ubuntu：</p>
+                        <p><code>apt-get update gcc(更新)</code></p>
+                        <p><code>apt-get install g++</code></p>
+                    </blockquote>
+
                 </div>
             </div>
 
@@ -56,7 +59,6 @@
 
         <!-- Footer -->
         <div class="footer-page"></div>
-
 
         <!-- Scripts -->
         <script src="../assets/js/jquery.min.js"></script>
@@ -67,12 +69,8 @@
 
         <script>
             $(function () {
-                /*公共部分
-                 * 导航栏
-                 * footer CopyRight
-                 */
-                $(".header-page").load("../public/matter-header.html");
-                $(".footer-page").load("../public/matter-footer.html");
+                $(".header-page").load("./public/matter-header.html");
+                $(".footer-page").load("./public/matter-footer.html");
             });
         </script>
 
