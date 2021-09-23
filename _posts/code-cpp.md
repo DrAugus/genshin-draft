@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "一些程序题"
+date:   2020-08-02 15:00:03
+categories: C++
+tags: C++
+---
+
+
+
 ## 一些程序题
 
 1.
