@@ -1,94 +1,93 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>
-      {% if page.title %}
-      {{ page.title | escape }}
-      {% else %}
-      {{ site.title | escape }}
-      {% endif %}
-    </title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/augus.ico"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"/>
-    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
-    <!--移除main.css共用page.css 会导致 project 页面失效 about界面失效 tag标签动态显示失效-->
-    <!--增加main.css会导致post文档格式失效-->
-<!--    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">-->
-    {% for css in layout.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}"/>
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}"/>
-    {% endif %}
-    {% endfor %}
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>
+            {% if page.title %}
+            {{ page.title | escape }}
+            {% else %}
+            {{ site.title | escape }}
+            {% endif %}
+        </title>
+        <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/augus.ico"/>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"/>
+        <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
+        <!--移除main.css共用page.css 会导致 project 页面失效 about界面失效 tag标签动态显示失效-->
+        <!--增加main.css会导致post文档格式失效-->
+        <!--    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">-->
+        {% for css in layout.css %}
+        {% if css contains "//" %}
+        <link rel="stylesheet" href="{{css}}"/>
+        {% else %}
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}"/>
+        {% endif %}
+        {% endfor %}
 
-    <!--并不知道下面注释是在写什么-->
-    {% for css in page.css %}
-    {% if css contains "//" %}
-    <link rel="stylesheet" href="{{css}}"/>
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}"/>
-    {% endif %}
-    {% endfor %}
-
-
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css"/>
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml"/>
-    {% seo title=false %}
-  </head>
-  <body>
-    <header>
-      <nav class="top-nav teal">
-
-        <!--粒子效果-->
-        <div class="particles-wrapper">
-          <canvas class="particles"></canvas>
-        </div>
-
-        <!-- background -->
-<!--        <div class="head-bg-wrapper"><img class="head-bg-wrapper" src="{{site.baseurl}}/assets/res/iMacPro.svg" alt=""/></div>-->
-
-        <div class="nav-wrapper">
-          <div class="container">
-            <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>&nbsp;&nbsp;趣舍万殊&nbsp;&nbsp;静躁不同
-            <p class="head-message">多情自古空余恨&nbsp;&nbsp;好梦由来最易醒</p>
-              <div class="divider"></div>
-          </div>
-        </div>
+        <!--并不知道下面注释是在写什么-->
+        {% for css in page.css %}
+        {% if css contains "//" %}
+        <link rel="stylesheet" href="{{css}}"/>
+        {% else %}
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}"/>
+        {% endif %}
+        {% endfor %}
 
 
-      </nav>
-      <div class="container">
-        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
-          <i class="material-icons">menu</i>
-        </a>
-      </div>
-      <ul id="slide-out" class="side-nav fixed">
-        <li>
-          <div class="userView">
-<!--            <img class="user-bg" src="{{site.baseurl}}/assets/res/World_Time_Zones_Map.png" />-->
-            <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpeg"></a>
-            <!-- TODO icon此css暂无 等待后续合并css -->
-            <a href="{{site.github_profile}}" target="_blank" class="icon brands fa-github"><span class="green-text name">{{site.user}}</span></a>
-            <a href="mailto:{{site.user_email}}" class="icon solid style2 fa-envelope"><span class="green-text email">{{site.user_email}}</span></a>
-          </div>
-        </li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">home</i>Home</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">description</i>Projects</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>Categories</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="material-icons">label</i>Tags</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/about"><i class="material-icons">person</i>About</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/contact-thanks"><i class="material-icons">email</i>Contact&Thanks</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">person</i>Blog</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/style/index"><i class="material-icons">person</i>Intro</a></li>
-        <li><a class="waves-effect" href="{{site.baseurl}}/style-matter/index"><i class="material-icons">person</i>Matter</a></li>
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css"/>
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml"/>
+        {% seo title=false %}
+    </head>
+    <body>
+        <header>
+            <nav class="top-nav teal">
 
-      </ul>
+                <!--粒子效果-->
+                <div class="particles-wrapper">
+                    <canvas class="particles"></canvas>
+                </div>
 
-    </header>
-    <main>
+                <!-- background -->
+                <!--        <div class="head-bg-wrapper"><img class="head-bg-wrapper" src="{{site.baseurl}}/assets/res/iMacPro.svg" alt=""/></div>-->
+
+                <div class="nav-wrapper">
+                    <div class="container">
+                        <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>&nbsp;&nbsp;趣舍万殊&nbsp;&nbsp;静躁不同
+                        <p class="head-message">多情自古空余恨&nbsp;&nbsp;好梦由来最易醒</p>
+                        <div class="divider"></div>
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="container">
+                <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+            <ul id="slide-out" class="side-nav fixed">
+                <li>
+                    <div class="userView">
+                        <!--            <img class="user-bg" src="{{site.baseurl}}/assets/res/World_Time_Zones_Map.png" />-->
+                        <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpeg"></a>
+                        <!-- TODO icon此css暂无 等待后续合并css -->
+                        <a href="{{site.github_profile}}" target="_blank" class="icon brands fa-github"><span class="green-text name">{{site.user}}</span></a>
+                        <a href="mailto:{{site.user_email}}" class="icon solid style2 fa-envelope"><span class="green-text email">{{site.user_email}}</span></a>
+                    </div>
+                </li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">home</i>Home</a></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">description</i>Projects</a></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>Categories</a></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="material-icons">label</i>Tags</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/about"><i class="material-icons">person</i>About</a></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/contact-thanks"><i class="material-icons">email</i>Contact&Thanks</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">person</i>Blog</a></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/style/index"><i class="material-icons">person</i>Intro</a></li>
+                <li><a class="waves-effect" href="{{site.baseurl}}/style-matter/index"><i class="material-icons">person</i>Matter</a></li>
+            </ul>
+
+        </header>
+        <main>
