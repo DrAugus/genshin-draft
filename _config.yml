@@ -32,7 +32,8 @@ contact_url: "https://github.com/DrAugus"
 disqus_shortname: "Augus"
 
 # Build settings
-#markdown:
+markdown: kramdown
+highlighter: rouge
 gems:
   - jekyll-paginate
   - jekyll-seo-tag
