@@ -16,11 +16,11 @@ theme: jekyll-theme-cayman
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: AUGUS
-description: > # this means to ignore newlines until "baseurl:"
-#  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
+description: > # webpage description
+  体验生活
 baseurl: "/resume"
 url: "https://draugus.github.io"
-#permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title
 #repository: draugus/resume
 paginate: 5
 
@@ -35,6 +35,7 @@ disqus_shortname: "Augus"
 markdown: kramdown
 highlighter: rouge
 gems:
+  - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
