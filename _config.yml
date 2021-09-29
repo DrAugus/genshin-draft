@@ -18,7 +18,6 @@ theme: jekyll-theme-cayman
 title: AUGUS
 description: > # this means to ignore newlines until "baseurl:"
 #  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
-体验生活
 baseurl: "/resume"
 url: "https://draugus.github.io"
 #permalink: /:year/:month/:day/:title
