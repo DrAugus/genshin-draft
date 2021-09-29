@@ -1,5 +1,10 @@
 ---
+
 ---
+
+@font-face
+  font-family: 'JetBrains Mono'
+
 @mixin transition($args...)
   -webkit-transition: $args
   -moz-transition: $args
@@ -17,6 +22,19 @@ main
 
       pre
         padding: 5px
+
+  blockquote
+    color: #888
+    background: #e2e2e2
+    border-left-color: #d2d2d2
+    overflow: hidden
+  code
+    font-family: "JetBrains Mono", serif
+    &.language-plaintext
+      padding: .2em
+      border-radius: .2em
+      color: #c7254e
+      background: #e6e2e4
 
   figure
     &.highlight
@@ -62,6 +80,22 @@ main
         background-color: #616161
 
       @include transition(all .3s ease-in-out)
+
+#post-content
+  table, th, td
+    border: 1px solid #ccc
+
+  table
+    thead
+      tr
+        background: #e7e8e9
+
+      th
+        text-align: center
+
+    tbody
+      tr:nth-child(2n + 1)
+        background: #f7f7f7
 
 @media only screen and (max-width: 992px)
   #post-info
