@@ -13,6 +13,82 @@
   -o-transition: $args
   transition: $args
 
+
+
+code[class*=language-], pre[class*=language-] 
+  color: #fff
+  background: none
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace
+  font-feature-settings: normal
+  text-align: left
+  white-space: pre
+  word-spacing: normal
+  word-break: normal
+  word-wrap: normal
+  line-height: 1.5
+  margin-bottom: 0
+  -moz-tab-size: 4
+  -o-tab-size: 4
+  tab-size: 4
+  -webkit-hyphens: none
+  -ms-hyphens: none
+  hyphens: none
+
+pre[class*=language-]
+  overflow: auto
+  padding: 1.3125rem
+
+pre[class*=language-]::selection
+  background: #27292a
+
+pre[class*=language-]::selection, pre[class*=language-] ::selection
+  text-shadow: none
+  background: hsla(0, 0%, 100%, .15)
+
+:not(pre)
+  & > code[class*=language-]
+    border-radius: .3em
+    background: var(--inlineCode-bg)
+    color: var(--inlineCode-text)
+    padding: .15em .2em .05em
+    white-space: normal
+
+.gatsby-highlight-code-line
+  background-color: #022a4b
+  display: block
+  padding-right: 1em
+  padding-left: 1.25em
+  border-left: .25em solid #ffa7c4
+
+
+.gatsby-highlight, .gatsby-highlight-code-line
+  margin-right: -1.3125rem
+  margin-left: -1.3125rem
+
+
+.gatsby-highlight
+  margin-bottom: 1.75rem
+  border-radius: 10px
+  background: #011627
+  -webkit-overflow-scrolling: touch
+  overflow: auto
+
+@media (max-width: 672px)
+.gatsby-highlight
+  border-radius: 0
+
+.gatsby-highlight pre[class*=language-]
+  float: left
+  min-width: 100%
+
+
+
+
+
+
+
+  
+
 main
   div
     .divider
@@ -29,13 +105,6 @@ main
     background: #e2e2e2
     border-left-color: #d2d2d2
     overflow: hidden
-  code
-    font-family: "JetBrains Mono"
-    &.language-plaintext
-      padding: .2em
-      border-radius: .2em
-      color: #c7254e
-      background: #e6e2e4
 
   figure
     &.highlight
