@@ -1,62 +1,38 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Generic - Phantom by HTML5 UP</title>
+        <title>Algorithm</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
         <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
         <link rel="stylesheet" href="assets/css/main.css"/>
         <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
-
-
-        <!-- 自动生成导航目录 -->
-        <script src="assets/js/jquery-3.3.1.min.js"></script>
-        <style>
-            #auto-content-bar {
-                padding-right: 0;
-            }
-
-            .auto-menu {
-                width: 120px;
-                background: rgba(0, 0, 0, 0);
-                border: 1px #32c6c6 solid;
-                border-radius: 4px;
-                position: fixed;
-                right: 0;
-                padding: 0 6px;
-            }
-
-            .auto-menu a {
-                width: 100%;
-                height: 30px;
-                line-height: 30px;
-                display: inline-block;
-            }
-        </style>
-        <script>
-            $(document).ready(function (e) {
-                $("#auto-content-bar").children().each(function (index, element) {
-                    var tagName = $(this).get(0).tagName;
-                    if (tagName.substr(0, 1).toUpperCase() == "H") {
-                        var contentH = $(this).html();//获取内容
-                        var markID = "mark-" + tagName + "-" + index.toString();
-                        $(this).attr("id", markID);//为当前h标签设置ID
-                        $(".auto-menu").append("<a href='#" + markID + "'>" + contentH + "</a>");//在目标div中加入内容
-                    }
-                });
-            });
-        </script>
-
     </head>
 
 
     <body class="is-preload">
 
-        <!-- Header -->
-        <div class="header-page"></div>
-
         <!-- Wrapper -->
         <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+
+                    <!-- Logo -->
+                    <a href="../index.html" class="logo">
+                        <span class="symbol"><img src="../../assets/res/logo.svg" alt=""/></span><span class="title">AUGUS</span>
+                    </a>
+
+                    <!-- Nav -->
+                    <nav>
+                        <ul>
+                            <li><a href="#menu">Menu</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </header>
 
             <!-- Menu -->
             <nav id="menu">
@@ -260,10 +236,58 @@
                 </div>
             </div>
 
-        </div>
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <section>
+                        <h2>Get in touch</h2>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <input type="text" name="name" id="name" placeholder="Name"/>
+                                </div>
+                                <div class="field half">
+                                    <input type="email" name="email" id="email" placeholder="Email"/>
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Send" class="primary"/></li>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <h2>Follow</h2>
+                        <ul class="icons">
+                            <li><a href="https://twitter.com/RookieAugus" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="https://facebook.com/dr.bit.augus" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="https://www.instagram.com/augusbie" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                            <!--									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+                            <li><a href="https://github.com/DrAugus" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                            <!--                    									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>-->
+                            <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                            <li><a href="mailto:bramlye@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                        </ul>
+                    </section>
+                    <section>
+                <span class="STYLE1" id=jnkc>
+                    <script>setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());",1000);</script>
+                </span>
+                    </section>
+                    <ul class="copyright">
+                        <p class="copyright">&#xA9; <span id="currentFullYear"></span>. All rights reserved. Design:<a
+                                href="https://github.com/DrAugus">AUGUS</a>.</p>
+                        <script type="text/javascript">
+                            var currentFullYear = (new Date()).getFullYear();
+                            document.getElementById('currentFullYear').innerHTML = currentFullYear;
+                        </script>
+                    </ul>
+                </div>
+            </footer>
 
-        <!-- Footer -->
-        <div class="footer-page"></div>
+        </div>
 
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
@@ -272,12 +296,6 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <script>
-            $(function () {
-                $(".header-page").load("./public/matter-header.html");
-                $(".footer-page").load("./public/matter-footer.html");
-            });
-        </script>
 
     </body>
 </html>

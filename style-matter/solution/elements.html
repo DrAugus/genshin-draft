@@ -12,20 +12,39 @@
     </head>
     <body class="is-preload">
 
-        <!-- Header -->
-        <div class="header-page"></div>
-
         <!-- Wrapper -->
         <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+
+                    <!-- Logo -->
+                    <a href="../index.html" class="logo">
+                        <span class="symbol"><img src="../../assets/res/logo.svg" alt=""/></span><span class="title">AUGUS</span>
+                    </a>
+
+                    <!-- Nav -->
+                    <nav>
+                        <ul>
+                            <li><a href="#menu">Menu</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </header>
 
             <!-- Menu -->
             <nav id="menu">
                 <h2>Menu</h2>
                 <ul>
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="generic.html">Ipsum veroeros</a></li>
-                    <li><a href="generic.html">Tempus etiam</a></li>
-                    <li><a href="generic.html">Consequat dolor</a></li>
+                    <li><a href="list.html">问题列表</a></li>
+                    <li><a href="resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
+                    <li><a href="htmlNotes.html">HTML Record</a></li>
+                    <li><a href="webRecord.html">网站记录</a></li>
+                    <li><a href="linuxError.html">Linux Error</a></li>
+                    <li><a href="new1.html">备用1</a></li>
                     <li><a href="elements.html">Elements</a></li>
                     <li><a href="genshin-impact.html">Genshin Impact</a></li>
                 </ul>
@@ -412,10 +431,58 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 </div>
             </div>
 
-        </div>
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <section>
+                        <h2>Get in touch</h2>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <input type="text" name="name" id="name" placeholder="Name"/>
+                                </div>
+                                <div class="field half">
+                                    <input type="email" name="email" id="email" placeholder="Email"/>
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Send" class="primary"/></li>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <h2>Follow</h2>
+                        <ul class="icons">
+                            <li><a href="https://twitter.com/RookieAugus" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="https://facebook.com/dr.bit.augus" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="https://www.instagram.com/augusbie" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                            <!--									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+                            <li><a href="https://github.com/DrAugus" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                            <!--                    									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>-->
+                            <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                            <li><a href="mailto:bramlye@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                        </ul>
+                    </section>
+                    <section>
+                <span class="STYLE1" id=jnkc>
+                    <script>setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());",1000);</script>
+                </span>
+                    </section>
+                    <ul class="copyright">
+                        <p class="copyright">&#xA9; <span id="currentFullYear"></span>. All rights reserved. Design:<a
+                                href="https://github.com/DrAugus">AUGUS</a>.</p>
+                        <script type="text/javascript">
+                            var currentFullYear = (new Date()).getFullYear();
+                            document.getElementById('currentFullYear').innerHTML = currentFullYear;
+                        </script>
+                    </ul>
+                </div>
+            </footer>
 
-        <!-- Footer -->
-        <div class="footer-page"></div>
+        </div>
 
         <!-- Scripts -->
         <script src="../assets/js/jquery.min.js"></script>
@@ -424,12 +491,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         <script src="../assets/js/util.js"></script>
         <script src="../assets/js/main.js"></script>
 
-        <script>
-            $(function () {
-                $(".header-page").load("../public/matter-header.html");
-                $(".footer-page").load("../public/matter-footer.html");
-            });
-        </script>
 
     </body>
 </html>
