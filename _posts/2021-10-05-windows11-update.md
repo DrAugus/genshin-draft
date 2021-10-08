@@ -6,6 +6,13 @@ categories: windows
 tags: windows 更新
 ---
 
+
+
+本文介绍更新路上的绊脚石
+
+如果需要跨过这些绊脚石，进PE直接安装win11镜像即可。
+[附官方更新地址](https://www.microsoft.com/zh-cn/software-download/windows11)
+
 ## TMP2.0 开启
 
 > 启用 TPM 的选项可能标记为"安全设备、安全设备支持、TPM 状态、AMD fTPM开关、AMD PSP fTPM、IntelPTT或Intel平台信任技术"。
