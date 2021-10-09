@@ -108,18 +108,23 @@
                         </ul>
                     </section>
                     <section>
-                <span class="STYLE1" id=jnkc>
-                    <script>setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());",1000);</script>
-                </span>
+                        <h2>Now</h2>
+                        <div class="row">
+                            <div class="col s12">
+                                <span id="time_str">
+                                    <script> setInterval("time_str.innerHTML=new Date().toString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());", 1000);</script>
+                                </span>
+                            </div>
+                        </div>
                     </section>
-                    <ul class="copyright">
-                        <p class="copyright">&#xA9; <span id="currentFullYear"></span>. All rights reserved. Design:<a
-                                href="https://github.com/DrAugus">AUGUS</a>.</p>
+                    <section>
+                        <p class="copyright">&#xA9; 2021-<span id="currentFullYear"></span>. All rights reserved.
+                            Design: <a href="https://github.com/DrAugus">AUGUS</a>.</p>
                         <script type="text/javascript">
                             var currentFullYear = (new Date()).getFullYear();
                             document.getElementById('currentFullYear').innerHTML = currentFullYear;
                         </script>
-                    </ul>
+                    </section>
                 </div>
             </footer>
 
