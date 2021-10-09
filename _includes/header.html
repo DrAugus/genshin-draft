@@ -70,10 +70,12 @@
             <ul id="slide-out" class="sidenav sidenav-fixed" style="background-color:#c4bdbd">
                 <li>
                     <div class="userView">
-                        <!--            <img class="user-bg" src="{{site.baseurl}}/assets/res/World_Time_Zones_Map.png" />-->
-                        <a href="{{site.github_profile}}" target="_blank"><img class="user-avatar circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpg" alt=""></a>
-                        <a href="{{site.github_profile}}" target="_blank"><span class="blue-grey-text name">{{site.user}}</span></a>
-                        <a href="mailto:{{site.user_email}}"><span class="green-text email">{{site.user_email}}</span></a>
+<!--                        <img class="user-bg" src="{{site.baseurl}}/assets/res/"/>-->
+                        <a class="user-avatar" href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpg" width="64" alt=""></a>
+                        <div class="green-text user-info">
+                            {{site.user}}<br>
+                            <a href="mailto:{{site.user_email}}"><span class="green-text email">{{site.user_email}}</span></a>
+                        </div>
                     </div>
                 </li>
                 <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">home</i>Home</a></li>
