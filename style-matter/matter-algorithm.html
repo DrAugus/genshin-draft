@@ -271,24 +271,27 @@
                             <li><a href="mailto:bramlye@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
                         </ul>
                     </section>
-                    <section>
-                        <h2>Now</h2>
-                        <div class="row">
-                            <div class="col s12">
+
+					<ul class="copyright">
+						<li>
+							<div class="row">
+								<div class="col s12">
                                 <span id="time_str">
                                     <script> setInterval("time_str.innerHTML=new Date().toString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());", 1000);</script>
                                 </span>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <p class="copyright">&#xA9; 2021-<span id="currentFullYear"></span>. All rights reserved.
-                            Design: <a href="https://github.com/DrAugus">AUGUS</a>.</p>
-                        <script type="text/javascript">
-                            var currentFullYear = (new Date()).getFullYear();
-                            document.getElementById('currentFullYear').innerHTML = currentFullYear;
-                        </script>
-                    </section>
+								</div>
+							</div>
+						</li>
+						<li>
+							&#xA9; 2021-<span id="currentFullYear"></span>. All rights reserved.
+							Design: <a href="https://github.com/DrAugus">AUGUS</a>.
+							<script type="text/javascript">
+								var currentFullYear = (new Date()).getFullYear();
+								document.getElementById('currentFullYear').innerHTML = currentFullYear;
+							</script>
+						</li>
+					</ul>
+
                 </div>
             </footer>
 
