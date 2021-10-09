@@ -17,7 +17,7 @@ theme: jekyll-theme-cayman
 # in the templates via {{ site.myvariable }}.
 title: AUGUS
 description: > # webpage description
-  体验生活
+#  趣舍萬殊&nbsp;&nbsp;靜躁不同
 baseurl: "/resume"
 url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
