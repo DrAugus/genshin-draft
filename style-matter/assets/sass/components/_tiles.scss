@@ -162,6 +162,24 @@
 				}
 			}
 
+			&.style7 {
+				> .image:before {
+					background-color: _palette(accent7);
+				}
+			}
+
+			&.style8 {
+				> .image:before {
+					background-color: _palette(accent8);
+				}
+			}
+
+			&.style9 {
+				> .image:before {
+					background-color: _palette(accent9);
+				}
+			}
+
 			body:not(.is-touch) & {
 				&:hover {
 					> .image {
