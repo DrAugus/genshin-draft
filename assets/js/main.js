@@ -1,10 +1,3 @@
-(function($){
-  $(function(){
-    $(".button-collapse").Sidenav();
-  });
-})(jQuery);
-
-
 // Materialize 全部插件初始化
 M.AutoInit();
 
