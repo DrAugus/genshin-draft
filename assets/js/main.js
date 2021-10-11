@@ -1,6 +1,6 @@
 (function($){
   $(function(){
-    $(".button-collapse").sideNav();
+    $(".button-collapse").Sidenav();
   });
 })(jQuery);
 
