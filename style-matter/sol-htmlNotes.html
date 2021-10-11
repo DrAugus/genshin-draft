@@ -1,18 +1,16 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>SOL LIST</title>
+        <title>HTML学习笔记</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-        <link rel="shortcut icon" type="image/x-icon" href="../../assets/res/augus.ico"/>
-        <link rel="stylesheet" href="../assets/css/main.css"/>
-        <link rel="stylesheet" href="../assets/css/search-box.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/res/augus.ico"/>
+        <link rel="stylesheet" href="assets/css/main.css"/>
         <noscript>
-            <link rel="stylesheet" href="../assets/css/noscript.css"/>
+            <link rel="stylesheet" href="assets/css/noscript.css"/>
         </noscript>
     </head>
     <body class="is-preload">
-
 
         <!-- Wrapper -->
         <div id="wrapper">
@@ -22,8 +20,8 @@
                 <div class="inner">
 
                     <!-- Logo -->
-                    <a href="../index.html" class="logo icon brands fa-fingerprint">
-<!--                        <span class="symbol"><img src="../../assets/res/logo.svg" alt=""/></span>-->
+                    <a href="index.html" class="logo icon brands fa-fingerprint">
+<!--                        <span class="symbol"><img src="../assets/res/logo.svg" alt=""/></span>-->
                         <span class="title">AUGUS</span>
                     </a>
 
@@ -41,18 +39,18 @@
             <nav id="menu">
                 <h2>Menu</h2>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="list.html">问题列表</a></li>
-                    <li><a href="resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
-                    <li><a href="htmlNotes.html">HTML Record</a></li>
-                    <li><a href="webRecord.html">网站记录</a></li>
-                    <li><a href="linuxError.html">Linux Error</a></li>
-                    <li><a href="new1.html">备用1</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                    <li><a href="genshin-impact.html">Genshin Impact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sol-list.html">问题列表</a></li>
+                    <li><a href="sol-resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
+                    <li><a href="sol-htmlNotes.html">HTML Record</a></li>
+                    <li><a href="sol-webRecord.html">网站记录</a></li>
+                    <li><a href="sol-linuxError.html">Linux Error</a></li>
+                    <li><a href="sol-new1.html">备用1</a></li>
+                    <li><a href="sol-elements.html">Elements</a></li>
+                    <li><a href="sol-genshinImpact.html">Genshin Impact</a></li>
 
-                    <li><a href="../../aerial/index.html">aerial</a></li>
-                    <li><a href="../../editorial/index.html">editorial</a></li>
+                    <li><a href="../aerial/index.html">aerial</a></li>
+                    <li><a href="../editorial/index.html">editorial</a></li>
                     <li><a href="#">CURRENT</a></li>
 
                 </ul>
@@ -61,31 +59,40 @@
             <!-- Main -->
             <div id="main">
                 <div class="inner">
-
-                    <!-- 搜索框预置 -->
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-                    <div class="search">
-                        <i class="material-icons search-icon search-start">search</i>
-                        <input type="text" class="search-input" placeholder="Searching..."/>
-                        <i class="material-icons search-icon search-clear">clear</i>
-                        <div class="search-results"></div>
-                    </div>
-
-
-                    <h1>问题列表</h1>
-                    <span class="image main"><img src="../images/pic13.jpg" alt=""/></span>
-                    <p>你可以找到你想要的吗？</p>
-                    <nav>
-                        <ul>
-                            <li><a href="resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
-                            <li><a href="htmlNotes.html">HTML Record</a></li>
-                            <li><a href="webRecord.html">网站记录</a></li>
-                            <li><a href="linuxError.html">Linux Error</a></li>
-                            <li><a href="new1.html">备用1</a></li>
-                            <li><a href="elements.html">Elements</a></li>
-                            <li><a href="genshin-impact.html">Genshin Impact</a></li>
-                        </ul>
-                    </nav>
+                    <h1>HTML Record</h1>
+                    <span class="image main"><img src="images/pic13.jpg" alt=""/></span>
+                    <br>
+                    <details>
+                        <summary>HTML &lt;a&gt; 标签的 target 属性</summary>
+                        <br>
+                        <table class="dataintable">
+                            <tr>
+                                <th>值</th>
+                                <th>描述</th>
+                            </tr>
+                            <tr>
+                                <td>_blank</td>
+                                <td>在新窗口中打开被链接文档。</td>
+                            </tr>
+                            <tr>
+                                <td>_self</td>
+                                <td>默认。在相同的框架中打开被链接文档。</td>
+                            </tr>
+                            <tr>
+                                <td>_parent</td>
+                                <td>在父框架集中打开被链接文档。</td>
+                            </tr>
+                            <tr>
+                                <td>_top</td>
+                                <td>在整个窗口中打开被链接文档。</td>
+                            </tr>
+                            <tr>
+                                <td><i>framename</i></td>
+                                <td>在指定的框架中打开被链接文档。</td>
+                            </tr>
+                        </table>
+                    </details>
+                    <p></p>
                 </div>
             </div>
 
@@ -150,13 +157,14 @@
 
         </div>
 
+
         <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-        <script src="../assets/js/search-box.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
 
     </body>
 </html>

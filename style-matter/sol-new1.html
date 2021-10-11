@@ -1,16 +1,30 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>VirtualBox该何去何从</title>
+        <title>备用页</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-        <link rel="shortcut icon" type="image/x-icon" href="../../assets/res/augus.ico"/>
-        <link rel="stylesheet" href="../assets/css/main.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/res/augus.ico"/>
+        <link rel="stylesheet" href="assets/css/main.css"/>
         <noscript>
-            <link rel="stylesheet" href="../assets/css/noscript.css"/>
+            <link rel="stylesheet" href="assets/css/noscript.css"/>
         </noscript>
     </head>
     <body class="is-preload">
+
+        <!-- 原本的结构为 -->
+        <!-- Wrapper -->
+        <!-- 	Header -->
+        <!-- 	Menu -->
+        <!-- 	Main -->
+        <!-- 	Footer -->
+
+        <!-- 改为Wrapper包裹每一个部分 -->
+        <!-- Header Footer 在对应的html内已包裹 -->
+
+
+        <!-- 20211008 结构还原 等待更好的公共部分方法 TODO-->
+
 
         <!-- Wrapper -->
         <div id="wrapper">
@@ -20,8 +34,8 @@
                 <div class="inner">
 
                     <!-- Logo -->
-                    <a href="../index.html" class="logo icon brands fa-fingerprint">
-<!--                        <span class="symbol"><img src="../../assets/res/logo.svg" alt=""/></span>-->
+                    <a href="index.html" class="logo icon brands fa-fingerprint">
+<!--                        <span class="symbol"><img src="../assets/res/logo.svg" alt=""/></span>-->
                         <span class="title">AUGUS</span>
                     </a>
 
@@ -39,18 +53,18 @@
             <nav id="menu">
                 <h2>Menu</h2>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="list.html">问题列表</a></li>
-                    <li><a href="resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
-                    <li><a href="htmlNotes.html">HTML Record</a></li>
-                    <li><a href="webRecord.html">网站记录</a></li>
-                    <li><a href="linuxError.html">Linux Error</a></li>
-                    <li><a href="new1.html">备用1</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                    <li><a href="genshin-impact.html">Genshin Impact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sol-list.html">问题列表</a></li>
+                    <li><a href="sol-resetVirtualBox.html">重装系统后如何重新启用Virtual Box</a></li>
+                    <li><a href="sol-htmlNotes.html">HTML Record</a></li>
+                    <li><a href="sol-webRecord.html">网站记录</a></li>
+                    <li><a href="sol-linuxError.html">Linux Error</a></li>
+                    <li><a href="sol-new1.html">备用1</a></li>
+                    <li><a href="sol-elements.html">Elements</a></li>
+                    <li><a href="sol-genshinImpact.html">Genshin Impact</a></li>
 
-                    <li><a href="../../aerial/index.html">aerial</a></li>
-                    <li><a href="../../editorial/index.html">editorial</a></li>
+                    <li><a href="../aerial/index.html">aerial</a></li>
+                    <li><a href="../editorial/index.html">editorial</a></li>
                     <li><a href="#">CURRENT</a></li>
 
                 </ul>
@@ -59,52 +73,9 @@
             <!-- Main -->
             <div id="main">
                 <div class="inner">
-                    <h1>重装系统后如何重新启用Virtual Box</h1>
-                    <span class="image main"><img src="../images/pic13.jpg" alt=""/></span>
-                    <p>避免后面出现如下报错信息，请先检查<code>vboxdrv</code>服务是否正常运行</p>
-                    <blockquote>
-                        NtCreateFile(\Device\VBoxDrvStub) failed: 0xc000000034
-                        STATUS_OBJECT_NAME_NOT_FOUND (0 retries) (rc=-101)<br>
-                        Make sure the kernel module has been loaded successfully.
-                    </blockquote>
-                    <details>
-                        <summary>vboxdrv服务</summary>
-                        <br>
-                        <ul>
-                            <li>cmd键入<code>sc.exe query vboxdrv</code>检测其运行状态</li>
-                            <li>若未启动，键入<code>sc start vboxdrv</code>进行启动</li>
-                            <li>启动失败则需要重新安装，进入安装路径<code>C:\Program Files\Oracle\VirtualBox\drivers\vboxdrv</code>,
-                                右击VBoxDrv.inf，选安装，然后重启。
-                            </li>
-                        </ul>
-                    </details>
-                    <br>
-                    <p>下面我们开始恢复</p>
-                    <p>重现你当时安装所选的配置，在到虚拟硬盘的步骤时，选择使用现有文件，找到你之前的vdi文件，点击创建，大功告成</p>
-                    <p>
-                        <span style="text-align: center;display:block;">
-                            <a href="https://sm.ms/image/agfDFEBjGoNMdu7" target="_blank"><img src="https://i.loli.net/2021/10/11/agfDFEBjGoNMdu7.png" ></a>
-                        </span>
-                    </p>
-                    <br>
-
-                    <p>一些坑...</p>
-                    <ul>
-                        <li>
-                            <p>一定要把网络设置为桥接网卡</p>
-                            <p><span style="text-align: center;display:block;">
-                                <a href="https://sm.ms/image/OYZgpsw4CBJhVju" target="_blank"><img src="https://i.loli.net/2021/10/11/OYZgpsw4CBJhVju.png" alt=""></a>
-                            </span></p>
-                        </li>
-                        <li>
-                            检查linux网卡配置
-                            <ul>
-                                <li><code>vim /etc/sysconfig/network-scripts/ifcfg-enp0s3 </code></li>
-                                <li><code>vim /etc/resolv.conf</code></li>
-                            </ul>
-                        </li>
-                    </ul>
-
+                    <h1>备用页</h1>
+                    <span class="image main"><img src="images/pic13.jpg" alt=""/></span>
+                    <p>备用页备用页备用页备用页备用页备用页备用页备用页备用页</p>
                 </div>
             </div>
 
@@ -171,12 +142,11 @@
 
 
         <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
     </body>
 </html>
