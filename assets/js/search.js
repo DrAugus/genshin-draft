@@ -1,8 +1,4 @@
-/**
- * 网站文章内容搜索功能实现
- * Copyright (c) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/search.js>
- * @todo 多关键词搜索
- */
+var searchUrl = "https://draugus.github.io/resume/feed.xml";
 
 // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
 var elSearchBox = document.querySelector(".search"),
@@ -53,7 +49,7 @@ xhr.onreadystatechange = function () {
         elSearchBox.style.display = "block";
     }
 };
-xhr.open("get", "/feed.xml", true);
+xhr.open("get", searchUrl, true);
 xhr.send();
 
 // 绑定按钮事件
