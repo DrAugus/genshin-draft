@@ -15,9 +15,7 @@
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/materialize.min.css">
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
-        <!--移除main.css共用page.css 会导致 project 页面失效 about界面失效 tag标签动态显示失效-->
-        <!--增加main.css会导致post文档格式失效-->
-        <!--    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">-->
+
         {% for css in layout.css %}
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}"/>
