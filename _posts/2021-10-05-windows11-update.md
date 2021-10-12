@@ -57,3 +57,5 @@ tags: windows 更新
 之后输入 `bcdedit` 查看启动管理器，查看 `hypervisorlaunchtype` 是不是off状态的，重启之后生效。
 
 ![bcdedit.png](https://i.loli.net/2021/10/11/T4vshnFbzEkf5Oj.png)
+
+> 注意这个解决办法 是能够升级win11但是无法使用virtualbox
