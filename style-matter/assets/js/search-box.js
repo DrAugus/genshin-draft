@@ -3,7 +3,6 @@ var searchBtn = document.querySelector('.search-start');
 var searchClear = document.querySelector('.search-clear');
 var searchInput = document.querySelector('.search-input');
 var searchResults = document.querySelector('.search-results');
-var searchUrl = "https://draugus.github.io/resume/feed.xml"
 
 // 申明保存文章的标题、链接、内容的数组变量
 var searchValue = '',
@@ -39,7 +38,7 @@ xhr.onreadystatechange = function () {
 }
 
 // 开始获取根目录下 feed.xml 文件内的数据
-xhr.open('get', searchUrl, true);
+xhr.open('get', '/feed.xml', true);
 xhr.send();
 
 searchBtn.onclick = searchConfirm;
