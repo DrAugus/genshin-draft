@@ -12,7 +12,8 @@ js: [
     "particles.min.js",
     "main.js",
     "search.js",
-    "gen-category.js"
+    "gen-category.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
 ]
 ---
 <div id="post-info">
@@ -54,6 +55,7 @@ js: [
     {{ content }}
   </div>
 </div>
+
 {% if site.disqus_shortname and page.comments %}
 <div id="disqus_thread"></div>
 <script>
@@ -70,3 +72,10 @@ js: [
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endif %}
+
+<!--表格排序-->
+<script type="text/javascript">
+    $(function () {
+        $("#myTableSort").tablesorter();
+    });
+</script>
