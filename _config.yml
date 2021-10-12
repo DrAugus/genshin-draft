@@ -18,8 +18,8 @@ theme: jekyll-theme-cayman
 title: AUGUS
 description: > # webpage description
 #  趣舍萬殊&nbsp;&nbsp;靜躁不同
-#baseurl: "/resume"
-url: "https://draugus.github.io/resume"
+baseurl: "/resume"
+url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
 #repository: draugus/resume
 paginate: 5

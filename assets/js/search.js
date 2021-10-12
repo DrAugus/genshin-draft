@@ -1,3 +1,5 @@
+var searchUrl = "https://draugus.github.io/resume/feed.xml";
+
 // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
 var elSearchBox = document.querySelector(".search"),
     elSearchBtn = document.querySelector(".search-start"),
@@ -47,7 +49,7 @@ xhr.onreadystatechange = function () {
         elSearchBox.style.display = "block";
     }
 };
-xhr.open("get", '/feed.xml', true);
+xhr.open("get", searchUrl, true);
 xhr.send();
 
 // 绑定按钮事件
