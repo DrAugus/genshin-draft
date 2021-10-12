@@ -55,11 +55,17 @@ tags: 杂谈 外卖
 <h3>test baidu map</h3>
 <div class="container"></div>
 <script type="text/javascript">
-    var map = new window.BMapGL.Map("container");
-    // 创建地图实例
-    var point = new window.BMapGL.Point(116.404, 39.915);
-    // 创建点坐标
-    map.centerAndZoom(point, 15);
-    // 初始化地图，设置中心点坐标和地图级别
+    function initialize() {
+        var mp = new BMapGL.Map('map');
+        mp.centerAndZoom(new BMapGL.Point(121.491, 31.233), 11);
+    }
+
+    function loadScript() {
+        var script = document.createElement("script");
+        script.src = "https://api.map.baidu.com/api?v=1.0&type=webgl&ak=DHQmvz9qGEdsPhzbaKwUPk0LnO4dWMCp&callback=initialize";
+        document.body.appendChild(script);
+    }
+
+    window.onload = loadScript;
 </script>
 
