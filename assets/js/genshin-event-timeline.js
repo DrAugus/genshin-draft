@@ -1,5 +1,5 @@
 // Copyright (c) 2021 Made Baruna  https://paimon.moe/timeline
-export const eventsData = [
+const eventsData = [
     [
         {
             name: "The Heron's Invitation Web Event",
