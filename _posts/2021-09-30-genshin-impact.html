@@ -7,10 +7,14 @@ tags: 原神
 ---
 
 
+<button onclick="reverseAll()">点我排序</button>
+<button onclick="resetAll()">重置</button>
+
+
 <div class="timeline-trace" id="apply">祈愿</div>
 <div class="timeline-wrapper" id="wrapper1">
 
-    {% for i in (0..10) %}
+    {% for i in (0..4) %}
     <div class="timeline-area">
         <div class="timeline-date"><span>{{i}}</span></div>
         <div class="timeline-text"><h2>loading</h2>
@@ -32,6 +36,16 @@ tags: 原神
     let eventsWeapons = [];
     eventsCharacters = eventsData[4];
     eventsWeapons = eventsData[5];
+
+    function reverseAll() {
+        eventsCharacters.reverse();
+        eventsWeapons.reverse();
+    }
+
+    function resetAll() {
+
+    }
+
 
     let imgCharacters = [];
     let imgWeapons = [];
