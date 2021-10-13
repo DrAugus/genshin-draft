@@ -24,7 +24,6 @@
         {% endif %}
         {% endfor %}
 
-        <!--并不知道下面注释是在写什么-->
         {% for css in page.css %}
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}"/>
