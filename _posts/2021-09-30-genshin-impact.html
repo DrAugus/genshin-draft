@@ -36,10 +36,10 @@ tags: 原神
     let imgCharacters = [];
     let imgWeapons = [];
 
-    for (let characters in eventsCharacters) {
+    for (let characters of eventsCharacters) {
         imgCharacters.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + characters.image);
     }
-    for (let weapons in eventsWeapons) {
+    for (let weapons of eventsWeapons) {
         imgWeapons.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + weapons.image);
     }
 
