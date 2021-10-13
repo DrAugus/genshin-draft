@@ -51,7 +51,7 @@ tags: 原神
     </div>
 
     <div class="timeline-area">
-        <div class="timeline-date"><span>6</span></div>
+        <div class="timeline-date"><span id = "testetstes"></span></div>
         <div class="timeline-text"><h2>loading</h2>
             <span class="image main"><img src="https://i.loli.net/2021/09/30/CaD7QfLSOecGpuy.png" alt=""></span>
             <span class="image main"><img src="https://i.loli.net/2021/09/30/j7pbo5rRsmMZFh3.png" alt=""></span>
@@ -59,3 +59,15 @@ tags: 原神
     </div>
 
 </div>
+
+
+
+<script src="{{site.baseurl}}/assets/js/genshin-event-timeline.js"></script>
+<script type="text/javascript">
+
+    let events = [];
+    events = eventsData[5];
+
+    document.getElementById('testetstes').innerHTML = events;
+
+</script>
