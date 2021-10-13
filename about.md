@@ -7,8 +7,7 @@ css: [
     "animate.css", 
     "morphext.css"
 ]
-js: [ 
-    "https://code.jquery.com/jquery-3.6.0.min.js",
+js: [
     "morphext.min.js", 
     "about.js"
 ]

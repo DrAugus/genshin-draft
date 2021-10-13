@@ -72,6 +72,14 @@
 </footer>
 
 <!-- Compiled and minified JavaScript -->
+
+<!-- 公共部分的js -->
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=DHQmvz9qGEdsPhzbaKwUPk0LnO4dWMCp"></script>
+<!--The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source. Read more at srihash.org-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<!-- all layout js -->
 {% for js in layout.js %}
 {% if js contains "//" %}
 <script src="{{js}}"></script>
@@ -79,6 +87,7 @@
 <script src="{{site.baseurl}}/assets/js/{{js}}"></script>
 {% endif %}
 {% endfor %}
+<!-- all page js -->
 {% for js in page.js %}
 {% if js contains "//" %}
 <script src="{{js}}"></script>
@@ -105,8 +114,6 @@
 </script>
 {% endif %}
 
-<script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=DHQmvz9qGEdsPhzbaKwUPk0LnO4dWMCp">
-</script>
 
 <!--表格排序-->
 <script type="text/javascript">
