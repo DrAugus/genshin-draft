@@ -14,7 +14,7 @@ tags: 原神
 <div class="timeline-trace" id="apply">祈愿</div>
 <div class="timeline-wrapper" id="wrapper1">
 
-    {% for i in (0..4) %}
+    {% for i in (0..19) %}
     <div class="timeline-area">
         <div class="timeline-date"><span>{{i}}</span></div>
         <div class="timeline-text"><h2>loading</h2>
@@ -46,7 +46,6 @@ tags: 原神
 
     }
 
-
     let imgCharacters = [];
     let imgWeapons = [];
 
@@ -57,9 +56,8 @@ tags: 原神
         imgWeapons.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + weapons.image);
     }
 
-    console.log(imgCharacters, imgWeapons);
-
     let length = imgCharacters.length > imgWeapons.length ? imgWeapons.length : imgCharacters.length;
+    console.log(imgCharacters, imgWeapons, length);
     for (let i = 0; i < length; ++i) {
         document.getElementById('imgCharacter' + i).src = imgCharacters[i];
         document.getElementById('imgWeapon' + i).src = imgWeapons[i];
