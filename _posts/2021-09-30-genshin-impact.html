@@ -14,8 +14,8 @@ tags: 原神
     <div class="timeline-area">
         <div class="timeline-date"><span>{{i}}</span></div>
         <div class="timeline-text"><h2>loading</h2>
-            {% assign imgCharacter = "imgCharacter" + i %}
-            {% assign imgWeapon = "imgWeapon" + i %}
+            {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}
+            {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}
             <span class="image main"><img id="{{imgCharacter}}" src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""></span>
             <span class="image main"><img id="{{imgWeapon}}" src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></span>
         </div>
