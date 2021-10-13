@@ -10,64 +10,46 @@ tags: 原神
 <div class="timeline-trace" id="apply">祈愿</div>
 <div class="timeline-wrapper" id="wrapper1">
 
+    {% for i in (0..10) %}
     <div class="timeline-area">
-        <div class="timeline-date"><span>1</span></div>
+        <div class="timeline-date"><span>{{i}}</span></div>
         <div class="timeline-text"><h2>loading</h2>
-            <span class="image main"><img src="https://i.loli.net/2021/10/13/PiW51Elu9Q7IcD2.png" alt=""></span>
-            <span class="image main"><img src="https://i.loli.net/2021/10/13/B6UFoGcNiAW2VJX.png" alt=""></span>
+            {% assign imgCharacter = "imgCharacter" + i %}
+            {% assign imgWeapon = "imgWeapon" + i %}
+            <span class="image main"><img id="{{imgCharacter}}" src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""></span>
+            <span class="image main"><img id="{{imgWeapon}}" src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></span>
         </div>
     </div>
-
-    <div class="timeline-area">
-        <div class="timeline-date"><span>2</span></div>
-        <div class="timeline-text"><h2>loading</h2>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""></span>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></span>
-        </div>
-    </div>
-
-    <div class="timeline-area">
-        <div class="timeline-date"><span>3</span></div>
-        <div class="timeline-text"><h2>loading</h2>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/wIr8gT2Wy6qGxHR.png" alt=""></span>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/Rc2mDSzr7BgwY4G.png" alt=""></span>
-        </div>
-    </div>
-
-    <div class="timeline-area">
-        <div class="timeline-date"><span>4</span></div>
-        <div class="timeline-text"><h2>loading</h2>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/NjE63ZHWsYzoqAk.png" alt=""></span>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/UkqRVmxNLzdfH1K.png" alt=""></span>
-        </div>
-    </div>
-
-    <div class="timeline-area">
-        <div class="timeline-date"><span>5</span></div>
-        <div class="timeline-text"><h2>loading</h2>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/ZLY3Pj42OglcJuo.png" alt=""></span>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/i63FbUyML5xNpwS.png" alt=""></span>
-        </div>
-    </div>
-
-    <div class="timeline-area">
-        <div class="timeline-date"><span id = "testetstes"></span></div>
-        <div class="timeline-text"><h2>loading</h2>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/CaD7QfLSOecGpuy.png" alt=""></span>
-            <span class="image main"><img src="https://i.loli.net/2021/09/30/j7pbo5rRsmMZFh3.png" alt=""></span>
-        </div>
-    </div>
+    {% endfor %}
 
 </div>
-
 
 
 <script src="{{site.baseurl}}/assets/js/genshin-event-timeline.js"></script>
 <script type="text/javascript">
 
-    let events = [];
-    events = eventsData[5];
+    let eventsCharacters = [];
+    let eventsWeapons = [];
+    eventsCharacters = eventsData[4];
+    eventsWeapons = eventsData[5];
 
-    document.getElementById('testetstes').innerHTML = events;
+    let imgCharacters = [];
+    let imgWeapons = [];
+
+    for (let characters in eventsCharacters) {
+        imgCharacters.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + characters.image);
+    }
+    for (let weapons in eventsWeapons) {
+        imgWeapons.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + weapons.image);
+    }
+
+    console.log(imgCharacters, imgWeapons);
+
+    let length = imgCharacters.length > imgWeapons.length ? imgWeapons.length : imgCharacters.length;
+    for (let i = 0; i < length; ++i) {
+        document.getElementById('imgCharacter' + i).src = imgCharacters[i];
+        document.getElementById('imgWeapon' + i).src = imgWeapons[i];
+    }
+
 
 </script>
