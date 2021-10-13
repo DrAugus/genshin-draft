@@ -1,9 +1,8 @@
 .timeline-wrapper {
-    font-family: roboto;
     display: flex;
     flex-wrap: wrap;
-    max-width: 200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .timeline-area {
@@ -28,7 +27,7 @@
     font-size: 12px;
     padding: 5px 10px;
     margin: auto;
-    background: #4fd166;
+    background: #e37acb;
     border-radius: 25px;
     margin-top: 25px;
     margin-left: 5px;
@@ -50,7 +49,7 @@
     margin: 0 auto;
     font-size: 16px;
     text-transform: uppercase;
-    background-color: #4fd166;
+    background-color: #b151c7;
     padding: 10px;
     text-align: left;
 }
@@ -80,10 +79,10 @@
 }
 
 .timeline-trace {
-    width: 200px;
+    width: 100%;
     height: 60px;
     margin: 0 auto;
     font-size: 26px;
-    color: #008518;
+    color: #79fa90;
     background: no-repeat right #caf3d2;
 }
