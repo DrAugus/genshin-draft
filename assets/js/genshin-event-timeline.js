@@ -552,7 +552,7 @@ const eventsData = [
         {
             name: 'Epitome Invocation - Weapon Banner',
             pos: '30% 30%',
-            image: 'epitome_invocation.jpg',
+            image: 'epitome_invocation_0.jpg',
             start: '2020-09-28 10:00:00',
             end: '2020-10-18 17:59:59',
             color: '#FFAA4B',
