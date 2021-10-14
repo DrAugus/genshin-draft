@@ -20,8 +20,14 @@ tags: 原神
         <div class="timeline-text"><h2>loading</h2>
             {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}
             {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}
-            <span class="image main"><img id="{{imgCharacter}}" src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""></span>
-            <span class="image main"><img id="{{imgWeapon}}" src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></span>
+            {% capture aCharacter %}aCharacter{{i}}{% endcapture %}
+            {% capture aWeapon %}aWeapon{{i}}{% endcapture %}
+            <span class="image main"><a id="{{aCharacter}}" href="#">
+                <img id="{{imgCharacter}}" src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""/></a>
+            </span>
+            <span class="image main"><a id="{{aWeapon}}" href="#">
+                <img id="{{imgWeapon}}" src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></a>
+            </span>
         </div>
     </div>
     {% endfor %}
@@ -48,12 +54,16 @@ tags: 原神
 
     let imgCharacters = [];
     let imgWeapons = [];
+    let aCharacters = [];
+    let aWeapons = [];
 
     for (let characters of eventsCharacters) {
         imgCharacters.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + characters.image);
+        aCharacters.push("" + characters.url);
     }
     for (let weapons of eventsWeapons) {
         imgWeapons.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + weapons.image);
+        aWeapons.push("" + weapons.url);
     }
 
     let length = imgCharacters.length > imgWeapons.length ? imgWeapons.length : imgCharacters.length;
@@ -61,6 +71,9 @@ tags: 原神
     for (let i = 0; i < length; ++i) {
         document.getElementById('imgCharacter' + i).src = imgCharacters[i];
         document.getElementById('imgWeapon' + i).src = imgWeapons[i];
+
+        document.getElementById('aCharacter' + i).href = aCharacters[i];
+        document.getElementById('aWeapon' + i).href = aWeapons[i];
     }
 
 
