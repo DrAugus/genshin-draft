@@ -1,11 +1,11 @@
 const numC = {
-    'cao' : 0,
-    'yan' : 1,
-    'lei' : 2,
-    'shui' : 3,
-    'huo' : 4,
-    'feng' : 5,
-    'bing' : 6,
+    'cao': 0,
+    'yan': 1,
+    'lei': 2,
+    'shui': 3,
+    'huo': 4,
+    'feng': 5,
+    'bing': 6,
 }
 
 const colorCharacter = [
@@ -293,7 +293,8 @@ const eventsData = [
     [
         {
             no: 0,
-            name: 'Ballad in Goblets - Venti Banner',
+            shortname: ['venti', '温迪'],
+            name: ['Ballad in Goblets - Venti Banner', '「杯装之诗」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'ballad_in_goblets_1.png',
@@ -306,7 +307,8 @@ const eventsData = [
         },
         {
             no: 1,
-            name: 'Sparkling Steps 1 - Klee Banner',
+            shortname: ['klee', '可莉'],
+            name: ['Sparkling Steps - Klee Banner', '「闪焰的驻足」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'sparkling_steps_1.png',
@@ -318,7 +320,8 @@ const eventsData = [
         },
         {
             no: 2,
-            name: 'Farewell of Snezhnaya - Tartaglia Banner',
+            shortname: ['tartaglia', '达达利亚'],
+            name: ['Farewell of Snezhnaya - Tartaglia Banner', '「暂别冬都」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'farewell_of_snezhnaya_1.png',
@@ -331,7 +334,8 @@ const eventsData = [
         },
         {
             no: 3,
-            name: 'Gentry of Hermitage - Zhongli Banner',
+            shortname: ['zhongli', '钟离'],
+            name: ['Gentry of Hermitage - Zhongli Banner', '「陵薮市朝」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'gentry_of_hermitage_1.png',
@@ -343,7 +347,8 @@ const eventsData = [
         },
         {
             no: 4,
-            name: 'Secretum Secretorum - Albedo Banner',
+            shortname: ['albedo', '阿贝多'],
+            name: ['Secretum Secretorum - Albedo Banner', '「深秘之息」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'secretum_secretorum_1.png',
@@ -356,7 +361,8 @@ const eventsData = [
         },
         {
             no: 5,
-            name: 'Adrift in the Harbor - Ganyu Banner',
+            shortname: ['ganyu', '甘雨'],
+            name: ['Adrift in the Harbor - Ganyu Banner', '「浮生孰来」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'adrift_in_the_harbor_1.png',
@@ -368,7 +374,8 @@ const eventsData = [
         },
         {
             no: 6,
-            name: 'Invitation to Mundane Life - Xiao Banner',
+            shortname: ['xiao', '魈'],
+            name: ['Invitation to Mundane Life - Xiao Banner', '「烟火之邀」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'invitation_to_mundane_life_1.png',
@@ -381,7 +388,8 @@ const eventsData = [
         },
         {
             no: 7,
-            name: 'Dance of Lanterns - Keqing Banner',
+            shortname: ['keqing', '刻晴'],
+            name: ['Dance of Lanterns - Keqing Banner', '「鱼龙灯昼」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'dance_of_lanterns_1.png',
@@ -393,7 +401,8 @@ const eventsData = [
         },
         {
             no: 8,
-            name: 'Moment of Bloom - Hu Tao Banner',
+            shortname: ['hu_tao', '胡桃'],
+            name: ['Moment of Bloom - Hu Tao Banner', '「赤团开时」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'moment_of_bloom_1.jpg',
@@ -405,7 +414,8 @@ const eventsData = [
         },
         {
             no: 9,
-            name: 'Ballad in Goblets - Venti Banner',
+            shortname: ['venti', '温迪'],
+            name: ['Ballad in Goblets - Venti Banner', '「杯装之诗」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'ballad_in_goblets_2.jpg',
@@ -418,7 +428,8 @@ const eventsData = [
         },
         {
             no: 10,
-            name: 'Farewell of Snezhnaya - Tartaglia Banner',
+            shortname: ['tartaglia', '达达利亚'],
+            name: ['Farewell of Snezhnaya - Tartaglia Banner', '「暂别冬都」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'farewell_of_snezhnaya_2.png',
@@ -430,7 +441,8 @@ const eventsData = [
         },
         {
             no: 11,
-            name: 'Gentry of Hermitage - Zhongli Banner',
+            shortname: ['zhongli', '钟离'],
+            name: ['Gentry of Hermitage - Zhongli Banner', '「陵薮市朝」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'gentry_of_hermitage_2.png',
@@ -443,7 +455,8 @@ const eventsData = [
         },
         {
             no: 12,
-            name: 'Born of Ocean Swell - Eula Banner',
+            shortname: ['eula', '优菈'],
+            name: ['Born of Ocean Swell - Eula Banner', '「浪涌之瞬」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'born_of_ocean_swell_1.jpg',
@@ -455,7 +468,8 @@ const eventsData = [
         },
         {
             no: 13,
-            name: 'Sparkling Steps - Klee Banner',
+            shortname: ['klee', '可莉'],
+            name: ['Sparkling Steps - Klee Banner', '「闪焰的驻足」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'sparkling_steps_2.png',
@@ -468,7 +482,8 @@ const eventsData = [
         },
         {
             no: 14,
-            name: 'Leaves in the Wind - kaedehara_kazuha Banner',
+            shortname: ['kaedehara_kazuha', '枫原万叶'],
+            name: ['Leaves in the Wind - Kaedehara Kazuha Banner', '「叶落风随」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'leaves_in_the_wind_1.png',
@@ -480,7 +495,8 @@ const eventsData = [
         },
         {
             no: 15,
-            name: "The Heron's Court - Kamisato Ayaka Banner",
+            shortname: ['kamisato_ayaka', '神里绫华'],
+            name: ["The Heron's Court - Kamisato Ayaka Banner", '「白鹭之庭」'],
             pos: '30% 20%',
             zoom: '180%',
             image: 'the_herons_court_1.jpg',
@@ -494,7 +510,8 @@ const eventsData = [
         },
         {
             no: 16,
-            name: 'Tapestry of Golden Flames - Yoimiya Banner',
+            shortname: ['yoimiya', '宵宫'],
+            name: ['Tapestry of Golden Flames - Yoimiya Banner', '「焰色天河」'],
             pos: '30% 25%',
             zoom: '180%',
             image: 'tapestry_of_golden_flames_1.jpg',
@@ -506,7 +523,8 @@ const eventsData = [
         },
         {
             no: 17,
-            name: 'Reign of Serenity - Raiden Shogun Banner',
+            shortname: ['raiden_shogun', '雷电将军'],
+            name: ['Reign of Serenity - Raiden Shogun Banner', '「影寂天下人」'],
             pos: '30% 10%',
             zoom: '180%',
             image: 'reign_of_serenity_1.jpg',
@@ -520,7 +538,8 @@ const eventsData = [
         },
         {
             no: 18,
-            name: 'Drifting Luminescence - Sangonomiya Kokomi Banner',
+            shortname: ['sangonomiya_kokomi', '珊瑚宫心海'],
+            name: ['Drifting Luminescence - Sangonomiya Kokomi Banner', '「浮岳虹珠」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'drifting_luminescence_1.jpg',
@@ -532,7 +551,8 @@ const eventsData = [
         },
         {
             no: 19,
-            name: 'Farewell of Snezhnaya - Tartaglia Banner',
+            shortname: ['tartaglia', '达达利亚'],
+            name: ['Farewell of Snezhnaya - Tartaglia Banner', '「暂别冬都」'],
             pos: '40% 15%',
             zoom: '180%',
             image: 'farewell_of_snezhnaya_3.png',
@@ -547,7 +567,7 @@ const eventsData = [
     ],
     [
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_0.jpg',
             start: '2020-09-28 10:00:00',
@@ -558,7 +578,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_1.jpg',
             start: '2020-10-20 18:00:00',
@@ -569,7 +589,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_2.jpg',
             start: '2020-11-11 18:00:00',
@@ -580,7 +600,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_3.jpg',
             start: '2020-12-01 18:00:00',
@@ -591,7 +611,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_4.jpg',
             start: '2020-12-23 11:00:00',
@@ -602,7 +622,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_5.jpg',
             start: '2021-01-12 18:00:00',
@@ -613,7 +633,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_6.jpg',
             start: '2021-02-03 11:00:00',
@@ -625,7 +645,7 @@ const eventsData = [
         },
         // 移除7 刻晴 搅屎棍  魈及刻晴前半期池：和璞鸢，磐岩结绿 刻晴后半期及胡桃池：狼的末路，护摩之杖
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_7.jpg',
             start: '',
@@ -636,7 +656,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_8.jpg',
             start: '2021-02-23 18:00:00',
@@ -647,7 +667,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_9.jpg',
             start: '2021-03-17 11:00:00',
@@ -658,7 +678,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_10.jpg',
             start: '2021-04-06 18:00:00',
@@ -669,7 +689,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_11.jpg',
             start: '2021-04-28 11:00:00',
@@ -680,7 +700,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_12.jpg',
             start: '2021-05-18 18:00:00',
@@ -691,7 +711,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_13.jpg',
             start: '2021-06-09 11:00:00',
@@ -702,7 +722,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_14.jpg',
             start: '2021-06-29 18:00:00',
@@ -713,7 +733,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_15.jpg',
             start: '2021-07-21 11:00:00',
@@ -724,7 +744,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '30% 30%',
             image: 'epitome_invocation_16.jpg',
             start: '2021-08-10 18:00:00',
@@ -734,7 +754,7 @@ const eventsData = [
             showOnHome: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '40% 20%',
             image: 'epitome_invocation_17.jpg',
             start: '2021-09-01 11:00:00',
@@ -745,7 +765,7 @@ const eventsData = [
             timezoneDependent: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '40% 40%',
             image: 'epitome_invocation_18.jpg',
             start: '2021-09-21 18:00:00',
@@ -755,7 +775,7 @@ const eventsData = [
             showOnHome: true,
         },
         {
-            name: 'Epitome Invocation - Weapon Banner',
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
             pos: '40% 40%',
             image: 'epitome_invocation_19.jpg',
             start: '2021-10-13 11:00:00',
