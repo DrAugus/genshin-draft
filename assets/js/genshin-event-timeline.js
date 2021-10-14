@@ -323,7 +323,7 @@ const eventsData = [
             name: 'Farewell of Snezhnaya - Tartaglia Banner',
             pos: '40% 15%',
             zoom: '180%',
-            image: 'farewell_of_snezhnaya_1.jpg',
+            image: 'farewell_of_snezhnaya_1.png',
             start: '2020-11-11 18:00:00',
             end: '2020-12-01 14:59:59',
             color: colorCharacter[numC.shui],
