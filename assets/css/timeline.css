@@ -14,7 +14,7 @@
 
 .timeline-date {
     display: flex;
-    background: #f3a2a2;
+    background: url("../res/genshin-impact/timeline.svg");
     order: 2;
     text-align: center;
     font-size: 12px;
@@ -26,7 +26,7 @@
     font-size: 12px;
     padding: 5px 1px;
     margin: auto;
-    background: #27e33e;
+    color: #fff;
     border-radius: 25px;
     margin-top: 25px;
 }
