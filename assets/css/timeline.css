@@ -14,23 +14,21 @@
 
 .timeline-date {
     display: flex;
-    /* 渐变线 */
-    background: linear-gradient(to right, #fff 40%, #caf1d1 50%, #fff 40%);
+    background: #f3a2a2;
     order: 2;
     text-align: center;
     font-size: 12px;
     flex-basis: 50px;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 .timeline-date > span {
     font-size: 12px;
-    padding: 5px 10px;
+    padding: 5px 1px;
     margin: auto;
-    background: #e37acb;
+    background: #27e33e;
     border-radius: 25px;
     margin-top: 25px;
-    margin-left: 5px;
 }
 
 .timeline-text {
@@ -41,7 +39,7 @@
     order: 3;
     width: 80%;
     padding-left: 10px;
-    background: #fff;
+    /*background: #fff;*/
     margin-bottom: 3%;
 }
 
@@ -49,7 +47,7 @@
     margin: 0 auto;
     font-size: 16px;
     text-transform: uppercase;
-    background-color: #b151c7;
+    /*background-color: #b151c7;*/
     padding: 10px;
     text-align: left;
 }
@@ -83,6 +81,6 @@
     height: 60px;
     margin: 0 auto;
     font-size: 26px;
-    color: #79fa90;
-    background: no-repeat right #caf3d2;
+    color: #30a3c5;
+    /*background: no-repeat right #caf3d2;*/
 }
