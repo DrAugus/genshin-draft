@@ -630,6 +630,17 @@ const eventsData = [
         {
             name: 'Epitome Invocation - Weapon Banner',
             pos: '30% 30%',
+            image: 'epitome_invocation_7.jpg',
+            start: '',
+            end: '',
+            color: '#FFAA4B',
+            url: '',
+            showOnHome: true,
+            timezoneDependent: true,
+        },
+        {
+            name: 'Epitome Invocation - Weapon Banner',
+            pos: '30% 30%',
             image: 'epitome_invocation_8.jpg',
             start: '2021-02-23 18:00:00',
             end: '2021-03-16 14:59:59',
