@@ -1,6 +1,3 @@
-// Copyright (c) 2021 Made Baruna  https://paimon.moe/timeline
-// 神里之前的 只有日期正确 时间不正确
-
 const numC = {
     'cao' : 0,
     'yan' : 1,
