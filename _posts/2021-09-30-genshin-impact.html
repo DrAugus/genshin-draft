@@ -12,8 +12,8 @@ tags: 原神
 
 旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！
 
-<div class="timeline-trace" id="apply">活动祈愿时间线</div>
-<div class="timeline-wrapper" id="wrapper1">
+<div class="timeline-trace"><span>活动祈愿时间线</span></div>
+<div class="timeline-wrapper">
 
     {% for i in (0..19) %}
     <div class="timeline-area">
@@ -21,17 +21,19 @@ tags: 原神
         {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}
         {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}
         <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>
-            {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}
-            {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}
-            {% capture aCharacter %}aCharacter{{i}}{% endcapture %}
-            {% capture aWeapon %}aWeapon{{i}}{% endcapture %}
-            <span class="image main"><a id="{{aCharacter}}" href="#">
+            <div class="timeline-info">
+                {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}
+                {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}
+                {% capture aCharacter %}aCharacter{{i}}{% endcapture %}
+                {% capture aWeapon %}aWeapon{{i}}{% endcapture %}
+                <span class="image main"><a id="{{aCharacter}}" href="#">
                 <img id="{{imgCharacter}}" src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""/></a>
             </span>
-            <h3 id="{{nameWeapon}}"></h3>
-            <span class="image main"><a id="{{aWeapon}}" href="#">
+                <h3 id="{{nameWeapon}}"></h3>
+                <span class="image main"><a id="{{aWeapon}}" href="#">
                 <img id="{{imgWeapon}}" src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></a>
             </span>
+            </div>
         </div>
     </div>
     {% endfor %}

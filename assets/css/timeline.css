@@ -14,33 +14,31 @@
 
 .timeline-date {
     display: flex;
-    background: url("../res/genshin-impact/timeline.svg");
+    /*background: url("../res/genshin-impact/timeline.svg");*/
     order: 2;
     text-align: center;
     font-size: 12px;
     flex-basis: 1px;
-    /*color: #fff;*/
+    background-color: #99cc66;
+    margin-right: 10px;
+    width: 2px;
 }
 
 .timeline-date > span {
-    font-size: 12px;
-    padding: 5px 1px;
-    margin: auto;
-    color: #fff;
-    border-radius: 25px;
-    margin-top: 25px;
+    font-size: 24px;
+    color: #f44336;
+    border-radius: 10px;
+    margin-left: -6px;
+    background: #FFFF66;
 }
 
 .timeline-text {
-    text-align: center;
+    text-align: left;
     padding: 20px;
-    border-radius: 25px;
-    color: #000;
+    color: #FF6666;
     order: 3;
     width: 80%;
-    padding-left: 10px;
-    /*background: #fff;*/
-    margin-bottom: 3%;
+    margin: 0.5rem 0 0 0;
 }
 
 .timeline-text h2 h3 h4 {
@@ -57,6 +55,11 @@
     text-transform: uppercase;
     text-align: left;
     padding: 10px;
+}
+
+.timeline-info {
+    border-radius: 25px;
+    background: #fff;
 }
 
 @media (min-width: 640px) {
@@ -77,9 +80,13 @@
 
 .timeline-trace {
     width: 100%;
-    height: 60px;
     margin: 0 auto;
     font-size: 26px;
+    background: no-repeat right #caf3d2;
+    border-radius: 10px;
+}
+
+.timeline-trace span {
     color: #30a3c5;
-    /*background: no-repeat right #caf3d2;*/
+    text-align: left;
 }
