@@ -33,12 +33,12 @@ main
 .card
   position: relative
   margin: 0.5rem 0 1rem 0
-  background-color: #a6fdfd
+  background-color: #44f9f9
   -webkit-transition: -webkit-box-shadow .25s
   transition: -webkit-box-shadow .25s
   transition: box-shadow .25s
   transition: box-shadow .25s, -webkit-box-shadow .25s
-  border-radius: 2px
+  border-radius: 10px
   //background: -webkit-linear-gradient(10deg, rgba(91, 210, 87, 0.5) 10%, rgba(231, 73, 139, 0.5) 90%)
   //background: linear-gradient(10deg, rgba(91, 210, 87, 0.5) 10%, rgba(231, 73, 139, 0.5) 90%)
 
@@ -59,7 +59,11 @@ main
 
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating)
-  color: #fff
+  color: #727171
+
+//方法重写
+.card .card-action:last-child
+  border-radius: 0 0 10px 10px
 
 
 .image.main
