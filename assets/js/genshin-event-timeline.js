@@ -954,7 +954,8 @@ const eventsData = [
     ],
 ];
 
-let searchUrl = 'https://draugus.github.io/resume';
+if (!searchUrl)
+    searchUrl = 'https://draugus.github.io/resume';
 // main func
 
 let eventsCharacters = [];
