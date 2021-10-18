@@ -41,7 +41,8 @@ js: ["food-list.js"]
         {% capture FL_satisfaction %}FL_satisfaction{{i}}{% endcapture %}
         {% capture FL_price %}FL_price{{i}}{% endcapture %}
         {% capture FL_note %}FL_note{{i}}{% endcapture %}
-        <tr>
+        {% capture FL_typeColor %}FL_typeColor{{i}}{% endcapture %}
+        <tr id="{{FL_typeColor}}">
             <td id="{{FL_satisfaction}}"><span id="{{FL_name}}"></span></td>
             <td id="{{FL_foodRate}}"><span id="{{FL_food}}"></span></td>
             <td id="{{FL_price}}"></td>

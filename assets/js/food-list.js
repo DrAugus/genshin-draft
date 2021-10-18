@@ -8,15 +8,28 @@ const foodType = {
     'dishes': 6,//炒菜
 }
 
+// const foodTypeColor = [
+//     '#98e628',
+//     '#e2b032',
+//     '#fca7ff',
+//     '#03ddfe',
+//     '#fa5d3e',
+//     '#4cf3b6',
+//     '#a6fdfd',
+// ];
+
 const foodTypeColor = [
-    '#98e628',
-    '#e2b032',
-    '#fca7ff',
-    '#03ddfe',
-    '#fa5d3e',
-    '#4cf3b6',
-    '#a6fdfd',
+    'red accent-1',
+    'pink accent-1',
+    'purple accent-1',
+    'deep-purple lighten-4',
+    'indigo lighten-4',
+    'blue lighten-4',
+    'cyan lighten-4',
+    'light-blue lighten-4',
+    'green lighten-4',
 ];
+
 
 const foodTypeName = [
     '日韩料理',
@@ -231,6 +244,7 @@ let FL_foodRate = [];
 let FL_satisfaction = [];
 let FL_price = [];
 let FL_note = [];
+let FL_typeColor = [];
 
 for (let info of foodList[0]) {
     FL_name.push(info.name);
@@ -239,6 +253,7 @@ for (let info of foodList[0]) {
     FL_satisfaction.push(info.satisfaction);
     FL_price.push(info.price);
     FL_note.push(info.note);
+    FL_typeColor.push(info.type_color);
 }
 console.log(FL_name, FL_food);
 let length = foodList[0].length;
@@ -250,5 +265,7 @@ for (let i = 0; i < length; ++i) {
 
     document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
     document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
+
+    document.getElementById('FL_typeColor' + i).className = FL_typeColor[i];
 }
 
