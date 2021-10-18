@@ -954,8 +954,8 @@ const eventsData = [
     ],
 ];
 
-if (!searchUrl)
-    searchUrl = 'https://draugus.github.io/resume';
+
+let searchGenshinResUrl = 'https://draugus.github.io/resume';
 // main func
 
 let eventsCharacters = [];
@@ -981,13 +981,13 @@ let nameWeapons = [];
 let shortnameCharacters = [];
 
 for (let characters of eventsCharacters) {
-    imgCharacters.push(searchUrl + "/assets/res/genshin-impact/events/" + characters.image);
+    imgCharacters.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + characters.image);
     aCharacters.push("" + characters.url);
     nameCharacters.push(characters.name);
     shortnameCharacters.push(characters.shortname);
 }
 for (let weapons of eventsWeapons) {
-    imgWeapons.push(searchUrl + "/assets/res/genshin-impact/events/" + weapons.image);
+    imgWeapons.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + weapons.image);
     aWeapons.push("" + weapons.url);
     nameWeapons.push(weapons.name);
 }
