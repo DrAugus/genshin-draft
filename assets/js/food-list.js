@@ -245,7 +245,7 @@ let length = foodList[0].length;
 for (let i = 0; i < length; ++i) {
     document.getElementById('FL_name' + i).innerHTML = FL_name[i];
     document.getElementById('FL_food' + i).innerHTML = FL_food[i];
-    document.getElementById('FL_price' + i).innerHTML = FL_price[i];
+    document.getElementById('FL_price' + i).innerHTML = '￥' + FL_price[i];
     document.getElementById('FL_note' + i).innerHTML = FL_note[i];
 
     document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
