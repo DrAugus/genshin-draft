@@ -982,8 +982,10 @@ let nameCharacters = [];
 let nameWeapons = [];
 let shortnameCharacters = [];
 let colorCharacters = [];
-let timeStart = [];// 0 character 1 weapon
-let timeEnd = [];
+let timeStartCharacter = [];
+let timeEndCharacter = [];
+let timeStartWeapon = [];
+let timeEndWeapon = [];
 
 for (let characters of eventsCharacters) {
     imgCharacters.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + characters.image);
@@ -991,15 +993,15 @@ for (let characters of eventsCharacters) {
     nameCharacters.push(characters.name);
     shortnameCharacters.push(characters.shortname);
     colorCharacters.push(characters.color);
-    timeStart[0].push(characters.start);
-    timeEnd[0].push(characters.end);
+    timeStartCharacter.push(characters.start);
+    timeEndCharacter.push(characters.end);
 }
 for (let weapons of eventsWeapons) {
     imgWeapons.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + weapons.image);
     aWeapons.push("" + weapons.url);
     nameWeapons.push(weapons.name);
-    timeStart[1].push(weapons.start);
-    timeEnd[1].push(weapons.end);
+    timeStartWeapon.push(weapons.start);
+    timeEndWeapon.push(weapons.end);
 }
 
 let length = imgCharacters.length > imgWeapons.length ? imgWeapons.length : imgCharacters.length;
@@ -1014,10 +1016,10 @@ for (let i = 0; i < length; ++i) {
     document.getElementById('nameCharacter' + i).innerHTML = nameCharacters[i][1] + " " + shortnameCharacters[i][1] + " " + nameCharacters[i][0];
     document.getElementById('nameWeapon' + i).innerHTML = nameWeapons[i][1] + nameWeapons[i][0];
 
-    document.getElementById('timeStartCharacter' + i).src = timeStart[0][i];
-    document.getElementById('timeEndCharacter' + i).src = timeEnd[0][i];
-    document.getElementById('timeStartWeapon' + i).src = timeStart[1][i];
-    document.getElementById('timeEndWeapon' + i).src = timeEnd[1][i];
+    document.getElementById('timeStartCharacter' + i).src = timeStartCharacter[i];
+    document.getElementById('timeEndCharacter' + i).src = timeEndCharacter[i];
+    document.getElementById('timeStartWeapon' + i).src = timeStartWeapon[i];
+    document.getElementById('timeEndWeapon' + i).src = timeEndWeapon[i];
 
     //改变颜色
     document.getElementById('nameCharacter' + i).style.color = colorCharacters[i];
