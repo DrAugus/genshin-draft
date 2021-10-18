@@ -17,6 +17,8 @@ js: ["genshin-event-timeline.js"]
     {% for i in (0..19) %}
     <div class="timeline-area">
         <div class="timeline-date"><span>{{i}}</span></div>
+        {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}
+        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>
         {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}
         {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}
         <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>
@@ -26,14 +28,15 @@ js: ["genshin-event-timeline.js"]
                 {% capture aCharacter %}aCharacter{{i}}{% endcapture %}
                 {% capture aWeapon %}aWeapon{{i}}{% endcapture %}
                 <span class="image main"><a id="{{aCharacter}}" href="#">
-                <img id="{{imgCharacter}}" src="https://i.loli.net/2021/09/30/Sj8eon9i52tuxOd.png" alt=""/></a>
-            </span>
+                <img id="{{imgCharacter}}" src="" alt=""/></a></span>
                 <h3 id="{{nameWeapon}}"></h3>
                 <span class="image main"><a id="{{aWeapon}}" href="#">
-                <img id="{{imgWeapon}}" src="https://i.loli.net/2021/09/30/rsU2b5RtyDHqxOX.png" alt=""></a>
-            </span>
+                <img id="{{imgWeapon}}" src="" alt=""></a></span>
             </div>
         </div>
+        {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}
+        <div class="timeline-date"><p id="{{timeEndCharacter}}"></p></div>
+        <hr>
     </div>
     {% endfor %}
 
