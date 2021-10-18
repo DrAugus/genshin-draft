@@ -220,7 +220,7 @@ const foodRate = [
 
 let blackRestaurant = foodList[1];
 for (let i = 0; i < blackRestaurant.length; ++i) {
-    // document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i];
+    document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i];
 }
 
 //foodList FL
