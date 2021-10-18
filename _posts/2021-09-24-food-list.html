@@ -4,6 +4,7 @@ title:  "再也不用考虑今天吃什么了"
 date:   2021-09-24 11:00:02
 categories: 杂谈
 tags: 杂谈 外卖
+js: ["food-list.js"]
 ---
 
 今天吃什么不用我多说了吧。<br>
@@ -40,7 +41,6 @@ tags: 杂谈 外卖
         {% capture FL_satisfaction %}FL_satisfaction{{i}}{% endcapture %}
         {% capture FL_price %}FL_price{{i}}{% endcapture %}
         {% capture FL_note %}FL_note{{i}}{% endcapture %}
-        {{FL_name}}
         <tr>
             <td id="{{FL_satisfaction}} {{FL_name}}"></td>
             <td id="{{FL_foodRate}} {{FL_food}}"></td>
@@ -64,56 +64,6 @@ tags: 杂谈 外卖
 <ul>
     {% for i in (0..5) %}
     {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
-    {{nameBlackRestaurant}}
     <li id="nameBlackRestaurant">河南大烩菜</li>
     {% endfor %}
 </ul>
-
-
-<script src="{{site.baseurl}}/assets/js/food-list.js"></script>
-<script type="text/javascript">
-    const foodRate = [
-        '',
-        '',
-        'amber accent-3',
-        'light-blue accent-3',
-        'cyan accent-3',
-        'teal accent-3',
-    ];
-
-    let blackRestaurant = foodList[1];
-    for (let i = 0; i < blackRestaurant.length; ++i) {
-        // document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i];
-    }
-
-    //foodList FL
-
-    let FL_name = [];
-    let FL_food = [];
-    let FL_foodRate = [];
-    let FL_satisfaction = [];
-    let FL_price = [];
-    let FL_note = [];
-
-    for (let info of foodList[0]) {
-        FL_name.push(info.name);
-        FL_food.push(info.food);
-        FL_foodRate.push(info.food_rate);
-        FL_satisfaction.push(info.satisfaction);
-        FL_price.push(info.price);
-        FL_note.push(info.note);
-    }
-    console.log(FL_name, FL_food);
-    let length = foodList[0].length;
-    for (let i = 0; i < length; ++i) {
-        document.getElementById('FL_name' + i).innerHTML = FL_name[i];
-        document.getElementById('FL_food' + i).innerHTML = FL_food[i];
-        document.getElementById('FL_price' + i).innerHTML = FL_price[i];
-        document.getElementById('FL_note' + i).innerHTML = FL_note[i];
-
-        document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
-        document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
-    }
-
-
-</script>

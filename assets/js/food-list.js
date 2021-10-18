@@ -207,3 +207,48 @@ const foodList = [
         '秦小二油泼面肉夹馍凉皮臊子面',
     ],
 ];
+
+
+const foodRate = [
+    '',
+    '',
+    'amber accent-3',
+    'light-blue accent-3',
+    'cyan accent-3',
+    'teal accent-3',
+];
+
+let blackRestaurant = foodList[1];
+for (let i = 0; i < blackRestaurant.length; ++i) {
+    // document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i];
+}
+
+//foodList FL
+
+let FL_name = [];
+let FL_food = [];
+let FL_foodRate = [];
+let FL_satisfaction = [];
+let FL_price = [];
+let FL_note = [];
+
+for (let info of foodList[0]) {
+    FL_name.push(info.name);
+    FL_food.push(info.food);
+    FL_foodRate.push(info.food_rate);
+    FL_satisfaction.push(info.satisfaction);
+    FL_price.push(info.price);
+    FL_note.push(info.note);
+}
+console.log(FL_name, FL_food);
+let length = foodList[0].length;
+for (let i = 0; i < length; ++i) {
+    document.getElementById('FL_name' + i).innerHTML = FL_name[i];
+    document.getElementById('FL_food' + i).innerHTML = FL_food[i];
+    document.getElementById('FL_price' + i).innerHTML = FL_price[i];
+    document.getElementById('FL_note' + i).innerHTML = FL_note[i];
+
+    document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
+    document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
+}
+

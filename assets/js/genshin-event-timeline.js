@@ -953,3 +953,54 @@ const eventsData = [
         },
     ],
 ];
+
+
+// main func
+
+let eventsCharacters = [];
+let eventsWeapons = [];
+eventsCharacters = eventsData[4];
+eventsWeapons = eventsData[5];
+
+function reverseAll() {
+    eventsCharacters.reverse();
+    eventsWeapons.reverse();
+}
+
+function resetAll() {
+
+}
+
+let imgCharacters = [];
+let imgWeapons = [];
+let aCharacters = [];
+let aWeapons = [];
+let nameCharacters = [];
+let nameWeapons = [];
+let shortnameCharacters = [];
+
+for (let characters of eventsCharacters) {
+    imgCharacters.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + characters.image);
+    aCharacters.push("" + characters.url);
+    nameCharacters.push(characters.name);
+    shortnameCharacters.push(characters.shortname);
+}
+for (let weapons of eventsWeapons) {
+    imgWeapons.push("{{site.baseurl}}/assets/res/genshin-impact/events/" + weapons.image);
+    aWeapons.push("" + weapons.url);
+    nameWeapons.push(weapons.name);
+}
+
+let length = imgCharacters.length > imgWeapons.length ? imgWeapons.length : imgCharacters.length;
+console.log(imgCharacters, imgWeapons, length);
+for (let i = 0; i < length; ++i) {
+    document.getElementById('imgCharacter' + i).src = imgCharacters[i];
+    document.getElementById('imgWeapon' + i).src = imgWeapons[i];
+
+    document.getElementById('aCharacter' + i).href = aCharacters[i];
+    document.getElementById('aWeapon' + i).href = aWeapons[i];
+
+    document.getElementById('nameCharacter' + i).innerHTML = nameCharacters[i][1] + " " + shortnameCharacters[i][1] + " " + nameCharacters[i][0];
+    document.getElementById('nameWeapon' + i).innerHTML = nameWeapons[i][1] + nameWeapons[i][0];
+}
+
