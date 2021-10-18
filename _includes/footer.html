@@ -81,6 +81,7 @@
 
 <!-- all layout js -->
 {% for js in layout.js %}
+{{layout.js}}
 {% if js contains "//" %}
 <script src="{{js}}"></script>
 {% else %}
@@ -89,6 +90,7 @@
 {% endfor %}
 <!-- all page js -->
 {% for js in page.js %}
+{{page.js}}
 {% if js contains "//" %}
 <script src="{{js}}"></script>
 {% else %}
