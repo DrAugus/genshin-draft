@@ -979,12 +979,14 @@ let aWeapons = [];
 let nameCharacters = [];
 let nameWeapons = [];
 let shortnameCharacters = [];
+let colorCharacters = [];
 
 for (let characters of eventsCharacters) {
     imgCharacters.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + characters.image);
     aCharacters.push("" + characters.url);
     nameCharacters.push(characters.name);
     shortnameCharacters.push(characters.shortname);
+    colorCharacters.push(characters.color);
 }
 for (let weapons of eventsWeapons) {
     imgWeapons.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + weapons.image);
@@ -1003,5 +1005,8 @@ for (let i = 0; i < length; ++i) {
 
     document.getElementById('nameCharacter' + i).innerHTML = nameCharacters[i][1] + " " + shortnameCharacters[i][1] + " " + nameCharacters[i][0];
     document.getElementById('nameWeapon' + i).innerHTML = nameWeapons[i][1] + nameWeapons[i][0];
+
+    //改变颜色
+    document.getElementById('nameCharacter' + i).style.color = colorCharacters[i];
 }
 
