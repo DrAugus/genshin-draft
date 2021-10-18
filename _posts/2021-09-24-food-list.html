@@ -64,7 +64,8 @@ tags: 杂谈 外卖
 <ul>
     {% for i in (0..5) %}
     {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
-    <li><div id="nameBlackRestaurant"></div></li>
+    {{nameBlackRestaurant}}
+    <li id="nameBlackRestaurant">河南大烩菜</li>
     {% endfor %}
 </ul>
 
