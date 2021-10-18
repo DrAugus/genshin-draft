@@ -40,6 +40,7 @@ tags: 杂谈 外卖
         {% capture FL_satisfaction %}FL_satisfaction{{i}}{% endcapture %}
         {% capture FL_price %}FL_price{{i}}{% endcapture %}
         {% capture FL_note %}FL_note{{i}}{% endcapture %}
+        {{FL_name}}
         <tr>
             <td id="{{FL_satisfaction}} {{FL_name}}"></td>
             <td id="{{FL_foodRate}} {{FL_food}}"></td>
@@ -63,6 +64,7 @@ tags: 杂谈 外卖
 <ul>
     {% for i in (0..5) %}
     {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
+    {{nameBlackRestaurant}}
     <li id="nameBlackRestaurant">河南大烩菜</li>
     {% endfor %}
 </ul>
