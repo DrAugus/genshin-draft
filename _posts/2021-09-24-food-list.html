@@ -64,6 +64,6 @@ js: ["food-list.js"]
 <ul>
     {% for i in (0..5) %}
     {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
-    <li id="nameBlackRestaurant">河南大烩菜</li>
+    <li id="{{nameBlackRestaurant}}">河南大烩菜</li>
     {% endfor %}
 </ul>
