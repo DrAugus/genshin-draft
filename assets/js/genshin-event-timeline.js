@@ -1016,10 +1016,10 @@ for (let i = 0; i < length; ++i) {
     document.getElementById('nameCharacter' + i).innerHTML = nameCharacters[i][1] + " " + shortnameCharacters[i][1] + " " + nameCharacters[i][0];
     document.getElementById('nameWeapon' + i).innerHTML = nameWeapons[i][1] + nameWeapons[i][0];
 
-    document.getElementById('timeStartCharacter' + i).src = timeStartCharacter[i];
-    document.getElementById('timeEndCharacter' + i).src = timeEndCharacter[i];
-    document.getElementById('timeStartWeapon' + i).src = timeStartWeapon[i];
-    document.getElementById('timeEndWeapon' + i).src = timeEndWeapon[i];
+    document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
+    document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
+    document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
+    document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
 
     //改变颜色
     document.getElementById('nameCharacter' + i).style.color = colorCharacters[i];
