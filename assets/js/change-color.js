@@ -15,6 +15,9 @@ function changeColor() {
     if (i === colorChange.length) {
         i = 0;
     } else {
-        document.getElementById('chip').style.backgroundColor = colorChange[i++ % colorChange.length]; //循环颜色
+        let chipClass = document.getElementsByClassName('chip');
+        for (chip of chipClass) {
+            chip.style.backgroundColor = colorChange[i++ % colorChange.length]; //循环颜色
+        }
     }
 }
