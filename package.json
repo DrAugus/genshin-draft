@@ -1,8 +1,41 @@
 {
+  "dependencies": {
+    "compression": "^1.7.1",
+    "exceljs": "^4.2.1",
+    "localforage": "^1.9.0",
+    "polka": "next",
+    "prettier": "^2.2.1",
+    "sirv": "^1.0.0"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
-    "postcss": "^8.3.6",
-    "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.2.7"
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@mdi/js": "^5.9.55",
+    "@rollup/plugin-babel": "^5.0.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-dynamic-import-vars": "^1.1.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-replace": "^2.3.4",
+    "@rollup/plugin-url": "^5.0.0",
+    "autoprefixer": "^10.0.1",
+    "chart.js": "^2.9.4",
+    "dayjs": "^1.9.4",
+    "dotenv": "^8.2.0",
+    "postcss": "^8.2.10",
+    "postcss-load-config": "^3.0.0",
+    "postcss-nested": "^5.0.1",
+    "rollup": "^2.3.4",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "sapper": "^0.28.0",
+    "svelte": "^3.17.3",
+    "svelte-i18n": "^3.3.6",
+    "svelte-preprocess": "^4.5.1",
+    "svelte-simple-modal": "^0.6.1",
+    "tailwindcss": "^1.9.5"
   }
 }
