@@ -15,21 +15,21 @@
 .timeline-date {
     display: flex;
     /*background: url("../res/genshin-impact/timeline.svg");*/
-    order: 2;
-    text-align: center;
-    font-size: 12px;
-    flex-basis: 1px;
     background-color: #99cc66;
-    margin-right: 10px;
-    width: 2px;
+    width: 1px;
+    height: 200px;
+    position: relative;
+    margin-left: 29px;
 }
 
-.timeline-date > span {
-    font-size: 24px;
-    color: #f44336;
-    border-radius: 10px;
-    margin-left: -6px;
-    background: #FFFF66;
+.timeline-date span {
+    position: absolute;
+    margin-left: -15px;
+    text-align: center;
+    width: 30px;
+    background: red;
+    border-radius: 25px;
+    font-size: 20px;
 }
 
 .timeline-text {

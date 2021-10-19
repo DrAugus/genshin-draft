@@ -1018,8 +1018,8 @@ for (let i = 0; i < length; ++i) {
 
     document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
     document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
-    document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
-    document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
+    // document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
+    // document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
 
     //改变颜色
     document.getElementById('nameCharacter' + i).style.color = colorCharacters[i];
