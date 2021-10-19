@@ -4,7 +4,12 @@ title:  "test gantt"
 date:   2021-10-18 18:22:22
 categories: 游戏
 tags: 原神
+js: [
+    "https://unpkg.com/dayjs@1.8.21/dayjs.min.js",
+    "genshin-gantt.js",
+]
 ---
+
 
 <script>
 
