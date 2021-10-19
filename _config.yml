@@ -48,8 +48,6 @@ include:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-postcss
-  - jekyll-purgecss
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -60,12 +58,6 @@ include:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - node_modules/
-  - yarn.lock
-#  - postcss.config.js
-#  - tailwind.config.js
-#  - purgecss.config.js
-  - package.json
   - Gemfile
   - Gemfile.lock
 sass:
