@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col s12">
                 <p class="footer-message grey-text text-lighten-4">趣舍萬殊&nbsp;&nbsp;靜躁不同</p>
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
                 {% if site.github.is_project_page %}
                 <p><span class="site-footer-owner">Repository [<a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a>] is maintained by <a
                         href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span></p>
@@ -75,8 +76,10 @@
 
 <!-- 公共部分的js -->
 <!--The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source. Read more at srihash.org-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
 
 <!-- all layout js -->
 {% for js in layout.js %}
