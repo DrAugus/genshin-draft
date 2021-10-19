@@ -62,9 +62,9 @@ include:
 exclude:
   - node_modules/
   - yarn.lock
-  - postcss.config.js
-  - tailwind.config.js
-  - purgecss.config.js
+#  - postcss.config.js
+#  - tailwind.config.js
+#  - purgecss.config.js
   - package.json
   - Gemfile
   - Gemfile.lock
