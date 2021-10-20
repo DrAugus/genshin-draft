@@ -5,9 +5,9 @@ date:   2021-09-30 18:04:22
 categories: 游戏
 tags: 原神
 js: [
-    "https://unpkg.com/dayjs@1.8.21/dayjs.min.js",
-    "genshin-gantt.js",
-    "genshin-event-timeline.js"
+"https://unpkg.com/dayjs@1.8.21/dayjs.min.js",
+"genshin-gantt.js",
+"genshin-event-timeline.js"
 ]
 ---
 
@@ -17,56 +17,41 @@ js: [
 旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！
 
 <div class="timeline-trace"><span>活动祈愿时间线</span></div>
-<div class="timeline-wrapper">
 
-    {% for i in (0..19) %}
+{% for i in (0..19) %}
 
-
-    <div class="timeline-area">
-        <div class="timeline-date"><span>{{i}}</span></div>
-<!--        {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}-->
-<!--        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>-->
-        {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}
-        {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}
-        <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>
-            <div class="timeline-info">
-<!--                {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}-->
-<!--                {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}-->
-<!--                {% capture aCharacter %}aCharacter{{i}}{% endcapture %}-->
-<!--                {% capture aWeapon %}aWeapon{{i}}{% endcapture %}-->
+<div class="timeline-area">
+    <div class="timeline-date left-t{{i}}"><span>{{i}}</span></div>
+    <!--        {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}-->
+    <!--        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>-->
+    {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}
+    {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}
+    <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>
+        <div class="timeline-info">
+            <!--                {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}-->
+            <!--                {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}-->
+            <!--                {% capture aCharacter %}aCharacter{{i}}{% endcapture %}-->
+            <!--                {% capture aWeapon %}aWeapon{{i}}{% endcapture %}-->
 
 
+            <div class="event-item event-item-{{i}}"><span class="event-name-{{i}}"></span></div>
 
 
-                <div class="event-item event-item-{{i}}"><span class="event-name-{{i}}"></span> </div>
+            <!--                <span class="image main"><a id="{{aCharacter}}" href="#">-->
+            <!--                <img id="{{imgCharacter}}" src="" alt=""/></a></span>-->
+
+            <h3 id="{{nameWeapon}}"></h3>
+
+            <!--                <span class="image main"><a id="{{aWeapon}}" href="#">-->
+            <!--                <img id="{{imgWeapon}}" src="" alt=""></a></span>-->
 
 
-
-
-
-<!--                <span class="image main"><a id="{{aCharacter}}" href="#">-->
-<!--                <img id="{{imgCharacter}}" src="" alt=""/></a></span>-->
-
-                <h3 id="{{nameWeapon}}"></h3>
-
-<!--                <span class="image main"><a id="{{aWeapon}}" href="#">-->
-<!--                <img id="{{imgWeapon}}" src="" alt=""></a></span>-->
-
-
-
-
-            </div>
         </div>
-<!--        {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}-->
-<!--        <div class="timeline-date"><p id="{{timeEndCharacter}}"></p></div>-->
+
+        <!--        {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}-->
+        <!--        <div class="timeline-date"><p id="{{timeEndCharacter}}"></p></div>-->
         <hr>
     </div>
-
-
-
-
-
-    {% endfor %}
-
 </div>
+{% endfor %}
 

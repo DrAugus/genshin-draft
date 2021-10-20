@@ -998,6 +998,12 @@ for (let i = 0; i < length; ++i) {
         eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
             eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
     }
+
+    //left-t
+    let leftClass = document.getElementsByClassName('left-t' + i);
+    for (let lClass of leftClass) {
+        lClass.style.left = (50 * i) + 'px';
+    }
 }
 
 
