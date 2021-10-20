@@ -18,40 +18,48 @@ js: [
 
 <div class="timeline-trace"><span>活动祈愿时间线</span></div>
 
+
+
+<!-- 时间线 -->
 {% for i in (0..19) %}
 
 <div class="timeline-area">
     <div class="timeline-date left-t{{i}}"><span>{{i}}</span></div>
+</div>
+{% endfor %}
+
+
+{% for i in (0..19) %}
+<div class="timeline-area">
+    <div class="event-item event-item-{{i}} left-t{{i}}"><span class="event-name-{{i}}"></span></div>
+</div>
+
     <!--        {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}-->
     <!--        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>-->
-    {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}
-    {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}
-    <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>
-        <div class="timeline-info">
+<!--    {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}-->
+<!--    {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}-->
+<!--    <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>-->
+<!--        <div class="timeline-info">-->
             <!--                {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}-->
             <!--                {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}-->
             <!--                {% capture aCharacter %}aCharacter{{i}}{% endcapture %}-->
             <!--                {% capture aWeapon %}aWeapon{{i}}{% endcapture %}-->
 
-
-            <div class="event-item event-item-{{i}}"><span class="event-name-{{i}}"></span></div>
-
-
             <!--                <span class="image main"><a id="{{aCharacter}}" href="#">-->
             <!--                <img id="{{imgCharacter}}" src="" alt=""/></a></span>-->
 
-            <h3 id="{{nameWeapon}}"></h3>
+<!--            <h3 id="{{nameWeapon}}"></h3>-->
 
             <!--                <span class="image main"><a id="{{aWeapon}}" href="#">-->
             <!--                <img id="{{imgWeapon}}" src="" alt=""></a></span>-->
 
 
-        </div>
+<!--        </div>-->
 
         <!--        {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}-->
         <!--        <div class="timeline-date"><p id="{{timeEndCharacter}}"></p></div>-->
-        <hr>
-    </div>
-</div>
+<!--        <hr>-->
+<!--    </div>-->
+<!--</div>-->
 {% endfor %}
 
