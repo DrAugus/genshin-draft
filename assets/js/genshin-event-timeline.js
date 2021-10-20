@@ -986,14 +986,18 @@ for (let i = 0; i < length; ++i) {
 
     //动态设置各个角色的css
     let eventItemClass = document.getElementsByClassName('event-item-' + i);
-    eventItemClass.style.backgroundImage = 'url(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image)';
-    eventItemClass.style.backgroundPosition = eventsCharacters[i].pos;
-    eventItemClass.style.backgroundSize = eventsCharacters[i].zoom ? eventsCharacters[i].zoom : '200%';
+    for (let eItem of eventItemClass) {
+        eItem.style.backgroundImage = 'url(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image)';
+        eItem.style.backgroundPosition = eventsCharacters[i].pos;
+        eItem.style.backgroundSize = eventsCharacters[i].zoom ? eventsCharacters[i].zoom : '200%';
+    }
 
     let eventNameColor = eventsCharacters[i].color;
     let eventNameClass = document.getElementsByClassName('event-name-' + i);
-    eventNameClass.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
-        eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
+    for (let eName of eventNameClass) {
+        eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
+            eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
+    }
 }
 
 
