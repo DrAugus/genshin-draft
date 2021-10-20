@@ -103,3 +103,16 @@ div.event-item {
     background-repeat: no-repeat;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
+
+div.timeline-scroll-x {
+    width: auto;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+}
+
+-webkit-scrollbar {
+    display: none;
+}
