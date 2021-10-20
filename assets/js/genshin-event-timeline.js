@@ -957,7 +957,7 @@ const eventsData = [
 ];
 
 
-let searchGenshinResUrl = 'https://draugus.github.io/resume';
+let searchGenshinResUrl = '/resume';
 // main func
 
 const eventsCharacters = eventsData[4];
