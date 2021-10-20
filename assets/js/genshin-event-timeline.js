@@ -1002,7 +1002,7 @@ for (let i = 0; i < length; ++i) {
     //left-t
     let leftClass = document.getElementsByClassName('left-t' + i);
     for (let lClass of leftClass) {
-        lClass.style.left = (50 * i) + 'px';
+        lClass.style.left = (150 * i) + 'px';
     }
 }
 
