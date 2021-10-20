@@ -111,6 +111,7 @@ div.timeline-scroll-x {
     overflow-y: hidden;
     overflow-x: scroll;
     display: flex;
+    height: 512px;
 }
 
 -webkit-scrollbar {

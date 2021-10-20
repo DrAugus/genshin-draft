@@ -26,14 +26,9 @@ js: [
 
     <div class="timeline-area">
         <div class="timeline-date left-t{{i}}"><span>{{i}}</span></div>
-    </div>
-    {% endfor %}
-
-
-    {% for i in (0..19) %}
-    <div class="timeline-area">
         <div class="event-item event-item-{{i}} left-t{{i}}"><span class="event-name-{{i}}"></span></div>
     </div>
+    {% endfor %}
 
     <!--        {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}-->
     <!--        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>-->
