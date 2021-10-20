@@ -971,8 +971,8 @@ for (let i = 0; i < length; ++i) {
     // document.getElementById('aCharacter' + i).href = aCharacters[i];
     // document.getElementById('aWeapon' + i).href = aWeapons[i];
 
-    document.getElementById('nameCharacter' + i).innerHTML = eventsCharacters[i].name[1] + " " + eventsCharacters[i].shortname[1] + " " + eventsCharacters[i].name[0];
-    document.getElementById('nameWeapon' + i).innerHTML = eventsWeapons[i].name[1] + eventsWeapons[i].name[0];
+    // document.getElementById('nameCharacter' + i).innerHTML = eventsCharacters[i].name[1] + " " + eventsCharacters[i].shortname[1] + " " + eventsCharacters[i].name[0];
+    // document.getElementById('nameWeapon' + i).innerHTML = eventsWeapons[i].name[1] + eventsWeapons[i].name[0];
 
     // document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
     // document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
@@ -980,8 +980,8 @@ for (let i = 0; i < length; ++i) {
     // document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
 
     //改变颜色
-    document.getElementById('nameCharacter' + i).style.color = eventsCharacters[i].color;
-    document.getElementById('nameWeapon' + i).style.color = colorWeapon;
+    // document.getElementById('nameCharacter' + i).style.color = eventsCharacters[i].color;
+    // document.getElementById('nameWeapon' + i).style.color = colorWeapon;
 
 
     //动态设置各个角色的css
