@@ -987,7 +987,7 @@ for (let i = 0; i < length; ++i) {
     //动态设置各个角色的css
     let eventItemClass = document.getElementsByClassName('event-item-' + i);
     for (let eItem of eventItemClass) {
-        eItem.style.backgroundImage = url(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image);
+        eItem.style.backgroundImage = "url(" + searchGenshinResUrl + " '/assets/res/genshin-impact/events/' + eventsCharacters[i].image)";
         eItem.style.backgroundPosition = eventsCharacters[i].pos;
         eItem.style.backgroundSize = eventsCharacters[i].zoom ? eventsCharacters[i].zoom : '200%';
     }
