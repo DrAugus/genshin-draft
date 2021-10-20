@@ -960,70 +960,40 @@ const eventsData = [
 let searchGenshinResUrl = 'https://draugus.github.io/resume';
 // main func
 
-let eventsCharacters = [];
-let eventsWeapons = [];
-eventsCharacters = eventsData[4];
-eventsWeapons = eventsData[5];
-
-function reverseAll() {
-    eventsCharacters.reverse();
-    eventsWeapons.reverse();
-}
-
-function resetAll() {
-
-}
-
-let imgCharacters = [];
-let imgWeapons = [];
-let aCharacters = [];
-let aWeapons = [];
-let nameCharacters = [];
-let nameWeapons = [];
-let shortnameCharacters = [];
-let colorCharacters = [];
-let timeStartCharacter = [];
-let timeEndCharacter = [];
-let timeStartWeapon = [];
-let timeEndWeapon = [];
-
-for (let characters of eventsCharacters) {
-    imgCharacters.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + characters.image);
-    aCharacters.push("" + characters.url);
-    nameCharacters.push(characters.name);
-    shortnameCharacters.push(characters.shortname);
-    colorCharacters.push(characters.color);
-    timeStartCharacter.push(characters.start);
-    timeEndCharacter.push(characters.end);
-}
-for (let weapons of eventsWeapons) {
-    imgWeapons.push(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + weapons.image);
-    aWeapons.push("" + weapons.url);
-    nameWeapons.push(weapons.name);
-    timeStartWeapon.push(weapons.start);
-    timeEndWeapon.push(weapons.end);
-}
-
-let length = imgCharacters.length > imgWeapons.length ? imgWeapons.length : imgCharacters.length;
+const eventsCharacters = eventsData[4];
+const eventsWeapons = eventsData[5];
+const length = eventsCharacters.length < eventsWeapons.length ? eventsCharacters.length : eventsWeapons.length;
 
 for (let i = 0; i < length; ++i) {
-    document.getElementById('imgCharacter' + i).src = imgCharacters[i];
-    document.getElementById('imgWeapon' + i).src = imgWeapons[i];
+    // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
+    // document.getElementById('imgWeapon' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsWeapons[i].image;
 
-    document.getElementById('aCharacter' + i).href = aCharacters[i];
-    document.getElementById('aWeapon' + i).href = aWeapons[i];
+    // document.getElementById('aCharacter' + i).href = aCharacters[i];
+    // document.getElementById('aWeapon' + i).href = aWeapons[i];
 
-    document.getElementById('nameCharacter' + i).innerHTML = nameCharacters[i][1] + " " + shortnameCharacters[i][1] + " " + nameCharacters[i][0];
-    document.getElementById('nameWeapon' + i).innerHTML = nameWeapons[i][1] + nameWeapons[i][0];
+    document.getElementById('nameCharacter' + i).innerHTML = eventsCharacters[i].name[1] + " " + eventsCharacters[i].shortname[1] + " " + eventsCharacters[i].name[0];
+    document.getElementById('nameWeapon' + i).innerHTML = eventsWeapons[i].name[1] + eventsWeapons[i].name[0];
 
-    document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
-    document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
+    // document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
+    // document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
     // document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
     // document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
 
     //改变颜色
-    document.getElementById('nameCharacter' + i).style.color = colorCharacters[i];
+    document.getElementById('nameCharacter' + i).style.color = eventsCharacters[i].color;
     document.getElementById('nameWeapon' + i).style.color = colorWeapon;
 
+
+    //动态设置各个角色的css
+    let eventItemClass = document.getElementsByClassName('event-item-' + i);
+    eventItemClass.style.backgroundImage = url(searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image);
+    eventItemClass.style.backgroundPosition = eventsCharacters[i].pos;
+    eventItemClass.style.backgroundSize = eventsCharacters[i].zoom ? eventsCharacters[i].zoom : '200%';
+
+    let eventNameColor = eventsCharacters[i].color;
+    let eventNameClass = document.getElementsByClassName('event-name-' + i);
+    eventNameClass.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
+        eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
 }
+
 
