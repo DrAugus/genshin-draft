@@ -65,3 +65,7 @@ tags: windows 更新
 > fixed in 6.1.28
 > This incompatibility with the Windows Hypervisor related interface in Windows 11 (host) should be fixed with VirtualBox 6.1.28.
 > Using the Windows Hypervisor (Hyper-V) is working again. However, the performance is unchanged, i.e. still very noticeably lower than with VirtualBox's own hypervisor code, so it can make sense to disable Hyper-V. You decide.
+
+需要注意
+- win11默认关闭Hyper-V服务，需要你重新打开（在windows功能里重新打开）
+- 管理员命令执行`.\VBoxSDS.exe --regservice`
