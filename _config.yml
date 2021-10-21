@@ -24,7 +24,7 @@ description: > # webpage description
 url: "https://draugus.github.io/resume"
 permalink: /:year/:month/:day/:title
 #repository: draugus/resume
-paginate: 5
+paginate: 12
 
 # specific configurations
 github_profile: "https://github.com/DrAugus"
