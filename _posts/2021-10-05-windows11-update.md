@@ -42,7 +42,7 @@ tags: windows 更新
 * 最后，打开pe上的修复工具，修复下引导即可
 
 
-## 其他问题
+## 其他问题[20201019bug fixed](#fixed20536)
 
 ### [KB5007125：升级到安装了 Oracle VirtualBox 的 Windows 11 时保持兼容性](https://support.microsoft.com/zh-cn/topic/kb5007125-%E5%8D%87%E7%BA%A7%E5%88%B0%E5%AE%89%E8%A3%85%E4%BA%86-oracle-virtualbox-%E7%9A%84-windows-11-%E6%97%B6%E4%BF%9D%E6%8C%81%E5%85%BC%E5%AE%B9%E6%80%A7-ea84b50c-77f5-473c-99a8-81c2b7b53d35)
 
@@ -59,3 +59,9 @@ tags: windows 更新
 ![bcdedit.png](https://i.loli.net/2021/10/11/T4vshnFbzEkf5Oj.png)
 
 > 注意这个解决办法 是能够升级win11但是无法使用virtualbox
+
+
+<span id="fixed20536">2020-10-19 bug已修复</span>
+> fixed in 6.1.28
+> This incompatibility with the Windows Hypervisor related interface in Windows 11 (host) should be fixed with VirtualBox 6.1.28.
+> Using the Windows Hypervisor (Hyper-V) is working again. However, the performance is unchanged, i.e. still very noticeably lower than with VirtualBox's own hypervisor code, so it can make sense to disable Hyper-V. You decide.
