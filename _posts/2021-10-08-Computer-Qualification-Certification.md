@@ -386,7 +386,6 @@ CISC与RISC
 - 一级封锁协议：事务T在修改数据R前必须先对其加X锁，直到事务结束才释放。可防止丢失修改。
 - 二级封锁协议：一级封锁协议加上事务T在读取数据R之前先对其加S锁，读完后即可释放S锁。可防止丢失修改，还可防止读脏数据。
 - 三级封锁协议：一级封锁协议加上事务T在读取数据R之前先对其加S锁，直到事务结束才释放。可防止丢失修改，还可防止读脏数据、防止数据重复读。
-
 - 两段锁协议：可串行化、可能发生死锁。
 
 ## 数据库完整性约束
@@ -413,10 +412,7 @@ CISC与RISC
 - 完全备份：备份所有数据
 - 差量备份：仅备份上一次**完全备份**之后变化的数据
 - 增量备份：备份上一次备份之后变化的数据
--
-
-影子拷贝：该策略假设在某一个时刻只有一个活动的事务，首先对数据库做副本（称为影子副本），并在磁盘上维护一个dp_pointer指针，指向数据库的当前副本。对于要执行写操作的数据项，数据库系统在磁盘上维护数据库的一个副本，所有的写操作都在数据库副本上执行，而保持原始数据库不变，如果在任一时刻操作不得不中止，系统仅需要删除新副本，原数据库副本没有受到任何影响。
-
+- 影子拷贝：该策略假设在某一个时刻只有一个活动的事务，首先对数据库做副本（称为影子副本），并在磁盘上维护一个dp_pointer指针，指向数据库的当前副本。对于要执行写操作的数据项，数据库系统在磁盘上维护数据库的一个副本，所有的写操作都在数据库副本上执行，而保持原始数据库不变，如果在任一时刻操作不得不中止，系统仅需要删除新副本，原数据库副本没有受到任何影响。
 - 基于日志的延迟修改技术（deferred-modification
   technique）的设计与恢复过程。该技术通过在日志中记录所有对数据库的修改操作，将一个事务的所有写操作延迟到事务提交后才执行，日志中需要记录“事务开始”和“事务提交”时间，还需要记录数据项被事务修改后的新值，无需记录数据项被事务修改前的原始值。当系统发生故障时，如果某个事务已经开始，但没有提交，则该事务对数据项的修改尚未体现在数据库中，因此无需做任何恢复动作。
 
@@ -606,10 +602,7 @@ CISC与RISC
 
 一般说来，信息化需求包含3个层次，即**战略需求**、**运作需求**和**技术需求**。
 
-1.
-
-战略需求。组织信息化的目标是提升组织的竞争能力、为组织的可持续发展提供一个支持环境。从某种意义上来说，信息化对组织不仅仅是服务的手段和实现现有战略的辅助工具；信息化可以把组织战略提升到一个新的水平，为组织带来新的发展契机。特别是对于企业，信息化战略是企业竞争的基础。
-
+1. 战略需求。组织信息化的目标是提升组织的竞争能力、为组织的可持续发展提供一个支持环境。从某种意义上来说，信息化对组织不仅仅是服务的手段和实现现有战略的辅助工具；信息化可以把组织战略提升到一个新的水平，为组织带来新的发展契机。特别是对于企业，信息化战略是企业竞争的基础。
 2. 运作需求。组织信息化的运作需求是组织信息化需求非常重要且关键的一环，它包含三方面的内容：一是实现信息化战略目标的需要；二是运作策略的需要。三是人才培养的需要。
 3. 技术需求。由于系统开发时间过长等问题在信息技术层面上对系统的完善、升级、集成和整合提出了需求。也有的组织，原来基本上没有大型的信息系统项目，有的也只是一些单机应用，这样的组织的信息化需求，一般是从头开发新的系统。
 
@@ -626,8 +619,7 @@ CISC与RISC
 
 ## 信息系统战略规划
 
-企业信息化涉及到对企业管理理念的创新，按照市场发展的要求，对企业现有的管理流程重新整合，管理核心从对（ ）的管理，转向对（ ）的管理，并延伸到对企业技术创新、工艺设计、产品设计、生产制造过程的管理，进而还要扩展到对（
-）的管理乃至发展到电子商务。
+企业信息化涉及到对企业管理理念的创新，按照市场发展的要求，对企业现有的管理流程重新整合，管理核心从对（ ）的管理，转向对（ ）的管理，并延伸到对企业技术创新、工艺设计、产品设计、生产制造过程的管理，进而还要扩展到对（ ）的管理乃至发展到电子商务。
 
 ## 政府信息化与电子政务
 
@@ -925,17 +917,15 @@ CISC与RISC
 ##### 配置项
 
 - 属于产品组成部分的工作成果：如需求文档、设计文档、源代码和测试用例等；
-
 - 属于项目管理和机构支撑过程域产生的文档：如工作计划、项目质量报告和项目跟踪报告等。
 
-  # 软件架构设计
+# 软件架构设计
 
 ## 软件架构的概念
 
 ##### 架构的本质
 
 - 软件架构为软件系统提供了一个结构、行为和属性的高级抽象。
-
 - 架构架构风格是特定应用领域的惯用模式，架构定义一个词汇表和一组约束
 
 ##### 架构的“4+1”视图
@@ -1091,7 +1081,7 @@ CISC与RISC
 - COM
 - EJB
 
-基于构件的开发模型由软件的需求分析定义、体系结构设计、构件库建 立、应用软件构建以及测试和发布 5 个阶段组成。
+基于构件的开发模型由软件的需求分析定义、体系结构设计、构件库建立、应用软件构建以及测试和发布 5 个阶段组成。
 
 ## 软件架构文档
 
@@ -1281,59 +1271,24 @@ CISC与RISC
 
 ## 软件架构重用
 
-软件架构重用是一个解释性、交互式和反复迭代的过程，包括了多项活动。**信息提取**通过分析系统现有设计和实现工件来构造它的模型。其结果用于在后续活动中构造系统的视图。数据库构建活动把模型中包含的**元素和关系**
-转换为数据库中的标准存储格式。**视图融合**活动包括定义和操作数据库中存储的信息，理顺、加强并建立起元素之间的连接。重构由两个主要活动组成；**可视化和交互**及**模式定义和识别**
-。前者提供了一种让用户操作架构元素的机制，后者则提供了用于架构重构的设施。
+软件架构重用是一个解释性、交互式和反复迭代的过程，包括了多项活动。**信息提取**通过分析系统现有设计和实现工件来构造它的模型。其结果用于在后续活动中构造系统的视图。数据库构建活动把模型中包含的**元素和关系**转换为数据库中的标准存储格式。**视图融合**活动包括定义和操作数据库中存储的信息，理顺、加强并建立起元素之间的连接。重构由两个主要活动组成；**可视化和交互**及**模式定义和识别**。前者提供了一种让用户操作架构元素的机制，后者则提供了用于架构重构的设施。
 
-Software architecture reconstruction is an interpretive, interactive, and iterative process including many
-activities. **Information extraction** involves analyzing a system's existing design and implementation artifacts to
-construct a model of it. The result is used in the following activities to construct a view of the system. The database
-construction activity converts the **elements and relations** contained in the view into a standard format for storage
-in a database. The **view fusion** activity involves defining and manipulating the information stored in database to
-reconcile, augment, and establish connections between the elements. Reconstruction consists of two primary
-activities: **visualization and interaction**  and **pattern definition and recognition**. The former provides a
-mechanism for the user to manipulate architectural elements, and the latter provides facilities for architecture
-reconstruction.
+> Software architecture reconstruction is an interpretive, interactive, and iterative process including many activities. **Information extraction** involves analyzing a system's existing design and implementation artifacts to construct a model of it. The result is used in the following activities to construct a view of the system. The database construction activity converts the **elements and relations** contained in the view into a standard format for storage in a database. The **view fusion** activity involves defining and manipulating the information stored in database to reconcile, augment, and establish connections between the elements. Reconstruction consists of two primary activities: **visualization and interaction**  and **pattern definition and recognition**. The former provides a mechanism for the user to manipulate architectural elements, and the latter provides facilities for architecture reconstruction.
 
-系统架构是一个系统的一种表示，包含了**功能**到软硬件构件的映射、**软件架构**
-到硬件架构的映射以及对于这些组件人机交互的关注。也就是说，系统架构关注于整个系统，包括硬件、软件和使用者。软件架构结构根据其所展示元素的广义性质，可以被分为三个主要类别。 1）**模块结构**
-将决策体现为一组需要被构建或采购的代码或数据单元。 2）**构件连接器结构**将决策体现为系统如何被结构化为一组具有运行时行为和交互的元素。 3）**分配结构**
-将决策体现为系统如何在其环境中关联到非软件结构，如CPU、文件系统、网络、开发团队等。
+系统架构是一个系统的一种表示，包含了**功能**到软硬件构件的映射、**软件架构**到硬件架构的映射以及对于这些组件人机交互的关注。也就是说，系统架构关注于整个系统，包括硬件、软件和使用者。软件架构结构根据其所展示元素的广义性质，可以被分为三个主要类别。 1）**模块结构**将决策体现为一组需要被构建或采购的代码或数据单元。 2）**构件连接器结构**将决策体现为系统如何被结构化为一组具有运行时行为和交互的元素。 3）**分配结构**将决策体现为系统如何在其环境中关联到非软件结构，如CPU、文件系统、网络、开发团队等。
 
-A system's architecture is a representation of a system in which there is a mapping of **functionality** onto hardware
-and software components, a mapping of the **software architecture** onto the hardware architecture. and a concern for
-the human interaction with these components. That is, system architecture is concerned with a total system, including
-hardware. software, and humans. Software architectural structures can be divided into three major categories, depending
-on the broad nature of the elements they show.1）**Module structures** embody decisions as a set of code or data units
-that have to be constructed or procured.2）**Component-and-connector structures** embody decisions as to how the system
-is to be structured as set of elements that have runtime behavior and interactions.3）**Allocation structures** embody
-decisions as to how the system will relate to non software structures in its environment(such as CPUs, file systems,
-networks, development teams, etc.).
+> A system's architecture is a representation of a system in which there is a mapping of **functionality** onto hardware and software components, a mapping of the **software architecture** onto the hardware architecture. and a concern for the human interaction with these components. That is, system architecture is concerned with a total system, including hardware. software, and humans. Software architectural structures can be divided into three major categories, depending on the broad nature of the elements they show.1）**Module structures** embody decisions as a set of code or data units that have to be constructed or procured.2）**Component-and-connector structures** embody decisions as to how the system is to be structured as set of elements that have runtime behavior and interactions.3）**Allocation structures** embody decisions as to how the system will relate to non software structures in its environment(such as CPUs, file systems, networks, development teams, etc.).
 
-**架构设计**的目标是确定应用软件的哪些部分将分配到何种硬件。识别出正在开发系统的主要软件构件并分配到系统将要运行的硬件构件。所有软件系统可分为四项基本功能。第一项是**数据存储**
-。大多数信息系统需要数据进行存储并检索，不论是一个小文件，比如一个字处理器产生的一个备忘录，还是一个大型数据库，比如存储一个企业会计记录的数据库。第二项功能是**数据访问逻辑**
-，处理过程需要访问数据，这通常是指用SQL进行数据库查询。第三项功能是**应用程序逻辑**，这些逻辑通过数据流图，用例和功能需求来记录。第四项功能是表示逻辑，给用户显示信息并接收用户命令。一个系统的三类主要硬件构件是**
-客户机、服务器和网络**。
+**架构设计**的目标是确定应用软件的哪些部分将分配到何种硬件。识别出正在开发系统的主要软件构件并分配到系统将要运行的硬件构件。所有软件系统可分为四项基本功能。第一项是**数据存储**。大多数信息系统需要数据进行存储并检索，不论是一个小文件，比如一个字处理器产生的一个备忘录，还是一个大型数据库，比如存储一个企业会计记录的数据库。第二项功能是**数据访问逻辑**，处理过程需要访问数据，这通常是指用SQL进行数据库查询。第三项功能是**应用程序逻辑**，这些逻辑通过数据流图，用例和功能需求来记录。第四项功能是表示逻辑，给用户显示信息并接收用户命令。一个系统的三类主要硬件构件是**客户机、服务器和网络**。
 
-The objective of **architecture design** is to determine what parts of the application software will be assigned to what
-hardware. The major software components of the system being developed have to be identified and then allocated to the
-various hardware components on which the system will operate. All software systems can be divided into four basic
-functions. The first is **data storage**. Most information systems require data to be stored and retrieved, whether a
-small file,such as a memo produced by a word processor, or a large database, such as one that stores an organization’s
-accounting records.The second function is the **data access logic**, the processing required to access data, which often
-means database queries in Structured Query Language. The third function is the  **application logic**, which is the
-logic documented in the DFDs, use cases,and functional requirements.The fourth function is the presentation logic,the
-display of information to the user and the acceptance of the user’s commands.The three primary hardware components of a
-system are **clients,servers,and network**.
+> The objective of **architecture design** is to determine what parts of the application software will be assigned to what hardware. The major software components of the system being developed have to be identified and then allocated to the various hardware components on which the system will operate. All software systems can be divided into four basic functions. The first is **data storage**. Most information systems require data to be stored and retrieved, whether a small file,such as a memo produced by a word processor, or a large database, such as one that stores an organization’s accounting records.The second function is the **data access logic**, the processing required to access data, which often means database queries in Structured Query Language. The third function is the  **application logic**, which is the logic documented in the DFDs, use cases,and functional requirements.The fourth function is the presentation logic,the display of information to the user and the acceptance of the user’s commands.The three primary hardware components of a system are **clients,servers,and network**.
 
 # 案例专题
 
 ## 案例主题1：软件工程
 
-```
 1. 需求分析
 2. 面向对象设计
-```
 
 ##### 数据流图DFD答题技巧
 
@@ -1371,11 +1326,9 @@ system are **clients,servers,and network**.
 
 ## 案例主题2：架构设计
 
-```
 1. 软件架构风格
 2. 质量属性与架构评估
 3. Web架构综合考查
-```
 
 ##### 软件架构风格
 
@@ -1440,13 +1393,11 @@ system are **clients,servers,and network**.
 
 ## 案例主题3：数据库设计
 
-```
 1. 规范化与反规范化
 2. 分布式数据库
 3. NoSQL
 4. 内存数据库
 5. 其他数据库扩展知识
-```
 
 ##### 视图的优点
 
@@ -1468,24 +1419,20 @@ system are **clients,servers,and network**.
 
 ## 案例主题4：其他
 
-```
 1. 时间管理与成本管理
 2. 系统安全性
 3. 系统可靠性
-```
 
 # 论文写作
 
 ## 考纲
 
-```
 1. 系统建模
 2. 软件架构设计
 3. 系统设计
 4. 分布式系统设计
 5. 系统的可靠性分析与设计
 6. 系统的安全性和保密性设计
-```
 
 ## 架构真题
 
@@ -1501,11 +1448,8 @@ system are **clients,servers,and network**.
 正文：2200-2500字
 
 - 找准核心论点：5min
-
 - 搭建论文框架：10min
-
 - 撰写摘要：15min
-
 - 正文写作：90min
 
 | 基本框架            | 内容                                                         | 字数        |
