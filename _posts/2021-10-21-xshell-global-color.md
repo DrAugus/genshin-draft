@@ -8,7 +8,7 @@ tags: XShell
 
 工具 - 配色方案 - 自定义设计好自己喜欢的配色
 
-[自定义配色](/assets/res/xshell-1.png)
+![自定义配色](/assets/res/xshell-1.png)
 
 点击导出，将默认配色(XTerm)也导出
 
