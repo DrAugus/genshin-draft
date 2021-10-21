@@ -93,7 +93,8 @@
 
 
 div.event-item {
-    position: absolute;
+    position: relative;
+    border-radius: 10px;
     opacity: 1;
     right: 0;
     margin-top: 30px;
