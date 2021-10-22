@@ -112,11 +112,12 @@ const foodList = [
             name: '漠漠家.胡辣汤.焖面.肉夹馍(杭州城西店)',
             type_name: foodTypeName[foodType.fen_mian],
             type_color: foodTypeColor[foodType.fen_mian],
-            food: '焖面自选 | 可乐 | 韭菜盒子 | 加香菜葱花',
+            food: ['焖面自选 | 可乐 | 韭菜盒子 | 加香菜葱花',
+                '自选焖面单人餐+配胡辣汤 | 藕夹 | 韭菜盒子'],
             food_rate: 5,
             satisfaction: 4,
-            price: '15.79',
-            note: '会腻',
+            price: ['15.79', '14.89'],
+            note: '会腻 切忌连续食用 忌香辣焖面',
         },
         {
             name: '芝根披萨PIZZA',
@@ -210,14 +211,15 @@ const foodList = [
         },
 
     ],
-    //拉黑店家
+    //拉黑店家 拉黑缘由
     [
-        '河南大烩菜',
-        '陕老顺.油泼面.凉皮.肉夹馍(祥符街道店)',
-        '私町Osaka食堂外带寿司(五洲国际广场店)',
-        '遇膳•黄焖鸡米饭•过桥米线(美林湾店)',
-        '东北饺子坊-凉皮凉面',
-        '秦小二油泼面肉夹馍凉皮臊子面',
+        ['河南大烩菜', ''],
+        ['陕老顺.油泼面.凉皮.肉夹馍(祥符街道店)', ''],
+        ['私町Osaka食堂外带寿司(五洲国际广场店)', ''],
+        ['遇膳•黄焖鸡米饭•过桥米线(美林湾店)', ''],
+        ['东北饺子坊-凉皮凉面', ''],
+        ['秦小二油泼面肉夹馍凉皮臊子面', ''],
+        ['牛一锅牛肉焖饭(运河上街店)', '特辣特辣'],
     ],
 ];
 
@@ -233,7 +235,7 @@ const foodRate = [
 
 let blackRestaurant = foodList[1];
 for (let i = 0; i < blackRestaurant.length; ++i) {
-    document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i];
+    document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i][0] + ' | ' + blackRestaurant[i][1];
 }
 
 //foodList FL
@@ -257,6 +259,7 @@ for (let info of foodList[0]) {
 }
 console.log(FL_name, FL_food);
 let length = foodList[0].length;
+//TODO 重构
 for (let i = 0; i < length; ++i) {
     document.getElementById('FL_name' + i).innerHTML = FL_name[i];
     document.getElementById('FL_food' + i).innerHTML = FL_food[i];
