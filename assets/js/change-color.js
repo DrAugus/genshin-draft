@@ -9,6 +9,7 @@ const colorChange = [
 ];
 
 let i = 0;
+changeColor();
 setInterval('changeColor()', 500);
 
 function changeColor() {
@@ -16,8 +17,12 @@ function changeColor() {
         i = 0;
     } else {
         let chipClass = document.getElementsByClassName('chip');
-        for (chip of chipClass) {
+        for (let chip of chipClass) {
             chip.style.backgroundColor = colorChange[i++ % colorChange.length]; //循环颜色
+        }
+        let headMessageClass = document.getElementsByClassName('head-message');
+        for (let hm of headMessageClass) {
+            hm.style.backgroundColor = colorChange[i++ % colorChange.length]; //循环颜色
         }
     }
 }
