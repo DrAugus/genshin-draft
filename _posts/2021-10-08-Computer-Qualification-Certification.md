@@ -13,7 +13,7 @@ tags: 软考 系统架构
 
 综合知识 75道选择题，共75分
 
-![part1](/assets/res/cqc-1.png)
+![cqc-1.png](https://i.loli.net/2021/10/22/t28KyVU9qIeZfTO.png)
 
 
 # 计算机组成原理与体系结构
