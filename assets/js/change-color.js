@@ -22,7 +22,7 @@ function changeColor() {
         }
         let headMessageClass = document.getElementsByClassName('head-message');
         for (let hm of headMessageClass) {
-            hm.style.backgroundColor = colorChange[i++ % colorChange.length]; //循环颜色
+            hm.style.color = colorChange[i++ % colorChange.length]; //循环颜色
         }
     }
 }
