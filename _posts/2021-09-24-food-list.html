@@ -37,18 +37,18 @@ js: ["food-list.js"]
 <!--三列 每一列一个店家 如果店家有多个菜品 进行表格处理-->
 <div class="container">
 
-
+    {% for i in (0..30) %}-->
+    {% capture FL_name %}FL_name{{i}}{% endcapture %}
+    {% capture FL_food %}FL_food{{i}}{% endcapture %}
+    {% if FL_name %}
     <div class="row">
         <div class="col s12">This div is 12-columns wide on all screen sizes</div>
         <div class="col s4">
-            <p class="z-depth-5" id="FL_name1 FL_food1"></p>
+            <p class="z-depth-5" id="{{FL_name}} {{FL_food}}"></p>
         </div>
-        <div class="col s4">
-            <p class="z-depth-5" id="FL_name2"></p></div>
-        <div class="col s4">
-            <p class="z-depth-5" id="FL_name3"></p></div>
     </div>
-
+    {% endif%}
+    {% endfor %}
 </div>
 
 
