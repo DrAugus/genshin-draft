@@ -52,7 +52,7 @@ const posZijingang = '(紫金港店)';
     @food
     @food_rate: 食物评级
     @satisfaction: 总体满意度
-    @price
+    @price: 只标记该菜品最低购入价格
     @note: 备注
 */
 const foodList = [
@@ -239,36 +239,46 @@ for (let i = 0; i < blackRestaurant.length; ++i) {
 }
 
 //foodList FL
-
+// one by one
+// 先做 店家和食物
 let FL_name = [];
 let FL_food = [];
-let FL_foodRate = [];
-let FL_satisfaction = [];
-let FL_price = [];
-let FL_note = [];
-let FL_typeColor = [];
 
-for (let info of foodList[0]) {
-    FL_name.push(info.name);
-    FL_food.push(info.food);
-    FL_foodRate.push(info.food_rate);
-    FL_satisfaction.push(info.satisfaction);
-    FL_price.push(info.price);
-    FL_note.push(info.note);
-    FL_typeColor.push(info.type_color);
-}
-console.log(FL_name, FL_food);
-let length = foodList[0].length;
-//TODO 重构
+
+// let FL_foodRate = [[]];
+// let FL_satisfaction = [[]];
+// let FL_price = [];
+// let FL_note = [];
+// let FL_typeColor = [];
+
+let bestFood = foodList[0];
+let length = bestFood.length;
+
 for (let i = 0; i < length; ++i) {
-    document.getElementById('FL_name' + i).innerHTML = FL_name[i];
-    document.getElementById('FL_food' + i).innerHTML = FL_food[i];
-    document.getElementById('FL_price' + i).innerHTML = '￥' + FL_price[i];
-    document.getElementById('FL_note' + i).innerHTML = FL_note[i];
 
-    document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
-    document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
 
-    document.getElementById('FL_typeColor' + i).className = FL_typeColor[i];
+    if (typeof bestFood[i].food != "string") {
+
+        //copy current
+        let newObj = bestFood[i];
+        let foodLength = newObj.food.length;
+        for (let typeFood = 0; typeFood < foodLength; ++typeFood) {
+            document.getElementById('FL_name' + i).innerHTML = newObj.name;
+            document.getElementById('FL_food' + i + typeFood).innerHTML = newObj.food[typeFood];
+        }
+        i += foodLength;
+        length += foodLength;
+
+
+        // document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
+        // document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
+        // document.getElementById('FL_typeColor' + i).className = FL_typeColor[i];
+
+
+    } else {
+        document.getElementById('FL_name' + i).innerHTML = bestFood[i].name;
+        document.getElementById('FL_food' + i).innerHTML = bestFood[i].food;
+    }
+
 }
 
