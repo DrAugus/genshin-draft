@@ -94,8 +94,11 @@ js: ["food-list.js"]
 <h2>拉黑商家 - 难吃的一批</h2>
 
 <ul>
-    {% for i in (0..5) %}
+    {% for i in (0..10) %}
     {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
+    {% if nameBlackRestaurant != true %}
+    {% break %}
+    {% endif%}
     <li id="{{nameBlackRestaurant}}">河南大烩菜</li>
     {% endfor %}
 </ul>
