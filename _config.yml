@@ -37,13 +37,7 @@ disqus_shortname: "Augus"
 theme: jekyll-theme-cayman
 markdown: kramdown
 highlighter: rouge
-#gems:
-#  - jekyll-feed
-#  - jekyll-paginate
-#  - jekyll-seo-tag
-#  - jekyll-sitemap
-
-include:
+gems:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
