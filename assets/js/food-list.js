@@ -288,6 +288,9 @@ for (let i = 0; i < length; ++i) {
     {
         document.getElementById('FL_name' + i).innerHTML = bestFood[i].name;
         document.getElementById('FL_food' + i).innerHTML = bestFood[i].food;
+        document.getElementById('FL_price' + i).innerHTML = bestFood[i].price;
+
+        // document.getElementById('FL_typeColor' + i).className = bestFood[i].type_color;
     }
 
 }
