@@ -112,11 +112,20 @@ const foodList = [
             name: '漠漠家.胡辣汤.焖面.肉夹馍(杭州城西店)',
             type_name: foodTypeName[foodType.fen_mian],
             type_color: foodTypeColor[foodType.fen_mian],
-            food: ['焖面自选 | 可乐 | 韭菜盒子 | 加香菜葱花',
-                '自选焖面单人餐+配胡辣汤 | 藕夹 | 韭菜盒子'],
+            food: '焖面自选 | 可乐 | 韭菜盒子 | 加香菜葱花',
             food_rate: 5,
             satisfaction: 4,
-            price: ['15.79', '14.89'],
+            price: '15.79',
+            note: '会腻 切忌连续食用 忌香辣焖面',
+        },
+        {
+            name: '漠漠家.胡辣汤.焖面.肉夹馍(杭州城西店)',
+            type_name: foodTypeName[foodType.fen_mian],
+            type_color: foodTypeColor[foodType.fen_mian],
+            food: '自选焖面单人餐+配胡辣汤 | 藕夹 | 韭菜盒子',
+            food_rate: 5,
+            satisfaction: 4,
+            price: '14.89',
             note: '会腻 切忌连续食用 忌香辣焖面',
         },
         {
@@ -256,26 +265,27 @@ let length = bestFood.length;
 
 for (let i = 0; i < length; ++i) {
 
-
-    if (typeof bestFood[i].food != "string") {
-
-        //copy current
-        let newObj = bestFood[i];
-        let foodLength = newObj.food.length;
-        for (let typeFood = 0; typeFood < foodLength; ++typeFood) {
-            document.getElementById('FL_name' + i).innerHTML = newObj.name;
-            document.getElementById('FL_food' + i + typeFood).innerHTML = newObj.food[typeFood];
-        }
-        i += foodLength;
-        length += foodLength;
-
-
-        // document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
-        // document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
-        // document.getElementById('FL_typeColor' + i).className = FL_typeColor[i];
-
-
-    } else {
+    //
+    // if (typeof bestFood[i].food != "string") {
+    //
+    //     //copy current
+    //     let newObj = bestFood[i];
+    //     let foodLength = newObj.food.length;
+    //     for (let typeFood = 0; typeFood < foodLength; ++typeFood) {
+    //         document.getElementById('FL_name' + i).innerHTML = newObj.name;
+    //         document.getElementById('FL_food' + i + typeFood).innerHTML = newObj.food[typeFood];
+    //     }
+    //     i += foodLength;
+    //     length += foodLength;
+    //
+    //
+    //     // document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
+    //     // document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
+    //     // document.getElementById('FL_typeColor' + i).className = FL_typeColor[i];
+    //
+    //
+    // } else
+    {
         document.getElementById('FL_name' + i).innerHTML = bestFood[i].name;
         document.getElementById('FL_food' + i).innerHTML = bestFood[i].food;
     }
