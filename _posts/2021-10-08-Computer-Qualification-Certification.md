@@ -4,6 +4,7 @@ title:  "Computer Qualification Certification"
 date:   2021-10-08 14:57:55
 categories: 考试
 tags: 软考 系统架构
+excerpt: ...
 ---
 
 

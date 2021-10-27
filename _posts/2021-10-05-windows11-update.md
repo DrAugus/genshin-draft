@@ -4,11 +4,9 @@ title:  "windows11更新纪要"
 date:   2021-10-05 13:16:44
 categories: windows
 tags: windows 更新
+excerpt: 介绍win11更新路上的绊脚石
 ---
 
-
-
-本文介绍更新路上的绊脚石
 
 > 2021-10-11 update AMD用户一定不要升级Windows11
 
