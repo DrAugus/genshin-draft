@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 title: AUGUS
 description: > # webpage description
-#  趣舍萬殊&nbsp;&nbsp;靜躁不同
+#  Welcome to my personal website
 #baseurl: "/resume"
 url: "https://draugus.github.io/resume"
 permalink: /:year/:month/:day/:title

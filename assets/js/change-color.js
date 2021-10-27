@@ -20,9 +20,9 @@ function changeColor() {
         for (let chip of chipClass) {
             chip.style.backgroundColor = colorChange[i++ % colorChange.length]; //循环颜色
         }
-        let headMessageClass = document.getElementsByClassName('head-message');
-        for (let hm of headMessageClass) {
-            hm.style.color = colorChange[i++ % colorChange.length]; //循环颜色
-        }
+        // let headMessageClass = document.getElementsByClassName('head-message');
+        // for (let hm of headMessageClass) {
+        //     hm.style.color = colorChange[i++ % colorChange.length]; //循环颜色
+        // }
     }
 }

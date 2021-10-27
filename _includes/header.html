@@ -39,8 +39,7 @@
     </head>
     <body>
         <header>
-            <nav class="top-nav teal">
-
+            <nav class="top-nav">
                 <!--粒子效果-->
                 <div class="particles-wrapper">
                     <canvas class="particles"></canvas>
@@ -48,11 +47,10 @@
 
                 <div class="nav-wrapper">
                     <div class="container">
-                        <a class="page-title" href="{{site.baseurl}}/">{{site.title}} 白露未晞</a>
+                        <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
                         <p class="head-message">多情自古空余恨&nbsp;&nbsp;好夢由來最易醒</p>
                     </div>
                 </div>
-
             </nav>
 
             <div class="container">
@@ -64,13 +62,20 @@
                 <li>
                     <div class="userView">
 <!--                        <img class="user-bg" src="{{site.baseurl}}/assets/res/img.png" alt=""/>-->
-                        <a class="user-avatar" href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpg" width="64" alt=""></a>
-                        <div class="user-info">
-                            {{site.user}}<br>
-                            <a href="mailto:{{site.user_email}}"><span class="email">{{site.user_email}}</span></a>
+                        <div class="row">
+                            <div class="col s3">
+                                <a href="{{site.github_profile}}" target="_blank"><img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpg" width="64" alt=""></a>
+                            </div>
+                            <div class="col s9">
+                                <div class="user-info">
+                                    {{site.user}}<br>
+                                    <a href="mailto:{{site.user_email}}"><span class="email">{{site.user_email}}</span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </li>
+                <li><div class="divider"></div></li>
                 <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="material-icons">home</i>Home</a></li>
                 <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">description</i>Projects</a></li>
                 <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>Categories</a></li>
