@@ -3,7 +3,7 @@ var searchBtn = document.querySelector('.search-start');
 var searchClear = document.querySelector('.search-clear');
 var searchInput = document.querySelector('.search-input');
 var searchResults = document.querySelector('.search-results');
-var searchFeedUrl = "https://draugus.github.io/resume/feed.xml"
+var searchFeedUrl = "/feed.xml"
 
 // 申明保存文章的标题、链接、内容的数组变量
 var searchValue = '',

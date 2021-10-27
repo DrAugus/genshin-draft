@@ -1,4 +1,4 @@
-var searchFeedUrl = "https://draugus.github.io/resume/feed.xml";
+var searchFeedUrl = "/feed.xml";
 
 // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
 var elSearchBox = document.querySelector(".search"),

@@ -20,10 +20,10 @@
 title: AUGUS
 description: > # webpage description
 #  Welcome to my personal website
-#baseurl: "/resume"
-url: "https://draugus.github.io/resume"
+#baseurl: "/"
+url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
-#repository: draugus/resume
+#repository: draugus/draugus.github.io
 paginate: 12
 
 # specific configurations
