@@ -4,6 +4,7 @@ title:  "rapidJson::Document doc"
 date:   2021-08-02 15:00:03 
 categories: C++
 tags: RapidJSON C++
+excerpt: 一个C++的JSON解析器及生成器 RapidJSON
 ---
 
 `RapidJSON`是一个C++的JSON解析器及生成器。

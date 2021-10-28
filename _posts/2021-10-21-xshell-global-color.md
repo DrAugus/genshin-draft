@@ -4,7 +4,7 @@ title:  "XShell全局设置配色方案"
 date:   2021-10-21 14:32:44
 categories: XShell
 tags: XShell
-excerpt: ...
+excerpt: 全局自定义配色 XShell
 ---
 
 工具 - 配色方案 - 自定义设计好自己喜欢的配色
