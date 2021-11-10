@@ -1048,6 +1048,11 @@ const autoPlayVoice = () => {
     document.getElementById('hutao-text').innerHTML = voiceHuTao[index].text;
 }
 autoPlayVoice();
+//填充所有胡桃语音
+for (let i = 0; i < voiceHuTao.length; ++i) {
+    document.getElementById('hutao-voice-' + i).src = voiceHuTao[i].src;
+    document.getElementById('hutao-text-' + i).innerHTML = voiceHuTao[i].text;
+}
 
 
 // main func
