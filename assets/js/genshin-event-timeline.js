@@ -566,6 +566,19 @@ const eventsData = [
             timezoneDependent: true,
             version: '2.2',
         },
+        {
+            no: 20,
+            shortname: ['hu_tao', '胡桃'],
+            name: ['Moment of Bloom - Hu Tao Banner', '「雪霁梅香」'],
+            pos: '60% 20%',
+            zoom: '180%',
+            image: 'moment_of_bloom_2.jpg',
+            start: '2021-11-02 18:00:00',
+            end: '2021-11-23 14:59:59',
+            color: colorCharacter[numC.huo],
+            url: 'https://bbs.mihoyo.com/ys/article/11444616',
+            showOnHome: true,
+        },
     ],
     [
         {
@@ -787,6 +800,16 @@ const eventsData = [
             showOnHome: true,
             timezoneDependent: true,
         },
+        {
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
+            pos: '40% 40%',
+            image: 'epitome_invocation_20.jpg',
+            start: '2021-11-02 18:00:00',
+            end: '2021-11-23 14:59:59',
+            color: '#FFAA4B',
+            url: 'https://bbs.mihoyo.com/ys/article/11444617',
+            showOnHome: true,
+        },
     ],
     [
         {
@@ -957,11 +980,114 @@ const eventsData = [
 ];
 
 
+//胡桃 语音
+const voiceHuTao = [
+    {
+        index: 0,
+        text: '嗯~早起身体好，晚睡人会飘。',
+        src: 'https://patchwiki.biligame.com/images/ys/8/8d/n8gei38e7k4v8os3scp7uormhc633ib.mp3',
+    },
+    {
+        index: 1,
+        text: '哟！中午好呀，吃了吗？',
+        src: 'https://patchwiki.biligame.com/images/ys/d/d7/kmv4y3qxzawo4lvza5sto2hqs4asxcj.mp3',
+    },
+    {
+        index: 2,
+        text: '嘻嘻，月亮出来喽~咱也出门吧。',
+        src: 'https://patchwiki.biligame.com/images/ys/c/c8/9p3stmpojfh2pmodmvi6srkjo55e9l9.mp3',
+    },
+    {
+        index: 3,
+        text: '咳咳...太阳出来我晒太阳，月亮出来我晒月亮咯~',
+        src: 'https://patchwiki.biligame.com/images/ys/0/01/2fnjqvot4urhojue61nnct93s94kpg4.mp3',
+    },
+    {
+        index: 4,
+        text: '哎哟哟',
+        src: 'https://patchwiki.biligame.com/images/ys/a/a7/1bxid2ud8xdv491mpn6z1nf598l6bw6.mp3',
+    },
+    {
+        index: 5,
+        text: '丘丘',
+        src: 'https://patchwiki.biligame.com/images/ys/2/2d/pfpqhnpnlf07hwdjud6f3ilsg840osm.mp3',
+    },
+    {
+        index: 6,
+        text: '不如去我那儿喝杯茶？嘿~',
+        src: 'https://patchwiki.biligame.com/images/ys/c/cd/mh8ksq83vyqgm9m065emzzstw9skjaa.mp3',
+    },
+];
+
+
+const autoPlayVoice = () => {
+    const myDate = new Date();
+    const hour = myDate.getHours();
+
+    const getVoiceIndex = (hour) => {
+        if (hour < 3) {
+            //丘丘
+            return voiceHuTao[5].index;
+        } else if (hour < 10) {
+            //早上
+            return voiceHuTao[0].index;
+        } else if (hour < 14) {
+            //中午
+            return voiceHuTao[1].index;
+        } else if (hour < 16) {
+            //下午
+            return voiceHuTao[6].index;
+        } else {
+            //晚上
+            return voiceHuTao[2].index;
+        }
+    }
+
+    let index = getVoiceIndex(hour)
+    document.getElementById('hutao-voice').src = voiceHuTao[index].src;
+    document.getElementById('hutao-text').innerHTML = voiceHuTao[index].text;
+}
+autoPlayVoice();
+//填充所有胡桃语音
+for (let i = 0; i < voiceHuTao.length; ++i) {
+    document.getElementById('hutao-voice-' + i).src = voiceHuTao[i].src;
+    document.getElementById('hutao-text-' + i).innerHTML = voiceHuTao[i].text;
+}
+
+
 // main func
 
 const eventsCharacters = eventsData[4];
 const eventsWeapons = eventsData[5];
 const length = eventsCharacters.length < eventsWeapons.length ? eventsCharacters.length : eventsWeapons.length;
+
+
+//最新的祈愿
+
+document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].name[1] + eventsCharacters[eventsCharacters.length - 1].shortname[1];
+document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
+document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
+
+const deadlineCurrentWish = () => {
+    const currentTimestamp = Date.parse(new Date());
+    const currentDeadline = eventsCharacters[eventsCharacters.length - 1].end;
+    const currentWishEndTimestamp = Date.parse(new Date(currentDeadline));
+    const diffTimestamp = currentWishEndTimestamp - currentTimestamp;
+    const diffTime = new Date(parseInt(diffTimestamp));
+    let d = diffTime.getDate(), h = diffTime.getHours(), m = diffTime.getMinutes(), s = diffTime.getSeconds();
+    const formatTime = x => x < 10 ? ('0' + x) : x;
+    return formatTime(d) + "天" + formatTime(h) + ":" + formatTime(m) + ":" + formatTime(s);
+}
+//当前时间
+setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二三四五六'.charAt (new Date().getDay());", 1000);
+//结束时间
+setInterval("deadline.innerHTML = deadlineCurrentWish()", 1000);
+
+//当前时间定位
+const setCurrentPos = () => {
+    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
+}
+setCurrentPos();
 
 for (let i = 0; i < length; ++i) {
     // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
@@ -973,8 +1099,8 @@ for (let i = 0; i < length; ++i) {
     // document.getElementById('nameCharacter' + i).innerHTML = eventsCharacters[i].name[1] + " " + eventsCharacters[i].shortname[1] + " " + eventsCharacters[i].name[0];
     // document.getElementById('nameWeapon' + i).innerHTML = eventsWeapons[i].name[1] + eventsWeapons[i].name[0];
 
-    // document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
-    // document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
+    document.getElementById('timeStartCharacter' + i).innerHTML = eventsCharacters[i].start;
+    document.getElementById('timeEndCharacter' + i).innerHTML = eventsCharacters[i].end;
     // document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
     // document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
 
@@ -1006,3 +1132,122 @@ for (let i = 0; i < length; ++i) {
 }
 
 
+let dayWidth = 50;
+const eventHeight = 36;
+const eventMargin = 20;
+const padding = 10;
+
+
+let lastEventTime = dayjs().year(2000);
+let firstDay = dayjs();
+let dates = [];
+let months = {};
+let monthList = [];
+let events = [];
+let today = dayjs();
+
+
+function convertToDate(e, i) {
+    let start = dayjs(e.start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
+    const end = dayjs(e.end, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
+    const duration = end.diff(start, 'day', true);
+
+    if (lastEventTime < end) lastEventTime = end;
+
+    return {
+        ...e,
+        index: i,
+        start,
+        end,
+        duration,
+    };
+}
+
+function processEvent() {
+    events = eventsData.map((e, i) => {
+        if (Array.isArray(e)) {
+            return e.map((item) => convertToDate(item, i));
+        }
+
+        return convertToDate(e, i);
+    });
+
+    events
+        .slice()
+        .sort((a, b) => {
+            if (Array.isArray(a) && Array.isArray(b)) {
+                return a[0].start - b[0].start;
+            } else if (!Array.isArray(a) && Array.isArray(b)) {
+                return a.start - b[0].start;
+            } else if (Array.isArray(a) && !Array.isArray(b)) {
+                return a[0].start - b.start;
+            } else {
+                return a.start - b.start;
+            }
+        })
+        .forEach((e, i) => {
+            if (i === 0) {
+                if (Array.isArray(e)) {
+                    firstDay = e[0].start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
+                } else {
+                    firstDay = e.start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
+                }
+            }
+
+            if (Array.isArray(e)) {
+                for (let j = 0; j < e.length; j++) {
+                    const current = e[j];
+
+                    events[current.index][j].offset = Math.abs(firstDay.diff(events[current.index][j].start, 'day', true));
+                }
+            } else {
+                events[e.index].offset = Math.abs(firstDay.diff(e.start, 'day', true));
+            }
+        });
+
+    const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, 'day', true))) + 2 * padding;
+
+    months = [];
+    for (let i = 0; i < dayTotal; i++) {
+        const month = firstDay.add(i, 'day').format('MMMM');
+        if (months[month] === undefined) {
+            months[month] = {
+                total: 0,
+                offset: 0,
+            };
+        }
+
+        months[month].total++;
+    }
+
+    monthList = Object.entries(months);
+    for (let i = 0; i < monthList.length; i++) {
+        monthList[i][1].offset = i - 1 >= 0 ? monthList[i - 1][1].total + monthList[i - 1][1].offset : 0;
+    }
+
+    dates = [...new Array(dayTotal)].map((_, i) => firstDay.add(i, 'day').date());
+}
+
+processEvent();
+
+console.log(dates)
+console.log(monthList)
+console.log(events)
+
+
+for (let i = 0; i < 459; ++i) {
+    let leftClass = document.getElementsByClassName('left-day-' + i);
+    for (let lClass of leftClass) {
+        lClass.style.left = (dayWidth * i) + 'px';
+    }
+    document.getElementById('timeline-day-' + i).innerHTML = dates[i];
+}
+
+for (let i = 0; i < 12; ++i) {
+    let leftClass = document.getElementsByClassName('left-month-' + i);
+    for (let lClass of leftClass) {
+        lClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
+        lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
+    }
+    document.getElementById('timeline-month-' + i).innerHTML = monthList[i][0];
+}
