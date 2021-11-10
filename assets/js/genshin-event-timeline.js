@@ -1131,3 +1131,123 @@ for (let i = 0; i < length; ++i) {
     }
 }
 
+
+let dayWidth = 50;
+const eventHeight = 36;
+const eventMargin = 20;
+const padding = 10;
+
+
+let lastEventTime = dayjs().year(2000);
+let firstDay = dayjs();
+let dates = [];
+let months = {};
+let monthList = [];
+let events = [];
+let today = dayjs();
+
+
+function convertToDate(e, i) {
+    let start = dayjs(e.start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
+    const end = dayjs(e.end, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
+    const duration = end.diff(start, 'day', true);
+
+    if (lastEventTime < end) lastEventTime = end;
+
+    return {
+        ...e,
+        index: i,
+        start,
+        end,
+        duration,
+    };
+}
+
+function processEvent() {
+    events = eventsData.map((e, i) => {
+        if (Array.isArray(e)) {
+            return e.map((item) => convertToDate(item, i));
+        }
+
+        return convertToDate(e, i);
+    });
+
+    events
+        .slice()
+        .sort((a, b) => {
+            if (Array.isArray(a) && Array.isArray(b)) {
+                return a[0].start - b[0].start;
+            } else if (!Array.isArray(a) && Array.isArray(b)) {
+                return a.start - b[0].start;
+            } else if (Array.isArray(a) && !Array.isArray(b)) {
+                return a[0].start - b.start;
+            } else {
+                return a.start - b.start;
+            }
+        })
+        .forEach((e, i) => {
+            if (i === 0) {
+                if (Array.isArray(e)) {
+                    firstDay = e[0].start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
+                } else {
+                    firstDay = e.start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
+                }
+            }
+
+            if (Array.isArray(e)) {
+                for (let j = 0; j < e.length; j++) {
+                    const current = e[j];
+
+                    events[current.index][j].offset = Math.abs(firstDay.diff(events[current.index][j].start, 'day', true));
+                }
+            } else {
+                events[e.index].offset = Math.abs(firstDay.diff(e.start, 'day', true));
+            }
+        });
+
+    const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, 'day', true))) + 2 * padding;
+
+    months = [];
+    for (let i = 0; i < dayTotal; i++) {
+        const month = firstDay.add(i, 'day').format('MMMM');
+        if (months[month] === undefined) {
+            months[month] = {
+                total: 0,
+                offset: 0,
+            };
+        }
+
+        months[month].total++;
+    }
+
+    monthList = Object.entries(months);
+    for (let i = 0; i < monthList.length; i++) {
+        monthList[i][1].offset = i - 1 >= 0 ? monthList[i - 1][1].total + monthList[i - 1][1].offset : 0;
+    }
+
+    dates = [...new Array(dayTotal)].map((_, i) => firstDay.add(i, 'day').date());
+}
+
+processEvent();
+
+console.log(dates)
+console.log(monthList)
+console.log(events)
+
+
+for (let i = 0; i < 459; ++i) {
+    let leftClass = document.getElementsByClassName('left-day-' + i);
+    for (let lClass of leftClass) {
+        lClass.style.left = (dayWidth * i) + 'px';
+    }
+    document.getElementById('timeline-day-' + i).innerHTML = dates[i];
+}
+
+for (let i = 0; i < 12; ++i) {
+    let leftClass = document.getElementsByClassName('left-month-' + i);
+    for (let lClass of leftClass) {
+        lClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
+        lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
+    }
+    document.getElementById('timeline-month-' + i).innerHTML = monthList[i][0];
+}
