@@ -42,11 +42,16 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 </div>
 
 
-<div class="timeline-scroll-x">
+<div class="timeline-scroll-x" id="pos-timeline" >
 
 
     <!-- 时间线 -->
     {% for i in (0..20) %}
+
+    {% if i == 12 %}
+    <div id="location"></div>
+    These shoes are awesome!
+    {% endif %}
 
     <div class="timeline-area">
         <div class="timeline-wrapper left-t{{i}}">
@@ -92,3 +97,8 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
     <!--</div>-->
 
 </div>
+
+
+<script>
+    document.getElementById('pos-timeline').scrollLeft = document.getElementById('location').offsetLeft
+</script>
