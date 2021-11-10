@@ -1246,8 +1246,11 @@ for (let i = 0; i < 459; ++i) {
 for (let i = 0; i < 12; ++i) {
     let leftClass = document.getElementsByClassName('left-month-' + i);
     for (let lClass of leftClass) {
-        lClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
         lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
+    }
+    let widthClass = document.getElementsByClassName('width-month-' + i);
+    for (let wClass of widthClass) {
+        wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
     }
     document.getElementById('timeline-month-' + i).innerHTML = monthList[i][0];
 }

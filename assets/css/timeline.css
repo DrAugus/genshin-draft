@@ -25,8 +25,7 @@
     background-color: #99cc66;
     width: 1px;
     position: relative;
-    /*margin-left: 29px;*/
-    top: 50px;
+    margin-left: 29px;
 }
 
 .timeline-index {
