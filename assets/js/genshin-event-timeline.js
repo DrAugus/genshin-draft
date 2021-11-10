@@ -1079,10 +1079,15 @@ const deadlineCurrentWish = () => {
     return formatTime(d) + "天" + formatTime(h) + ":" + formatTime(m) + ":" + formatTime(s);
 }
 //当前时间
-setInterval("time_str.innerHTML=new Date().toString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());", 1000);
+setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二三四五六'.charAt (new Date().getDay());", 1000);
 //结束时间
-setInterval("deadline.innerHTML=deadlineCurrentWish()", 1000);
+setInterval("deadline.innerHTML = deadlineCurrentWish()", 1000);
 
+//当前时间定位
+const setCurrentPos = () => {
+    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
+}
+setCurrentPos();
 
 for (let i = 0; i < length; ++i) {
     // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
