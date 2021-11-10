@@ -1043,11 +1043,8 @@ const autoPlayVoice = () => {
         }
     }
 
-    let autoPlay = document.getElementsByClassName('hutao-voice');
     let index = getVoiceIndex(hour)
-    for (let eItem of autoPlay) {
-        eItem.style.src = voiceHuTao[index].src;
-    }
+    document.getElementById('hutao-voice').src = voiceHuTao[index].src;
     document.getElementById('hutao-text').innerHTML = voiceHuTao[index].text;
 }
 autoPlayVoice();
