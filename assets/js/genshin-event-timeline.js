@@ -985,7 +985,7 @@ const voiceHuTao = [
     {
         index: 0,
         text: '嗯~早起身体好，晚睡人会飘。',
-        src: 'https://patchwiki.biligame.com/images/ys/0/0e/0lqal4lydx4k5nz8xps3fg08gxyzi3u.mp3',
+        src: 'https://patchwiki.biligame.com/images/ys/8/8d/n8gei38e7k4v8os3scp7uormhc633ib.mp3',
     },
     {
         index: 1,
