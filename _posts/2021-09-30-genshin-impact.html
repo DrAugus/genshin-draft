@@ -15,23 +15,45 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 <!-- TODO 排序-->
 
 
-旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！
+<img src="/assets/res/genshin-impact/current/wish20/hutao3.png" alt=""/>
 
-<div class="timeline-trace"><span>活动祈愿时间线</span></div>
+<div class="timeline-top-info">
+
+    <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
+
+    <h3>当前祈愿为——<span style="color: #fa5d3e" id="currentCharacter"></span></h3>
+    <p style="color: #9b574a">The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather
+        young age.</p>
+    <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
+    <h4>当前时间为：</h4>
+    <span id="time_str"></span>
+    <h4>结束祈愿：<span id="deadline"></span></h4>
+
+</div>
+
 
 <div class="timeline-scroll-x">
 
 
     <!-- 时间线 -->
-    {% for i in (0..19) %}
+    {% for i in (0..20) %}
 
     <div class="timeline-area">
-        <div class="timeline-date left-t{{i}}"><span>{{i}}</span></div>
+        <div class="timeline-wrapper left-t{{i}}">
+            <div class="timeline-index">{{i}}</div>
+            <div class="timeline-date">
+                {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}
+                {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}
+                <div class="col s12" id="{{timeStartCharacter}}"></div>
+                <br>
+                <div class="col s12" id="{{timeEndCharacter}}"></div>
+            </div>
+        </div>
         <div class="event-item event-item-{{i}} left-t{{i}}"><span class="event-name-{{i}}"></span></div>
     </div>
     {% endfor %}
 
-    <!--        {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}-->
+
     <!--        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>-->
     <!--    {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}-->
     <!--    {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}-->

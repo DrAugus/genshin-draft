@@ -1,8 +1,15 @@
-.timeline-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 100%;
+.timeline-top-info {
+    background-image: url("/assets/res/genshin-impact/current/wish20/hutao2.png");
+    background-position: 45% 20%;
+    background-size: 190%;
+}
+
+@media screen and (max-width: 610px) {
+    .timeline-top-info {
+        background-position: 65% 15%;
+        background-size: auto;
+        min-width: 185px;
+    }
 }
 
 .timeline-area {
@@ -12,7 +19,7 @@
     width: 100%;
 }
 
-.timeline-date {
+.timeline-wrapper {
     display: flex;
     /*background: url("../res/genshin-impact/timeline.svg");*/
     background-color: #99cc66;
@@ -21,7 +28,7 @@
     margin-left: 29px;
 }
 
-.timeline-date > span {
+.timeline-index {
     position: absolute;
     margin-left: -15px;
     text-align: center;
@@ -30,6 +37,10 @@
     border-radius: 25px;
     font-size: 20px;
     color: #fff3e0;
+}
+
+.timeline-date {
+    margin-top: 30px;
 }
 
 .timeline-text {
@@ -97,10 +108,10 @@ div.event-item {
     border-radius: 10px;
     opacity: 1;
     right: 0;
-    margin-top: 30px;
+    margin-top: 77px;
     width: 750px;
-    max-width: 200px;
-    height: 36px;
+    max-width: 256px;
+    height: 88px;
     background-repeat: no-repeat;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }

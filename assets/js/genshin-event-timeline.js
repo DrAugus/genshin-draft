@@ -566,6 +566,19 @@ const eventsData = [
             timezoneDependent: true,
             version: '2.2',
         },
+        {
+            no: 20,
+            shortname: ['hu_tao', '胡桃'],
+            name: ['Moment of Bloom - Hu Tao Banner', '「雪霁梅香」'],
+            pos: '60% 20%',
+            zoom: '180%',
+            image: 'moment_of_bloom_2.jpg',
+            start: '2021-11-02 18:00:00',
+            end: '2021-11-23 14:59:59',
+            color: colorCharacter[numC.huo],
+            url: 'https://bbs.mihoyo.com/ys/article/11444616',
+            showOnHome: true,
+        },
     ],
     [
         {
@@ -787,6 +800,16 @@ const eventsData = [
             showOnHome: true,
             timezoneDependent: true,
         },
+        {
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
+            pos: '40% 40%',
+            image: 'epitome_invocation_20.jpg',
+            start: '2021-11-02 18:00:00',
+            end: '2021-11-23 14:59:59',
+            color: '#FFAA4B',
+            url: 'https://bbs.mihoyo.com/ys/article/11444617',
+            showOnHome: true,
+        },
     ],
     [
         {
@@ -963,6 +986,29 @@ const eventsCharacters = eventsData[4];
 const eventsWeapons = eventsData[5];
 const length = eventsCharacters.length < eventsWeapons.length ? eventsCharacters.length : eventsWeapons.length;
 
+
+//最新的祈愿
+
+document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].name[1] + eventsCharacters[eventsCharacters.length - 1].shortname[1];
+document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
+document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
+
+const deadlineCurrentWish = () => {
+    const currentTimestamp = Date.parse(new Date());
+    const currentDeadline = eventsCharacters[eventsCharacters.length - 1].end;
+    const currentWishEndTimestamp = Date.parse(new Date(currentDeadline));
+    const diffTimestamp = currentWishEndTimestamp - currentTimestamp;
+    const diffTime = new Date(parseInt(diffTimestamp));
+    let d = diffTime.getDate(), h = diffTime.getHours(), m = diffTime.getMinutes(), s = diffTime.getSeconds();
+    const formatTime = x => x < 10 ? ('0' + x) : x;
+    return formatTime(d) + "天" + formatTime(h) + ":" + formatTime(m) + ":" + formatTime(s);
+}
+//当前时间
+setInterval("time_str.innerHTML=new Date().toString()+' 星期'+'日一二三四五六'.charAt (new Date().getDay());", 1000);
+//结束时间
+setInterval("deadline.innerHTML=deadlineCurrentWish()", 1000);
+
+
 for (let i = 0; i < length; ++i) {
     // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
     // document.getElementById('imgWeapon' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsWeapons[i].image;
@@ -973,8 +1019,8 @@ for (let i = 0; i < length; ++i) {
     // document.getElementById('nameCharacter' + i).innerHTML = eventsCharacters[i].name[1] + " " + eventsCharacters[i].shortname[1] + " " + eventsCharacters[i].name[0];
     // document.getElementById('nameWeapon' + i).innerHTML = eventsWeapons[i].name[1] + eventsWeapons[i].name[0];
 
-    // document.getElementById('timeStartCharacter' + i).innerHTML = timeStartCharacter[i];
-    // document.getElementById('timeEndCharacter' + i).innerHTML = timeEndCharacter[i];
+    document.getElementById('timeStartCharacter' + i).innerHTML = eventsCharacters[i].start;
+    document.getElementById('timeEndCharacter' + i).innerHTML = eventsCharacters[i].end;
     // document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
     // document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
 
@@ -1004,5 +1050,4 @@ for (let i = 0; i < length; ++i) {
         lClass.style.left = (150 * i) + 'px';
     }
 }
-
 
