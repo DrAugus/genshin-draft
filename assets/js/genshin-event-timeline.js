@@ -1068,6 +1068,7 @@ document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsC
 document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
 document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
 
+//未使用dayjs safari不支持
 const deadlineCurrentWish = () => {
     const currentTimestamp = Date.parse(new Date());
     const currentDeadline = eventsCharacters[eventsCharacters.length - 1].end;
@@ -1078,10 +1079,17 @@ const deadlineCurrentWish = () => {
     const formatTime = x => x < 10 ? ('0' + x) : x;
     return formatTime(d) + "天" + formatTime(h) + ":" + formatTime(m) + ":" + formatTime(s);
 }
+//使用dayjs
+const wishDeadline = () => {
+    const currentDL = eventsCharacters[eventsCharacters.length - 1].end;
+    const now = dayjs();
+    const diffTimestamp = now.diff(currentDL);
+    return dayjs(diffTimestamp).format('DD天HH:mm:ss')
+}
 //当前时间
 setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二三四五六'.charAt (new Date().getDay());", 1000);
 //结束时间
-setInterval("deadline.innerHTML = deadlineCurrentWish()", 1000);
+setInterval("deadline.innerHTML = wishDeadline()", 1000);
 
 //当前时间定位
 const setCurrentPos = () => {
