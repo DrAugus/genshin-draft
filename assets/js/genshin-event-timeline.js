@@ -1090,11 +1090,6 @@ setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二
 //结束时间
 setInterval("deadline.innerHTML = wishDeadline();", 1000);
 
-//当前时间定位
-const setCurrentPos = () => {
-    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
-}
-setCurrentPos();
 
 for (let i = 0; i < length; ++i) {
     // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
@@ -1281,7 +1276,8 @@ const countDays = allDays.length
 for (let i = 0; i < dates.length; ++i) {
     let leftClass = document.getElementsByClassName('left-day-' + i);
     for (let lClass of leftClass) {
-        lClass.style.left = (dayWidth * i) + 'px';
+        //圆圈timeline-index的width为30
+        lClass.style.left = ((dayWidth - 30) * i) + 'px';
     }
     document.getElementById('timeline-day-' + i).innerHTML = dates[i];
 }
@@ -1298,3 +1294,25 @@ for (let i = 0; i < monthList.length; ++i) {
     }
     document.getElementById('timeline-month-' + i).innerHTML = monthList[i][0];
 }
+
+let todayOffset = Math.abs(firstDay.diff(today, 'day', true));
+let leftToday = document.getElementsByClassName('timeline-line-pos');
+for(let l of leftToday){
+    //timeline-index的width为30
+    l.style.left = todayOffset * dayWidth +30 + 'px';
+}
+
+
+//当前时间定位
+const setCurrentPos = () => {
+    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
+    document.getElementById('set-pos-now').scrollLeft = document.getElementById('now-pos').offsetLeft;
+}
+setCurrentPos();
+
+const setTodayTime = () => {
+    const d = dayjs()
+    document.getElementById('today-time').innerHTML = d.format('HH:mm:ss')
+}
+setInterval("setTodayTime()", 1000);
+

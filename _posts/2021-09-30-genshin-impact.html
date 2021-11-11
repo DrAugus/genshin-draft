@@ -42,21 +42,24 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
 </div>
 
-
-<!--时间线测试 目前发现只要把scroll position设置为 absolute即可-->
-<div class="timeline-scroll-x">
+<div class="timeline-scroll-x" id="set-pos-now">
 
     <div class="timeline-month">
         {% for i in (0..15) %}
-        <div class="  left-month-{{i}}">
+        <div class="left-month-{{i}}">
             <div class="width-month-{{i}}"><span id="timeline-month-{{i}}"></span></div>
         </div>
         {% endfor %}
     </div>
 
     <div class="timeline-day">
+        <div class="timeline-line-pos" id="now-pos">
+            <div class="absolute rounded-xl top-0 text-center bg-white text-black" id="today-time">
+            </div>
+        </div>
+
         {% for i in (0..458) %}
-        <div class=" timeline-wrapper left-day-{{i}}" style="top: 50px">
+        <div class="timeline-wrapper left-day-{{i}}">
             <div class="timeline-index"><span id="timeline-day-{{i}}"></span></div>
         </div>
         {% endfor %}

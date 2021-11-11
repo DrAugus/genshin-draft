@@ -29,6 +29,15 @@
     margin-left: 29px;
 }
 
+.timeline-line-pos {
+    position: relative;
+    background-color: #cc668a;
+    width: 2px;
+    min-width: 2px;
+    height: calc(100% - 10px);
+    top: 50px;
+}
+
 .timeline-index {
     position: absolute;
     margin-left: -15px;
@@ -124,19 +133,23 @@ div.timeline-scroll-x {
     overflow-y: hidden;
     overflow-x: scroll;
     /*display: flex;*/
-    height: 800px;
+    height: 1000px;
 }
 
-div.timeline-month{
+div.timeline-month {
     display: flex;
-    top:20px;
+    top: 20px;
 }
 
-div.timeline-day{
+div.timeline-day {
     display: flex;
-    height: 800px;
+    height: 700px;
 }
 
+div.timeline-wish {
+    display: flex;
+    top: 0
+}
 
 -webkit-scrollbar {
     display: none;
