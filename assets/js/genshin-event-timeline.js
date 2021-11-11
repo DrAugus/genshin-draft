@@ -1068,26 +1068,28 @@ document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsC
 document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
 document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
 
-const deadlineCurrentWish = () => {
-    const currentTimestamp = Date.parse(new Date());
-    const currentDeadline = eventsCharacters[eventsCharacters.length - 1].end;
-    const currentWishEndTimestamp = Date.parse(new Date(currentDeadline));
-    const diffTimestamp = currentWishEndTimestamp - currentTimestamp;
-    const diffTime = new Date(parseInt(diffTimestamp));
-    let d = diffTime.getDate(), h = diffTime.getHours(), m = diffTime.getMinutes(), s = diffTime.getSeconds();
-    const formatTime = x => x < 10 ? ('0' + x) : x;
-    return formatTime(d) + "天" + formatTime(h) + ":" + formatTime(m) + ":" + formatTime(s);
+
+//秒转换
+const secondsFormat = (s) => {
+    const day = Math.floor(s / (24 * 3600)); // Math.floor()向下取整
+    const hour = Math.floor((s - day * 24 * 3600) / 3600);
+    const minute = Math.floor((s - day * 24 * 3600 - hour * 3600) / 60);
+    const second = s - day * 24 * 3600 - hour * 3600 - minute * 60;
+    return day + "天" + hour + "时" + minute + "分" + second + "秒";
+}
+//使用dayjs
+const wishDeadline = () => {
+    const currentDL = dayjs(eventsCharacters[eventsCharacters.length - 1].end)
+    const now = dayjs();
+    let diff = currentDL.diff(now);
+    diff = Math.floor(diff / 1000);
+    return secondsFormat(diff);
 }
 //当前时间
 setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二三四五六'.charAt (new Date().getDay());", 1000);
 //结束时间
-setInterval("deadline.innerHTML = deadlineCurrentWish()", 1000);
+setInterval("deadline.innerHTML = wishDeadline();", 1000);
 
-//当前时间定位
-const setCurrentPos = () => {
-    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
-}
-setCurrentPos();
 
 for (let i = 0; i < length; ++i) {
     // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
@@ -1141,7 +1143,8 @@ const padding = 10;
 let lastEventTime = dayjs().year(2000);
 let firstDay = dayjs();
 let dates = [];
-let months = {};
+let years = [];
+let yearList = [];
 let monthList = [];
 let events = [];
 let today = dayjs();
@@ -1150,7 +1153,7 @@ let today = dayjs();
 function convertToDate(e, i) {
     let start = dayjs(e.start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
     const end = dayjs(e.end, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
-    const duration = end.diff(start, 'day', true);
+    const duration = end.diff(start, 'seconds', true);
 
     if (lastEventTime < end) lastEventTime = end;
 
@@ -1186,6 +1189,7 @@ function processEvent() {
             }
         })
         .forEach((e, i) => {
+            // i为0是角色祈愿 找到第一个角色祈愿的开始时间 提前padding天 设为firstDay
             if (i === 0) {
                 if (Array.isArray(e)) {
                     firstDay = e[0].start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
@@ -1207,20 +1211,27 @@ function processEvent() {
 
     const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, 'day', true))) + 2 * padding;
 
-    months = [];
     for (let i = 0; i < dayTotal; i++) {
+        const year = firstDay.add(i, 'day').format('YYYY');
         const month = firstDay.add(i, 'day').format('MMMM');
-        if (months[month] === undefined) {
-            months[month] = {
+        if (years[year] === undefined) {
+            years[year] = [];
+        }
+        if (years[year][month] === undefined) {
+            years[year][month] = {
                 total: 0,
                 offset: 0,
             };
         }
-
-        months[month].total++;
+        years[year][month].total++;
     }
 
-    monthList = Object.entries(months);
+    yearList = Object.entries(years);
+    for (let i = 0; i < yearList.length; i++) {
+        let obj = Object.entries(yearList[i][1]);
+        monthList = monthList.concat(obj);
+    }
+
     for (let i = 0; i < monthList.length; i++) {
         monthList[i][1].offset = i - 1 >= 0 ? monthList[i - 1][1].total + monthList[i - 1][1].offset : 0;
     }
@@ -1230,24 +1241,78 @@ function processEvent() {
 
 processEvent();
 
-console.log(dates)
-console.log(monthList)
-console.log(events)
+// console.log('dates', dates)
+// console.log('monthList', monthList)
+// console.log('events', events)
 
+const getDuration = (type, start, end) => {
+    const $array = [];
+    const current = new Date(start);
+    end = new Date(end);
+    while (current <= end) {
+        $array.push(new Date(current));
+        if (type == 'hour') {//小时
+            current.setHours(current.getHours() + 1);
+        } else if (type == 'day') {//天
+            current.setDate(current.getDate() + 1);
+        } else if (type == 'week') {//周
+            current.setDate(current.getDate() + 7);
+        } else if (type == 'month') {//月
+            current.setMonth(current.getMonth() + 1);
+        } else {//默认天
+            current.setDate(current.getDate() + 1);
+        }
+    }
+    return $array;
+}
 
-for (let i = 0; i < 459; ++i) {
+let startD = dayjs(eventsCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
+let endD = dayjs(eventsCharacters[eventsCharacters.length - 1].end).add(7, 'day').format('YYYY-MM-DD HH:mm:ss')
+const allDays = getDuration('day', startD, endD)
+const countDays = allDays.length
+// console.log(allDays)
+// console.log('countDays', countDays)
+
+for (let i = 0; i < dates.length; ++i) {
     let leftClass = document.getElementsByClassName('left-day-' + i);
     for (let lClass of leftClass) {
-        lClass.style.left = (dayWidth * i) + 'px';
+        //圆圈timeline-index的width为30
+        lClass.style.left = ((dayWidth - 30) * i) + 'px';
     }
     document.getElementById('timeline-day-' + i).innerHTML = dates[i];
 }
 
-for (let i = 0; i < 12; ++i) {
+console.log(monthList)
+for (let i = 0; i < monthList.length; ++i) {
     let leftClass = document.getElementsByClassName('left-month-' + i);
     for (let lClass of leftClass) {
-        lClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
         lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
+    }
+    let widthClass = document.getElementsByClassName('width-month-' + i);
+    for (let wClass of widthClass) {
+        wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
     }
     document.getElementById('timeline-month-' + i).innerHTML = monthList[i][0];
 }
+
+let todayOffset = Math.abs(firstDay.diff(today, 'day', true));
+let leftToday = document.getElementsByClassName('timeline-line-pos');
+for(let l of leftToday){
+    //timeline-index的width为30
+    l.style.left = todayOffset * dayWidth +30 + 'px';
+}
+
+
+//当前时间定位
+const setCurrentPos = () => {
+    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
+    document.getElementById('set-pos-now').scrollLeft = document.getElementById('now-pos').offsetLeft;
+}
+setCurrentPos();
+
+const setTodayTime = () => {
+    const d = dayjs()
+    document.getElementById('today-time').innerHTML = d.format('HH:mm:ss')
+}
+setInterval("setTodayTime()", 1000);
+

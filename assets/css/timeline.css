@@ -24,8 +24,17 @@
     /*background: url("../res/genshin-impact/timeline.svg");*/
     background-color: #99cc66;
     width: 1px;
+    min-width: 1px;
     position: relative;
-    /*margin-left: 29px;*/
+    margin-left: 29px;
+}
+
+.timeline-line-pos {
+    position: relative;
+    background-color: #cc668a;
+    width: 2px;
+    min-width: 2px;
+    height: calc(100% - 10px);
     top: 50px;
 }
 
@@ -123,8 +132,23 @@ div.timeline-scroll-x {
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
+    /*display: flex;*/
+    height: 600px;
+}
+
+div.timeline-month {
     display: flex;
-    height: 256px;
+    top: 20px;
+}
+
+div.timeline-day {
+    display: flex;
+    height: 400px;
+}
+
+div.timeline-wish {
+    /*display: flex;*/
+    position: absolute;
 }
 
 -webkit-scrollbar {
