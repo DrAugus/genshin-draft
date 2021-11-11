@@ -1148,7 +1148,8 @@ const padding = 10;
 let lastEventTime = dayjs().year(2000);
 let firstDay = dayjs();
 let dates = [];
-let months = {};
+let years = [];
+let yearList = [];
 let monthList = [];
 let events = [];
 let today = dayjs();
@@ -1157,7 +1158,7 @@ let today = dayjs();
 function convertToDate(e, i) {
     let start = dayjs(e.start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
     const end = dayjs(e.end, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
-    const duration = end.diff(start, 'day', true);
+    const duration = end.diff(start, 'seconds', true);
 
     if (lastEventTime < end) lastEventTime = end;
 
@@ -1193,6 +1194,7 @@ function processEvent() {
             }
         })
         .forEach((e, i) => {
+            // i为0是角色祈愿 找到第一个角色祈愿的开始时间 提前padding天 设为firstDay
             if (i === 0) {
                 if (Array.isArray(e)) {
                     firstDay = e[0].start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
@@ -1214,20 +1216,27 @@ function processEvent() {
 
     const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, 'day', true))) + 2 * padding;
 
-    months = [];
     for (let i = 0; i < dayTotal; i++) {
+        const year = firstDay.add(i, 'day').format('YYYY');
         const month = firstDay.add(i, 'day').format('MMMM');
-        if (months[month] === undefined) {
-            months[month] = {
+        if (years[year] === undefined) {
+            years[year] = [];
+        }
+        if (years[year][month] === undefined) {
+            years[year][month] = {
                 total: 0,
                 offset: 0,
             };
         }
-
-        months[month].total++;
+        years[year][month].total++;
     }
 
-    monthList = Object.entries(months);
+    yearList = Object.entries(years);
+    for (let i = 0; i < yearList.length; i++) {
+        let obj = Object.entries(yearList[i][1]);
+        monthList = monthList.concat(obj);
+    }
+
     for (let i = 0; i < monthList.length; i++) {
         monthList[i][1].offset = i - 1 >= 0 ? monthList[i - 1][1].total + monthList[i - 1][1].offset : 0;
     }
@@ -1242,7 +1251,8 @@ console.log(monthList)
 console.log(events)
 
 
-for (let i = 0; i < 459; ++i) {
+
+for (let i = 0; i < dates.length; ++i) {
     let leftClass = document.getElementsByClassName('left-day-' + i);
     for (let lClass of leftClass) {
         lClass.style.left = (dayWidth * i) + 'px';
@@ -1250,7 +1260,8 @@ for (let i = 0; i < 459; ++i) {
     document.getElementById('timeline-day-' + i).innerHTML = dates[i];
 }
 
-for (let i = 0; i < 12; ++i) {
+console.log(monthList)
+for (let i = 0; i < monthList.length; ++i) {
     let leftClass = document.getElementsByClassName('left-month-' + i);
     for (let lClass of leftClass) {
         lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';

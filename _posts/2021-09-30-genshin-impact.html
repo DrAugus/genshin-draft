@@ -32,8 +32,9 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
     <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
 
     <h3>当前祈愿为——<span style="color: #fa5d3e" id="currentCharacter"></span></h3>
-    <p style="color: #9b574a">The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather
-        young age.</p>
+    <p style="color: #9b574a">
+        The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
+    </p>
     <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
     <h4>当前时间为：</h4>
     <span id="time_str"></span>
@@ -45,17 +46,27 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 <!--时间线测试 目前发现只要把scroll position设置为 absolute即可-->
 <div class="timeline-scroll-x">
 
-    {% for i in (0..458) %}
-    <div class="timeline-wrapper left-day-{{i}}" style="top: 50px">
-        <div class="timeline-index"><span id="timeline-day-{{i}}"></span></div>
+    <div class="timeline-month">
+        {% for i in (0..15) %}
+        <div class="  left-month-{{i}}">
+            <div class="width-month-{{i}}"><span id="timeline-month-{{i}}"></span></div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
-    {% for i in (0..11) %}
-    <div class="left-month-{{i}}">
-        <div class="width-month-{{i}}"><span id="timeline-month-{{i}}"></span></div>
+    <div class="timeline-day">
+        {% for i in (0..458) %}
+        <div class=" timeline-wrapper left-day-{{i}}" style="top: 50px">
+            <div class="timeline-index"><span id="timeline-day-{{i}}"></span></div>
+        </div>
+        {% endfor %}
+
     </div>
-    {% endfor %}
+
+
+
+
+
 
 </div>
 

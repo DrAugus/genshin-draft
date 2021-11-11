@@ -123,9 +123,20 @@ div.timeline-scroll-x {
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
-    display: flex;
-    height: 256px;
+    /*display: flex;*/
+    height: 800px;
 }
+
+div.timeline-month{
+    display: flex;
+    top:20px;
+}
+
+div.timeline-day{
+    display: flex;
+    height: 800px;
+}
+
 
 -webkit-scrollbar {
     display: none;
