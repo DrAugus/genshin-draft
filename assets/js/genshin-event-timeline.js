@@ -1246,11 +1246,37 @@ function processEvent() {
 
 processEvent();
 
-console.log(dates)
-console.log(monthList)
-console.log(events)
+// console.log('dates', dates)
+// console.log('monthList', monthList)
+// console.log('events', events)
 
+const getDuration = (type, start, end) => {
+    const $array = [];
+    const current = new Date(start);
+    end = new Date(end);
+    while (current <= end) {
+        $array.push(new Date(current));
+        if (type == 'hour') {//小时
+            current.setHours(current.getHours() + 1);
+        } else if (type == 'day') {//天
+            current.setDate(current.getDate() + 1);
+        } else if (type == 'week') {//周
+            current.setDate(current.getDate() + 7);
+        } else if (type == 'month') {//月
+            current.setMonth(current.getMonth() + 1);
+        } else {//默认天
+            current.setDate(current.getDate() + 1);
+        }
+    }
+    return $array;
+}
 
+let startD = dayjs(eventsCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
+let endD = dayjs(eventsCharacters[eventsCharacters.length - 1].end).add(7, 'day').format('YYYY-MM-DD HH:mm:ss')
+const allDays = getDuration('day', startD, endD)
+const countDays = allDays.length
+// console.log(allDays)
+// console.log('countDays', countDays)
 
 for (let i = 0; i < dates.length; ++i) {
     let leftClass = document.getElementsByClassName('left-day-' + i);
