@@ -133,7 +133,7 @@ div.timeline-scroll-x {
     overflow-y: hidden;
     overflow-x: scroll;
     /*display: flex;*/
-    height: 1000px;
+    height: 600px;
 }
 
 div.timeline-month {
@@ -143,12 +143,12 @@ div.timeline-month {
 
 div.timeline-day {
     display: flex;
-    height: 700px;
+    height: 400px;
 }
 
 div.timeline-wish {
-    display: flex;
-    top: 0
+    /*display: flex;*/
+    position: absolute;
 }
 
 -webkit-scrollbar {
