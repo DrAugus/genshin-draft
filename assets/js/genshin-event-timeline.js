@@ -1068,28 +1068,27 @@ document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsC
 document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
 document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
 
-//未使用dayjs safari不支持
-const deadlineCurrentWish = () => {
-    const currentTimestamp = Date.parse(new Date());
-    const currentDeadline = eventsCharacters[eventsCharacters.length - 1].end;
-    const currentWishEndTimestamp = Date.parse(new Date(currentDeadline));
-    const diffTimestamp = currentWishEndTimestamp - currentTimestamp;
-    const diffTime = new Date(parseInt(diffTimestamp));
-    let d = diffTime.getDate(), h = diffTime.getHours(), m = diffTime.getMinutes(), s = diffTime.getSeconds();
-    const formatTime = x => x < 10 ? ('0' + x) : x;
-    return formatTime(d) + "天" + formatTime(h) + ":" + formatTime(m) + ":" + formatTime(s);
+
+//秒转换
+const secondsFormat = (s) => {
+    const day = Math.floor(s / (24 * 3600)); // Math.floor()向下取整
+    const hour = Math.floor((s - day * 24 * 3600) / 3600);
+    const minute = Math.floor((s - day * 24 * 3600 - hour * 3600) / 60);
+    const second = s - day * 24 * 3600 - hour * 3600 - minute * 60;
+    return day + "天" + hour + "时" + minute + "分" + second + "秒";
 }
 //使用dayjs
 const wishDeadline = () => {
-    const currentDL = eventsCharacters[eventsCharacters.length - 1].end;
+    const currentDL = dayjs(eventsCharacters[eventsCharacters.length - 1].end)
     const now = dayjs();
-    const diffTimestamp = now.diff(currentDL);
-    return dayjs(diffTimestamp).format('DD天HH:mm:ss')
+    let diff = currentDL.diff(now);
+    diff = Math.floor(diff / 1000);
+    return secondsFormat(diff);
 }
 //当前时间
 setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二三四五六'.charAt (new Date().getDay());", 1000);
 //结束时间
-setInterval("deadline.innerHTML = wishDeadline()", 1000);
+setInterval("deadline.innerHTML = wishDeadline();", 1000);
 
 //当前时间定位
 const setCurrentPos = () => {
