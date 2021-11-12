@@ -42,7 +42,7 @@
     width: 2px;
     min-width: 2px;
     height: calc(100% - 10px);
-    top: 50px;
+    top: -25px;
 }
 
 .timeline-index {
@@ -136,7 +136,7 @@ div.event-img {
     border-radius: 10px;
     opacity: 0.8;
     right: 0;
-    width: 70%;
+    width: 55%;
     height: 100%;
     background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) no-repeat;
 }
@@ -148,7 +148,7 @@ div.timeline-scroll-x {
     overflow-y: hidden;
     overflow-x: scroll;
     /*display: flex;*/
-    height: 600px;
+    height: 350px;
 }
 
 div.timeline-month {
@@ -158,7 +158,7 @@ div.timeline-month {
 
 div.timeline-day {
     display: flex;
-    height: 400px;
+    height: 350px;
 }
 
 div.timeline-wish {
