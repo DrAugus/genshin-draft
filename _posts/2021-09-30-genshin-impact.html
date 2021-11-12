@@ -12,21 +12,6 @@ js: [
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
-
-<p id="hutao-text"></p>
-<audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
-
-
-<ul>
-    {% for i in (0..6) %}
-    <li><p id="hutao-text-{{i}}"></p>
-        <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
-    </li>
-    {% endfor %}
-</ul>
-
-<img src="/assets/res/genshin-impact/current/wish20/hutao3.png" alt=""/>
-
 <div class="timeline-top-info">
 
     <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
@@ -42,19 +27,34 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
 </div>
 
-<div class="timeline-scroll-x" id="set-pos-now">
+
+<p id="hutao-text"></p>
+<audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
+
+<ul>
+    {% for i in (0..6) %}
+    <li><p id="hutao-text-{{i}}"></p>
+        <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
+    </li>
+    {% endfor %}
+</ul>
+
+<img src="/assets/res/genshin-impact/current/wish20/hutao3.png" alt=""/>
+
+
+<div class="timeline-scroll-x" id="setNowPos">
 
     <div class="timeline-month">
         {% for i in (0..15) %}
-        <div class="left-month-{{i}}">
-            <div class="width-month-{{i}}"><span id="timeline-month-{{i}}"></span></div>
+        <div class="timeline-month-left-{{i}}">
+            <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
         </div>
         {% endfor %}
     </div>
 
     <div class="timeline-day">
-        <div class="timeline-line-pos" id="now-pos">
-            <div class="absolute" id="today-time"></div>
+        <div class="timeline-today-line-pos" id="findNowPos">
+            <div class="absolute" id="currentTime"></div>
         </div>
 
         <div class="timeline-wish">
@@ -62,24 +62,22 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                 {% for i in (0..20) %}
                 <div class="event-item event-item-{{i}}">
                     <div class="event-img event-img-{{i}}"></div>
-                    <span class="event-name-{{i}}" id="event-name-{{i}}" style="font-size: 5rem"></span>
-                    <br><span id="event-wish-s-{{i}}" style="font-size: 1rem"></span>
-                    <br><span id="event-wish-e-{{i}}" style="font-size: 1rem"></span>
+                    <span class="event-name-{{i}}" id="eventName{{i}}" style="font-size: 5rem"></span>
+                    <br><span id="eventWishS{{i}}" style="font-size: 1rem"></span>
+                    <br><span id="eventWishE{{i}}" style="font-size: 1rem"></span>
                 </div>
                 {% endfor %}
             </div>
         </div>
 
-
         {% for i in (0..458) %}
         <div class="timeline-wrapper left-day-{{i}}">
-            <div class="timeline-index"><span id="timeline-day-{{i}}"></span></div>
+            <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
         </div>
         {% endfor %}
 
 
     </div>
-
 
 </div>
 

@@ -1236,24 +1236,24 @@ for (let i = 0; i < dates.length; ++i) {
         //圆圈timeline-index的width为30
         lClass.style.left = ((dayWidth - 30) * i) + 'px';
     }
-    document.getElementById('timeline-day-' + i).innerHTML = dates[i];
+    document.getElementById('timelineDay' + i).innerHTML = dates[i];
 }
 
 console.log(monthList)
 for (let i = 0; i < monthList.length; ++i) {
-    let leftClass = document.getElementsByClassName('left-month-' + i);
+    let leftClass = document.getElementsByClassName('timeline-month-left-' + i);
     for (let lClass of leftClass) {
         lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
     }
-    let widthClass = document.getElementsByClassName('width-month-' + i);
+    let widthClass = document.getElementsByClassName('timeline-month-width-' + i);
     for (let wClass of widthClass) {
         wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
     }
-    document.getElementById('timeline-month-' + i).innerHTML = monthList[i][0];
+    document.getElementById('timelineMonthName' + i).innerHTML = monthList[i][0];
 }
 
 let todayOffset = Math.abs(firstDay.diff(today, 'day', true));
-let leftToday = document.getElementsByClassName('timeline-line-pos');
+let leftToday = document.getElementsByClassName('timeline-today-line-pos');
 for (let l of leftToday) {
     //timeline-index的width为30
     l.style.left = todayOffset * dayWidth + 30 + 'px';
@@ -1262,14 +1262,14 @@ for (let l of leftToday) {
 
 //当前时间定位
 const setCurrentPos = () => {
-    document.getElementById('set-pos-now').scrollLeft = document.getElementById('now-pos').offsetLeft-600;
+    document.getElementById('setNowPos').scrollLeft = document.getElementById('findNowPos').offsetLeft - 600;
 }
-console.log(document.getElementById('now-pos').offsetLeft)
+console.log(document.getElementById('findNowPos').offsetLeft)
 setCurrentPos();
 
 const setTodayTime = () => {
     const d = dayjs()
-    document.getElementById('today-time').innerHTML = d.format('HH:mm:ss')
+    document.getElementById('currentTime').innerHTML = d.format('HH:mm:ss')
 }
 setInterval("setTodayTime()", 1000);
 
@@ -1304,9 +1304,9 @@ for (let i = 0; i < length; ++i) {
         eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
             eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
     }
-    document.getElementById('event-name-' + i).innerHTML = e[i].shortname[1];
-    document.getElementById('event-wish-s-' + i).innerHTML = e[i].start;
-    document.getElementById('event-wish-e-' + i).innerHTML = e[i].end;
+    document.getElementById('eventName' + i).innerHTML = e[i].shortname[1];
+    document.getElementById('eventWishS' + i).innerHTML = e[i].start;
+    document.getElementById('eventWishE' + i).innerHTML = e[i].end;
 
 
     //left-t
