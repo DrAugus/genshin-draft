@@ -1,11 +1,10 @@
 .timeline-top-info {
-    background-image: url("/assets/res/genshin-impact/current/wish20/hutao2.png"), radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.5) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(255, 255, 255, 0.3) 166%);
-    background-position: 45% 20%;
-    background-size: 190%;
+    background-position: 125% 20%;
     border-radius: 10px;
+    background-repeat: no-repeat;
 }
 
-.timeline-top-cover{
+.timeline-top-cover {
     background: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
 }

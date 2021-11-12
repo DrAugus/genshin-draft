@@ -12,14 +12,24 @@ js: [
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
-<p id="hutao-text"></p>
+AUTOPLAY<p id="hutao-text"></p>
 <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
 
+<br><br>
+<details>
+    <summary>展开所有语音</summary>
+    <ul>
+        {% for i in (0..6) %}
+        <li><p id="hutao-text-{{i}}"></p>
+            <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
+        </li>
+        {% endfor %}
+    </ul>
+</details>
+<br>
 
 <div class="timeline-top-info z-depth-2">
-
     <div class="timeline-top-cover">
-
         <div style="margin-left: 10px">
 
             <br>
@@ -30,32 +40,23 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
             <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
 
-            <h3>当前祈愿为——<span style="color: #fa5d3e" id="currentCharacter"></span></h3>
-            <p style="color: #9b574a">
+            {% for i in (0..19) %}
+            <img src="/assets/res/genshin-impact/intertwined_fate.png" class="z-depth-0"
+                 style="width: 25px;" alt="">
+            {% endfor %}
+
+            <h3>当前祈愿为 <span class="current-wish-color" id="currentCharacter"></span></h3>
+            <p class="current-wish-color">
                 The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
             </p>
             <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-            <h4>当前时间为：</h4>
-            <span id="time_str"></span>
-            <h4>结束祈愿：<span id="deadline"></span></h4>
+            <h4>当前时间为：<span id="time_str"></span></h4>
+            <h4>祈愿倒计时：<span id="deadline"></span></h4>
             <br>
 
         </div>
-
-
     </div>
-
 </div>
-
-<ul>
-    {% for i in (0..6) %}
-    <li><p id="hutao-text-{{i}}"></p>
-        <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
-    </li>
-    {% endfor %}
-</ul>
-
-<img src="/assets/res/genshin-impact/current/wish20/hutao3.png" alt=""/>
 
 
 <div class="timeline-scroll-x" id="setNowPos">
@@ -69,6 +70,7 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
     </div>
 
     <div class="timeline-day">
+
         <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
             <div class="absolute" id="currentTime"></div>
         </div>
@@ -92,7 +94,6 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
             <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
         </div>
         {% endfor %}
-
 
     </div>
 

@@ -1073,11 +1073,17 @@ const length = eventsCharacters.length < eventsWeapons.length ? eventsCharacters
 
 
 //最新的祈愿
-
 document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].name[1] + eventsCharacters[eventsCharacters.length - 1].shortname[1];
 document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
 document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
-
+let wishColorClass = document.getElementsByClassName('current-wish-color');
+for (let w of wishColorClass) {
+    w.style.color = eventsCharacters[eventsCharacters.length - 1].color;
+}
+let timelineTopInfoBG = document.getElementsByClassName('timeline-top-info');
+for (let t of timelineTopInfoBG) {
+    t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + eventsCharacters[eventsCharacters.length - 1].shortname[0] + ".png')"
+}
 
 //秒转换
 const secondsFormat = (s) => {
@@ -1096,7 +1102,7 @@ const wishDeadline = () => {
     return secondsFormat(diff);
 }
 //当前时间
-setInterval("time_str.innerHTML = new Date().toString() + ' 星期' + '日一二三四五六'.charAt (new Date().getDay());", 1000);
+setInterval("time_str.innerHTML = dayjs().format('MM-DD HH:mm:ss');", 1000);
 //结束时间
 setInterval("deadline.innerHTML = wishDeadline();", 1000);
 
