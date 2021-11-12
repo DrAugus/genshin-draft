@@ -12,130 +12,92 @@ js: [
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
-
-<p id="hutao-text"></p>
+AUTOPLAY<p id="hutao-text"></p>
 <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
 
+<br><br>
+<details>
+    <summary>展开所有语音</summary>
+    <ul>
+        {% for i in (0..6) %}
+        <li><p id="hutao-text-{{i}}"></p>
+            <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
+        </li>
+        {% endfor %}
+    </ul>
+</details>
+<br>
 
-<ul>
-    {% for i in (0..6) %}
-    <li><p id="hutao-text-{{i}}"></p>
-        <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
-    </li>
-    {% endfor %}
-</ul>
+<div class="timeline-top-info z-depth-2">
+    <div class="timeline-top-cover">
+        <div style="margin-left: 10px">
 
-<img src="/assets/res/genshin-impact/current/wish20/hutao3.png" alt=""/>
+            <br>
 
-<div class="timeline-top-info">
+            {% for i in (0..6) %}
+            <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt=""/>
+            {% endfor %}
 
-    <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
+            <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
 
-    <h3>当前祈愿为——<span style="color: #fa5d3e" id="currentCharacter"></span></h3>
-    <p style="color: #9b574a">
-        The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
-    </p>
-    <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-    <h4>当前时间为：</h4>
-    <span id="time_str"></span>
-    <h4>结束祈愿：<span id="deadline"></span></h4>
+            {% for i in (0..19) %}
+            <img src="/assets/res/genshin-impact/intertwined_fate.png" class="z-depth-0"
+                 style="width: 25px;" alt="">
+            {% endfor %}
 
+            <h3>当前祈愿为 <span class="current-wish-color" id="currentCharacter"></span></h3>
+            <p class="current-wish-color">
+                The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
+            </p>
+            <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
+            <h4>当前时间为：<span id="time_str"></span></h4>
+            <h4>祈愿倒计时：<span id="deadline"></span></h4>
+            <br>
+
+        </div>
+    </div>
 </div>
 
-<div class="timeline-scroll-x" id="set-pos-now">
+<br><br>
+
+<div class="timeline-scroll-x" id="setNowPos">
 
     <div class="timeline-month">
         {% for i in (0..15) %}
-        <div class="left-month-{{i}}">
-            <div class="width-month-{{i}}"><span id="timeline-month-{{i}}"></span></div>
+        <div class="timeline-month-left-{{i}}">
+            <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
         </div>
         {% endfor %}
     </div>
 
     <div class="timeline-day">
-        <div class="timeline-line-pos" id="now-pos">
-            <div class="absolute" id="today-time"></div>
+
+        <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
+            <div class="absolute" id="currentTime"></div>
         </div>
 
-        <div class="timeline-wish">
-            <div style="position: relative">
+        <div class="timeline-wish" style="z-index: 3">
+            <div style="position: absolute">
                 {% for i in (0..20) %}
-                <div class="event-item event-item-{{i}} left-t{{i}}"><span class="event-name-{{i}}"></span></div>
+                <div class="event-item event-item-{{i}}">
+                    <div class="event-img event-img-{{i}}"></div>
+                    <span class="event-name-{{i}}" id="eventName{{i}}"
+                          style="font-size: 5rem; margin-left: 10px"></span>
+                    <br><span id="eventWishS{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
+                    <br><span id="eventWishE{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
+                </div>
                 {% endfor %}
             </div>
         </div>
 
-
         {% for i in (0..458) %}
-        <div class="timeline-wrapper left-day-{{i}}">
-            <div class="timeline-index"><span id="timeline-day-{{i}}"></span></div>
+        <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
+            <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
         </div>
         {% endfor %}
 
-
     </div>
-
-
-
 
 </div>
 
-
-<h1>======</h1>
-
-<div class="timeline-scroll-x" id="timeline-set-pos">
-
-
-    <!-- 时间线 -->
-    {% for i in (0..20) %}
-
-    {% if i == 12 %}
-    <div id="set-location"></div>
-    测试定位用，后期改为当前时间
-    {% endif %}
-
-    <div class="timeline-area">
-        <div class="timeline-wrapper left-t{{i}}">
-            <div class="timeline-index">{{i}}</div>
-            <div class="timeline-date">
-                {% capture timeStartCharacter %}timeStartCharacter{{i}}{% endcapture %}
-                {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}
-                <div class="col s12" id="{{timeStartCharacter}}"></div>
-                <br>
-                <div class="col s12" id="{{timeEndCharacter}}"></div>
-            </div>
-        </div>
-        <div class="event-item event-item-{{i}} left-t{{i}}"><span class="event-name-{{i}}"></span></div>
-    </div>
-    {% endfor %}
-
-
-    <!--        <div class="timeline-date"><p id="{{timeStartCharacter}}"></p></div>-->
-    <!--    {% capture nameCharacter %}nameCharacter{{i}}{% endcapture %}-->
-    <!--    {% capture nameWeapon %}nameWeapon{{i}}{% endcapture %}-->
-    <!--    <div class="timeline-text"><h2 id="{{nameCharacter}}"></h2>-->
-    <!--        <div class="timeline-info">-->
-    <!--                {% capture imgCharacter %}imgCharacter{{i}}{% endcapture %}-->
-    <!--                {% capture imgWeapon %}imgWeapon{{i}}{% endcapture %}-->
-    <!--                {% capture aCharacter %}aCharacter{{i}}{% endcapture %}-->
-    <!--                {% capture aWeapon %}aWeapon{{i}}{% endcapture %}-->
-
-    <!--                <span class="image main"><a id="{{aCharacter}}" href="#">-->
-    <!--                <img id="{{imgCharacter}}" src="" alt=""/></a></span>-->
-
-    <!--            <h3 id="{{nameWeapon}}"></h3>-->
-
-    <!--                <span class="image main"><a id="{{aWeapon}}" href="#">-->
-    <!--                <img id="{{imgWeapon}}" src="" alt=""></a></span>-->
-
-
-    <!--        </div>-->
-
-    <!--        {% capture timeEndCharacter %}timeEndCharacter{{i}}{% endcapture %}-->
-    <!--        <div class="timeline-date"><p id="{{timeEndCharacter}}"></p></div>-->
-    <!--        <hr>-->
-    <!--    </div>-->
-    <!--</div>-->
-
-</div>
 
