@@ -114,14 +114,12 @@
 
 
 div.event-item {
-    position: relative;
+    position: absolute;
     border-radius: 10px;
     opacity: 1;
     right: 0;
     margin-top: 77px;
-    width: 750px;
-    max-width: 256px;
-    height: 88px;
+    height: 180px;
     background-repeat: no-repeat;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
@@ -147,8 +145,8 @@ div.timeline-day {
 }
 
 div.timeline-wish {
-    /*display: flex;*/
-    position: absolute;
+    display: flex;
+    position: relative;
 }
 
 -webkit-scrollbar {
