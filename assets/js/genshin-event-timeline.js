@@ -1272,9 +1272,8 @@ for (let l of leftToday) {
 
 //当前时间定位
 const setCurrentPos = () => {
-    document.getElementById('setNowPos').scrollLeft = document.getElementById('findNowPos').offsetLeft - 600;
+    document.getElementById('setNowPos').scrollLeft = document.getElementById('findNowPos').offsetLeft - document.body.clientWidth / 2;
 }
-console.log(document.getElementById('findNowPos').offsetLeft)
 setCurrentPos();
 
 const setTodayTime = () => {
