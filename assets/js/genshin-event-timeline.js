@@ -1262,9 +1262,9 @@ for (let l of leftToday) {
 
 //当前时间定位
 const setCurrentPos = () => {
-    document.getElementById('timeline-set-pos').scrollLeft = document.getElementById('set-location').offsetLeft;
-    document.getElementById('set-pos-now').scrollLeft = document.getElementById('now-pos').offsetLeft;
+    document.getElementById('set-pos-now').scrollLeft = document.getElementById('now-pos').offsetLeft-600;
 }
+console.log(document.getElementById('now-pos').offsetLeft)
 setCurrentPos();
 
 const setTodayTime = () => {
@@ -1285,7 +1285,7 @@ for (let i = 0; i < length; ++i) {
     let start = firstDay
     const end = dayjs(e[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
     const duration = end.diff(start, 'day', true);
-    console.log(i, duration)
+    // console.log(i, duration)
 
     for (let eItem of eventItemClass) {
         eItem.style.backgroundColor = e[i].color
