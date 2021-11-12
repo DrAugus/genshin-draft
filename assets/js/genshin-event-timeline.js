@@ -1,4 +1,4 @@
-const numC = {
+const elementIndex = {
     'cao': 0,
     'yan': 1,
     'lei': 2,
@@ -8,7 +8,7 @@ const numC = {
     'bing': 6,
 }
 
-const colorCharacter = [
+const elementColor = [
     '#98e628',//草
     '#e2b032',//岩
     '#fca7ff',//雷
@@ -17,6 +17,16 @@ const colorCharacter = [
     '#4cf3b6',//风
     '#a6fdfd',//冰
 ];
+
+const elementImg = [
+    'dendro.png',
+    'geo.png',
+    'electro.png',
+    'hydro.png',
+    'pyro.png',
+    'anemo.png',
+    'cryo.png',
+]
 
 const colorWeapon = '#FFAA4B';
 
@@ -302,7 +312,7 @@ const eventsData = [
             image: 'ballad_in_goblets_1.png',
             start: '2020-09-28 10:00:00',
             end: '2020-10-18 17:59:59',
-            color: colorCharacter[numC.feng],
+            color: elementColor[elementIndex.feng],
             url: 'https://bbs.mihoyo.com/ys/article/1748378',
             showOnHome: true,
             version: '1.0',
@@ -316,7 +326,7 @@ const eventsData = [
             image: 'sparkling_steps_1.png',
             start: '2020-10-20 18:00:00',
             end: '2020-11-09 17:59:59',
-            color: colorCharacter[numC.huo],
+            color: elementColor[elementIndex.huo],
             url: 'https://bbs.mihoyo.com/ys/article/2277693',
             showOnHome: true,
         },
@@ -329,7 +339,7 @@ const eventsData = [
             image: 'farewell_of_snezhnaya_1.png',
             start: '2020-11-11 18:00:00',
             end: '2020-12-01 15:59:59',
-            color: colorCharacter[numC.shui],
+            color: elementColor[elementIndex.shui],
             url: 'https://bbs.mihoyo.com/ys/article/2563525',
             showOnHome: true,
             version: '1.1',
@@ -343,7 +353,7 @@ const eventsData = [
             image: 'gentry_of_hermitage_1.png',
             start: '2020-12-01 18:00:00',
             end: '2020-12-22 14:59:59',
-            color: colorCharacter[numC.yan],
+            color: elementColor[elementIndex.yan],
             url: 'https://bbs.mihoyo.com/ys/article/2878243',
             showOnHome: true,
         },
@@ -356,7 +366,7 @@ const eventsData = [
             image: 'secretum_secretorum_1.png',
             start: '2020-12-23 11:00:00',
             end: '2021-01-12 15:59:59',
-            color: colorCharacter[numC.yan],
+            color: elementColor[elementIndex.yan],
             url: 'https://bbs.mihoyo.com/ys/article/3236897',
             showOnHome: true,
             version: '1.2',
@@ -370,7 +380,7 @@ const eventsData = [
             image: 'adrift_in_the_harbor_1.png',
             start: '2021-01-12 18:00:00',
             end: '2021-02-02 14:59:59',
-            color: colorCharacter[numC.bing],
+            color: elementColor[elementIndex.bing],
             url: 'https://bbs.mihoyo.com/ys/article/3661305',
             showOnHome: true,
         },
@@ -383,7 +393,7 @@ const eventsData = [
             image: 'invitation_to_mundane_life_1.png',
             start: '2021-02-03 11:00:00',
             end: '2021-02-17 15:59:59',
-            color: colorCharacter[numC.feng],
+            color: elementColor[elementIndex.feng],
             url: 'https://bbs.mihoyo.com/ys/article/4005715',
             showOnHome: true,
             version: '1.3',
@@ -397,7 +407,7 @@ const eventsData = [
             image: 'dance_of_lanterns_1.png',
             start: '2021-02-17 18:00:00',
             end: '2021-03-02 15:59:59',
-            color: colorCharacter[numC.lei],
+            color: elementColor[elementIndex.lei],
             url: 'https://bbs.mihoyo.com/ys/article/4005720',
             showOnHome: true,
         },
@@ -410,7 +420,7 @@ const eventsData = [
             image: 'moment_of_bloom_1.jpg',
             start: '2021-03-02 18:00:00',
             end: '2021-03-16 14:59:59',
-            color: colorCharacter[numC.huo],
+            color: elementColor[elementIndex.huo],
             url: 'https://bbs.mihoyo.com/ys/article/4701165',
             showOnHome: true,
         },
@@ -423,7 +433,7 @@ const eventsData = [
             image: 'ballad_in_goblets_2.jpg',
             start: '2021-03-17 11:00:00',
             end: '2021-04-06 15:59:59',
-            color: colorCharacter[numC.feng],
+            color: elementColor[elementIndex.feng],
             url: 'https://bbs.mihoyo.com/ys/article/4959532',
             showOnHome: true,
             version: '1.4',
@@ -437,7 +447,7 @@ const eventsData = [
             image: 'farewell_of_snezhnaya_2.png',
             start: '2021-04-06 18:00:00',
             end: '2021-04-27 14:59:59',
-            color: colorCharacter[numC.shui],
+            color: elementColor[elementIndex.shui],
             url: 'https://bbs.mihoyo.com/ys/article/5305223',
             showOnHome: true,
         },
@@ -450,7 +460,7 @@ const eventsData = [
             image: 'gentry_of_hermitage_2.png',
             start: '2021-04-28 11:00:00',
             end: '2021-05-18 17:59:59',
-            color: colorCharacter[numC.yan],
+            color: elementColor[elementIndex.yan],
             url: 'https://bbs.mihoyo.com/ys/article/5726195',
             showOnHome: true,
             version: '1.5',
@@ -464,7 +474,7 @@ const eventsData = [
             image: 'born_of_ocean_swell_1.jpg',
             start: '2021-05-18 18:00:00',
             end: '2021-06-08 14:59:59',
-            color: colorCharacter[numC.bing],
+            color: elementColor[elementIndex.bing],
             url: 'https://bbs.mihoyo.com/ys/article/6179333',
             showOnHome: true,
         },
@@ -477,7 +487,7 @@ const eventsData = [
             image: 'sparkling_steps_2.png',
             start: '2021-06-09 11:00:00',
             end: '2021-06-29 17:59:59',
-            color: colorCharacter[numC.huo],
+            color: elementColor[elementIndex.huo],
             url: 'https://bbs.mihoyo.com/ys/article/6634463',
             showOnHome: true,
             version: '1.6',
@@ -491,7 +501,7 @@ const eventsData = [
             image: 'leaves_in_the_wind_1.png',
             start: '2021-06-29 18:00:00',
             end: '2021-07-20 14:59:59',
-            color: colorCharacter[numC.feng],
+            color: elementColor[elementIndex.feng],
             url: 'https://bbs.mihoyo.com/ys/article/7067772',
             showOnHome: true,
         },
@@ -504,7 +514,7 @@ const eventsData = [
             image: 'the_herons_court_1.jpg',
             start: '2021-07-21 11:00:00',
             end: '2021-08-10 17:59:59',
-            color: colorCharacter[numC.bing],
+            color: elementColor[elementIndex.bing],
             url: 'https://bbs.mihoyo.com/ys/article/7578978',
             showOnHome: true,
             timezoneDependent: true,
@@ -519,7 +529,7 @@ const eventsData = [
             image: 'tapestry_of_golden_flames_1.jpg',
             start: '2021-08-10 18:00:00',
             end: '2021-08-31 14:59:59',
-            color: colorCharacter[numC.huo],
+            color: elementColor[elementIndex.huo],
             url: 'https://bbs.mihoyo.com/ys/article/8275802',
             showOnHome: true,
         },
@@ -532,7 +542,7 @@ const eventsData = [
             image: 'reign_of_serenity_1.jpg',
             start: '2021-09-01 11:00:00',
             end: '2021-09-21 17:59:59',
-            color: colorCharacter[numC.lei],
+            color: elementColor[elementIndex.lei],
             url: 'https://bbs.mihoyo.com/ys/article/9004344',
             showOnHome: true,
             timezoneDependent: true,
@@ -547,7 +557,7 @@ const eventsData = [
             image: 'drifting_luminescence_1.jpg',
             start: '2021-09-21 18:00:00',
             end: '2021-10-12 14:59:59',
-            color: colorCharacter[numC.shui],
+            color: elementColor[elementIndex.shui],
             url: 'https://bbs.mihoyo.com/ys/article/9679284',
             showOnHome: true,
         },
@@ -560,7 +570,7 @@ const eventsData = [
             image: 'farewell_of_snezhnaya_3.png',
             start: '2021-10-13 11:00:00',
             end: '2021-11-02 17:59:59',
-            color: colorCharacter[numC.shui],
+            color: elementColor[elementIndex.shui],
             url: 'https://bbs.mihoyo.com/ys/article/10755906',
             showOnHome: true,
             timezoneDependent: true,
@@ -575,7 +585,7 @@ const eventsData = [
             image: 'moment_of_bloom_2.jpg',
             start: '2021-11-02 18:00:00',
             end: '2021-11-23 14:59:59',
-            color: colorCharacter[numC.huo],
+            color: elementColor[elementIndex.huo],
             url: 'https://bbs.mihoyo.com/ys/article/11444616',
             showOnHome: true,
         },
@@ -1313,6 +1323,16 @@ for (let i = 0; i < length; ++i) {
     let leftClass = document.getElementsByClassName('left-t' + i);
     for (let lClass of leftClass) {
         lClass.style.left = (350 * i) + 'px';
+    }
+}
+
+let currentElementColor = e[e.length - 1].color
+for (let i = 0; i < elementImg.length; ++i) {
+    document.getElementById('showElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[i];
+
+    let elementsClass = document.getElementsByClassName('show-elements-' + i);
+    for (let ele of elementsClass) {
+        ele.style.opacity = elementColor[i] === currentElementColor ? '1' : '0.3';
     }
 }
 

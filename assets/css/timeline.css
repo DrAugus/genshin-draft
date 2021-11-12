@@ -1,8 +1,15 @@
 .timeline-top-info {
-    background-image: url("/assets/res/genshin-impact/current/wish20/hutao2.png"), radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, 0.3) 166%);
+    background-image: url("/assets/res/genshin-impact/current/wish20/hutao2.png"), radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.5) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(255, 255, 255, 0.3) 166%);
     background-position: 45% 20%;
     background-size: 190%;
+    border-radius: 10px;
 }
+
+.timeline-top-cover{
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
 
 @media screen and (max-width: 610px) {
     .timeline-top-info {
@@ -120,14 +127,14 @@ div.event-item {
     right: 0;
     margin-top: 77px;
     height: 180px;
-    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) no-repeat;
+    background: linear-gradient(to left, rgb(255 255 255 / 80%), rgba(0, 0, 0, 0)) no-repeat;
 }
 
 div.event-img {
     position: absolute;
     margin-left: 165px;
     border-radius: 10px;
-    opacity: 1;
+    opacity: 0.8;
     right: 0;
     width: 70%;
     height: 100%;

@@ -12,24 +12,40 @@ js: [
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
-<div class="timeline-top-info">
-
-    <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
-
-    <h3>当前祈愿为——<span style="color: #fa5d3e" id="currentCharacter"></span></h3>
-    <p style="color: #9b574a">
-        The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
-    </p>
-    <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-    <h4>当前时间为：</h4>
-    <span id="time_str"></span>
-    <h4>结束祈愿：<span id="deadline"></span></h4>
-
-</div>
-
-
 <p id="hutao-text"></p>
 <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
+
+
+<div class="timeline-top-info z-depth-2">
+
+    <div class="timeline-top-cover">
+
+        <div style="margin-left: 10px">
+
+            <br>
+
+            {% for i in (0..6) %}
+            <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt=""/>
+            {% endfor %}
+
+            <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
+
+            <h3>当前祈愿为——<span style="color: #fa5d3e" id="currentCharacter"></span></h3>
+            <p style="color: #9b574a">
+                The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
+            </p>
+            <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
+            <h4>当前时间为：</h4>
+            <span id="time_str"></span>
+            <h4>结束祈愿：<span id="deadline"></span></h4>
+            <br>
+
+        </div>
+
+
+    </div>
+
+</div>
 
 <ul>
     {% for i in (0..6) %}
@@ -62,9 +78,10 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                 {% for i in (0..20) %}
                 <div class="event-item event-item-{{i}}">
                     <div class="event-img event-img-{{i}}"></div>
-                    <span class="event-name-{{i}}" id="eventName{{i}}" style="font-size: 5rem"></span>
-                    <br><span id="eventWishS{{i}}" style="font-size: 1rem"></span>
-                    <br><span id="eventWishE{{i}}" style="font-size: 1rem"></span>
+                    <span class="event-name-{{i}}" id="eventName{{i}}"
+                          style="font-size: 5rem; margin-left: 10px"></span>
+                    <br><span id="eventWishS{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
+                    <br><span id="eventWishE{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
                 </div>
                 {% endfor %}
             </div>
