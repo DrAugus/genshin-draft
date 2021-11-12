@@ -116,10 +116,22 @@
 div.event-item {
     position: absolute;
     border-radius: 10px;
-    opacity: 1;
+    opacity: 0.7;
     right: 0;
     margin-top: 77px;
     height: 180px;
+    background-repeat: no-repeat;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+div.event-img {
+    position: absolute;
+    margin-left: 165px;
+    border-radius: 10px;
+    opacity: 1;
+    right: 0;
+    width: 70%;
+    height: 100%;
     background-repeat: no-repeat;
     mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }

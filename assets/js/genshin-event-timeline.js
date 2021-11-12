@@ -1274,51 +1274,40 @@ const setTodayTime = () => {
 setInterval("setTodayTime()", 1000);
 
 
+let e = events[4]
+
+
 for (let i = 0; i < length; ++i) {
-    // document.getElementById('imgCharacter' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsCharacters[i].image;
-    // document.getElementById('imgWeapon' + i).src = searchGenshinResUrl + "/assets/res/genshin-impact/events/" + eventsWeapons[i].image;
-
-    // document.getElementById('aCharacter' + i).href = aCharacters[i];
-    // document.getElementById('aWeapon' + i).href = aWeapons[i];
-
-    // document.getElementById('nameCharacter' + i).innerHTML = eventsCharacters[i].name[1] + " " + eventsCharacters[i].shortname[1] + " " + eventsCharacters[i].name[0];
-    // document.getElementById('nameWeapon' + i).innerHTML = eventsWeapons[i].name[1] + eventsWeapons[i].name[0];
-
-    document.getElementById('timeStartCharacter' + i).innerHTML = eventsCharacters[i].start;
-    document.getElementById('timeEndCharacter' + i).innerHTML = eventsCharacters[i].end;
-    // document.getElementById('timeStartWeapon' + i).innerHTML = timeStartWeapon[i];
-    // document.getElementById('timeEndWeapon' + i).innerHTML = timeEndWeapon[i];
-
-    //改变颜色
-    // document.getElementById('nameCharacter' + i).style.color = eventsCharacters[i].color;
-    // document.getElementById('nameWeapon' + i).style.color = colorWeapon;
-
-
     //动态设置各个角色的css
     let eventItemClass = document.getElementsByClassName('event-item-' + i);
+    let eventImgClass = document.getElementsByClassName('event-img-' + i);
 
-    let e = events[4]
     let start = firstDay
     const end = dayjs(e[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
     const duration = end.diff(start, 'day', true);
     console.log(i, duration)
 
     for (let eItem of eventItemClass) {
-        eItem.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + eventsCharacters[i].image + "')";
-        eItem.style.backgroundPosition = eventsCharacters[i].pos;
-        eItem.style.backgroundSize = eventsCharacters[i].zoom ? eventsCharacters[i].zoom : '200%';
+        eItem.style.backgroundColor = e[i].color
         eItem.style.width = e[i].duration * dayWidth + 'px'
-        console.log(eItem.style.width)
         eItem.style.left = duration * dayWidth + 30 + 'px'
-        console.log(eItem.style.left)
+    }
+    for (let img of eventImgClass) {
+        img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + e[i].image + "')";
+        img.style.backgroundPosition = e[i].pos;
+        img.style.backgroundSize = e[i].zoom ? e[i].zoom : '200%';
     }
 
-    let eventNameColor = eventsCharacters[i].color;
+    let eventNameColor = e[i].color;
     let eventNameClass = document.getElementsByClassName('event-name-' + i);
     for (let eName of eventNameClass) {
         eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
             eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
     }
+    document.getElementById('event-name-' + i).innerHTML = e[i].shortname[1];
+    document.getElementById('event-wish-s-' + i).innerHTML = e[i].start;
+    document.getElementById('event-wish-e-' + i).innerHTML = e[i].end;
+
 
     //left-t
     let leftClass = document.getElementsByClassName('left-t' + i);
