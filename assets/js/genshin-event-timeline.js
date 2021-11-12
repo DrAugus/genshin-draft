@@ -1065,26 +1065,6 @@ for (let i = 0; i < voiceHuTao.length; ++i) {
 }
 
 
-// main func
-
-const eventsCharacters = eventsData[4];
-const eventsWeapons = eventsData[5];
-const length = eventsCharacters.length < eventsWeapons.length ? eventsCharacters.length : eventsWeapons.length;
-
-
-//最新的祈愿
-document.getElementById('currentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].name[1] + eventsCharacters[eventsCharacters.length - 1].shortname[1];
-document.getElementById('timeStartCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].start;
-document.getElementById('timeEndCurrentCharacter').innerHTML = eventsCharacters[eventsCharacters.length - 1].end;
-let wishColorClass = document.getElementsByClassName('current-wish-color');
-for (let w of wishColorClass) {
-    w.style.color = eventsCharacters[eventsCharacters.length - 1].color;
-}
-let timelineTopInfoBG = document.getElementsByClassName('timeline-top-info');
-for (let t of timelineTopInfoBG) {
-    t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + eventsCharacters[eventsCharacters.length - 1].shortname[0] + ".png')"
-}
-
 //秒转换
 const secondsFormat = (s) => {
     const day = Math.floor(s / (24 * 3600)); // Math.floor()向下取整
@@ -1093,25 +1073,36 @@ const secondsFormat = (s) => {
     const second = s - day * 24 * 3600 - hour * 3600 - minute * 60;
     return day + "天" + hour + "时" + minute + "分" + second + "秒";
 }
-//使用dayjs
-const wishDeadline = () => {
-    const currentDL = dayjs(eventsCharacters[eventsCharacters.length - 1].end)
-    const now = dayjs();
-    let diff = currentDL.diff(now);
-    diff = Math.floor(diff / 1000);
-    return secondsFormat(diff);
-}
-//当前时间
-setInterval("time_str.innerHTML = dayjs().format('MM-DD HH:mm:ss');", 1000);
-//结束时间
-setInterval("deadline.innerHTML = wishDeadline();", 1000);
 
+//返回始末时间之间的所有日期
+const getDuration = (type, start, end) => {
+    const $array = [];
+    const current = new Date(start);
+    end = new Date(end);
+    while (current <= end) {
+        $array.push(new Date(current));
+        if (type == 'hour') {//小时
+            current.setHours(current.getHours() + 1);
+        } else if (type == 'day') {//天
+            current.setDate(current.getDate() + 1);
+        } else if (type == 'week') {//周
+            current.setDate(current.getDate() + 7);
+        } else if (type == 'month') {//月
+            current.setMonth(current.getMonth() + 1);
+        } else {//默认天
+            current.setDate(current.getDate() + 1);
+        }
+    }
+    return $array;
+}
+
+
+// main func
 
 let dayWidth = 50;
 const eventHeight = 36;
 const eventMargin = 20;
 const padding = 10;
-
 
 let lastEventTime = dayjs().year(2000);
 let firstDay = dayjs();
@@ -1123,7 +1114,7 @@ let events = [];
 let today = dayjs();
 
 
-function convertToDate(e, i) {
+const convertToDate = (e, i) => {
     let start = dayjs(e.start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
     const end = dayjs(e.end, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
     const duration = end.diff(start, 'day', true);
@@ -1139,7 +1130,7 @@ function convertToDate(e, i) {
     };
 }
 
-function processEvent() {
+const processEvent = () => {
     events = eventsData.map((e, i) => {
         if (Array.isArray(e)) {
             return e.map((item) => convertToDate(item, i));
@@ -1214,69 +1205,48 @@ function processEvent() {
 
 processEvent();
 
-// console.log('dates', dates)
-// console.log('monthList', monthList)
-// console.log('events', events)
+let wishCharacters = events[4];
+let wishLength = wishCharacters.length
 
-const getDuration = (type, start, end) => {
-    const $array = [];
-    const current = new Date(start);
-    end = new Date(end);
-    while (current <= end) {
-        $array.push(new Date(current));
-        if (type == 'hour') {//小时
-            current.setHours(current.getHours() + 1);
-        } else if (type == 'day') {//天
-            current.setDate(current.getDate() + 1);
-        } else if (type == 'week') {//周
-            current.setDate(current.getDate() + 7);
-        } else if (type == 'month') {//月
-            current.setMonth(current.getMonth() + 1);
-        } else {//默认天
-            current.setDate(current.getDate() + 1);
+//设置时间轴
+const setTimeAxis = () => {
+    let startD = dayjs(wishCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
+    let endD = dayjs(wishCharacters[wishLength - 1].end).add(7, 'day').format('YYYY-MM-DD HH:mm:ss')
+    const allDays = getDuration('day', startD, endD)
+    const countDays = allDays.length
+
+    for (let i = 0; i < dates.length; ++i) {
+        let leftClass = document.getElementsByClassName('left-day-' + i);
+        for (let lClass of leftClass) {
+            //圆圈timeline-index的width为30
+            lClass.style.left = ((dayWidth - 30) * i) + 'px';
         }
+        document.getElementById('timelineDay' + i).innerHTML = dates[i];
     }
-    return $array;
-}
 
-let startD = dayjs(eventsCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
-let endD = dayjs(eventsCharacters[eventsCharacters.length - 1].end).add(7, 'day').format('YYYY-MM-DD HH:mm:ss')
-const allDays = getDuration('day', startD, endD)
-const countDays = allDays.length
-// console.log(allDays)
-// console.log('countDays', countDays)
-
-for (let i = 0; i < dates.length; ++i) {
-    let leftClass = document.getElementsByClassName('left-day-' + i);
-    for (let lClass of leftClass) {
-        //圆圈timeline-index的width为30
-        lClass.style.left = ((dayWidth - 30) * i) + 'px';
+    for (let i = 0; i < monthList.length; ++i) {
+        let leftClass = document.getElementsByClassName('timeline-month-left-' + i);
+        for (let lClass of leftClass) {
+            lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
+        }
+        let widthClass = document.getElementsByClassName('timeline-month-width-' + i);
+        for (let wClass of widthClass) {
+            wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
+        }
+        document.getElementById('timelineMonthName' + i).innerHTML = monthList[i][0];
     }
-    document.getElementById('timelineDay' + i).innerHTML = dates[i];
-}
 
-console.log(monthList)
-for (let i = 0; i < monthList.length; ++i) {
-    let leftClass = document.getElementsByClassName('timeline-month-left-' + i);
-    for (let lClass of leftClass) {
-        lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
+    let todayOffset = Math.abs(firstDay.diff(today, 'day', true));
+    let leftToday = document.getElementsByClassName('timeline-today-line-pos');
+    for (let l of leftToday) {
+        //timeline-index的width为30
+        l.style.left = todayOffset * dayWidth + 30 + 'px';
     }
-    let widthClass = document.getElementsByClassName('timeline-month-width-' + i);
-    for (let wClass of widthClass) {
-        wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
-    }
-    document.getElementById('timelineMonthName' + i).innerHTML = monthList[i][0];
 }
-
-let todayOffset = Math.abs(firstDay.diff(today, 'day', true));
-let leftToday = document.getElementsByClassName('timeline-today-line-pos');
-for (let l of leftToday) {
-    //timeline-index的width为30
-    l.style.left = todayOffset * dayWidth + 30 + 'px';
-}
+setTimeAxis();
 
 
-//当前时间定位
+//当前时间定位 ----------------------------------------------------------------
 const setCurrentPos = () => {
     document.getElementById('setNowPos').scrollLeft = document.getElementById('findNowPos').offsetLeft - document.body.clientWidth / 2;
 }
@@ -1287,57 +1257,92 @@ const setTodayTime = () => {
     document.getElementById('currentTime').innerHTML = d.format('HH:mm:ss')
 }
 setInterval("setTodayTime()", 1000);
+//---------------------------------------------------------------------------
 
 
-let e = events[4]
+//祈愿角色信息
+const wishInfo = () => {
+    for (let i = 0; i < wishLength; ++i) {
+        //动态设置各个角色的css
+        let eventItemClass = document.getElementsByClassName('event-item-' + i);
+        let eventImgClass = document.getElementsByClassName('event-img-' + i);
+
+        let start = firstDay
+        const end = dayjs(wishCharacters[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
+        const duration = end.diff(start, 'day', true);
+        // console.log(i, duration)
+
+        for (let eItem of eventItemClass) {
+            eItem.style.backgroundColor = wishCharacters[i].color
+            eItem.style.width = wishCharacters[i].duration * dayWidth + 'px'
+            eItem.style.left = duration * dayWidth + 30 + 'px'
+        }
+        for (let img of eventImgClass) {
+            img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + wishCharacters[i].image + "')";
+            img.style.backgroundPosition = wishCharacters[i].pos;
+            img.style.backgroundSize = wishCharacters[i].zoom ? wishCharacters[i].zoom : '200%';
+        }
+
+        let eventNameColor = wishCharacters[i].color;
+        let eventNameClass = document.getElementsByClassName('event-name-' + i);
+        for (let eName of eventNameClass) {
+            eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
+                eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
+        }
+        document.getElementById('eventName' + i).innerHTML = wishCharacters[i].shortname[1];
+        document.getElementById('eventWishS' + i).innerHTML = wishCharacters[i].start;
+        document.getElementById('eventWishE' + i).innerHTML = wishCharacters[i].end;
 
 
-for (let i = 0; i < length; ++i) {
-    //动态设置各个角色的css
-    let eventItemClass = document.getElementsByClassName('event-item-' + i);
-    let eventImgClass = document.getElementsByClassName('event-img-' + i);
-
-    let start = firstDay
-    const end = dayjs(e[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
-    const duration = end.diff(start, 'day', true);
-    // console.log(i, duration)
-
-    for (let eItem of eventItemClass) {
-        eItem.style.backgroundColor = e[i].color
-        eItem.style.width = e[i].duration * dayWidth + 'px'
-        eItem.style.left = duration * dayWidth + 30 + 'px'
-    }
-    for (let img of eventImgClass) {
-        img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + e[i].image + "')";
-        img.style.backgroundPosition = e[i].pos;
-        img.style.backgroundSize = e[i].zoom ? e[i].zoom : '200%';
-    }
-
-    let eventNameColor = e[i].color;
-    let eventNameClass = document.getElementsByClassName('event-name-' + i);
-    for (let eName of eventNameClass) {
-        eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
-            eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
-    }
-    document.getElementById('eventName' + i).innerHTML = e[i].shortname[1];
-    document.getElementById('eventWishS' + i).innerHTML = e[i].start;
-    document.getElementById('eventWishE' + i).innerHTML = e[i].end;
-
-
-    //left-t
-    let leftClass = document.getElementsByClassName('left-t' + i);
-    for (let lClass of leftClass) {
-        lClass.style.left = (350 * i) + 'px';
-    }
-}
-
-let currentElementColor = e[e.length - 1].color
-for (let i = 0; i < elementImg.length; ++i) {
-    document.getElementById('showElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[i];
-
-    let elementsClass = document.getElementsByClassName('show-elements-' + i);
-    for (let ele of elementsClass) {
-        ele.style.opacity = elementColor[i] === currentElementColor ? '1' : '0.3';
+        //left-t
+        let leftClass = document.getElementsByClassName('left-t' + i);
+        for (let lClass of leftClass) {
+            lClass.style.left = (350 * i) + 'px';
+        }
     }
 }
+wishInfo();
+
+//当前祈愿信息
+const updateCurrentWishInfo = () => {
+
+    //最新的祈愿
+    document.getElementById('currentCharacter').innerHTML = wishCharacters[wishLength - 1].name[1] + wishCharacters[wishLength - 1].shortname[1];
+    document.getElementById('timeStartCurrentCharacter').innerHTML = wishCharacters[wishLength - 1].start;
+    document.getElementById('timeEndCurrentCharacter').innerHTML = wishCharacters[wishLength - 1].end;
+    let wishColorClass = document.getElementsByClassName('current-wish-color');
+    for (let w of wishColorClass) {
+        w.style.color = wishCharacters[wishLength - 1].color;
+    }
+    let timelineTopInfoBG = document.getElementsByClassName('timeline-top-info');
+    for (let t of timelineTopInfoBG) {
+        t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 1].shortname[0] + ".png')"
+    }
+
+    //显示当前祈愿角色元素属性
+    let currentElementColor = wishCharacters[wishLength - 1].color
+    for (let i = 0; i < elementImg.length; ++i) {
+        document.getElementById('showElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[i];
+
+        let elementsClass = document.getElementsByClassName('show-elements-' + i);
+        for (let ele of elementsClass) {
+            ele.style.opacity = elementColor[i] === currentElementColor ? '1' : '0.3';
+        }
+    }
+}
+updateCurrentWishInfo();
+
+
+const wishDeadline = () => {
+    const currentDL = dayjs(wishCharacters[wishLength - 1].end)
+    const now = dayjs();
+    let diff = currentDL.diff(now);
+    diff = Math.floor(diff / 1000);
+    return secondsFormat(diff);
+}
+//当前时间
+setInterval("time_str.innerHTML = dayjs().format('MM-DD HH:mm:ss');", 1000);
+//结束当前祈愿时间
+setInterval("deadline.innerHTML = wishDeadline();", 1000);
+
 
