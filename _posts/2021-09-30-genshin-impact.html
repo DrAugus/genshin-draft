@@ -13,150 +13,150 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
 <div class="col s12">
-AUTOPLAY<p id="hutao-text"></p>
-<audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
+    AUTOPLAY<p id="hutao-text"></p>
+    <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
 </div>
 
 <div class="col s12">
-<details>
-    <summary>展开所有语音</summary>
-    <ul>
-        {% for i in (0..6) %}
-        <li><p id="hutao-text-{{i}}"></p>
-            <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
-        </li>
-        {% endfor %}
-    </ul>
-</details>
+    <details>
+        <summary>展开所有语音</summary>
+        <ul>
+            {% for i in (0..6) %}
+            <li><p id="hutao-text-{{i}}"></p>
+                <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
+            </li>
+            {% endfor %}
+        </ul>
+    </details>
 </div>
 
 <div class="col s12">
-<div style="height: 300px">
-    <h2>即将发布</h2>
-    {% for i in (0..1) %}
-    <div class="col s4">
-        <div class="future-info future-info-{{i}} z-depth-2">
-            <div class="timeline-top-cover">
-                <div style="margin-left: 10px">
-                    <br>
+    <div style="height: 300px">
+        <h2>即将发布</h2>
+        {% for i in (0..1) %}
+        <div class="col s4">
+            <div class="future-info future-info-{{i}} z-depth-2">
+                <div class="timeline-top-cover">
+                    <div style="margin-left: 10px">
+                        <br>
 
-                    <img class="z-depth-0 " id="futureElements{{i}}" alt="" src=""/>
+                        <img class="z-depth-0 " id="futureElements{{i}}" alt="" src=""/>
 
-                    <h3><span class="future-wish-color-{{i}}" id="futureWish{{i}}"></span></h3>
-                    <p class="future-wish-color-{{i}}" id="futureWishText{{i}}"></p>
+                        <h3><span class="future-wish-color-{{i}}" id="futureWish{{i}}"></span></h3>
+                        <p class="future-wish-color-{{i}}" id="futureWishText{{i}}"></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    {% endfor %}
-    <div class="col s4">
-        <div class="future-info z-depth-2"
-             style="
+        {% endfor %}
+        <div class="col s4">
+            <div class="future-info z-depth-2"
+                 style="
              background-image: url('/assets/res/genshin-impact/temp/arataki_itto.png');
              background-position: 55% 30%;
              background-size: 380%;">
-            <div class="timeline-top-cover">
-                <div style="margin-left: 10px">
-                    <br>
+                <div class="timeline-top-cover">
+                    <div style="margin-left: 10px">
+                        <br>
 
-                    <img class="z-depth-0 " alt="" src="/assets/res/genshin-impact/elements/geo.png"/>
+                        <img class="z-depth-0 " alt="" src="/assets/res/genshin-impact/elements/geo.png"/>
 
-                    <h3><span style="color: #000;
+                        <h3><span style="color: #000;
                     text-shadow:
                     #e2b032  -1px -1px 4px,
                     #e2b032 1px -1px 4px,
                      #e2b032 -1px 1px 4px,  
                      #e2b032  1px 1px 4px, 
                      #e2b032  0 0 10px;">荒泷一斗</span></h3>
-                    <p style="color: #000;
+                        <p style="color: #000;
                     text-shadow:
                     #e2b032  -1px -1px 4px,
                     #e2b032 1px -1px 4px,
                      #e2b032 -1px 1px 4px,
                      #e2b032  1px 1px 4px,
                      #e2b032  0 0 10px;">
-                        活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？ </p>
+                            活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？ </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
 
 <div class="col s12">
-<div class="timeline-top-info z-depth-2">
-    <div class="timeline-top-cover">
-        <div style="margin-left: 10px">
+    <div class="timeline-top-info z-depth-2">
+        <div class="timeline-top-cover">
+            <div style="margin-left: 10px">
 
-            <br>
+                <br>
 
-            {% for i in (0..6) %}
-            <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt="" src=""/>
-            {% endfor %}
+                {% for i in (0..6) %}
+                <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt="" src=""/>
+                {% endfor %}
 
-            <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
+                <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
 
-            {% for i in (0..19) %}
-            <img src="/assets/res/genshin-impact/intertwined_fate.png" class="z-depth-0"
-                 style="width: 25px;" alt="">
-            {% endfor %}
+                {% for i in (0..19) %}
+                <img src="/assets/res/genshin-impact/intertwined_fate.png" class="z-depth-0"
+                     style="width: 25px;" alt="">
+                {% endfor %}
 
-            <h3>当前祈愿为 <span class="current-wish-color" id="currentCharacter"></span></h3>
-            <p class="current-wish-color">
-                The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
-            </p>
-            <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-            <h4>当前时间为：<span id="time_str"></span></h4>
-            <h4>祈愿倒计时：<span id="deadline"></span></h4>
-            <br>
+                <h3>当前祈愿为 <span class="current-wish-color" id="currentCharacter"></span></h3>
+                <p class="current-wish-color">
+                    The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.
+                </p>
+                <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
+                <h4>当前时间为：<span id="time_str"></span></h4>
+                <h4>祈愿倒计时：<span id="deadline"></span></h4>
+                <br>
 
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <div class="col s12"><br></div>
 
 <div class="col s12">
-<div class="timeline-scroll-x" id="setNowPos">
+    <div class="timeline-scroll-x" id="setNowPos">
 
-    <div class="timeline-month">
-        {% for i in (0..15) %}
-        <div class="timeline-month-left-{{i}}">
-            <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <div class="timeline-day">
-
-        <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
-            <div class="absolute" id="currentTime"></div>
-        </div>
-
-        <div class="timeline-wish" style="z-index: 3">
-            <div style="position: absolute">
-                {% for i in (0..20) %}
-                <div class="event-item event-item-{{i}}">
-                    <div class="event-img event-img-{{i}}"></div>
-                    <span class="event-name-{{i}}" id="eventName{{i}}"
-                          style="font-size: 5rem; margin-left: 10px"></span>
-                    <br><span id="eventWishS{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
-                    <br><span id="eventWishE{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
-                </div>
-                {% endfor %}
+        <div class="timeline-month">
+            {% for i in (0..15) %}
+            <div class="timeline-month-left-{{i}}">
+                <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
             </div>
+            {% endfor %}
         </div>
 
-        {% for i in (0..458) %}
-        <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
-            <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
+        <div class="timeline-day">
+
+            <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
+                <div class="absolute" id="currentTime"></div>
+            </div>
+
+            <div class="timeline-wish" style="z-index: 3">
+                <div style="position: absolute">
+                    {% for i in (0..20) %}
+                    <div class="event-item event-item-{{i}}">
+                        <div class="event-img event-img-{{i}}"></div>
+                        <span class="event-name-{{i}}" id="eventName{{i}}"
+                              style="font-size: 5rem; margin-left: 10px"></span>
+                        <br><span id="eventWishS{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
+                        <br><span id="eventWishE{{i}}" style="font-size: 1rem; margin-left: 10px"></span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% for i in (0..458) %}
+            <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
+                <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
+            </div>
+            {% endfor %}
+
         </div>
-        {% endfor %}
 
     </div>
-
-</div>
 </div>
 
 
