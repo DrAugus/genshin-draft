@@ -1,3 +1,10 @@
+.future-info{
+    /*background-position: 125% 20%;*/
+    border-radius: 10px;
+    background-repeat: no-repeat;
+}
+
+
 .timeline-top-info {
     background-position: 125% 20%;
     border-radius: 10px;

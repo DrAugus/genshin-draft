@@ -1332,6 +1332,35 @@ const updateCurrentWishInfo = () => {
 }
 updateCurrentWishInfo();
 
+//未来即将开放的祈愿
+const futureWishInfo = () => {
+    // 4 12 
+    let indexArr = [4, 12]
+    let bgPos = ['50% 0', '50% 20%']
+    let text = [
+        '西风骑士团首席炼金术士兼调查小队队长，被称作「白垩之子」的天才。',
+        '古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。',]
+    for (let i = 0; i < indexArr.length; ++i) {
+        document.getElementById('futureWish' + i).innerHTML = wishCharacters[indexArr[i]].name[1] + wishCharacters[indexArr[i]].shortname[1];
+        let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
+        let showColor = wishCharacters[indexArr[i]].color;
+        for (let w of wishColorClass) {
+            w.style.color = '#000'
+            w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
+                showColor + ' -1px 1px 4px, ' + showColor + ' 1px 1px 4px, ' + showColor + ' 0 0 10px';
+        }
+        let timelineTopInfoBG = document.getElementsByClassName('future-info-' + i);
+        for (let t of timelineTopInfoBG) {
+            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[indexArr[i]].shortname[0] + ".png')"
+            t.style.backgroundPosition = bgPos[i]
+        }
+        let currentElementColor = wishCharacters[indexArr[i]].color
+        let index = elementColor.indexOf(currentElementColor)
+        document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
+        document.getElementById('futureWishText' + i).innerHTML = text[i]
+    }
+}
+futureWishInfo();
 
 const wishDeadline = () => {
     const currentDL = dayjs(wishCharacters[wishLength - 1].end)
