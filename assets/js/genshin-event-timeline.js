@@ -1099,7 +1099,7 @@ const getDuration = (type, start, end) => {
 
 // main func
 
-let dayWidth = 50;
+let dayWidth = 35;
 const eventHeight = 36;
 const eventMargin = 20;
 const padding = 10;
@@ -1266,6 +1266,7 @@ const wishInfo = () => {
         //动态设置各个角色的css
         let eventItemClass = document.getElementsByClassName('event-item-' + i);
         let eventImgClass = document.getElementsByClassName('event-img-' + i);
+        // let eventWishColorClass = document.getElementsByClassName('event-wish-color-' + i);
 
         let start = firstDay
         const end = dayjs(wishCharacters[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
@@ -1282,6 +1283,9 @@ const wishInfo = () => {
             img.style.backgroundPosition = wishCharacters[i].pos;
             img.style.backgroundSize = wishCharacters[i].zoom ? wishCharacters[i].zoom : '200%';
         }
+        // for (let eWishColor of eventWishColorClass) {
+        //     eWishColor.style.backgroundColor = wishCharacters[i].color
+        // }
 
         let eventNameColor = wishCharacters[i].color;
         let eventNameClass = document.getElementsByClassName('event-name-' + i);
@@ -1290,8 +1294,8 @@ const wishInfo = () => {
                 eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
         }
         document.getElementById('eventName' + i).innerHTML = wishCharacters[i].shortname[1];
-        document.getElementById('eventWishS' + i).innerHTML = wishCharacters[i].start;
-        document.getElementById('eventWishE' + i).innerHTML = wishCharacters[i].end;
+        // document.getElementById('eventWishS' + i).innerHTML = wishCharacters[i].start;
+        // document.getElementById('eventWishE' + i).innerHTML = wishCharacters[i].end;
 
 
         //left-t

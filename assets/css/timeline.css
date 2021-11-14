@@ -1,4 +1,4 @@
-.future-info{
+.future-info {
     /*background-position: 125% 20%;*/
     border-radius: 10px;
     background-repeat: no-repeat;
@@ -128,23 +128,30 @@
 
 div.event-item {
     position: absolute;
-    border-radius: 10px;
+    border-radius: 100px;
     opacity: 1;
     right: 0;
     margin-top: 77px;
-    height: 180px;
-    background: linear-gradient(to left, rgb(255 255 255 / 80%), rgba(0, 0, 0, 0)) no-repeat;
+    height: 120px;
+    background: linear-gradient(to left, rgb(255 255 255), rgb(0 0 0 / 0%)) no-repeat;
 }
 
 div.event-img {
     position: absolute;
     margin-left: 165px;
-    border-radius: 10px;
-    opacity: 0.8;
+    border-radius: 100px;
+    opacity: 1;
     right: 0;
     width: 55%;
     height: 100%;
     background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) no-repeat;
+}
+
+div.event-wish-color {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to left, rgb(255 255 255 / 80%), rgba(0, 0, 0, 0)) no-repeat;
 }
 
 div.timeline-scroll-x {
