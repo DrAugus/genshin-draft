@@ -1366,16 +1366,19 @@ const futureWishInfo = () => {
 }
 futureWishInfo();
 
-const wishDeadline = () => {
-    const currentDL = dayjs(wishCharacters[wishLength - 1].end)
-    const now = dayjs();
-    let diff = currentDL.diff(now);
-    diff = Math.floor(diff / 1000);
-    return secondsFormat(diff);
-}
+
+const Deadline = (start, end) => secondsFormat(Math.floor(end.diff(start) / 1000));
+
+//祈愿倒计时
+const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[wishLength - 1].end))
+
 //当前时间
 setInterval("time_str.innerHTML = dayjs().format('MM-DD HH:mm:ss');", 1000);
 //结束当前祈愿时间
 setInterval("deadline.innerHTML = wishDeadline();", 1000);
 
-
+let newYearEve = () => Deadline(dayjs(), dayjs('2022-01-31'));
+setInterval("newYearEve_.innerHTML = newYearEve();", 1000);
+//春节倒计时
+let springFestival = () => Deadline(dayjs(), dayjs('2022-02-01'));
+setInterval("newYear.innerHTML = springFestival();", 1000);
