@@ -34,27 +34,41 @@ excerpt: 让你能够更快速的决定今天吃什么
 
 <h2>外卖推荐</h2>
 
-<!--三列 每一列一个店家 如果店家有多个菜品 进行表格处理-->
-<div class="container row">
+<!--三列 每一列一个店家 如果店家有多个菜品 进行表格处理
+店家重复 进行点击更换下一个推荐
+-->
+<div class="row">
 
     {% for i in (0..16) %}
 
     {% capture FL_name %}FL_name{{i}}{% endcapture %}
     {% capture FL_food %}FL_food{{i}}{% endcapture %}
     {% capture FL_price %}FL_price{{i}}{% endcapture %}
-    {% capture FL_typeColor %}FL_typeColor{{i}}{% endcapture %}
+    {% capture FL_nameRateColor %}FL_nameRateColor{{i}}{% endcapture %}
+    {% capture FL_foodRateColor %}FL_foodRateColor{{i}}{% endcapture %}
 
     {% if FL_name %}
 
-    <div class="col s4">
-        <p class="z-depth-3" id="{{FL_name}}"></p>
+
+    <!-- restaurant -->
+    <div class=" col s4">
+        <div class="z-depth-0 fl-satisfaction-{{i}}">
+            <span id="{{FL_name}}"></span>
+        </div>
     </div>
-    <div class="col s4">
-        <p class="z-depth-4" id="{{FL_food}}"></p>
+    <!-- food -->
+    <div class=" col s4">
+        <div class="z-depth-2 fl-food-rate-{{i}}">
+            <span id="{{FL_food}}"></span>
+        </div>
     </div>
-    <div class="col s4">
-        <p class="z-depth-5" id="{{FL_price}}"></p>
+    <div class=" col s4">
+        <div class="z-depth-3">
+            <span id="{{FL_price}}"></span>
+        </div>
     </div>
+
+
 
     {% endif %}
     {% endfor %}
