@@ -49,70 +49,34 @@ excerpt: 让你能够更快速的决定今天吃什么
 
     {% if FL_name %}
 
-
-    <!-- restaurant -->
-    <div class=" col s4">
-        <div class="z-depth-0 fl-satisfaction-{{i}}">
-            <span id="{{FL_name}}"></span>
+    <div class="row">
+        <!-- restaurant -->
+        <div class=" col s4">
+            <div class="z-depth-0 fl-satisfaction-{{i}}">
+                <div style="margin-left: 10px">
+                    <span id="{{FL_name}}"></span></div>
+            </div>
+        </div>
+        <!-- food -->
+        <div class=" col s4">
+            <div class="z-depth-2 fl-food-rate-{{i}}">
+                <div style="margin-left: 10px">
+                    <span id="{{FL_food}}"></span></div>
+            </div>
+        </div>
+        <!-- price -->
+        <div class=" col s4">
+            <div class="z-depth-3">
+                <div style="margin-left: 10px">
+                    <span id="{{FL_price}}"></span></div>
+            </div>
         </div>
     </div>
-    <!-- food -->
-    <div class=" col s4">
-        <div class="z-depth-2 fl-food-rate-{{i}}">
-            <span id="{{FL_food}}"></span>
-        </div>
-    </div>
-    <div class=" col s4">
-        <div class="z-depth-3">
-            <span id="{{FL_price}}"></span>
-        </div>
-    </div>
-
-
 
     {% endif %}
     {% endfor %}
 
 </div>
-
-
-<!--class 排序 高亮 居中 缩小可滚动-->
-<!--<div class="container">-->
-<!--    <table id="myTableSort" class="tablesorter highlight centered responsive-table">-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th>商家</th>-->
-<!--            <th>商品</th>-->
-<!--            <th>价格</th>-->
-<!--            <th>副作用</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-
-<!--        {% for i in (0..14) %}-->
-<!--        {% capture FL_name %}FL_name{{i}}{% endcapture %}-->
-<!--        {% capture FL_food %}FL_food{{i}}{% endcapture %}-->
-<!--        {% capture FL_foodRate %}FL_foodRate{{i}}{% endcapture %}-->
-<!--        {% capture FL_satisfaction %}FL_satisfaction{{i}}{% endcapture %}-->
-<!--        {% capture FL_price %}FL_price{{i}}{% endcapture %}-->
-<!--        {% capture FL_note %}FL_note{{i}}{% endcapture %}-->
-<!--        {% capture FL_typeColor %}FL_typeColor{{i}}{% endcapture %}-->
-<!--        <tr id="{{FL_typeColor}}">-->
-<!--            <td id="{{FL_satisfaction}}"><span id="{{FL_name}}"></span></td>-->
-<!--            <td id="{{FL_foodRate}}"><span id="{{FL_food}}"></span></td>-->
-<!--            <td id="{{FL_price}}"></td>-->
-<!--            <td id="{{FL_note}}"></td>-->
-<!--        </tr>-->
-<!--        {% endfor %}-->
-
-<!--        </tbody>-->
-<!--        <tfoot>-->
-<!--        <tr>-->
-
-<!--        </tr>-->
-<!--        </tfoot>-->
-<!--    </table>-->
-<!--</div>-->
 
 
 <h2>拉黑商家 - 难吃的一批</h2>

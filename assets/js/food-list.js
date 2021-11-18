@@ -8,14 +8,15 @@ const foodType = {
     'dishes': 6,//炒菜
 }
 
+// 80 透明度50%
 const rateColor = [
-    '#98e628',
-    '#e2b032',
-    '#fca7ff',
-    '#03ddfe',
-    '#fa5d3e',
-    '#4cf3b6',
-    '#a6fdfd',
+    '#98e62880',
+    '#e2b03280',
+    '#fca7ff80',
+    '#03ddfe80',
+    '#fa5d3e80',
+    '#4cf3b680',
+    '#a6fdfd80',
 ];
 
 const foodTypeColor = [
@@ -87,26 +88,26 @@ const foodList = [
             price: '18.67',
             note: '下午会饿 偶现胃痛',
         },
-        // {
-        //     name: 2,
-        //     type_name: foodTypeName[foodType.eu_cuisine],
-        //     type_color: foodTypeColor[foodType.eu_cuisine],
-        //     food: '六件自助-黑胶嫩牛五方+牛气冲天堡+脆皮全腿+鸡米花+香芋派+中可',
-        //     food_rate: 5,
-        //     satisfaction: 4,
-        //     price: '23.8',
-        //     note: '',
-        // },
-        // {
-        //     name: 3,
-        //     type_name: foodTypeName[foodType.fen_mian],
-        //     type_color: foodTypeColor[foodType.fen_mian],
-        //     food: '双主食烤包自选豪华四件套-招牌香酥鸡炭火烤包+铁板烤肉拌粉+可乐+无小食',
-        //     food_rate: 5,
-        //     satisfaction: 4,
-        //     price: '24.8',
-        //     note: '下午会饿',
-        // },
+        {
+            name: 2,
+            type_name: foodTypeName[foodType.eu_cuisine],
+            type_color: foodTypeColor[foodType.eu_cuisine],
+            food: '六件自助-黑胶嫩牛五方+牛气冲天堡+脆皮全腿+鸡米花+香芋派+中可',
+            food_rate: 5,
+            satisfaction: 4,
+            price: '23.8',
+            note: '',
+        },
+        {
+            name: 3,
+            type_name: foodTypeName[foodType.fen_mian],
+            type_color: foodTypeColor[foodType.fen_mian],
+            food: '双主食烤包自选豪华四件套-招牌香酥鸡炭火烤包+铁板烤肉拌粉+可乐+无小食',
+            food_rate: 5,
+            satisfaction: 4,
+            price: '24.8',
+            note: '下午会饿',
+        },
         {
             name: 4,
             type_name: foodTypeName[foodType.fen_mian],
@@ -266,61 +267,43 @@ for (let i = 0; i < blackRestaurant.length; ++i) {
     document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i][0] + ' | ' + blackRestaurant[i][1];
 }
 
-//foodList FL
-// one by one
-// 先做 店家和食物
-let FL_name = [];
-let FL_food = [];
-let FL_rateFoodColor = []
-
-
-// let FL_foodRate = [[]];
-// let FL_satisfaction = [[]];
-// let FL_price = [];
-// let FL_note = [];
-// let FL_typeColor = [];
-
 let bestFood = foodList[0];
 let length = bestFood.length;
 
+
+let repeatName = new Map()
+bestFood.forEach(v => !repeatName.has(v.name) ? repeatName.set(v.name, v) : repeatName.set(v.name, [repeatName.get(v.name), v]))
+//移除非重复的
+repeatName.forEach((value, key) => {
+    if (!Array.isArray(value))
+        repeatName.delete(key)
+})
+
+
+console.log(repeatName)
+
 for (let i = 0; i < length; ++i) {
 
-    //
-    // if (typeof bestFood[i].food != "string") {
-    //
-    //     //copy current
-    //     let newObj = bestFood[i];
-    //     let foodLength = newObj.food.length;
-    //     for (let typeFood = 0; typeFood < foodLength; ++typeFood) {
-    //         document.getElementById('FL_name' + i).innerHTML = newObj.name;
-    //         document.getElementById('FL_food' + i + typeFood).innerHTML = newObj.food[typeFood];
-    //     }
-    //     i += foodLength;
-    //     length += foodLength;
-    //
-    //
-    //     // document.getElementById('FL_foodRate' + i).className = foodRate[FL_foodRate[i]];
-    //     // document.getElementById('FL_satisfaction' + i).className = foodRate[FL_satisfaction[i]];
-    //     // document.getElementById('FL_typeColor' + i).className = FL_typeColor[i];
-    //
-    //
-    // } else
-    {
-        document.getElementById('FL_name' + i).innerHTML = bestFood[i].name;
-        document.getElementById('FL_food' + i).innerHTML = bestFood[i].food;
-        document.getElementById('FL_price' + i).innerHTML = bestFood[i].price;
+    let htmlIndex = i;
+    if (repeatName.has(bestFood[i].name)) {
+        console.log('repeat-------')
+        --htmlIndex;
+        continue;
     }
 
+    document.getElementById('FL_name' + htmlIndex).innerHTML = restaurant[bestFood[i].name];
+    document.getElementById('FL_food' + htmlIndex).innerHTML = bestFood[i].food;
+    document.getElementById('FL_price' + htmlIndex).innerHTML = bestFood[i].price;
 
-
-
-    let bgSatisfaction = document.getElementsByClassName('fl-satisfaction-' + i);
+    let bgSatisfaction = document.getElementsByClassName('fl-satisfaction-' + htmlIndex);
     for (let t of bgSatisfaction) {
         t.style.backgroundColor = rateColor[bestFood[i].satisfaction]
+        t.style.borderRadius = '10px'
     }
-    let bgFoodRate = document.getElementsByClassName('fl-food-rate-' + i);
+    let bgFoodRate = document.getElementsByClassName('fl-food-rate-' + htmlIndex);
     for (let t of bgFoodRate) {
         t.style.backgroundColor = rateColor[bestFood[i].food_rate]
+        t.style.borderRadius = '10px'
     }
 
 }
