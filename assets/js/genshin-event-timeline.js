@@ -589,6 +589,35 @@ const eventsData = [
             url: 'https://bbs.mihoyo.com/ys/article/11444616',
             showOnHome: true,
         },
+        {
+            //时间 url 都待定
+            no: 21,
+            shortname: ['albedo', '阿贝多'],
+            name: ['Secretum Secretorum - Albedo Banner', '「深秘之息」'],
+            pos: '40% 15%',
+            zoom: '180%',
+            image: 'secretum_secretorum_1.png',
+            start: '2021-11-24 11:00:00',
+            end: '2021-12-12 15:59:59',
+            color: elementColor[elementIndex.yan],
+            url: 'https://bbs.mihoyo.com/ys/article/3236897',
+            showOnHome: true,
+            version: '2.3',
+        },
+        {
+            //时间 url 都待定
+            no: 22,
+            shortname: ['eula', '优菈'],
+            name: ['Born of Ocean Swell - Eula Banner', '「浪涌之瞬」'],
+            pos: '40% 20%',
+            zoom: '180%',
+            image: 'born_of_ocean_swell_1.jpg',
+            start: '2021-11-24 11:00:00',
+            end: '2021-12-12 15:59:59',
+            color: elementColor[elementIndex.bing],
+            url: 'https://bbs.mihoyo.com/ys/article/6179333',
+            showOnHome: true,
+        },
     ],
     [
         {
@@ -1208,6 +1237,14 @@ processEvent();
 let wishCharacters = events[4];
 let wishLength = wishCharacters.length
 
+// //set monthList length
+// document.getElementById('lenMonthList').innerHTML = '' + monthList.length
+// //set wish length
+// document.getElementById('lenWish').innerHTML = '' + wishLength
+// //set day length
+// document.getElementById('lenAllDays').innerHTML = '' + dates.length
+console.log('all days, ', dates.length)
+
 //设置时间轴
 const setTimeAxis = () => {
     let startD = dayjs(wishCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
@@ -1307,8 +1344,10 @@ const wishInfo = () => {
 }
 wishInfo();
 
+const reprintWish = true;
+
 //当前祈愿信息
-const updateCurrentWishInfo = () => {
+const updateCurrentWishInfo = (reprintWish) => {
 
     //最新的祈愿
     document.getElementById('currentCharacter').innerHTML = wishCharacters[wishLength - 1].name[1] + wishCharacters[wishLength - 1].shortname[1];
@@ -1320,7 +1359,15 @@ const updateCurrentWishInfo = () => {
     }
     let timelineTopInfoBG = document.getElementsByClassName('timeline-top-info');
     for (let t of timelineTopInfoBG) {
-        t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 1].shortname[0] + ".png')"
+        if (reprintWish) {
+            t.style.background = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 1].shortname[0] + ".png') no-repeat left," +
+                "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 2].shortname[0] + ".png') no-repeat right"
+            t.style.backgroundPosition = '0 20%, 100% 20%'
+        } else {
+            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 1].shortname[0] + ".png')"
+            t.style.backgroundPosition = '125% 20%'
+            t.style.backgroundRepeat = 'no-repeat'
+        }
     }
 
     //显示当前祈愿角色元素属性
@@ -1334,7 +1381,7 @@ const updateCurrentWishInfo = () => {
         }
     }
 }
-updateCurrentWishInfo();
+updateCurrentWishInfo(reprintWish);
 
 //未来即将开放的祈愿
 const futureWishInfo = () => {

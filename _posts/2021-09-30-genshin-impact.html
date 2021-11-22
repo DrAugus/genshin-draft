@@ -15,6 +15,11 @@ js: [
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
+{% capture lenMonthList %}15{% endcapture %}
+{% capture lenWish %}30{% endcapture %}
+{% capture lenAllDays %}470{% endcapture %}
+
+
 <div class="col s12">
     AUTOPLAY<p id="hutao-text"></p>
     <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
@@ -126,7 +131,7 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
     <div class="timeline-scroll-x" id="setNowPos">
 
         <div class="timeline-month">
-            {% for i in (0..15) %}
+            {% for i in (0..lenMonthList) %}
             <div class="timeline-month-left-{{i}}">
                 <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
             </div>
@@ -141,7 +146,7 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
             <div class="timeline-wish" style="z-index: 3">
                 <div style="position: absolute">
-                    {% for i in (0..20) %}
+                    {% for i in (0..lenWish) %}
                     <div class="event-item event-item-{{i}}">
                         <div class="event-img event-img-{{i}}"></div>
                         <span class="event-name-{{i}}" id="eventName{{i}}"
@@ -153,7 +158,7 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                 </div>
             </div>
 
-            {% for i in (0..458) %}
+            {% for i in (0..lenAllDays) %}
             <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
                 <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
             </div>

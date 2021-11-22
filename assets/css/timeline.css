@@ -6,9 +6,7 @@
 
 
 .timeline-top-info {
-    background-position: 125% 20%;
     border-radius: 10px;
-    background-repeat: no-repeat;
 }
 
 .timeline-top-cover {
@@ -19,9 +17,7 @@
 
 @media screen and (max-width: 610px) {
     .timeline-top-info {
-        background-position: 65% 15%;
-        background-size: auto;
-        min-width: 185px;
+
     }
 }
 
