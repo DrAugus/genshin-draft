@@ -1435,6 +1435,8 @@ const wishInfo = () => {
 }
 wishInfo();
 
+//中文昵称名字+英文昵称名字
+const nameInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortname[ZH] + '&nbsp;' + wishCharacters[i].name[EN]
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
@@ -1456,15 +1458,15 @@ const updateCurrentWishInfo = () => {
     document.getElementById('timeEndCurrentCharacter').innerHTML = wishCharacters[wish1Index].end;
 
     //penultimate 倒数第二
-    let penultimateWish = reprintWish ? wishCharacters[wish2Index].name[showLanguage] + wishCharacters[wish2Index].shortname[showLanguage] : '';
-    let newWish = wishCharacters[wish1Index].name[showLanguage] + wishCharacters[wish1Index].shortname[showLanguage];
+    let penultimateWish = reprintWish ? nameInfo(wish2Index) : '';
+    let newWish = nameInfo(wish1Index);
 
     //最新的祈愿
     document.getElementById('currentCharacter').innerHTML = reprintWish ? penultimateWish : newWish
     document.getElementById('currentCharacter2').innerHTML = newWish//class控制显示
     //祈愿角色信息
-    document.getElementById('currentWishText').innerHTML = reprintWish ? wishCharacters[wish2Index].info[showLanguage] : wishCharacters[wish1Index].info[showLanguage]
-    document.getElementById('currentWishText2').innerHTML = wishCharacters[wish1Index].info[showLanguage]//class控制显示
+    document.getElementById('currentWishText').innerHTML = reprintWish ? wishCharacters[wish2Index].info[ZH] : wishCharacters[wish1Index].info[ZH]
+    document.getElementById('currentWishText2').innerHTML = wishCharacters[wish1Index].info[ZH]//class控制显示
     //color显示
     let wishColorClass = document.getElementsByClassName('current-wish-color');
     for (let w of wishColorClass) {
@@ -1538,7 +1540,7 @@ const futureWishInfo = () => {
     console.log('coming soon: ', indexArr)
     let bgPos = ['50% 0', '50% 20%', '50% 20%']
     for (let i = 0; i < indexArr.length; ++i) {
-        document.getElementById('futureWish' + i).innerHTML = wishCharacters[indexArr[i]].name[1] + wishCharacters[indexArr[i]].shortname[showLanguage];
+        document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
         let showColor = wishCharacters[indexArr[i]].color;
         for (let w of wishColorClass) {
@@ -1554,7 +1556,7 @@ const futureWishInfo = () => {
         let currentElementColor = wishCharacters[indexArr[i]].color
         let index = elementColor.indexOf(currentElementColor)
         document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
-        document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info
+        document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
     }
 }
 futureWishInfo();
