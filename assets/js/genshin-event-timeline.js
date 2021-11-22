@@ -628,9 +628,10 @@ const eventsData = [
         {
             //除名字外都待定 日期推测应该准确
             no: 23,
-            shortname: ['', '荒泷一斗'],
-            name: ['', '「」'],
-            info: ['', '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？'],
+            shortname: ['arataki_itto', '荒泷一斗'],
+            name: ['Hanamizaka Heroics - Arataki Itto Banner', '「花坂豪快」'],
+            info: ['The first and greatest head of the Arataki Gang, famed throughout Inazuma City\'s Hanamizaka... Wait, what? You\'ve never heard of them? Are you trying to be funny here?',
+                '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？'],
             pos: '40% 20%',
             zoom: '180%',
             image: '',
