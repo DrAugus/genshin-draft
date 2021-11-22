@@ -1,3 +1,6 @@
+//html 循环最大也是100
+const MAX_INDEX = 100
+
 const foodType = {
     'jp_ko_cuisine': 0,//日韩料理
     'eu_cuisine': 1,//西餐
@@ -79,6 +82,28 @@ const foodList = [
     //推荐
     [
         {
+            //测试用
+            name: 1,
+            type_name: foodTypeName[foodType.mala_xiang_guo],
+            type_color: foodTypeColor[foodType.mala_xiang_guo],
+            food: '香辣-Kyaneos | 土豆粉 | 雪碧',
+            food_rate: 5,
+            satisfaction: 3,
+            price: '18.67',
+            note: '下午会饿 偶现胃痛',
+        },
+        {
+            //测试用
+            name: 1,
+            type_name: foodTypeName[foodType.mala_xiang_guo],
+            type_color: foodTypeColor[foodType.mala_xiang_guo],
+            food: 'Kyaneos-六荤五素单人豪华餐 | Kyaneos | 雪碧',
+            food_rate: 5,
+            satisfaction: 3,
+            price: '18.67',
+            note: '下午会饿 偶现胃痛',
+        },
+        {
             name: 1,
             type_name: foodTypeName[foodType.mala_xiang_guo],
             type_color: foodTypeColor[foodType.mala_xiang_guo],
@@ -149,6 +174,39 @@ const foodList = [
             note: '会腻 切忌连续食用 忌香辣焖面',
         },
         {
+            //测试用
+            name: 6,
+            type_name: foodTypeName[foodType.fen_mian],
+            type_color: foodTypeColor[foodType.fen_mian],
+            food: 'Kyaneos+ | 藕夹 | 韭菜盒子',
+            food_rate: 5,
+            satisfaction: 4,
+            price: '114.89',
+            note: '会腻 切忌连续食用 忌香辣焖面',
+        },
+        {
+            //测试用
+            name: 6,
+            type_name: foodTypeName[foodType.fen_mian],
+            type_color: foodTypeColor[foodType.fen_mian],
+            food: 'Kyaneos+配胡辣汤 | 藕夹 | 韭菜盒子',
+            food_rate: 5,
+            satisfaction: 4,
+            price: '124.89',
+            note: '会腻 切忌连续食用 忌香辣焖面',
+        },
+        {
+            //测试用
+            name: 6,
+            type_name: foodTypeName[foodType.fen_mian],
+            type_color: foodTypeColor[foodType.fen_mian],
+            food: '自选焖面单人餐+Kyaneos | 藕夹 | 韭菜盒子',
+            food_rate: 5,
+            satisfaction: 4,
+            price: '14.89',
+            note: '会腻 切忌连续食用 忌香辣焖面',
+        },
+        {
             name: 7,
             type_name: foodTypeName[foodType.eu_cuisine],
             type_color: foodTypeColor[foodType.eu_cuisine],
@@ -156,6 +214,17 @@ const foodList = [
             food_rate: 5,
             satisfaction: 5,
             price: '9.9',
+            note: '仅作小食',
+        },
+        {
+            //测试用
+            name: 7,
+            type_name: foodTypeName[foodType.eu_cuisine],
+            type_color: foodTypeColor[foodType.eu_cuisine],
+            food: 'mini自选-Kyaneos',
+            food_rate: 5,
+            satisfaction: 5,
+            price: '29.9',
             note: '仅作小食',
         },
         {
@@ -270,7 +339,7 @@ for (let i = 0; i < blackRestaurant.length; ++i) {
 let bestFood = foodList[0];
 let length = bestFood.length;
 
-
+//key 为 name
 let repeatName = new Map()
 bestFood.forEach(v => !repeatName.has(v.name) ? repeatName.set(v.name, v) : repeatName.set(v.name, [repeatName.get(v.name), v]))
 //移除非重复的
@@ -278,33 +347,77 @@ repeatName.forEach((value, key) => {
     if (!Array.isArray(value))
         repeatName.delete(key)
 })
-
-
 console.log(repeatName)
+//下标为name真实的索引值对应name下标的数组内的值
+let repeatIndexArr = []
+const setBestFood = (k, v) => {
+    document.getElementById('FL_name' + k).innerHTML = restaurant[v.name];
+    document.getElementById('FL_food' + k).innerHTML = v.food;
+    document.getElementById('FL_price' + k).innerHTML = v.price;
+
+    let bgSatisfaction = document.getElementsByClassName('fl-satisfaction-' + k);
+    for (let t of bgSatisfaction) {
+        t.style.backgroundColor = rateColor[v.satisfaction]
+        t.style.borderRadius = '10px'
+    }
+    let bgFoodRate = document.getElementsByClassName('fl-food-rate-' + k);
+    for (let t of bgFoodRate) {
+        t.style.backgroundColor = rateColor[v.food_rate]
+        t.style.borderRadius = '10px'
+    }
+}
 
 for (let i = 0; i < length; ++i) {
-
-    let htmlIndex = i;
-    if (repeatName.has(bestFood[i].name)) {
-        console.log('repeat-------')
-        --htmlIndex;
+    let repeatIndex = bestFood[i].name
+    if (repeatName.has(repeatIndex)) {
+        if (Array.isArray(repeatIndexArr[repeatIndex])) {
+            repeatIndexArr[repeatIndex].push(i)
+        } else {
+            repeatIndexArr[repeatIndex] = [i]
+        }
         continue;
     }
-
-    document.getElementById('FL_name' + htmlIndex).innerHTML = restaurant[bestFood[i].name];
-    document.getElementById('FL_food' + htmlIndex).innerHTML = bestFood[i].food;
-    document.getElementById('FL_price' + htmlIndex).innerHTML = bestFood[i].price;
-
-    let bgSatisfaction = document.getElementsByClassName('fl-satisfaction-' + htmlIndex);
-    for (let t of bgSatisfaction) {
-        t.style.backgroundColor = rateColor[bestFood[i].satisfaction]
-        t.style.borderRadius = '10px'
+    setBestFood(i, bestFood[i])
+}
+if (repeatIndexArr.length) {
+    console.log('repeat index ', repeatIndexArr)
+    for (let i in repeatIndexArr) {
+        //0号下标默认显示 其他下标跳过
+        let index = repeatIndexArr[i][0]
+        setBestFood(index, bestFood[index])
+        //其他下标的行全部隐藏
+        for (let j = 1; j < repeatIndexArr[i].length; ++j) {
+            let noShowIndex = repeatIndexArr[i][j]
+            let showRow = document.getElementsByClassName('row-display-' + noShowIndex);
+            for (let s of showRow) {
+                s.style.display = 'none'
+            }
+        }
     }
-    let bgFoodRate = document.getElementsByClassName('fl-food-rate-' + htmlIndex);
-    for (let t of bgFoodRate) {
-        t.style.backgroundColor = rateColor[bestFood[i].food_rate]
-        t.style.borderRadius = '10px'
-    }
+}
 
+for (let i = 0; i < rateColor.length; ++i) {
+    let bg = document.getElementsByClassName('stars-' + i);
+    for (let t of bg) {
+        t.style.backgroundColor = rateColor[i]
+    }
+}
+
+const changeInfo = () => {
+    for (let i in repeatIndexArr) {
+        let arr = repeatIndexArr[i]
+        let random = Math.floor((Math.random() * arr.length));
+        let index = arr[random]
+        console.log('random', random)
+        //随机出来的新菜品放在下标0的索引里
+        setBestFood(arr[0], bestFood[index])
+    }
+}
+
+for (let i = bestFood.length; i < MAX_INDEX; ++i) {
+    let showRow = document.getElementsByClassName('row-display-' + i);
+    for (let s of showRow) {
+        s.style.display = 'none'
+    }
 }
 

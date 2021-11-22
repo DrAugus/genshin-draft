@@ -12,10 +12,9 @@ excerpt: 让你能够更快速的决定今天吃什么
 <blockquote>
     温馨提示：评级在商家上 | 味道评级在商品上
     <ul>
-        <li class="teal accent-3">5星 #1de9b6</li>
-        <li class="cyan accent-3">4星 #00e5ff</li>
-        <li class="light-blue accent-3">3星 #00b0ff</li>
-        <li class="amber accent-3">2星 #ffc400</li>
+        <li class="stars-5">5星</li>
+        <li class="stars-4">4星</li>
+        <li class="stars-3">3星</li>
     </ul>
     种类在整行背景上
     <ul>
@@ -39,7 +38,7 @@ excerpt: 让你能够更快速的决定今天吃什么
 -->
 <div class="row">
 
-    {% for i in (0..16) %}
+    {% for i in (0..99) %}
 
     {% capture FL_name %}FL_name{{i}}{% endcapture %}
     {% capture FL_food %}FL_food{{i}}{% endcapture %}
@@ -47,25 +46,24 @@ excerpt: 让你能够更快速的决定今天吃什么
     {% capture FL_nameRateColor %}FL_nameRateColor{{i}}{% endcapture %}
     {% capture FL_foodRateColor %}FL_foodRateColor{{i}}{% endcapture %}
 
-    {% if FL_name %}
-
-    <div class="row">
+    <!-- 这个row为了三行一组 -->
+    <div class="row row-display-{{i}}">
         <!-- restaurant -->
-        <div class=" col s4">
+        <div class="col s4 " onclick="changeInfo()">
             <div class="z-depth-0 fl-satisfaction-{{i}}">
                 <div style="margin-left: 10px">
                     <span id="{{FL_name}}"></span></div>
             </div>
         </div>
         <!-- food -->
-        <div class=" col s4">
+        <div class="col s4">
             <div class="z-depth-2 fl-food-rate-{{i}}">
                 <div style="margin-left: 10px">
                     <span id="{{FL_food}}"></span></div>
             </div>
         </div>
         <!-- price -->
-        <div class=" col s4">
+        <div class="col s4">
             <div class="z-depth-3">
                 <div style="margin-left: 10px">
                     <span id="{{FL_price}}"></span></div>
@@ -73,7 +71,6 @@ excerpt: 让你能够更快速的决定今天吃什么
         </div>
     </div>
 
-    {% endif %}
     {% endfor %}
 
 </div>
@@ -85,7 +82,7 @@ excerpt: 让你能够更快速的决定今天吃什么
     {% for i in (0..10) %}
     {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
     {% if nameBlackRestaurant %}
-    <li id="{{nameBlackRestaurant}}">河南大烩菜</li>
+    <li id="{{nameBlackRestaurant}}"></li>
     {% endif%}
     {% endfor %}
 </ul>
