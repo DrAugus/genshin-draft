@@ -620,6 +620,21 @@ const eventsData = [
             url: 'https://bbs.mihoyo.com/ys/article/6179333',
             showOnHome: true,
         },
+        {
+            //除名字外都待定 日期推测应该准确
+            no: 23,
+            shortname: ['', '荒泷一斗'],
+            name: ['', '「」'],
+            info: ['', '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？'],
+            pos: '40% 20%',
+            zoom: '180%',
+            image: '',
+            start: '2021-12-14 18:00:00',
+            end: '2022-01-04 14:59:59',
+            color: elementColor[elementIndex.yan],
+            url: 'https://bbs.mihoyo.com/ys/article/?',
+            showOnHome: true,
+        },
     ],
     [
         {
@@ -1424,11 +1439,13 @@ updateCurrentWishInfo(reprintWish);
 //未来即将开放的祈愿
 const futureWishInfo = () => {
     // 4 12 
-    let indexArr = [4, 12]
-    let bgPos = ['50% 0', '50% 20%']
+    let indexArr = [4, 12, 23]
+    let bgPos = ['50% 0', '50% 20%', '50% 20%']
     let text = [
         '西风骑士团首席炼金术士兼调查小队队长，被称作「白垩之子」的天才。',
-        '古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。',]
+        '古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。',
+        '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？',
+    ]
     for (let i = 0; i < indexArr.length; ++i) {
         document.getElementById('futureWish' + i).innerHTML = wishCharacters[indexArr[i]].name[1] + wishCharacters[indexArr[i]].shortname[1];
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
