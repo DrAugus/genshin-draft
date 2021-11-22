@@ -1,3 +1,7 @@
+const EN = 0;
+const ZH = 1;
+const showLanguage = ZH;
+
 const elementIndex = {
     'cao': 0,
     'yan': 1,
@@ -580,6 +584,8 @@ const eventsData = [
             no: 20,
             shortname: ['hu_tao', '胡桃'],
             name: ['Moment of Bloom - Hu Tao Banner', '「雪霁梅香」'],
+            info: ['The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.',
+                '「往生堂」七十七代堂主，年纪轻轻就已主掌璃月的葬仪事务'],
             pos: '60% 20%',
             zoom: '180%',
             image: 'moment_of_bloom_2.jpg',
@@ -1323,6 +1329,62 @@ setInterval("setTodayTime()", 1000);
 //---------------------------------------------------------------------------
 
 
+let objWish = {
+    haveWish: true,//0无祈愿 1有祈愿
+    wishIndex: [],//索引集 一个为当前祈愿或者即将开放的祈愿 两个为双复刻池
+    reprint: true,//双复刻标记
+    isFuture: true,//当前无祈愿 正在等待开放
+    comingIndex: [],//即将到来的未开放的
+}
+//找出当前在哪个祈愿时间段
+const findCurrentWish = () => {
+    let obj = {}
+    obj.wishIndex = []
+    obj.haveWish = true
+    obj.isFuture = false;
+    obj.comingIndex = []
+    //当前时间所处的祈愿时间段
+    for (let e of wishCharacters) {
+        //当前时间在祈愿起始时间后
+        let startAfter = dayjs().isAfter(e.start, 'second')
+        //当前时间在祈愿结束时间前
+        let endBefore = dayjs().isBefore(e.end, 'second')
+        if (startAfter && endBefore) {
+            obj.wishIndex.push(e.no)
+        }
+    }
+    //如果没有找到
+    if (!obj.wishIndex.length) {
+        obj.haveWish = false;
+        for (let i = 1; i < wishLength; ++i) {
+            //介于前一个结束时间后 后一个开始时间前
+            let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, 'second')
+            let startBefore = dayjs().isBefore(wishCharacters[i].start, 'second')
+            if (endAfter && startBefore) {
+                obj.wishIndex.push(wishCharacters[i].no)
+                obj.isFuture = true;
+            }
+        }
+    }
+
+    obj.reprint = obj.wishIndex.length > 1
+
+    //存放所有未来的祈愿
+    if (obj.wishIndex.length) {
+        let startIndex = obj.wishIndex[obj.wishIndex.length - 1]
+        if (obj.isFuture) obj.comingIndex.push(startIndex)
+        else ++startIndex;
+        for (let i = startIndex; i < wishLength; ++i) {
+            obj.comingIndex.push(i)
+        }
+    }
+
+    return obj;
+}
+let currentWishObj = findCurrentWish();
+console.log('I found current wish: ', currentWishObj)
+
+
 //祈愿角色信息
 const wishInfo = () => {
     for (let i = 0; i < wishLength; ++i) {
@@ -1340,6 +1402,8 @@ const wishInfo = () => {
             eItem.style.backgroundColor = wishCharacters[i].color
             eItem.style.width = wishCharacters[i].duration * dayWidth + 'px'
             eItem.style.left = duration * dayWidth + 30 + 'px'
+
+            if (wishCharacters[i].wish_2) eItem.style.marginTop = '150px'
         }
         for (let img of eventImgClass) {
             img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + wishCharacters[i].image + "')";
@@ -1356,7 +1420,7 @@ const wishInfo = () => {
             eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
                 eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
         }
-        document.getElementById('eventName' + i).innerHTML = wishCharacters[i].shortname[1];
+        document.getElementById('eventName' + i).innerHTML = wishCharacters[i].shortname[showLanguage];
         // document.getElementById('eventWishS' + i).innerHTML = wishCharacters[i].start;
         // document.getElementById('eventWishE' + i).innerHTML = wishCharacters[i].end;
 
@@ -1370,62 +1434,65 @@ const wishInfo = () => {
 }
 wishInfo();
 
-const reprintWish = true;
+
 //当前祈愿信息
-const updateCurrentWishInfo = (reprintWish) => {
+const updateCurrentWishInfo = () => {
+    let reprintWish = currentWishObj.reprint
+    if (!currentWishObj.haveWish) {
+        document.getElementById('noWishInfo').innerHTML = '暂无祈愿，敬请期待';
+        let currentHaveNoWish = document.getElementsByClassName('no-wish');
+        for (let n of currentHaveNoWish) {
+            n.style.display = 'none';
+        }
+        return
+    }
+    let wish1Index = currentWishObj.wishIndex[0]
+    let wish2Index = -1
+    if (reprintWish) wish2Index = currentWishObj.wishIndex[1]
 
     //最新祈愿的起止时间
-    document.getElementById('timeStartCurrentCharacter').innerHTML = wishCharacters[wishLength - 1].start;
-    document.getElementById('timeEndCurrentCharacter').innerHTML = wishCharacters[wishLength - 1].end;
+    document.getElementById('timeStartCurrentCharacter').innerHTML = wishCharacters[wish1Index].start;
+    document.getElementById('timeEndCurrentCharacter').innerHTML = wishCharacters[wish1Index].end;
+
     //penultimate 倒数第二
-    let penultimateWish = wishCharacters[wishLength - 2].name[1] + wishCharacters[wishLength - 2].shortname[1];
-    let newWish = wishCharacters[wishLength - 1].name[1] + wishCharacters[wishLength - 1].shortname[1];
+    let penultimateWish = reprintWish ? wishCharacters[wish2Index].name[showLanguage] + wishCharacters[wish2Index].shortname[showLanguage] : '';
+    let newWish = wishCharacters[wish1Index].name[showLanguage] + wishCharacters[wish1Index].shortname[showLanguage];
+
     //最新的祈愿
     document.getElementById('currentCharacter').innerHTML = reprintWish ? penultimateWish : newWish
     document.getElementById('currentCharacter2').innerHTML = newWish//class控制显示
     //祈愿角色信息
-    document.getElementById('currentWishText').innerHTML = reprintWish ? wishCharacters[wishLength - 2].info[1] : wishCharacters[wishLength - 1].info[1]
-    document.getElementById('currentWishText2').innerHTML = wishCharacters[wishLength - 1].info[1]
-
-    if (reprintWish) {
-        let wishColorClass = document.getElementsByClassName('current-wish-color');
-        for (let w of wishColorClass) {
-            w.style.color = wishCharacters[wishLength - 2].color;
-        }
-        let wishColorClass2 = document.getElementsByClassName('current-wish-color-2');
-        for (let w of wishColorClass2) {
-            w.style.color = wishCharacters[wishLength - 1].color;
-        }
-    } else {
-        let wishColorClass = document.getElementsByClassName('current-wish-color');
-        for (let w of wishColorClass) {
-            w.style.color = wishCharacters[wishLength - 1].color;
-        }
-        let wishColorClass2 = document.getElementsByClassName('current-wish-color-2');
-        for (let w of wishColorClass2) {
-            w.style.color = '';
-            w.style.display = 'none'
-        }
+    document.getElementById('currentWishText').innerHTML = reprintWish ? wishCharacters[wish2Index].info[showLanguage] : wishCharacters[wish1Index].info[showLanguage]
+    document.getElementById('currentWishText2').innerHTML = wishCharacters[wish1Index].info[showLanguage]//class控制显示
+    //color显示
+    let wishColorClass = document.getElementsByClassName('current-wish-color');
+    for (let w of wishColorClass) {
+        w.style.color = reprintWish ? wishCharacters[wish2Index].color : wishCharacters[wish1Index].color;
+    }
+    let wishColorClass2 = document.getElementsByClassName('current-wish-color-2');
+    for (let w of wishColorClass2) {
+        w.style.display = 'none'
+        w.style.color = wishCharacters[wish1Index].color;
     }
 
     //祈愿角色图片
     let timelineTopInfoBG = document.getElementsByClassName('timeline-top-info');
     for (let t of timelineTopInfoBG) {
         if (reprintWish) {
-            t.style.background = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 1].shortname[0] + ".png') no-repeat," +
-                "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 2].shortname[0] + ".png') no-repeat"
+            t.style.background = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wish1Index].shortname[EN] + ".png') no-repeat," +
+                "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wish2Index].shortname[EN] + ".png') no-repeat"
             t.style.backgroundPosition = '30% 10%, 100% 10%'
         } else {
-            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wishLength - 1].shortname[0] + ".png')"
+            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wish1Index].shortname[EN] + ".png')"
             t.style.backgroundPosition = '125% 20%'
             t.style.backgroundRepeat = 'no-repeat'
         }
     }
 
     //显示当前祈愿角色元素属性
-    let currentElementColor = [wishCharacters[wishLength - 1].color]
+    let currentElementColor = [wishCharacters[wish1Index].color]
     if (reprintWish) {
-        currentElementColor.push(wishCharacters[wishLength - 2].color)
+        currentElementColor.push(wishCharacters[wish2Index].color)
     }
     for (let i = 0; i < elementImg.length; ++i) {
         document.getElementById('showElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[i];
@@ -1437,26 +1504,40 @@ const updateCurrentWishInfo = (reprintWish) => {
                     ele.style.opacity = '1'
                     break
                 } else {
-                    ele.style.opacity = '0.2'
+                    ele.style.opacity = '0.1'
                 }
             }
         }
     }
 }
-updateCurrentWishInfo(reprintWish);
+updateCurrentWishInfo();
 
 //未来即将开放的祈愿
 const futureWishInfo = () => {
-    // 4 12 
-    let indexArr = [4, 12, 23]
+    let indexArr = []
+
+    if (!currentWishObj.comingIndex.length && !currentWishObj.isFuture) {
+        document.getElementById('futureWishInfo').innerHTML = '未来祈愿，等待更新';
+        let futureWish = document.getElementsByClassName('future-wish');
+        for (let n of futureWish) {
+            n.style.display = 'none';
+        }
+        return
+    }
+
+    if (currentWishObj.isFuture) {
+        let startIndex = currentWishObj.wishIndex[0]
+        for (let i = startIndex; i < wishLength; ++i) {
+            indexArr.push(i)
+        }
+    } else if (currentWishObj.comingIndex.length) {
+        indexArr = indexArr.concat(currentWishObj.comingIndex)
+    }
+
+    console.log('coming soon: ', indexArr)
     let bgPos = ['50% 0', '50% 20%', '50% 20%']
-    let text = [
-        '西风骑士团首席炼金术士兼调查小队队长，被称作「白垩之子」的天才。',
-        '古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。',
-        '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？',
-    ]
     for (let i = 0; i < indexArr.length; ++i) {
-        document.getElementById('futureWish' + i).innerHTML = wishCharacters[indexArr[i]].name[1] + wishCharacters[indexArr[i]].shortname[1];
+        document.getElementById('futureWish' + i).innerHTML = wishCharacters[indexArr[i]].name[1] + wishCharacters[indexArr[i]].shortname[showLanguage];
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
         let showColor = wishCharacters[indexArr[i]].color;
         for (let w of wishColorClass) {
@@ -1467,12 +1548,12 @@ const futureWishInfo = () => {
         let timelineTopInfoBG = document.getElementsByClassName('future-info-' + i);
         for (let t of timelineTopInfoBG) {
             t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[indexArr[i]].shortname[0] + ".png')"
-            t.style.backgroundPosition = bgPos[i]
+            // t.style.backgroundPosition = bgPos[i]
         }
         let currentElementColor = wishCharacters[indexArr[i]].color
         let index = elementColor.indexOf(currentElementColor)
         document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
-        document.getElementById('futureWishText' + i).innerHTML = text[i]
+        document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info
     }
 }
 futureWishInfo();
@@ -1481,7 +1562,7 @@ futureWishInfo();
 const Deadline = (start, end) => secondsFormat(Math.floor(end.diff(start) / 1000));
 
 //祈愿倒计时
-const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[wishLength - 1].end))
+const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[currentWishObj.wishIndex[0]].end))
 
 //当前时间
 setInterval("time_str.innerHTML = dayjs().format('MM-DD HH:mm:ss');", 1000);

@@ -41,22 +41,27 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 <div class="col s12">
     <div style="height: 300px">
         <h2>即将发布</h2>
-        {% for i in (0..2) %}
-        <div class="col s4">
-            <div class="future-info future-info-{{i}} z-depth-2">
-                <div class="timeline-top-cover">
-                    <div style="margin-left: 10px">
-                        <br>
 
-                        <img class="z-depth-0 " id="futureElements{{i}}" alt="" src=""/>
+        <span id="futureWishInfo"></span>
+        <div class="future-wish">
+            {% for i in (0..2) %}
+            <div class="col s4">
+                <div class="future-info future-info-{{i}} z-depth-2">
+                    <div class="timeline-top-cover">
+                        <div style="margin-left: 10px">
+                            <br>
 
-                        <h3><span class="future-wish-color-{{i}}" id="futureWish{{i}}"></span></h3>
-                        <p class="future-wish-color-{{i}}" id="futureWishText{{i}}"></p>
+                            <img class="z-depth-0 " id="futureElements{{i}}" alt="" src=""/>
+
+                            <h3><span class="future-wish-color-{{i}}" id="futureWish{{i}}"></span></h3>
+                            <p class="future-wish-color-{{i}}" id="futureWishText{{i}}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+
     </div>
 </div>
 
@@ -78,15 +83,20 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                      style="width: 25px;" alt="">
                 {% endfor %}
 
-                <h3>当前祈愿为
-                    <span class="current-wish-color" id="currentCharacter"></span>
-                    <span class="current-wish-color-2" id="currentCharacter2"></span>
-                </h3>
-                <p class="current-wish-color" id="currentWishText"></p>
-                <p class="current-wish-color-2" id="currentWishText2"></p>
-                <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-                <h4>当前时间为：<span id="time_str"></span></h4>
-                <h4>祈愿倒计时：<span id="deadline"></span></h4>
+                <span id="noWishInfo"></span>
+                <div class="no-wish">
+                    <h3>当前祈愿为
+                        <span class="current-wish-color" id="currentCharacter"></span>
+                        <span class="current-wish-color-2" id="currentCharacter2"></span>
+                    </h3>
+                    <p class="current-wish-color" id="currentWishText"></p>
+                    <p class="current-wish-color-2" id="currentWishText2"></p>
+                    <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
+                    <h4>当前时间为：<span id="time_str"></span></h4>
+                    <h4>祈愿倒计时：<span id="deadline"></span></h4>
+                </div>
+
+
                 <h4>除夕倒计时：<span id="newYearEve_"></span></h4>
                 <h4>春节倒计时：<span id="newYear"></span> 正月初一 壬寅年 虎 辛丑月 乙酉日</h4>
                 <br>
