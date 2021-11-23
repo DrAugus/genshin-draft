@@ -602,6 +602,8 @@ const eventsData = [
             info: ['', '西风骑士团首席炼金术士兼调查小队队长，被称作「白垩之子」的天才。'],
             pos: '40% 15%',
             zoom: '180%',
+            fullPos: '55% 0%',
+            fullZoom: '180%',
             image: 'secretum_secretorum_2.jpg',
             start: '2021-11-24 11:00:00',
             end: '2021-12-14 17:59:59',
@@ -617,6 +619,8 @@ const eventsData = [
             info: ['', '古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。'],
             pos: '40% 20%',
             zoom: '180%',
+            fullPos: '35% 30%',
+            fullZoom: '200%',
             image: 'born_of_ocean_swell_2.jpg',
             start: '2021-11-24 11:00:00',
             end: '2021-12-14 17:59:59',
@@ -634,6 +638,8 @@ const eventsData = [
                 '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？'],
             pos: '40% 20%',
             zoom: '180%',
+            fullPos: '55% 30%',
+            fullZoom: '200%',
             image: '',
             start: '2021-12-14 18:00:00',
             end: '2022-01-04 14:59:59',
@@ -655,6 +661,8 @@ const eventsData = [
                 '天上仙女也好，白发魔头也罢，人们将如何看待这个神秘的女子？而掩藏在她身上的秘密与真心，也如山间云雾一般难以捕捉。'],
             pos: '40% 20%',
             zoom: '180%',
+            fullPos: '55% 30%',
+            fullZoom: '200%',
             image: 'shenhe_1.jpg',
             start: '2022-01-05 11:00:00',
             end: '2022-01-26 17:59:59',
@@ -677,6 +685,8 @@ const eventsData = [
                 '否则，她说不定又要挨长辈们唠叨啦。'],
             pos: '40% 20%',
             zoom: '180%',
+            fullPos: '55% 30%',
+            fullZoom: '200%',
             image: 'yunjin_1.jpg',
             start: '2022-01-05 11:00:00',
             end: '2022-01-26 17:59:59',
@@ -1582,7 +1592,6 @@ const futureWishInfo = () => {
     }
 
     console.log('coming soon: ', indexArr)
-    let bgPos = ['50% 0', '50% 20%', '50% 20%', '50% 40%']
     for (let i = 0; i < indexArr.length; ++i) {
         document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
@@ -1595,11 +1604,8 @@ const futureWishInfo = () => {
         let timelineTopInfoBG = document.getElementsByClassName('future-info-' + i);
         for (let t of timelineTopInfoBG) {
             t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[indexArr[i]].shortname[0] + ".png')"
-            // 3 4 为申鹤 云堇
-            if (i > indexArr.length - 3) {
-                t.style.backgroundPosition = '60% 20%'
-                t.style.backgroundSize = '300%'
-            }
+            t.style.backgroundPosition = wishCharacters[indexArr[i]].fullPos
+            t.style.backgroundSize = wishCharacters[indexArr[i]].fullZoom
         }
         let currentElementColor = wishCharacters[indexArr[i]].color
         let index = elementColor.indexOf(currentElementColor)
