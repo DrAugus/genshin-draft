@@ -1582,7 +1582,7 @@ const futureWishInfo = () => {
     }
 
     console.log('coming soon: ', indexArr)
-    let bgPos = ['50% 0', '50% 20%', '50% 20%']
+    let bgPos = ['50% 0', '50% 20%', '50% 20%', '50% 40%']
     for (let i = 0; i < indexArr.length; ++i) {
         document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
@@ -1595,7 +1595,11 @@ const futureWishInfo = () => {
         let timelineTopInfoBG = document.getElementsByClassName('future-info-' + i);
         for (let t of timelineTopInfoBG) {
             t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[indexArr[i]].shortname[0] + ".png')"
-            // t.style.backgroundPosition = bgPos[i]
+            // 3 4 为申鹤 云堇
+            if (i > indexArr.length - 3) {
+                t.style.backgroundPosition = '60% 20%'
+                t.style.backgroundSize = '300%'
+            }
         }
         let currentElementColor = wishCharacters[indexArr[i]].color
         let index = elementColor.indexOf(currentElementColor)
