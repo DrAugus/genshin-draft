@@ -20,24 +20,77 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 {% capture lenAllDays %}514{% endcapture %}
 {% capture lenFuture %}4{% endcapture %}
 
-<div class="col s12">
-    AUTOPLAY<p id="hutao-text"></p>
-    <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
+<!--语音暂不显示-->
+<div style="display: none">
+    <div class="col s12">
+        AUTOPLAY<p id="hutao-text"></p>
+        <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
+    </div>
+
+    <div class="col s12">
+        <details>
+            <summary>展开所有语音</summary>
+            <ul>
+                {% for i in (0..6) %}
+                <li><p id="hutao-text-{{i}}"></p>
+                    <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
+                </li>
+                {% endfor %}
+            </ul>
+        </details>
+    </div>
 </div>
 
+
+<div class="col s12"><br></div>
+
+<!--当前祈愿-->
 <div class="col s12">
-    <details>
-        <summary>展开所有语音</summary>
-        <ul>
-            {% for i in (0..6) %}
-            <li><p id="hutao-text-{{i}}"></p>
-                <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
-            </li>
-            {% endfor %}
-        </ul>
-    </details>
+    <div class="timeline-top-info z-depth-2">
+        <div class="timeline-top-cover">
+            <div style="margin-left: 10px">
+
+                <br>
+
+                <h1 id="noWishInfo"></h1>
+                <div class="no-wish">
+
+                    {% for i in (0..6) %}
+                    <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt="" src=""/>
+                    {% endfor %}
+
+                    <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
+
+                    {% for i in (0..19) %}
+                    <img src="/assets/res/genshin-impact/intertwined_fate.png" class="z-depth-0"
+                         style="width: 25px;" alt="">
+                    {% endfor %}
+
+                    <h3>当前祈愿为
+                        <span class="current-wish-color" id="currentCharacter"></span>
+                        <span class="current-wish-color-2" id="currentCharacter2"></span>
+                    </h3>
+                    <p class="current-wish-color" id="currentWishText"></p>
+                    <p class="current-wish-color-2" id="currentWishText2"></p>
+                    <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
+                    <h4>当前时间为：<span id="time_str"></span></h4>
+                    <h4>祈愿倒计时：<span id="deadline"></span></h4>
+
+                </div>
+
+
+                <h4>除夕倒计时：<span id="newYearEve_"></span></h4>
+                <h4>春节倒计时：<span id="newYear"></span> 正月初一 壬寅年 虎 辛丑月 乙酉日</h4>
+                <br>
+
+            </div>
+        </div>
+    </div>
 </div>
 
+<div class="col s12"><br></div>
+
+<!--即将发布-->
 <div class="col s12">
     <div style="height: 300px">
         <h2>即将发布</h2>
@@ -68,47 +121,6 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
 
-<div class="col s12">
-    <div class="timeline-top-info z-depth-2">
-        <div class="timeline-top-cover">
-            <div style="margin-left: 10px">
-
-                <br>
-
-                {% for i in (0..6) %}
-                <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt="" src=""/>
-                {% endfor %}
-
-                <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
-
-                {% for i in (0..19) %}
-                <img src="/assets/res/genshin-impact/intertwined_fate.png" class="z-depth-0"
-                     style="width: 25px;" alt="">
-                {% endfor %}
-
-                <span id="noWishInfo"></span>
-                <div class="no-wish">
-                    <h3>当前祈愿为
-                        <span class="current-wish-color" id="currentCharacter"></span>
-                        <span class="current-wish-color-2" id="currentCharacter2"></span>
-                    </h3>
-                    <p class="current-wish-color" id="currentWishText"></p>
-                    <p class="current-wish-color-2" id="currentWishText2"></p>
-                    <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-                    <h4>当前时间为：<span id="time_str"></span></h4>
-                    <h4>祈愿倒计时：<span id="deadline"></span></h4>
-                </div>
-
-
-                <h4>除夕倒计时：<span id="newYearEve_"></span></h4>
-                <h4>春节倒计时：<span id="newYear"></span> 正月初一 壬寅年 虎 辛丑月 乙酉日</h4>
-                <br>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="col s12"><br></div>
 
 <div class="col s12">
@@ -135,8 +147,6 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                         <div class="event-img event-img-{{i}}"></div>
                         <span class="event-name-{{i}}" id="eventName{{i}}"
                               style="font-size: 5rem; margin-left: 10px"></span>
-<!--                        <br><span id="eventWishS{{i}}" style="font-size: 1rem; margin-left: 10px"></span>-->
-<!--                        <br><span id="eventWishE{{i}}" style="font-size: 1rem; margin-left: 10px"></span>-->
                     </div>
                     {% endfor %}
                 </div>
