@@ -603,7 +603,7 @@ const eventsData = [
             pos: '40% 15%',
             zoom: '180%',
             fullPos: '55% 0%',
-            fullZoom: '180%',
+            fullZoom: '100%',
             image: 'secretum_secretorum_2.jpg',
             start: '2021-11-24 11:00:00',
             end: '2021-12-14 17:59:59',
@@ -620,7 +620,7 @@ const eventsData = [
             pos: '40% 20%',
             zoom: '180%',
             fullPos: '35% 30%',
-            fullZoom: '200%',
+            fullZoom: '100%',
             image: 'born_of_ocean_swell_2.jpg',
             start: '2021-11-24 11:00:00',
             end: '2021-12-14 17:59:59',
@@ -1490,7 +1490,8 @@ const wishInfo = () => {
 wishInfo();
 
 //中文昵称名字+英文昵称名字
-const nameInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortname[ZH] + '&nbsp;' + wishCharacters[i].name[EN]
+const nameInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortname[ZH] + '&nbsp;' + wishCharacters[i].name[EN];
+const nameZHInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortname[ZH];
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
@@ -1516,35 +1517,45 @@ const updateCurrentWishInfo = () => {
     let newWish = nameInfo(wish1Index);
 
     //最新的祈愿
-    document.getElementById('currentCharacter').innerHTML = reprintWish ? penultimateWish : newWish
-    document.getElementById('currentCharacter2').innerHTML = newWish//class控制显示
+    document.getElementById('currentCharacter0').innerHTML = nameInfo(wish1Index)
+    document.getElementById('currentCharacter1').innerHTML = nameInfo(wish2Index)//class控制显示
+
+    document.getElementById('currentCharacter1-0').innerHTML = nameZHInfo(wish1Index)
+    document.getElementById('currentCharacter1-1').innerHTML = nameZHInfo(wish2Index)//class控制显示
+    document.getElementById('currentCharacter2-0').innerHTML = nameZHInfo(wish1Index)
+    document.getElementById('currentCharacter2-1').innerHTML = nameZHInfo(wish2Index)//class控制显示
+
     //祈愿角色信息
-    document.getElementById('currentWishText').innerHTML = reprintWish ? wishCharacters[wish2Index].info[ZH] : wishCharacters[wish1Index].info[ZH]
-    document.getElementById('currentWishText2').innerHTML = wishCharacters[wish1Index].info[ZH]//class控制显示
+    document.getElementById('currentWishText0').innerHTML = wishCharacters[wish1Index].info[ZH]
+    document.getElementById('currentWishText1').innerHTML = wishCharacters[wish2Index].info[ZH]//class控制显示
     //color显示
-    let wishColorClass = document.getElementsByClassName('current-wish-color');
+    let wishColorClass = document.getElementsByClassName('current-wish-color-0');
     for (let w of wishColorClass) {
-        w.style.color = reprintWish ? wishCharacters[wish2Index].color : wishCharacters[wish1Index].color;
+        w.style.color = wishCharacters[wish1Index].color;
     }
-    let wishColorClass2 = document.getElementsByClassName('current-wish-color-2');
+    let wishColorClass2 = document.getElementsByClassName('current-wish-color-1');
     for (let w of wishColorClass2) {
         if (!reprintWish) w.style.display = 'none'
-        w.style.color = wishCharacters[wish1Index].color;
+        w.style.color = wishCharacters[wish2Index].color;
     }
 
     //祈愿角色图片
-    let timelineTopInfoBG = document.getElementsByClassName('timeline-top-info');
-    for (let t of timelineTopInfoBG) {
-        if (reprintWish) {
-            t.style.background = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wish1Index].shortname[EN] + ".png') no-repeat," +
-                "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wish2Index].shortname[EN] + ".png') no-repeat"
-            t.style.backgroundPosition = '30% 10%, 100% 10%'
-        } else {
-            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[wish1Index].shortname[EN] + ".png')"
-            t.style.backgroundPosition = '125% 20%'
+    for (let i = 0; i < currentWishObj.wishIndex.length; ++i) {
+        let index = currentWishObj.wishIndex[i]
+        let wishBGClass = document.getElementsByClassName('current-wish-bg-'+i);
+        for (let t of wishBGClass) {
+            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[index].shortname[EN] + ".png')"
+            t.style.backgroundPosition = wishCharacters[index].fullPos
+            t.style.backgroundSize = wishCharacters[index].fullZoom
             t.style.backgroundRepeat = 'no-repeat'
         }
+
+        //祈愿图片上的元素颜色
+        let currentElementColor_ = wishCharacters[index].color
+        let indexColor = elementColor.indexOf(currentElementColor_)
+        document.getElementById('currentElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[indexColor];
     }
+
 
     //显示当前祈愿角色元素属性
     let currentElementColor = [wishCharacters[wish1Index].color]
@@ -1561,11 +1572,12 @@ const updateCurrentWishInfo = () => {
                     ele.style.opacity = '1'
                     break
                 } else {
-                    ele.style.opacity = '0.1'
+                    ele.style.opacity = '0.2'
                 }
             }
         }
     }
+
 }
 updateCurrentWishInfo();
 
