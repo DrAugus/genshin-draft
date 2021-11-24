@@ -50,10 +50,11 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
         <div class="timeline-top-cover">
             <div style="margin-left: 10px">
 
-                <br>
-
                 <h1 id="noWishInfo"></h1>
                 <div class="no-wish">
+
+                    <!--空行分割-->
+                    <div class="col s12"> &nbsp;</div>
 
                     {% for i in (0..6) %}
                     <img class="z-depth-0 show-elements-{{i}}" id="showElements{{i}}" alt="" src=""/>
@@ -66,12 +67,12 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                          style="width: 25px;" alt="">
                     {% endfor %}
 
-                    <h3>当前祈愿为
-                        <span class="current-wish-color" id="currentCharacter"></span>
-                        <span class="current-wish-color-2" id="currentCharacter2"></span>
+                    <h3>当前祈愿为<br>
+                        <span class="current-wish-color" id="currentCharacter"></span><br>
+                        <span class="current-wish-color-2" id="currentCharacter2"></span><br>
                     </h3>
-                    <p class="current-wish-color" id="currentWishText"></p>
-                    <p class="current-wish-color-2" id="currentWishText2"></p>
+                    <span class="current-wish-color" id="currentWishText"></span><br>
+                    <span class="current-wish-color-2" id="currentWishText2"></span>
                     <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
                     <h4>当前时间为：<span id="time_str"></span></h4>
                     <h4>祈愿倒计时：<span id="deadline"></span></h4>

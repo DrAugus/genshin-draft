@@ -1528,7 +1528,7 @@ const updateCurrentWishInfo = () => {
     }
     let wishColorClass2 = document.getElementsByClassName('current-wish-color-2');
     for (let w of wishColorClass2) {
-        w.style.display = 'none'
+        if (!reprintWish) w.style.display = 'none'
         w.style.color = wishCharacters[wish1Index].color;
     }
 
