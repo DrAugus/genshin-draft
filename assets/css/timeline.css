@@ -197,3 +197,12 @@ div.timeline-wish {
 -webkit-scrollbar {
     display: none;
 }
+
+/*覆盖完整显示*/
+.truncate:hover {
+    word-break: normal;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+}

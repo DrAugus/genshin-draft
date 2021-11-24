@@ -50,28 +50,25 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
     <h1 id="noWishInfo"></h1>
     <div class="no-wish">
 
-        <div class="row" style="text-align: center">
+        <div class="row center">
             <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
             <!--元素显示-->
             {% for i in (0..lenElements) %}
-            <img class="z-depth-2 show-elements-{{i}}"
+            <img class="z-depth-2 show-elements-{{i}} hoverable responsive-img"
                  style="border-radius: 10px"
                  id="showElements{{i}}" alt="" src=""/>
             {% endfor %}
         </div>
 
-        <div class="row">
+        <div class="row center">
             {% for i in (0..lenCurrent) %}
-            <div class="col s5 current-wish-bg-{{i}} z-depth-2" style="height: 150px;border-radius: 10px">
-                <img class="z-depth-0" id="currentElements{{i}}" alt="" src=""/><br>
-                <span class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></span>
+            <div class="col s5 current-wish-bg-{{i}} z-depth-2 hoverable" style="border-radius: 10px">
+                <img class="z-depth-0 responsive-img" id="currentElements{{i}}" alt="" src=""/><br>
+                <h2 class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></h2>
             </div>
             <div class="col s2"></div>
             {% endfor %}
         </div>
-
-        <!--空行分割-->
-        <div class="row"> &nbsp;</div>
 
         <div class="row">
             <h2>当前祈愿为
@@ -114,12 +111,12 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
     <div class="future-wish">
         {% for i in (0..lenFuture) %}
         <div class="col s12 l4 ">
-            <div class="future-info future-info-{{i}} z-depth-2 ">
+            <div class="future-info future-info-{{i}} z-depth-2 hoverable">
                 <div class="timeline-top-cover">
                     <div style="margin: auto">
-                        <img class="z-depth-0 " id="futureElements{{i}}" alt="" src=""/>
-                        <h3><span class="future-wish-color-{{i}}" id="futureWish{{i}}"></span></h3>
-                        <span class="future-wish-color-{{i}}" id="futureWishText{{i}}"></span>
+                        <img class="z-depth-0 responsive-img" id="futureElements{{i}}" alt="" src=""/>
+                        <h3><span class="future-wish-color-{{i}} truncate" id="futureWish{{i}}"></span></h3>
+                        <span class="future-wish-color-{{i}} truncate" id="futureWishText{{i}}"></span>
                     </div>
                 </div>
             </div>
@@ -156,7 +153,7 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                 <div style="position: absolute">
                     {% for i in (0..lenWish) %}
                     <div class="event-item event-item-{{i}}">
-                        <div class="event-img event-img-{{i}}"></div>
+                        <div class="event-img event-img-{{i}} responsive-img"></div>
                         <span class="event-name-{{i}}" id="eventName{{i}}"
                               style="font-size: 4rem; margin-left: 10px"></span>
                     </div>
