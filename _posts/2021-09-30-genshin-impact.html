@@ -23,6 +23,47 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 {% capture lenCurrent %}1{% endcapture %}
 {% capture lenElements %}6{% endcapture %}
 
+<!--时间轴-->
+<div class="col s12">
+    <div class="timeline-scroll-x" id="setNowPos">
+
+        <div class="timeline-month">
+            {% for i in (0..lenMonthList) %}
+            <div class="timeline-month-left-{{i}}">
+                <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="timeline-day">
+
+            <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
+                <div class="absolute" id="currentTime"></div>
+            </div>
+
+            <div class="timeline-wish" style="z-index: 3">
+                <div style="position: absolute">
+                    {% for i in (0..lenWish) %}
+                    <div class="event-item event-item-{{i}}">
+                        <div class="event-img event-img-{{i}} responsive-img"></div>
+                        <span class="event-name-{{i}}" id="eventName{{i}}"
+                              style="font-size: 4rem; margin-left: 10px"></span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% for i in (0..lenAllDays) %}
+            <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
+                <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
 <!--语音暂不显示-->
 <div style="display: none">
     <div class="col s12">
@@ -131,46 +172,7 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
 <div class="col s12"><br></div>
 
-<!--时间轴-->
-<div class="col s12">
-    <div class="timeline-scroll-x" id="setNowPos">
 
-        <div class="timeline-month">
-            {% for i in (0..lenMonthList) %}
-            <div class="timeline-month-left-{{i}}">
-                <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div class="timeline-day">
-
-            <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
-                <div class="absolute" id="currentTime"></div>
-            </div>
-
-            <div class="timeline-wish" style="z-index: 3">
-                <div style="position: absolute">
-                    {% for i in (0..lenWish) %}
-                    <div class="event-item event-item-{{i}}">
-                        <div class="event-img event-img-{{i}} responsive-img"></div>
-                        <span class="event-name-{{i}}" id="eventName{{i}}"
-                              style="font-size: 4rem; margin-left: 10px"></span>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            {% for i in (0..lenAllDays) %}
-            <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
-                <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
-            </div>
-            {% endfor %}
-
-        </div>
-
-    </div>
-</div>
 
 
 
