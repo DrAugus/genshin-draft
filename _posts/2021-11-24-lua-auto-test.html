@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "lua自动化测试指南"
+date:   2021-11-24 11:15:22
+categories: 编程
+tags: lua
+excerpt: lua自动化测试指南
+---
+
+<h1>lua自动化测试指南</h1>
+
+<h2>安装过程</h2>
+
+<h3>安装luarocks</h3>
+
+<ol>
+    <li>
+        <a href="https://www.cnblogs.com/xulang/p/12535667.html" target="_blank">安装流程</a>
+    </li>
+    <li>
+        安装完成后cmd运行<code>luarocks</code>看是否安装成功<br>
+        <blockquote>找不到luarocks命令时，需要将图示四个文件copy放入<code>lua\5.1\</code>路径下<br>
+            <img src="https://i.loli.net/2021/11/24/HaimyRg9jqLStwb.png">
+        </blockquote>
+
+    </li>
+    <li>
+        安装busted <code>luarocks install busted</code><br>
+        <blockquote>
+            <ul>
+                <li>
+                    如若出现<a href="https://github.com/Olivine-Labs/busted/issues/590" target="_blank">Error: Parse error
+                    processing dependency 'lua_cliargs = 3.0'</a>，
+                    请键入<code>where luarocks</code>查看路径是否为您的安装路径，此现象为您在设备上安装了多个版本的luarocks系统无法确定安装版本。
+                </li>
+                <li>如若出现 <code>'mingw32-gcc'不是内部或外部命令，也不是可运行的程序</code> 您需要安装gcc<br>
+                    <img src="https://i.loli.net/2021/11/24/AjSJhNkOZ4FwKLY.png">
+                </li>
+            </ul>
+        </blockquote>
+    </li>
+
+</ol>
+
