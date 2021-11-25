@@ -15,6 +15,118 @@ js: [
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
+<h4>Simple Accordion</h4>
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First Section</div>
+        <div class="collapsible-body"><p>This is first section.</p></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second Section</div>
+        <div class="collapsible-body"><p>This is second section.</p></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third Section</div>
+        <div class="collapsible-body"><p>This is third section.</p></div>
+    </li>
+</ul>
+<h4>Popout Accordion</h4>
+<ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First Section</div>
+        <div class="collapsible-body"><p>This is first section.</p></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second Section</div>
+        <div class="collapsible-body"><p>This is second section.</p></div>
+    </li>
+    <li>
+        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third Section</div>
+        <div class="collapsible-body"><p>This is third section.</p></div>
+    </li>
+</ul>
+
+
+
+<h3>Tabs Demo</h3>
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s3"><a href="#inbox">Inbox</a></li>
+            <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
+            <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
+            <li class="tab col s3"><a href="#sent">Sent</a></li>
+        </ul>
+    </div>
+    <div id="inbox" class="col s12">Inbox</div>
+    <div id="unread" class="col s12">Unread</div>
+    <div id="outbox" class="col s12">Outbox (Disabled)</div>
+    <div id="sent" class="col s12">Sent</div>
+</div>
+
+
+<div class="card-panel">
+    <h5>Raised Buttons</h5>
+    <button class="btn waves-effect waves-teal">Add</button>
+    <button class="btn waves-effect waves-teal"><i class="material-icons left">add</i>Add</button>
+    <button class="btn waves-effect waves-teal"><i class="material-icons right">add</i>Add</button>
+    <button class="btn waves-effect waves-teal disabled">Add</button>
+    <h5>Flat Buttons</h5>
+    <button class="btn-flat waves-effect waves-teal">Add</button>
+    <button class="btn-flat waves-effect waves-teal disabled"><i class="material-icons left">add</i>Add</button>
+    <h5>Floating Buttons</h5>
+    <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a class="btn-floating waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
+    <h5>Large Buttons</h5>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
+    <h5>Primary Buttons</h5>
+    <button class="btn waves-effect waves-light red" type="submit">Send<i class="material-icons right">send</i></button>
+    <button class="btn waves-effect waves-light blue " type="submit">Cancel<i
+            class="material-icons right">cancel</i></button>
+</div>
+
+
+<div class="row">
+
+    <div class="col s12 m6">
+        <div class="card blue-grey lighten-4">
+
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator"
+                     src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png">
+            </div>
+
+            <div class="card-content activator">
+                <p>Albdo.</p>
+            </div>
+
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">HTML5<i class="material-icons right">close</i></span>
+                <img src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png"
+                     style="width: 60%">
+                <p>HTML5 is the next major revision of the HTML standard superseding HTML 4.01, XHTML 1.0, and XHTML
+                    1.1. HTML5 is a standard for structuring and presenting content on the World Wide Web.</p>
+                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+                <a class="right blue-grey-text" href="http://www.w3cschool.cn">www.w3cschool.cn</a>
+            </div>
+
+            <div class="card-action">
+                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+                <a class="right blue-grey-text" href="http://www.w3cschool.cn">www.w3cschool.cn</a>
+            </div>
+
+            <div class="card-action">
+                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+                <a class="right blue-grey-text" href="http://www.w3cschool.cn">www.w3cschool.cn</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!--长度减1-->
 {% capture lenMonthList %}20{% endcapture %}
 {% capture lenWish %}30{% endcapture %}
