@@ -1521,10 +1521,6 @@ const updateCurrentWishInfo = () => {
     document.getElementById('timeStartCurrentCharacter').innerHTML = wishCharacters[wish1Index].start;
     document.getElementById('timeEndCurrentCharacter').innerHTML = wishCharacters[wish1Index].end;
 
-    //penultimate 倒数第二
-    let penultimateWish = reprintWish ? nameInfo(wish2Index) : '';
-    let newWish = nameInfo(wish1Index);
-
     //最新的祈愿
     document.getElementById('currentCharacter0').innerHTML = nameInfo(wish1Index)
     document.getElementById('currentCharacter1').innerHTML = nameInfo(wish2Index)//class控制显示
@@ -1551,7 +1547,7 @@ const updateCurrentWishInfo = () => {
     //祈愿角色图片
     for (let i = 0; i < currentWishObj.wishIndex.length; ++i) {
         let index = currentWishObj.wishIndex[i]
-        let wishBGClass = document.getElementsByClassName('current-wish-bg-'+i);
+        let wishBGClass = document.getElementsByClassName('current-wish-bg-' + i);
         for (let t of wishBGClass) {
             t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[index].shortname[EN] + ".png')"
             t.style.backgroundPosition = wishCharacters[index].fullPos
@@ -1614,7 +1610,7 @@ const futureWishInfo = () => {
 
     console.log('coming soon: ', indexArr)
     for (let i = 0; i < indexArr.length; ++i) {
-        document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
+
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
         let showColor = wishCharacters[indexArr[i]].color;
         for (let w of wishColorClass) {
@@ -1622,16 +1618,18 @@ const futureWishInfo = () => {
             w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
                 showColor + ' -1px 1px 4px, ' + showColor + ' 1px 1px 4px, ' + showColor + ' 0 0 10px';
         }
-        let timelineTopInfoBG = document.getElementsByClassName('future-info-' + i);
-        for (let t of timelineTopInfoBG) {
-            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[indexArr[i]].shortname[0] + ".png')"
-            t.style.backgroundPosition = wishCharacters[indexArr[i]].fullPos
-            t.style.backgroundSize = wishCharacters[indexArr[i]].fullZoom
+        let eventWishBGColorClass = document.getElementsByClassName('future-wish-bg-color-' + i);
+        for (let eWishColor of eventWishBGColorClass) {
+            eWishColor.style.backgroundColor = showColor
         }
-        let currentElementColor = wishCharacters[indexArr[i]].color
-        let index = elementColor.indexOf(currentElementColor)
+
+        let index = elementColor.indexOf(showColor)
         document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
         document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
+        document.getElementById('futureWishText1' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
+        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/full/' + wishCharacters[indexArr[i]].shortname[0] + '.png'
+        document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
+        document.getElementById('futureWish1' + i).innerHTML = nameInfo(indexArr[i]);
     }
 }
 futureWishInfo();
@@ -1643,7 +1641,7 @@ const Deadline = (start, end) => secondsFormat(Math.floor(end.diff(start) / 1000
 const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[currentWishObj.wishIndex[0]].end))
 
 //当前时间
-setInterval("time_str.innerHTML = dayjs().format('MM-DD HH:mm:ss');", 1000);
+setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000);
 //结束当前祈愿时间
 setInterval("deadline.innerHTML = wishDeadline();", 1000);
 

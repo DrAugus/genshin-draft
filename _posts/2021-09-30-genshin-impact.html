@@ -115,14 +115,16 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
             {% endfor %}
         </div>
 
-        <div class="row center">
+        <div class="row">
+
             {% for i in (0..lenCurrent) %}
             <div class="col s5 current-wish-bg-{{i}} z-depth-2 hoverable" style="border-radius: 10px">
-                <img class="z-depth-0 responsive-img" id="currentElements{{i}}" alt="" src=""/><br>
-                <h2 class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></h2>
+                <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" alt="" src=""/><br>
+                <h2 class="current-wish-color-{{i}} right" id="currentCharacter1-{{i}}"></h2>
             </div>
             <div class="col s2"></div>
             {% endfor %}
+
         </div>
 
         <div class="row">
@@ -144,15 +146,23 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
         </div>
 
         <div class="row">
-            <h4><span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span></h4>
-            <h4>当前时间为：<span id="time_str"></span></h4>
-            <h4>祈愿倒计时：<span id="deadline"></span></h4>
+            <h2>当前祈愿周期为</h2>
+            <h4 class="center">
+                <span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span>
+            </h4>
+        </div>
+
+        <div class="collection">
+            <h3 class="collection-item">当前时间为：<span class="badge" id="time_str"></span></h3>
+            <h3 class="collection-item">祈愿倒计时：<span class="badge" id="deadline"></span></h3>
         </div>
     </div>
 
-    <div class="row">
-        <h4>除夕倒计时：<span id="newYearEve_"></span></h4>
-        <h4>春节倒计时：<span id="newYear"></span> 正月初一 壬寅年 虎 辛丑月 乙酉日</h4>
+    <div class="collection">
+        <h3 class="collection-item">除夕倒计时：<span class="badge" id="newYearEve_"></span></h3>
+        <h3 class="collection-item">春节倒计时：<span class="badge" id="newYear"></span>
+            <span class="badge red-text">正月初一 壬寅年 虎 辛丑月 乙酉日</span>
+        </h3>
     </div>
 
 </div>
@@ -164,19 +174,34 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
     <span id="futureWishInfo"></span>
     <div class="future-wish">
+
         {% for i in (0..lenFuture) %}
-        <div class="col s12 l4 ">
-            <div class="future-info future-info-{{i}} z-depth-2 hoverable">
-                <div class="timeline-top-cover">
-                    <div style="margin: auto">
-                        <img class="z-depth-0 responsive-img" id="futureElements{{i}}" alt="" src=""/>
-                        <h3><span class="future-wish-color-{{i}} truncate" id="futureWish{{i}}"></span></h3>
-                        <span class="future-wish-color-{{i}} truncate" id="futureWishText{{i}}"></span>
-                    </div>
+        <div class="col s12 m6 l4">
+            <div class="card future-wish-bg-color-{{i}}">
+                <div class="card-image waves-effect waves-block waves-light hoverable">
+                    <img class="activator" id="futureWishBG{{i}}" alt="">
                 </div>
+
+                <div class="card-content activator">
+                    <h3 class="future-wish-color-{{i}}" id="futureWish{{i}}"></h3>
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title future-wish-color-{{i}}" id="futureWish1{{i}}">
+                        <i class="material-icons right">close</i></span>
+                    <img class="z-depth-0 responsive-img" id="futureElements{{i}}" alt="" src=""/>
+                    <span class="future-wish-color-{{i}} " id="futureWishText{{i}}"></span>
+                </div>
+
+                <!--truncate截断-->
+                <div class="card-action">
+                    <h4 class="future-wish-color-{{i}} truncate" id="futureWishText1{{i}}"></h4>
+                </div>
+
             </div>
         </div>
         {% endfor %}
+
     </div>
 
 </div>
