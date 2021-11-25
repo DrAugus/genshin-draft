@@ -1446,7 +1446,8 @@ const wishInfo = () => {
         //动态设置各个角色的css
         let eventItemClass = document.getElementsByClassName('event-item-' + i);
         let eventImgClass = document.getElementsByClassName('event-img-' + i);
-        // let eventWishColorClass = document.getElementsByClassName('event-wish-color-' + i);
+        let eventWishColorClass = document.getElementsByClassName('event-wish-color-' + i);
+        let eventWishTextColorClass = document.getElementsByClassName('event-wish-text-color-' + i);
 
         let start = firstDay
         const end = dayjs(wishCharacters[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
@@ -1465,9 +1466,12 @@ const wishInfo = () => {
             img.style.backgroundPosition = wishCharacters[i].pos;
             img.style.backgroundSize = wishCharacters[i].zoom ? wishCharacters[i].zoom : '200%';
         }
-        // for (let eWishColor of eventWishColorClass) {
-        //     eWishColor.style.backgroundColor = wishCharacters[i].color
-        // }
+        for (let eWishColor of eventWishColorClass) {
+            eWishColor.style.backgroundColor = wishCharacters[i].color
+        }
+        for (let eWishTextColor of eventWishTextColorClass) {
+            eWishTextColor.style.color = wishCharacters[i].color
+        }
 
         let eventNameColor = wishCharacters[i].color;
         let eventNameClass = document.getElementsByClassName('event-name-' + i);
@@ -1475,7 +1479,12 @@ const wishInfo = () => {
             eName.style.textShadow = eventNameColor + ' -1px -1px 4px, ' + eventNameColor + ' 1px -1px 4px, ' +
                 eventNameColor + ' -1px 1px 4px, ' + eventNameColor + ' 1px 1px 4px, ' + eventNameColor + ' 0 0 10px';
         }
-        document.getElementById('eventName' + i).innerHTML = wishCharacters[i].shortname[showLanguage];
+        let showWishName = wishCharacters[i].shortname[showLanguage] ? wishCharacters[i].shortname[showLanguage] : '';
+        document.getElementById('eventName' + i).innerHTML = showWishName
+        document.getElementById('infoEventName' + i).innerHTML = showWishName
+        document.getElementById('infoEventBG' + i).src = wishCharacters[i].image ? '/assets/res/genshin-impact/events/' + wishCharacters[i].image : ''
+        document.getElementById('infoEventTextInfo' + i).innerHTML = wishCharacters[i].info ? wishCharacters[i].info : ''
+        document.getElementById('infoEventUrl' + i).href = wishCharacters[i].url ? wishCharacters[i].url : ''
         // document.getElementById('eventWishS' + i).innerHTML = wishCharacters[i].start;
         // document.getElementById('eventWishE' + i).innerHTML = wishCharacters[i].end;
 
