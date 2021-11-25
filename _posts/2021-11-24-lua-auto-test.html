@@ -44,8 +44,20 @@ excerpt: lua自动化测试指南
                     processing dependency 'lua_cliargs = 3.0'</a>，
                     请键入<code>where luarocks</code>查看路径是否为您的安装路径，此现象为您在设备上安装了多个版本的luarocks系统无法确定安装版本。
                 </li>
-                <li>如若出现 <code>'mingw32-gcc'不是内部或外部命令，也不是可运行的程序</code> 您需要安装gcc<br>
-                    <img src="https://i.loli.net/2021/11/24/AjSJhNkOZ4FwKLY.png">
+                <li>如若出现 <code>'mingw32-gcc'不是内部或外部命令，也不是可运行的程序</code>
+                    <img src="https://i.loli.net/2021/11/24/AjSJhNkOZ4FwKLY.png"><br>
+                    <details>
+                        <summary>您需要安装gcc</summary>
+                        <ul>
+                            <li>mingw下载安装（windows安装<a href="https://www.msys2.org/" target="_blank">指南</a>）</li>
+                            <li>配置环境变量。
+                                我的电脑->属性->高级系统设置->环境变量->系统变量<br>
+                                系统变量->Path->编辑->新建->D:\mingw\bin->确定<br>
+                                系统变量->新建->变量名：LIBRARY_path->变量值：D:\mingw\lib->确定<br>
+                                系统变量->新建->变量名：C_INCLUDE_PATH->变量值：D:\mingw\include->确定<br>
+                            <li>gcc -v验证安装</li>
+                        </ul>
+                    </details>
                 </li>
             </ul>
         </blockquote>
