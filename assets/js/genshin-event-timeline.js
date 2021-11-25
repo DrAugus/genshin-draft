@@ -1527,8 +1527,6 @@ const updateCurrentWishInfo = () => {
 
     document.getElementById('currentCharacter1-0').innerHTML = nameZHInfo(wish1Index)
     document.getElementById('currentCharacter1-1').innerHTML = nameZHInfo(wish2Index)//class控制显示
-    document.getElementById('currentCharacter2-0').innerHTML = nameZHInfo(wish1Index)
-    document.getElementById('currentCharacter2-1').innerHTML = nameZHInfo(wish2Index)//class控制显示
 
     //祈愿角色信息
     document.getElementById('currentWishText0').innerHTML = wishCharacters[wish1Index].info[ZH]
@@ -1550,8 +1548,7 @@ const updateCurrentWishInfo = () => {
         let wishBGClass = document.getElementsByClassName('current-wish-bg-' + i);
         for (let t of wishBGClass) {
             t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[index].shortname[EN] + ".png')"
-            t.style.backgroundPosition = wishCharacters[index].fullPos
-            t.style.backgroundSize = wishCharacters[index].fullZoom
+            t.style.backgroundPosition = wishCharacters[index].pos
             t.style.backgroundRepeat = 'no-repeat'
         }
 

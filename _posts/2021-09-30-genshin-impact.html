@@ -116,32 +116,24 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
         </div>
 
         <div class="row">
-
-            {% for i in (0..lenCurrent) %}
-            <div class="col s5 current-wish-bg-{{i}} z-depth-2 hoverable" style="border-radius: 10px">
-                <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" alt="" src=""/><br>
-                <h2 class="current-wish-color-{{i}} right" id="currentCharacter1-{{i}}"></h2>
-            </div>
-            <div class="col s2"></div>
-            {% endfor %}
-
-        </div>
-
-        <div class="row">
             <h2>当前祈愿为
-                <dl>
+                <ul class="collapsible popout" data-collapsible="accordion">
                     {% for i in (0..lenCurrent) %}
-                    <dt class="current-wish-color-{{i}}" id="currentCharacter2-{{i}}"></dt>
-                    <dd>
-                        <div class="col s12">
-                            <span class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></span>
+                    <li style="border-radius: 5px;" class="current-wish-bg-{{i}} z-depth-2 hoverable">
+                        <div class="collapsible-header current-wish-color-{{i}}"
+                             style="background-color: rgba(255,255,250,0)!important;"
+                             id="currentCharacter{{i}}">
                         </div>
-                        <div class="col s12">
+
+                        <div class="collapsible-body">
+                            <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" alt="" src=""/><br>
+                            <span class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></span><br>
                             <span class="current-wish-color-{{i}}" id="currentWishText{{i}}"></span>
+
                         </div>
-                    </dd>
+                    </li>
                     {% endfor %}
-                </dl>
+                </ul>
             </h2>
         </div>
 
