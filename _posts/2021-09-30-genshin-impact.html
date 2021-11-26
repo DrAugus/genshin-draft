@@ -15,6 +15,13 @@ js:
 excerpt: 原神相关的信息 目前只更新了角色up祈愿
 ---
 
+{% for member in site.data.genshin %}
+<ul>
+    <li>{{ member[1].name }}</li>
+</ul>
+{% endfor %}
+
+
 <h4>Simple Accordion</h4>
 <ul class="collapsible" data-collapsible="accordion">
     <li>
