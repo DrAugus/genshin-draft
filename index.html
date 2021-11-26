@@ -9,13 +9,18 @@ css: ["index.css"]
       <div class="card-content">
         <span id="post-title" class="card-title">{{post.title}}</span>
         <p id="post-date">
-          <i class="material-icons">date_range</i>
-          {{post.date | date: "%Y-%m-%d %H:%M"}}
+            <!--日期格式化网站 http://www.strfti.me/-->
+          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>
+          <i class="material-icons">date_range</i>发布日期 {{post.date | date: "%H:%M:%S %a, %B %d, %Y"}}
         </p>
-        <p id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
+
       </div>
+        <div class="card-action">
+            <p id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
+        </div>
       <div class="card-action">
-        <a href="{{post.url | prepend: site.baseurl}}">阅读更多...</a>
+          <a href="{{post.url | prepend: site.baseurl}}"> <i class="material-icons">share</i></a>
+          <a class="right" href="{{post.url | prepend: site.baseurl}}">READ MORE</a>
       </div>
     </div>
   </div>
