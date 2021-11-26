@@ -61,6 +61,8 @@ incremental: true
 
 future: true
 
+timezone: Asia/Shanghai
+
 #Liquid profiler
 #Generate a Liquid rendering profile to help you identify performance bottlenecks.
 profile: true
