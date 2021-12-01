@@ -46,27 +46,50 @@ excerpt: 让你能够更快速的决定今天吃什么
     {% capture FL_nameRateColor %}FL_nameRateColor{{i}}{% endcapture %}
     {% capture FL_foodRateColor %}FL_foodRateColor{{i}}{% endcapture %}
 
-    <!-- 这个row为了三行一组 -->
-    <div class="row row-display-{{i}}">
-        <!-- restaurant -->
-        <div class="col s4 " onclick="changeInfo()">
-            <div class="z-depth-0 fl-satisfaction-{{i}}">
-                <div style="margin-left: 10px">
-                    <span id="{{FL_name}}"></span></div>
-            </div>
-        </div>
-        <!-- food -->
-        <div class="col s4">
-            <div class="z-depth-2 fl-food-rate-{{i}}">
-                <div style="margin-left: 10px">
-                    <span id="{{FL_food}}"></span></div>
-            </div>
-        </div>
-        <!-- price -->
-        <div class="col s4">
-            <div class="z-depth-3">
-                <div style="margin-left: 10px">
-                    <span id="{{FL_price}}"></span></div>
+    <!--隐藏不存在的-->
+    <div class="row-display-{{i}}">
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="">
+                </div>
+
+                <div class="card-content activator">
+                    <p>测试预留.</p>
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">测试预留<i
+                            class="material-icons right">close</i></span>
+                    <img src="" style="width: 60%">
+                    <p>测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留</p>
+                    <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+                </div>
+
+                <!-- restaurant -->
+                <div class="card-action" onclick="changeInfo()">
+                    <div class="z-depth-0 fl-satisfaction-{{i}}">
+                        <div style="margin-left: 10px">
+                            <span id="{{FL_name}}"></span></div>
+                    </div>
+                </div>
+                <!-- food -->
+                <div class="card-action">
+                    <div class="z-depth-2 fl-food-rate-{{i}}">
+                        <div style="margin-left: 10px">
+                            <span id="{{FL_food}}"></span></div>
+                    </div>
+                </div>
+                <!-- price -->
+                <div class="card-action">
+                    <div class="z-depth-3">
+                        <div style="margin-left: 10px">
+                            <span id="{{FL_price}}"></span></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

@@ -82,28 +82,6 @@ const foodList = [
     //推荐
     [
         {
-            //测试用
-            name: 1,
-            type_name: foodTypeName[foodType.mala_xiang_guo],
-            type_color: foodTypeColor[foodType.mala_xiang_guo],
-            food: '香辣-Kyaneos | 土豆粉 | 雪碧',
-            food_rate: 5,
-            satisfaction: 3,
-            price: '18.67',
-            note: '下午会饿 偶现胃痛',
-        },
-        {
-            //测试用
-            name: 1,
-            type_name: foodTypeName[foodType.mala_xiang_guo],
-            type_color: foodTypeColor[foodType.mala_xiang_guo],
-            food: 'Kyaneos-六荤五素单人豪华餐 | Kyaneos | 雪碧',
-            food_rate: 5,
-            satisfaction: 3,
-            price: '18.67',
-            note: '下午会饿 偶现胃痛',
-        },
-        {
             name: 1,
             type_name: foodTypeName[foodType.mala_xiang_guo],
             type_color: foodTypeColor[foodType.mala_xiang_guo],
@@ -174,39 +152,6 @@ const foodList = [
             note: '会腻 切忌连续食用 忌香辣焖面',
         },
         {
-            //测试用
-            name: 6,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
-            food: 'Kyaneos+ | 藕夹 | 韭菜盒子',
-            food_rate: 5,
-            satisfaction: 4,
-            price: '114.89',
-            note: '会腻 切忌连续食用 忌香辣焖面',
-        },
-        {
-            //测试用
-            name: 6,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
-            food: 'Kyaneos+配胡辣汤 | 藕夹 | 韭菜盒子',
-            food_rate: 5,
-            satisfaction: 4,
-            price: '124.89',
-            note: '会腻 切忌连续食用 忌香辣焖面',
-        },
-        {
-            //测试用
-            name: 6,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
-            food: '自选焖面单人餐+Kyaneos | 藕夹 | 韭菜盒子',
-            food_rate: 5,
-            satisfaction: 4,
-            price: '14.89',
-            note: '会腻 切忌连续食用 忌香辣焖面',
-        },
-        {
             name: 7,
             type_name: foodTypeName[foodType.eu_cuisine],
             type_color: foodTypeColor[foodType.eu_cuisine],
@@ -214,17 +159,6 @@ const foodList = [
             food_rate: 5,
             satisfaction: 5,
             price: '9.9',
-            note: '仅作小食',
-        },
-        {
-            //测试用
-            name: 7,
-            type_name: foodTypeName[foodType.eu_cuisine],
-            type_color: foodTypeColor[foodType.eu_cuisine],
-            food: 'mini自选-Kyaneos',
-            food_rate: 5,
-            satisfaction: 5,
-            price: '29.9',
             note: '仅作小食',
         },
         {
