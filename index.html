@@ -10,7 +10,7 @@ css: ["index.css"]
         <span id="post-title" class="card-title">{{post.title}}</span>
         <p id="post-date">
             <!--日期格式化网站 http://www.strfti.me/-->
-          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>
+<!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
           <i class="material-icons">date_range</i>发布日期 {{post.date | date: "%H:%M:%S %a, %B %d, %Y"}}
         </p>
 
