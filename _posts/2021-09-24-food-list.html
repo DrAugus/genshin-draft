@@ -102,10 +102,7 @@ excerpt: 让你能够更快速的决定今天吃什么
 <h2>拉黑商家 - 难吃的一批</h2>
 
 <ul>
-    {% for i in (0..10) %}
-    {% capture nameBlackRestaurant %}nameBlackRestaurant{{i}}{% endcapture %}
-    {% if nameBlackRestaurant %}
-    <li id="{{nameBlackRestaurant}}"></li>
-    {% endif%}
+    {% for i in (0..20) %}
+    <li class="show-black-res-{{i}}" id="nameBlackRestaurant{{i}}"></li>
     {% endfor %}
 </ul>

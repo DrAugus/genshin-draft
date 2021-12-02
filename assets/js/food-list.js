@@ -243,15 +243,17 @@ const foodList = [
         },
 
     ],
-    //拉黑店家 拉黑缘由
+    //拉黑店家 拉黑缘由 拉黑菜品
     [
-        ['河南大烩菜', ''],
-        ['陕老顺.油泼面.凉皮.肉夹馍(祥符街道店)', ''],
-        ['私町Osaka食堂外带寿司(五洲国际广场店)', ''],
-        ['遇膳•黄焖鸡米饭•过桥米线(美林湾店)', ''],
-        ['东北饺子坊-凉皮凉面', ''],
-        ['秦小二油泼面肉夹馍凉皮臊子面', ''],
-        ['牛一锅牛肉焖饭(运河上街店)', '特辣特辣'],
+        ['河南大烩菜', '', ''],
+        ['陕老顺.油泼面.凉皮.肉夹馍(祥符街道店)', '', ''],
+        ['私町Osaka食堂外带寿司(五洲国际广场店)', '', ''],
+        ['遇膳•黄焖鸡米饭•过桥米线(美林湾店)', '', ''],
+        ['东北饺子坊-凉皮凉面', '', ''],
+        ['秦小二油泼面肉夹馍凉皮臊子面', '', ''],
+        ['牛一锅牛肉焖饭(运河上街店)', '特辣特辣', ''],
+        ['谭嘴巴酸辣粉·渔粉·凉皮(同人精华店)', '鱼刺过多 粉很少 腻', '招牌渔粉'],
+        ['豫顺园·蒸面烩面胡辣汤', '只有两片五花肉 非常干 极其难吃', '豆角五花肉蒸香面']
     ],
 ];
 
@@ -267,7 +269,7 @@ const foodRate = [
 
 let blackRestaurant = foodList[1];
 for (let i = 0; i < blackRestaurant.length; ++i) {
-    document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i][0] + ' | ' + blackRestaurant[i][1];
+    document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i][0] + ' | ' + blackRestaurant[i][1] + ' | ' + blackRestaurant[i][2];
 }
 
 let bestFood = foodList[0];
