@@ -16,18 +16,6 @@ excerpt: 让你能够更快速的决定今天吃什么
         <li class="stars-4">4星</li>
         <li class="stars-3">3星</li>
     </ul>
-    种类在整行背景上
-    <ul>
-        <li class="red accent-1">日韩料理</li>
-        <li class="pink accent-1">西餐</li>
-        <li class="purple accent-1">奶茶</li>
-        <li class="deep-purple lighten-4">Malatang 串串 麻辣烫 麻辣香锅 冒菜</li>
-        <li class="indigo lighten-4">炸鸡 烤鸭 Fried chicken and roast duck</li>
-        <li class="blue lighten-4">粉面</li>
-        <li class="cyan lighten-4">炒菜</li>
-        <li class="light-blue lighten-4">备用</li>
-        <li class="green lighten-4">备用</li>
-    </ul>
 </blockquote>
 
 
@@ -40,12 +28,6 @@ excerpt: 让你能够更快速的决定今天吃什么
 
     {% for i in (0..99) %}
 
-    {% capture FL_name %}FL_name{{i}}{% endcapture %}
-    {% capture FL_food %}FL_food{{i}}{% endcapture %}
-    {% capture FL_price %}FL_price{{i}}{% endcapture %}
-    {% capture FL_nameRateColor %}FL_nameRateColor{{i}}{% endcapture %}
-    {% capture FL_foodRateColor %}FL_foodRateColor{{i}}{% endcapture %}
-
     <!--隐藏不存在的-->
     <div class="row-display-{{i}}">
 
@@ -53,41 +35,29 @@ excerpt: 让你能够更快速的决定今天吃什么
             <div class="card">
 
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="">
+                    <img class="activator" id="food-bg-{{i}}" src="" alt="">
                 </div>
 
-                <div class="card-content activator">
-                    <p>测试预留.</p>
+                <!-- restaurant -->
+                <div class="card-content activator fl-satisfaction-{{i}}" onclick="changeInfo()">
+                    <span id="foodRestaurantName{{i}}"></span>
                 </div>
 
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">测试预留<i
                             class="material-icons right">close</i></span>
-                    <img src="" style="width: 60%">
+                    <img class="" id="food-bg-1-{{i}}" src="" style="width: 60%" alt="">
                     <p>测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留</p>
                     <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
                 </div>
 
-                <!-- restaurant -->
-                <div class="card-action" onclick="changeInfo()">
-                    <div class="z-depth-0 fl-satisfaction-{{i}}">
-                        <div style="margin-left: 10px">
-                            <span id="{{FL_name}}"></span></div>
-                    </div>
-                </div>
                 <!-- food -->
-                <div class="card-action">
-                    <div class="z-depth-2 fl-food-rate-{{i}}">
-                        <div style="margin-left: 10px">
-                            <span id="{{FL_food}}"></span></div>
-                    </div>
+                <div class="card-action fl-food-rate-{{i}}">
+                    <span id="foodName{{i}}"></span>
                 </div>
                 <!-- price -->
                 <div class="card-action">
-                    <div class="z-depth-3">
-                        <div style="margin-left: 10px">
-                            <span id="{{FL_price}}"></span></div>
-                    </div>
+                    <span id="foodPrice{{i}}"></span>
                 </div>
 
             </div>
@@ -99,10 +69,10 @@ excerpt: 让你能够更快速的决定今天吃什么
 </div>
 
 
-<h2>拉黑商家 - 难吃的一批</h2>
+<h2>拉黑商家 - 非常难吃</h2>
 
 <ul>
-    {% for i in (0..20) %}
+    {% for i in (0..19) %}
     <li class="show-black-res-{{i}}" id="nameBlackRestaurant{{i}}"></li>
     {% endfor %}
 </ul>

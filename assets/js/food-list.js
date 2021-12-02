@@ -1,14 +1,19 @@
 //html 循环最大也是100
 const MAX_INDEX = 100
+const MAX_BLACK_INDEX = 20
 
 const foodType = {
     'jp_ko_cuisine': 0,//日韩料理
     'eu_cuisine': 1,//西餐
     'tea': 2,//奶茶
-    'mala_xiang_guo': 3,//Malatang 串串 麻辣烫 麻辣香锅 冒菜
+    'mala_xiang_guo': 3,//Malatang 串串 麻辣烫 麻辣香锅 冒菜 图片来自美食天下
     'fried_chicken': 4, //炸鸡 烤鸭 Fried chicken and roast duck
     'fen_mian': 5,//粉面
     'dishes': 6,//炒菜
+}
+
+function findKey(value, compare = (a, b) => a === b) {
+    return Object.keys(data).find(k => compare(data[k], value))
 }
 
 // 80 透明度50%
@@ -70,8 +75,7 @@ const restaurant = {
 
 /*
     @name
-    @type_name
-    @type_color
+    @type
     @food
     @food_rate: 食物评级
     @satisfaction: 总体满意度
@@ -83,8 +87,7 @@ const foodList = [
     [
         {
             name: 1,
-            type_name: foodTypeName[foodType.mala_xiang_guo],
-            type_color: foodTypeColor[foodType.mala_xiang_guo],
+            type: 'mala_xiang_guo',
             food: '香辣-六荤五素单人豪华餐 | 土豆粉 | 雪碧',
             food_rate: 5,
             satisfaction: 3,
@@ -93,8 +96,7 @@ const foodList = [
         },
         {
             name: 2,
-            type_name: foodTypeName[foodType.eu_cuisine],
-            type_color: foodTypeColor[foodType.eu_cuisine],
+            type: 'eu_cuisine',
             food: '六件自助-黑胶嫩牛五方+牛气冲天堡+脆皮全腿+鸡米花+香芋派+中可',
             food_rate: 5,
             satisfaction: 4,
@@ -103,8 +105,7 @@ const foodList = [
         },
         {
             name: 3,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '双主食烤包自选豪华四件套-招牌香酥鸡炭火烤包+铁板烤肉拌粉+可乐+无小食',
             food_rate: 5,
             satisfaction: 4,
@@ -113,8 +114,7 @@ const foodList = [
         },
         {
             name: 4,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '招牌辣椒炒肉汤粉-微辣 | 卤鸡腿',
             food_rate: 4,
             satisfaction: 3,
@@ -123,8 +123,7 @@ const foodList = [
         },
         {
             name: 5,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '金汤肥牛汤粉 | 椒盐炸脆菇 | 公牛肉饼',
             food_rate: 5,
             satisfaction: 4,
@@ -133,8 +132,7 @@ const foodList = [
         },
         {
             name: 6,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '焖面自选 | 可乐 | 韭菜盒子 | 加香菜葱花',
             food_rate: 5,
             satisfaction: 4,
@@ -143,8 +141,7 @@ const foodList = [
         },
         {
             name: 6,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '自选焖面单人餐+配胡辣汤 | 藕夹 | 韭菜盒子',
             food_rate: 5,
             satisfaction: 4,
@@ -153,8 +150,7 @@ const foodList = [
         },
         {
             name: 7,
-            type_name: foodTypeName[foodType.eu_cuisine],
-            type_color: foodTypeColor[foodType.eu_cuisine],
+            type: 'eu_cuisine',
             food: 'mini自选-精选芝士披萨',
             food_rate: 5,
             satisfaction: 5,
@@ -163,8 +159,7 @@ const foodList = [
         },
         {
             name: 8,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '岐山臊子面 | 老潼关肉夹馍',
             food_rate: 5,
             satisfaction: 5,
@@ -173,8 +168,7 @@ const foodList = [
         },
         {
             name: 9,
-            type_name: foodTypeName[foodType.fried_chicken],
-            type_color: foodTypeColor[foodType.fried_chicken],
+            type: 'fried_chicken',
             food: '一人份手撕鸭+随机铁板菜+米饭 | 可口可乐',
             food_rate: 5,
             satisfaction: 5,
@@ -183,8 +177,7 @@ const foodList = [
         },
         {
             name: 10,
-            type_name: foodTypeName[foodType.dishes],
-            type_color: foodTypeColor[foodType.dishes],
+            type: 'dishes',
             food: '尖椒豆皮 | 香芹爆牛肉',
             food_rate: 5,
             satisfaction: 3,
@@ -193,8 +186,7 @@ const foodList = [
         },
         {
             name: 11,
-            type_name: foodTypeName[foodType.mala_xiang_guo],
-            type_color: foodTypeColor[foodType.mala_xiang_guo],
+            type: 'mala_xiang_guo',
             food: '5荤5素套餐 | 土豆粉 | 盲盒随机混搭 | 加香菜中辣',
             food_rate: 5,
             satisfaction: 4,
@@ -203,8 +195,7 @@ const foodList = [
         },
         {
             name: 12,
-            type_name: foodTypeName[foodType.fried_chicken],
-            type_color: foodTypeColor[foodType.fried_chicken],
+            type: 'fried_chicken',
             food: '豪华半只鸡套餐-飘香芝士味 | 套餐加量-去骨鸡腿肉2块',
             food_rate: 5,
             satisfaction: 5,
@@ -213,8 +204,7 @@ const foodList = [
         },
         {
             name: 13,
-            type_name: foodTypeName[foodType.fen_mian],
-            type_color: foodTypeColor[foodType.fen_mian],
+            type: 'fen_mian',
             food: '酸汤牛腩拉面-加猪排 | 荷包蛋',
             food_rate: 5,
             satisfaction: 5,
@@ -223,8 +213,7 @@ const foodList = [
         },
         {
             name: 14,
-            type_name: foodTypeName[foodType.fried_chicken],
-            type_color: foodTypeColor[foodType.fried_chicken],
+            type: 'fried_chicken',
             food: '大盘鸡加肉伴馒头(2个馒头)-微辣',
             food_rate: 5,
             satisfaction: 5,
@@ -233,8 +222,7 @@ const foodList = [
         },
         {
             name: 15,
-            type_name: foodTypeName[foodType.fried_chicken],
-            type_color: foodTypeColor[foodType.fried_chicken],
+            type: 'fried_chicken',
             food: '单人份大盘鸡+宽面-香辣味 | 馒头2个 | 网红锅贴3个',
             food_rate: 5,
             satisfaction: 4,
@@ -269,7 +257,11 @@ const foodRate = [
 
 let blackRestaurant = foodList[1];
 for (let i = 0; i < blackRestaurant.length; ++i) {
-    document.getElementById('nameBlackRestaurant' + i).innerHTML = blackRestaurant[i][0] + ' | ' + blackRestaurant[i][1] + ' | ' + blackRestaurant[i][2];
+    let tips0 = blackRestaurant[i][0]
+    let tips1 = blackRestaurant[i][1] ? blackRestaurant[i][1] : '暂无缘由'
+    let tips2 = blackRestaurant[i][2] ? blackRestaurant[i][2] : '全部拉黑'
+
+    document.getElementById('nameBlackRestaurant' + i).innerHTML = tips0 + '&nbsp;|&nbsp;' + tips1 + '&nbsp;|&nbsp;' + tips2
 }
 
 let bestFood = foodList[0];
@@ -287,19 +279,22 @@ console.log(repeatName)
 //下标为name真实的索引值对应name下标的数组内的值
 let repeatIndexArr = []
 const setBestFood = (k, v) => {
-    document.getElementById('FL_name' + k).innerHTML = restaurant[v.name];
-    document.getElementById('FL_food' + k).innerHTML = v.food;
-    document.getElementById('FL_price' + k).innerHTML = v.price;
+    console.log(k, v)
+    document.getElementById('foodRestaurantName' + k).innerHTML = restaurant[v.name];
+    document.getElementById('foodName' + k).innerHTML = v.food;
+    document.getElementById('foodPrice' + k).innerHTML = v.price;
+    let imgPath = '/assets/res/food/'
+    document.getElementById('food-bg-' + k).src = imgPath + v.type + '.png';
+    document.getElementById('food-bg-1-' + k).src = imgPath + v.type + '.png';
+    console.log('food-bg-' + k, imgPath + v.type + '.png')
 
     let bgSatisfaction = document.getElementsByClassName('fl-satisfaction-' + k);
     for (let t of bgSatisfaction) {
         t.style.backgroundColor = rateColor[v.satisfaction]
-        t.style.borderRadius = '10px'
     }
     let bgFoodRate = document.getElementsByClassName('fl-food-rate-' + k);
     for (let t of bgFoodRate) {
         t.style.backgroundColor = rateColor[v.food_rate]
-        t.style.borderRadius = '10px'
     }
 }
 
@@ -357,3 +352,9 @@ for (let i = bestFood.length; i < MAX_INDEX; ++i) {
     }
 }
 
+for (let i = blackRestaurant.length; i < MAX_BLACK_INDEX; ++i) {
+    let show = document.getElementsByClassName('show-black-res-' + i);
+    for (let s of show) {
+        s.style.display = 'none'
+    }
+}
