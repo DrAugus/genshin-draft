@@ -284,8 +284,8 @@ const setBestFood = (k, v) => {
     document.getElementById('foodName' + k).innerHTML = v.food;
     document.getElementById('foodPrice' + k).innerHTML = v.price;
     let imgPath = '/assets/res/food/'
-    document.getElementById('food-bg-' + k).src = imgPath + v.type + '.png';
-    document.getElementById('food-bg-1-' + k).src = imgPath + v.type + '.png';
+    document.getElementById('food-bg-' + k).src = imgPath + v.type + '.jpg';
+    document.getElementById('food-bg-1-' + k).src = imgPath + v.type + '.jpg';
     console.log('food-bg-' + k, imgPath + v.type + '.png')
 
     let bgSatisfaction = document.getElementsByClassName('fl-satisfaction-' + k);
