@@ -10,19 +10,26 @@ excerpt: 坚持学习每一天
 
 <ul class="collapsible popout" data-collapsible="accordion">
     {% for words in site.data.words-zh %}
-    <li style="border-radius: 5px;" class="z-depth-2 hoverable">
+    {% if words[1].words != "" %}
+    <li class="z-depth-2 hoverable">
         <div class="collapsible-header">
             <span> {{words[1].words}} </span>
             <span> {{words[1].pinyin}} </span>
         </div>
 
         <div class="collapsible-body">
-            <span> {{words[1].basicInterpretation}} </span><br>
-            <span> {{words[1].detailedInterpretation}} </span><br>
-            <span> {{words[1].near-synonym}} </span><br>
-            <span> {{words[1].antonym}} </span><br>
-            <span> {{words[1].source}} </span><br>
+            {% if words[1].basicInterpretation != "" %}
+            <span>基本释义： {{words[1].basicInterpretation}} </span><br> {% endif %}
+            {% if words[1].detailedInterpretation != "" %}
+            <span>详细释义： {{words[1].detailedInterpretation}} </span><br> {% endif %}
+            {% if words[1].near-synonym != "" %}
+            <span>近义词： {{words[1].near-synonym}} </span><br> {% endif %}
+            {% if words[1].antonym != "" %}
+            <span>反义词： {{words[1].antonym}} </span><br> {% endif %}
+            {% if words[1].source != "" %}
+            <span>出处： {{words[1].source}} </span><br> {% endif %}
         </div>
     </li>
+    {% endif %}
     {% endfor %}
 </ul>
