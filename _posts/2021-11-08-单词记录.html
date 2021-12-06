@@ -8,6 +8,32 @@ excerpt: 坚持学习每一天
 ---
 
 
+<h4>Default Preloader</h4>
+<div class="progress">
+    <div class="determinate" style="width: 50%"></div>
+</div>
+<h4>Indeterminate Preloader</h4>
+<div class="progress">
+    <div class="indeterminate"></div>
+</div>
+<h4>Circular Preloader</h4>
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+
 {% for words in site.data.words-en %}
 <p>{{words}}</p>
 {% endfor %}
