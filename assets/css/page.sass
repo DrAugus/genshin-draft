@@ -2,9 +2,10 @@
 
 ---
 
+@font-face
+  font-family: Merriweather, Cambria, Cochin, Georgia, Times, JetBrains Mono, serif
 
 body
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', JetBrains Mono, serif
   display: flex
   min-height: 100vh
   flex-direction: column
@@ -78,7 +79,7 @@ header
     background-size: 100%
 
   .page-top-bg
-    background-image: url("/assets/res/img.png")
+    //background-image: url("/assets/res/img.png")
     //background-position: 20% 80%
     //background-size: 80%
     opacity: 80%
@@ -99,44 +100,19 @@ header
     //background: linear-gradient(90deg, rgba(84, 225, 221, 0.8) 10%, rgba(107, 241, 227, 0.8) 90%)
     //background: #4cf3b6
     margin-top: 36px
-
-    .user-bg
-      float: left
-      width: 100%
-
-    .user-info
-      margin-top: 20px
-      line-height: initial
-
-      .a
-        color: #585858 !important
+    line-height: initial
 
     .circle
       border-style: solid
       border-color: rgba(0, 150, 110, 0.76)
       border-width: 1px
 
-  .ad
-    position: relative
-
-    a
-      img
-        width: 100%
-
-    i
-      position: absolute
-      top: 0
-      right: 10px
-      cursor: pointer
-
   nav
-    a
-      color: #0089ff !important
 
     &.top-nav
       position: relative
       height: 240px
-      background-color: #7ec6e5 !important
+      background-color: rgba(126, 198, 229, 0.8) !important
       //background: -webkit-linear-gradient(-30deg, rgba(109, 246, 105, 0.8) 30%, rgba(176, 248, 134, 0.8) 60%)
 
       .head-bg-wrapper
@@ -165,13 +141,11 @@ header
       font-weight: bold
       line-height: 80px
       margin-top: 0.5em
-      font-family: "Algerian", serif
 
     .head-message
       margin: 0
       font-size: 30px
       font-weight: bold
-      font-family: kouzan, serif
       line-height: initial
       text-shadow: #E2B032FF -1px -1px 4px, #E2B032FF 1px -1px 4px, #E2B032FF -1px 1px 4px, #E2B032FF 1px 1px 4px, #E2B032FF 0px 0px 10px
 
@@ -257,9 +231,6 @@ main
   padding: 3px 10px
   background-color: #00000000
 
-.page-footer .footer-copyright
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-
 .opacity-icon
   opacity: 60% !important
 
@@ -267,7 +238,7 @@ main
 footer
   &.page-footer
     margin-top: 10px
-    background-color: #76cb97
+    background-color: #76cb9738
   //background: -webkit-linear-gradient(-30deg, #d28a57 30%, #7e49e7 60%)
   //background: linear-gradient(60deg, rgba(229, 222, 100, 0.6) 30%, rgba(183, 241, 127, 0.6) 70%)
 

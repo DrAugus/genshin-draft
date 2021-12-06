@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "英语词汇"
+date:   '2021-11-08 15:42:11'
+categories: 单词
+tags: 单词 英语
+excerpt: 坚持学习每一天
+---
+
+
+<h4>Default Preloader</h4>
+<div class="progress">
+    <div class="determinate" style="width: 50%"></div>
+</div>
+<h4>Indeterminate Preloader</h4>
+<div class="progress">
+    <div class="indeterminate"></div>
+</div>
+<h4>Circular Preloader</h4>
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+
+{% for words in site.data.words-en %}
+<p><i class="fas fa-horse"></i> {{words}}</p>
+{% endfor %}
