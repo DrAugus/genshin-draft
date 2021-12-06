@@ -2,9 +2,10 @@
 
 ---
 
+@font-face
+  font-family: Merriweather, Cambria, Cochin, Georgia, Times, JetBrains Mono, serif
 
 body
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', JetBrains Mono, serif
   display: flex
   min-height: 100vh
   flex-direction: column
@@ -130,13 +131,11 @@ header
       cursor: pointer
 
   nav
-    a
-      color: #0089ff !important
 
     &.top-nav
       position: relative
       height: 240px
-      background-color: rgba(126, 198, 229, 0) !important
+      background-color: rgba(126, 198, 229, 0.8) !important
       //background: -webkit-linear-gradient(-30deg, rgba(109, 246, 105, 0.8) 30%, rgba(176, 248, 134, 0.8) 60%)
 
       .head-bg-wrapper
@@ -165,13 +164,11 @@ header
       font-weight: bold
       line-height: 80px
       margin-top: 0.5em
-      font-family: "Algerian", serif
 
     .head-message
       margin: 0
       font-size: 30px
       font-weight: bold
-      font-family: kouzan, serif
       line-height: initial
       text-shadow: #E2B032FF -1px -1px 4px, #E2B032FF 1px -1px 4px, #E2B032FF -1px 1px 4px, #E2B032FF 1px 1px 4px, #E2B032FF 0px 0px 10px
 
@@ -256,9 +253,6 @@ main
   color: #313131
   padding: 3px 10px
   background-color: #00000000
-
-.page-footer .footer-copyright
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 
 .opacity-icon
   opacity: 60% !important
