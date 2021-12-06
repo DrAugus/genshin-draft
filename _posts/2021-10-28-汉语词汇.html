@@ -1,17 +1,21 @@
 ---
 layout: post
-title:  "字词记录"
+title:  "汉语词汇"
 date:   '2021-10-28 11:57:55'
 categories: 单词
-tags: 成语 字词
+tags: 成语 字词 汉语
 excerpt: 坚持学习每一天
 ---
 
 
-<ul class="collapsible popout" data-collapsible="accordion">
+<h2 class="center">跟着小猫一起学词语</h2>
+
+
+<ul class="collapsible popout fa-ul" data-collapsible="accordion">
     {% for words in site.data.words-zh %}
     {% if words[1].words != "" %}
-    <li class="z-depth-2 hoverable">
+    <li class="z-depth-2 hoverable" style="list-style-type: none">
+        <i class="fa-li fas fa-cat"></i>
         <div class="collapsible-header">
             <span> {{words[1].words}} </span>
             <span> {{words[1].pinyin}} </span>
