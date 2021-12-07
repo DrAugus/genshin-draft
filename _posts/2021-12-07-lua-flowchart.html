@@ -1,0 +1,96 @@
+---
+title:  Lua可视化流程
+layout: post
+date:   '2021-12-07 17:32:11'
+categories: 编程
+tags: lua
+excerpt: Lua可视化流程
+---
+
+
+
+{% for words in site.data.lua-flow %}
+{% for steps in words[1].evaluate.step %}
+{% if steps == "invoke" %}
+{{words[1].evaluate.invoke}}
+{% else %}
+<p>{{steps}}</p>
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+
+<h3>policy_administrator:evaluate</h3>
+<div class="row">
+    <div class="col s12 green-text">初始化所有主客体及行为</div>
+    <div class="col s12 green-text">格式化所有主客体属性</div>
+    <div class="col s12 green-text">判定pa_action_handler</div>
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s6"><a href="#pa_action_handler-0">pa_action_handler true</a></li>
+            <li class="tab col s6"><a class="active" href="#pa_action_handler-1">pa_action_handler false</a></li>
+        </ul>
+    </div>
+    <div id="pa_action_handler-0" class="col s12">
+
+        <a href="#policy_administrator.default_handle">policy_administrator.default_handle();</a>
+    </div>
+    <div id="pa_action_handler-1" class="col s12">
+
+        <details>
+            <summary><code>policy_administrator.base_info_wrapper();</code></summary>
+            <ol>
+                <li>invoke 身份查询identity_handler:query_identity(初始化身份->填充身份信息)</li>
+                <li>obs信息填充</li>
+            </ol>
+        </details>
+        <a href="#policy_administrator.default_handle"><button id="show">sssshow</button> policy_administrator.logon_wrapper();</a>
+
+
+    </div>
+    <div id="policy_administrator.default_handle" class="col s12">
+        <ol><li>invoke 身份检查 <code>identity_handler:check_identity</code><ol><li>初始化身份</li><li>必要条件下需要重新进行身份查询</li></ol></li><li>invoke 评估方法 <code>policy_engine:eval</code><ol><li>初始化所有信息</li><li>没有当前对象就生成基本值</li><li>黑名单相关信息填充</li><li>其他策略消息填充</li><li>处理<a href="#pe_handler"><code>pe_handler</code></a></li><li>模拟处理</li><li>敏感资产匹配</li><li>填充schema、DB</li></ol></li></ol>
+    </div>
+
+
+
+
+    <div class="col s12 green-text">对于特殊数据库的response_需要调整</div>
+    <div class="col s12 green-text">填充obs</div>
+    <div class="col s12 green-text">return self.response_, self.matched_policy_id_, self.obs_</div>
+    <div class="col s12"></div>
+
+
+</div>
+
+
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <a href="#" class="breadcrumb">Home</a>
+            <a href="#" class="breadcrumb">Technology</a>
+            <a href="#" class="breadcrumb">HTML5</a>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="col s12">
+    <ul class="tabs">
+        <li class="tab col s3"><a href="#inbox">Inbox</a></li>
+        <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
+        <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
+        <li class="tab col s3"><a href="#sent">Sent</a></li>
+    </ul>
+</div>
+<div id="inbox" class="col s12">Inbox</div>
+<div id="unread" class="col s12">Unread</div>
+<div id="outbox" class="col s12">Outbox (Disabled)</div>
+<div id="sent" class="col s12">Sent</div>
+
+
+
+
+
+

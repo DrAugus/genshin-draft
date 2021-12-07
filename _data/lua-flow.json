@@ -1,0 +1,29 @@
+{
+  "policy_administrator": {
+    "evaluate": {
+      "step": [
+        "初始化所有主客体及行为",
+        "格式化所有主客体属性",
+        "invoke",
+        "对于特殊数据库的response_需要调整",
+        "填充obs",
+        "return self.response_, self.matched_policy_id_, self.obs_",
+        "结束评估"
+      ],
+      "invoke": {
+        "pa_action_handler": {
+          "true": {
+            "base_info_wrapper": {
+            },
+            "logon_wrapper": {
+            }
+          },
+          "false": {
+            "default_handle": {
+            }
+          }
+        }
+      }
+    }
+  }
+}
