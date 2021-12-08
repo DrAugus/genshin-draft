@@ -8,177 +8,354 @@ excerpt: Lua可视化流程
 ---
 
 
-{% for words in site.data.lua-flow %}
-{% for steps in words[1].evaluate.step %}
-{% if steps == "invoke" %}
-{{words[1].evaluate.invoke}}
-{% else %}
-<p>{{steps}}</p>
-{% endif %}
-{% endfor %}
-{% endfor %}
+<!--invoke 全折叠-->
 
 
-<h3>policy_administrator:evaluate</h3>
+<!--移除summary前小箭头-->
+<style>
+    details > summary:first-of-type {
+        list-style-type: none;
+    }
+
+    a.active {
+        color: #dc2e2e !important
+    }
+</style>
+
+
+<h3><i>policy_administrator:evaluate</i></h3>
 <div class="row">
     <div class="chip green-text">初始化所有主客体及行为</div>
     <br>
     <div class="chip green-text">格式化所有主客体属性</div>
     <br>
-    <div class="chip green-text">判定pa_action_handler</div>
-    <br>
-    <div class="col s12">
-        <ul class="tabs">
-            <li class="tab col s6"><a href="#pa_action_handler-0">null</a></li>
-            <li class="tab col s6"><a class="active" href="#pa_action_handler-1">not null</a></li>
-        </ul>
-    </div>
-    <div id="pa_action_handler-0" class="col s12">
-
-        <a href="#policy_administrator.default_handle">policy_administrator.default_handle();</a>
-    </div>
-    <div id="pa_action_handler-1" class="col s12">
-
-        <details>
-            <summary><code>policy_administrator.base_info_wrapper();</code></summary>
-            <ol>
-                <li>invoke 身份查询identity_handler:query_identity(初始化身份->填充身份信息)</li>
-                <li>obs信息填充</li>
-            </ol>
-        </details>
-        <a href="#policy_administrator.default_handle">policy_administrator.logon_wrapper();</a>
 
 
-    </div>
-    <br>
-    <div id="policy_administrator.default_handle" class="col s12">
-        <ol>
-            <li>invoke 身份检查 <code>identity_handler:check_identity</code>
+    <details>
+        <summary>
+            <div class="chip green-text"><b>判定pa_action_handler</b></div>
+        </summary>
+
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a href="#pa_action_handler-0">null</a></li>
+                <li class="tab col s6"><a class="active" href="#pa_action_handler-1">not null</a></li>
+            </ul>
+        </div>
+        <div id="pa_action_handler-0" class="col s12">
+            invoke <a href="#policy_administrator.default_handle">policy_administrator.default_handle();</a>
+        </div>
+        <div id="pa_action_handler-1" class="col s12">
+            <details>
+                <summary>invoke <u>policy_administrator.base_info_wrapper();</u></summary>
                 <ol>
-                    <li>初始化身份</li>
-                    <li>必要条件下需要重新进行身份查询</li>
+                    <li>invoke 身份查询identity_handler:query_identity(初始化身份->填充身份信息)</li>
+                    <li>obs信息填充</li>
                 </ol>
-            </li>
-            <li>invoke 评估方法 <span class="chip green">policy_engine:eval</span>
-                <ol class="green lighten-3">
-                    <li>初始化所有信息</li>
-                    <li>没有当前对象就生成基本值</li>
-                    <li>黑名单相关信息填充</li>
-                    <li>其他策略消息填充</li>
-                    <li>处理<span class="chip">pe_handler</span></li>
-                    <div class="col s12">
-                        <ul class="tabs">
-                            <li class="tab col s6"><a href="#pe_handler-0">null</a></li>
-                            <li class="tab col s6"><a class="active" href="#pe_handler-1">not null</a></li>
-                        </ul>
-                    </div>
-                    <div id="pe_handler-0" class="col s12 orange lighten-3">
+            </details>
+            invoke <a href="#policy_administrator.default_handle">policy_administrator.logon_wrapper();</a>
+        </div>
+
+
+        <div id="policy_administrator.default_handle" class="col s12">
+            <div class="col s12">
+                <details>
+                    <summary>
+                        <div class="chip">invoke 身份检查 <a href="#identity_handler:check_identity">identity_handler:check_identity</a>
+                        </div>
+                    </summary>
+                    <ol>
+                        <li>初始化身份</li>
+                        <li>必要条件下需要重新进行身份查询</li>
+                    </ol>
+                </details>
+            </div>
+            <div class="col s12">
+                <div class="chip"> invoke 评估方法 <span class="green-text">policy_engine:eval</span></div>
+                <br>
+                <div class="chip green accent-1">初始化所有信息</div>
+                <br>
+                <div class="chip green accent-1">没有当前对象就生成基本值</div>
+                <br>
+                <div class="chip green accent-1">黑名单相关信息填充</div>
+                <br>
+                <div class="chip green accent-1">其他策略消息填充</div>
+                <br>
+                <div class="chip green accent-1"><b>处理<span class="red-text">pe_handler</span></b></div>
+                <br>
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s6"><a href="#pe_handler-0">null</a></li>
+                        <li class="tab col s6"><a class="active" href="#pe_handler-1">not null</a></li>
+                    </ul>
+                </div>
+                <br>
+                <div id="pe_handler-0" class="col s12">
+                    <div class="chip">
                         <i>invoke 默认方法 <a href="#policy_engine:default_handle">policy_engine:default_handle</a></i>
-                        <div id="policy_engine:default_handle" class="col s12">
-                            sql_direction是否为回向消息<br>
+                    </div>
+                    <div id="policy_engine:default_handle" class="col s12">
+                        <div class="chip orange lighten-3">sql_direction是否为回向消息</div>
+                        <br>
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab col s6"><a href="#sql_direction_response">response</a></li>
+                                <li class="tab col s6"><a class="active" href="#sql_direction_request">request</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="sql_direction_response" class="col s12">
+
+                            <details>
+                                <summary>
+                                    <div class="chip">
+                                        <i> invoke <a
+                                                href="#policy_engine:handle_response_flow">policy_engine:handle_response_flow</a></i>
+                                    </div>
+                                </summary>
+                                <div id="policy_engine:handle_response_flow" class="col s12">
+                                    <div class="chip">初始化matched_info</div>
+                                    <br>
+                                    <div class="chip">action为DATAMASKING（目前回向只有DM）</div>
+                                    <br>
+
+                                    <details>
+                                        <summary>
+                                            <div class="chip">
+                                                <i>invoke <a
+                                                        href="#policy_engine:handle_dm_response">policy_engine:handle_dm_response</a>处理脱敏回向</i>
+                                            </div>
+                                        </summary>
+                                        <div id="policy_engine:handle_dm_response" class="col s12">
+                                            <div class="chip">schema、table、colum转换为大写</div>
+                                            <br>
+                                            <div class="chip">遍历所有列判定是否为敏感列</div>
+                                            <ol>
+                                                <li>
+                                                    <div> 不是敏感列，不脱敏，返回</div>
+                                                </li>
+                                                <li>
+                                                    <div>是敏感列，判定是否获取到敏感资产</div>
+                                                    <ol>
+                                                        <li>
+                                                            <div>获取到敏感资产，查找并返回对应的脱敏算法</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>未获取到敏感资产，返回默认脱敏算法</div>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </details>
+                                </div>
+                            </details>
+
+
+                        </div>
+                        <div id="sql_direction_request" class="col s12">
+                            <div class="chip">格式化parsed_statement_将string转化为lua table</div>
+                            <br>
+                            <div class="chip">判定是否命中工单语句policy_engine:handle_worksheet_statement</div>
+                            <br>
                             <div class="col s12">
                                 <ul class="tabs">
-                                    <li class="tab col s6"><a href="#sql_direction_response">response</a></li>
-                                    <li class="tab col s6"><a class="active" href="#sql_direction_request">request</a>
+                                    <li class="tab col s6"><a href="#handle_worksheet_statement-0">false</a></li>
+                                    <li class="tab col s6"><a class="active"
+                                                              href="#handle_worksheet_statement-1">true</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div id="sql_direction_response" class="col s12">
-                                invoke <a
-                                    href="#policy_engine:handle_response_flow">policy_engine:handle_response_flow</a>
-
-
-                                <div id="policy_engine:handle_response_flow" class="col s12">
-
-                                </div>
-                                <div class="col s12"></div>
-                                <div class="col s12"></div>
-                                <div class="col s12"></div>
-                            </div>
-                            <div id="sql_direction_request" class="col s12">
-                                格式化parsed_statement_将string转化为lua table<br>
-                                判定是否命中工单语句policy_engine:handle_worksheet_statement<br>
+                            <div id="handle_worksheet_statement-0" class="col s12">
+                                <div class="chip"> invoke sensitive_evaluation:matched_senstive_sql是否命中敏感sql</div>
+                                <br>
                                 <div class="col s12">
                                     <ul class="tabs">
-                                        <li class="tab col s6"><a href="#handle_worksheet_statement-0">false</a></li>
-                                        <li class="tab col s6"><a class="active" href="#handle_worksheet_statement-1">true</a>
+                                        <li class="tab col s6"><a href="#matched_senstive_sql-0">false</a></li>
+                                        <li class="tab col s6"><a class="active" href="#matched_senstive_sql-1">true</a>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div id="handle_worksheet_statement-0" class="col s12">
-                                invoke sensitive_evaluation:matched_senstive_sql是否命中敏感sql<br>
+                                <div id="matched_senstive_sql-0" class="col s12">
+                                    <div class="chip">
+                                        判定是否为业务身份，是则invoke
+                                        policy_engine:handle_business_specific业务全审计；否则响应policy_engine:access_control_handle，审计DML、DDL
+                                    </div>
+                                </div>
+                                <div id="matched_senstive_sql-1" class="col s12">
+                                    <div class="chip"> invoke 进行策略匹配<a href="#policy_engine:go_through_policies">policy_engine:go_through_policies</a>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="col s12">
+                                    <div class="chip">
+                                        判定policy_id是否为空，非空则填充obs
+                                    </div>
+                                </div>
                             </div>
                             <div id="handle_worksheet_statement-1" class="col s12">
-                                invoke policy_engine:handle_worksheet_statement(填充obs信息)<br>
-                            </div>
-                            <div class="col s12"></div>
-                            <div class="col s12"></div>
-                            <div class="col s12"></div>
-                            <div class="col s12"></div>
-                            <div class="col s12"></div>
-                            <div class="col s12"></div>
 
-
-                        </div>
-                    </div>
-                    <div id="pe_handler-1" class="col s12 orange lighten-3">
-                        <i>invoke <a href="#policy_engine:logon_wrapper">policy_engine:logon_wrapper</a></i>
-                        <div id="policy_engine:logon_wrapper" class="col s12">
-                            是否忽略登录请求？是，返回默认值，不进行下一步；否，执行下一步<br>
-                            是否为工单登录？是，直接return；否，执行下一步<br>
-                            invoke 评估访问控制<a
-                                href="#policy_engine:eval_access_control">policy_engine:eval_access_control</a><br>
-
-                            <div id="policy_engine:eval_access_control" class="col s12">
-                                检查是否为非登录状态<br>
-
-                                是登录<br>
-                                检查系统数据字典policy_engine:system_data_dict_force<br>
-                                判定评估结果是否为eval_result_pending<br>
-                                是，则直接return<br>
-                                否，进行资产类型判空(见下)<br>
-                                非登录<br>
-                                资产类型判空？若非空，则invoke 确定资产类型sensitive_evaluation:determine_asset_type<br>
-                                invoke 匹配敏感资产<a href="#sensitive_evaluation:matched_sensitive_asset_ex">sensitive_evaluation:matched_sensitive_asset_ex</a><br>
-                                <div id="sensitive_evaluation:matched_sensitive_asset_ex" class="col s12">
-                                    sensitive_evaluation:matched_sensitive_asset_exsensitive_evaluation:matched_sensitive_asset_exsensitive_evaluation:matched_sensitive_asset_exsensitive_evaluation:matched_sensitive_asset_ex
+                                <div class="chip">invoke policy_engine:handle_worksheet_statement(填充obs信息)</div>
+                                <br>
+                                <div class="chip">判定parse语句是否存在，即parsed_statement_是否有值</div>
+                                <br>
+                                <div class="col s12">
+                                    <ul class="tabs">
+                                        <li class="tab col s6"><a href="#parsed_statement_-0">false</a></li>
+                                        <li class="tab col s6"><a class="active" href="#parsed_statement_-1">true</a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                判定是否为工单？<br>
-                                是，直接return<br>
-                                否，查看is_asset_matched是否匹配到资产？否，return；是，invoke 进行策略匹配<a
-                                    href="#policy_engine:go_through_policies">policy_engine:go_through_policies</a><br>
-                                <div id="policy_engine:go_through_policies" class="col s12">
-                                    policy_engine:go_through_policiespolicy_engine:go_through_policiespolicy_engine:go_through_policiespolicy_engine:go_through_policiespolicy_engine:go_through_policies
+
+                                <div id="parsed_statement_-0" class="col s12">
+                                    <div class="chip"> 直接return</div>
+                                </div>
+                                <div id="parsed_statement_-1" class="col s12">
+                                    <div class="chip">遍历所有敏感资产</div>
+                                    <br>
+                                    <div class="chip">进行资产匹配sensitive_evaluation:matched_sensitive_asset</div>
                                 </div>
                             </div>
+                        </div>
 
 
-                            invoke <a href="#policy_engine:handle_logon_fail_control">policy_engine:handle_logon_fail_control</a><br>
-                            <div id="policy_engine:handle_logon_fail_control" class="col s12">
-
+                    </div>
+                </div>
+                <div id="pe_handler-1" class="col s12">
+                    <div class="chip"><i>invoke <a
+                            href="#policy_engine:logon_wrapper">policy_engine:logon_wrapper</a></i></div>
+                    <div id="policy_engine:logon_wrapper" class="col s12">
+                        <div class="chip"> 是否忽略登录请求？policy_engine:ignore_logon_request</div>
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab col s6"><a href="#ignore_logon_request-0">not ignore</a></li>
+                                <li class="tab col s6"><a class="active" href="#ignore_logon_request-1">ignore</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="ignore_logon_request-0" class="col s12">
+                            <div class="chip"> 是否工单登录？policy_engine:handle_worksheet_logon</div>
+                            <div class="col s12">
+                                <ul class="tabs">
+                                    <li class="tab col s6"><a href="#handle_worksheet_logon-0">no</a></li>
+                                    <li class="tab col s6"><a class="active" href="#handle_worksheet_logon-1">yes</a>
+                                    </li>
+                                </ul>
                             </div>
+                            <div id="handle_worksheet_logon-0" class="col s12">
+                                <div class="chip orange lighten-3"> invoke 评估访问控制<a
+                                        href="#policy_engine:eval_access_control">policy_engine:eval_access_control</a>
+                                </div>
+                                <br>
+                                <div id="policy_engine:eval_access_control" class="col s12">
+                                    <div class="chip pink lighten-3"> 检查是否为非登录状态action logon</div>
+                                    <br>
+                                    <div class="col s12">
+                                        <ul class="tabs">
+                                            <li class="tab col s6"><a href="#action_logon-0">logon</a></li>
+                                            <li class="tab col s6"><a class="active" href="#action_logon-1">not
+                                                logon</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="action_logon-0" class="col s12">
+                                        <!--no handle-->
+                                    </div>
+                                    <div id="action_logon-1" class="col s12">
+                                        <div class="chip">检查系统数据字典policy_engine:system_data_dict_force</div>
+                                        <br>
+                                        <div class="chip"> 判定评估结果非eval_result_pending且非敏感sql直接return</div>
+                                        <br>
+                                    </div>
+                                    <div class="chip pink lighten-3">
+                                        资产类型判空？若非空，则invoke 确定资产类型sensitive_evaluation:determine_asset_type
+                                    </div>
+                                    <br>
 
+                                    <details>
+                                        <summary>
+                                            <div class="chip pink lighten-3"> invoke 匹配敏感资产<a
+                                                    href="#sensitive_evaluation:matched_sensitive_asset_ex">sensitive_evaluation:matched_sensitive_asset_ex</a>
+                                            </div>
+                                        </summary>
+                                        <div id="sensitive_evaluation:matched_sensitive_asset_ex" class="col s12">
+                                            TODO sensitive_evaluation:matched_sensitive_asset_ex
+                                        </div>
+                                    </details>
+
+                                    <details>
+                                        <summary>
+                                            <div class="chip pink lighten-3">invoke <a
+                                                    href="#policy_engine:handle_worksheet_table">policy_engine:handle_worksheet_table</a>
+                                            </div>
+                                        </summary>
+                                        <div id="policy_engine:handle_worksheet_table" class="col s12">
+                                            TODO policy_engine:handle_worksheet_table
+                                        </div>
+                                    </details>
+                                    <details>
+                                        <summary></summary>
+                                    </details>
+
+
+                                    <ol>
+                                        <li>
+                                            <div class="chip pink lighten-3">
+                                                如果是handle_worksheet_table或者是敏感sqlis_senstive_sql或者没有资产匹配is_asset_matched，直接return
+                                            </div>
+                                        </li>
+                                        <li>
+
+
+                                            <details>
+                                                <summary>
+                                                    <div class="chip pink lighten-3">
+                                                        否则，invoke 进行策略匹配<a href="#policy_engine:go_through_policies">policy_engine:go_through_policies</a>
+                                                    </div>
+                                                </summary>
+                                                <div id="policy_engine:go_through_policies" class="col s12">
+                                                    TODO go_through_policies
+                                                </div>
+                                            </details>
+
+
+                                        </li>
+                                    </ol>
+
+
+                                </div>
+
+                                <div class="chip orange lighten-3"> invoke <a
+                                        href="#policy_engine:handle_logon_fail_control">policy_engine:handle_logon_fail_control</a>
+                                </div>
+                                <br>
+                                <div id="policy_engine:handle_logon_fail_control" class="col s12">
+                                </div>
+                            </div>
+                            <div id="handle_worksheet_logon-1" class="col s12">
+                                <div class="chip"> 直接return</div>
+                            </div>
+                        </div>
+                        <div id="ignore_logon_request-1" class="col s12">
+                            <div class="chip">直接返回默认值</div>
                         </div>
                     </div>
+                </div>
 
 
-                    <div class="col s12"></div>
-                    <div class="col s12"></div>
-                    <div class="col s12"></div>
-                    <div class="col s12"></div>
-                    <div class="col s12"></div>
+                <div class="chip green accent-1">模拟处理</div>
+                <br>
+                <div class="chip green accent-1">敏感资产匹配</div>
+                <br>
+                <div class="chip green accent-1">填充schema、DB</div>
+                <br>
+
+            </div>
+
+        </div>
+    </details>
 
 
-                    <li>模拟处理</li>
-                    <li>敏感资产匹配</li>
-                    <li>填充schema、DB</li>
-                </ol>
-            </li>
-        </ol>
-    </div>
-
-    <br>
     <div class="chip green-text">对于特殊数据库的response_需要调整</div>
     <br>
     <div class="chip green-text">填充obs</div>
@@ -186,32 +363,19 @@ excerpt: Lua可视化流程
     <div class="chip green-text">return self.response_, self.matched_policy_id_, self.obs_</div>
     <br>
 
-    <div class="col s12"></div>
-    <div class="col s12"></div>
-    <div class="col s12"></div>
-    <div class="col s12"></div>
-    <div class="col s12"></div>
-    <div class="col s12"></div>
-
-
 </div>
 
 
-<div class="col s12">
-    <ul class="tabs">
-        <li class="tab col s3"><a href="#inbox">Inbox</a></li>
-        <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
-        <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
-        <li class="tab col s3"><a href="#sent">Sent</a></li>
-    </ul>
-</div>
-<div id="inbox" class="col s12">Inbox</div>
-<div id="unread" class="col s12">Unread</div>
-<div id="outbox" class="col s12">Outbox (Disabled)</div>
-<div id="sent" class="col s12">Sent</div>
+<hr>
 
+<i>from json - abandon</i><br>
 
-
-
-
-
+{% for words in site.data.lua-flow %}
+{% for steps in words[1].evaluate.step %}
+{% if steps == "invoke" %}
+{{words[1].evaluate.invoke}}
+{% else %}
+->{{steps}}
+{% endif %}
+{% endfor %}
+{% endfor %}
