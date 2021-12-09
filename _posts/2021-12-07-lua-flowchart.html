@@ -20,6 +20,12 @@ excerpt: Lua可视化流程
     a.active {
         color: #dc2e2e !important
     }
+
+    .tabs {
+        height: auto;
+        width: auto;
+        background-color: rgba(255, 255, 255, 0);
+    }
 </style>
 
 <h3>WARING: <span class="red-text lighten-3">本页面未启用手机适配</span> 手机端<u>速速</u>退出 或者 <a
@@ -41,8 +47,8 @@ excerpt: Lua可视化流程
 
         <div class="col s12">
             <ul class="tabs">
-                <li class="tab col s6"><a href="#pa_action_handler-0">null</a></li>
-                <li class="tab col s6"><a class="active" href="#pa_action_handler-1">not null</a></li>
+                <li class="tab chip"><a href="#pa_action_handler-0">null</a></li>
+                <li class="tab chip"><a class="active" href="#pa_action_handler-1">not null</a></li>
             </ul>
         </div>
         <div id="pa_action_handler-0" class="col s12">
@@ -88,8 +94,8 @@ excerpt: Lua可视化流程
                 <br>
                 <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab col s6"><a href="#pe_handler-0">null</a></li>
-                        <li class="tab col s6"><a class="active" href="#pe_handler-1">not null</a></li>
+                        <li class="tab chip"><a href="#pe_handler-0">null</a></li>
+                        <li class="tab chip"><a class="active" href="#pe_handler-1">not null</a></li>
                     </ul>
                 </div>
                 <br>
@@ -102,8 +108,8 @@ excerpt: Lua可视化流程
                         <br>
                         <div class="col s12">
                             <ul class="tabs">
-                                <li class="tab col s6"><a href="#sql_direction_response">response</a></li>
-                                <li class="tab col s6"><a class="active" href="#sql_direction_request">request</a>
+                                <li class="tab chip"><a href="#sql_direction_response">response</a></li>
+                                <li class="tab chip"><a class="active" href="#sql_direction_request">request</a>
                                 </li>
                             </ul>
                         </div>
@@ -163,9 +169,9 @@ excerpt: Lua可视化流程
                             <br>
                             <div class="col s12">
                                 <ul class="tabs">
-                                    <li class="tab col s6"><a href="#handle_worksheet_statement-0">false</a></li>
-                                    <li class="tab col s6"><a class="active"
-                                                              href="#handle_worksheet_statement-1">true</a>
+                                    <li class="tab chip"><a href="#handle_worksheet_statement-0">false</a></li>
+                                    <li class="tab chip"><a class="active"
+                                                            href="#handle_worksheet_statement-1">true</a>
                                     </li>
                                 </ul>
                             </div>
@@ -174,27 +180,124 @@ excerpt: Lua可视化流程
                                 <br>
                                 <div class="col s12">
                                     <ul class="tabs">
-                                        <li class="tab col s6"><a href="#matched_senstive_sql-0">false</a></li>
-                                        <li class="tab col s6"><a class="active" href="#matched_senstive_sql-1">true</a>
+                                        <li class="tab chip"><a href="#matched_senstive_sql-0">false</a></li>
+                                        <li class="tab chip"><a class="active" href="#matched_senstive_sql-1">true</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div id="matched_senstive_sql-0" class="col s12">
-                                    <div class="chip">
-                                        判定是否为业务身份，是则invoke
-                                        policy_engine:handle_business_specific业务全审计；否则响应policy_engine:access_control_handle，审计DML、DDL
-                                    </div>
+
                                 </div>
                                 <div id="matched_senstive_sql-1" class="col s12">
-                                    <div class="chip"> invoke 进行策略匹配<a href="#policy_engine:go_through_policies">policy_engine:go_through_policies</a>
-                                    </div>
-                                    <br>
+
+                                    <details>
+                                        <summary>
+                                            <div class="chip"> invoke 进行策略匹配<a
+                                                    href="#policy_engine:go_through_policies">policy_engine:go_through_policies</a>
+                                            </div>
+                                        </summary>
+
+                                        TODO policy_engine:go_through_policies
+
+                                    </details>
+
                                 </div>
+
+
                                 <div class="col s12">
+                                    <ul class="tabs">
+                                        <li class="tab chip"><a
+                                                href="#is_business-not-is_asset_matched-0">是业务身份且没有匹配到资产</a>
+                                        </li>
+                                        <li class="tab chip"><a class="active"
+                                                                href="#is_business-not-is_asset_matched-1">反之</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                                <div id="is_business-not-is_asset_matched-0" class="col s12">
                                     <div class="chip">
-                                        判定policy_id是否为空，非空则填充obs
+                                        invoke policy_engine:handle_business_specific业务全审计
                                     </div>
                                 </div>
+
+                                <div id="is_business-not-is_asset_matched-1" class="col s12">
+                                    <details>
+                                        <summary>
+                                            <div class="chip"> invoke <a href="#policy_engine:access_control_handle">policy_engine:access_control_handle</a>
+                                            </div>
+                                        </summary>
+
+                                        <div id="policy_engine:access_control_handle" class="col s12">
+
+                                            <div class="chip teal accent-1"> 初始化response, matched_policy_id, obs</div>
+                                            <br>
+
+                                            <div class="chip teal accent-1">遍历parse结果</div>
+                                            <br>
+
+                                            <div class="chip teal accent-1"> 判定脱敏条件</div>
+                                            <br>
+
+
+                                            <div class="chip teal accent-1"> invoke <a
+                                                    href="#policy_engine:eval_access_control">policy_engine:eval_access_control</a>
+                                            </div>
+
+
+                                            <details>
+                                                <summary>
+                                                    <div class="chip teal accent-1"> 如果mainType与action一致</div>
+                                                </summary>
+                                                <div class="chip">如果是 敏感sql 直接return</div>
+                                                <br>
+                                                <div class="chip">处理 误删除</div>
+                                                <br>
+                                                <div class="chip">处理 更新删除行控</div>
+                                                <br>
+                                                <div class="chip"> 处理 查询行控</div>
+                                                <br>
+
+
+                                            </details>
+
+                                            <div class="chip teal accent-1">
+                                                如果是 敏感sql 直接return
+                                            </div>
+                                            <br>
+                                            <div class="chip teal accent-1"> 处理 误删除</div>
+                                            <br>
+                                            <div class="chip teal accent-1"> 处理 更新删除行控</div>
+                                            <br>
+                                            <div class="chip teal accent-1"> 处理 查询行控</div>
+                                            <br>
+
+                                            <div class="chip teal accent-1"> 如果response_非eval_result_pending填充脱敏obs
+                                            </div>
+                                            <br>
+
+                                            <div class="chip teal accent-1"> 填充所有obs</div>
+                                            <br>
+
+
+                                        </div>
+
+                                    </details>
+                                </div>
+
+
+                                <div class="chip">
+                                    审计DML、DDL
+                                </div>
+                                <br>
+
+
+                                <div class="chip">
+                                    判定policy_id是否为空，非空则填充obs
+
+                                </div>
+                                <br>
                             </div>
                             <div id="handle_worksheet_statement-1" class="col s12">
 
@@ -204,8 +307,8 @@ excerpt: Lua可视化流程
                                 <br>
                                 <div class="col s12">
                                     <ul class="tabs">
-                                        <li class="tab col s6"><a href="#parsed_statement_-0">false</a></li>
-                                        <li class="tab col s6"><a class="active" href="#parsed_statement_-1">true</a>
+                                        <li class="tab chip"><a href="#parsed_statement_-0">false</a></li>
+                                        <li class="tab chip"><a class="active" href="#parsed_statement_-1">true</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -231,8 +334,8 @@ excerpt: Lua可视化流程
                         <div class="chip"> 是否忽略登录请求？policy_engine:ignore_logon_request</div>
                         <div class="col s12">
                             <ul class="tabs">
-                                <li class="tab col s6"><a href="#ignore_logon_request-0">not ignore</a></li>
-                                <li class="tab col s6"><a class="active" href="#ignore_logon_request-1">ignore</a>
+                                <li class="tab chip"><a href="#ignore_logon_request-0">not ignore</a></li>
+                                <li class="tab chip"><a class="active" href="#ignore_logon_request-1">ignore</a>
                                 </li>
                             </ul>
                         </div>
@@ -240,8 +343,8 @@ excerpt: Lua可视化流程
                             <div class="chip"> 是否工单登录？policy_engine:handle_worksheet_logon</div>
                             <div class="col s12">
                                 <ul class="tabs">
-                                    <li class="tab col s6"><a href="#handle_worksheet_logon-0">no</a></li>
-                                    <li class="tab col s6"><a class="active" href="#handle_worksheet_logon-1">yes</a>
+                                    <li class="tab chip"><a href="#handle_worksheet_logon-0">no</a></li>
+                                    <li class="tab chip"><a class="active" href="#handle_worksheet_logon-1">yes</a>
                                     </li>
                                 </ul>
                             </div>
@@ -255,8 +358,8 @@ excerpt: Lua可视化流程
                                     <br>
                                     <div class="col s12">
                                         <ul class="tabs">
-                                            <li class="tab col s6"><a href="#action_logon-0">logon</a></li>
-                                            <li class="tab col s6"><a class="active" href="#action_logon-1">not
+                                            <li class="tab chip"><a href="#action_logon-0">logon</a></li>
+                                            <li class="tab chip"><a class="active" href="#action_logon-1">not
                                                 logon</a>
                                             </li>
                                         </ul>
