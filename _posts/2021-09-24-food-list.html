@@ -21,54 +21,33 @@ excerpt: 让你能够更快速的决定今天吃什么
 
 <h2>外卖推荐</h2>
 
-<blockquote>
-    温馨提示：可点击店家切换此店多种菜品推荐（如果有多个推荐的话）
-</blockquote>
-<div class="row">
 
-    {% for i in (0..99) %}
-
-    <!--隐藏不存在的-->
-    <div class="row-display-{{i}}">
-
-        <div class="col s12 m6 l4">
-            <div class="card">
-
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" id="food-bg-{{i}}" src="" alt="">
-                </div>
-
-                <!-- restaurant -->
-                <div class="card-content activator fl-satisfaction-{{i}}" onclick="changeInfo()">
-                    <span id="foodRestaurantName{{i}}"></span>
-                </div>
-
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">测试预留<i
-                            class="material-icons right">close</i></span>
-                    <img class="" id="food-bg-1-{{i}}" src="" style="width: 60%" alt="">
-                    <p>测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留</p>
-                    <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-                </div>
-
-                <!-- food -->
-                <div class="card-action fl-food-rate-{{i}}">
-                    <span id="foodName{{i}}"></span>
-                </div>
-                <!-- price -->
-                <div class="card-action">
-                    <span id="foodPrice{{i}}"></span>
-                </div>
-
-            </div>
+<ul class="collapsible popout fa-ul" data-collapsible="accordion">
+    {% for bestFood in site.data.food-list.bestFood %}
+    {% if bestFood.name != "" %}
+    <li class="z-depth-2 hoverable">
+        <!--        <i class="fa-li fas fa-hamburger"></i>-->
+        <div class="collapsible-header">
+            <div class="chip stars-{{bestFood.satisfaction}}"> {{bestFood.name}}</div>
         </div>
-    </div>
 
+        <div class="collapsible-body">
+            {% for food in bestFood.food %}
+            <div class="chip stars-{{food.food_rate}}">{{food.name}}</div>
+            <br>
+            <div class="chip">￥{{food.price}}</div>
+            <br>
+            {% if food.note != "" %}
+            <div class="chip"> TIPS: {{food.note}}</div>
+            <br>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </li>
+    {% endif %}
     {% endfor %}
+</ul>
 
-</div>
-
-<hr>
 
 <div class="row">
     <div class="col s12">
@@ -78,9 +57,14 @@ excerpt: 让你能够更快速的决定今天吃什么
                 <span class="card-title">拉黑商家 - 非常难吃</span>
             </div>
 
-            {% for i in (0..19) %}
-            <div class="card-action show-black-res-{{i}}">
-                <span id="nameBlackRestaurant{{i}}"></span>
+            {% for blackFood in site.data.food-list.blackFood %}
+            <div class="card-action">
+                {% if blackFood[0] != "" %}
+                <p>{{blackFood[0]}}</p>{% endif %}
+                {% if blackFood[1] != "" %}
+                <p>拉黑原因：{{blackFood[1]}}</p>{% endif %}
+                {% if blackFood[2] != "" %}
+                <p>拉黑菜品：{{blackFood[2]}}</p>{% endif %}
             </div>
             {% endfor %}
 
