@@ -1,3 +1,4 @@
+//与json一起修改
 const timeAll = {
     "christmas_eve": {
         "name": "圣诞节前夜",
@@ -12,6 +13,10 @@ const timeAll = {
         "2021": "12-25 09:00:00",
         "2022": "12-24 09:00:00"
     },
+    "new_year": {
+        "name": "元旦",
+        "block": "01-01"
+    },
     "new_year_eve": {
         "name": "除夕",
         "2022": "01-31",
@@ -21,6 +26,12 @@ const timeAll = {
         "name": "春节",
         "info": "正月初一 壬寅年 虎 辛丑月 乙酉日",
         "2022": "02-01",
+        "2023": ""
+    },
+    "lantern_festival": {
+        "name": "元宵节",
+        "info": "正月十五",
+        "2022": "02-15",
         "2023": ""
     }
 }
@@ -44,8 +55,6 @@ const arrTime = obj2arr(timeAll);
 
 console.log(arrTime)
 
-console.log(parseInt("5天13时3秒"))
-
 let ddl = (index) => {
     let y = dayjs().year()
     let k = Object.keys(timeAll)[index]
@@ -53,15 +62,23 @@ let ddl = (index) => {
     let day
     if (block) {
         day = block
+        let end = y + "-" + day
+        //当前时间在end后
+        let endAfter = dayjs().isAfter(end, 'second')
+        if (endAfter) {
+            ++y;
+        }
+
     } else {
         day = arrTime[index][k][y]
+        if (!day) {
+            ++y;
+            day = arrTime[index][k][y]
+            if (!day)
+                return -1;
+        }
     }
-    if (!day) {
-        ++y;
-        day = arrTime[index][k][y]
-        if (!day)
-            return -1;
-    }
+
     let end = y + "-" + day
     return Deadline(dayjs(), dayjs(end));
 }
@@ -85,8 +102,7 @@ const handlerTime = (index) => {
         }
 
     } else {
-        let i = index + 1
-        let className = document.getElementsByClassName('out-of-time-' + i);
+        let className = document.getElementsByClassName('out-of-time-' + index);
         for (let c of className) {
             c.style.display = 'none'
         }
