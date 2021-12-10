@@ -1,7 +1,7 @@
 //与json一起修改
 const timeAll = {
     "christmas_eve": {
-        "name": "圣诞节前夜",
+        "name": "平安夜",
         "block": "12-24"
     },
     "christmas": {
@@ -27,6 +27,10 @@ const timeAll = {
         "info": "正月初一 壬寅年 虎 辛丑月 乙酉日",
         "2022": "02-01",
         "2023": ""
+    },
+    "valentine": {
+        "name": "情人节",
+        "block": "02-14"
     },
     "lantern_festival": {
         "name": "元宵节",
