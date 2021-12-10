@@ -1607,9 +1607,3 @@ const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[currentWishObj
 setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000);
 //结束当前祈愿时间
 setInterval("deadline.innerHTML = wishDeadline();", 1000);
-
-let newYearEve = () => Deadline(dayjs(), dayjs('2022-01-31'));
-setInterval("newYearEve_.innerHTML = newYearEve();", 1000);
-//春节倒计时
-let springFestival = () => Deadline(dayjs(), dayjs('2022-02-01'));
-setInterval("newYear.innerHTML = springFestival();", 1000);

@@ -1,0 +1,14 @@
+<div class="collection">
+
+
+    {% for info in site.data.countdown %}
+    <!--这个index起始为1 https://shopify.dev/api/liquid/objects/for-loops-->
+    <h3 class="collection-item out-of-time-{{forloop.index}}">{{info[1].name}}倒计时：
+        <span class="badge chip" id="{{info[0]}}"></span>
+        <span class="badge red-text">{{info[1].info}}</span>
+    </h3>
+    {% endfor %}
+
+
+
+</div>
