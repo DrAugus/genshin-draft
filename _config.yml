@@ -17,13 +17,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+#
+# More Liquid Language, here are some quick references:
+# https://shopify.dev/api/liquid/
+#
 title: AUGUS
 description: > # webpage description
 #  Welcome to my personal website
 #baseurl: "/"
 url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
-#repository: draugus/draugus.github.io
 paginate: 12
 
 # specific configurations
@@ -55,6 +58,8 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - LICENSE
+  - run.bat
 sass:
   style: compressed
 
@@ -67,3 +72,6 @@ timezone: Asia/Shanghai
 #Liquid profiler
 #Generate a Liquid rendering profile to help you identify performance bottlenecks.
 profile: true
+
+port: 40000
+
