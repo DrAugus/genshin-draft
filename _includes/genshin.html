@@ -1,94 +1,11 @@
 <p>原神相关的信息 目前只更新了角色up祈愿</p>
 
-<div class="row">
-    {% for characters in site.data.genshin-characters %}
-    <div class="col s2 card-image">
-        <img style="border-radius: 10px" src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png">
-    </div>
-    {% endfor %}
 
-</div>
-
-
-<h3>Tabs Demo</h3>
-<div class="row">
-    <div class="col s12">
-        <ul class="tabs">
-            <li class="tab col s3"><a href="#inbox">Inbox</a></li>
-            <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
-            <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
-            <li class="tab col s3"><a href="#sent">Sent</a></li>
-        </ul>
-    </div>
-    <div id="inbox" class="col s12">Inbox</div>
-    <div id="unread" class="col s12">Unread</div>
-    <div id="outbox" class="col s12">Outbox (Disabled)</div>
-    <div id="sent" class="col s12">Sent</div>
-</div>
-
-
-<div class="card-panel">
-    <h5>Raised Buttons</h5>
-    <button class="btn waves-effect waves-teal">Add</button>
-    <button class="btn waves-effect waves-teal"><i class="material-icons left">add</i>Add</button>
-    <button class="btn waves-effect waves-teal"><i class="material-icons right">add</i>Add</button>
-    <button class="btn waves-effect waves-teal disabled">Add</button>
-    <h5>Flat Buttons</h5>
-    <button class="btn-flat waves-effect waves-teal">Add</button>
-    <button class="btn-flat waves-effect waves-teal disabled"><i class="material-icons left">add</i>Add</button>
-    <h5>Floating Buttons</h5>
-    <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
-    <a class="btn-floating waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
-    <h5>Large Buttons</h5>
-    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-    <a class="btn-floating btn-large waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
-    <h5>Primary Buttons</h5>
-    <button class="btn waves-effect waves-light red" type="submit">Send<i class="material-icons right">send</i></button>
-    <button class="btn waves-effect waves-light blue " type="submit">Cancel<i
-            class="material-icons right">cancel</i></button>
-</div>
-
-
-<div class="row">
-
-    <div class="col s12 m6">
-        <div class="card blue-grey lighten-4">
-
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                     src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png">
-            </div>
-
-            <div class="card-content activator">
-                <p>测试预留.</p>
-            </div>
-
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">测试预留<i class="material-icons right">close</i></span>
-                <img src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png"
-                     style="width: 60%">
-                <p>测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留</p>
-                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-            </div>
-
-            <div class="card-action">
-                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-            </div>
-
-            <div class="card-action">
-                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
 <!--长度减1-->
 {% capture lenMonthList %}20{% endcapture %}
-{% capture lenWish %}28{% endcapture %}
-{% capture lenAllDays %}521{% endcapture %}
+{% capture lenWish %}27{% endcapture %}
+{% capture lenAllDays %}520{% endcapture %}
 {% capture lenFuture %}4{% endcapture %}
 {% capture lenCurrent %}1{% endcapture %}
 {% capture lenElements %}6{% endcapture %}
@@ -237,9 +154,9 @@
                     <img class="activator" id="futureWishBG{{i}}" alt="">
                 </div>
 
-                <div class="card-content activator">
-                    <h3 class="future-wish-color-{{i}}" id="futureWish{{i}}"></h3>
-                </div>
+<!--                <div class="card-content activator">-->
+<!--                    <h3 class="future-wish-color-{{i}}" id="futureWish{{i}}"></h3>-->
+<!--                </div>-->
 
                 <div class="card-reveal">
                     <span class="card-title future-wish-color-{{i}}">
@@ -252,7 +169,7 @@
 
                 <!--truncate截断-->
                 <div class="card-action">
-                    <h4 class="future-wish-color-{{i}} truncate" id="futureWishText1{{i}}"></h4>
+                    <p class="truncate" id="futureWish{{i}}"></p>
                 </div>
 
             </div>
@@ -265,3 +182,102 @@
 
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
+
+<h2>全部角色</h2>
+
+<div class="row">
+    {% for characters in site.data.genshin-characters %}
+    <div class="col s2">
+
+        <div style="background-image: url('/assets/res/genshin-impact/elements/{{characters[1].ele}}.png');background-repeat: no-repeat;background-position: top right;">
+            <div class="card-image">
+                <img style="border-radius: 10px" src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png">
+            </div>
+            <p class="center" style=" text-shadow: 0 2px 6px rgb(0 0 0 / 20%);">{{characters[1].name}}</p>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+<div class="divider"></div>
+
+<h4>====测试用====</h4>
+
+<h3>Tabs Demo</h3>
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s3"><a href="#inbox">Inbox</a></li>
+            <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
+            <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
+            <li class="tab col s3"><a href="#sent">Sent</a></li>
+        </ul>
+    </div>
+    <div id="inbox" class="col s12">Inbox</div>
+    <div id="unread" class="col s12">Unread</div>
+    <div id="outbox" class="col s12">Outbox (Disabled)</div>
+    <div id="sent" class="col s12">Sent</div>
+</div>
+
+
+<div class="card-panel">
+    <h5>Raised Buttons</h5>
+    <button class="btn waves-effect waves-teal">Add</button>
+    <button class="btn waves-effect waves-teal"><i class="material-icons left">add</i>Add</button>
+    <button class="btn waves-effect waves-teal"><i class="material-icons right">add</i>Add</button>
+    <button class="btn waves-effect waves-teal disabled">Add</button>
+    <h5>Flat Buttons</h5>
+    <button class="btn-flat waves-effect waves-teal">Add</button>
+    <button class="btn-flat waves-effect waves-teal disabled"><i class="material-icons left">add</i>Add</button>
+    <h5>Floating Buttons</h5>
+    <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a class="btn-floating waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
+    <h5>Large Buttons</h5>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
+    <h5>Primary Buttons</h5>
+    <button class="btn waves-effect waves-light red" type="submit">Send<i class="material-icons right">send</i></button>
+    <button class="btn waves-effect waves-light blue " type="submit">Cancel<i
+            class="material-icons right">cancel</i></button>
+</div>
+
+
+<div class="row">
+
+    <div class="col s12 m6">
+        <div class="card blue-grey lighten-4">
+
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator"
+                     src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png">
+            </div>
+
+            <div class="card-content activator">
+                <p>测试预留.</p>
+            </div>
+
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">测试预留<i class="material-icons right">close</i></span>
+                <img src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png"
+                     style="width: 60%">
+                <p>测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留</p>
+                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+            </div>
+
+            <div class="card-action">
+                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+            </div>
+
+            <div class="card-action">
+                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
