@@ -1,19 +1,4 @@
----
-title: 原神up角色
-layout: post
-date: '2021-09-30 18:04:22'
-categories:
-- 游戏
-tags:
-- 原神
-css:
-- timeline.css
-js: [
-"genshin-gantt.js",
-"genshin-event-timeline.js"]
-excerpt: 原神相关的信息 目前只更新了角色up祈愿
----
-
+<p>原神相关的信息 目前只更新了角色up祈愿</p>
 
 <div class="row">
     {% for characters in site.data.genshin-characters %}
@@ -102,9 +87,9 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
 <!--长度减1-->
 {% capture lenMonthList %}20{% endcapture %}
-{% capture lenWish %}30{% endcapture %}
-{% capture lenAllDays %}514{% endcapture %}
-{% capture lenFuture %}2{% endcapture %}
+{% capture lenWish %}28{% endcapture %}
+{% capture lenAllDays %}521{% endcapture %}
+{% capture lenFuture %}4{% endcapture %}
 {% capture lenCurrent %}1{% endcapture %}
 {% capture lenElements %}6{% endcapture %}
 
@@ -131,10 +116,10 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
 
                     {% for i in (0..lenWish) %}
                     <div class="card event-item event-item-{{i}}">
-                        <div class="card-image waves-effect waves-block waves-light " style="height: 88px">
+                        <div class="card-image waves-effect waves-block waves-light " style="height: 128px">
                             <div class="event-img event-img-{{i}} responsive-img activator"></div>
-                            <span class="event-name-{{i}}" id="eventName{{i}}"
-                                  style="font-size: 4rem; margin-left: 10px"></span>
+                            <span class="event-name-{{i}} left-align" id="eventName{{i}}"
+                                  style="font-size: 4rem; margin-left: 10px; color: white"></span>
                         </div>
 
                         <div class="card-reveal">
@@ -257,8 +242,10 @@ excerpt: 原神相关的信息 目前只更新了角色up祈愿
                 </div>
 
                 <div class="card-reveal">
-                    <span class="card-title future-wish-color-{{i}}" id="futureWish1{{i}}">
-                        <i class="material-icons right">close</i></span>
+                    <span class="card-title future-wish-color-{{i}}">
+                        <span id="futureWish1{{i}}"></span>
+                        <i class="material-icons right">close</i>
+                    </span>
                     <img class="z-depth-0 responsive-img" id="futureElements{{i}}" alt="" src=""/>
                     <span class="future-wish-color-{{i}} " id="futureWishText{{i}}"></span>
                 </div>

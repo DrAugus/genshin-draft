@@ -1,6 +1,8 @@
 const EN = 0;
 const ZH = 1;
 const showLanguage = ZH;
+const MAX_INDEX = 100
+const MAX_DAY = 3650
 
 const elementIndex = {
     'cao': 0,
@@ -648,8 +650,23 @@ const eventsData = [
             showOnHome: true,
         },
         {
-            //除名字外都待定 日期推测应该准确
             no: 24,
+            shortname: ['xiao', '魈'],
+            name: ['Invitation to Mundane Life - Xiao Banner', '「烟火之邀」'],
+            info: ['', ''],
+            pos: '40% 15%',
+            zoom: '180%',
+            image: 'invitation_to_mundane_life_1.png',
+            start: '2022-01-05 11:00:00',
+            end: '2022-01-19 15:59:59',
+            color: elementColor[elementIndex.feng],
+            url: 'https://bbs.mihoyo.com/ys/article/4005715',
+            showOnHome: true,
+            version: '2.4',
+        },
+        {
+            //除名字外都待定 日期推测应该准确
+            no: 25,
             shortname: ['shenhe', '申鹤'],
             name: ['', '「孤辰茕怀」'],
             info: ['',
@@ -664,16 +681,15 @@ const eventsData = [
             fullPos: '55% 30%',
             fullZoom: '200%',
             image: 'shenhe_1.jpg',
-            start: '2022-01-05 11:00:00',
-            end: '2022-01-26 17:59:59',
+            start: '2022-01-19 18:00:00',
+            end: '2022-02-01 15:59:59',
             color: elementColor[elementIndex.bing],
             url: 'https://bbs.mihoyo.com/ys/article/?',
             showOnHome: true,
-            version: '2.4',
         },
         {
             //除名字外都待定 日期推测应该准确
-            no: 25,
+            no: 26,
             shortname: ['yunjin', '云堇'],
             name: ['', '「红毹婵娟」'],
             info: ['',
@@ -688,12 +704,26 @@ const eventsData = [
             fullPos: '55% 30%',
             fullZoom: '200%',
             image: 'yunjin_1.jpg',
-            start: '2022-01-05 11:00:00',
-            end: '2022-01-26 17:59:59',
+            start: '2022-01-19 18:00:00',
+            end: '2022-02-01 15:59:59',
             color: elementColor[elementIndex.yan],
             url: 'https://bbs.mihoyo.com/ys/article/?',
             showOnHome: true,
             wish_2: true,
+        },
+        {
+            no: 27,
+            shortname: ['ganyu', '甘雨'],
+            name: ['Adrift in the Harbor - Ganyu Banner', '「浮生孰来」'],
+            info: ['', ''],
+            pos: '40% 15%',
+            zoom: '180%',
+            image: 'adrift_in_the_harbor_1.png',
+            start: '2021-02-01 18:00:00',
+            end: '2021-02-15 14:59:59',
+            color: elementColor[elementIndex.bing],
+            url: 'https://bbs.mihoyo.com/ys/article/3661305',
+            showOnHome: true,
         },
     ],
     [
@@ -1299,6 +1329,7 @@ let wishLength = wishCharacters.length
 // //set day length
 // document.getElementById('lenAllDays').innerHTML = '' + dates.length
 console.log('all days, ', dates.length)
+console.log('wishLength', wishLength)
 
 //设置时间轴
 const setTimeAxis = () => {
@@ -1427,12 +1458,13 @@ const wishInfo = () => {
             eItem.style.width = wishCharacters[i].duration * dayWidth + 'px'
             eItem.style.left = duration * dayWidth + 30 + 'px'
 
-            if (wishCharacters[i].wish_2) eItem.style.marginTop = '150px'
+            if (wishCharacters[i].wish_2) eItem.style.marginTop = '160px'
         }
         for (let img of eventImgClass) {
             img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + wishCharacters[i].image + "')";
             img.style.backgroundPosition = wishCharacters[i].pos;
-            img.style.backgroundSize = wishCharacters[i].zoom ? wishCharacters[i].zoom : '200%';
+            img.style.backgroundSize = '100%'
+            // wishCharacters[i].zoom ? wishCharacters[i].zoom : '200%';
         }
         for (let eWishColor of eventWishColorClass) {
             eWishColor.style.backgroundColor = wishCharacters[i].color
