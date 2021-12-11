@@ -1396,7 +1396,7 @@ let objWish = {
     comingIndex: [],//即将到来的未开放的
 }
 //找出当前在哪个祈愿时间段
-const findCurrentWish = () => {
+const getWishObj = () => {
     let obj = {}
     obj.wishIndex = []
     obj.haveWish = true
@@ -1440,8 +1440,8 @@ const findCurrentWish = () => {
 
     return obj;
 }
-let currentWishObj = findCurrentWish();
-console.log('I found current wish: ', currentWishObj)
+objWish = getWishObj();
+console.log('objWish', objWish)
 
 
 //祈愿角色信息
@@ -1509,8 +1509,8 @@ const nameZHInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortna
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
-    let reprintWish = currentWishObj.reprint
-    if (!currentWishObj.haveWish) {
+    let reprintWish = objWish.reprint
+    if (!objWish.haveWish) {
         document.getElementById('noWishInfo').innerHTML = '暂无祈愿，敬请期待';
         let currentHaveNoWish = document.getElementsByClassName('no-wish');
         for (let n of currentHaveNoWish) {
@@ -1518,9 +1518,9 @@ const updateCurrentWishInfo = () => {
         }
         return
     }
-    let wish1Index = currentWishObj.wishIndex[0]
+    let wish1Index = objWish.wishIndex[0]
     let wish2Index = -1
-    if (reprintWish) wish2Index = currentWishObj.wishIndex[1]
+    if (reprintWish) wish2Index = objWish.wishIndex[1]
 
     //最新祈愿的起止时间
     document.getElementById('timeStartCurrentCharacter').innerHTML = dayjs(wishCharacters[wish1Index].start).format('MM-DD HH:mm:ss')
@@ -1548,8 +1548,8 @@ const updateCurrentWishInfo = () => {
     }
 
     //祈愿角色图片
-    for (let i = 0; i < currentWishObj.wishIndex.length; ++i) {
-        let index = currentWishObj.wishIndex[i]
+    for (let i = 0; i < objWish.wishIndex.length; ++i) {
+        let index = objWish.wishIndex[i]
         let wishBGClass = document.getElementsByClassName('current-wish-bg-' + i);
         for (let t of wishBGClass) {
             t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/half/" + wishCharacters[index].shortname[EN] + ".png')"
@@ -1592,7 +1592,7 @@ updateCurrentWishInfo();
 const futureWishInfo = () => {
     let indexArr = []
 
-    if (!currentWishObj.comingIndex.length && !currentWishObj.isFuture) {
+    if (!objWish.comingIndex.length && !objWish.isFuture) {
         document.getElementById('futureWishInfo').innerHTML = '未来祈愿，等待更新';
         let futureWish = document.getElementsByClassName('future-wish');
         for (let n of futureWish) {
@@ -1601,13 +1601,13 @@ const futureWishInfo = () => {
         return
     }
 
-    if (currentWishObj.isFuture) {
-        let startIndex = currentWishObj.wishIndex[0]
+    if (objWish.isFuture) {
+        let startIndex = objWish.wishIndex[0]
         for (let i = startIndex; i < wishLength; ++i) {
             indexArr.push(i)
         }
-    } else if (currentWishObj.comingIndex.length) {
-        indexArr = indexArr.concat(currentWishObj.comingIndex)
+    } else if (objWish.comingIndex.length) {
+        indexArr = indexArr.concat(objWish.comingIndex)
     }
 
     console.log('coming soon: ', indexArr)
@@ -1637,7 +1637,7 @@ futureWishInfo();
 
 
 //祈愿倒计时
-const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[currentWishObj.wishIndex[0]].end))
+const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[objWish.wishIndex[0]].end))
 
 const ddlHandle = () => {
     let s = '#deadline'
@@ -1676,8 +1676,8 @@ const hideClass = (start, end, str) => {
 const lenMonthList = monthList.length
 const lenWish = wishLength
 const lenAllDays = dates.length
-const lenFuture = currentWishObj.comingIndex.length
-const lenCurrent = currentWishObj.wishIndex.length
+const lenFuture = objWish.comingIndex.length
+const lenCurrent = objWish.wishIndex.length
 
 hideClass(lenMonthList, MAX_MONTH, 'lenMonthList-show-')
 hideClass(lenWish, MAX_WISH, 'lenWish-show-')
