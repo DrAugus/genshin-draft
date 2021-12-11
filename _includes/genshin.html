@@ -1,13 +1,12 @@
 <p>原神相关的信息 目前只更新了角色up祈愿</p>
 
-
-
 <!--长度减1-->
-{% capture lenMonthList %}20{% endcapture %}
-{% capture lenWish %}27{% endcapture %}
-{% capture lenAllDays %}520{% endcapture %}
-{% capture lenFuture %}4{% endcapture %}
-{% capture lenCurrent %}1{% endcapture %}
+{% capture lenMonthList %}119{% endcapture %}
+{% capture lenWish %}119{% endcapture %}
+{% capture lenAllDays %}3649{% endcapture %}
+{% capture lenFuture %}119{% endcapture %}
+{% capture lenCurrent %}99{% endcapture %}
+
 {% capture lenElements %}6{% endcapture %}
 
 <!--时间轴-->
@@ -16,7 +15,7 @@
 
         <div class="timeline-month">
             {% for i in (0..lenMonthList) %}
-            <div class="timeline-month-left-{{i}}">
+            <div class="timeline-month-left-{{i}} lenMonthList-show-{{i}}">
                 <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
             </div>
             {% endfor %}
@@ -32,7 +31,7 @@
                 <div style="position: absolute">
 
                     {% for i in (0..lenWish) %}
-                    <div class="card event-item event-item-{{i}}">
+                    <div class="card event-item event-item-{{i}} lenWish-show-{{i}}">
                         <div class="card-image waves-effect waves-block waves-light " style="height: 128px">
                             <div class="event-img event-img-{{i}} responsive-img activator"></div>
                             <span class="event-name-{{i}} left-align" id="eventName{{i}}"
@@ -55,7 +54,7 @@
             </div>
 
             {% for i in (0..lenAllDays) %}
-            <div class="timeline-wrapper left-day-{{i}}" style="z-index: -1">
+            <div class="timeline-wrapper left-day-{{i}} lenAllDays-show-{{i}}" style="z-index: -1">
                 <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
             </div>
             {% endfor %}
@@ -103,38 +102,49 @@
         </div>
 
         <div class="row">
-            <h2>当前祈愿为
-                <ul class="collapsible popout" data-collapsible="accordion">
-                    {% for i in (0..lenCurrent) %}
-                    <li style="border-radius: 5px;" class="current-wish-bg-{{i}} z-depth-2 hoverable">
-                        <div class="collapsible-header current-wish-color-{{i}}"
-                             style="background-color: rgba(255,255,250,0)!important;"
-                             id="currentCharacter{{i}}">
-                        </div>
+            <h1>当前祈愿为 </h1>
+            <ul class="collapsible popout" data-collapsible="accordion">
+                {% for i in (0..lenCurrent) %}
+                <li style="border-radius: 5px;" class="current-wish-bg-{{i}} z-depth-2 hoverable lenCurrent-show-{{i}}">
+                    <div class="collapsible-header current-wish-color-{{i}}"
+                         style="background-color: rgba(255,255,250,0)!important;"
+                         id="currentCharacter{{i}}">
+                    </div>
 
-                        <div class="collapsible-body">
-                            <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" alt="" src=""/><br>
-                            <span class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></span><br>
-                            <span class="current-wish-color-{{i}}" id="currentWishText{{i}}"></span>
+                    <div class="collapsible-body">
+                        <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" alt="" src=""/><br>
+                        <span class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></span><br>
+                        <span class="current-wish-color-{{i}}" id="currentWishText{{i}}"></span>
 
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </h2>
+                    </div>
+                </li>
+                {% endfor %}
+                <li style="border-radius: 5px;" class="z-depth-2 hoverable">
+                    <div class="collapsible-header"
+                         style="background-color: rgba(255,255,250,0)!important;">
+
+                        祈愿倒计时：<span id="deadline"></span>
+                    </div>
+                </li>
+                <li style="border-radius: 5px;" class="z-depth-2 hoverable">
+                    <div class="collapsible-header"
+                         style="background-color: rgba(255,255,250,0)!important;">
+                        当前时间为：<span id="time_str"></span>
+                    </div>
+                </li>
+                <li style="border-radius: 5px;" class="z-depth-2 hoverable">
+                    <div class="collapsible-header"
+                         style="background-color: rgba(255,255,250,0)!important;">
+
+                        当前祈愿周期为：
+                        <span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span>
+
+                    </div>
+                </li>
+            </ul>
+
         </div>
 
-        <div class="row">
-            <h2>当前祈愿周期为</h2>
-            <h4 class="center">
-                <span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span>
-            </h4>
-        </div>
-
-        <div class="collection">
-            <h3 class="collection-item">当前时间为：<span class="badge" id="time_str"></span></h3>
-            <h3 class="collection-item">祈愿倒计时：<span class="badge" id="deadline"></span></h3>
-        </div>
     </div>
 
 </div>
@@ -148,15 +158,11 @@
     <div class="future-wish">
 
         {% for i in (0..lenFuture) %}
-        <div class="col s12 m6 l4">
+        <div class="col s12 m6 l4 lenFuture-show-{{i}}">
             <div class="card future-wish-bg-color-{{i}}">
                 <div class="card-image waves-effect waves-block waves-light hoverable">
                     <img class="activator" id="futureWishBG{{i}}" alt="">
                 </div>
-
-<!--                <div class="card-content activator">-->
-<!--                    <h3 class="future-wish-color-{{i}}" id="futureWish{{i}}"></h3>-->
-<!--                </div>-->
 
                 <div class="card-reveal">
                     <span class="card-title future-wish-color-{{i}}">
@@ -183,8 +189,7 @@
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
 
-<h2>全部角色</h2>
-
+<h1>全部角色</h1>
 <div class="row">
     {% for characters in site.data.genshin-characters %}
     <div class="col s2">
@@ -200,8 +205,6 @@
     {% endfor %}
 
 </div>
-
-
 
 <div class="divider"></div>
 

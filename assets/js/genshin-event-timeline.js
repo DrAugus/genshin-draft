@@ -1,8 +1,12 @@
 const EN = 0;
 const ZH = 1;
 const showLanguage = ZH;
-const MAX_INDEX = 100
+
+const MAX_MONTH = 120
+const MAX_WISH = 120
 const MAX_DAY = 3650
+const MAX_FUTURE = 120
+const MAX_CURRENT = 100
 
 const elementIndex = {
     'cao': 0,
@@ -1332,15 +1336,6 @@ processEvent();
 let wishCharacters = events[4];
 let wishLength = wishCharacters.length
 
-// //set monthList length
-// document.getElementById('lenMonthList').innerHTML = '' + monthList.length
-// //set wish length
-// document.getElementById('lenWish').innerHTML = '' + wishLength
-// //set day length
-// document.getElementById('lenAllDays').innerHTML = '' + dates.length
-console.log('all days, ', dates.length)
-console.log('wishLength', wishLength)
-
 //设置时间轴
 const setTimeAxis = () => {
     let startD = dayjs(wishCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
@@ -1528,8 +1523,8 @@ const updateCurrentWishInfo = () => {
     if (reprintWish) wish2Index = currentWishObj.wishIndex[1]
 
     //最新祈愿的起止时间
-    document.getElementById('timeStartCurrentCharacter').innerHTML = wishCharacters[wish1Index].start;
-    document.getElementById('timeEndCurrentCharacter').innerHTML = wishCharacters[wish1Index].end;
+    document.getElementById('timeStartCurrentCharacter').innerHTML = dayjs(wishCharacters[wish1Index].start).format('MM-DD HH:mm:ss')
+    document.getElementById('timeEndCurrentCharacter').innerHTML = dayjs(wishCharacters[wish1Index].end).format('MM-DD HH:mm:ss')
 
     //最新的祈愿
     document.getElementById('currentCharacter0').innerHTML = nameInfo(wish1Index)
@@ -1627,7 +1622,7 @@ const futureWishInfo = () => {
         }
         let eventWishBGColorClass = document.getElementsByClassName('future-wish-bg-color-' + i);
         for (let eWishColor of eventWishBGColorClass) {
-            eWishColor.style.backgroundColor = showColor +'59'//59 35%透明度
+            eWishColor.style.backgroundColor = showColor + '59'//59 35%透明度
         }
 
         let index = elementColor.indexOf(showColor)
@@ -1644,7 +1639,52 @@ futureWishInfo();
 //祈愿倒计时
 const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[currentWishObj.wishIndex[0]].end))
 
+const ddlHandle = () => {
+    let s = '#deadline'
+    let d = parseInt(wishDeadline())
+    $(s).html(wishDeadline())
+    if (d < 3) {
+        $(s).addClass('red black-text')
+    } else if (d < 7) {
+        $(s).addClass('orange black-text')
+    } else if (d < 10) {
+        $(s).addClass('teal black-text')
+    } else if (d < 15) {
+        $(s).addClass('blue black-text')
+    } else {
+        $(s).addClass('green black-text')
+    }
+}
+
 //当前时间
 setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000);
 //结束当前祈愿时间
-setInterval("deadline.innerHTML = wishDeadline();", 1000);
+setInterval(ddlHandle, 1000);
+
+
+//隐藏多余的遍历
+const hideClass = (start, end, str) => {
+    console.log(str, start)
+    for (let i = start; i < end; ++i) {
+        let show = document.getElementsByClassName(str + i);
+        for (let s of show) {
+            s.style.display = 'none'
+        }
+    }
+}
+
+const lenMonthList = monthList.length
+const lenWish = wishLength
+const lenAllDays = dates.length
+const lenFuture = currentWishObj.comingIndex.length
+const lenCurrent = currentWishObj.wishIndex.length
+
+hideClass(lenMonthList, MAX_MONTH, 'lenMonthList-show-')
+hideClass(lenWish, MAX_WISH, 'lenWish-show-')
+hideClass(lenAllDays, MAX_DAY, 'lenAllDays-show-')
+hideClass(lenFuture, MAX_FUTURE, 'lenFuture-show-')
+hideClass(lenCurrent, MAX_CURRENT, 'lenCurrent-show-')
+
+
+
+
