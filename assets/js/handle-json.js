@@ -11,7 +11,7 @@ for (let key in obj) {
 
 console.log(obj)
 
-var arr = {
+const arr = {
     "草": "dendro",
     "岩": "geo",
     "雷": "electro",
@@ -19,9 +19,9 @@ var arr = {
     "火": "pyro",
     "风": "anemo",
     "冰": "cryo",
-}
+};
 
-for (let key in a) {
-    a[key]["ele"] = arr[a[key]["element"]]
+for (let key in obj) {
+    obj[key]["ele"] = arr[obj[key]["element"]]
 }
-console.log(a)
+console.log(obj)

@@ -636,7 +636,6 @@ const eventsData = [
             wish_2: true,
         },
         {
-            //除名字外都待定 日期推测应该准确
             no: 23,
             shortname: ['arataki_itto', '荒泷一斗'],
             name: ['Hanamizaka Heroics - Arataki Itto Banner', '「花坂豪快」'],
@@ -662,15 +661,31 @@ const eventsData = [
             zoom: '180%',
             image: 'invitation_to_mundane_life_1.png',
             start: '2022-01-05 11:00:00',
-            end: '2022-01-19 15:59:59',
+            end: '2022-01-25 15:59:59',
             color: elementColor[elementIndex.feng],
             url: 'https://bbs.mihoyo.com/ys/article/4005715',
             showOnHome: true,
             version: '2.4',
+
+        },
+        {
+            no: 25,
+            shortname: ['ganyu', '甘雨'],
+            name: ['Adrift in the Harbor - Ganyu Banner', '「浮生孰来」'],
+            info: ['', ''],
+            pos: '40% 15%',
+            zoom: '180%',
+            image: 'adrift_in_the_harbor_1.png',
+            start: '2022-01-05 11:00:00',
+            end: '2022-01-25 15:59:59',
+            color: elementColor[elementIndex.bing],
+            url: 'https://bbs.mihoyo.com/ys/article/3661305',
+            showOnHome: true,
+            wish_2: true,
         },
         {
             //除名字外都待定 日期推测应该准确
-            no: 25,
+            no: 26,
             shortname: ['shenhe', '申鹤'],
             name: ['', '「孤辰茕怀」'],
             info: ['',
@@ -689,44 +704,6 @@ const eventsData = [
             end: '2022-02-01 15:59:59',
             color: elementColor[elementIndex.bing],
             url: 'https://bbs.mihoyo.com/ys/article/?',
-            showOnHome: true,
-        },
-        {
-            //除名字外都待定 日期推测应该准确
-            no: 26,
-            shortname: ['yunjin', '云堇'],
-            name: ['', '「红毹婵娟」'],
-            info: ['',
-                '既是戏团「云翰社」的当家，也是璃月港内风头正劲的名角。\n' +
-                '云堇唱腔甜美，扮相俏丽，以灵动又富有情感的表演闻名。无论是娇柔端庄的闺中千金，还是义薄云天的巾帼女杰，她都能拿捏得恰到好处。\n' +
-                '更为难得的是，这位年轻演员还懂得剧本创作。除《神女劈观》外，云翰社近年来另有不少新剧，皆出自云堇之手。\n' +
-                '不过，令人意外的是，向来以端庄优雅形象示人的云堇，还有个不为人知的小爱好——听摇滚。\n' +
-                '若是在璃月港内的摇滚乐表演现场见到她，还请不要声张。\n' +
-                '否则，她说不定又要挨长辈们唠叨啦。'],
-            pos: '40% 20%',
-            zoom: '120%',
-            fullPos: '55% 30%',
-            fullZoom: '200%',
-            image: 'yunjin_1.jpg',
-            start: '2022-01-19 18:00:00',
-            end: '2022-02-01 15:59:59',
-            color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/?',
-            showOnHome: true,
-            wish_2: true,
-        },
-        {
-            no: 27,
-            shortname: ['ganyu', '甘雨'],
-            name: ['Adrift in the Harbor - Ganyu Banner', '「浮生孰来」'],
-            info: ['', ''],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'adrift_in_the_harbor_1.png',
-            start: '2021-02-01 18:00:00',
-            end: '2021-02-15 14:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/3661305',
             showOnHome: true,
         },
     ],
@@ -1488,7 +1465,6 @@ const wishInfo = () => {
         document.getElementById('eventName' + i).innerHTML = showWishName
         document.getElementById('infoEventName' + i).innerHTML = showWishName
         document.getElementById('infoEventBG' + i).src = wishCharacters[i].image ? '/assets/res/genshin-impact/events/' + wishCharacters[i].image : ''
-        document.getElementById('infoEventTextInfo' + i).innerHTML = wishCharacters[i].info ? wishCharacters[i].info : ''
         document.getElementById('infoEventUrl' + i).href = wishCharacters[i].url ? wishCharacters[i].url : ''
         // document.getElementById('eventWishS' + i).innerHTML = wishCharacters[i].start;
         // document.getElementById('eventWishE' + i).innerHTML = wishCharacters[i].end;
@@ -1674,13 +1650,11 @@ const hideClass = (start, end, str) => {
 }
 
 const lenMonthList = monthList.length
-const lenWish = wishLength
 const lenAllDays = dates.length
 const lenFuture = objWish.comingIndex.length
 const lenCurrent = objWish.wishIndex.length
 
 hideClass(lenMonthList, MAX_MONTH, 'lenMonthList-show-')
-hideClass(lenWish, MAX_WISH, 'lenWish-show-')
 hideClass(lenAllDays, MAX_DAY, 'lenAllDays-show-')
 hideClass(lenFuture, MAX_FUTURE, 'lenFuture-show-')
 hideClass(lenCurrent, MAX_CURRENT, 'lenCurrent-show-')

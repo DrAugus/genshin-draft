@@ -2,7 +2,6 @@
 
 <!--长度减1-->
 {% capture lenMonthList %}119{% endcapture %}
-{% capture lenWish %}119{% endcapture %}
 {% capture lenAllDays %}3649{% endcapture %}
 {% capture lenFuture %}119{% endcapture %}
 {% capture lenCurrent %}99{% endcapture %}
@@ -30,8 +29,12 @@
             <div class="timeline-wish" style="z-index: 3">
                 <div style="position: absolute">
 
-                    {% for i in (0..lenWish) %}
-                    <div class="card event-item event-item-{{i}} lenWish-show-{{i}}">
+                    {% for wishInfo in site.data.genshin-characters-wish %}
+                    {% for wish in wishInfo[1] %}
+                    {% assign i = forloop.index0 %}
+
+
+                    <div class="card event-item event-item-{{i}}">
                         <div class="card-image waves-effect waves-block waves-light " style="height: 128px">
                             <div class="event-img event-img-{{i}} responsive-img activator"></div>
                             <span class="event-name-{{i}} left-align" id="eventName{{i}}"
@@ -42,12 +45,19 @@
                             <span class="card-title event-wish-text-color-{{i}} text-darken-4" id="infoEventName{{i}}">
                                 <i class="material-icons right">close</i></span>
                             <img id="infoEventBG{{i}}" alt="">
-                            <p class="event-wish-text-color-{{i}}" id="infoEventTextInfo{{i}}"></p>
+
+                            {% for characters in site.data.genshin-characters %}
+                            {% if characters[1].id == wish.wish5star[0] %}
+                            <p class="event-wish-text-color-{{i}}"> {{characters[1].intro-content}}</p>
+                            {% endif %}
+                            {% endfor %}
+
                             <button class="btn waves-effect waves-light event-wish-color-{{i}}"><i
                                     class="material-icons">share</i></button>
                             <a class="right event-wish-text-color-{{i}}" id="infoEventUrl{{i}}" target="_blank">官方信息</a>
                         </div>
                     </div>
+                    {% endfor %}
                     {% endfor %}
 
                 </div>
