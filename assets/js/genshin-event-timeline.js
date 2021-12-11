@@ -642,11 +642,11 @@ const eventsData = [
             zoom: '180%',
             fullPos: '55% 30%',
             fullZoom: '200%',
-            image: '',
+            image: 'hanamizaka _heroics_1.jpg',
             start: '2021-12-14 18:00:00',
             end: '2022-01-04 14:59:59',
             color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/?',
+            url: 'https://bbs.mihoyo.com/ys/article/12926123',
             showOnHome: true,
         },
         {
@@ -964,6 +964,16 @@ const eventsData = [
             end: '2021-12-14 17:59:59',
             color: '#FFAA4B',
             url: 'https://ys.mihoyo.com/main/news/detail/18668',
+            showOnHome: true,
+        },
+        {
+            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
+            pos: '40% 40%',
+            image: 'epitome_invocation_22.jpg',
+            start: '2021-12-14 18:00:00',
+            end: '2022-01-04 14:59:59',
+            color: '#FFAA4B',
+            url: 'https://ys.mihoyo.com/main/news/detail/12926124',
             showOnHome: true,
         },
     ],
@@ -1547,8 +1557,8 @@ const updateCurrentWishInfo = () => {
         let index = currentWishObj.wishIndex[i]
         let wishBGClass = document.getElementsByClassName('current-wish-bg-' + i);
         for (let t of wishBGClass) {
-            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/full/" + wishCharacters[index].shortname[EN] + ".png')"
-            t.style.backgroundPosition = wishCharacters[index].pos
+            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/half/" + wishCharacters[index].shortname[EN] + ".png')"
+            t.style.backgroundSize = "100%"
             t.style.backgroundRepeat = 'no-repeat'
         }
 
@@ -1617,16 +1627,15 @@ const futureWishInfo = () => {
         }
         let eventWishBGColorClass = document.getElementsByClassName('future-wish-bg-color-' + i);
         for (let eWishColor of eventWishBGColorClass) {
-            eWishColor.style.backgroundColor = showColor
+            eWishColor.style.backgroundColor = showColor +'59'//59 35%透明度
         }
 
         let index = elementColor.indexOf(showColor)
         document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
         document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
-        document.getElementById('futureWishText1' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
         document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].shortname[0] + '.png'
-        document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
-        document.getElementById('futureWish1' + i).innerHTML = nameInfo(indexArr[i]);
+        document.getElementById('futureWish' + i).innerHTML = nameZHInfo(indexArr[i]);
+        document.getElementById('futureWish1' + i).innerHTML = nameZHInfo(indexArr[i]);
     }
 }
 futureWishInfo();
