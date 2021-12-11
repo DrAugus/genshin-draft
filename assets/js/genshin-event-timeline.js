@@ -1624,7 +1624,7 @@ const futureWishInfo = () => {
         document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
         document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
         document.getElementById('futureWishText1' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
-        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/full/' + wishCharacters[indexArr[i]].shortname[0] + '.png'
+        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].shortname[0] + '.png'
         document.getElementById('futureWish' + i).innerHTML = nameInfo(indexArr[i]);
         document.getElementById('futureWish1' + i).innerHTML = nameInfo(indexArr[i]);
     }
