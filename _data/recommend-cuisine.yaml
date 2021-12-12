@@ -1,0 +1,27 @@
+{
+  0: {
+    name: '达美乐比萨',
+    info: '',
+    img: ''
+  } ,
+  1: {
+    name: '鸡翅玉米',
+    info: '',
+    img: [ 'chicken_wings_corn_1.JPG','chicken_wings_corn_2.JPG' ]
+  },
+  2: {
+    name: '美式·牛肉汉堡',
+    info: '牛约堡',
+    img: ''
+  },
+  3: {
+    name: '哥老官',
+    info: '哥老官重庆美蛙鱼头特色火锅',
+    img: ''
+  },
+  4: {
+    name: '海底捞',
+    info: '',
+    img: ''
+  }
+}

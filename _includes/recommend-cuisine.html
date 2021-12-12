@@ -2,29 +2,36 @@
 
     <ul class="collapsible popout" data-collapsible="accordion">
 
+        {% for cuisine in site.data.recommend-cuisine %}
+        {% if cuisine[1].name != "" %}
+
         <li style="border-radius: 5px;" class="z-depth-2 hoverable">
             <div class="collapsible-header current-wish-color-{{i}}"
                  style="background-color: rgba(255,255,250,0)!important;">
-                达美乐比萨
-            </div>
-        </li>
-        <li style="border-radius: 5px;" class="z-depth-2 hoverable">
-            <div class="collapsible-header current-wish-color-{{i}}"
-                 style="background-color: rgba(255,255,250,0)!important;">
-                鸡翅玉米
+                {{cuisine[1].name}}
             </div>
 
             <div class="collapsible-body">
-                <div class="card ">
+                {% if cuisine[1].img != "" %}
+                <div class="card">
+
+                    {% for src in cuisine[1].img %}
                     <div class="card-image waves-effect waves-block waves-light hoverable">
-                        <img class="activator" alt="" src="/assets/res/food/recommend-cuisine/chicken_wings_corn_1.JPG">
+                        <img class="activator" alt="" src="/assets/res/food/recommend-cuisine/{{src}}">
                     </div>
-                    <div class="card-image waves-effect waves-block waves-light hoverable">
-                        <img class="activator" alt="" src="/assets/res/food/recommend-cuisine/chicken_wings_corn_2.JPG">
-                    </div>
+                    {% endfor %}
+
                 </div>
+                {% endif %}
+
+                {% if cuisine[1].info != "" %}
+                {{cuisine[1].info}}
+                {% endif %}
             </div>
         </li>
+
+        {% endif %}
+        {% endfor %}
 
     </ul>
 
