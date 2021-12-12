@@ -700,8 +700,8 @@ const eventsData = [
             fullPos: '55% 30%',
             fullZoom: '200%',
             image: 'shenhe_1.jpg',
-            start: '2022-01-19 18:00:00',
-            end: '2022-02-01 15:59:59',
+            start: '2022-01-25 18:00:00',
+            end: '2022-02-14 15:59:59',
             color: elementColor[elementIndex.bing],
             url: 'https://bbs.mihoyo.com/ys/article/?',
             showOnHome: true,
@@ -1443,8 +1443,10 @@ const wishInfo = () => {
             if (wishCharacters[i].wish_2) eItem.style.marginTop = '160px'
         }
         for (let img of eventImgClass) {
-            img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + wishCharacters[i].image + "')";
-            img.style.backgroundPosition = wishCharacters[i].pos;
+            // img.style.backgroundImage = "url('/assets/res/genshin-impact/events/" + wishCharacters[i].image + "')";
+            img.style.backgroundImage = "url('/assets/res/genshin-impact/characters/half/" + wishCharacters[i].shortname[0] + ".png')";
+            // img.style.backgroundPosition = wishCharacters[i].pos;
+            img.style.backgroundPosition = '0 25%'
             img.style.backgroundSize = '100%'
             // wishCharacters[i].zoom ? wishCharacters[i].zoom : '200%';
         }

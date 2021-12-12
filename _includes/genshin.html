@@ -116,9 +116,8 @@
             <ul class="collapsible popout" data-collapsible="accordion">
                 {% for i in (0..lenCurrent) %}
                 <li style="border-radius: 5px;" class="current-wish-bg-{{i}} z-depth-2 hoverable lenCurrent-show-{{i}}">
-                    <div class="collapsible-header current-wish-color-{{i}}"
-                         style="background-color: rgba(255,255,250,0)!important;"
-                         id="currentCharacter{{i}}">
+                    <div class="collapsible-header" style="background-color: rgba(255,255,250,0)!important;">
+                        <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
                     </div>
 
                     <div class="collapsible-body">
@@ -185,7 +184,7 @@
 
                 <!--truncate截断-->
                 <div class="card-action">
-                    <p class="truncate" id="futureWish{{i}}"></p>
+                    <h5 class="truncate" id="futureWish{{i}}"></h5>
                 </div>
 
             </div>
@@ -198,6 +197,47 @@
 
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
+
+<h1>观月推荐</h1>
+
+<div class="row">
+    <div class="col s12 m6 l4 ">
+        <div class="card ">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img class="activator" alt="" src="/assets/res/genshin-impact/characters/half/thoma.png">
+            </div>
+
+            <div class="card-action">
+
+                <p>托马圣遗物</p>
+                <strong>1.套装选择：</strong><strong
+                    style="color: rgb(190, 143, 0);">千岩固牢2件</strong><strong>+</strong><strong
+                    style="color: rgb(112, 48, 160);">绝缘之旗印2件</strong><br>
+                <strong style="color: rgb(192, 0, 0);">2.词条选择：</strong><br>
+                ①.<strong>生之花/死之羽：</strong>百分比生命值、充能效率<br>
+                ②.<strong>时之沙</strong>（<strong style="color: rgb(192, 0, 0);">生命值</strong>/充能效率）：充能效率、百分比生命值<br>
+                ③.<strong>空之杯/理之冠</strong>（<strong style="color: rgb(192, 0, 0);">生命值</strong>）：充能效率<br>
+                如果选择生命值武器，那么时之沙主属性选择充能效率；如果选择充能武器，那么时之沙主属性选择生命值。<br>
+
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m6 l4 ">
+        <div class="card ">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img class="activator" alt="" src="/assets/res/genshin-impact/characters/half/kujou_sara.png">
+            </div>
+
+            <div class="card-action">
+                <p>九条圣遗物</p>
+                攻击 雷伤 暴击/暴伤<br>
+                4绝缘<br>
+                暴击/暴伤/攻击/充能<br>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <h1>全部角色</h1>
 <div class="row">
