@@ -184,6 +184,28 @@
 
 </div>
 
+<!--版本答案-->
+<div class="row">
+    <h1>版本答案 0命5星 队伍推荐</h1>
+    <ul class="collapsible popout" data-collapsible="accordion">
+        {% for party in site.data.genshin-party-setup %}
+        <li class="z-depth-2 hoverable" style="border-radius: 5px;background-color: rgba(255,255,250,0)!important;">
+            <div class="collapsible-header" style="background-color: rgba(255,255,250,0)!important;">
+                <h5>{{party.name}}</h5>
+            </div>
+
+            <div class="collapsible-body">
+                <p>{{party.party}}
+                    {% if party.advans != "" %}<br>优势：{{party.advans}} {% endif %}
+                    {% if party.disadvans != "" %} <br>缺陷：{{party.disadvans}} {% endif %}
+                </p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
 <!--即将发布-->
 <div class="row">
 
