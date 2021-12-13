@@ -1,8 +1,10 @@
 <div class="row">
 
+    <h1>小松鼠の推荐</h1>
+
     <ul class="collapsible popout" data-collapsible="accordion">
 
-        {% for cuisine in site.data.recommend-cuisine %}
+        {% for cuisine in site.data.recommend-cuisine.recommend %}
         {% if cuisine.name != "" %}
 
         <li style="border-radius: 5px;" class="z-depth-2 hoverable">
@@ -26,6 +28,35 @@
 
                 {% if cuisine.info != "" %}
                 {{cuisine.info}}
+                {% endif %}
+            </div>
+        </li>
+
+        {% endif %}
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+<div class="row">
+
+    <h1>小松鼠の小黑屋</h1>
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+
+        {% for block in site.data.recommend-cuisine.block %}
+        {% if block.name != "" %}
+
+        <li style="border-radius: 5px;" class="z-depth-2 hoverable">
+            <div class="collapsible-header current-wish-color-{{i}}"
+                 style="background-color: rgba(255,255,250,0)!important;">
+                {{block.name}}
+            </div>
+
+            <div class="collapsible-body">
+                {% if block.reason != "" %}
+                {{block.reason}}
                 {% endif %}
             </div>
         </li>
