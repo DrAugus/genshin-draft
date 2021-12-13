@@ -202,7 +202,7 @@
 
 <div class="row">
     <div class="col s12 m6 l4 ">
-        <div class="card ">
+        <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img class="activator" alt="" src="/assets/res/genshin-impact/characters/half/thoma.png">
             </div>
@@ -242,15 +242,30 @@
 <h1>全部角色</h1>
 <div class="row">
     {% for characters in site.data.genshin-characters %}
-    <div class="col s2">
-
-        <div style="background-image: url('/assets/res/genshin-impact/elements/{{characters[1].ele}}.png');background-repeat: no-repeat;background-position: top right;">
-            <div class="card-image">
-                <img style="border-radius: 10px" src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png">
+    <div class="col s4 m3 l1">
+        <div class="card" style="background-color: rgba(255,255,250,0)!important;border-radius:10px">
+            <!--设置背景时发现高度为0 增加 padding-bottom 即可显示-->
+            <div class="card-image waves-effect waves-block waves-light hoverable"
+                 style="background-image: url('/assets/res/genshin-impact/characters/{{characters[1].id}}.png');
+                 background-repeat: no-repeat;
+                 background-position: center;
+                 padding-bottom:100%;
+                 border-radius:10px">
+                <div style="width: 30%">
+                    <img src="/assets/res/genshin-impact/elements/{{characters[1].ele}}.png">
+                </div>
             </div>
-            <p class="center" style=" text-shadow: 0 2px 6px rgb(0 0 0 / 20%);">{{characters[1].name}}</p>
-        </div>
 
+
+            {% for eleInfo in site.data.genshin-ele-color %}
+            {% if eleInfo[0] == characters[1].ele %}
+            <span class="activator center valign-wrapper" style="color:{{eleInfo[1]}}"> {{characters[1].name}}</span>
+            {% break %}
+            {% endif %}
+            {% endfor %}
+
+
+        </div>
     </div>
     {% endfor %}
 
