@@ -1,0 +1,16 @@
+---
+title:  遇到的种种问题
+layout: post
+date:   '2021-12-13 16:06:06'
+categories: 编程
+tags: 问题 编程
+excerpt: 每天遇到的问题，不懂的东西收集
+---
+
+
+{% for info in site.data.problems-encountered %}
+<p>
+    Q: {{info.problem}}<br>
+    A: {{info.reason}}
+</p>
+{% endfor %}

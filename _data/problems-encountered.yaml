@@ -1,0 +1,3 @@
+[
+  { problem: 'div标签设置背景时发现实际显示效果图片高度为0', reason: '增加 padding-bottom 即可显示' },
+]
