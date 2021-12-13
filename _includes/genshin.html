@@ -30,34 +30,60 @@
                 <div style="position: absolute">
 
                     {% for wishInfo in site.data.genshin-characters-wish %}
+
                     {% for wish in wishInfo[1] %}
                     {% assign i = forloop.index0 %}
 
+                    {% for characters in site.data.genshin-characters %}
+                    {% if characters[1].id == wish.wish5star[0] %}
 
-                    <div class="card event-item event-item-{{i}}">
+                    <!--颜色控制-->
+                    {% assign eleColor = "#fff" %}
+                    {% for eleInfo in site.data.genshin-ele-color %}
+                    {% if eleInfo[0] == characters[1].ele %}
+                    {% assign eleColor = eleInfo[1] %}
+                    {% break %}
+                    {% endif %}
+                    {% endfor %}
+                    <!--颜色控制-->
+
+                    <div class="card event-item event-item-{{i}}" style="background-color: {{eleColor}}">
                         <div class="card-image waves-effect waves-block waves-light " style="height: 128px">
-                            <div class="event-img event-img-{{i}} responsive-img activator"></div>
-                            <span class="event-name-{{i}} left-align" id="eventName{{i}}"
-                                  style="font-size: 4rem; margin-left: 10px; color: white"></span>
+                            <div class="event-img responsive-img activator"
+                                 style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
+                            </div>
+                            <span class="left-align" style="font-size: 4rem; margin-left: 10px; color: white">
+                                {{characters[1].name}}
+                            </span>
                         </div>
+
 
                         <div class="card-reveal">
-                            <span class="card-title event-wish-text-color-{{i}} text-darken-4" id="infoEventName{{i}}">
-                                <i class="material-icons right">close</i></span>
-                            <img id="infoEventBG{{i}}" alt="">
+                            <span class="card-title" style="color: {{eleColor}}">
+                                <i class="material-icons right">close</i>
+                                {{wish.name}}-{{wish.shortName}}
+                            </span>
+                            {{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}
+                            <img alt="" src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
 
-                            {% for characters in site.data.genshin-characters %}
-                            {% if characters[1].id == wish.wish5star[0] %}
-                            <p class="event-wish-text-color-{{i}}"> {{characters[1].intro-content}}</p>
-                            {% endif %}
-                            {% endfor %}
 
-                            <button class="btn waves-effect waves-light event-wish-color-{{i}}"><i
+                            <p style="color: {{eleColor}}"> {{characters[1].intro-content}}</p>
+
+
+                            <button class="btn waves-effect waves-light" style="background-color: {{eleColor}}"><i
                                     class="material-icons">share</i></button>
-                            <a class="right event-wish-text-color-{{i}}" id="infoEventUrl{{i}}" target="_blank">官方信息</a>
+                            <a class="right" style="color: {{eleColor}}" href="#" target="_blank">官方信息:TODO接入href</a>
                         </div>
+
+
                     </div>
+
+                    {% break %}
+                    {% endif %}
                     {% endfor %}
+
+                    {% endfor %}
+
                     {% endfor %}
 
                 </div>

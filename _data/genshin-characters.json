@@ -428,5 +428,35 @@
     "intro-content": "海祇军大将。身具领兵者威严的同时，又无高位者的倨傲。 无论何时何地都深受部下信赖，能让人毫无负担地寄托后背与心灵。",
     "city": "Inazuma",
     "ele": "geo"
+  },
+  "shenhe": {
+    "id": "shenhe",
+    "name": "申鹤",
+    "element": "冰",
+    "star": 5,
+    "event-exclusive": true,
+    "intro-content": "红尘渺渺，因果烟消",
+    "city": "Liyue",
+    "ele": "cryo"
+  },
+  "yunjin": {
+    "id": "yunjin",
+    "name": "云堇",
+    "element": "岩",
+    "star": 4,
+    "event-exclusive": false,
+    "intro-content": "红毹婵娟，庄谐并举",
+    "city": "Liyue",
+    "ele": "geo"
+  },
+  "shenlilingren": {
+    "id": "shenlilingren",
+    "name": "神里凌人",
+    "element": "冰",
+    "star": 5,
+    "event-exclusive": true,
+    "intro-content": "",
+    "city": "Inazuma",
+    "ele": "cryo"
   }
 }
