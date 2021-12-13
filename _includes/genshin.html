@@ -29,9 +29,8 @@
             <div class="timeline-wish" style="z-index: 3">
                 <div style="position: absolute">
 
-                    {% for wishInfo in site.data.genshin-characters-wish %}
+                    {% for wish in site.data.genshin-wish.characters %}
 
-                    {% for wish in wishInfo[1] %}
                     {% assign i = forloop.index0 %}
 
                     {% for characters in site.data.genshin-characters %}
@@ -57,31 +56,27 @@
                             </span>
                         </div>
 
-
                         <div class="card-reveal">
                             <span class="card-title" style="color: {{eleColor}}">
                                 <i class="material-icons right">close</i>
                                 {{wish.name}}-{{wish.shortName}}
                             </span>
-                            {{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}
-                            <img alt="" src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
-
+                            <!--downcase转换小写 并用_替换空格 append其他标记-->
+                            <img alt="" loading="lazy"
+                                 src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
 
                             <p style="color: {{eleColor}}"> {{characters[1].intro-content}}</p>
 
-
-                            <button class="btn waves-effect waves-light" style="background-color: {{eleColor}}"><i
-                                    class="material-icons">share</i></button>
+                            <button class="btn waves-effect waves-light" style="background-color: {{eleColor}}">
+                                <i class="material-icons">share</i>
+                            </button>
                             <a class="right" style="color: {{eleColor}}" href="#" target="_blank">官方信息:TODO接入href</a>
                         </div>
-
 
                     </div>
 
                     {% break %}
                     {% endif %}
-                    {% endfor %}
-
                     {% endfor %}
 
                     {% endfor %}
@@ -96,7 +91,6 @@
             {% endfor %}
 
         </div>
-
     </div>
 </div>
 
