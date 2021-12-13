@@ -18,695 +18,364 @@ const elementIndex = {
     'bing': 6,
 }
 
-const elementColor = [
-    '#98e628',//草
-    '#e2b032',//岩
-    '#fca7ff',//雷
-    '#03ddfe',//水
-    '#fa5d3e',//火
-    '#4cf3b6',//风
-    '#a6fdfd',//冰
-];
+const elementColor =
+    {
+        dendro: '#98e628',//草
+        geo: '#e2b032',//岩
+        electro: '#fca7ff',//雷
+        hydro: '#03ddfe',//水
+        pyro: '#fa5d3e',//火
+        anemo: '#4cf3b6',//风
+        cryo: '#a6fdfd',//冰
+    }
 
-const elementImg = [
-    'dendro.png',
-    'geo.png',
-    'electro.png',
-    'hydro.png',
-    'pyro.png',
-    'anemo.png',
-    'cryo.png',
-]
 
 const colorWeapon = '#FFAA4B';
 
 const eventsData = [
     [
         {
-            name: "The Heron's Invitation Web Event",
-            pos: '0% 48%',
-            image: 'the_herons_invitation.jpg',
-            start: '2021-07-26 04:00:00',
-            end: '2021-08-02 23:59:59',
-            color: '#FFFBF1',
-            zoom: '200%',
-            url: 'https://www.hoyolab.com/genshin/article/543290',
-            showOnHome: true,
-        },
-        {
-            name: 'Summer Night Mementos',
-            pos: '0% 40%',
-            image: 'summer_night_mementos.jpg',
-            start: '2021-08-05 04:00:00',
-            end: '2021-08-11 23:59:59',
-            color: '#FFFEF9',
-            zoom: '200%',
-            url: 'https://mhy.link/071OHHA6',
-            showOnHome: true,
-        },
-        {
-            name: 'An Unforgettable Journey - Anniversary Web Event',
-            pos: '0% 55%',
-            image: 'an_unforgettable_journey.jpg',
-            start: '2021-09-28 04:00:00',
-            end: '2021-10-12 23:59:59',
-            color: '#5A8EBE',
-            zoom: '100%',
-            url: 'https://mhy.link/adfsJJA6',
-            showOnHome: true,
-        },
-    ],
-    [
-        {
-            name: 'Lost Riches',
-            pos: '0% 50%',
-            image: 'lost_riches_2.jpg',
-            start: '2021-08-06 10:00:00',
-            end: '2021-08-16 03:59:59',
-            color: '#FFF2DC',
-            zoom: '170%',
-            url: 'https://genshin.mihoyo.com/en/news/detail/14337',
-            showOnHome: true,
-        },
-        {
-            name: 'Ley Line Overflow',
-            pos: '20% 35%',
-            image: 'ley_line_overflow.jpg',
-            start: '2021-08-23 04:00:00',
-            end: '2021-08-30 03:59:59',
-            color: '#43DA8C',
-            zoom: '150%',
-            url: 'https://www.hoyolab.com/genshin/article/661106',
-            showOnHome: true,
-        },
-        {
-            name: 'Spectral Secrets',
-            pos: '0% 25%',
-            image: 'spectral_secrets.jpg',
-            start: '2021-09-19 10:00:00',
-            end: '2021-09-26 03:59:59',
-            color: '#F6F5F0',
-            zoom: '170%',
-            url: 'https://www.hoyolab.com/genshin/article/780934',
-            showOnHome: true,
-        },
-        {
-            name: 'Passage of Clouds and Stars - Daily Login',
-            pos: '0% 40%',
-            image: 'passage_of_clouds_and_stars.jpg',
-            start: '2021-09-28 10:00:00',
-            end: '2021-10-11 03:59:59',
-            color: '#547BE4',
-            zoom: '200%',
-            url: 'https://www.hoyolab.com/article/780929',
-            showOnHome: true,
-        },
-        {
-            name: "Tuned to the World's Sound",
-            pos: '0% 15%',
-            image: 'tuned_to_the_worlds_sound.jpg',
-            start: '2021-10-15 10:00:00',
-            end: '2021-10-25 03:59:59',
-            color: '#FFF8F1',
-            zoom: '300%',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            showOnHome: true,
-        },
-    ],
-    [
-        {
-            name: 'Thunder Sojourn',
-            pos: '0% 25%',
-            image: 'thunder_sojourn.jpg',
-            start: '2021-07-22 10:00:00',
-            end: '2021-08-09 03:59:59',
-            color: '#F0DBFF',
-            zoom: '200%',
-            url: 'https://genshin.mihoyo.com/en/news/detail/14337',
-            showOnHome: true,
-        },
-        {
-            name: 'Theater Mechanicus: Stage of Wonders',
-            pos: '0% 45%',
-            image: 'theater_mechanicus_wonders.jpg',
-            start: '2021-08-12 10:00:00',
-            end: '2021-08-26 03:59:59',
-            color: '#F8EAC4',
-            zoom: '200%',
-            url: 'https://www.hoyolab.com/genshin/article/661106',
-            showOnHome: true,
-        },
-        {
-            name: 'Lunar Realm',
-            pos: '0% 50%',
-            image: 'lunar_realm.jpg',
-            start: '2021-09-10 10:00:00',
-            end: '2021-09-20 03:59:59',
-            color: '#3585FF',
-            zoom: '180%',
-            url: 'https://www.hoyolab.com/genshin/article/780932',
-            showOnHome: true,
-        },
-        {
-            name: 'Moonlight Merriment',
-            pos: '100% 15%',
-            image: 'moonlight_merriment.jpg',
-            start: '2021-09-27 10:00:00',
-            end: '2021-10-11 03:59:59',
-            color: '#FF7B69',
-            zoom: '150%',
-            url: 'https://www.hoyolab.com/genshin/article/780930',
-            showOnHome: true,
-        },
-        {
-            name: 'Labyrinth Warriors',
-            pos: '0% 14%',
-            image: 'labyrinth_warriors.jpg',
-            start: '202110-21 10:00:00',
-            end: '2021-11-08 03:59:59',
-            color: '#CFB1F1',
-            zoom: '250%',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            showOnHome: true,
-        },
-    ],
-    [
-        {
-            name: 'Act I',
-            start: '2021-07-22 10:00:00',
-            end: '2021-07-24 04:00:00',
-            color: '#F0DBFF',
-            url: 'https://www.hoyolab.com/genshin/article/567649',
-            startOnly: true,
-            timezoneDependent: true,
-        },
-        {
-            name: 'Act II',
-            start: '2021-07-24 04:00:00',
-            end: '2021-07-27 04:00:00',
-            color: '#F0DBFF',
-            url: 'https://www.hoyolab.com/genshin/article/567649',
-            startOnly: true,
-        },
-        {
-            name: 'Act III',
-            start: '2021-07-27 04:00:00',
-            end: '2021-07-30 04:00:00',
-            color: '#F0DBFF',
-            url: 'https://www.hoyolab.com/genshin/article/567649',
-            startOnly: true,
-        },
-        {
-            name: 'Act IV',
-            start: '2021-07-30 04:00:00',
-            end: '2021-08-09 03:59:59',
-            color: '#F0DBFF',
-            url: 'https://www.hoyolab.com/genshin/article/567649',
-            image: 'thunder_sojourn.jpg',
-            zoom: '200%',
-            pos: '0% 25%',
-            startOnly: true,
-        },
-        {
-            name: 'Phantom Flow',
-            pos: '0% 20%',
-            image: 'phantom_flow.jpg',
-            start: '2021-08-20 10:00:00',
-            end: '2021-08-30 03:59:59',
-            color: '#FFB6EB',
-            zoom: '100%',
-            url: 'https://www.hoyolab.com/genshin/article/661106',
-            showOnHome: true,
-        },
-        {
-            name: 'Hyakunin Ikki',
-            pos: '0% 70%',
-            image: 'hyakunin_ikki.jpg',
-            start: '2021-09-02 10:00:00',
-            end: '2021-09-13 03:59:59',
-            color: '#E48DA5',
-            zoom: '200%',
-            url: 'https://www.hoyolab.com/genshin/article/780931',
-            showOnHome: true,
-        },
-        {
-            name: 'Path I',
-            start: '2021-09-27 10:00:00',
-            end: '2021-10-01 04:00:00',
-            color: '#FF7B69',
-            url: 'https://www.hoyolab.com/genshin/article/780930',
-            startOnly: true,
-        },
-        {
-            name: 'Path II',
-            start: '2021-10-01 04:00:00',
-            end: '2021-10-05 04:00:00',
-            color: '#FF7B69',
-            url: 'https://www.hoyolab.com/genshin/article/780930',
-            startOnly: true,
-        },
-        {
-            name: 'Path III',
-            pos: '100% 15%',
-            image: 'moonlight_merriment.jpg',
-            start: '2021-10-05 04:00:00',
-            end: '2021-10-11 03:59:59',
-            color: '#FF7B69',
-            zoom: '150%',
-            url: 'https://www.hoyolab.com/genshin/article/780930',
-            startOnly: true,
-        },
-        {
-            name: 'Part 1',
-            start: '2021-10-21 10:00:00',
-            end: '2021-10-24 04:00:00',
-            color: '#CFB1F1',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            startOnly: true,
-        },
-        {
-            name: 'Part 2',
-            start: '2021-10-24 04:00:00',
-            end: '2021-10-27 04:00:00',
-            color: '#CFB1F1',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            startOnly: true,
-        },
-        {
-            name: 'Part 3',
-            start: '2021-10-27 04:00:00',
-            end: '2021-10-30 04:00:00',
-            color: '#CFB1F1',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            startOnly: true,
-        },
-        {
-            name: 'Part 4',
-            pos: '0% 14%',
-            image: 'labyrinth_warriors.jpg',
-            start: '2021-10-30 04:00:00',
-            end: '2021-11-08 03:59:59',
-            color: '#CFB1F1',
-            zoom: '250%',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            startOnly: true,
-        },
-    ],
-    [
-        {
-            no: 0,
-            shortname: ['venti', '温迪'],
-            name: ['Ballad in Goblets - Venti Banner', '「杯装之诗」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'ballad_in_goblets_1.png',
-            start: '2020-09-28 10:00:00',
-            end: '2020-10-18 17:59:59',
-            color: elementColor[elementIndex.feng],
-            url: 'https://bbs.mihoyo.com/ys/article/1748378',
-            showOnHome: true,
-            version: '1.0',
-        },
-        {
-            no: 1,
-            shortname: ['klee', '可莉'],
-            name: ['Sparkling Steps - Klee Banner', '「闪焰的驻足」'],
-            pos: '40% 20%',
-            zoom: '180%',
-            image: 'sparkling_steps_1.png',
-            start: '2020-10-20 18:00:00',
-            end: '2020-11-09 17:59:59',
-            color: elementColor[elementIndex.huo],
-            url: 'https://bbs.mihoyo.com/ys/article/2277693',
-            showOnHome: true,
-        },
-        {
-            no: 2,
-            shortname: ['tartaglia', '达达利亚'],
-            name: ['Farewell of Snezhnaya - Tartaglia Banner', '「暂别冬都」'],
-            pos: '50% 5%',
-            zoom: '180%',
-            image: 'farewell_of_snezhnaya_1.png',
-            start: '2020-11-11 18:00:00',
-            end: '2020-12-01 15:59:59',
-            color: elementColor[elementIndex.shui],
-            url: 'https://bbs.mihoyo.com/ys/article/2563525',
-            showOnHome: true,
-            version: '1.1',
-        },
-        {
-            no: 3,
-            shortname: ['zhongli', '钟离'],
-            name: ['Gentry of Hermitage - Zhongli Banner', '「陵薮市朝」'],
-            pos: '40% 5%',
-            zoom: '180%',
-            image: 'gentry_of_hermitage_1.png',
-            start: '2020-12-01 18:00:00',
-            end: '2020-12-22 14:59:59',
-            color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/2878243',
-            showOnHome: true,
-        },
-        {
-            no: 4,
-            shortname: ['albedo', '阿贝多'],
-            name: ['Secretum Secretorum - Albedo Banner', '「深秘之息」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'secretum_secretorum_1.png',
-            start: '2020-12-23 11:00:00',
-            end: '2021-01-12 15:59:59',
-            color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/3236897',
-            showOnHome: true,
-            version: '1.2',
-        },
-        {
-            no: 5,
-            shortname: ['ganyu', '甘雨'],
-            name: ['Adrift in the Harbor - Ganyu Banner', '「浮生孰来」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'adrift_in_the_harbor_1.png',
-            start: '2021-01-12 18:00:00',
-            end: '2021-02-02 14:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/3661305',
-            showOnHome: true,
-        },
-        {
-            no: 6,
-            shortname: ['xiao', '魈'],
-            name: ['Invitation to Mundane Life - Xiao Banner', '「烟火之邀」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'invitation_to_mundane_life_1.png',
-            start: '2021-02-03 11:00:00',
-            end: '2021-02-17 15:59:59',
-            color: elementColor[elementIndex.feng],
-            url: 'https://bbs.mihoyo.com/ys/article/4005715',
-            showOnHome: true,
-            version: '1.3',
-        },
-        {
-            no: 7,
-            shortname: ['keqing', '刻晴'],
-            name: ['Dance of Lanterns - Keqing Banner', '「鱼龙灯昼」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'dance_of_lanterns_1.png',
-            start: '2021-02-17 18:00:00',
-            end: '2021-03-02 15:59:59',
-            color: elementColor[elementIndex.lei],
-            url: 'https://bbs.mihoyo.com/ys/article/4005720',
-            showOnHome: true,
-        },
-        {
-            no: 8,
-            shortname: ['hu_tao', '胡桃'],
-            name: ['Moment of Bloom - Hu Tao Banner', '「赤团开时」'],
-            pos: '60% 20%',
-            zoom: '180%',
-            image: 'moment_of_bloom_1.jpg',
-            start: '2021-03-02 18:00:00',
-            end: '2021-03-16 14:59:59',
-            color: elementColor[elementIndex.huo],
-            url: 'https://bbs.mihoyo.com/ys/article/4701165',
-            showOnHome: true,
-        },
-        {
-            no: 9,
-            shortname: ['venti', '温迪'],
-            name: ['Ballad in Goblets - Venti Banner', '「杯装之诗」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'ballad_in_goblets_2.jpg',
-            start: '2021-03-17 11:00:00',
-            end: '2021-04-06 15:59:59',
-            color: elementColor[elementIndex.feng],
-            url: 'https://bbs.mihoyo.com/ys/article/4959532',
-            showOnHome: true,
-            version: '1.4',
-        },
-        {
-            no: 10,
-            shortname: ['tartaglia', '达达利亚'],
-            name: ['Farewell of Snezhnaya - Tartaglia Banner', '「暂别冬都」'],
-            pos: '50% 5%',
-            zoom: '180%',
-            image: 'farewell_of_snezhnaya_2.png',
-            start: '2021-04-06 18:00:00',
-            end: '2021-04-27 14:59:59',
-            color: elementColor[elementIndex.shui],
-            url: 'https://bbs.mihoyo.com/ys/article/5305223',
-            showOnHome: true,
-        },
-        {
-            no: 11,
-            shortname: ['zhongli', '钟离'],
-            name: ['Gentry of Hermitage - Zhongli Banner', '「陵薮市朝」'],
-            pos: '40% 5%',
-            zoom: '180%',
-            image: 'gentry_of_hermitage_2.png',
-            start: '2021-04-28 11:00:00',
-            end: '2021-05-18 17:59:59',
-            color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/5726195',
-            showOnHome: true,
-            version: '1.5',
-        },
-        {
-            no: 12,
-            shortname: ['eula', '优菈'],
-            name: ['Born of Ocean Swell - Eula Banner', '「浪涌之瞬」'],
-            pos: '40% 20%',
-            zoom: '180%',
-            image: 'born_of_ocean_swell_1.jpg',
-            start: '2021-05-18 18:00:00',
-            end: '2021-06-08 14:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/6179333',
-            showOnHome: true,
-        },
-        {
-            no: 13,
-            shortname: ['klee', '可莉'],
-            name: ['Sparkling Steps - Klee Banner', '「闪焰的驻足」'],
-            pos: '40% 20%',
-            zoom: '180%',
-            image: 'sparkling_steps_2.png',
-            start: '2021-06-09 11:00:00',
-            end: '2021-06-29 17:59:59',
-            color: elementColor[elementIndex.huo],
-            url: 'https://bbs.mihoyo.com/ys/article/6634463',
-            showOnHome: true,
-            version: '1.6',
-        },
-        {
-            no: 14,
-            shortname: ['kaedehara_kazuha', '枫原万叶'],
-            name: ['Leaves in the Wind - Kaedehara Kazuha Banner', '「叶落风随」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'leaves_in_the_wind_1.png',
-            start: '2021-06-29 18:00:00',
-            end: '2021-07-20 14:59:59',
-            color: elementColor[elementIndex.feng],
-            url: 'https://bbs.mihoyo.com/ys/article/7067772',
-            showOnHome: true,
-        },
-        {
-            no: 15,
-            shortname: ['kamisato_ayaka', '神里绫华'],
-            name: ["The Heron's Court - Kamisato Ayaka Banner", '「白鹭之庭」'],
-            pos: '30% 20%',
-            zoom: '180%',
-            image: 'the_herons_court_1.jpg',
-            start: '2021-07-21 11:00:00',
-            end: '2021-08-10 17:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/7578978',
-            showOnHome: true,
-            timezoneDependent: true,
-            version: '2.0',
-        },
-        {
-            no: 16,
-            shortname: ['yoimiya', '宵宫'],
-            name: ['Tapestry of Golden Flames - Yoimiya Banner', '「焰色天河」'],
-            pos: '30% 25%',
-            zoom: '180%',
-            image: 'tapestry_of_golden_flames_1.jpg',
-            start: '2021-08-10 18:00:00',
-            end: '2021-08-31 14:59:59',
-            color: elementColor[elementIndex.huo],
-            url: 'https://bbs.mihoyo.com/ys/article/8275802',
-            showOnHome: true,
-        },
-        {
-            no: 17,
-            shortname: ['raiden_shogun', '雷电将军'],
-            name: ['Reign of Serenity - Raiden Shogun Banner', '「影寂天下人」'],
-            pos: '30% 10%',
-            zoom: '180%',
-            image: 'reign_of_serenity_1.jpg',
-            start: '2021-09-01 11:00:00',
-            end: '2021-09-21 17:59:59',
-            color: elementColor[elementIndex.lei],
-            url: 'https://bbs.mihoyo.com/ys/article/9004344',
-            showOnHome: true,
-            timezoneDependent: true,
-            version: '2.1',
-        },
-        {
-            no: 18,
-            shortname: ['sangonomiya_kokomi', '珊瑚宫心海'],
-            name: ['Drifting Luminescence - Sangonomiya Kokomi Banner', '「浮岳虹珠」'],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'drifting_luminescence_1.jpg',
-            start: '2021-09-21 18:00:00',
-            end: '2021-10-12 14:59:59',
-            color: elementColor[elementIndex.shui],
-            url: 'https://bbs.mihoyo.com/ys/article/9679284',
-            showOnHome: true,
-        },
-        {
-            no: 19,
-            shortname: ['tartaglia', '达达利亚'],
-            name: ['Farewell of Snezhnaya - Tartaglia Banner', '「暂别冬都」'],
-            pos: '50% 5%',
-            zoom: '180%',
-            image: 'farewell_of_snezhnaya_3.png',
-            start: '2021-10-13 11:00:00',
-            end: '2021-11-02 17:59:59',
-            color: elementColor[elementIndex.shui],
-            url: 'https://bbs.mihoyo.com/ys/article/10755906',
-            showOnHome: true,
-            timezoneDependent: true,
-            version: '2.2',
-        },
-        {
-            no: 20,
-            shortname: ['hu_tao', '胡桃'],
-            name: ['Moment of Bloom - Hu Tao Banner', '「雪霁梅香」'],
-            info: ['The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.',
-                '「往生堂」七十七代堂主，年纪轻轻就已主掌璃月的葬仪事务'],
-            pos: '60% 20%',
-            zoom: '180%',
-            image: 'moment_of_bloom_2.jpg',
-            start: '2021-11-02 18:00:00',
-            end: '2021-11-23 14:59:59',
-            color: elementColor[elementIndex.huo],
-            url: 'https://bbs.mihoyo.com/ys/article/11444616',
-            showOnHome: true,
-        },
-        {
-            no: 21,
-            shortname: ['albedo', '阿贝多'],
-            name: ['Secretum Secretorum - Albedo Banner', '「深秘之息」'],
-            info: ['', '西风骑士团首席炼金术士兼调查小队队长，被称作「白垩之子」的天才。'],
-            pos: '40% 15%',
-            zoom: '180%',
-            fullPos: '55% 0%',
-            fullZoom: '100%',
-            image: 'secretum_secretorum_2.jpg',
-            start: '2021-11-24 11:00:00',
-            end: '2021-12-14 17:59:59',
-            color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/12233203',
-            showOnHome: true,
-            version: '2.3',
-        },
-        {
-            no: 22,
-            shortname: ['eula', '优菈'],
-            name: ['Born of Ocean Swell - Eula Banner', '「浪涌之瞬」'],
-            info: ['', '古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。'],
-            pos: '40% 20%',
-            zoom: '180%',
-            fullPos: '35% 30%',
-            fullZoom: '100%',
-            image: 'born_of_ocean_swell_2.jpg',
-            start: '2021-11-24 11:00:00',
-            end: '2021-12-14 17:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/12233204',
-            showOnHome: true,
-            wish_2: true,
-        },
-        {
-            no: 23,
-            shortname: ['arataki_itto', '荒泷一斗'],
-            name: ['Hanamizaka Heroics - Arataki Itto Banner', '「花坂豪快」'],
-            info: ['The first and greatest head of the Arataki Gang, famed throughout Inazuma City\'s Hanamizaka... Wait, what? You\'ve never heard of them? Are you trying to be funny here?',
-                '活跃在稻妻城花见坂的「荒泷派」初代目头领。什么，从没听说过「荒泷派」？ 你是想找茬吗？'],
-            pos: '40% 20%',
-            zoom: '180%',
-            fullPos: '55% 30%',
-            fullZoom: '200%',
-            image: 'hanamizaka _heroics_1.jpg',
-            start: '2021-12-14 18:00:00',
-            end: '2022-01-04 14:59:59',
-            color: elementColor[elementIndex.yan],
-            url: 'https://bbs.mihoyo.com/ys/article/12926123',
-            showOnHome: true,
-        },
-        {
-            no: 24,
-            shortname: ['xiao', '魈'],
-            name: ['Invitation to Mundane Life - Xiao Banner', '「烟火之邀」'],
-            info: ['', ''],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'invitation_to_mundane_life_1.png',
-            start: '2022-01-05 11:00:00',
-            end: '2022-01-25 15:59:59',
-            color: elementColor[elementIndex.feng],
-            url: 'https://bbs.mihoyo.com/ys/article/4005715',
-            showOnHome: true,
-            version: '2.4',
-
-        },
-        {
-            no: 25,
-            shortname: ['ganyu', '甘雨'],
-            name: ['Adrift in the Harbor - Ganyu Banner', '「浮生孰来」'],
-            info: ['', ''],
-            pos: '40% 15%',
-            zoom: '180%',
-            image: 'adrift_in_the_harbor_1.png',
-            start: '2022-01-05 11:00:00',
-            end: '2022-01-25 15:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/3661305',
-            showOnHome: true,
-            wish_2: true,
-        },
-        {
-            //除名字外都待定 日期推测应该准确
-            no: 26,
-            shortname: ['shenhe', '申鹤'],
-            name: ['', '「孤辰茕怀」'],
-            info: ['',
-                '申鹤本是驱魔世家旁系之子，出于一些原因被留云借风真君收养。\n' +
-                '对申鹤来说，留云借风真君是一位博学健谈的师父。\n' +
-                '对留云借风真君来说，申鹤也是她指点过的人类中最特别的那个。\n' +
-                '以人类之身与仙家一同生活并非易事，但申鹤体质特殊、意志过人，又极有仙术天赋，很受众仙家认可。不过，长年累月修行加上吃仙草、饮山露的生活习惯，让她离人间的生活越发遥远，甚至被当成过神秘的白发仙人。\n' +
-                '性格中偶然流露出的锋芒与身上绑缚的红绳，也为她的「神秘」再添一笔。若把她的过去写成故事，想必会有多个版本。\n' +
-                '天上仙女也好，白发魔头也罢，人们将如何看待这个神秘的女子？而掩藏在她身上的秘密与真心，也如山间云雾一般难以捕捉。'],
-            pos: '40% 20%',
-            zoom: '120%',
-            fullPos: '55% 30%',
-            fullZoom: '200%',
-            image: 'shenhe_1.jpg',
-            start: '2022-01-25 18:00:00',
-            end: '2022-02-14 15:59:59',
-            color: elementColor[elementIndex.bing],
-            url: 'https://bbs.mihoyo.com/ys/article/?',
-            showOnHome: true,
-        },
-    ],
+            "no": 0,
+            "shortname": "温迪",
+            "name": "「杯装之诗」",
+            "pos": "40% 15%",
+            "start": "2020-09-28 10:00:00",
+            "end": "2020-10-18 17:59:59",
+            "url": "https://bbs.mihoyo.com/ys/article/1748378",
+            "version": "1.0",
+            "ele": "anemo",
+            "id": "venti",
+            "wishName": "Ballad in Goblets",
+            "info": "来路不明的吟游诗人，有时唱一些老掉牙的旧诗，有时又会唱出谁也没听过的新歌。喜欢苹果和热闹的气氛，讨厌奶酪和一切黏糊糊的物质。在引导「风」的元素力时，元素的塑形往往外显为羽毛，因为他很中意看上去轻飘飘的东西。"
+        }, {
+        "no": 1,
+        "shortname": "可莉",
+        "name": "「闪焰的驻足」",
+        "pos": "40% 20%",
+        "start": "2020-10-20 18:00:00",
+        "end": "2020-11-09 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/2277693",
+        "ele": "pyro",
+        "id": "klee",
+        "wishName": "Sparkling Steps",
+        "info": "西风骑士团，火花骑士！永远伴随闪光与爆炸出现！——然后在琴团长严厉的目光注视下默默消失。虽然新炸药的配方，很多都是在被关禁闭的时候想出来的……但如果不被关禁闭的话，就更好了。"
+    }, {
+        "no": 2,
+        "shortname": "达达利亚",
+        "name": "「暂别冬都」",
+        "pos": "50% 5%",
+        "start": "2020-11-11 18:00:00",
+        "end": "2020-12-01 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/2563525",
+        "version": "1.1",
+        "ele": "hydro",
+        "id": "tartaglia",
+        "wishName": "Farewell of Snezhnaya",
+        "info": "达达利亚——来自寒冰之国，心思变幻莫测的客人。不必猜测他的想法，也无需质疑他的来意。只要记住：这副稚气未脱的外表下暗藏的，是锤炼到极致的战士之躯。"
+    }, {
+        "no": 3,
+        "shortname": "钟离",
+        "name": "「陵薮市朝」",
+        "pos": "40% 5%",
+        "start": "2020-12-01 18:00:00",
+        "end": "2020-12-22 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/2878243",
+        "ele": "geo",
+        "id": "zhongli",
+        "wishName": "Gentry of Hermitage",
+        "info": "应「往生堂」邀请而来的神秘客卿。样貌俊美，举止高雅，拥有远超常人的学识。虽说来历不明，却知礼数、晓规矩。坐镇「往生堂」，能行天地万物之典仪。"
+    }, {
+        "no": 4,
+        "shortname": "阿贝多",
+        "name": "「深秘之息」",
+        "pos": "40% 15%",
+        "start": "2020-12-23 11:00:00",
+        "end": "2021-01-12 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/3236897",
+        "version": "1.2",
+        "ele": "geo",
+        "id": "albedo",
+        "wishName": "Secretum Secretorum",
+        "info": "阿贝多——现定居蒙德的炼金术士，效力于西风骑士团。「天才」、「白垩之子」或「调查队长」…他不怎么在意称号和名望，只专注于研究课题。财富和人脉不是他的目标。他渴望驾驭的，是从古到今深藏于人类头脑中的无上知识。"
+    }, {
+        "no": 5,
+        "shortname": "甘雨",
+        "name": "「浮生孰来」",
+        "pos": "40% 15%",
+        "start": "2021-01-12 18:00:00",
+        "end": "2021-02-02 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/3661305",
+        "ele": "cryo",
+        "id": "ganyu",
+        "wishName": "Adrift in the Harbor",
+        "info": "璃月七星的秘书，体内流淌着人类与仙兽的血脉。天性优雅娴静，但仙兽「麒麟」温柔的性情与坚定毅重的工作态度毫无冲突。毕竟，甘雨坚信自己所做的一切工作都是为了践行与帝君的契约，谋求璃月众生的最大福祉。"
+    }, {
+        "no": 6,
+        "shortname": "魈",
+        "name": "「烟火之邀」",
+        "pos": "40% 15%",
+        "start": "2021-02-03 11:00:00",
+        "end": "2021-02-17 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/4005715",
+        "version": "1.3",
+        "ele": "anemo",
+        "id": "xiao",
+        "wishName": "Invitation to Mundane Life",
+        "info": "守护璃月港的「三眼五显仙人」之一，妙称「护法夜叉大将」。虽然外表看起来是一个少年人，但一些有关他的传说，已在古卷中流传千年。对望舒客栈中一道名为「杏仁豆腐」的菜颇为喜爱。究其原因，是因为「杏仁豆腐」的味道，与他曾经吞噬过的「美梦」十分相似。"
+    }, {
+        "no": 7,
+        "shortname": "刻晴",
+        "name": "「鱼龙灯昼」",
+        "pos": "40% 15%",
+        "start": "2021-02-17 18:00:00",
+        "end": "2021-03-02 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/4005720",
+        "ele": "electro",
+        "id": "keqing",
+        "wishName": "Dance of Lanterns",
+        "info": "璃月七星之一，玉衡星。对「帝君一言而决的璃月」颇有微词——但实际上，神挺欣赏她这样的人。她坚信与人类命运相关的事，应当由人类去做，而且人类一定可以做得更好。为了证明这一点，她比任何人都要努力。"
+    }, {
+        "no": 8,
+        "shortname": "胡桃",
+        "name": "「赤团开时」",
+        "pos": "60% 20%",
+        "start": "2021-03-02 18:00:00",
+        "end": "2021-03-16 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/4701165",
+        "ele": "pyro",
+        "id": "hu_tao",
+        "wishName": "Moment of Bloom",
+        "info": "胡桃——「往生堂」第七十七代堂主，掌控着璃月葬仪事务的重要人物。尽心尽力地为人们完成送别之仪，维护着世间阴阳平衡之道。除此以外还是个神奇打油诗人，诸多「杰作」被璃月人口口相传。"
+    }, {
+        "no": 9,
+        "shortname": "温迪",
+        "name": "「杯装之诗」",
+        "pos": "40% 15%",
+        "start": "2021-03-17 11:00:00",
+        "end": "2021-04-06 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/4959532",
+        "version": "1.4",
+        "ele": "anemo",
+        "id": "venti",
+        "wishName": "Ballad in Goblets",
+        "info": "来路不明的吟游诗人，有时唱一些老掉牙的旧诗，有时又会唱出谁也没听过的新歌。喜欢苹果和热闹的气氛，讨厌奶酪和一切黏糊糊的物质。在引导「风」的元素力时，元素的塑形往往外显为羽毛，因为他很中意看上去轻飘飘的东西。"
+    }, {
+        "no": 10,
+        "shortname": "达达利亚",
+        "name": "「暂别冬都」",
+        "pos": "50% 5%",
+        "start": "2021-04-06 18:00:00",
+        "end": "2021-04-27 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/5305223",
+        "ele": "hydro",
+        "id": "tartaglia",
+        "wishName": "Farewell of Snezhnaya",
+        "info": "达达利亚——来自寒冰之国，心思变幻莫测的客人。不必猜测他的想法，也无需质疑他的来意。只要记住：这副稚气未脱的外表下暗藏的，是锤炼到极致的战士之躯。"
+    }, {
+        "no": 11,
+        "shortname": "钟离",
+        "name": "「陵薮市朝」",
+        "pos": "40% 5%",
+        "start": "2021-04-28 11:00:00",
+        "end": "2021-05-18 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/5726195",
+        "version": "1.5",
+        "ele": "geo",
+        "id": "zhongli",
+        "wishName": "Gentry of Hermitage",
+        "info": "应「往生堂」邀请而来的神秘客卿。样貌俊美，举止高雅，拥有远超常人的学识。虽说来历不明，却知礼数、晓规矩。坐镇「往生堂」，能行天地万物之典仪。"
+    }, {
+        "no": 12,
+        "shortname": "优菈",
+        "name": "「浪涌之瞬」",
+        "pos": "40% 20%",
+        "start": "2021-05-18 18:00:00",
+        "end": "2021-06-08 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/6179333",
+        "ele": "cryo",
+        "id": "eula",
+        "wishName": "Born of Ocean Swell",
+        "info": "优菈——常年在外作战的「浪花骑士」，反叛的旧贵族末裔。生于旧日宗室，身负罪恶血脉之人，的确需要独特的处世技巧，才能在偏见的高墙下安然行走。当然，这并不妨碍她与家族决裂，作为卓越的「浪花骑士」，在外游猎蒙德的敌人，完成她那意义独特的「复仇」。"
+    }, {
+        "no": 13,
+        "shortname": "可莉",
+        "name": "「闪焰的驻足」",
+        "pos": "40% 20%",
+        "start": "2021-06-09 11:00:00",
+        "end": "2021-06-29 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/6634463",
+        "version": "1.6",
+        "ele": "pyro",
+        "id": "klee",
+        "wishName": "Sparkling Steps",
+        "info": "西风骑士团，火花骑士！永远伴随闪光与爆炸出现！——然后在琴团长严厉的目光注视下默默消失。虽然新炸药的配方，很多都是在被关禁闭的时候想出来的……但如果不被关禁闭的话，就更好了。"
+    }, {
+        "no": 14,
+        "shortname": "枫原万叶",
+        "name": "「叶落风随」",
+        "pos": "40% 15%",
+        "start": "2021-06-29 18:00:00",
+        "end": "2021-07-20 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/7067772",
+        "ele": "anemo",
+        "id": "kaedehara_kazuha",
+        "wishName": "Leaves in the Wind",
+        "info": "稻妻出身的浪人武士。为人谦和，个性温顺。年轻潇洒的外表下埋藏着许多往事。看似随性，心中却有独属于自己的行事准则。"
+    }, {
+        "no": 15,
+        "shortname": "神里绫华",
+        "name": "「白鹭之庭」",
+        "pos": "30% 20%",
+        "start": "2021-07-21 11:00:00",
+        "end": "2021-08-10 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/7578978",
+        "timezoneDependent": true,
+        "version": "2.0",
+        "ele": "cryo",
+        "id": "kamisato_ayaka",
+        "wishName": "The Herons Court",
+        "info": "稻妻「社奉行」神里家的大小姐。端庄文雅，聪慧坚韧。待人接物真诚又得体，深受稻妻民众爱戴，贵有「白鹭公主」之名。"
+    }, {
+        "no": 16,
+        "shortname": "宵宫",
+        "name": "「焰色天河」",
+        "pos": "30% 25%",
+        "start": "2021-08-10 18:00:00",
+        "end": "2021-08-31 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/8275802",
+        "ele": "pyro",
+        "id": "yoimiya",
+        "wishName": "Tapestry of Golden Flames",
+        "info": "才华横溢的烟花工匠，「长野原烟花店」的现任店主，被誉为「夏祭的女王」。热情似火的少女。未泯的童心与匠人的执着在她身上交织出了奇妙的焰色反应。"
+    }, {
+        "no": 17,
+        "shortname": "雷电将军",
+        "name": "「影寂天下人」",
+        "pos": "30% 10%",
+        "start": "2021-09-01 11:00:00",
+        "end": "2021-09-21 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/9004344",
+        "timezoneDependent": true,
+        "version": "2.1",
+        "ele": "electro",
+        "id": "raiden_shogun",
+        "wishName": "Reign of Serenity",
+        "info": "雷电将军——此世最殊胜威怖的雷霆化身，稻妻幕府的最高主宰。挟威权之鸣雷，逐永恒之孤道的寂灭者。"
+    }, {
+        "no": 18,
+        "shortname": "珊瑚宫心海",
+        "name": "「浮岳虹珠」",
+        "pos": "40% 15%",
+        "start": "2021-09-21 18:00:00",
+        "end": "2021-10-12 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/9679284",
+        "ele": "hydro",
+        "id": "sangonomiya_kokomi",
+        "wishName": "Drifting Luminescence",
+        "info": "心海是海祇岛的「现人神巫女」，也就是现任海祇岛最高领袖。她通读兵法、擅长谋略，在军事上有着独特见解，也能将内政、外交等工作处理得井井有条。不过，这位人们眼中深不可测的领导者，似乎也有不为人知的一面…"
+    }, {
+        "no": 19,
+        "shortname": "达达利亚",
+        "name": "「暂别冬都」",
+        "pos": "50% 5%",
+        "start": "2021-10-13 11:00:00",
+        "end": "2021-11-02 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/10755906",
+        "timezoneDependent": true,
+        "version": "2.2",
+        "ele": "hydro",
+        "id": "tartaglia",
+        "wishName": "Farewell of Snezhnaya",
+        "info": "达达利亚——来自寒冰之国，心思变幻莫测的客人。不必猜测他的想法，也无需质疑他的来意。只要记住：这副稚气未脱的外表下暗藏的，是锤炼到极致的战士之躯。"
+    }, {
+        "no": 20,
+        "shortname": "胡桃",
+        "name": "「雪霁梅香」",
+        "info": "胡桃——「往生堂」第七十七代堂主，掌控着璃月葬仪事务的重要人物。尽心尽力地为人们完成送别之仪，维护着世间阴阳平衡之道。除此以外还是个神奇打油诗人，诸多「杰作」被璃月人口口相传。",
+        "pos": "60% 20%",
+        "start": "2021-11-02 18:00:00",
+        "end": "2021-11-23 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/11444616",
+        "ele": "pyro",
+        "id": "hu_tao",
+        "wishName": "Moment of Bloom"
+    }, {
+        "no": 21,
+        "shortname": "阿贝多",
+        "name": "「深秘之息」",
+        "info": "阿贝多——现定居蒙德的炼金术士，效力于西风骑士团。「天才」、「白垩之子」或「调查队长」…他不怎么在意称号和名望，只专注于研究课题。财富和人脉不是他的目标。他渴望驾驭的，是从古到今深藏于人类头脑中的无上知识。",
+        "pos": "40% 15%",
+        "start": "2021-11-24 11:00:00",
+        "end": "2021-12-14 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/12233203",
+        "version": "2.3",
+        "ele": "geo",
+        "id": "albedo",
+        "wishName": "Secretum Secretorum"
+    }, {
+        "no": 22,
+        "shortname": "优菈",
+        "name": "「浪涌之瞬」",
+        "info": "优菈——常年在外作战的「浪花骑士」，反叛的旧贵族末裔。生于旧日宗室，身负罪恶血脉之人，的确需要独特的处世技巧，才能在偏见的高墙下安然行走。当然，这并不妨碍她与家族决裂，作为卓越的「浪花骑士」，在外游猎蒙德的敌人，完成她那意义独特的「复仇」。",
+        "pos": "40% 20%",
+        "start": "2021-11-24 11:00:00",
+        "end": "2021-12-14 17:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/12233204",
+        "wish_2": true,
+        "ele": "cryo",
+        "id": "eula",
+        "wishName": "Born of Ocean Swell"
+    }, {
+        "no": 23,
+        "shortname": "荒泷一斗",
+        "name": "「花坂豪快」",
+        "info": "鬼族后裔，性格豪爽热血的快意男儿。如风一般迅猛，也如雷一般夺目。",
+        "pos": "40% 20%",
+        "start": "2021-12-14 18:00:00",
+        "end": "2022-01-04 14:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/12926123",
+        "ele": "geo",
+        "id": "arataki_itto",
+        "wishName": "Hanamizaka Heroics"
+    }, {
+        "no": 24,
+        "shortname": "魈",
+        "name": "「烟火之邀」",
+        "info": "守护璃月港的「三眼五显仙人」之一，妙称「护法夜叉大将」。虽然外表看起来是一个少年人，但一些有关他的传说，已在古卷中流传千年。对望舒客栈中一道名为「杏仁豆腐」的菜颇为喜爱。究其原因，是因为「杏仁豆腐」的味道，与他曾经吞噬过的「美梦」十分相似。",
+        "pos": "40% 15%",
+        "start": "2022-01-05 11:00:00",
+        "end": "2022-01-25 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/4005715",
+        "version": "2.4",
+        "ele": "anemo",
+        "id": "xiao",
+        "wishName": "Invitation to Mundane Life"
+    }, {
+        "no": 25,
+        "shortname": "甘雨",
+        "name": "「浮生孰来」",
+        "info": "璃月七星的秘书，体内流淌着人类与仙兽的血脉。天性优雅娴静，但仙兽「麒麟」温柔的性情与坚定毅重的工作态度毫无冲突。毕竟，甘雨坚信自己所做的一切工作都是为了践行与帝君的契约，谋求璃月众生的最大福祉。",
+        "pos": "40% 15%",
+        "start": "2022-01-05 11:00:00",
+        "end": "2022-01-25 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/3661305",
+        "wish_2": true,
+        "ele": "cryo",
+        "id": "ganyu",
+        "wishName": "Adrift in the Harbor"
+    }, {
+        "no": 26,
+        "shortname": "申鹤",
+        "name": "「孤辰茕怀」",
+        "info": "红尘渺渺，因果烟消",
+        "pos": "40% 20%",
+        "start": "2022-01-25 18:00:00",
+        "end": "2022-02-14 15:59:59",
+        "url": "https://bbs.mihoyo.com/ys/article/?",
+        "ele": "cryo",
+        "id": "shenhe",
+        "wishName": ""
+    }],
     [
         {
             name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
@@ -958,172 +627,6 @@ const eventsData = [
             showOnHome: true,
         },
     ],
-    [
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-07-16 04:00:00',
-            end: '2021-08-01 04:00:00',
-            color: '#4299E1',
-            description:
-                'When an active character triggers a Swirl reaction on a nearby opponent, a Brumous Aura that lasts 8s will be left at the location where the reaction took place. The Aura will inflict one count of DMG to opponents within it once every 2s. A Brumous Aura can be generated once every 9s.',
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-08-01 04:00:00',
-            end: '2021-08-16 04:00:00',
-            color: '#4299E1',
-            description:
-                "When an active character's Elemental Energy is fully charged, the DEF of opponents hit by the character's Normal, Charged or Plunging Attacks will be decreased by 7% for 10 seconds. Max 5 stacks. Each stack has an independent duration.",
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-08-16 04:00:00',
-            end: '2021-09-01 04:00:00',
-            color: '#4299E1',
-            description:
-                'When an active character obtains an Elemental Orb or Elemental Particle, the character will unleash a shockwave that deals DMG to surrounding opponents. This kind of shockwave can be unleashed once every 4s.',
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-09-01 04:00:00',
-            end: '2021-09-16 04:00:00',
-            color: '#4299E1',
-            description:
-                'After unleashing an Elemental Burst, the ATK of every character in the party will be increased by 20% for 10s. Max 3 stacks. Each stack has an independent duration.',
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-09-16 04:00:00',
-            end: '2021-10-01 04:00:00',
-            color: '#4299E1',
-            description:
-                "After a character uses an Elemental Burst, all party members' ATK is increased by 6.5% for 15s. Maximum 7 stacks. When 7 stacks are reached, the active character's Normal Attacks will unleash a shockwave at the position of the opponent it hits, dealing AoE DMG. A shockwave can be unleashed in this manner once every 2s.",
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-10-01 04:00:00',
-            end: '2021-10-16 04:00:00',
-            color: '#4299E1',
-            description:
-                "For 10s after a character uses an Elemental Burst, that character's Normal and Charged Attacks will unleash a shockwave at the position of the opponent they hit at the cost of 1% of the character's HP, dealing AoE DMG. This effect will be cleared when this character leaves the field. A shockwave can be unleashed in this manner once every 1s. Active characters can go down as a result of this HP loss.",
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-10-16 04:00:00',
-            end: '2021-11-01 04:00:00',
-            color: '#4299E1',
-            description:
-                "After the challenge begins, when a character's Elemental Energy is greater than or equal to 50%, they will gain a 6.5% ATK Bonus every second. Max 10 stacks. When a character's Elemental Energy is less than 30%, the ATK Bonus gained this way will be cleared.",
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-11-01 04:00:00',
-            end: '2021-11-16 04:00:00',
-            color: '#4299E1',
-            description:
-                "After the challenge begins, when a character's Elemental Energy is 100%, they will gain 1 stack of Auspice every second. Max 10 stacks. When this character unleashes their Elemental Burst, all Auspice stacks will be cleared, and the DMG dealt by this character will be increased by 5% for each stack cleared for the next 10s. While the character is enjoying the DMG Bonus gained via this method, they cannot gain any more stacks.",
-        },
-        {
-            name: 'Spiral Abyss',
-            image: 'spiral_abyss.jpg',
-            pos: '50% 20%',
-            start: '2021-11-16 04:00:00',
-            end: '2021-12-01 04:00:00',
-            color: '#4299E1',
-            description:
-                "After the challenge begins, when the active character's Elemental Energy is greater than or equal to 50%, they will continuously release shockwaves that deal DMG to opponents. When their Elemental Energy reaches 100%, these shockwaves will deal even greater DMG.",
-        },
-    ],
-    [
-        {
-            name: "Paimon's Bargain - Fischl, Xiangling, and Blackcliff",
-            pos: '0% 50%',
-            zoom: '150%',
-            start: '2021-07-01 04:00:00',
-            end: '2021-08-01 04:00:00',
-            color: '#B6A1EA',
-            image: 'paimon_bargain.png',
-            description: 'Now selling: Fischl, Xiangling, and Blackcliff Weapons.',
-        },
-        {
-            name: "Paimon's Bargain - Beidou, Noelle, and Royal",
-            pos: '0% 50%',
-            zoom: '150%',
-            start: '2021-08-01 04:00:00',
-            end: '2021-09-01 04:00:00',
-            color: '#B6A1EA',
-            image: 'paimon_bargain.png',
-            description: 'Now selling: Beidou, Noelle, and Royal Weapons.',
-        },
-        {
-            name: "Paimon's Bargain - Ningguang, Xingqiu, and Blackcliff",
-            pos: '0% 50%',
-            zoom: '150%',
-            start: '2021-09-01 04:00:00',
-            end: '2021-10-01 04:00:00',
-            color: '#B6A1EA',
-            image: 'paimon_bargain.png',
-            description: 'Now selling: Ningguang, Xingqiu, and Blackcliff Weapons.',
-        },
-        {
-            name: "Paimon's Bargain - Razor, Amber, and Royal",
-            pos: '0% 50%',
-            zoom: '150%',
-            start: '2021-10-01 04:00:00',
-            end: '2021-11-01 04:00:00',
-            color: '#B6A1EA',
-            image: 'paimon_bargain.png',
-            description: 'Now selling: Razor, Amber, and Royal Weapons.',
-        },
-    ],
-    [
-        {
-            name: 'Battle Pass - Divine Thunder',
-            pos: '0% 12%',
-            image: 'divine_thunder.jpg',
-            start: '2021-07-21 10:00:00',
-            end: '2021-08-30 03:59:59',
-            color: '#9F94FF',
-            url: 'https://genshin.mihoyo.com/en/news/detail/14337',
-            timezoneDependent: true,
-        },
-        {
-            name: 'Battle Pass - Moonchaser',
-            pos: '0% 12%',
-            image: 'moonchaser.jpg',
-            start: '2021-09-01 11:00:00',
-            end: '2021-10-11 03:59:59',
-            color: '#68D0C0',
-            url: 'https://genshin.mihoyo.com/en/news/detail/15353',
-            timezoneDependent: true,
-        },
-        {
-            name: 'Battle Pass - Mystic Repose',
-            pos: '0% 12%',
-            image: 'mystic_repose.jpg',
-            start: '2021-10-13 11:00:00',
-            end: '2021-11-22 03:59:59',
-            color: '#9C93FF',
-            url: 'https://genshin.mihoyo.com/en/news/detail/16356',
-            timezoneDependent: true,
-        },
-    ],
 ];
 
 
@@ -1310,7 +813,7 @@ const processEvent = () => {
 
 processEvent();
 
-let wishCharacters = events[4];
+let wishCharacters = events[0];
 let wishLength = wishCharacters.length
 
 //设置时间轴
@@ -1449,8 +952,8 @@ const wishInfo = () => {
 wishInfo();
 
 //中文昵称名字+英文昵称名字
-const nameInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortname[ZH] + '&nbsp;' + wishCharacters[i].name[EN];
-const nameZHInfo = (i) => wishCharacters[i].name[ZH] + wishCharacters[i].shortname[ZH];
+const nameInfo = (i) => wishCharacters[i].wishName + ' - ' + wishCharacters[i].id;
+const nameZHInfo = (i) => wishCharacters[i].name + ' - ' + wishCharacters[i].shortname;
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
@@ -1479,17 +982,17 @@ const updateCurrentWishInfo = () => {
     document.getElementById('currentCharacter1-1').innerHTML = nameZHInfo(wish2Index)//class控制显示
 
     //祈愿角色信息
-    document.getElementById('currentWishText0').innerHTML = wishCharacters[wish1Index].info[ZH]
-    document.getElementById('currentWishText1').innerHTML = wishCharacters[wish2Index].info[ZH]//class控制显示
+    document.getElementById('currentWishText0').innerHTML = wishCharacters[wish1Index].info
+    document.getElementById('currentWishText1').innerHTML = wishCharacters[wish2Index].info//class控制显示
     //color显示
     let wishColorClass = document.getElementsByClassName('current-wish-color-0');
     for (let w of wishColorClass) {
-        w.style.color = wishCharacters[wish1Index].color;
+        w.style.color = elementColor [wishCharacters[wish1Index].ele];
     }
     let wishColorClass2 = document.getElementsByClassName('current-wish-color-1');
     for (let w of wishColorClass2) {
         if (!reprintWish) w.style.display = 'none'
-        w.style.color = wishCharacters[wish2Index].color;
+        w.style.color = elementColor [wishCharacters[wish1Index].ele];
     }
 
     //祈愿角色图片
@@ -1497,30 +1000,35 @@ const updateCurrentWishInfo = () => {
         let index = objWish.wishIndex[i]
         let wishBGClass = document.getElementsByClassName('current-wish-bg-' + i);
         for (let t of wishBGClass) {
-            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/half/" + wishCharacters[index].shortname[EN] + ".png')"
+            t.style.backgroundImage = "url('/assets/res/genshin-impact/characters/half/" + wishCharacters[index].id + ".png')"
             t.style.backgroundSize = "100%"
             t.style.backgroundRepeat = 'no-repeat'
         }
 
         //祈愿图片上的元素颜色
-        let currentElementColor_ = wishCharacters[index].color
-        let indexColor = elementColor.indexOf(currentElementColor_)
-        document.getElementById('currentElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[indexColor];
+        document.getElementById('currentElements' + i).src = '/assets/res/genshin-impact/elements/' + wishCharacters[wish1Index].ele + '.png';
     }
 
 
     //显示当前祈愿角色元素属性
-    let currentElementColor = [wishCharacters[wish1Index].color]
+    let currentEle = [wishCharacters[wish1Index].ele]
     if (reprintWish) {
-        currentElementColor.push(wishCharacters[wish2Index].color)
+        currentEle.push(wishCharacters[wish2Index].ele)
     }
-    for (let i = 0; i < elementImg.length; ++i) {
-        document.getElementById('showElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[i];
 
-        let elementsClass = document.getElementsByClassName('show-elements-' + i);
+    for (let key in elementColor) {
+        console.log(key, elementColor[key])
+    }
+
+    let index = 0;
+    for (let key in elementColor) {
+        document.getElementById('showElements' + index).src = '/assets/res/genshin-impact/elements/' + key + '.png';
+
+        let elementsClass = document.getElementsByClassName('show-elements-' + index);
         for (let ele of elementsClass) {
-            for (let ce of currentElementColor) {
-                if (elementColor[i] === ce) {
+
+            for (let ce of currentEle) {
+                if (key === ce) {
                     ele.style.opacity = '1'
                     break
                 } else {
@@ -1528,6 +1036,7 @@ const updateCurrentWishInfo = () => {
                 }
             }
         }
+        ++index;
     }
 
 }
@@ -1559,7 +1068,7 @@ const futureWishInfo = () => {
     for (let i = 0; i < indexArr.length; ++i) {
 
         let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
-        let showColor = wishCharacters[indexArr[i]].color;
+        let showColor = elementColor [wishCharacters[indexArr[i]].ele];
         for (let w of wishColorClass) {
             w.style.color = '#000'
             w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
@@ -1570,15 +1079,15 @@ const futureWishInfo = () => {
             eWishColor.style.backgroundColor = showColor + '59'//59 35%透明度
         }
 
-        let index = elementColor.indexOf(showColor)
-        document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + elementImg[index];
-        document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
-        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].shortname[0] + '.png'
+        document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + wishCharacters[indexArr[i]].ele + '.png';
+
+
+        document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info
+        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].id + '.png'
         document.getElementById('futureWish' + i).innerHTML = nameZHInfo(indexArr[i]);
     }
 }
 futureWishInfo();
-
 
 //祈愿倒计时
 const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[objWish.wishIndex[0]].end))

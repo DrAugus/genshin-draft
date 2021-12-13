@@ -8,7 +8,10 @@
       end: '2020-10-18 18:00:00',
       color: '#55E4B0',
       version: '1.0',
-      wish5star: [ 'venti' ],
+      wish5star: [
+          'venti'
+      ],
+      name2: '「杯装之诗」'
     },
     {
       name: 'Sparkling Steps',
@@ -17,7 +20,10 @@
       start: '2020-10-20 18:00:00',
       end: '2020-11-10 16:00:00',
       color: '#CA360E',
-      wish5star: [ 'klee' ],
+      wish5star: [
+          'klee'
+      ],
+      name2: '「闪焰的驻足」'
     },
     {
       name: 'Farewell of Snezhnaya',
@@ -27,7 +33,10 @@
       end: '2020-12-01 16:00:00',
       color: '#50A3C0',
       version: '1.1',
-      wish5star: [ 'tartaglia' ],
+      wish5star: [
+          'tartaglia'
+      ],
+      name2: '「暂别冬都」'
     },
     {
       name: 'Gentry of Hermitage',
@@ -36,7 +45,10 @@
       start: '2020-12-01 18:00:00',
       end: '2020-12-22 15:00:00',
       color: '#D1A55C',
-      wish5star: [ 'zhongli' ],
+      wish5star: [
+          'zhongli'
+      ],
+      name2: '「陵薮市朝」'
     },
     {
       name: 'Secretum Secretorum',
@@ -46,7 +58,10 @@
       end: '2021-01-12 16:00:00',
       color: '#FCFE83',
       version: '1.2',
-      wish5star: [ 'albedo' ],
+      wish5star: [
+          'albedo'
+      ],
+      name2: '「深秘之息」'
     },
     {
       name: 'Adrift in the Harbor',
@@ -55,7 +70,10 @@
       start: '2021-01-12 18:00:00',
       end: '2021-02-02 15:00:00',
       color: '#6994DF',
-      wish5star: [ 'ganyu' ],
+      wish5star: [
+          'ganyu'
+      ],
+      name2: '「浮生孰来」'
     },
     {
       name: 'Invitation to Mundane Life',
@@ -65,7 +83,10 @@
       end: '2021-02-17 16:00:00',
       color: '#2BE3F8',
       version: '1.3',
-      wish5star: [ 'xiao' ],
+      wish5star: [
+          'xiao'
+      ],
+      name2: '「烟火之邀」'
     },
     {
       name: 'Dance of Lanterns',
@@ -74,7 +95,10 @@
       start: '2021-02-17 18:00:00',
       end: '2021-03-02 16:00:00',
       color: '#AB6CD7',
-      wish5star: [ 'keqing' ],
+      wish5star: [
+          'keqing'
+      ],
+      name2: '「鱼龙灯昼」'
     },
     {
       name: 'Moment of Bloom',
@@ -83,7 +107,10 @@
       start: '2021-03-02 18:00:00',
       end: '2021-03-16 15:00:00',
       color: '#BF5042',
-      wish5star: [ 'hu_tao' ],
+      wish5star: [
+          'hu_tao'
+      ],
+      name2: '「赤团开时」'
     },
     {
       name: 'Ballad in Goblets',
@@ -92,9 +119,16 @@
       start: '2021-03-17 06:00:00',
       end: '2021-04-06 16:00:00',
       color: '#35C297',
-      wish5star: [ 'venti' ],
-      wish4star: [ 'sucrose', 'razor', 'noelle' ],
+      wish5star: [
+          'venti'
+      ],
+      'wish4star': [
+          'sucrose',
+          'razor',
+          'noelle'
+      ],
       version: '1.4',
+      name2: '「杯装之诗」'
     },
     {
       name: 'Farewell of Snezhnaya',
@@ -103,8 +137,15 @@
       start: '2021-04-06 18:00:00',
       end: '2021-04-27 15:00:00',
       color: '#50A3C0',
-      wish5star: [ 'tartaglia' ],
-      wish4star: [ 'rosaria', 'fischl', 'barbara' ],
+      wish5star: [
+          'tartaglia'
+      ],
+      'wish4star': [
+          'rosaria',
+          'fischl',
+          'barbara'
+      ],
+      name2: '「暂别冬都」'
     },
     {
       name: 'Gentry of Hermitage',
@@ -113,9 +154,16 @@
       start: '2021-04-28 06:00:00',
       end: '2021-05-18 17:59:59',
       color: '#D1A55C',
-      wish5star: [ 'zhongli' ],
-      wish4star: [ 'yanfei', 'noelle', 'diona' ],
+      wish5star: [
+          'zhongli'
+      ],
+      'wish4star': [
+          'yanfei',
+          'noelle',
+          'diona'
+      ],
       version: '1.5',
+      name2: '「陵薮市朝」'
     },
     {
       name: 'Born of Ocean Swell',
@@ -124,8 +172,15 @@
       start: '2021-05-18 18:00:00',
       end: '2021-06-08 15:00:00',
       color: '#A6D6E0',
-      wish5star: [ 'eula' ],
-      wish4star: [ 'xingqiu', 'beidou', 'xinyan' ],
+      wish5star: [
+          'eula'
+      ],
+      'wish4star': [
+          'xingqiu',
+          'beidou',
+          'xinyan'
+      ],
+      name2: '「浪涌之瞬」'
     },
     {
       name: 'Sparkling Steps',
@@ -134,9 +189,16 @@
       start: '2021-06-09 06:00:00',
       end: '2021-06-29 17:59:59',
       color: '#CA360E',
-      wish5star: [ 'klee' ],
-      wish4star: [ 'fischl', 'sucrose', 'barbara' ],
+      wish5star: [
+          'klee'
+      ],
+      'wish4star': [
+          'fischl',
+          'sucrose',
+          'barbara'
+      ],
       version: '1.6',
+      name2: '「闪焰的驻足」'
     },
     {
       name: 'Leaves in the Wind',
@@ -145,8 +207,15 @@
       start: '2021-06-29 18:00:00',
       end: '2021-07-20 14:59:59',
       color: '#8FFFDE',
-      wish5star: [ 'kaedehara_kazuha' ],
-      wish4star: [ 'bennett', 'razor', 'rosaria' ],
+      wish5star: [
+          'kaedehara_kazuha'
+      ],
+      'wish4star': [
+          'bennett',
+          'razor',
+          'rosaria'
+      ],
+      name2: '「叶落风随」'
     },
     {
       name: 'The Herons Court',
@@ -155,9 +224,16 @@
       start: '2021-07-21 06:00:00',
       end: '2021-08-10 17:59:59',
       color: '#FFFBF7',
-      wish5star: [ 'kamisato_ayaka' ],
-      wish4star: [ 'chongyun', 'ningguang', 'yanfei' ],
+      wish5star: [
+          'kamisato_ayaka'
+      ],
+      'wish4star': [
+          'chongyun',
+          'ningguang',
+          'yanfei'
+      ],
       version: '2.0',
+      name2: '「白鹭之庭」'
     },
     {
       name: 'Tapestry of Golden Flames',
@@ -166,8 +242,15 @@
       start: '2021-08-10 18:00:00',
       end: '2021-08-31 14:59:59',
       color: '#F7D69F',
-      wish5star: [ 'yoimiya' ],
-      wish4star: [ 'sayu', 'diona', 'xinyan' ],
+      wish5star: [
+          'yoimiya'
+      ],
+      'wish4star': [
+          'sayu',
+          'diona',
+          'xinyan'
+      ],
+      name2: '「焰色天河」'
     },
     {
       name: 'Reign of Serenity',
@@ -176,9 +259,16 @@
       start: '2021-09-01 06:00:00',
       end: '2021-09-21 17:59:59',
       color: '#D0AEF2',
-      wish5star: [ 'raiden_shogun' ],
-      wish4star: [ 'xiangling', 'sucrose', 'kujou_sara' ],
+      wish5star: [
+          'raiden_shogun'
+      ],
+      'wish4star': [
+          'xiangling',
+          'sucrose',
+          'kujou_sara'
+      ],
       version: '2.1',
+      name2: '「影寂天下人」'
     },
     {
       name: 'Drifting Luminescence',
@@ -187,8 +277,15 @@
       start: '2021-09-21 18:00:00',
       end: '2021-10-12 14:59:59',
       color: '#FF7B69',
-      wish5star: [ 'sangonomiya_kokomi' ],
-      wish4star: [ 'rosaria', 'beidou', 'xingqiu' ],
+      wish5star: [
+          'sangonomiya_kokomi'
+      ],
+      'wish4star': [
+          'rosaria',
+          'beidou',
+          'xingqiu'
+      ],
+      name2: '「浮岳虹珠」'
     },
     {
       name: 'Farewell of Snezhnaya',
@@ -197,9 +294,16 @@
       start: '2021-10-13 06:00:00',
       end: '2021-11-02 17:59:59',
       color: '#4ED8F3',
-      wish5star: [ 'tartaglia' ],
-      wish4star: [ 'ningguang', 'chongyun', 'yanfei' ],
+      wish5star: [
+          'tartaglia'
+      ],
+      'wish4star': [
+          'ningguang',
+          'chongyun',
+          'yanfei'
+      ],
       version: '2.2',
+      name2: '「暂别冬都」'
     },
     {
       name: 'Moment of Bloom',
@@ -208,8 +312,15 @@
       start: '2021-11-02 18:00:00',
       end: '2021-11-23 14:59:59',
       color: '#FF7966',
-      wish5star: [ 'hu_tao' ],
-      wish4star: [ 'thoma', 'diona', 'sayu' ],
+      wish5star: [
+          'hu_tao'
+      ],
+      'wish4star': [
+          'thoma',
+          'diona',
+          'sayu'
+      ],
+      name2: '「雪霁梅香」'
     },
     {
       name: 'Secretum Secretorum',
@@ -218,9 +329,16 @@
       start: '2021-11-24 11:00:00',
       end: '2021-12-14 17:59:59',
       color: '#FCFE83',
-      wish5star: [ 'albedo' ],
-      wish4star: [ 'bennett', 'noelle', 'rosaria' ],
+      wish5star: [
+          'albedo'
+      ],
+      'wish4star': [
+          'bennett',
+          'noelle',
+          'rosaria'
+      ],
       version: '2.3',
+      name2: '「深秘之息」'
     },
     {
       name: 'Born of Ocean Swell',
@@ -229,8 +347,15 @@
       start: '2021-11-24 11:00:00',
       end: '2021-12-14 17:59:59',
       color: '#A6D6E0',
-      wish5star: [ 'eula' ],
-      wish4star: [ 'bennett', 'noelle', 'rosaria' ],
+      wish5star: [
+          'eula'
+      ],
+      'wish4star': [
+          'bennett',
+          'noelle',
+          'rosaria'
+      ],
+      name2: '「浪涌之瞬」'
     },
     {
       name: 'Hanamizaka Heroics',
@@ -239,8 +364,15 @@
       start: '2021-12-14 18:00:00',
       end: '2022-01-04 14:59:59',
       color: '#FCFE83',
-      wish5star: [ 'arataki_itto' ],
-      wish4star: [ 'gorou', 'barbara', 'xiangling' ],
+      wish5star: [
+          'arataki_itto'
+      ],
+      'wish4star': [
+          'gorou',
+          'barbara',
+          'xiangling'
+      ],
+      name2: '「花坂豪快」'
     },
     {
       name: 'Invitation to Mundane Life',
@@ -250,7 +382,10 @@
       end: '2022-01-25 15:59:59',
       color: '#2BE3F8',
       version: '2.4',
-      wish5star: [ 'xiao' ],
+      wish5star: [
+          'xiao'
+      ],
+      name2: '「烟火之邀」'
     },
     {
       name: 'Adrift in the Harbor',
@@ -259,7 +394,10 @@
       start: '2022-01-05 11:00:00',
       end: '2022-01-25 15:59:59',
       color: '#6994DF',
-      wish5star: [ 'ganyu' ],
+      wish5star: [
+          'ganyu'
+      ],
+      name2: '「浮生孰来」'
     },
     {
       name: '',
@@ -268,8 +406,13 @@
       start: '2022-01-25 18:00:00',
       end: '2022-02-14 15:59:59',
       color: '#2BE3F8',
-      wish5star: [ 'shenhe' ],
-      wish4star: [ 'yunjin' ],
+      wish5star: [
+          'shenhe'
+      ],
+      'wish4star': [
+          'yunjin'
+      ],
+      name2: '「孤辰茕怀」'
     }
   ],
   weapons: [
