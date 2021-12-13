@@ -3,19 +3,19 @@
     <ul class="collapsible popout" data-collapsible="accordion">
 
         {% for cuisine in site.data.recommend-cuisine %}
-        {% if cuisine[1].name != "" %}
+        {% if cuisine.name != "" %}
 
         <li style="border-radius: 5px;" class="z-depth-2 hoverable">
             <div class="collapsible-header current-wish-color-{{i}}"
                  style="background-color: rgba(255,255,250,0)!important;">
-                {{cuisine[1].name}}
+                {{cuisine.name}}
             </div>
 
             <div class="collapsible-body">
-                {% if cuisine[1].img != "" %}
+                {% if cuisine.img != "" %}
                 <div class="card">
 
-                    {% for src in cuisine[1].img %}
+                    {% for src in cuisine.img %}
                     <div class="card-image waves-effect waves-block waves-light hoverable">
                         <img class="activator" alt="" src="/assets/res/food/recommend-cuisine/{{src}}">
                     </div>
@@ -24,8 +24,8 @@
                 </div>
                 {% endif %}
 
-                {% if cuisine[1].info != "" %}
-                {{cuisine[1].info}}
+                {% if cuisine.info != "" %}
+                {{cuisine.info}}
                 {% endif %}
             </div>
         </li>
