@@ -1587,17 +1587,7 @@ const ddlHandle = () => {
     let s = '#deadline'
     let d = parseInt(wishDeadline())
     $(s).html(wishDeadline())
-    if (d < 3) {
-        $(s).addClass('red black-text')
-    } else if (d < 7) {
-        $(s).addClass('orange black-text')
-    } else if (d < 10) {
-        $(s).addClass('teal black-text')
-    } else if (d < 15) {
-        $(s).addClass('blue black-text')
-    } else {
-        $(s).addClass('green black-text')
-    }
+    ddlCSS(s, d)
 }
 
 //当前时间

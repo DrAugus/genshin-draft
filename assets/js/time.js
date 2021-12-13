@@ -33,3 +33,17 @@ const getDuration = (type, start, end) => {
     }
     return $array;
 }
+
+const ddlCSS = (id,d) => {
+    if (d < 3) {
+        $(id).addClass('red black-text')
+    } else if (d < 7) {
+        $(id).addClass('orange black-text')
+    } else if (d < 10) {
+        $(id).addClass('teal black-text')
+    } else if (d < 15) {
+        $(id).addClass('blue black-text')
+    } else {
+        $(id).addClass('green black-text')
+    }
+}
