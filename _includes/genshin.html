@@ -127,7 +127,7 @@
             {% for i in (0..lenElements) %}
             <img class="z-depth-2 show-elements-{{i}} hoverable responsive-img"
                  style="border-radius: 10px"
-                 id="showElements{{i}}" alt="" src=""/>
+                 id="showElements{{i}}" alt="" src="" loading="lazy">
             {% endfor %}
         </div>
 
@@ -141,7 +141,7 @@
                     </div>
 
                     <div class="collapsible-body">
-                        <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" alt="" src=""/><br>
+                        <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" loading="lazy"><br>
                         <span class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></span><br>
                         <span class="current-wish-color-{{i}}" id="currentWishText{{i}}"></span>
 
@@ -212,7 +212,7 @@
         <div class="col s12 m6 l4 lenFuture-show-{{i}}">
             <div class="card future-wish-bg-color-{{i}}">
                 <div class="card-image waves-effect waves-block waves-light hoverable">
-                    <img class="activator" id="futureWishBG{{i}}" alt="">
+                    <img class="activator" id="futureWishBG{{i}}" loading="lazy">
                 </div>
 
                 <div class="card-reveal">
@@ -220,7 +220,7 @@
                         <span id="futureWish1{{i}}"></span>
                         <i class="material-icons right">close</i>
                     </span>
-                    <img class="z-depth-0 responsive-img" id="futureElements{{i}}" alt="" src=""/>
+                    <img class="z-depth-0 responsive-img" id="futureElements{{i}}" loading="lazy">
                     <span class="future-wish-color-{{i}} " id="futureWishText{{i}}"></span>
                 </div>
 
@@ -247,7 +247,8 @@
     <div class="col s12 m6 l4 ">
         <div class="card ">
             <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img class="activator" alt="" src="/assets/res/genshin-impact/characters/half/{{artifacts[0]}}.png">
+                <img class="activator" src="/assets/res/genshin-impact/characters/half/{{artifacts[0]}}.png"
+                     loading="lazy">
             </div>
 
             <div class="card-reveal">
@@ -276,7 +277,7 @@
                  padding-bottom:100%;
                  border-radius:10px">
                 <div style="width: 30%">
-                    <img src="/assets/res/genshin-impact/elements/{{characters[1].ele}}.png">
+                    <img src="/assets/res/genshin-impact/elements/{{characters[1].ele}}.png" loading="lazy">
                 </div>
             </div>
 
@@ -335,41 +336,4 @@
     <button class="btn waves-effect waves-light red" type="submit">Send<i class="material-icons right">send</i></button>
     <button class="btn waves-effect waves-light blue " type="submit">Cancel<i
             class="material-icons right">cancel</i></button>
-</div>
-
-
-<div class="row">
-
-    <div class="col s12 m6">
-        <div class="card blue-grey lighten-4">
-
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator"
-                     src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png">
-            </div>
-
-            <div class="card-content activator">
-                <p>测试预留.</p>
-            </div>
-
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">测试预留<i class="material-icons right">close</i></span>
-                <img src="/assets/res/genshin-impact/wish/character/Adrift%20in%20the%20Harbor%201.png"
-                     style="width: 60%">
-                <p>测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留测试预留</p>
-                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-            </div>
-
-            <div class="card-action">
-                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-            </div>
-
-            <div class="card-action">
-                <button class="btn waves-effect waves-light blue-grey"><i class="material-icons">share</i></button>
-            </div>
-
-        </div>
-
-    </div>
-
 </div>
