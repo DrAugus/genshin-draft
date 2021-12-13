@@ -3,7 +3,7 @@
 <!--长度减1-->
 {% capture lenMonthList %}119{% endcapture %}
 {% capture lenAllDays %}3649{% endcapture %}
-{% capture lenFuture %}119{% endcapture %}
+{% capture lenFuture %}3{% endcapture %}
 {% capture lenCurrent %}99{% endcapture %}
 
 {% capture lenElements %}6{% endcapture %}
@@ -208,30 +208,23 @@
     <span id="futureWishInfo"></span>
     <div class="future-wish">
 
-        {% for i in (0..lenFuture) %}
-        <div class="col s12 m6 l4 lenFuture-show-{{i}}">
-            <div class="card future-wish-bg-color-{{i}}">
-                <div class="card-image waves-effect waves-block waves-light hoverable">
-                    <img class="activator" id="futureWishBG{{i}}" loading="lazy">
-                </div>
+        <div class="slider">
+            <ul class="slides">
+                {% for i in (0..lenFuture) %}
+                <li class="lenFuture-show-{{i}} future-wish-bg-color-{{i}}">
+                    <img id="futureWishBG{{i}}" loading="lazy">
 
-                <div class="card-reveal">
-                    <span class="card-title future-wish-color-{{i}}">
-                        <span id="futureWish1{{i}}"></span>
-                        <i class="material-icons right">close</i>
-                    </span>
-                    <img class="z-depth-0 responsive-img" id="futureElements{{i}}" loading="lazy">
-                    <span class="future-wish-color-{{i}} " id="futureWishText{{i}}"></span>
-                </div>
-
-                <!--truncate截断-->
-                <div class="card-action">
-                    <h5 class="truncate" id="futureWish{{i}}"></h5>
-                </div>
-
-            </div>
+                    <div class="caption center-align">
+                        <h3 class="light future-wish-color-{{i}}" id="futureWish{{i}}"></h3>
+                        <h5 class="future-wish-color-{{i}} " id="futureWishText{{i}}"></h5>
+                        <img class="z-depth-0 responsive-img" style="display: none" id="futureElements{{i}}"
+                             loading="lazy">
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        {% endfor %}
+
 
     </div>
 

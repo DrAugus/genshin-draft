@@ -1575,7 +1575,6 @@ const futureWishInfo = () => {
         document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info[ZH] + '&nbsp;' + wishCharacters[indexArr[i]].info[EN]
         document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].shortname[0] + '.png'
         document.getElementById('futureWish' + i).innerHTML = nameZHInfo(indexArr[i]);
-        document.getElementById('futureWish1' + i).innerHTML = nameZHInfo(indexArr[i]);
     }
 }
 futureWishInfo();
