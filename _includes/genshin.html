@@ -116,60 +116,16 @@
     </div>
 </div>
 
-<!--恶搞-->
-<div class="col s12">
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="/assets/res/genshin-impact/wish_spoof_1.jpg" loading="lazy">
-                <div class="caption left-align">
-                    <h3 class="light" style="color: #a6fdfd;">真名 渡厄真君</h3>
-                    <h3 class="light" style="color: #a6fdfd;">听诏 宣此诰退</h3>
-                </div>
-            </li>
-            <li>
-                <img src="/assets/res/genshin-impact/wish_spoof_2.jpg" loading="lazy">
-                <div class="caption right-align">
-                    <h3 class="light" style="color: #e2b032;">天动万象</h3>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-
 <!--当前祈愿-->
 <div class="col s12">
 
     <h1 id="noWishInfo"></h1>
     <div class="no-wish">
 
-        <div class="row center">
-            <h2>旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
-            <!--元素显示-->
-            {% for i in (0..lenElements) %}
-            <img class="z-depth-2 show-elements-{{i}} hoverable responsive-img"
-                 style="border-radius: 10px"
-                 id="showElements{{i}}" alt="" src="" loading="lazy">
-            {% endfor %}
-        </div>
-
-        <div class="row">
-            <h1>当前祈愿为 </h1>
+        <div class="row ">
+            <h2 class="center">旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
             <ul class="collapsible popout" data-collapsible="accordion">
-                {% for i in (0..lenCurrent) %}
-                <li style="border-radius: 5px;" class="current-wish-bg-{{i}} z-depth-2 hoverable lenCurrent-show-{{i}}">
-                    <div class="collapsible-header" style="background-color: rgba(255,255,250,0)!important;">
-                        <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
-                    </div>
 
-                    <div class="collapsible-body">
-                        <img class="z-depth-0 responsive-img left" id="currentElements{{i}}" loading="lazy"><br>
-                        <span class="current-wish-color-{{i}}" id="currentCharacter1-{{i}}"></span><br>
-                        <span class="current-wish-color-{{i}}" id="currentWishText{{i}}"></span>
-
-                    </div>
-                </li>
-                {% endfor %}
                 <li style="border-radius: 5px;" class="z-depth-2 hoverable">
                     <div class="collapsible-header"
                          style="background-color: rgba(255,255,250,0)!important;">
@@ -193,8 +149,22 @@
                     </div>
                 </li>
             </ul>
-
         </div>
+
+        <div class="slider">
+            <ul class="slides">
+                {% for i in (0..3) %}
+                <li>
+                    <img id="showCurrentWishCharacter{{i}}" loading="lazy">
+                    <div class="caption left-align">
+                        <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
+                        <h3 class="light current-wish-color-{{i}}" id="currentWishText{{i}}"></h3>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
 
     </div>
 
@@ -321,6 +291,9 @@
 <div class="row">
     <div class="carousel">
         {% for characters in site.data.genshin-characters %}
+        {% if characters[0] == "shenhe" %}
+        {% break %}
+        {% endif %}
         <a class="carousel-item" href="#">
             <img src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
         </a>
