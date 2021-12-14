@@ -3,7 +3,8 @@
 <!--长度减1-->
 {% capture lenMonthList %}119{% endcapture %}
 {% capture lenAllDays %}3649{% endcapture %}
-{% capture lenFuture %}3{% endcapture %}
+<!--无法动态设置slider将该长度设置为5 其他填充为敬请期待-->
+{% capture lenFuture %}4{% endcapture %}
 {% capture lenCurrent %}99{% endcapture %}
 
 {% capture lenElements %}6{% endcapture %}
@@ -232,7 +233,7 @@
         <div class="slider">
             <ul class="slides">
                 {% for i in (0..lenFuture) %}
-                <li class="lenFuture-show-{{i}} future-wish-bg-color-{{i}}">
+                <li class="future-wish-bg-color-{{i}}">
                     <img id="futureWishBG{{i}}" loading="lazy">
 
                     <div class="caption center-align">

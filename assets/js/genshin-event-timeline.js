@@ -1086,6 +1086,12 @@ const futureWishInfo = () => {
         document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].id + '.png'
         document.getElementById('futureWish' + i).innerHTML = nameZHInfo(indexArr[i]);
     }
+
+    for (let i = indexArr.length; i < 5; ++i) {
+        document.getElementById('futureWishBG' + i).src = ''
+        document.getElementById('futureWish' + i).innerHTML = "敬请期待";
+        document.getElementById('futureWishText' + i).innerHTML = "===============";
+    }
 }
 futureWishInfo();
 
