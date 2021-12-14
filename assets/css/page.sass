@@ -64,11 +64,8 @@ a
     z-index: 999
 
 // PC
-header, main, footer
-  padding-left: 300px
-
-.container
-  width: 90%
+//header, main, footer
+//  padding-left: 300px
 
 header
   height: 190px
@@ -146,20 +143,6 @@ header
       margin: 0.5em
       font-size: 16px
       font-weight: bold
-
-    .nav-wrapper
-      height: 60%
-
-      .container
-        position: relative
-
-        .github-btns
-          position: absolute
-          top: 0
-          right: 0
-          width: 100%
-          text-align: right
-
 
 main
   flex: 1 0 auto
@@ -322,19 +305,9 @@ blockquote
 @media only screen and (max-width: 992px)
   header, main, footer
     padding-left: 0
-  nav.top-nav
-    .nav-wrapper
-      text-align: center
+
 // Phone
 @media only screen and (max-width: 600px)
-  nav.top-nav
-    .nav-wrapper
-      .github-btns
-        text-align: center
-
-        iframe
-          width: 30%
-
   footer
     .search
       .search-input
@@ -342,3 +315,10 @@ blockquote
 
       .search-results
         width: 80%
+
+.tabs
+  background-color: #fff0
+
+.tabs .tab a.active
+  background-color: rgba(213, 54, 54, 0.73)
+  color: #000000

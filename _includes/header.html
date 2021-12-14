@@ -40,33 +40,63 @@
     </head>
     <body>
         <header>
-            <nav class="top-nav page-top-bg">
 
+            <!-- Dropdown Structure -->
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="{{site.baseurl}}/index">Home</a></li>
+                <li><a href="{{site.baseurl}}/projects">Projects</a></li>
+                <li class="divider"></li>
+                <li><a href="{{site.baseurl}}/categories">Categories</a></li>
+                <li><a href="{{site.baseurl}}/tags">Tags</a></li>
+            </ul>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="{{site.baseurl}}/countdown">Countdown</a></li>
+                <li><a href="{{site.baseurl}}/genshin">Genshin</a></li>
+                <li><a href="{{site.baseurl}}/recommend-cuisine">🦔</a></li>
+                <li><a href="{{site.baseurl}}/food">Food</a></li>
+            </ul>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown3" class="dropdown-content">
+                <li><a href="{{site.baseurl}}/about">About</a></li>
+                <li><a href="{{site.baseurl}}/contact-thanks">Contact</a></li>
+            </ul>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown4" class="dropdown-content">
+                <li><a href="{{site.baseurl}}/aerial/index">Intro</a></li>
+                <li><a href="{{site.baseurl}}/style-matter/index">Matter</a></li>
+                <li><a href="{{site.baseurl}}/editorial/index">Editorial</a></li>
+            </ul>
+            <nav>
                 <div class="nav-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col s6 left">
-                                <a class="page-title" href="{{site.baseurl}}/">{{site.title}}</a>
-                            </div>
-                            <div class="right">
-                                <a href="{{site.github.repository_url}}"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="head-message">
-                                <div class="col s12 center">多情自古空余恨 好夢由來最易醒</div>
-                            </i>
-                        </div>
-                    </div>
+                    <a href="{{site.github.repository_url}}" class="brand-logo">{{site.title}}<i
+                            class="fab fa-github"></i></a>
+
+                    <ul class="right hide-on-med-and-down">
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Home
+                            <i class="material-icons right">arrow_drop_down</i></a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Other
+                            <i class="material-icons right">arrow_drop_down</i></a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">About
+                            <i class="material-icons right">arrow_drop_down</i></a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown4">Else
+                            <i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+
+                    <span class="right">「多情自古空余恨 好夢由來最易醒」</span>
                 </div>
             </nav>
 
             <div class="container">
-                <a href="#" data-target="slide-out" class="sidenav-trigger top-nav full hide-on-large-only">
+                <a href="#" data-target="slide-out" class="sidenav-trigger full hide-on-large-only">
                     <i class="material-icons">menu</i>
                 </a>
             </div>
-            <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg">
+            <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg hide-on-large-only">
                 <li>
                     <div class="userView">
                             <div class="row">

@@ -30,3 +30,9 @@ $(document).ready(function () {
 
 //Dropdown - Initialization
 $('.dropdown-trigger').dropdown();
+
+//Navbar - Initialization
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});
+
