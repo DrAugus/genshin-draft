@@ -1,0 +1,46 @@
+cet_4:
+  name: 英语四级
+  2021: 12-18 09:00:00
+
+cet_6:
+  name: 英语六级
+  2021: 12-18 15:00:00
+
+christmas_eve:
+  name: 平安夜
+  block: 12-24
+
+christmas:
+  name: 圣诞节
+  block: 12-25
+
+postgraduate_exam:
+  name: 研究生考试
+  2021: 12-25 09:00:00
+  2022: 12-24 09:00:00
+
+new_year:
+  name: 元旦
+  block: 01-01
+
+new_year_eve:
+  name: 除夕
+  2022: 01-31
+  2023:
+
+spring_festival:
+  name: 春节
+  info: 正月初一 壬寅年 虎 辛丑月 乙酉日
+  2022: 02-01
+  2023:
+
+valentine:
+  name: 情人节
+  block: 02-14
+
+lantern_festival:
+  name: 元宵节
+  info: 正月十五
+  2022: 02-15
+  2023:
+  

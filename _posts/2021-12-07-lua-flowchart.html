@@ -472,16 +472,3 @@ excerpt: Lua可视化流程
 </div>
 
 
-<hr>
-
-<i>from json - abandon</i><br>
-
-{% for words in site.data.lua-flow %}
-{% for steps in words[1].evaluate.step %}
-{% if steps == "invoke" %}
-{{words[1].evaluate.invoke}}
-{% else %}
-->{{steps}}
-{% endif %}
-{% endfor %}
-{% endfor %}
