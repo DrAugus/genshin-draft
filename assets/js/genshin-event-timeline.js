@@ -987,7 +987,7 @@ const updateCurrentWishInfo = () => {
         ]
         let info = [
             ['',],
-            ['真名 渡厄真君', '听诏 宣此诰退'],
+            ['真名 度厄真君', '听诏 宣此诰退'],
             ['天理长驱', '天动万象']
         ]
         let co = [
@@ -1000,7 +1000,10 @@ const updateCurrentWishInfo = () => {
             document.getElementById('currentWishText' + i).innerHTML = info[index][1]
             let wishColorClass = document.getElementsByClassName('current-wish-color-' + i);
             for (let w of wishColorClass) {
-                w.style.color = co[index];
+                let showColor = co[index];
+                w.style.color = '#000'
+                w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
+                    showColor + ' -1px 1px 4px, ' + showColor + ' 1px 1px 4px, ' + showColor + ' 0 0 10px';
             }
         }
     }
@@ -1071,9 +1074,9 @@ const futureWishInfo = () => {
     }
 
     for (let i = indexArr.length; i < 5; ++i) {
-        document.getElementById('futureWishBG' + i).src = ''
+        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/events/update.jpg'
         document.getElementById('futureWish' + i).innerHTML = "敬请期待";
-        document.getElementById('futureWishText' + i).innerHTML = "===============";
+        document.getElementById('futureWishText' + i).innerHTML = "";
     }
 }
 futureWishInfo();
