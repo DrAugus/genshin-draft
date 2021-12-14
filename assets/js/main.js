@@ -13,6 +13,20 @@ $(document).ready(function () {
 });
 
 //Media - Slider - Initialization
-$(document).ready(function(){
+$(document).ready(function () {
     $('.slider').slider();
 });
+
+//Carousel - Initialization
+$(document).ready(function () {
+    $('.carousel').carousel();
+});
+
+//Tabs - Initialization
+$(document).ready(function () {
+    $('.tabs').tabs();
+    this.swipeable = true
+});
+
+//Dropdown - Initialization
+$('.dropdown-trigger').dropdown();
