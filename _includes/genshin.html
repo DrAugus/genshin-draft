@@ -71,7 +71,7 @@
                             <button class="btn waves-effect waves-light" style="background-color: {{eleColor}}">
                                 <i class="material-icons">share</i>
                             </button>
-                            <a class="right" style="color: {{eleColor}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                            <a class="right" style="color:{{eleColor}}" href="#" target="_blank">官方信息:TODO接入href</a>
                         </div>
 
                     </div>
@@ -314,7 +314,9 @@
 <div class="row">
     <div class="carousel">
         {% for characters in site.data.genshin-characters %}
-        <a class="carousel-item" href="#"><img src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png"></a>
+        <a class="carousel-item" href="#">
+            <img src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+        </a>
         {% endfor %}
     </div>
 </div>
