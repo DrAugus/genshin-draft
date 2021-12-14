@@ -7,7 +7,6 @@ tags: 单词 英语
 excerpt: 坚持学习每一天
 ---
 
-
 {% for words in site.data.words-en %}
-<p><i class="fas fa-horse"></i> {{words}}</p>
+<p><i class="fas fa-horse"></i> <span class="chip"> {{words[0]}}</span> {{words[1]}}</p>
 {% endfor %}

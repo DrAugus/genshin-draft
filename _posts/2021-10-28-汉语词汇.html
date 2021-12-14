@@ -7,30 +7,28 @@ tags: 成语 字词 汉语
 excerpt: 坚持学习每一天
 ---
 
-
 <h2 class="center">跟着小猫一起学词语</h2>
 
-
 <ul class="collapsible popout fa-ul" data-collapsible="accordion">
-    {% for words in site.data.words-zh %}
-    {% if words[1].words != "" %}
+    {% for wordInfo in site.data.words-zh %}
+    {% if wordInfo.words != nil %}
     <li class="z-depth-2 hoverable">
         <i class="fa-li fas fa-cat"></i>
         <div class="collapsible-header">
-            <span> {{words[1].words}} ⌈ {{words[1].pinyin}} ⌋ </span>
+            <span> {{wordInfo.words}} ⌈ {{wordInfo.pinyin}} ⌋ </span>
         </div>
 
         <div class="collapsible-body">
-            {% if words[1].basicInterpretation != "" %}
-            <span>基本释义： {{words[1].basicInterpretation}} </span><br> {% endif %}
-            {% if words[1].detailedInterpretation != "" %}
-            <span>详细释义： {{words[1].detailedInterpretation}} </span><br> {% endif %}
-            {% if words[1].near-synonym != "" %}
-            <span>近义词： {{words[1].near-synonym}} </span><br> {% endif %}
-            {% if words[1].antonym != "" %}
-            <span>反义词： {{words[1].antonym}} </span><br> {% endif %}
-            {% if words[1].source != "" %}
-            <span>出处： {{words[1].source}} </span><br> {% endif %}
+            {% if wordInfo.basicInterpretation != nil %}
+            <span>基本释义： {{wordInfo.basicInterpretation}} </span><br> {% endif %}
+            {% if wordInfo.detailedInterpretation != nil %}
+            <span>详细释义： {{wordInfo.detailedInterpretation}} </span><br> {% endif %}
+            {% if wordInfo.near-synonym != nil %}
+            <span>近义词： {{wordInfo.near-synonym}} </span><br> {% endif %}
+            {% if wordInfo.antonym != nil %}
+            <span>反义词： {{wordInfo.antonym}} </span><br> {% endif %}
+            {% if wordInfo.source != nil %}
+            <span>出处： {{wordInfo.source}} </span><br> {% endif %}
         </div>
     </li>
     {% endif %}
