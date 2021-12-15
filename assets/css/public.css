@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Merriweather, Cambria, Cochin, Georgia, Times, JetBrains Mono, serif
+}
+
 /*所有列表都透明*/
 .collapsible-header {
     background-color: #fff0;
