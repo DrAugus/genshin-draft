@@ -28,6 +28,8 @@ description: > # webpage description
 url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
 paginate: 12
+# paginate只在index.html下有效 https://jekyllrb.com/docs/variables/#paginator
+paginate_path: "blog/page:num/"
 
 # specific configurations
 github_profile: "https://github.com/DrAugus"
