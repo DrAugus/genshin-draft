@@ -6,3 +6,9 @@
 
 - problem: img src路径错误 或者 该路径下无此文件
   reason: onerror="this.src=''"
+
+- problem: 反思
+  reason: 知识的匮乏让你想思考都没东西去思考
+
+- problem: css层级问题 div span 与 div > span
+  reason: div span 设置是的div下的所有span div > span 设置的是紧挨着的二级span
