@@ -41,3 +41,7 @@ nav ul a:hover {
     background-color: rgb(82, 217, 229);
 }
 
+.material-tooltip {
+    border-radius: 10px;
+    background-color: #77c3c7;
+}

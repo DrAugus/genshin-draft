@@ -36,3 +36,12 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
 });
 
+//Floating Action Button - Initialization
+$(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+});
+
+//Tooltips - Initialization
+$(document).ready(function(){
+    $('.tooltipped').tooltip();
+});
