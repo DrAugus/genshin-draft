@@ -2,6 +2,8 @@
 layout: page
 css: ["index.css"]
 ---
+<!--paginator只能用于index.html但可以用子文件下的index.html-->
+<!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
 <div class="row">
     {% for post in paginator.posts %}
     <div class="col s12 l6">
