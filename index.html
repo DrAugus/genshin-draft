@@ -1,63 +1,26 @@
 ---
 layout: page
-css: ["index.css"]
 ---
-<div class="row">
-    {% for post in paginator.posts %}
-    <div class="col s12 l6">
-        <div class="card hoverable">
-            <div class="card-content">
-                <span id="post-title" class="card-title">{{post.title}}</span>
-                <!--日期格式化网站 http://www.strfti.me/-->
-                <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
-                <p id="post-date"><i class="material-icons">dvr</i>{{post.date | date: "%H:%M:%S %a, %B %d, %Y"}}</p>
-                <span id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
+
+<div class="slider fullscreen">
+    <ul class="slides">
+
+        {% assign info1 = "谁是小刺猬捏!, 冲冲冲, 「多情自古空余恨 好夢由來最易醒」, 我要远行" | split: "," %}
+        {% assign info2 = "Here's our small slogan., Here's our small slogan., Here's our small slogan., Here's our small slogan." | split: "," %}
+        {% assign pos = "center-align, left-align, right-align, center-align" | split: "," %}
+        {% assign color = "black-text, black-text, grey-text text-lighten-3, grey-text text-lighten-3" | split: "," %}
+
+        {% for i in (0..3) %}
+
+        <li style="opacity: 1; transform: translateX(0px) translateY(0px);">
+            <img src="/assets/res/home/{{i}}.jpg" loading="lazy">
+            <div class="caption {{pos[i]}}" style="opacity: 0.6498; transform: translateX(0px) translateY(-35.02px);">
+                <h3 class="{{color[i]}}">{{info1[i]}}</h3>
+                <h5 class="light {{color[i]}}">{{info2[i]}}</h5>
             </div>
-            <div class="card-action">
-                <span><a href="{{post.url | prepend: site.baseurl}}">READ MORE</a></span>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-  <div class="col s12 center-align">
-    <ul class="pagination">
-      <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
-        {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="{{site.baseurl}}/">
-        {% else %}
-        <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
-        {% endif %}
-        {% else %}
-        <a href="#!">
-        {% endif %}
-          <i class="material-icons">chevron_left</i>
-        </a>
-      </li>
-      {% if paginator.page == 1 %}
-      <li class="active orange accent-3">
-        <a href="#!">1</a>
-      {% else %}
-      <li class="waves-effect">
-        <a href="{{site.baseurl}}/">1</a>
-      {% endif %}
-      </li>
-      {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-      <li class="active orange accent-3"><a href="#!">{{count}}</a></li>
-      {% else %}
-      <li class="waves-effect"><a href="{{site.baseurl}}/page{{count}}">{{count}}</a></li>
-      {% endif %}
-      {% endfor %}
-      <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
-        {% if paginator.next_page %}
-        <a href="{{site.baseurl}}/page{{paginator.next_page}}">
-        {% else %}
-        <a href="#!">
-        {% endif %}
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
+        </li>
+
+        {% endfor %}
+
     </ul>
-  </div>
 </div>
