@@ -2,3 +2,38 @@
 .collapsible-header {
     background-color: #fff0;
 }
+
+nav {
+    color: rgba(0, 0, 0, 0.51);
+    background-color: #fff0;
+}
+
+nav a {
+    color: #000;
+}
+
+nav ul a {
+    color: #000;
+}
+
+nav .brand-logo {
+    left: 1%;
+    color: #000;
+}
+
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: 15%;
+    }
+}
+
+/*nav下拉表如*/
+.nav-dropdown-content {
+    top: 60px !important;
+    border-radius: 10px;
+}
+
+nav ul a:hover {
+    background-color: rgb(82, 217, 229);
+}
+

@@ -42,7 +42,7 @@
         <header>
 
             <!-- Dropdown Structure -->
-            <ul id="dropdown1" class="dropdown-content">
+            <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
                 <li><a href="{{site.baseurl}}/index">Home</a></li>
                 <li><a href="{{site.baseurl}}/projects">Projects</a></li>
                 <li class="divider"></li>
@@ -50,47 +50,50 @@
                 <li><a href="{{site.baseurl}}/tags">Tags</a></li>
             </ul>
             <!-- Dropdown Structure -->
-            <ul id="dropdown2" class="dropdown-content">
+            <ul id="dropdown2" class="dropdown-content nav-dropdown-content">
                 <li><a href="{{site.baseurl}}/countdown">Countdown</a></li>
                 <li><a href="{{site.baseurl}}/genshin">Genshin</a></li>
                 <li><a href="{{site.baseurl}}/recommend-cuisine">🦔</a></li>
                 <li><a href="{{site.baseurl}}/food">Food</a></li>
             </ul>
             <!-- Dropdown Structure -->
-            <ul id="dropdown3" class="dropdown-content">
+            <ul id="dropdown3" class="dropdown-content nav-dropdown-content">
                 <li><a href="{{site.baseurl}}/about">About</a></li>
                 <li><a href="{{site.baseurl}}/contact-thanks">Contact</a></li>
             </ul>
             <!-- Dropdown Structure -->
-            <ul id="dropdown4" class="dropdown-content">
+            <ul id="dropdown4" class="dropdown-content nav-dropdown-content">
                 <li><a href="{{site.baseurl}}/aerial/index">Intro</a></li>
                 <li><a href="{{site.baseurl}}/style-matter/index">Matter</a></li>
                 <li><a href="{{site.baseurl}}/editorial/index">Editorial</a></li>
             </ul>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="{{site.github.repository_url}}" class="brand-logo hide-on-small-only" style="left: 10px">
-                        {{site.title}}<i class="fab fa-github"></i></a>
 
-                    <ul class="right">
-                        <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Home
-                            <i class="material-icons right">arrow_drop_down</i></a></li>
-                        <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Other
-                            <i class="material-icons right">arrow_drop_down</i></a></li>
-                        <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">About
-                            <i class="material-icons right">arrow_drop_down</i></a></li>
-                        <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown4">Else
-                            <i class="material-icons right">arrow_drop_down</i></a></li>
-                    </ul>
+            <!--To make the navbar fixed-->
+            <div class="navbar-fixed">
+                <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
+                <!--然后在nav-wrapper同级加入nav-content-->
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="{{site.github.repository_url}}" class="brand-logo hide-on-small-only">
+                            {{site.title}}<i class="fab fa-github"></i></a>
 
-                    <span class="right hide-on-small-only">「多情自古空余恨 好夢由來最易醒」</span>
-                </div>
-            </nav>
+                        <ul class="right">
+                            <!--数组声明 用split切割字符串-->
+                            {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog" | split: "," %}
+                            {% assign names = "Home, Other, About, Else" | split: "," %}
+                            {% for icon in icons %}
+                            <li><a class="dropdown-trigger" href="#!" data-target="dropdown{{forloop.index}}">
+                                <!--图标只在手机上显示-->
+                                <div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>
+                                <div class="hide-on-small-only">{{names[forloop.index0]}}<i class="material-icons right">arrow_drop_down</i></div>
+                            </a></li>
+                            {% endfor %}
+                        </ul>
 
+                        <span class="right hide-on-small-only">「多情自古空余恨 好夢由來最易醒」</span>
+                    </div>
+                </nav>
+            </div>
             <div class="container" style="display: none">
                 <a href="#" data-target="slide-out" class="sidenav-trigger full">
                     <i class="material-icons">menu</i>
