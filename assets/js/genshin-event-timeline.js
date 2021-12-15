@@ -1001,6 +1001,7 @@ const updateCurrentWishInfo = () => {
             let wishColorClass = document.getElementsByClassName('current-wish-color-' + i);
             for (let w of wishColorClass) {
                 let showColor = co[index];
+                if (showColor === '') continue;
                 w.style.color = '#000'
                 w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
                     showColor + ' -1px 1px 4px, ' + showColor + ' 1px 1px 4px, ' + showColor + ' 0 0 10px';
