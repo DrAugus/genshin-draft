@@ -38,10 +38,10 @@
                     {% if characters[1].id == wish.wish5star[0] %}
 
                     <!--颜色控制-->
-                    {% assign eleColor = "#fff" %}
+                    {% assign eleColor = "#fff0" %}
                     {% for eleInfo in site.data.genshin-ele-color %}
                     {% if eleInfo[0] == characters[1].ele %}
-                    {% assign eleColor = eleInfo[1] %}
+                    {% assign eleColor = eleInfo[1] | prepend: '#' %}
                     {% break %}
                     {% endif %}
                     {% endfor %}
