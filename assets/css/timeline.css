@@ -207,8 +207,3 @@ div.timeline-wish {
     word-wrap: break-word;
     overflow: hidden;
 }
-
-/*修改slider按钮颜色*/
-.slider .indicators .indicator-item.active {
-    background-color: #e2b032;!important;
-}
