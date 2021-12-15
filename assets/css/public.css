@@ -45,7 +45,7 @@ nav .brand-logo {
 }
 
 nav ul a:hover {
-    background-color: rgb(82, 217, 229);
+    background-color: #52D9E5;
 }
 
 .material-tooltip {
@@ -55,5 +55,14 @@ nav ul a:hover {
 
 /*修改slider按钮颜色*/
 .slider .indicators .indicator-item.active {
-    background-color: #e5b6d0;!important;
+    background-color: #e5b6d0 !important;
+}
+
+.collection .collection-item {
+    background-color: #fff0;
+}
+
+.page-title {
+    color: #52D9E5;
+    margin-top: 10px;
 }
