@@ -33,8 +33,15 @@ nav .brand-logo {
 
 /*nav下拉表如*/
 .nav-dropdown-content {
-    top: 60px !important;
+    top: 56px !important;
     border-radius: 10px;
+}
+
+@media only screen and (min-width: 601px) {
+    /*此时nav line-height为64*/
+    .nav-dropdown-content {
+        top: 64px !important;
+    }
 }
 
 nav ul a:hover {
