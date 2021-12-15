@@ -1,3 +1,8 @@
-[
-  { problem: 'div标签设置背景时发现实际显示效果图片高度为0', reason: '增加 padding-bottom 即可显示' },
-]
+- problem: div标签设置背景时发现实际显示效果图片高度为0
+  reason: 增加 padding-bottom 即可显示
+
+- problem: div background-image url路径错误 或者 该路径下无此文件
+  reason: 增加多个url
+
+- problem: img src路径错误 或者 该路径下无此文件
+  reason: onerror="this.src=''"
