@@ -8,7 +8,7 @@ kujou_sara:
   name: 九条裟罗
   artifacts: [ 绝缘之旗印4件 ]
   main: [ 攻击,雷伤,暴击/暴伤 ]
-  sub: [ 暴击,暴伤攻击,充能 ]
+  sub: [ 暴击,暴伤,攻击,充能 ]
   tips:
 xiangling:
   name: 香菱
@@ -16,4 +16,21 @@ xiangling:
   main: [ ]
   sub: [ ]
   tips:
-
+zhongli:
+  name: 钟离
+  artifacts: [ 千岩固牢2件+宗室2件 ]
+  main: [ 生命值,岩伤,暴击/暴伤 ]
+  sub: [ 暴击,暴伤,生命,攻击 ]
+  tips:
+bennett:
+  name: 班尼特
+  artifacts: [ 宗室4件 ]
+  main: [ 充能,生命,治疗 ]
+  sub: [ 充能,攻击 ]
+  tips:
+arataki_itto:
+  name: 荒泷一斗
+  artifacts: [ 宗室4件 ]
+  main: [ 防御,岩伤,暴击/暴伤 ]
+  sub: [ 暴击,暴伤,防御 ]
+  tips:
