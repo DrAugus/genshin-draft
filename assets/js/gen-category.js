@@ -15,7 +15,7 @@ if (categories.length > 0) { // 文章存在标题
     // 存在目录则显示目录按钮和侧栏
     category.classList.remove('hide');
     categoryBtn.classList.remove('hide');
-    blMenu.classList.remove('hide')
+    if (blMenu) blMenu.classList.remove('hide')
 
     categories.forEach(node => {
         // 每次 cloneNode 取代 createElement
