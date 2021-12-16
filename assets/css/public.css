@@ -66,9 +66,13 @@ nav .nav-wrapper a:hover {
     background-color: #77c3c7;
 }
 
+.slider .indicators .indicator-item {
+    background-color: #fff0;
+}
+
 /*修改slider按钮颜色*/
 .slider .indicators .indicator-item.active {
-    background-color: #e5b6d0 !important;
+    background-color: #fff0;
 }
 
 .collection .collection-item {
