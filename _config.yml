@@ -24,7 +24,6 @@
 title: AUGUS
 description: > # webpage description
 #  Welcome to my personal website
-#baseurl: "/"
 url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
 paginate: 12

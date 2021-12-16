@@ -11,17 +11,17 @@
             {{ site.title | escape }}
             {% endif %}
         </title>
-        <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/augus.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
         <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/materialize.min.css">
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/assets/css/materialize.min.css">
+        <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
 
         {% for css in layout.css %}
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}"/>
         {% else %}
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}"/>
+        <link rel="stylesheet" href="/assets/css/{{css}}"/>
         {% endif %}
         {% endfor %}
 
@@ -29,13 +29,13 @@
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}"/>
         {% else %}
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}"/>
+        <link rel="stylesheet" href="/assets/css/{{css}}"/>
         {% endif %}
         {% endfor %}
 
 
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css"/>
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml"/>
+        <link rel="stylesheet" href="/assets/css/syntax.css"/>
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
         {% seo title=false %}
     </head>
     <body>
@@ -43,31 +43,31 @@
 
             <!-- Dropdown Structure -->
             <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
-                <li><a href="{{site.baseurl}}/index">Home</a></li>
-                <li><a href="{{site.baseurl}}/blog/index">Blog</a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/blog/index">Blog</a></li>
                 <li class="divider"></li>
-                <li><a href="{{site.baseurl}}/projects">Projects</a></li>
+                <li><a href="/projects">Projects</a></li>
                 <li class="divider"></li>
-                <li><a href="{{site.baseurl}}/categories">Categories</a></li>
-                <li><a href="{{site.baseurl}}/tags">Tags</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/tags">Tags</a></li>
             </ul>
             <!-- Dropdown Structure -->
             <ul id="dropdown2" class="dropdown-content nav-dropdown-content">
-                <li><a href="{{site.baseurl}}/countdown">Countdown</a></li>
-                <li><a href="{{site.baseurl}}/genshin">Genshin</a></li>
-                <li><a href="{{site.baseurl}}/hedgehog">🦔</a></li>
-                <li><a href="{{site.baseurl}}/food">Food</a></li>
+                <li><a href="/countdown">Countdown</a></li>
+                <li><a href="/genshin">Genshin</a></li>
+                <li><a href="/hedgehog">🦔</a></li>
+                <li><a href="/food">Food</a></li>
             </ul>
             <!-- Dropdown Structure -->
             <ul id="dropdown3" class="dropdown-content nav-dropdown-content">
-                <li><a href="{{site.baseurl}}/about">About</a></li>
-                <li><a href="{{site.baseurl}}/contact-thanks">Contact</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact-thanks">Contact</a></li>
             </ul>
             <!-- Dropdown Structure -->
             <ul id="dropdown4" class="dropdown-content nav-dropdown-content">
-                <li><a href="{{site.baseurl}}/aerial/index">Intro</a></li>
-                <li><a href="{{site.baseurl}}/style-matter/index">Matter</a></li>
-                <li><a href="{{site.baseurl}}/editorial/index">Editorial</a></li>
+                <li><a href="/aerial/index">Intro</a></li>
+                <li><a href="/style-matter/index">Matter</a></li>
+                <li><a href="/editorial/index">Editorial</a></li>
             </ul>
 
             <!--To make the navbar fixed-->
@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col s3">
                                     <a href="{{site.github_profile}}" target="_blank">
-                                        <img class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.jpg" width="64" alt=""></a>
+                                        <img class="circle z-depth-2" src="/assets/res/user.jpg" width="64" alt=""></a>
                                 </div>
                                 <div class="col s9">
                                     {{site.user}}<br>
@@ -116,23 +116,23 @@
                     </div>
                 </li>
                 <li><div class="divider"></div></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="fa fa-project-diagram"></i>Projects</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="fa fa-list"></i>Categories</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="fa fa-marker"></i>Tags</a></li>
+                <li><a class="waves-effect" href="/index"><i class="fa fa-home"></i>Home</a></li>
+                <li><a class="waves-effect" href="/projects"><i class="fa fa-project-diagram"></i>Projects</a></li>
+                <li><a class="waves-effect" href="/categories"><i class="fa fa-list"></i>Categories</a></li>
+                <li><a class="waves-effect" href="/tags"><i class="fa fa-marker"></i>Tags</a></li>
                 <li><div class="divider"></div></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/countdown"><i class="fa fa-hourglass-half"></i>Countdown</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/genshin"><i class="fa fa-gamepad"></i>Genshin</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/hedgehog"><i class="fa fa-assistive-listening-systems"></i>Recommend</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/food"><i class="fa fa-utensils"></i>Food</a></li>
+                <li><a class="waves-effect" href="/countdown"><i class="fa fa-hourglass-half"></i>Countdown</a></li>
+                <li><a class="waves-effect" href="/genshin"><i class="fa fa-gamepad"></i>Genshin</a></li>
+                <li><a class="waves-effect" href="/hedgehog"><i class="fa fa-assistive-listening-systems"></i>Recommend</a></li>
+                <li><a class="waves-effect" href="/food"><i class="fa fa-utensils"></i>Food</a></li>
                 <li><div class="divider"></div></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/about"><i class="fa fa-user"></i>About</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/contact-thanks"><i class="fa fa-mail-bulk"></i>Contact&nbsp;Thanks</a></li>
+                <li><a class="waves-effect" href="/about"><i class="fa fa-user"></i>About</a></li>
+                <li><a class="waves-effect" href="/contact-thanks"><i class="fa fa-mail-bulk"></i>Contact&nbsp;Thanks</a></li>
                 <li><div class="divider"></div></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/index"><i class="fa fa-blog"></i>Blog</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/aerial/index"><i class="fa fa-user-secret"></i>Intro</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/style-matter/index"><i class="fa fa-solar-panel"></i>Matter</a></li>
-                <li><a class="waves-effect" href="{{site.baseurl}}/editorial/index"><i class="fa fa-pager"></i>Editorial</a></li>
+                <li><a class="waves-effect" href="/index"><i class="fa fa-blog"></i>Blog</a></li>
+                <li><a class="waves-effect" href="/aerial/index"><i class="fa fa-user-secret"></i>Intro</a></li>
+                <li><a class="waves-effect" href="/style-matter/index"><i class="fa fa-solar-panel"></i>Matter</a></li>
+                <li><a class="waves-effect" href="/editorial/index"><i class="fa fa-pager"></i>Editorial</a></li>
 
             </ul>
 
