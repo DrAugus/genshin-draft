@@ -16,7 +16,7 @@ css: ["index.css"]
                 <span id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
             </div>
             <div class="card-action">
-                <span><a href="{{post.url | prepend: site.baseurl}}">READ MORE</a></span>
+                <span><a href="{{post.url}}">READ MORE</a></span>
             </div>
         </div>
     </div>
@@ -26,9 +26,9 @@ css: ["index.css"]
       <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
         {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-        <a href="/">
+        <a href="/blog/">
         {% else %}
-        <a href="/page{{paginator.previous_page}}">
+        <a href="/blog/page{{paginator.previous_page}}">
         {% endif %}
         {% else %}
         <a href="#!">
@@ -41,19 +41,19 @@ css: ["index.css"]
         <a href="#!">1</a>
       {% else %}
       <li class="waves-effect">
-        <a href="/">1</a>
+        <a href="/blog/">1</a>
       {% endif %}
       </li>
       {% for count in (2..paginator.total_pages) %}
       {% if count == paginator.page %}
       <li class="active orange accent-3"><a href="#!">{{count}}</a></li>
       {% else %}
-      <li class="waves-effect"><a href="/page{{count}}">{{count}}</a></li>
+      <li class="waves-effect"><a href="/blog/page{{count}}">{{count}}</a></li>
       {% endif %}
       {% endfor %}
       <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
         {% if paginator.next_page %}
-        <a href="/page{{paginator.next_page}}">
+        <a href="/blog/page{{paginator.next_page}}">
         {% else %}
         <a href="#!">
         {% endif %}
