@@ -1,4 +1,4 @@
-@font-face {
+html {
     font-family: Merriweather, Cambria, Cochin, Georgia, Times, JetBrains Mono, serif
 }
 
@@ -9,7 +9,9 @@
 
 nav {
     color: rgba(0, 0, 0, 0.51);
-    background-color: rgba(255, 255, 255, 0.77);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 nav a {
@@ -35,6 +37,11 @@ nav .brand-logo {
 .nav-dropdown-content {
     top: 56px !important;
     border-radius: 10px;
+    background-color: #0000;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #fe7773;
 }
 
 @media only screen and (min-width: 601px) {
@@ -45,7 +52,13 @@ nav .brand-logo {
 }
 
 nav ul a:hover {
-    background-color: #52D9E5;
+    background-color: #0000;
+    color: #e81e25;
+}
+
+nav .nav-wrapper a:hover {
+    background-color: #0000;
+    /*color: #52d9e5;*/
 }
 
 .material-tooltip {

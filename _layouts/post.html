@@ -21,14 +21,11 @@ js:
                   <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30"
                      data-tooltip="Show Extra Info">info</i>
                 </span>
-                <div id="busuanzi_container_page_pv" style="display: inline;">HITS:&nbsp;
-                    <span style="display: inline;" id="busuanzi_value_page_pv"></span>&nbsp;times
-                </div>
             </div>
             <div class="collapsible-body">
                 <span>
-                  <i class="material-icons tooltipped" data-position="left" data-delay="30"
-                     data-tooltip="Categories">sort</i>
+                  <i class="fa fa-hashtag tooltipped" data-position="left" data-delay="30"
+                     data-tooltip="Categories"></i>
                   {% for cat in page.categories %}
                   {% capture test %}{{cat | slice: 0}}{% endcapture %}
                   {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
@@ -37,20 +34,22 @@ js:
                   {% endfor %}
                 </span>
                 <span>
-                  <i class="material-icons tooltipped" data-position="left" data-delay="30"
-                     data-tooltip="Tags">label</i>
+                  <i class="fa fa-tags tooltipped" data-position="left" data-delay="30" data-tooltip="Tags"></i>
                   {% for tag in page.tags %}
                   {% capture test %}{{tag | slice: 0}}{% endcapture %}
                   {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
                   <a href="{{site.baseurl}}/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
-                     target="_blank"><div
-                          class="chip">{{tag}}</div></a>
+                     target="_blank"><div class="chip">{{tag}}</div></a>
                   {% endfor %}
                 </span>
                 <span>
-                 <i class="material-icons tooltipped" data-position="left" data-delay="30"
-                    data-tooltip="统计">child_care</i>
-                    本文总共 {{ page.content | strip_html | strip_newlines | remove: " " | size }} 字 <b>·</b> 阅读全文大约需要 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 分钟
+                     <i class="fa fa-hand-point-up tooltipped" data-position="left" data-delay="30"
+                        data-tooltip="点击量"></i>
+                     <div id="busuanzi_container_page_pv" style="display: inline;">
+                         <span id="busuanzi_value_page_pv" style="display: inline;"></span>次点击</div>
+                 </span>
+                <span>
+                 <i class="fa fa-calculator tooltipped" data-position="left" data-delay="30" data-tooltip="统计"></i>本文总共 {{ page.content | strip_html | strip_newlines | remove: " " | size }} 字 <b>·</b> 阅读全文大约需要 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 分钟
                 </span>
             </div>
         </li>

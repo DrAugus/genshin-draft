@@ -4,7 +4,7 @@ const len = allImg.length;
 
 // 格式化显示所有文章图片
 for (let i = 0; i < len; i++) {
-    // allImg[i].classList.add('materialboxed');//放大图片会造成图片往左侧栏内移入
+    allImg[i].classList.add('materialboxed');
     allImg[i].classList.add('z-depth-4');
     allImg[i].classList.add('responsive-img')
 }

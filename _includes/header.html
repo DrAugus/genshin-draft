@@ -82,12 +82,12 @@
                         <ul class="right">
                             <!--数组声明 用split切割字符串-->
                             {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog" | split: "," %}
-                            {% assign names = "Home, Other, About, Else" | split: "," %}
+                            {% assign names = "MAIN, OTHER, ABOUT, ELSE" | split: "," %}
                             {% for icon in icons %}
                             <li><a class="dropdown-trigger" href="#!" data-target="dropdown{{forloop.index}}">
                                 <!--图标只在手机上显示-->
                                 <div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>
-                                <div class="hide-on-small-only">{{names[forloop.index0]}}<i class="material-icons right">arrow_drop_down</i></div>
+                                <div class="hide-on-small-only">{{names[forloop.index0]}}</div>
                             </a></li>
                             {% endfor %}
                         </ul>
