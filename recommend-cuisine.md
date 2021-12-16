@@ -1,6 +1,6 @@
 ---
-permalink: /recommend-cuisine
+permalink: /hedgehog
 layout: page
 title: "🦔推荐"
 ---
-{% include recommend-cuisine.html %}
+{% include hedgehog.html %}

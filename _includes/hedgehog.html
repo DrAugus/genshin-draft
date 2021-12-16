@@ -4,8 +4,8 @@
 
     <ul class="collapsible popout" data-collapsible="accordion">
 
-        {% for cuisine in site.data.recommend-cuisine.recommend %}
-        {% if cuisine.name != "" %}
+        {% for cuisine in site.data.hedgehog.recommend %}
+        {% if cuisine.name != nil %}
 
         <li style="border-radius: 5px;" class="z-depth-2 hoverable">
             <div class="collapsible-header current-wish-color-{{i}}"
@@ -13,23 +13,27 @@
                 {{cuisine.name}}
             </div>
 
+            {% if cuisine.img != nil or cuisine.info != nil %}
+
             <div class="collapsible-body">
-                {% if cuisine.img != "" %}
+                {% if cuisine.img != nil %}
                 <div class="card">
 
                     {% for src in cuisine.img %}
                     <div class="card-image waves-effect waves-block waves-light hoverable">
-                        <img class="activator" alt="" src="/assets/res/food/recommend-cuisine/{{src}}">
+                        <img class="activator" alt=nil src="/assets/res/hedgehog/{{src}}">
                     </div>
                     {% endfor %}
 
                 </div>
                 {% endif %}
 
-                {% if cuisine.info != "" %}
+                {% if cuisine.info != nil %}
                 {{cuisine.info}}
                 {% endif %}
             </div>
+
+            {% endif %}
         </li>
 
         {% endif %}
@@ -45,8 +49,8 @@
 
     <ul class="collapsible popout" data-collapsible="accordion">
 
-        {% for block in site.data.recommend-cuisine.block %}
-        {% if block.name != "" %}
+        {% for block in site.data.hedgehog.block %}
+        {% if block.name != nil %}
 
         <li style="border-radius: 5px;" class="z-depth-2 hoverable">
             <div class="collapsible-header current-wish-color-{{i}}"
@@ -55,7 +59,7 @@
             </div>
 
             <div class="collapsible-body">
-                {% if block.reason != "" %}
+                {% if block.reason != nil %}
                 {{block.reason}}
                 {% endif %}
             </div>
