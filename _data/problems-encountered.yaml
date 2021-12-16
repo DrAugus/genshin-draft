@@ -12,3 +12,7 @@
 
 - problem: css层级问题 div span 与 div > span
   reason: div span 设置是的div下的所有span div > span 设置的是紧挨着的二级span
+
+- problem: css文字竖向排列
+  reason: 标签writing-mode vertical-lr; 从左向右 从右向左是 vertical-rl;IE浏览器的从左向右 从右向左是tb-rl
+                                          
