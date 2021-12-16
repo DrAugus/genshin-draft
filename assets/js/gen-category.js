@@ -6,7 +6,8 @@ const categories = postContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
 if (categories.length > 0) { // 文章存在标题
     const category = document.querySelector('#category'),
-        categoryBtn = document.querySelector('.category-btn');
+        categoryBtn = document.querySelector('.category-btn'),
+        blMenu = document.querySelector('#bottom-right-menu');
     const li = document.createElement('li'),
         a = document.createElement('a');
 
@@ -14,6 +15,7 @@ if (categories.length > 0) { // 文章存在标题
     // 存在目录则显示目录按钮和侧栏
     category.classList.remove('hide');
     categoryBtn.classList.remove('hide');
+    blMenu.classList.remove('hide')
 
     categories.forEach(node => {
         // 每次 cloneNode 取代 createElement
