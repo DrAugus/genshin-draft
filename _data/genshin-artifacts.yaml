@@ -1,36 +1,84 @@
 thoma:
   name: 托马
-  artifacts: [ 千岩固牢2件+绝缘之旗印2件 ]
-  main: [ 生命值/充能效率,生命值/充能效率,生命值 ]
-  sub: [ 充能效率,百分比生命值 ]
+  weapon:
+  artifacts:
+    - 千岩固牢2件
+    - 绝缘之旗印2件
+  main:
+    sands: 生命值/充能效率
+    goblet: 生命值/充能效率
+    circlet: 生命值
+  sub:
+    - 充能效率
+    - 百分比生命值
   tips: 如果选择生命值武器，那么时之沙主属性选择充能效率；如果选择充能武器，那么时之沙主属性选择生命值。
 kujou_sara:
   name: 九条裟罗
-  artifacts: [ 绝缘之旗印4件 ]
-  main: [ 攻击,雷伤,暴击/暴伤 ]
-  sub: [ 暴击,暴伤,攻击,充能 ]
+  weapon:
+  artifacts:
+    - 绝缘之旗印4件
+  main:
+    sands: 攻击
+    goblet: 雷伤
+    circlet: 暴击/暴伤
+  sub:
+    - 暴击
+    - 暴伤
+    - 攻击
+    - 充能
   tips:
 xiangling:
   name: 香菱
-  artifacts: [ 绝缘之旗印4件 ]
-  main: [ ]
-  sub: [ ]
+  weapon:
+  artifacts:
+    - 绝缘之旗印4件
+  main:
+    sands:
+    goblet:
+    circlet:
+  sub:
   tips:
 zhongli:
   name: 钟离
-  artifacts: [ 千岩固牢2件+宗室2件 ]
-  main: [ 生命值,岩伤,暴击/暴伤 ]
-  sub: [ 暴击,暴伤,生命,攻击 ]
+  weapon:
+  artifacts:
+    - 千岩固牢2件
+    - 宗室2件
+  main:
+    sands: 生命值
+    goblet: 岩伤
+    circlet: 暴击/暴伤
+  sub:
+    - 暴击
+    - 暴伤
+    - 生命
+    - 攻击
   tips:
 bennett:
   name: 班尼特
-  artifacts: [ 宗室4件 ]
-  main: [ 充能,生命,治疗 ]
-  sub: [ 充能,攻击 ]
+  weapon:
+  artifacts:
+    - 宗室4件
+  main:
+    sands: 充能
+    goblet: 生命
+    circlet: 治疗
+  sub:
+    - 充能
+    - 攻击
   tips:
 arataki_itto:
   name: 荒泷一斗
-  artifacts: [ 宗室4件 ]
-  main: [ 防御,岩伤,暴击/暴伤 ]
-  sub: [ 暴击,暴伤,防御 ]
+  weapon:
+  artifacts:
+    - 华冠梦醒形骸记4件
+  main:
+    sands: 防御
+    goblet: 岩伤
+    circlet: 暴击/暴伤
+  sub:
+    - 暴击
+    - 暴伤
+    - 防御
+    - 攻击
   tips:

@@ -247,7 +247,12 @@
             <div class="card-reveal">
                 <span class="card-title">{{artifacts[1].name}}圣遗物</span>
                 {% if artifacts[1].artifacts != "" %} 推荐：{{artifacts[1].artifacts}}<br>{% endif %}
-                {% if artifacts[1].main != "" %} 主词条：{{artifacts[1].main}}<br>{% endif %}
+
+                {% if artifacts[1].main.sands != nil or artifacts[1].main.goblet != nil
+                or artifacts[1].main.circlet != nil %}
+                主词条：沙漏【{{artifacts[1].main.sands}}】 杯子【{{artifacts[1].main.goblet}}】 头【{{artifacts[1].main.circlet}}】<br>
+                {% endif %}
+
                 {% if artifacts[1].sub != "" %} 副词条：{{artifacts[1].sub}}<br>{% endif %}
                 {% if artifacts[1].tips != nil %} TIPS：{{artifacts[1].tips}}<br>{% endif %}
             </div>
