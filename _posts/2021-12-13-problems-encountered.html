@@ -8,217 +8,209 @@ excerpt: 每天遇到的问题，不懂的东西收集
 ---
 
 
-<!--<div class="row">-->
-<!--    <div class="col s12 m9 l10">-->
-<!--        <div id="introduction" class="section scrollspy">-->
-<!--            <p>Content </p>-->
-<!--        </div>-->
+<h1>这是自定义目录的结构</h1>
 
-<!--        <div id="structure" class="section scrollspy">-->
-<!--            <p>Content </p>-->
-<!--        </div>-->
 
-<!--        <div id="initialization" class="section scrollspy">-->
-<!--            <p>Content </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="col hide-on-small-only m3 l2">-->
-<!--        <ul class="section table-of-contents">-->
-<!--            <li><a href="#introduction">Introduction</a></li>-->
-<!--            <li><a href="#structure">Structure</a></li>-->
-<!--            <li><a href="#initialization">Intialization</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
+<h2>问题单信息</h2>
+{% for info in site.data.problems-encountered %}
+<p>
+    Q: {{info.problem}}<br>
+    A: {{info.reason}}
+</p>
+{% endfor %}
 
+
+<h2>====测试用代码====</h2>
 
 <div class="row">
-    <div class="col s12 m9 l10">
-
-        {% for info in site.data.problems-encountered %}
-        <p>
-            Q: {{info.problem}}<br>
-            A: {{info.reason}}
-        </p>
-        {% endfor %}
+    <div class="col s12 ">
 
 
-        <div class="row">
-            <div class="col s12 ">
-
-
-                <div class="parallax-container">
-                    <div class="parallax"><img src="https://materializecss.com/images/parallax2.jpg"></div>
-                </div>
-            </div>
-            <div class="section">
-                <div class="col s12 container">
-                    <h2 class="header">Parallax</h2>
-                    <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or
-                        image in
-                        this case, is moved at a different speed than the foreground content while scrolling.</p>
-                    <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or
-                        image in
-                        this case, is moved at a different speed than the foreground content while scrolling.</p>
-                    <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or
-                        image in
-                        this case, is moved at a different speed than the foreground content while scrolling.</p>
-
-                </div>
-            </div>
-            <div class="col s12 ">
-                <div class="parallax-container">
-                    <div class="parallax"><img src="https://materializecss.com/images/parallax2.jpg"></div>
-                </div>
-            </div>
-
-            <div class="col s12 ">
-                <img class="materialboxed" src="https://materializecss.com/images/parallax2.jpg"></div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="https://materializecss.com/images/parallax2.jpg"></div>
         </div>
+    </div>
+    <div class="section">
+        <div class="col s12 container">
+            <h2 class="header">Parallax</h2>
+            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or
+                image in
+                this case, is moved at a different speed than the foreground content while scrolling.</p>
+            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or
+                image in
+                this case, is moved at a different speed than the foreground content while scrolling.</p>
+            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or
+                image in
+                this case, is moved at a different speed than the foreground content while scrolling.</p>
 
+        </div>
+    </div>
+    <div class="col s12 ">
+        <div class="parallax-container">
+            <div class="parallax"><img src="https://materializecss.com/images/parallax2.jpg"></div>
+        </div>
+    </div>
 
-        <h4>====测试用====</h4>
+    <div class="col s12 ">
+        <img class="materialboxed" src="https://materializecss.com/images/parallax2.jpg"></div>
+</div>
 
-        <div class="card">
-            <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img loading="lazy">
-            </div>
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light hoverable">
+        <img loading="lazy">
+    </div>
 
-            <div class="card-reveal">
+    <div class="card-reveal">
         <span class="card-title">
             <i class="material-icons right">close</i>
         </span>
-            </div>
-
-            <!--truncate截断-->
-            <div class="card-action">
-                <h5 class="truncate"></h5>
-            </div>
-
-        </div>
-
-
-        <h4>Default Preloader</h4>
-        <div class="progress">
-            <div class="determinate" style="width: 50%"></div>
-        </div>
-        <h4>Indeterminate Preloader</h4>
-        <div class="progress">
-            <div class="indeterminate"></div>
-        </div>
-        <h4>Circular Preloader</h4>
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue-only">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-
-            <div class="spinner-layer spinner-red">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-
-            <div class="spinner-layer spinner-yellow">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-
-            <div class="spinner-layer spinner-green">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-        </div>
-
-
-        <h3>Tabs Demo</h3>
-        <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s3"><a href="#inbox">Inbox</a></li>
-                    <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
-                    <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
-                    <li class="tab col s3"><a href="#sent">Sent</a></li>
-                </ul>
-            </div>
-            <div id="inbox" class="col s12">Inbox</div>
-            <div id="unread" class="col s12">Unread</div>
-            <div id="outbox" class="col s12">Outbox (Disabled)</div>
-            <div id="sent" class="col s12">Sent</div>
-        </div>
-
-
-        <div class="card-panel">
-            <h5>Raised Buttons</h5>
-            <button class="btn waves-effect waves-teal">Add</button>
-            <button class="btn waves-effect waves-teal"><i class="material-icons left">add</i>Add</button>
-            <button class="btn waves-effect waves-teal"><i class="material-icons right">add</i>Add</button>
-            <button class="btn waves-effect waves-teal disabled">Add</button>
-            <h5>Flat Buttons</h5>
-            <button class="btn-flat waves-effect waves-teal">Add</button>
-            <button class="btn-flat waves-effect waves-teal disabled"><i class="material-icons left">add</i>Add</button>
-            <h5>Floating Buttons</h5>
-            <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
-            <a class="btn-floating waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
-            <h5>Large Buttons</h5>
-            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-            <a class="btn-floating btn-large waves-effect waves-light red disabled"><i
-                    class="material-icons">add</i></a>
-            <h5>Primary Buttons</h5>
-            <button class="btn waves-effect waves-light red" type="submit">Send<i class="material-icons right">send</i>
-            </button>
-            <button class="btn waves-effect waves-light blue " type="submit">Cancel<i
-                    class="material-icons right">cancel</i></button>
-        </div>
-
     </div>
 
-
-    <div class="col hide-on-small-only  m3 l2">
-        <ul id="post-contents" class="section table-of-contents"></ul>
+    <!--truncate截断-->
+    <div class="card-action">
+        <h5 class="truncate"></h5>
     </div>
 
+</div>
+
+
+<h4>Default Preloader</h4>
+<div class="progress">
+    <div class="determinate" style="width: 50%"></div>
+</div>
+<h4>Indeterminate Preloader</h4>
+<div class="progress">
+    <div class="indeterminate"></div>
+</div>
+<h4>Circular Preloader</h4>
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+            <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+
+<h3>Tabs Demo</h3>
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs">
+            <li class="tab col s3"><a href="#inbox">Inbox</a></li>
+            <li class="tab col s3"><a class="active" href="#unread">Unread</a></li>
+            <li class="tab col s3 disabled"><a href="#outbox">Outbox (Disabled)</a></li>
+            <li class="tab col s3"><a href="#sent">Sent</a></li>
+        </ul>
+    </div>
+    <div id="inbox" class="col s12">Inbox</div>
+    <div id="unread" class="col s12">Unread</div>
+    <div id="outbox" class="col s12">Outbox (Disabled)</div>
+    <div id="sent" class="col s12">Sent</div>
+</div>
+
+
+<div class="card-panel">
+    <h5>Raised Buttons</h5>
+    <button class="btn waves-effect waves-teal">Add</button>
+    <button class="btn waves-effect waves-teal"><i class="material-icons left">add</i>Add</button>
+    <button class="btn waves-effect waves-teal"><i class="material-icons right">add</i>Add</button>
+    <button class="btn waves-effect waves-teal disabled">Add</button>
+    <h5>Flat Buttons</h5>
+    <button class="btn-flat waves-effect waves-teal">Add</button>
+    <button class="btn-flat waves-effect waves-teal disabled"><i class="material-icons left">add</i>Add</button>
+    <h5>Floating Buttons</h5>
+    <a class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a class="btn-floating waves-effect waves-light red disabled"><i class="material-icons">add</i></a>
+    <h5>Large Buttons</h5>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light red disabled"><i
+            class="material-icons">add</i></a>
+    <h5>Primary Buttons</h5>
+    <button class="btn waves-effect waves-light red" type="submit">Send<i class="material-icons right">send</i>
+    </button>
+    <button class="btn waves-effect waves-light blue " type="submit">Cancel<i
+            class="material-icons right">cancel</i></button>
+</div>
+
+
+<h1>这是目录模板</h1>
+<div class="row">
+    <div class="col s12 m9 l10">
+        <div id="introduction" class="section scrollspy">
+            <p>Content </p>
+        </div>
+
+        <div id="structure" class="section scrollspy">
+            <p>Content </p>
+        </div>
+
+        <div id="initialization" class="section scrollspy">
+            <p>Content </p>
+        </div>
+    </div>
+    <div class="col hide-on-small-only m3 l2">
+        <ul class="section table-of-contents">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#structure">Structure</a></li>
+            <li><a href="#initialization">Intialization</a></li>
+        </ul>
+    </div>
 </div>
