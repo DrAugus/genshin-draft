@@ -1,7 +1,7 @@
 const title = postContent.querySelectorAll('h1, h2, h3, h4, h5, h6');
 
 if (title.length > 0) { // 文章存在标题
-    const blMenu = document.querySelector('#bottom-right-menu');
+    const blMenu = document.querySelector('.bottom-right-menu');
     //主页不显示右下角菜单
     if (blMenu) blMenu.classList.remove('hide')
     const contents = document.querySelector('#post-contents');

@@ -15,4 +15,9 @@
 
 - problem: css文字竖向排列
   reason: 标签writing-mode vertical-lr; 从左向右 从右向左是 vertical-rl;IE浏览器的从左向右 从右向左是tb-rl
-                                          
+
+- problem: querySelector .开头和#开头
+  reason: .开头是class \#开头是id
+
+- problem:
+  reason:
