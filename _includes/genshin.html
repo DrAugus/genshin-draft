@@ -172,7 +172,7 @@
 
 <!--版本答案-->
 <div class="row">
-    <h1>版本答案 0命5星 队伍推荐</h1>
+    <h1>版本答案 队伍推荐</h1>
     <ul class="collapsible popout" data-collapsible="accordion">
         {% for party in site.data.genshin-party-setup %}
         <li class="z-depth-2 hoverable" style="border-radius: 5px;background-color: rgba(255,255,250,0)!important;">
@@ -183,6 +183,7 @@
             <div class="collapsible-body">
                 <p>
                     {% for i in (0..party.party.size) %}
+                    <!--跳过最大的 index从0起 包含了size-->
                     {% if i >= party.party.size %}
                     {% break %}
                     {% endif %}
@@ -190,8 +191,8 @@
                     {% endfor %}
                 </p>
                 <p>{{party.party}}
-                    {% if party.advans != nil %}<br>优势：{{party.advans}} {% endif %}
-                    {% if party.disadvans != nil %} <br>缺陷：{{party.disadvans}} {% endif %}
+                    {% if party.advantage != nil %}<br>优势：{{party.advantage}} {% endif %}
+                    {% if party.disadvantage != nil %} <br>缺陷：{{party.disadvantage}} {% endif %}
                 </p>
             </div>
         </li>
