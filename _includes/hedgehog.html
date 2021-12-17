@@ -58,11 +58,11 @@
                 {{block.name}}
             </div>
 
+            {% if block.reason != nil %}
             <div class="collapsible-body">
-                {% if block.reason != nil %}
                 {{block.reason}}
-                {% endif %}
             </div>
+            {% endif %}
         </li>
 
         {% endif %}
