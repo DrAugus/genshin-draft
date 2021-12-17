@@ -17,15 +17,19 @@ Jekyll requires the following:
    ```shell
    gem install jekyll bundler
    ```
-3. Change into your new directory.
+3. Git clone this repository
    ```shell
-    cd thisproject
+   git clone https://github.com/DrAugus/draugus.github.io.git
    ```
-4. Build the site and make it available on a local server.
+4. Change into this directory.
+   ```shell
+   cd draugus.github.io
+   ```
+5. Build the site and make it available on a local server.
    ```shell
    bundle exec jekyll serve --trace
    ```
-5. Browse to [http://localhost:40000](http://localhost:40000)
+6. Browse to [http://localhost:40000](http://localhost:40000)
 
 ## Getting Started
 
