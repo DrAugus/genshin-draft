@@ -758,6 +758,7 @@ const processEvent = () => {
     });
 
     events
+        //slice不会改变原始数组
         .slice()
         .sort((a, b) => {
             if (Array.isArray(a) && Array.isArray(b)) {
