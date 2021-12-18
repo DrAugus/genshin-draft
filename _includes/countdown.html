@@ -1,31 +1,22 @@
-<!--记得配置文件和js一起改-->
 <div class="row">
     <ul class="collapsible popout" data-collapsible="accordion">
 
-
         {% for info in site.data.countdown %}
 
-        {% capture show %}
-        {% if info[1].block != nil %} {{info[1].block}} {% endif %}
-        {% if info[1][2021] != nil %} {{info[1][2021]}} {% endif %}
-        {% if info[1][2021] == nil %} {{info[1][2022]}} {% endif %}
-        {% endcapture %}
-
         <!--index起始为1 index0起始为0 https://shopify.dev/api/liquid/objects/for-loops-->
-        <li class="z-depth-2 hoverable out-of-time-{{forloop.index0}}">
+        <li class="z-depth-2 hoverable">
             <div class="collapsible-header">
                 <!-- data-position can be : bottom, top, left, or right -->
                 <!-- data-tooltip defines the tooltip text -->
-                {{info[1].name}}
-                <span class="badge chip tooltipped" id="{{info[0]}}" data-position="left"
-                      data-tooltip="{{show}}"></span>
+                <span id="festival{{forloop.index0}}"></span>
+                <span class="badge chip tooltipped" id="ddl{{forloop.index0}}" data-position="left"
+                      data-tooltip=""></span>
             </div>
 
-            {% if info[1].info != nil %}
             <div class="collapsible-body">
-                <h3 class="red-text">{{info[1].info}}</h3>
+                <h3 class="red-text"></h3>
             </div>
-            {% endif %}
+
         </li>
 
         {% endfor %}
