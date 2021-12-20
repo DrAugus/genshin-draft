@@ -19,5 +19,10 @@
 - problem: querySelector .开头和#开头
   reason: .开头是class \#开头是id
 
+- problem: Linux删除某个字母开头的所有文件
+  reason: 比如删除temp目录下以a开头的所有文件：<br>首先要进到temp目录下<br>在删除前先使用ls a*查看要删除哪些文件，防止误删除<br>确认无误后，使用 rm -rf a* 命令，删除a开头的所有文件
+
 - problem:
   reason:
+
+
