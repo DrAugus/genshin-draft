@@ -13,7 +13,7 @@ css: ["blog.css"]
                 <!--日期格式化网站 http://www.strfti.me/-->
                 <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
                 <p id="post-date"><i class="material-icons">dvr</i>{{post.date | date: "%H:%M:%S %a, %B %d, %Y"}}</p>
-                <span id="post-content">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
+                <span id="all-contents-info">{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
             </div>
             <div class="card-action">
                 <span><a href="{{post.url}}">READ MORE</a></span>

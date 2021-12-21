@@ -1,4 +1,4 @@
-const postContent = document.querySelector('#post-content');
+const postContent = document.querySelector('#all-contents-info');
 const allImg = postContent.querySelectorAll('img');
 const len = allImg.length;
 
