@@ -70,6 +70,18 @@
                 <li><a href="/style-matter/index">Matter</a></li>
                 <li><a href="/editorial/index">Editorial</a></li>
             </ul>
+            <!-- Dropdown Structure -->
+            <ul id="dropdown5" class="dropdown-content nav-dropdown-content">
+                <li><a href="/cpp">CPP</a></li>
+                <li><a href="/algorithm">algorithm</a></li>
+                <li><a href="/os">os</a></li>
+                <li><a href="/network_protocol">protocol</a></li>
+                <li><a href="/database">database</a></li>
+                <li><a href="/java">java</a></li>
+                <li><a href="/front_end">front_end</a></li>
+                <li><a href="/sys_design">sys_design</a></li>
+                <li><a href="/non_tech">non_tech</a></li>
+            </ul>
 
             <!--To make the navbar fixed-->
             <div class="navbar-fixed">
@@ -82,8 +94,8 @@
 
                         <ul class="right">
                             <!--数组声明 用split切割字符串-->
-                            {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog" | split: "," %}
-                            {% assign names = "MAIN, OTHER, ABOUT, ELSE" | split: "," %}
+                            {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog, fa-terminal" | split: "," %}
+                            {% assign names = "MAIN, OTHER, ABOUT, ELSE, CODE" | split: "," %}
                             {% for icon in icons %}
                             <li><a class="dropdown-trigger" href="#!" data-target="dropdown{{forloop.index}}">
                                 <!--图标只在手机上显示-->
