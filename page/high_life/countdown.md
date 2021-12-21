@@ -6,4 +6,4 @@ js: [
     "countdown.js"
 ]
 ---
-{% include countdown.html %}
+{% include high_life/countdown.html %}
