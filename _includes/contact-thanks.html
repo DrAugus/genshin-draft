@@ -1,48 +1,30 @@
 <div class="col s12">
 
     <div class="row">
-        <div class="col s3 m2 l2 xl1">TODO:</div>
-        <div class="col s3 m2 l2 xl1"><a href="https://github.com/DrAugus/draugus.github.io/projects/" target="_blank">TODO</a></div>
-        <div class="col s3 m2 l2 xl1"><a href="https://github.com/DrAugus/draugus.github.io/issues/" target="_blank">BUG</a></div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col s3 m2 l2 xl1">QQ:</div>
-        <a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=980652196&site=qq&menu=yes">
-            <img border="0"
-                 src="https://wpa.qq.com/pa?p=2:980652196:51"
-                 alt="期待您的反馈"
-                 title="期待您的反馈"/></a>
+        <div class="col s12">
+            <h2>CONTACT</h2>
+            <p>
+                <a class="fab fa-qq" target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=980652196&site=qq&menu=yes"><span
+                        class="label">QQ </span></a>
+                <a href="mailto:bramlye@outlook.com" class="fa fa-envelope"><span class="label">Email </span></a>
+                <a href="https://github.com/DrAugus/draugus.github.io/issues/" class="fa fa-comment-dots">留言</a>
+            </p>
+        </div>
     </div>
 
     <div class="row">
-        <div class="col s3 m2 l2 xl1">邮箱:</div>
-        <a href="mailto:bramlye@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a>
-    </div>
-
-    <div class="row">
-        <div class="col s3 m2 l2 xl1">留言:</div>
-        <a href="/message">留言板</a> 或 <a href="https://github.com/DrAugus/draugus.github.io/issues/">在此</a>给我留言
-    </div>
-
-    <div class="row">
-        <div class="col s3 m2 l2 xl1">致谢:</div>
-        <br>
-        <div class="container">
-            <ul class="cat-post">
-                <li><a href="https://github.com/ShawnTeoh/matjek">matjek</a></li>
-                <li><a href="https://html5up.net/">HTML5 UP</a></li>
-                <li><a href="https://materializecss.com/">Materialize.css</a>: Famous materialize css style library.
+        <div class="col s12">
+            <h2>致谢</h2>
+            <ul>
+                {% for thanksInfo in site.data.thanks %}
+                <li>
+                    <a href="{{thanksInfo[1].url}}">{{thanksInfo[1].name}}</a>
+                    {% if thanksInfo[1].info %}
+                    : {{thanksInfo[1].info}}
+                    {% endif %}
                 </li>
-                <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-                <li><a href="https://valine.js.org/">Valine</a>: Blog article comment plugin.</li>
-                <li><a href="https://www.wp2.cn/material_icons/">Material Icons</a>: Design <a
-                        href="https://google.github.io/material-design-icons//">material icons</a></li>
-                <li><a href="https://fontawesome.com/">Font Awesome</a>: vector icons and social logos</li>
-                <li><a href="https://shopify.github.io/liquid/">Liquid</a> Document (<a href="https://liquid.bootcss.com/">中文版</a>)</li>
-                <li><a href="https://github.com/rouge-ruby/rouge/">code highlighter</a>: A pure Ruby code highlighter that is compatible with Pygments</li>
+                {% endfor %}
+
                 <li>
                     <a href="https://www.jetbrains.com/?=augus" target="_parent">
                         <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg"

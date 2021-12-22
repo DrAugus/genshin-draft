@@ -1,0 +1,32 @@
+matjek:
+  name: matjek
+  url: https://github.com/ShawnTeoh/matjek/
+  info:
+html5up:
+  name: HTML5 UP
+  url: https://html5up.net/
+  info:
+materializecss:
+  name: Materialize.css
+  url: https://materializecss.com/
+  info: Famous materialize css style library.
+github_pages:
+  name: GitHub Pages
+  url: https://pages.github.com/
+  info:
+material_icons:
+  name: Material Icons
+  url: https://www.wp2.cn/material_icons/
+  info:
+fontawesome:
+  name: Font Awesome
+  url: https://fontawesome.com/
+  info: vector icons and social logos
+liquid:
+  name: Liquid
+  url: https://shopify.github.io/liquid/
+  info:
+highlighter:
+  name: Code highlighter
+  url: https://github.com/rouge-ruby/rouge/
+  info: A pure Ruby code highlighter that is compatible with Pygments
