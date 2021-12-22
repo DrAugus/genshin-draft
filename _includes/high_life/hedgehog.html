@@ -7,9 +7,8 @@
         {% for cuisine in site.data.hedgehog.recommend %}
         {% if cuisine.name != nil %}
 
-        <li style="border-radius: 5px;" class="z-depth-2 hoverable">
-            <div class="collapsible-header current-wish-color-{{i}}"
-                 style="background-color: rgba(255,255,250,0)!important;">
+        <li class="z-depth-2 hoverable">
+            <div class="collapsible-header current-wish-color-{{i}}">
                 {{cuisine.name}}
             </div>
 
@@ -21,7 +20,7 @@
 
                     {% for src in cuisine.img %}
                     <div class="card-image waves-effect waves-block waves-light hoverable">
-                        <img class="activator" alt=nil src="/assets/res/hedgehog/{{src}}">
+                        <img class="activator" src="/assets/res/hedgehog/{{src}}">
                     </div>
                     {% endfor %}
 
@@ -45,6 +44,51 @@
 
 <div class="row">
 
+    <h1>小刺猬の奶茶</h1>
+
+    <ul class="collapsible popout" data-collapsible="accordion">
+
+        {% for tea in site.data.hedgehog.tea %}
+        {% if tea.name != nil %}
+
+        <li class="z-depth-2 hoverable">
+            <div class="collapsible-header current-wish-color-{{i}}">
+                {{tea.name}}
+            </div>
+
+            {% if tea.img != nil or tea.info != nil %}
+
+            <div class="collapsible-body">
+                {% if tea.img != nil %}
+                <div class="card">
+
+                    {% for src in tea.img %}
+                    <div class="card-image waves-effect waves-block waves-light hoverable">
+                        <img class="activator" src="/assets/res/hedgehog/{{src}}">
+                    </div>
+                    {% endfor %}
+
+                </div>
+                {% endif %}
+
+                {% if tea.info != nil %}
+                {{tea.info}}
+                {% endif %}
+            </div>
+
+            {% endif %}
+        </li>
+
+        {% endif %}
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+
+<div class="row">
+
     <h1>小刺猬の小黑屋</h1>
 
     <ul class="collapsible popout" data-collapsible="accordion">
@@ -52,9 +96,8 @@
         {% for block in site.data.hedgehog.block %}
         {% if block.name != nil %}
 
-        <li style="border-radius: 5px;" class="z-depth-2 hoverable">
-            <div class="collapsible-header current-wish-color-{{i}}"
-                 style="background-color: rgba(255,255,250,0)!important;">
+        <li class="z-depth-2 hoverable">
+            <div class="collapsible-header current-wish-color-{{i}}">
                 {{block.name}}
             </div>
 
