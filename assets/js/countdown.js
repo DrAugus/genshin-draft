@@ -113,10 +113,6 @@ const countdown = () => {
     dateInfo.sort((a, b) => a.sort - b.sort);
 };
 
-countdown();
-
-console.log(dateInfo);
-
 const handlerTime = (i) => {
     ddlCSS("#ddl" + i, dateInfo[i].sort);
     $("#ddl" + i).text(dateInfo[i].ddl);
@@ -126,6 +122,7 @@ const handlerTime = (i) => {
     document.getElementById("ddl" + i).setAttribute("data-tooltip", dateInfo[i].date);
 };
 const time_beat = () => {
+    countdown();
     for (let i = 0; i < dateInfo.length; ++i) {
         handlerTime(i);
     }
