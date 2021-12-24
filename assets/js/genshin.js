@@ -1,20 +1,20 @@
-const MAX_MONTH = 120
-const MAX_WISH = 120
-const MAX_DAY = 3650
-const MAX_FUTURE = 120
-const MAX_CURRENT = 100
+const MAX_MONTH = 120;
+const MAX_WISH = 120;
+const MAX_DAY = 3650;
+const MAX_FUTURE = 120;
+const MAX_CURRENT = 100;
 
 const elementColor = {
-    dendro: '#98e628',//草
-    geo: '#e2b032',//岩
-    electro: '#fca7ff',//雷
-    hydro: '#03ddfe',//水
-    pyro: '#fa5d3e',//火
-    anemo: '#4cf3b6',//风
-    cryo: '#a6fdfd',//冰
-}
+    dendro: "#98e628",//草
+    geo: "#e2b032",//岩
+    electro: "#fca7ff",//雷
+    hydro: "#03ddfe",//水
+    pyro: "#fa5d3e",//火
+    anemo: "#4cf3b6",//风
+    cryo: "#a6fdfd"//冰
+};
 
-const colorWeapon = '#FFAA4B';
+const colorWeapon = "#FFAA4B";
 
 const eventsData = [
     [{
@@ -388,255 +388,255 @@ const eventsData = [
     }],
     [
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_0.jpg',
-            start: '2020-09-28 10:00:00',
-            end: '2020-10-18 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/1748393',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_0.jpg",
+            start: "2020-09-28 10:00:00",
+            end: "2020-10-18 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/1748393",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_1.jpg',
-            start: '2020-10-20 18:00:00',
-            end: '2020-11-09 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/2277850',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_1.jpg",
+            start: "2020-10-20 18:00:00",
+            end: "2020-11-09 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/2277850",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_2.jpg',
-            start: '2020-11-11 18:00:00',
-            end: '2020-12-01 15:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/2563554',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_2.jpg",
+            start: "2020-11-11 18:00:00",
+            end: "2020-12-01 15:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/2563554",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_3.jpg',
-            start: '2020-12-01 18:00:00',
-            end: '2020-12-22 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/2878254',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_3.jpg",
+            start: "2020-12-01 18:00:00",
+            end: "2020-12-22 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/2878254",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_4.jpg',
-            start: '2020-12-23 11:00:00',
-            end: '2021-01-12 15:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/3236902',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_4.jpg",
+            start: "2020-12-23 11:00:00",
+            end: "2021-01-12 15:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/3236902",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_5.jpg',
-            start: '2021-01-12 18:00:00',
-            end: '2021-02-02 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/3661310',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_5.jpg",
+            start: "2021-01-12 18:00:00",
+            end: "2021-02-02 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/3661310",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_6.jpg',
-            start: '2021-02-03 11:00:00',
-            end: '2021-02-23 15:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/4005726',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_6.jpg",
+            start: "2021-02-03 11:00:00",
+            end: "2021-02-23 15:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/4005726",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         // 移除7 刻晴 搅屎棍  魈及刻晴前半期池：和璞鸢，磐岩结绿 刻晴后半期及胡桃池：狼的末路，护摩之杖
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_7.jpg',
-            start: '',
-            end: '',
-            color: '#FFAA4B',
-            url: '',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_7.jpg",
+            start: "",
+            end: "",
+            color: "#FFAA4B",
+            url: "",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_8.jpg',
-            start: '2021-02-23 18:00:00',
-            end: '2021-03-16 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/4571433',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_8.jpg",
+            start: "2021-02-23 18:00:00",
+            end: "2021-03-16 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/4571433",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_9.jpg',
-            start: '2021-03-17 11:00:00',
-            end: '2021-04-06 15:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/4959533',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_9.jpg",
+            start: "2021-03-17 11:00:00",
+            end: "2021-04-06 15:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/4959533",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_10.jpg',
-            start: '2021-04-06 18:00:00',
-            end: '2021-04-27 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/5305224',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_10.jpg",
+            start: "2021-04-06 18:00:00",
+            end: "2021-04-27 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/5305224",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_11.jpg',
-            start: '2021-04-28 11:00:00',
-            end: '2021-05-18 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/5726196',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_11.jpg",
+            start: "2021-04-28 11:00:00",
+            end: "2021-05-18 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/5726196",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_12.jpg',
-            start: '2021-05-18 18:00:00',
-            end: '2021-06-08 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/6179334',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_12.jpg",
+            start: "2021-05-18 18:00:00",
+            end: "2021-06-08 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/6179334",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_13.jpg',
-            start: '2021-06-09 11:00:00',
-            end: '2021-06-29 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/6634464',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_13.jpg",
+            start: "2021-06-09 11:00:00",
+            end: "2021-06-29 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/6634464",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_14.jpg',
-            start: '2021-06-29 18:00:00',
-            end: '2021-07-20 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/7067773',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_14.jpg",
+            start: "2021-06-29 18:00:00",
+            end: "2021-07-20 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/7067773",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_15.jpg',
-            start: '2021-07-21 11:00:00',
-            end: '2021-08-10 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/7578979',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_15.jpg",
+            start: "2021-07-21 11:00:00",
+            end: "2021-08-10 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/7578979",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '30% 30%',
-            image: 'epitome_invocation_16.jpg',
-            start: '2021-08-10 18:00:00',
-            end: '2021-08-31 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/8275803',
-            showOnHome: true,
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "30% 30%",
+            image: "epitome_invocation_16.jpg",
+            start: "2021-08-10 18:00:00",
+            end: "2021-08-31 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/8275803",
+            showOnHome: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '40% 20%',
-            image: 'epitome_invocation_17.jpg',
-            start: '2021-09-01 11:00:00',
-            end: '2021-09-21 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/9004345',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "40% 20%",
+            image: "epitome_invocation_17.jpg",
+            start: "2021-09-01 11:00:00",
+            end: "2021-09-21 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/9004345",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '40% 40%',
-            image: 'epitome_invocation_18.jpg',
-            start: '2021-09-21 18:00:00',
-            end: '2021-10-12 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/9679285',
-            showOnHome: true,
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "40% 40%",
+            image: "epitome_invocation_18.jpg",
+            start: "2021-09-21 18:00:00",
+            end: "2021-10-12 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/9679285",
+            showOnHome: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '40% 40%',
-            image: 'epitome_invocation_19.jpg',
-            start: '2021-10-13 11:00:00',
-            end: '2021-11-02 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/10755907',
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "40% 40%",
+            image: "epitome_invocation_19.jpg",
+            start: "2021-10-13 11:00:00",
+            end: "2021-11-02 17:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/10755907",
             showOnHome: true,
-            timezoneDependent: true,
+            timezoneDependent: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '40% 40%',
-            image: 'epitome_invocation_20.jpg',
-            start: '2021-11-02 18:00:00',
-            end: '2021-11-23 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://bbs.mihoyo.com/ys/article/11444617',
-            showOnHome: true,
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "40% 40%",
+            image: "epitome_invocation_20.jpg",
+            start: "2021-11-02 18:00:00",
+            end: "2021-11-23 14:59:59",
+            color: "#FFAA4B",
+            url: "https://bbs.mihoyo.com/ys/article/11444617",
+            showOnHome: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '40% 40%',
-            image: 'epitome_invocation_21.jpg',
-            start: '2021-11-24 11:00:00',
-            end: '2021-12-14 17:59:59',
-            color: '#FFAA4B',
-            url: 'https://ys.mihoyo.com/main/news/detail/18668',
-            showOnHome: true,
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "40% 40%",
+            image: "epitome_invocation_21.jpg",
+            start: "2021-11-24 11:00:00",
+            end: "2021-12-14 17:59:59",
+            color: "#FFAA4B",
+            url: "https://ys.mihoyo.com/main/news/detail/18668",
+            showOnHome: true
         },
         {
-            name: ['Epitome Invocation - Weapon Banner', '「神铸赋形」'],
-            pos: '40% 40%',
-            image: 'epitome_invocation_22.jpg',
-            start: '2021-12-14 18:00:00',
-            end: '2022-01-04 14:59:59',
-            color: '#FFAA4B',
-            url: 'https://ys.mihoyo.com/main/news/detail/12926124',
-            showOnHome: true,
-        },
-    ],
+            name: ["Epitome Invocation - Weapon Banner", "「神铸赋形」"],
+            pos: "40% 40%",
+            image: "epitome_invocation_22.jpg",
+            start: "2021-12-14 18:00:00",
+            end: "2022-01-04 14:59:59",
+            color: "#FFAA4B",
+            url: "https://ys.mihoyo.com/main/news/detail/12926124",
+            showOnHome: true
+        }
+    ]
 ];
 
 
@@ -644,39 +644,39 @@ const eventsData = [
 const voiceHuTao = [
     {
         index: 0,
-        text: '嗯~早起身体好，晚睡人会飘。',
-        src: 'https://patchwiki.biligame.com/images/ys/8/8d/n8gei38e7k4v8os3scp7uormhc633ib.mp3',
+        text: "嗯~早起身体好，晚睡人会飘。",
+        src: "https://patchwiki.biligame.com/images/ys/8/8d/n8gei38e7k4v8os3scp7uormhc633ib.mp3"
     },
     {
         index: 1,
-        text: '哟！中午好呀，吃了吗？',
-        src: 'https://patchwiki.biligame.com/images/ys/d/d7/kmv4y3qxzawo4lvza5sto2hqs4asxcj.mp3',
+        text: "哟！中午好呀，吃了吗？",
+        src: "https://patchwiki.biligame.com/images/ys/d/d7/kmv4y3qxzawo4lvza5sto2hqs4asxcj.mp3"
     },
     {
         index: 2,
-        text: '嘻嘻，月亮出来喽~咱也出门吧。',
-        src: 'https://patchwiki.biligame.com/images/ys/c/c8/9p3stmpojfh2pmodmvi6srkjo55e9l9.mp3',
+        text: "嘻嘻，月亮出来喽~咱也出门吧。",
+        src: "https://patchwiki.biligame.com/images/ys/c/c8/9p3stmpojfh2pmodmvi6srkjo55e9l9.mp3"
     },
     {
         index: 3,
-        text: '咳咳...太阳出来我晒太阳，月亮出来我晒月亮咯~',
-        src: 'https://patchwiki.biligame.com/images/ys/0/01/2fnjqvot4urhojue61nnct93s94kpg4.mp3',
+        text: "咳咳...太阳出来我晒太阳，月亮出来我晒月亮咯~",
+        src: "https://patchwiki.biligame.com/images/ys/0/01/2fnjqvot4urhojue61nnct93s94kpg4.mp3"
     },
     {
         index: 4,
-        text: '哎哟哟',
-        src: 'https://patchwiki.biligame.com/images/ys/a/a7/1bxid2ud8xdv491mpn6z1nf598l6bw6.mp3',
+        text: "哎哟哟",
+        src: "https://patchwiki.biligame.com/images/ys/a/a7/1bxid2ud8xdv491mpn6z1nf598l6bw6.mp3"
     },
     {
         index: 5,
-        text: '丘丘',
-        src: 'https://patchwiki.biligame.com/images/ys/2/2d/pfpqhnpnlf07hwdjud6f3ilsg840osm.mp3',
+        text: "丘丘",
+        src: "https://patchwiki.biligame.com/images/ys/2/2d/pfpqhnpnlf07hwdjud6f3ilsg840osm.mp3"
     },
     {
         index: 6,
-        text: '不如去我那儿喝杯茶？嘿~',
-        src: 'https://patchwiki.biligame.com/images/ys/c/cd/mh8ksq83vyqgm9m065emzzstw9skjaa.mp3',
-    },
+        text: "不如去我那儿喝杯茶？嘿~",
+        src: "https://patchwiki.biligame.com/images/ys/c/cd/mh8ksq83vyqgm9m065emzzstw9skjaa.mp3"
+    }
 ];
 
 
@@ -701,17 +701,17 @@ const autoPlayVoice = () => {
             //晚上
             return voiceHuTao[2].index;
         }
-    }
+    };
 
-    let index = getVoiceIndex(hour)
-    document.getElementById('hutao-voice').src = voiceHuTao[index].src;
-    document.getElementById('hutao-text').innerHTML = voiceHuTao[index].text;
-}
+    let index = getVoiceIndex(hour);
+    document.getElementById("hutao-voice").src = voiceHuTao[index].src;
+    document.getElementById("hutao-text").innerHTML = voiceHuTao[index].text;
+};
 autoPlayVoice();
 //填充所有胡桃语音
 for (let i = 0; i < voiceHuTao.length; ++i) {
-    document.getElementById('hutao-voice-' + i).src = voiceHuTao[i].src;
-    document.getElementById('hutao-text-' + i).innerHTML = voiceHuTao[i].text;
+    document.getElementById("hutao-voice-" + i).src = voiceHuTao[i].src;
+    document.getElementById("hutao-text-" + i).innerHTML = voiceHuTao[i].text;
 }
 
 
@@ -733,9 +733,9 @@ let today = dayjs();
 
 
 const convertToDate = (e, i) => {
-    let start = dayjs(e.start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
-    const end = dayjs(e.end, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
-    const duration = end.diff(start, 'day', true);
+    let start = dayjs(e.start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+    const end = dayjs(e.end, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+    const duration = end.diff(start, "day", true);
 
     if (lastEventTime < end) lastEventTime = end;
 
@@ -744,9 +744,9 @@ const convertToDate = (e, i) => {
         index: i,
         start,
         end,
-        duration,
+        duration
     };
-}
+};
 
 const processEvent = () => {
     events = eventsData.map((e, i) => {
@@ -775,9 +775,9 @@ const processEvent = () => {
             // i为0是角色祈愿 找到第一个角色祈愿的开始时间 提前padding天 设为firstDay
             if (i === 0) {
                 if (Array.isArray(e)) {
-                    firstDay = e[0].start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
+                    firstDay = e[0].start.set("hour", 0).set("minute", 0).set("second", 0).subtract(padding, "day");
                 } else {
-                    firstDay = e.start.set('hour', 0).set('minute', 0).set('second', 0).subtract(padding, 'day');
+                    firstDay = e.start.set("hour", 0).set("minute", 0).set("second", 0).subtract(padding, "day");
                 }
             }
 
@@ -785,25 +785,25 @@ const processEvent = () => {
                 for (let j = 0; j < e.length; j++) {
                     const current = e[j];
 
-                    events[current.index][j].offset = Math.abs(firstDay.diff(events[current.index][j].start, 'day', true));
+                    events[current.index][j].offset = Math.abs(firstDay.diff(events[current.index][j].start, "day", true));
                 }
             } else {
-                events[e.index].offset = Math.abs(firstDay.diff(e.start, 'day', true));
+                events[e.index].offset = Math.abs(firstDay.diff(e.start, "day", true));
             }
         });
 
-    const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, 'day', true))) + 2 * padding;
+    const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, "day", true))) + 2 * padding;
 
     for (let i = 0; i < dayTotal; i++) {
-        const year = firstDay.add(i, 'day').format('YYYY');
-        const month = firstDay.add(i, 'day').format('MMMM');
+        const year = firstDay.add(i, "day").format("YYYY");
+        const month = firstDay.add(i, "day").format("MMMM");
         if (years[year] === undefined) {
             years[year] = [];
         }
         if (years[year][month] === undefined) {
             years[year][month] = {
                 total: 0,
-                offset: 0,
+                offset: 0
             };
         }
         years[year][month].total++;
@@ -819,20 +819,20 @@ const processEvent = () => {
         monthList[i][1].offset = i - 1 >= 0 ? monthList[i - 1][1].total + monthList[i - 1][1].offset : 0;
     }
 
-    dates = [...new Array(dayTotal)].map((_, i) => firstDay.add(i, 'day').date());
-}
+    dates = [...new Array(dayTotal)].map((_, i) => firstDay.add(i, "day").date());
+};
 
 processEvent();
 
 let wishCharacters = events[0];
-let wishLength = wishCharacters.length
+let wishLength = wishCharacters.length;
 
 //设置时间轴
 const setTimeAxis = () => {
-    let startD = dayjs(wishCharacters[0].start).subtract(7, 'day').format('YYYY-MM-DD HH:mm:ss')
-    let endD = dayjs(wishCharacters[wishLength - 1].end).add(7, 'day').format('YYYY-MM-DD HH:mm:ss')
-    const allDays = getDuration('day', startD, endD)
-    const countDays = allDays.length
+    let startD = dayjs(wishCharacters[0].start).subtract(7, "day").format("YYYY-MM-DD HH:mm:ss");
+    let endD = dayjs(wishCharacters[wishLength - 1].end).add(7, "day").format("YYYY-MM-DD HH:mm:ss");
+    const allDays = getDuration("day", startD, endD);
+    const countDays = allDays.length;
 
     for (let i = 0; i < dates.length; ++i) {
         $(".left-day-" + i).removeClass("hide");
@@ -847,31 +847,31 @@ const setTimeAxis = () => {
 
         let widthClass = document.getElementsByClassName("timeline-month-width-" + i);
         for (let wClass of widthClass) {
-            wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
+            wClass.style.width = (dayWidth * monthList[i][1].total) + "px";
         }
-        document.getElementById('timelineMonthName' + i).innerHTML = monthList[i][0];
+        document.getElementById("timelineMonthName" + i).innerHTML = monthList[i][0];
     }
 
-    let todayOffset = Math.abs(firstDay.diff(today, 'day', true));
-    let leftToday = document.getElementsByClassName('timeline-today-line-pos');
+    let todayOffset = Math.abs(firstDay.diff(today, "day", true));
+    let leftToday = document.getElementsByClassName("timeline-today-line-pos");
     for (let l of leftToday) {
         //timeline-index的width为30
-        l.style.left = todayOffset * dayWidth + 30 + 'px';
+        l.style.left = todayOffset * dayWidth + 30 + "px";
     }
-}
+};
 setTimeAxis();
 
 
 //当前时间定位 ----------------------------------------------------------------
 const setCurrentPos = () => {
-    document.getElementById('setNowPos').scrollLeft = document.getElementById('findNowPos').offsetLeft - document.body.clientWidth / 2;
-}
+    document.getElementById("setNowPos").scrollLeft = document.getElementById("findNowPos").offsetLeft - document.body.clientWidth / 2;
+};
 setCurrentPos();
 
 const setTodayTime = () => {
-    const d = dayjs()
-    document.getElementById('currentTime').innerHTML = d.format('HH:mm:ss')
-}
+    const d = dayjs();
+    document.getElementById("currentTime").innerHTML = d.format("HH:mm:ss");
+};
 setInterval("setTodayTime()", 1000);
 //---------------------------------------------------------------------------
 
@@ -881,23 +881,23 @@ let objWish = {
     wishIndex: [],//索引集 一个为当前祈愿或者即将开放的祈愿 两个为双复刻池
     reprint: true,//双复刻标记
     isFuture: true,//当前无祈愿 正在等待开放
-    comingIndex: [],//即将到来的未开放的
-}
+    comingIndex: []//即将到来的未开放的
+};
 //找出当前在哪个祈愿时间段
 const getWishObj = () => {
-    let obj = {}
-    obj.wishIndex = []
-    obj.haveWish = true
+    let obj = {};
+    obj.wishIndex = [];
+    obj.haveWish = true;
     obj.isFuture = false;
-    obj.comingIndex = []
+    obj.comingIndex = [];
     //当前时间所处的祈愿时间段
     for (let e of wishCharacters) {
         //当前时间在祈愿起始时间后
-        let startAfter = dayjs().isAfter(e.start, 'second')
+        let startAfter = dayjs().isAfter(e.start, "second");
         //当前时间在祈愿结束时间前
-        let endBefore = dayjs().isBefore(e.end, 'second')
+        let endBefore = dayjs().isBefore(e.end, "second");
         if (startAfter && endBefore) {
-            obj.wishIndex.push(e.no)
+            obj.wishIndex.push(e.no);
         }
     }
     //如果没有找到
@@ -905,31 +905,31 @@ const getWishObj = () => {
         obj.haveWish = false;
         for (let i = 1; i < wishLength; ++i) {
             //介于前一个结束时间后 后一个开始时间前
-            let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, 'second')
-            let startBefore = dayjs().isBefore(wishCharacters[i].start, 'second')
+            let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, "second");
+            let startBefore = dayjs().isBefore(wishCharacters[i].start, "second");
             if (endAfter && startBefore) {
-                obj.wishIndex.push(wishCharacters[i].no)
+                obj.wishIndex.push(wishCharacters[i].no);
                 obj.isFuture = true;
             }
         }
     }
 
-    obj.reprint = obj.wishIndex.length > 1
+    obj.reprint = obj.wishIndex.length > 1;
 
     //存放所有未来的祈愿
     if (obj.wishIndex.length) {
-        let startIndex = obj.wishIndex[obj.wishIndex.length - 1]
-        if (obj.isFuture) obj.comingIndex.push(startIndex)
+        let startIndex = obj.wishIndex[obj.wishIndex.length - 1];
+        if (obj.isFuture) obj.comingIndex.push(startIndex);
         else ++startIndex;
         for (let i = startIndex; i < wishLength; ++i) {
-            obj.comingIndex.push(i)
+            obj.comingIndex.push(i);
         }
     }
 
     return obj;
-}
+};
 objWish = getWishObj();
-console.log('objWish', objWish)
+console.log("objWish", objWish);
 
 
 //祈愿角色信息
@@ -955,135 +955,135 @@ const wishInfo = () => {
 wishInfo();
 
 //中文昵称名字+英文昵称名字
-const nameInfo = (i) => wishCharacters[i].wishName + ' - ' + wishCharacters[i].id;
-const nameZHInfo = (i) => wishCharacters[i].name + ' - ' + wishCharacters[i].shortname;
+const nameInfo = (i) => wishCharacters[i].wishName + " - " + wishCharacters[i].id;
+const nameZHInfo = (i) => wishCharacters[i].name + " - " + wishCharacters[i].shortname;
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
-    let reprintWish = objWish.reprint
+    let reprintWish = objWish.reprint;
     if (!objWish.haveWish) {
-        document.getElementById('noWishInfo').innerHTML = '暂无祈愿，敬请期待';
-        let currentHaveNoWish = document.getElementsByClassName('no-wish');
+        document.getElementById("noWishInfo").innerHTML = "暂无祈愿，敬请期待";
+        let currentHaveNoWish = document.getElementsByClassName("no-wish");
         for (let n of currentHaveNoWish) {
-            n.style.display = 'none';
+            n.style.display = "none";
         }
-        return
+        return;
     }
-    let len = objWish.wishIndex.length
+    let len = objWish.wishIndex.length;
 
     if (!reprintWish) {
 
         let imgSrc = [
-            'wish/character/Wanderlust Invocation 1.png',
-            'wish_spoof_1.jpg',
-            'wish_spoof_2.jpg'
-        ]
+            "wish/character/Wanderlust Invocation 1.png",
+            "wish_spoof_1.jpg",
+            "wish_spoof_2.jpg"
+        ];
         let info = [
-            ['',],
-            ['真名 度厄真君', '听诏 宣此诰退'],
-            ['天理长驱', '天动万象']
-        ]
+            [""],
+            ["真名 度厄真君", "听诏 宣此诰退"],
+            ["天理长驱", "天动万象"]
+        ];
         let co = [
-            '', '#a6fdfd', '#e2b032'
-        ]
+            "", "#a6fdfd", "#e2b032"
+        ];
         let index = 0;
         for (let i = len; i < 4; ++i, ++index) {
-            document.getElementById('showCurrentWishCharacter' + i).src = '/assets/res/genshin-impact/' + imgSrc[index]
-            document.getElementById('currentCharacter' + i).innerHTML = info[index][0]
-            document.getElementById('currentWishText' + i).innerHTML = info[index][1]
-            let wishColorClass = document.getElementsByClassName('current-wish-color-' + i);
+            document.getElementById("showCurrentWishCharacter" + i).src = "/assets/res/genshin-impact/" + imgSrc[index];
+            document.getElementById("currentCharacter" + i).innerHTML = info[index][0];
+            document.getElementById("currentWishText" + i).innerHTML = info[index][1];
+            let wishColorClass = document.getElementsByClassName("current-wish-color-" + i);
             for (let w of wishColorClass) {
                 let showColor = co[index];
-                if (showColor === '') continue;
-                w.style.color = '#000'
-                w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
-                    showColor + ' -1px 1px 4px, ' + showColor + ' 1px 1px 4px, ' + showColor + ' 0 0 10px';
+                if (showColor === "") continue;
+                w.style.color = "#000";
+                w.style.textShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
+                    showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
             }
         }
     }
 
     //祈愿角色图片
     for (let i = 0; i < len; ++i) {
-        let index = objWish.wishIndex[i]
+        let index = objWish.wishIndex[i];
         //最新祈愿的起止时间
-        document.getElementById('timeStartCurrentCharacter').innerHTML = dayjs(wishCharacters[index].start).format('MM-DD HH:mm:ss')
-        document.getElementById('timeEndCurrentCharacter').innerHTML = dayjs(wishCharacters[index].end).format('MM-DD HH:mm:ss')
+        document.getElementById("timeStartCurrentCharacter").innerHTML = dayjs(wishCharacters[index].start).format("MM-DD HH:mm:ss");
+        document.getElementById("timeEndCurrentCharacter").innerHTML = dayjs(wishCharacters[index].end).format("MM-DD HH:mm:ss");
         //最新的祈愿
-        document.getElementById('currentCharacter' + i).innerHTML = ''
+        document.getElementById("currentCharacter" + i).innerHTML = "";
         //祈愿角色信息
-        document.getElementById('currentWishText' + i).innerHTML = ''
+        document.getElementById("currentWishText" + i).innerHTML = "";
         //color显示
-        let wishColorClass = document.getElementsByClassName('current-wish-color-' + index);
+        let wishColorClass = document.getElementsByClassName("current-wish-color-" + index);
         for (let w of wishColorClass) {
             w.style.color = elementColor[wishCharacters[index].ele];
         }
-        let imgSrc = wishCharacters[index].wishName.replace(' ', '_').replace('\'', '').toLowerCase() + '_' + wishCharacters[index].image + '.jpg'
-        document.getElementById('showCurrentWishCharacter' + i).src = '/assets/res/genshin-impact/events/' + imgSrc
+        let imgSrc = wishCharacters[index].wishName.replace(" ", "_").replace("'", "").toLowerCase() + "_" + wishCharacters[index].image + ".jpg";
+        document.getElementById("showCurrentWishCharacter" + i).src = "/assets/res/genshin-impact/events/" + imgSrc;
     }
 
-}
+};
 updateCurrentWishInfo();
 
 //未来即将开放的祈愿
 const futureWishInfo = () => {
-    let indexArr = []
+    let indexArr = [];
 
     if (!objWish.comingIndex.length && !objWish.isFuture) {
-        document.getElementById('futureWishInfo').innerHTML = '未来祈愿，等待更新';
-        let futureWish = document.getElementsByClassName('future-wish');
+        document.getElementById("futureWishInfo").innerHTML = "未来祈愿，等待更新";
+        let futureWish = document.getElementsByClassName("future-wish");
         for (let n of futureWish) {
-            n.style.display = 'none';
+            n.style.display = "none";
         }
-        return
+        return;
     }
 
     if (objWish.isFuture) {
-        let startIndex = objWish.wishIndex[0]
+        let startIndex = objWish.wishIndex[0];
         for (let i = startIndex; i < wishLength; ++i) {
-            indexArr.push(i)
+            indexArr.push(i);
         }
     } else if (objWish.comingIndex.length) {
-        indexArr = indexArr.concat(objWish.comingIndex)
+        indexArr = indexArr.concat(objWish.comingIndex);
     }
 
-    console.log('coming soon: ', indexArr)
+    console.log("coming soon: ", indexArr);
     for (let i = 0; i < indexArr.length; ++i) {
 
-        let wishColorClass = document.getElementsByClassName('future-wish-color-' + i);
+        let wishColorClass = document.getElementsByClassName("future-wish-color-" + i);
         let showColor = elementColor [wishCharacters[indexArr[i]].ele];
         for (let w of wishColorClass) {
-            w.style.color = '#000'
-            w.style.textShadow = showColor + ' -1px -1px 4px, ' + showColor + ' 1px -1px 4px, ' +
-                showColor + ' -1px 1px 4px, ' + showColor + ' 1px 1px 4px, ' + showColor + ' 0 0 10px';
+            w.style.color = "#000";
+            w.style.textShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
+                showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
         }
-        let eventWishBGColorClass = document.getElementsByClassName('future-wish-bg-color-' + i);
+        let eventWishBGColorClass = document.getElementsByClassName("future-wish-bg-color-" + i);
         for (let eWishColor of eventWishBGColorClass) {
-            eWishColor.style.backgroundColor = showColor + '59'//59 35%透明度
+            eWishColor.style.backgroundColor = showColor + "59";//59 35%透明度
         }
 
-        document.getElementById('futureElements' + i).src = '/assets/res/genshin-impact/elements/' + wishCharacters[indexArr[i]].ele + '.png';
-        document.getElementById('futureWishText' + i).innerHTML = wishCharacters[indexArr[i]].info
-        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/characters/half/' + wishCharacters[indexArr[i]].id + '.png'
-        document.getElementById('futureWish' + i).innerHTML = nameZHInfo(indexArr[i]);
+        document.getElementById("futureElements" + i).src = "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png";
+        document.getElementById("futureWishText" + i).innerHTML = wishCharacters[indexArr[i]].info;
+        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/characters/half/" + wishCharacters[indexArr[i]].id + ".png";
+        document.getElementById("futureWish" + i).innerHTML = nameZHInfo(indexArr[i]);
     }
 
     for (let i = indexArr.length; i < 5; ++i) {
-        document.getElementById('futureWishBG' + i).src = '/assets/res/genshin-impact/events/update.jpg'
-        document.getElementById('futureWish' + i).innerHTML = "敬请期待";
-        document.getElementById('futureWishText' + i).innerHTML = "";
+        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/update.jpg";
+        document.getElementById("futureWish" + i).innerHTML = "敬请期待";
+        document.getElementById("futureWishText" + i).innerHTML = "";
     }
-}
+};
 futureWishInfo();
 
 //祈愿倒计时
-const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[objWish.wishIndex[0]].end))
+const wishDeadline = () => Deadline(dayjs(), dayjs(wishCharacters[objWish.wishIndex[0]].end));
 
 const ddlHandle = () => {
-    let s = '#deadline'
-    let d = parseInt(wishDeadline())
-    $(s).html(wishDeadline())
-    ddlCSS(s, d)
-}
+    let s = "#deadline";
+    let d = parseInt(wishDeadline());
+    $(s).html(wishDeadline());
+    ddlCSS(s, d);
+};
 
 //当前时间
 setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000);

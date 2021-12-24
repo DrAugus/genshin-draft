@@ -1,15 +1,16 @@
 const colorChange = [
-    '#98e628',
-    '#e2b032',
-    '#fca7ff',
-    '#03ddfe',
-    '#fa5d3e',
-    '#4cf3b6',
-    '#a6fdfd',
+    "#98e628",
+    "#e2b032",
+    "#fca7ff",
+    "#03ddfe",
+    "#fa5d3e",
+    "#4cf3b6",
+    "#a6fdfd"
 ];
 
 let i = 0;
 changeColor();
+
 // setInterval('changeColor()', 500);
 
 function changeColor() {

@@ -9,4 +9,4 @@ const obj2arr = (obj) => {
         arr.push(item);
     }
     return arr;
-}
+};

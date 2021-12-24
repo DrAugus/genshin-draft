@@ -4,44 +4,44 @@ M.AutoInit();
 
 //Parallax - Initialization
 $(document).ready(function () {
-    $('.parallax').parallax();
+    $(".parallax").parallax();
 });
 
 //Media - Material Box - Initialization
 $(document).ready(function () {
-    $('.materialboxed').materialbox();
+    $(".materialboxed").materialbox();
 });
 
 //Media - Slider - Initialization
 $(document).ready(function () {
-    $('.slider').slider();
+    $(".slider").slider();
 });
 
 //Carousel - Initialization
 $(document).ready(function () {
-    $('.carousel').carousel();
+    $(".carousel").carousel();
 });
 
 //Tabs - Initialization
 $(document).ready(function () {
-    $('.tabs').tabs();
-    this.swipeable = true
+    $(".tabs").tabs();
+    this.swipeable = true;
 });
 
 //Dropdown - Initialization
-$('.dropdown-trigger').dropdown();
+$(".dropdown-trigger").dropdown();
 
 //Navbar - Initialization
-$(document).ready(function(){
-    $('.sidenav').sidenav();
+$(document).ready(function () {
+    $(".sidenav").sidenav();
 });
 
 //Floating Action Button - Initialization
-$(document).ready(function(){
-    $('.fixed-action-btn').floatingActionButton();
+$(document).ready(function () {
+    $(".fixed-action-btn").floatingActionButton();
 });
 
 //Tooltips - Initialization
-$(document).ready(function(){
-    $('.tooltipped').tooltip();
+$(document).ready(function () {
+    $(".tooltipped").tooltip();
 });
