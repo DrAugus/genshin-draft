@@ -835,20 +835,17 @@ const setTimeAxis = () => {
     const countDays = allDays.length
 
     for (let i = 0; i < dates.length; ++i) {
-        let leftClass = document.getElementsByClassName('left-day-' + i);
-        for (let lClass of leftClass) {
-            //圆圈timeline-index的width为30
-            lClass.style.left = ((dayWidth - 30) * i) + 'px';
-        }
-        document.getElementById('timelineDay' + i).innerHTML = dates[i];
+        $(".left-day-" + i).removeClass("hide");
+        //圆圈timeline-index的width为30
+        $(".left-day-" + i).css("left", ((dayWidth - 30) * i) + "px");
+        document.getElementById("timelineDay" + i).innerHTML = dates[i];
     }
 
     for (let i = 0; i < monthList.length; ++i) {
-        let leftClass = document.getElementsByClassName('timeline-month-left-' + i);
-        for (let lClass of leftClass) {
-            lClass.style.left = (dayWidth * monthList[i][1].offset) + 'px';
-        }
-        let widthClass = document.getElementsByClassName('timeline-month-width-' + i);
+        $(".timeline-month-left-" + i).removeClass("hide");
+        $(".timeline-month-left-" + i).css("left", (dayWidth * monthList[i][1].offset) + "px");
+
+        let widthClass = document.getElementsByClassName("timeline-month-width-" + i);
         for (let wClass of widthClass) {
             wClass.style.width = (dayWidth * monthList[i][1].total) + 'px';
         }
@@ -938,28 +935,23 @@ console.log('objWish', objWish)
 //祈愿角色信息
 const wishInfo = () => {
     for (let i = 0; i < wishLength; ++i) {
-        //动态设置各个角色的css
-        let eventItemClass = document.getElementsByClassName('event-item-' + i);
-
-        let start = firstDay
-        const end = dayjs(wishCharacters[i].start, 'YYYY-MM-DD HH:mm:ss').subtract(0, 'minute');
-        const duration = end.diff(start, 'day', true);
+        let start = firstDay;
+        const end = dayjs(wishCharacters[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+        const duration = end.diff(start, "day", true);
         // console.log(i, duration)
 
-        for (let eItem of eventItemClass) {
-            eItem.style.width = wishCharacters[i].duration * dayWidth + 'px'
-            eItem.style.left = duration * dayWidth + 30 + 'px'
-
-            if (wishCharacters[i].wish_2) eItem.style.marginTop = '160px'
-        }
+        //动态设置各个角色的css
+        $(".event-item-" + i).removeClass("hide");
+        $(".event-item-" + i).css({
+            "width": wishCharacters[i].duration * dayWidth + "px",
+            "left": duration * dayWidth + 30 + "px"
+        });
+        if (wishCharacters[i].wish_2) $(".event-item-" + i).css("marginTop", "160px");
 
         //left-t
-        let leftClass = document.getElementsByClassName('left-t' + i);
-        for (let lClass of leftClass) {
-            lClass.style.left = (350 * i) + 'px';
-        }
+        $(".left-t" + i).css("left", (350 * i) + "px");
     }
-}
+};
 wishInfo();
 
 //中文昵称名字+英文昵称名字
@@ -1097,29 +1089,5 @@ const ddlHandle = () => {
 setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000);
 //结束当前祈愿时间
 setInterval(ddlHandle, 1000);
-
-
-//隐藏多余的遍历
-const hideClass = (start, end, str) => {
-    console.log(str, start)
-    for (let i = start; i < end; ++i) {
-        let show = document.getElementsByClassName(str + i);
-        for (let s of show) {
-            s.style.display = 'none'
-        }
-    }
-}
-
-const lenMonthList = monthList.length
-const lenAllDays = dates.length
-const lenFuture = objWish.comingIndex.length
-const lenCurrent = objWish.wishIndex.length
-
-hideClass(lenMonthList, MAX_MONTH, 'lenMonthList-show-')
-hideClass(lenAllDays, MAX_DAY, 'lenAllDays-show-')
-hideClass(lenFuture, MAX_FUTURE, 'lenFuture-show-')
-hideClass(lenCurrent, MAX_CURRENT, 'lenCurrent-show-')
-
-
 
 

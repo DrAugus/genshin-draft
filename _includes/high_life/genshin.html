@@ -15,7 +15,7 @@
 
         <div class="timeline-month">
             {% for i in (0..lenMonthList) %}
-            <div class="timeline-month-left-{{i}} lenMonthList-show-{{i}}">
+            <div class="timeline-month-left-{{i}} hide">
                 <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
             </div>
             {% endfor %}
@@ -47,7 +47,7 @@
                     {% endfor %}
                     <!--颜色控制-->
 
-                    <div class="card event-item event-item-{{i}}" style="background-color: {{eleColor}}">
+                    <div class="card event-item event-item-{{i}} hide" style="background-color: {{eleColor}}">
                         <div class="card-image waves-effect waves-block waves-light " style="height: 128px">
                             <div class="event-img responsive-img activator"
                                  style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
@@ -86,7 +86,7 @@
             </div>
 
             {% for i in (0..lenAllDays) %}
-            <div class="timeline-wrapper left-day-{{i}} lenAllDays-show-{{i}}" style="z-index: -1">
+            <div class="timeline-wrapper left-day-{{i}} hide" style="z-index: -1">
                 <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
             </div>
             {% endfor %}
