@@ -1,10 +1,67 @@
 <!--暂定最高为5个同时发生的事件-->
 {% for i in (0..4) %}
-<div class="row" id="hide{{i}}">
-    <h3 class="center-align">今天是<span id="nowEvent{{i}}"></span></h3>
-    <p id="noEventInfo{{i}}"></p>
+<div class="row hide z-depth-0" id="showNow{{i}}">
+    <h2 class="center-align"><span id="nowEvent{{i}}"></span></h2>
+    <p id="nowEventInfo{{i}}"></p>
 </div>
 {% endfor %}
+
+
+<!--暂定最高为5个同时发生的事件-->
+{% for i in (0..4) %}
+<div class="row hide z-depth-0" id="showTomorrow{{i}}">
+
+    <div class="col s6">
+        <h3 class="center-align">即将到来<span id="tomorrowEvent{{i}}"></span></h3>
+    </div>
+
+    <div class="col s6">
+        <h3 class="center-align"><u id="tomorrowDDL{{i}}"></u></h3>
+    </div>
+
+</div>
+{% endfor %}
+
+<style>
+
+    span.badge {
+        height: auto;
+    }
+
+    li::after {
+        margin: -30px;
+        filter: blur(20px);
+    }
+
+    .collapsible-header {
+        border-bottom: 0;
+
+    }
+
+    .collapsible.popout > li {
+        margin: 5px 24px
+    }
+
+    .description {
+        border-radius: 5px;
+        background: rgba(255, 255, 255, .3);
+        overflow: hidden;
+    }
+
+    .description::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        filter: blur(20px);
+        z-index: -1;
+        margin: -30px;
+    }
+
+</style>
+
 
 <div class="row">
     <ul class="collapsible popout" data-collapsible="accordion">
@@ -12,16 +69,27 @@
         {% for info in site.data.countdown %}
 
         <!--index起始为1 index0起始为0 https://shopify.dev/api/liquid/objects/for-loops-->
-        <li class="z-depth-2 hoverable">
+        <!-- data-position can be : bottom, top, left, or right -->
+        <!-- data-tooltip defines the tooltip text -->
+        <li class="description hoverable hide showList{{forloop.index0}}">
             <div class="collapsible-header">
-                <!-- data-position can be : bottom, top, left, or right -->
-                <!-- data-tooltip defines the tooltip text -->
-                <span id="festival{{forloop.index0}}"></span>
-                <span class="badge chip tooltipped" id="ddl{{forloop.index0}}" data-position="left"
-                      data-tooltip=""></span>
+
+                <span style="" id="festival{{forloop.index0}}" class="tooltipped"
+                      data-position="right"></span>
+
+                <span class="badge" id="ddlDay{{forloop.index0}}"></span>
+
+                <div class="left-align">
+                    <span class="badge" style="">Days</span>
+                </div>
+
+                <span class="badge chip hide " id="ddl{{forloop.index0}}"></span>
+
             </div>
 
-            <div class="collapsible-body">
+
+            <!--不显示body 增加hide类 防止报错-->
+            <div class="collapsible-body hide">
                 <h5 class="red-text" id="info{{forloop.index0}}"></h5>
             </div>
 

@@ -65,8 +65,10 @@ const convertToDate = (festival, info, i) => {
     let block = false;
     //当前年
     let y = dayjs().year();
-    //此时的事件 可能为多个事件
-    let currentEvent = [];
+    //此时的事件 可能为多个事件 存放的是index
+    let nowEventIndex = [];
+    //明天的事件 存放的是index
+    let tomorrowEventIndex = [];
     Object.getOwnPropertyNames(info).forEach(key => {
         //foreach必须遍历所有 如果day有值 跳过即可
         if (day) return;
@@ -90,7 +92,7 @@ const convertToDate = (festival, info, i) => {
                 //当前时间在事件结束时间前
                 let endBefore = dayjs().isBefore(endEvent, "second");
                 if (startAfter && endBefore) {
-                    currentEvent.push(info);
+                    nowEventIndex.push(i);
                 }
             }
 
@@ -111,14 +113,20 @@ const convertToDate = (festival, info, i) => {
     }
 
     let end = y + "-" + day;
+    let duration = dayjs(end).diff(dayjs(), "day", true);
+    let ddlDay = Math.floor(duration);
+    if (!ddlDay) tomorrowEventIndex.push(i);
+
     return {
-        sort: dayjs(end).diff(dayjs(), "day", true),
+        sort: duration,
+        ddlDay: ddlDay,
         date: day,
         ddl: Deadline(dayjs(), dayjs(end)),
         festival: festival,
         name: info.name,
         info: info.info,
-        currentEventInfo: currentEvent,
+        nowEventIndexArr: nowEventIndex,
+        tomorrowEventIndexArr: tomorrowEventIndex,
         index: i
     };
 };
@@ -129,41 +137,79 @@ const countdown = () => {
 };
 
 const handlerTime = (i) => {
+
+    if (dateInfo[i].ddlDay) {
+        $(".showList" + i).removeClass("hide");
+    }
+
     ddlCSS("#ddl" + i, dateInfo[i].sort);
+    ddlCSS("#ddlDay" + i, dateInfo[i].sort);
+    $("#ddlDay" + i).text(dateInfo[i].ddlDay);
     $("#ddl" + i).text(dateInfo[i].ddl);
     $("#festival" + i).text(dateInfo[i].name);
     //无info无法设置隐藏 除非参考hedgehog
     $("#info" + i).text(dateInfo[i].info);
-    document.getElementById("ddl" + i).setAttribute("data-tooltip", dateInfo[i].date);
+    document.getElementById("festival" + i).setAttribute("data-tooltip", dateInfo[i].date);
 };
+
+const eventNow = () => {
+
+    let currentEventInfo = [];
+    for (let obj of dateInfo) {
+        for (let i = 0; i < obj.nowEventIndexArr.length; ++i) {
+            if (obj.index === obj.nowEventIndexArr[i]) {
+                currentEventInfo.push(obj);
+            }
+        }
+    }
+
+    for (let i = 0; i < currentEventInfo.length; ++i) {
+        $("#showNow" + i).removeClass("hide");
+        $("#nowEvent" + i).text(currentEventInfo[i].name);
+        $("#nowEventInfo" + i).text(currentEventInfo[i].info);
+    }
+
+};
+
+const ddlTimeFormat = (ddl) => {
+    ddl = ddl.replace("0天", "");
+    // ddl = ddl.replace("时", " : ");
+    // ddl = ddl.replace("分", " : ");
+    // ddl = ddl.replace("秒", "");
+    return ddl;
+};
+
+const eventTomorrow = () => {
+
+    let tInfo = [];
+    for (let obj of dateInfo) {
+        for (let i = 0; i < obj.tomorrowEventIndexArr.length; ++i) {
+            if (obj.index === obj.tomorrowEventIndexArr[i]) {
+                tInfo.push(obj);
+            }
+        }
+    }
+
+    for (let i = 0; i < tInfo.length; ++i) {
+        $("#showTomorrow" + i).removeClass("hide");
+        $("#tomorrowEvent" + i).text(tInfo[i].name);
+        $("#tomorrowDDL" + i).text(ddlTimeFormat(tInfo[i].ddl));
+    }
+
+};
+
 const time_beat = () => {
     countdown();
     for (let i = 0; i < dateInfo.length; ++i) {
         handlerTime(i);
     }
+
+    eventNow();
+    eventTomorrow();
+
 };
 
 time_beat();
 console.log(dateInfo);
 setInterval(time_beat, 1000);
-
-const eventNow = () => {
-
-    let nowInfo = dateInfo[dateInfo.length - 1].currentEventInfo;
-
-    console.log("currentEvent==>", nowInfo);
-
-    for (let i = 0; i < nowInfo.length; ++i) {
-        $("#nowEvent" + i).text(nowInfo[i].name);
-        $("#noEventInfo" + i).text(nowInfo[i].info);
-    }
-
-    //暂定最高为5个同时发生的事件
-    for (let i = nowInfo.length; i < 5; ++i) {
-        $("#hide" + i).addClass("hide");
-    }
-};
-
-eventNow();
-
 

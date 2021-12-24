@@ -63,7 +63,8 @@ nav .nav-wrapper a:hover {
 
 .material-tooltip {
     border-radius: 10px;
-    background-color: #77c3c7;
+    background-color: rgba(0, 0, 0, 0.13);
+    color: #000;
 }
 
 .slider .indicators .indicator-item {
