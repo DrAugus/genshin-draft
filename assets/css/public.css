@@ -129,6 +129,10 @@ nav .nav-wrapper a:hover {
     backdrop-filter: blur(10px);
 }
 
+.radius5px {
+    border-radius: 5px;
+}
+
 .radius10px {
     border-radius: 10px;
 }

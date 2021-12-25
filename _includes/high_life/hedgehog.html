@@ -8,6 +8,19 @@
     </div>
 </div>
 
+
+<style>
+    .collapsible-header {
+        border-bottom: 0;
+    }
+    .collapsible-body {
+        border-bottom: 0;
+    }
+    .collapsible.popout > li {
+        margin: 5px 24px
+    }
+</style>
+
 <div class="row">
 
     <h2>小刺猬の推荐</h2>
@@ -17,14 +30,12 @@
         {% for cuisine in site.data.hedgehog.recommend %}
         {% if cuisine.name != nil %}
 
-        <li class="z-depth-2 hoverable">
+        <li class="z-depth-2 hoverable radius10px">
             <div class="collapsible-header current-wish-color-{{i}}">
                 {{cuisine.name}}
             </div>
 
-            {% if cuisine.img != nil or cuisine.info != nil %}
-
-            <div class="collapsible-body">
+            <div class="collapsible-body  {% if cuisine.img == nil and cuisine.info == nil %}hide{% endif %}">
                 {% if cuisine.img != nil %}
                 <div class="card">
 
@@ -42,7 +53,7 @@
                 {% endif %}
             </div>
 
-            {% endif %}
+
         </li>
 
         {% endif %}
@@ -61,7 +72,7 @@
         {% for tea in site.data.hedgehog.tea %}
         {% if tea.name != nil %}
 
-        <li class="z-depth-2 hoverable">
+        <li class="z-depth-2 hoverable radius10px">
             <div class="collapsible-header current-wish-color-{{i}}">
                 {{tea.name}}
             </div>
@@ -106,7 +117,7 @@
         {% for block in site.data.hedgehog.block %}
         {% if block.name != nil %}
 
-        <li class="z-depth-2 hoverable">
+        <li class="z-depth-2 hoverable radius10px">
             <div class="collapsible-header current-wish-color-{{i}}">
                 {{block.name}}
             </div>

@@ -46,14 +46,14 @@
             <div class="collapsible-header">
                 <div> {{blackFood.name}}</div>
             </div>
-            {% if blackFood.reason != nil or blackFood.food != nil %}
-            <div class="collapsible-body">
+
+            <div class="collapsible-body {% if blackFood.reason == nil and blackFood.food == nil %}hide{% endif %}">
                 {% if blackFood.reason != nil %}
                 <p>拉黑原因：{{blackFood.reason}}</p>{% endif %}
                 {% if blackFood.food != nil %}
                 <p>拉黑菜品：{{blackFood.food}}</p>{% endif %}
             </div>
-            {% endif %}
+
         </li>
         {% endif %}
         {% endfor %}
