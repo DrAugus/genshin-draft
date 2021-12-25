@@ -136,3 +136,7 @@ nav .nav-wrapper a:hover {
 .radius10px {
     border-radius: 10px;
 }
+
+.collapsible.popout > li {
+    margin: 3px 24px
+}
