@@ -52,7 +52,7 @@ tea:
     restaurant: 沪上阿姨
     info:
     img:
-      - yangzhiganlu1.jpg
+      - tea/2.jpg
 block:
   - name: 古早蛋糕 芝士味
     reason: 不好吃 有点咸

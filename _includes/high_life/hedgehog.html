@@ -114,3 +114,46 @@
     </ul>
 
 </div>
+
+
+<div class="row">
+
+    <h1>小刺猬の日常</h1>
+
+    <!--FOOD-->
+    {% for i in (0..10) %}
+    <div class="col s3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img src="/assets/res/hedgehog/food/{{i}}.jpg" loading="lazy">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!--TEA-->
+    {% for i in (0..2) %}
+    <div class="col s3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img src="/assets/res/hedgehog/tea/{{i}}.jpg" loading="lazy">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!--SNACKS-->
+    {% for i in (0..1) %}
+    <div class="col s3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img src="/assets/res/hedgehog/snacks/{{i}}.jpg" loading="lazy">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
