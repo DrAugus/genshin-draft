@@ -13,9 +13,11 @@
     .collapsible-header {
         border-bottom: 0;
     }
+
     .collapsible-body {
         border-bottom: 0;
     }
+
     .collapsible.popout > li {
         margin: 5px 24px
     }
@@ -77,19 +79,19 @@
                 {{tea.name}}
             </div>
 
-            {% if tea.img != nil or tea.info != nil %}
-
-            <div class="collapsible-body">
+            <div class="collapsible-body {% if tea.img == nil and tea.info == nil and tea.restaurant == nil %}hide{% endif %}">
                 {% if tea.img != nil %}
                 <div class="card">
-
                     {% for src in tea.img %}
                     <div class="card-image waves-effect waves-block waves-light hoverable">
                         <img class="activator" src="/assets/res/hedgehog/{{src}}">
                     </div>
                     {% endfor %}
-
                 </div>
+                {% endif %}
+
+                {% if tea.restaurant != nil %}
+                {{tea.restaurant}}
                 {% endif %}
 
                 {% if tea.info != nil %}
@@ -97,7 +99,7 @@
                 {% endif %}
             </div>
 
-            {% endif %}
+
         </li>
 
         {% endif %}
@@ -142,19 +144,29 @@
     <h2>小刺猬の日常</h2>
 
     <!--FOOD-->
-    {% for i in (0..10) %}
-    <div class="col s3">
+    {% for i in (0..11) %}
+    <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img src="/assets/res/hedgehog/food/{{i}}.jpg" loading="lazy">
             </div>
+
+            {% for dailyFood in site.data.hedgehog.daily.food %}
+            {% if i == forloop.index0 %}
+            {% if dailyFood[1] != nil %}
+            <div class="card-content valign-wrapper center-align activator">
+                <span class="activator grey-text text-darken-1">{{dailyFood[1]}}</span>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     {% endfor %}
 
     <!--TEA-->
     {% for i in (0..2) %}
-    <div class="col s3">
+    <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img src="/assets/res/hedgehog/tea/{{i}}.jpg" loading="lazy">
@@ -165,7 +177,7 @@
 
     <!--SNACKS-->
     {% for i in (0..1) %}
-    <div class="col s3">
+    <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img src="/assets/res/hedgehog/snacks/{{i}}.jpg" loading="lazy">

@@ -53,7 +53,25 @@ tea:
     info:
     img:
       - tea/2.jpg
+  - name: 豆乳芝士奶豆腐
+    restaurant: 茶乙己
 block:
   - name: 古早蛋糕 芝士味
     reason: 不好吃 有点咸
 
+daily:
+  food:
+    0:
+    1:
+    2:
+    3:
+    4:
+    5:
+    6:
+    7:
+    8:
+    9:
+    10:
+    11: 土豆泥好吃 泡菜不好吃
+  snacks:
+  tea:
