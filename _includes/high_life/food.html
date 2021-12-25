@@ -11,14 +11,19 @@
 
 
 <div class="row">
-    <h1>外卖推荐</h1>
+    <h2>外卖推荐</h2>
     <ul class="collapsible popout fa-ul" data-collapsible="accordion">
         {% for bestFood in site.data.food-list.bestFood %}
         {% if bestFood.name != nil %}
-        <li class="z-depth-2 hoverable" style="background-color: #fff0">
-            <!--        <i class="fa-li fas fa-hamburger"></i>-->
-            <div class="collapsible-header">
-                <div class="chip stars-{{bestFood.satisfaction}}"> {{bestFood.name}}</div>
+        <li class="hoverable">
+            <div class="collapsible-header stars-{{bestFood.satisfaction}}">
+                <div> {{bestFood.name}}</div>
+                <span class="badge right">
+                        {% for food in bestFood.food %}
+                        ￥{{food.price}}
+                        {% break %}
+                        {% endfor %}
+                    </span>
             </div>
             <div class="collapsible-body">
                 {% for food in bestFood.food %}
@@ -38,20 +43,54 @@
 
 <!--block-->
 <div class="row">
-    <h1>拉黑商家 - 非常难吃</h1>
+    <h2>拉黑商家 - 非常难吃</h2>
     <ul class="collapsible popout fa-ul" data-collapsible="accordion">
         {% for blackFood in site.data.food-list.blackFood %}
         {% if blackFood.name != nil %}
-        <li class="z-depth-2 hoverable" style="background-color: #fff0">
+        <li class="hoverable">
             <div class="collapsible-header">
                 <div> {{blackFood.name}}</div>
             </div>
 
             <div class="collapsible-body {% if blackFood.reason == nil and blackFood.food == nil %}hide{% endif %}">
-                {% if blackFood.reason != nil %}
-                <p>拉黑原因：{{blackFood.reason}}</p>{% endif %}
-                {% if blackFood.food != nil %}
-                <p>拉黑菜品：{{blackFood.food}}</p>{% endif %}
+                {% if blackFood.reason != nil %}<p>拉黑原因：{{blackFood.reason}}</p>{% endif %}
+                {% if blackFood.food != nil %}<p>拉黑菜品：{{blackFood.food}}</p>{% endif %}
+            </div>
+
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<!--店里吃-->
+<div class="row">
+    <h2>去店里吃</h2>
+    <ul class="collapsible popout fa-ul" data-collapsible="accordion">
+        {% for info in site.data.food-list.restaurant %}
+        {% if info.name != nil %}
+        <li class="hoverable">
+            <div class="collapsible-header">
+                <div> {{info.name}}</div>
+            </div>
+
+            <div class="collapsible-body {% if info.recommend == nil and info.not-recommend == nil %}hide{% endif %}">
+                {% if info.recommend != nil %}
+                <p>
+                    推荐菜品：
+                    {% for recommend in info.recommend %}
+                    {{recommend}}，
+                    {% endfor %}
+                </p>
+                {% endif %}
+                {% if info.not-recommend != nil %}
+                <p>
+                    拉黑菜品：
+                    {% for not-recommend in info.not-recommend %}
+                    {{not-recommend}}，
+                    {% endfor %}
+                </p>
+                {% endif %}
             </div>
 
         </li>
