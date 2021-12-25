@@ -6,16 +6,16 @@ css: index.css
 <div class="slider fullscreen">
     <ul class="slides">
 
-        {% assign img = "0.jpg,1.png,4.jpg,2.jpg" | split: "," %}
+        {% assign img = "home/0.jpg,xy/23.jpg,xy/4.jpg,home/2.jpg" | split: "," %}
         {% assign info1 = "冲冲冲,谁是小刺猬捏!,多情自古空余恨,今晚我就要远航" | split: "," %}
         {% assign info2 = "Here's our small slogan.,🦔,「人生若只如初见 何事秋风悲画扇」,我有快乐和智慧的桨" | split: "," %}
-        {% assign pos = "center-align, right-align, left-align, center-align" | split: "," %}
+        {% assign pos = "right-align, center-align, left-align, center-align" | split: "," %}
         {% assign color = "black-text, black-text, black-text, grey-text text-lighten-3" | split: "," %}
 
         {% for i in (1..2) %}
 
         <li style="opacity: 1; transform: translateX(0px) translateY(0px);">
-            <img src="{{img[i] | prepend: '/assets/res/home/' }}" loading="lazy">
+            <img src="{{img[i] | prepend: '/assets/res/' }}" loading="lazy">
             <div class="caption {{pos[i]}}" style="opacity: 0.6498; transform: translateX(0px) translateY(-35.02px);">
                 <h3 class="{{color[i]}}">{{info1[i]}}</h3>
                 <h5 class="light {{color[i]}} right" style="writing-mode:vertical-rl">{{info2[i]}}</h5>

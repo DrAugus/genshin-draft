@@ -127,7 +127,8 @@ nav .nav-wrapper a:hover {
 /*磨砂玻璃效果*/
 .frosted {
     backdrop-filter: blur(10px);
-    background: inherit;
-    overflow: hidden;
+}
+
+.radius10px {
     border-radius: 10px;
 }
