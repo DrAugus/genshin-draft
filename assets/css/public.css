@@ -123,3 +123,11 @@ nav .nav-wrapper a:hover {
         -moz-transform: scale(1.24)
     }
 }
+
+/*磨砂玻璃效果*/
+.frosted {
+    backdrop-filter: blur(10px);
+    background: inherit;
+    overflow: hidden;
+    border-radius: 10px;
+}
