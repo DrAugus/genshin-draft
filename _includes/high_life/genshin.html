@@ -119,11 +119,11 @@
 <!--当前祈愿-->
 <div class="col s12">
 
-    <h1 id="noWishInfo"></h1>
+    <h2 id="noWishInfo"></h2>
     <div class="no-wish">
 
         <div class="row ">
-            <h2 class="center">旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h2>
+            <h3 class="center">旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h3>
             <ul class="collapsible popout" data-collapsible="accordion">
 
                 <li style="border-radius: 5px;" class="z-depth-2 hoverable">
@@ -158,7 +158,7 @@
                     <img id="showCurrentWishCharacter{{i}}" loading="lazy">
                     <div class="caption left-align">
                         <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
-                        <h3 class="light current-wish-color-{{i}}" id="currentWishText{{i}}"></h3>
+                        <h4 class="light current-wish-color-{{i}}" id="currentWishText{{i}}"></h4>
                     </div>
                 </li>
                 {% endfor %}
@@ -172,7 +172,7 @@
 
 <!--版本答案-->
 <div class="row">
-    <h1>版本答案 队伍推荐</h1>
+    <h2>版本答案 队伍推荐</h2>
     <ul class="collapsible popout" data-collapsible="accordion">
         {% for party in site.data.genshin-party-setup %}
         <li class="z-depth-2 hoverable" style="border-radius: 5px;background-color: rgba(255,255,250,0)!important;">
@@ -203,7 +203,7 @@
 <!--即将发布-->
 <div class="row">
 
-    <h1>即将发布</h1>
+    <h2>即将发布</h2>
 
     <span id="futureWishInfo"></span>
     <div class="future-wish">
@@ -215,7 +215,7 @@
                     <img id="futureWishBG{{i}}" loading="lazy">
 
                     <div class="caption left-align">
-                        <h3 class="light future-wish-color-{{i}}" id="futureWish{{i}}"></h3>
+                        <h4 class="light future-wish-color-{{i}}" id="futureWish{{i}}"></h4>
                         <h5 class="future-wish-color-{{i}} " id="futureWishText{{i}}"></h5>
                         <img class="z-depth-0 responsive-img" style="display: none" id="futureElements{{i}}"
                              loading="lazy">
@@ -233,7 +233,7 @@
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
 
-<h1>观月推荐</h1>
+<h2>观月推荐</h2>
 
 <div class="row">
     {% for artifacts in site.data.genshin-artifacts %}
@@ -250,7 +250,8 @@
 
                 {% if artifacts[1].main.sands != nil or artifacts[1].main.goblet != nil
                 or artifacts[1].main.circlet != nil %}
-                主词条：沙漏【{{artifacts[1].main.sands}}】 杯子【{{artifacts[1].main.goblet}}】 头【{{artifacts[1].main.circlet}}】<br>
+                主词条：沙漏【{{artifacts[1].main.sands}}】 杯子【{{artifacts[1].main.goblet}}】
+                头【{{artifacts[1].main.circlet}}】<br>
                 {% endif %}
 
                 {% if artifacts[1].sub != "" %} 副词条：{{artifacts[1].sub}}<br>{% endif %}
@@ -262,7 +263,7 @@
     {% endfor %}
 </div>
 
-<h1>全部角色</h1>
+<h2>全部角色</h2>
 <div class="row">
     {% for characters in site.data.genshin-characters %}
     <div class="col s4 m3 l1">
