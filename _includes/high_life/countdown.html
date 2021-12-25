@@ -24,78 +24,48 @@
 
 <style>
 
-    span.badge {
-        height: auto;
-    }
-
-    li::after {
-        margin: -30px;
-        filter: blur(20px);
-    }
-
     .collapsible-header {
         border-bottom: 0;
+    }
 
+    .collapsible-body {
+        border-bottom: 0;
     }
 
     .collapsible.popout > li {
         margin: 5px 24px
     }
 
-    .description {
-        border-radius: 5px;
-        background: rgba(255, 255, 255, .3);
-        overflow: hidden;
-    }
-
-    .description::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        filter: blur(20px);
-        z-index: -1;
-        margin: -30px;
-    }
 
 </style>
 
 
-<div class="row">
-    <ul class="collapsible popout" data-collapsible="accordion">
+<div class="row" style="background-image: url(/assets/res/xy/32.jpg);background-size: contain">
+    <div class="col s12">
 
-        {% for info in site.data.countdown %}
+        <ul class="collapsible popout" data-collapsible="accordion">
 
-        <!--index起始为1 index0起始为0 https://shopify.dev/api/liquid/objects/for-loops-->
-        <!-- data-position can be : bottom, top, left, or right -->
-        <!-- data-tooltip defines the tooltip text -->
-        <li class="description hoverable hide showList{{forloop.index0}}">
-            <div class="collapsible-header">
-
-                <span style="" id="festival{{forloop.index0}}" class="tooltipped"
-                      data-position="right"></span>
-
-                <span class="badge" id="ddlDay{{forloop.index0}}"></span>
-
-                <div class="left-align">
-                    <span class="badge" style="">Days</span>
+            {% for info in site.data.countdown %}
+            <!--index起始为1 index0起始为0 https://shopify.dev/api/liquid/objects/for-loops-->
+            <!-- data-position can be : bottom, top, left, or right -->
+            <!-- data-tooltip defines the tooltip text -->
+            <li class="hoverable hide showList{{forloop.index0}} frosted">
+                <div class="collapsible-header">
+                    <span id="festival{{forloop.index0}}" class="tooltipped white-text" data-position="right"></span>
+                    <span class="badge" id="ddlDay{{forloop.index0}}"></span>
+                    <div class="left-align">
+                        <span class="badge">Days</span>
+                    </div>
+                    <span class="badge chip hide" id="ddl{{forloop.index0}}"></span>
                 </div>
 
-                <span class="badge chip hide " id="ddl{{forloop.index0}}"></span>
+                <!--不显示body 增加hide类 防止报错-->
+                <div class="collapsible-body">
+                    <h5 class="white-text" id="info{{forloop.index0}}"></h5>
+                </div>
+            </li>
+            {% endfor %}
 
-            </div>
-
-
-            <!--不显示body 增加hide类 防止报错-->
-            <div class="collapsible-body hide">
-                <h5 class="red-text" id="info{{forloop.index0}}"></h5>
-            </div>
-
-        </li>
-
-        {% endfor %}
-
-    </ul>
+        </ul>
+    </div>
 </div>
