@@ -1,6 +1,6 @@
 thoma:
   name: 托马
-  weapon:
+  weapons:
   artifacts:
     - 千岩固牢2件
     - 绝缘之旗印2件
@@ -14,7 +14,9 @@ thoma:
   tips: 如果选择生命值武器，那么时之沙主属性选择充能效率；如果选择充能武器，那么时之沙主属性选择生命值。
 kujou_sara:
   name: 九条裟罗
-  weapon:
+  weapons:
+    - 天空之翼
+    - 祭礼弓
   artifacts:
     - 绝缘之旗印4件
   main:
@@ -29,7 +31,7 @@ kujou_sara:
   tips:
 xiangling:
   name: 香菱
-  weapon:
+  weapons:
   artifacts:
     - 绝缘之旗印4件
   main:
@@ -40,7 +42,7 @@ xiangling:
   tips:
 zhongli:
   name: 钟离
-  weapon:
+  weapons:
   artifacts:
     - 千岩固牢2件
     - 宗室2件
@@ -56,7 +58,7 @@ zhongli:
   tips:
 bennett:
   name: 班尼特
-  weapon:
+  weapons:
   artifacts:
     - 宗室4件
   main:
@@ -69,7 +71,7 @@ bennett:
   tips:
 arataki_itto:
   name: 荒泷一斗
-  weapon:
+  weapons:
   artifacts:
     - 华冠梦醒形骸记4件
   main:
