@@ -30,16 +30,16 @@
             <div class="timeline-wish" style="z-index: 3">
                 <div style="position: absolute">
 
-                    {% for wish in site.data.genshin-wish.characters %}
+                    {% for wish in site.data.genshin.wish.characters %}
 
                     {% assign i = forloop.index0 %}
 
-                    {% for characters in site.data.genshin-characters %}
+                    {% for characters in site.data.genshin.characters %}
                     {% if characters[1].id == wish.wish5star[0] %}
 
                     <!--颜色控制-->
                     {% assign eleColor = "#fff0" %}
-                    {% for eleInfo in site.data.genshin-ele-color %}
+                    {% for eleInfo in site.data.genshin.ele-color %}
                     {% if eleInfo[0] == characters[1].ele %}
                     {% assign eleColor = eleInfo[1] | prepend: '#' %}
                     {% break %}
@@ -171,7 +171,7 @@
 <div class="row">
     <h2>版本答案 队伍推荐</h2>
     <ul class="collapsible popout" data-collapsible="accordion">
-        {% for party in site.data.genshin-party-setup %}
+        {% for party in site.data.genshin.party-setup %}
         <li class="z-depth-2 hoverable radius5px">
             <div class="collapsible-header">
                 <span>{{party.name}}</span>
@@ -233,7 +233,7 @@
 <h2>观月推荐</h2>
 
 <div class="row">
-    {% for artifacts in site.data.genshin-artifacts-collocation %}
+    {% for artifacts in site.data.genshin.artifacts-collocation %}
     <div class="col s12 m6 l4 ">
         <div class="card ">
             <div class="card-image waves-effect waves-block waves-light hoverable">
@@ -262,7 +262,7 @@
 
 <h2>全部角色</h2>
 <div class="row">
-    {% for characters in site.data.genshin-characters %}
+    {% for characters in site.data.genshin.characters %}
     <div class="col s4 m3 l1">
         <div class="card radius10px">
             <!--设置背景时发现高度为0 增加 padding-bottom 即可显示-->
@@ -279,7 +279,7 @@
             </div>
 
 
-            {% for eleInfo in site.data.genshin-ele-color %}
+            {% for eleInfo in site.data.genshin.ele-color %}
             {% if eleInfo[0] == characters[1].ele %}
             <span class="activator center valign-wrapper" style="color:{{eleInfo[1]}}"> {{characters[1].name}}</span>
             {% break %}
@@ -295,7 +295,7 @@
 <!--滚动版全部角色-->
 <div class="row">
     <div class="carousel">
-        {% for characters in site.data.genshin-characters %}
+        {% for characters in site.data.genshin.characters %}
         {% if characters[0] == "shenhe" %}
         {% break %}
         {% endif %}
