@@ -140,7 +140,7 @@
     <h2>小刺猬の日常</h2>
 
     <!--FOOD-->
-    {% for i in (0..11) %}
+    {% for i in (0..12) %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
@@ -161,23 +161,43 @@
     {% endfor %}
 
     <!--TEA-->
-    {% for i in (0..2) %}
+    {% for i in (0..3) %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img src="/assets/res/hedgehog/tea/{{i}}.jpg" loading="lazy">
             </div>
+
+            {% for dailyTea in site.data.hedgehog.daily.tea %}
+            {% if i == forloop.index0 %}
+            {% if dailyTea[1] != nil %}
+            <div class="card-content valign-wrapper center-align activator">
+                <span class="activator grey-text text-darken-1">{{dailyTea[1]}}</span>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     {% endfor %}
 
-    <!--SNACKS-->
-    {% for i in (0..1) %}
+    <!--SNACK-->
+    {% for i in (0..2) %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img src="/assets/res/hedgehog/snacks/{{i}}.jpg" loading="lazy">
+                <img src="/assets/res/hedgehog/snack/{{i}}.jpg" loading="lazy">
             </div>
+
+            {% for dailySnack in site.data.hedgehog.daily.snack %}
+            {% if i == forloop.index0 %}
+            {% if dailySnack[1] != nil %}
+            <div class="card-content valign-wrapper center-align activator">
+                <span class="activator grey-text text-darken-1">{{dailySnack[1]}}</span>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     {% endfor %}
