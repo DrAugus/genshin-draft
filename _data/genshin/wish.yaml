@@ -343,6 +343,18 @@ characters:
 
     name2: 「花坂豪快」
 
+  - name:
+    image: 1,
+    shortName: Shenhe,
+    start: 2022-01-05 11:00:00,
+    end: 2022-01-25 15:59:59,
+    color: 2BE3F8,
+    wish5star:
+      - shenhe
+    wish4star:
+      - yunjin
+    name2: 「出尘入世」
+
   - name: Invitation to Mundane Life,
     image: 2,
     shortName: Xiao,
@@ -352,33 +364,30 @@ characters:
     version: 2.4,
     wish5star:
       - xiao
-
+    wish4star:
+      - yunjin
     name2: 「烟火之邀」
 
+  - name: Gentry of Hermitage,
+    image: 1,
+    shortName: Zhongli,
+    start: 2022-01-25 18:00:00,
+    end: 2022-02-14 15:59:59,
+    color: D1A55C,
+    wish5star:
+      - zhongli
+    name2: 「陵薮市朝」
   - name: Adrift in the Harbor,
     image: 1,
     shortName: Ganyu,
-    start: 2022-01-05 11:00:00,
-    end: 2022-01-25 15:59:59,
+    start: 2022-01-25 18:00:00,
+    end: 2022-02-14 15:59:59,
     color: 6994DF,
     wish5star:
       - ganyu
-
     name2: 「浮生孰来」
 
-  - name:
-    image: 1,
-    shortName: Shenhe,
-    start: 2022-01-25 18:00:00,
-    end: 2022-02-14 15:59:59,
-    color: 2BE3F8,
-    wish5star:
-      - shenhe
 
-    wish4star:
-      - yunjin
-
-    name2: 「孤辰茕怀」
 
 
 weapons:
