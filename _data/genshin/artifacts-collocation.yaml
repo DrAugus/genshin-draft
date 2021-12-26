@@ -1,9 +1,12 @@
+# weapon 靠前的为 最推荐
+# artifact 靠前的为 最推荐
+# sub 靠前的为 最推荐
 thoma:
   name: 托马
   weapons:
+  talent:
   artifacts:
-    - 千岩固牢2件
-    - 绝缘之旗印2件
+    - 千岩固牢2件 + 绝缘之旗印2件
   main:
     sands: 生命值/充能效率
     goblet: 生命值/充能效率
@@ -17,10 +20,16 @@ kujou_sara:
   weapons:
     - 天空之翼
     - 祭礼弓
+    - 绝弦
+  talent:
+    - 1
+    - 8
+    - 8
   artifacts:
+    - 宗室4件
     - 绝缘之旗印4件
   main:
-    sands: 攻击
+    sands: 充能
     goblet: 雷伤
     circlet: 暴击/暴伤
   sub:
@@ -32,6 +41,7 @@ kujou_sara:
 xiangling:
   name: 香菱
   weapons:
+  talent:
   artifacts:
     - 绝缘之旗印4件
   main:
@@ -43,9 +53,9 @@ xiangling:
 zhongli:
   name: 钟离
   weapons:
+  talent:
   artifacts:
-    - 千岩固牢2件
-    - 宗室2件
+    - 千岩固牢2件 + 宗室2件
   main:
     sands: 生命值
     goblet: 岩伤
@@ -59,6 +69,7 @@ zhongli:
 bennett:
   name: 班尼特
   weapons:
+  talent:
   artifacts:
     - 宗室4件
   main:
@@ -72,6 +83,7 @@ bennett:
 arataki_itto:
   name: 荒泷一斗
   weapons:
+  talent:
   artifacts:
     - 华冠梦醒形骸记4件
   main:
