@@ -1,3 +1,72 @@
+:root {
+    --ele-denro: #98e628;
+    --ele-geo: #e2b032;
+    --ele-electro: #fca7ff;
+    --ele-hydro: #03ddfe;
+    --ele-pyro: #fa5d3e;
+    --ele-anemo: #4cf3b6;
+    --ele-cryo: #a6fdfd;
+}
+
+/*元素背景色*/
+.ele-dendro {
+    background-color: var(--ele-denro)
+}
+
+.ele-geo {
+    background-color: var(--ele-geo)
+}
+
+.ele-electro {
+    background-color: var(--ele-electro)
+}
+
+.ele-hydro {
+    background-color: var(--ele-hydro)
+}
+
+.ele-pyro {
+    background-color: var(--ele-pyro)
+}
+
+.ele-anemo {
+    background-color: var(--ele-anemo)
+}
+
+.ele-cryo {
+    background-color: var(--ele-cryo)
+}
+
+/*元素文本色*/
+.ele-text-dendro {
+    color: var(--ele-denro)
+}
+
+.ele-text-geo {
+    color: var(--ele-geo)
+}
+
+.ele-text-electro {
+    color: var(--ele-electro)
+}
+
+.ele-text-hydro {
+    color: var(--ele-hydro)
+}
+
+.ele-text-pyro {
+    color: var(--ele-pyro)
+}
+
+.ele-text-anemo {
+    color: var(--ele-anemo)
+}
+
+.ele-text-cryo {
+    color: var(--ele-cryo)
+}
+
+
 .future-info {
     /*background-position: 125% 20%;*/
     border-radius: 10px;
@@ -36,6 +105,7 @@
     min-width: 1px;
     position: relative;
     margin-left: 29px;
+    z-index: -1
 }
 
 .timeline-today-line-pos {
@@ -45,6 +115,7 @@
     min-width: 2px;
     height: calc(100% - 10px);
     top: -25px;
+    z-index: 2;
 }
 
 .timeline-index {
@@ -121,18 +192,49 @@
     text-align: left;
 }
 
+.timeline-character-text {
+    font-size: 4rem;
+    margin-left: 10px;
+}
 
-div.event-item {
+.event-item {
     position: absolute;
     border-radius: 20px;
     opacity: 1;
     right: 0;
     margin-top: 32px;
     height: 128px;
-    background: linear-gradient(to left, rgb(255 255 255), rgb(0 0 0 / 0%)) no-repeat;
 }
 
-div.event-img {
+.event-item-background-dendro {
+    background: linear-gradient(to left, #98e628, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-item-background-geo {
+    background: linear-gradient(to left, #e2b032, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-item-background-electro {
+    background: linear-gradient(to left, #fca7ff, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-item-background-hydro {
+    background: linear-gradient(to left, #03ddfe, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-item-background-pyro {
+    background: linear-gradient(to left, #fa5d3e, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-item-background-anemo {
+    background: linear-gradient(to left, #4cf3b6, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-item-background-cryo {
+    background: linear-gradient(to left, #a6fdfd, rgb(0 0 0 / 0%)) no-repeat;
+}
+
+.event-img {
     position: absolute;
     margin-left: 165px;
     border-radius: 20px;
@@ -144,14 +246,14 @@ div.event-img {
     background-size: 100%;
 }
 
-div.event-wish-color {
+.event-wish-color {
     width: 100%;
     height: 100%;
     position: absolute;
     background: linear-gradient(to left, rgb(255 255 255 / 80%), rgba(0, 0, 0, 0)) no-repeat;
 }
 
-div.timeline-scroll-x {
+.timeline-scroll-x {
     width: auto;
     justify-content: space-between;
     white-space: nowrap;
@@ -180,19 +282,21 @@ div.timeline-scroll-x {
     /*background: rgba(0, 0, 0, 0.1);*/
 }
 
-div.timeline-month {
+.timeline-month {
     display: flex;
     top: 20px;
 }
 
-div.timeline-day {
+.timeline-day {
     display: flex;
     height: 350px;
+    position: relative;
 }
 
-div.timeline-wish {
+.timeline-wish {
     display: flex;
-    position: relative;
+    position: absolute;
+    z-index: 3
 }
 
 -webkit-scrollbar {
@@ -206,4 +310,19 @@ div.timeline-wish {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow: hidden;
+}
+
+
+.character-avatar {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 100%;
+    border-radius: 10px;
+}
+
+.monster-avatar {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 100%;
+    border-radius: 10px;
 }

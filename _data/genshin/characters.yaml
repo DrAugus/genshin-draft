@@ -458,3 +458,12 @@ shenlilingren:
   city: Inazuma
   ele: cryo
 
+lady_yae:
+  id: lady_yae
+  name: 八重神子
+  element: 雷
+  star: 5
+  event-exclusive: true
+  intro-content: 我的旧友啊，因为没办法边吃甜点心边看小说，气的内心崩溃，又哭又闹，呜呜呜呜，好可怜啊~
+  city: Inazuma
+  ele: electro

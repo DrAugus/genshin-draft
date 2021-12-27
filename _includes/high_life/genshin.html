@@ -23,70 +23,53 @@
 
         <div class="timeline-day">
 
-            <div class="timeline-today-line-pos" id="findNowPos" style="z-index: 2;">
-                <div class="absolute" id="currentTime"></div>
+            <div class="timeline-today-line-pos" id="findNowPos">
+                <div id="currentTime"></div>
             </div>
 
-            <div class="timeline-wish" style="z-index: 3">
-                <div style="position: absolute">
+            <div class="timeline-wish">
 
-                    {% for wish in site.data.genshin.wish.characters %}
+                {% for wish in site.data.genshin.wish.characters %}
+                {% assign i = forloop.index0 %}
 
-                    {% assign i = forloop.index0 %}
-
-                    {% for characters in site.data.genshin.characters %}
-                    {% if characters[1].id == wish.wish5star[0] %}
-
-                    <!--颜色控制-->
-                    {% assign eleColor = "#fff0" %}
-                    {% for eleInfo in site.data.genshin.ele-color %}
-                    {% if eleInfo[0] == characters[1].ele %}
-                    {% assign eleColor = eleInfo[1] | prepend: '#' %}
-                    {% break %}
-                    {% endif %}
-                    {% endfor %}
-                    <!--颜色控制-->
-
-                    <div class="card event-item event-item-{{i}} hide" style="background-color: {{eleColor}}">
-                        <div class="card-image waves-effect waves-block waves-light " style="height: 128px">
-                            <div class="event-img responsive-img activator"
-                                 style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
-                            </div>
-                            <span class="left-align" style="font-size: 4rem; margin-left: 10px; color: white">
-                                {{characters[1].name}}
-                            </span>
+                {% for characters in site.data.genshin.characters %}
+                {% if characters[1].id == wish.wish5star[0] %}
+                <div class="card event-item event-item-{{i}} event-item-background-{{characters[1].ele}} hide">
+                    <div class="card-image waves-effect waves-block waves-light activator" style="height: 100%">
+                        <div class="event-img responsive-img "
+                             style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
                         </div>
+                        <span class="left-align timeline-character-text ele-text-{{characters[1].ele}}">{{characters[1].name}}</span>
+                    </div>
 
-                        <div class="card-reveal">
-                            <span class="card-title" style="color: {{eleColor}}">
+                    <div class="card-reveal">
+                            <span class="card-title ele-text-{{characters[1].ele}}">
                                 <i class="material-icons right">close</i>
                                 {{wish.name}}-{{wish.shortName}}
                             </span>
-                            <!--downcase转换小写 并用_替换空格 append其他标记-->
-                            <img alt="" loading="lazy"
-                                 src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
+                        <!--downcase转换小写 并用_替换空格 append其他标记-->
+                        <img alt="" loading="lazy"
+                             src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
 
-                            <p style="color: {{eleColor}}"> {{characters[1].intro-content}}</p>
+                        <p class="ele-text-{{characters[1].ele}}">{{characters[1].intro-content}}</p>
 
-                            <button class="btn waves-effect waves-light" style="background-color: {{eleColor}}">
-                                <i class="material-icons">share</i>
-                            </button>
-                            <a class="right" style="color:{{eleColor}}" href="#" target="_blank">官方信息:TODO接入href</a>
-                        </div>
-
+                        <button class="btn waves-effect waves-light ele-{{characters[1].ele}}">
+                            <i class="material-icons">share</i>
+                        </button>
+                        <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
                     </div>
-
-                    {% break %}
-                    {% endif %}
-                    {% endfor %}
-
-                    {% endfor %}
-
                 </div>
+
+                {% break %}
+                {% endif %}
+                {% endfor %}
+
+                {% endfor %}
+
             </div>
 
             {% for i in (0..lenAllDays) %}
-            <div class="timeline-wrapper left-day-{{i}} hide" style="z-index: -1">
+            <div class="timeline-wrapper left-day-{{i}} hide">
                 <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
             </div>
             {% endfor %}
@@ -96,7 +79,7 @@
 </div>
 
 <!--语音暂不显示-->
-<div style="display: none">
+<div class="hide">
     <div class="col s12">
         AUTOPLAY<p id="hutao-text"></p>
         <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
@@ -127,20 +110,15 @@
             <ul class="collapsible popout" data-collapsible="accordion">
 
                 <li class="z-depth-2 hoverable radius5px">
-                    <div class="collapsible-header">
-                        祈愿倒计时：<span id="deadline"></span>
-                    </div>
+                    <div class="collapsible-header">祈愿倒计时：<span id="deadline"></span></div>
                     <div class="collapsible-body hide"></div>
                 </li>
                 <li class="z-depth-2 hoverable radius5px">
-                    <div class="collapsible-header">
-                        当前时间为：<span id="time_str"></span>
-                    </div>
+                    <div class="collapsible-header">当前时间为：<span id="time_str"></span></div>
                     <div class="collapsible-body hide"></div>
                 </li>
                 <li class="z-depth-2 hoverable radius5px">
-                    <div class="collapsible-header">
-                        当前祈愿周期为：
+                    <div class="collapsible-header">当前祈愿周期为：
                         <span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span>
                     </div>
                     <div class="collapsible-body hide"></div>
@@ -162,9 +140,7 @@
             </ul>
         </div>
 
-
     </div>
-
 </div>
 
 <!--版本答案-->
@@ -215,7 +191,7 @@
                     <div class="caption {{pos[forloop.index0]}}">
                         <h4 class="light future-wish-color-{{i}}" id="futureWish{{i}}"></h4>
                         <h5 class="future-wish-color-{{i}}" id="futureWishText{{i}}"></h5>
-                        <img class="z-depth-0 responsive-img" style="display: none" id="futureElements{{i}}"
+                        <img class="z-depth-0 responsive-img hide" id="futureElements{{i}}"
                              loading="lazy">
                     </div>
                 </li>
@@ -223,9 +199,7 @@
             </ul>
         </div>
 
-
     </div>
-
 </div>
 
 <!--空行分割-->
@@ -261,33 +235,17 @@
     {% endfor %}
 </div>
 
-<h2>全部角色</h2>
+<h2>原神——全部角色</h2>
 <div class="row">
     {% for characters in site.data.genshin.characters %}
     <div class="col s4 m3 l1">
         <div class="card radius10px">
-            <!--设置背景时发现高度为0 增加 padding-bottom 即可显示-->
-            <!--没有找到角色图片 用派蒙-->
-            <div class="card-image waves-effect waves-block waves-light hoverable"
-                 style="background-image: url('/assets/res/genshin-impact/characters/{{characters[1].id}}.png'),url('/assets/res/genshin-impact/characters/paimon_faq.png');
-                 background-repeat: no-repeat;
-                 background-position: center;
-                 padding-bottom:100%;
-                 border-radius:10px">
-                <div style="width: 30%">
-                    <img src="/assets/res/genshin-impact/elements/{{characters[1].ele}}.png" loading="lazy">
-                </div>
+            <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
+            <div class="card-image waves-effect waves-block waves-light hoverable character-avatar"
+                 style="background-image: url('/assets/res/genshin-impact/characters/{{characters[1].id}}.png');">
+                <!--                <img src="/assets/res/genshin-impact/elements/{{characters[1].ele}}.png" loading="lazy">-->
+                <span class=" center-align valign-wrapper ele-text-{{characters[1].ele}}"> {{characters[1].name}}</span>
             </div>
-
-
-            {% for eleInfo in site.data.genshin.ele-color %}
-            {% if eleInfo[0] == characters[1].ele %}
-            <span class="activator center valign-wrapper" style="color:{{eleInfo[1]}}"> {{characters[1].name}}</span>
-            {% break %}
-            {% endif %}
-            {% endfor %}
-
-
         </div>
     </div>
     {% endfor %}
@@ -306,5 +264,19 @@
         {% endfor %}
     </div>
 </div>
+
+<h2>原魔——全部怪物</h2>
+<div class="row">
+    {% for monsters in site.data.genshin.monsters %}
+    <div class="col s4 m3 l2">
+        <div class="card radius10px">
+            <div class="card-image waves-effect waves-block waves-light hoverable monster-avatar"
+                 style="background-image: url('/assets/res/genshin-impact/monsters/{{monsters[0]}}.png');">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 
 <div class="divider"></div>
