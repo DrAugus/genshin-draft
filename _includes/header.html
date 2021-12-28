@@ -17,6 +17,12 @@
         <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
 
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap.min.css">
+        <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+        <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/assets/css/syntax.css"/>
+
         {% for css in layout.css %}
         {% if css contains "//" %}
         <link rel="stylesheet" href="{{css}}"/>
@@ -33,8 +39,6 @@
         {% endif %}
         {% endfor %}
 
-
-        <link rel="stylesheet" href="/assets/css/syntax.css"/>
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
         {% seo title=false %}
     </head>
