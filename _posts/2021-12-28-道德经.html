@@ -8,7 +8,7 @@ excerpt: 道德经全文译文
 ---
 
 
-<ul class="collapsible popout fa-ul" data-collapsible="accordion">
+<ul class="collapsible" data-collapsible="accordion">
     {% for text in site.data.article.daodejing.text %}
     {% assign index0 = forloop.index0 %}
     {% for translation in site.data.article.daodejing.translation %}
@@ -16,10 +16,15 @@ excerpt: 道德经全文译文
     {% if index1 == index0 %}
     <li class="hide-box-shadow hoverable">
         <div class="collapsible-header">
-            <span><span class="red-text">{{text[0]}} </span><br>&nbsp;&nbsp;&nbsp;&nbsp; {{text[1]}} </span>
+            <!--8个&nbsp;占位2空格-->
+            <span><span style="font-family: 'SimHei',serif;font-size: 20px;" class="">{{text[0]}} </span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-family: 'SimSun',serif;font-size: 20px;"> {{text[1]}}</span> </span>
         </div>
         <div class="collapsible-body">
-            <span class="green-text">{{translation[1]}}</span>
+            <span style="font-family: 'KaiTi',serif;font-size: 20px;" class="">
+                &nbsp;&nbsp;{{translation[1]}}
+            </span>
         </div>
     </li>
     {% endif %}
