@@ -2,6 +2,10 @@ html {
     font-family: Merriweather, Cambria, Cochin, Georgia, Times, JetBrains Mono, serif
 }
 
+header {
+    height: 60px;
+}
+
 /*所有列表都透明*/
 .collapsible-header {
     background-color: #fff0;
