@@ -1,28 +1,82 @@
----
-layout: page
-css: index.css
----
+<!DOCTYPE HTML>
 
-<div class="slider fullscreen">
-    <ul class="slides">
+<html>
+    <head>
+        <title>Aerial</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="/assets/aerial/css/main.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
+        <noscript>
+            <link rel="stylesheet" href="/assets/aerial/css/noscript.css"/>
+        </noscript>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+            <div id="bg"></div>
+            <div id="overlay"></div>
+            <div id="main">
 
-        {% assign img = "home/0.jpg,xy/23.jpg,xy/4.jpg,home/2.jpg" | split: "," %}
-        {% assign info1 = "冲冲冲,谁是小刺猬捏!,多情自古空余恨,今晚我就要远航" | split: "," %}
-        {% assign info2 = "Here's our small slogan.,🦔,「人生若只如初见 何事秋风悲画扇」,我有快乐和智慧的桨" | split: "," %}
-        {% assign pos = "right-align, center-align, left-align, center-align" | split: "," %}
-        {% assign color = "black-text, black-text, black-text, grey-text text-lighten-3" | split: "," %}
+                <!-- Header -->
+                <header id="header">
+                    <h1>AUGUS</h1>
+                    <p>BACK-END &nbsp;&bull;&nbsp; DATA &nbsp;&bull;&nbsp; GAME</p>
+                    <nav>
+                        <ul>
+                            <li><a href="https://twitter.com/RookieAugus" class="icon brands fa-twitter"><span
+                                    class="label">Twitter</span></a></li>
+                            <li><a href="https://facebook.com/dr.bit.augus" class="icon brands fa-facebook-f"><span
+                                    class="label">Facebook</span></a></li>
+                            <li><a href="https://www.instagram.com/augusbie" class="icon brands fa-instagram"><span
+                                    class="label">Instagram</span></a></li>
+                            <li><a href="https://wpa.qq.com/msgrd?v=3&uin=980652196&site=qq&menu=yes" target="_blank"
+                                   class="icon brands fa-qq"><span class="label">QQ</span></a></li>
+                            <li><a href="https://github.com/DrAugus" class="icon brands style2 fa-github"><span
+                                    class="label">GitHub</span></a></li>
+                            <li><a href="mailto:bramlye@outlook.com" class="icon solid fa-envelope"><span class="label">Email</span></a>
+                            </li>
+                        </ul>
 
-        {% for i in (1..2) %}
+                    </nav>
 
-        <li style="opacity: 1; transform: translateX(0px) translateY(0px);">
-            <img src="{{img[i] | prepend: '/assets/res/' }}" loading="lazy">
-            <div class="caption {{pos[i]}}" style="opacity: 0.6498; transform: translateX(0px) translateY(-35.02px);">
-                <h3 class="{{color[i]}}">{{info1[i]}}</h3>
-                <h5 class="light {{color[i]}} right" style="writing-mode:vertical-rl">{{info2[i]}}</h5>
+                    <p>
+                        <!-- 各页面跳转 -->
+                        <a href="/blog/index" target="_parent">Blog</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="/genshin" target="_parent">Genshin</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="/hedgehog" target="_parent">Hedgehog</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="/countdown" target="_parent">Countdown</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="/style/index" target="_parent">Resume</a>
+                    </p>
+
+
+                </header>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&#xA9; 2021-<span id="currentFullYear"></span>. All rights reserved.
+                        Design: <a href="https://github.com/DrAugus">AUGUS</a>.</p>
+                    <script type="text/javascript">
+                        var currentFullYear = (new Date()).getFullYear();
+                        document.getElementById("currentFullYear").innerHTML = currentFullYear;
+                    </script>
+                </footer>
+
             </div>
-        </li>
-
-        {% endfor %}
-
-    </ul>
-</div>
+        </div>
+        <script>
+            window.onload = function () {
+                document.body.classList.remove("is-preload");
+            };
+            window.ontouchmove = function () {
+                return false;
+            };
+            window.onorientationchange = function () {
+                document.body.scrollTop = 0;
+            };
+        </script>
+    </body>
+</html>
