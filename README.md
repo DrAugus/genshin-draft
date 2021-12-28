@@ -1,5 +1,7 @@
 # [AUGUS](https://draugus.github.io/)
 
+Personal website powered by Bootstrap, Material, Jekyll, and GitHub Pages: https://draugus.github.io/
+
 ## [Quickstart](https://jekyllrb.com/docs/)
 
 ### Prerequisites
