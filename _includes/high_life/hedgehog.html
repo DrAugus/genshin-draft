@@ -120,11 +120,10 @@
                 {{block.name}}
             </div>
 
-            {% if block.reason != nil %}
-            <div class="collapsible-body">
+            <div class="collapsible-body {% if block.reason == nil and block.img == nil %}hide{% endif %}">
                 {{block.reason}}
+                <img src="/assets/res/hedgehog/block/{{block.img}}">
             </div>
-            {% endif %}
         </li>
 
         {% endif %}
