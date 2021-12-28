@@ -42,7 +42,10 @@
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
         {% seo title=false %}
     </head>
-    <body>
+    {% if page.with_background_image %}
+    {% assign bg_info = page.with_background_image | prepend: '/assets/res/' %}
+    {% endif %}
+    <body style="background:url('{{bg_info}}') no-repeat;background-size: cover;">
         <header>
 
             <!-- Dropdown Structure -->
