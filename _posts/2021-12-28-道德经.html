@@ -1,0 +1,58 @@
+---
+title:  道德经
+layout: post
+date:   '2021-12-28 13:39:11'
+categories: 汉语
+tags: 文章 书籍
+excerpt: 道德经全文译文
+---
+
+
+<ul class="collapsible popout fa-ul" data-collapsible="accordion">
+    {% for text in site.data.article.daodejing.text %}
+    {% assign index0 = forloop.index0 %}
+    {% for translation in site.data.article.daodejing.translation %}
+    {% assign index1 = forloop.index0 %}
+    {% if index1 == index0 %}
+    <li class="hide-box-shadow hoverable">
+        <div class="collapsible-header">
+            <span><span class="red-text">{{text[0]}} </span><br>&nbsp;&nbsp;&nbsp;&nbsp; {{text[1]}} </span>
+        </div>
+        <div class="collapsible-body">
+            <span class="green-text">{{translation[1]}}</span>
+        </div>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</ul>
+
+
+<div class="row">
+    {% for text in site.data.article.daodejing.text %}
+    <h2> {{text[0]}}</h2>
+    {{text[1]}}(<a href="#{{forloop.index0}}">译文</a>,
+    <a class="modal-trigger" href="#modal{{forloop.index0}}"> 弹出</a>)
+    {% endfor %}
+</div>
+
+
+{% for translation in site.data.article.daodejing.translation %}
+<!-- Modal Structure -->
+<div id="modal{{forloop.index0}}" class="modal">
+    <div class="modal-content">
+        <p>第{{translation[0]}}章</p>
+        <p>{{translation[1]}}</p>
+    </div>
+</div>
+{% endfor %}
+
+
+<div class="row">
+    {% for translation in site.data.article.daodejing.translation %}
+    <p>
+        <span id="{{forloop.index0}}">{{translation[0]}}</span><br>
+        {{translation[1]}}
+    </p>
+    {% endfor %}
+</div>

@@ -153,3 +153,11 @@ nav .nav-wrapper a:hover {
 span.badge {
     color: #fff;
 }
+
+.modal {
+    bottom: auto;
+}
+
+.hide-box-shadow {
+    box-shadow: none !important;
+}
