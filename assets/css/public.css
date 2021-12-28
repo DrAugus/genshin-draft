@@ -144,3 +144,12 @@ nav .nav-wrapper a:hover {
 .collapsible.popout > li {
     margin: 3px 24px
 }
+
+/*badge颜色修改*/
+.badge {
+    background-color: #777777;
+}
+
+span.badge {
+    color: #fff;
+}
