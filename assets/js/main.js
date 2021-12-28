@@ -45,3 +45,23 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".tooltipped").tooltip();
 });
+
+//Pushpin
+$(document).ready(function () {
+    $(".pushpin").pushpin();
+});
+
+//Pushpin - Initialization
+$(".pushpin-demo-nav").each(function () {
+    const $this = $(this);
+    const $target = $("#" + $(this).attr("data-target"));
+    $this.pushpin({
+        top: $target.offset().top,
+        bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+});
+
+//Modals - Initialization
+$(document).ready(function () {
+    $(".modal").modal();
+});
