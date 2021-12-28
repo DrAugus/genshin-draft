@@ -85,6 +85,7 @@
                 <li><a href="/non_tech">non_tech</a></li>
             </ul>
 
+
             <!--To make the navbar fixed-->
             <div class="navbar-fixed frosted">
                 <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
@@ -98,13 +99,14 @@
 
                         <ul class="right">
                             <!--数组声明 用split切割字符串-->
-                            {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog, fa-terminal" | split: "," %}
+                            {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog, fa-terminal" | split: ","
+                            %}
                             {% assign names = "HIGH,BLOG,ABOUT,ELSE,CODE" | split: "," %}
                             {% for icon in icons %}
                             <li><a class="dropdown-trigger" href="#!" data-target="dropdown{{forloop.index}}">
                                 <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
-<!--                                <div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
-<!--                                <div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
+                                <!--                                <div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
+                                <!--                                <div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
                                 <div>{{names[forloop.index0]}}</div>
                             </a></li>
                             {% endfor %}
@@ -121,38 +123,49 @@
             <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg" style="display: none">
                 <li>
                     <div class="userView">
-                            <div class="row">
-                                <div class="col s3">
-                                    <a href="{{site.github_profile}}" target="_blank">
-                                        <img class="circle z-depth-2" src="/assets/res/user.jpg" width="64" alt=""></a>
-                                </div>
-                                <div class="col s9">
-                                    {{site.user}}<br>
-                                    <a href="mailto:{{site.user_email}}"><u class="email">{{site.user_email}}</u></a>
-                                </div>
+                        <div class="row">
+                            <div class="col s3">
+                                <a href="{{site.github_profile}}" target="_blank">
+                                    <img class="circle z-depth-2" src="/assets/res/user.jpg" width="64" alt=""></a>
                             </div>
+                            <div class="col s9">
+                                {{site.user}}<br>
+                                <a href="mailto:{{site.user_email}}"><u class="email">{{site.user_email}}</u></a>
+                            </div>
+                        </div>
                     </div>
                 </li>
-                <li><div class="divider"></div></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
                 <li><a class="waves-effect" href="/index"><i class="fa fa-home"></i>Home</a></li>
                 <li><a class="waves-effect" href="/projects"><i class="fa fa-project-diagram"></i>Projects</a></li>
                 <li><a class="waves-effect" href="/categories"><i class="fa fa-list"></i>Categories</a></li>
                 <li><a class="waves-effect" href="/tags"><i class="fa fa-marker"></i>Tags</a></li>
-                <li><div class="divider"></div></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
                 <li><a class="waves-effect" href="/countdown"><i class="fa fa-hourglass-half"></i>Countdown</a></li>
                 <li><a class="waves-effect" href="/genshin"><i class="fa fa-gamepad"></i>Genshin</a></li>
-                <li><a class="waves-effect" href="/hedgehog"><i class="fa fa-assistive-listening-systems"></i>Recommend</a></li>
+                <li><a class="waves-effect" href="/hedgehog"><i class="fa fa-assistive-listening-systems"></i>Recommend</a>
+                </li>
                 <li><a class="waves-effect" href="/food"><i class="fa fa-utensils"></i>Food</a></li>
-                <li><div class="divider"></div></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
                 <li><a class="waves-effect" href="/about"><i class="fa fa-user"></i>About</a></li>
-                <li><a class="waves-effect" href="/contact-thanks"><i class="fa fa-mail-bulk"></i>Contact&nbsp;Thanks</a></li>
-                <li><div class="divider"></div></li>
+                <li><a class="waves-effect" href="/contact-thanks"><i
+                        class="fa fa-mail-bulk"></i>Contact&nbsp;Thanks</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
                 <li><a class="waves-effect" href="/index"><i class="fa fa-blog"></i>Blog</a></li>
                 <li><a class="waves-effect" href="/aerial/index"><i class="fa fa-user-secret"></i>Intro</a></li>
                 <li><a class="waves-effect" href="/style-matter/index"><i class="fa fa-solar-panel"></i>Matter</a></li>
                 <li><a class="waves-effect" href="/editorial/index"><i class="fa fa-pager"></i>Editorial</a></li>
 
             </ul>
+
 
         </header>
         <main>
