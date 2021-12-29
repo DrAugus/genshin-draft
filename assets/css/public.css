@@ -145,6 +145,17 @@ nav .nav-wrapper a:hover {
     margin: 3px 24px
 }
 
+/*mater css列表调整*/
+.collapsible > li {
+    margin: 3px 0
+}
+
+/*mater css列表阴影调整*/
+.collapsible {
+    border: none;
+    box-shadow: none;
+}
+
 /*badge颜色修改*/
 .badge {
     background-color: #777777;
