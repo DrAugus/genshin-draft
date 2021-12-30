@@ -42,11 +42,16 @@
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
         {% seo title=false %}
     </head>
-    {% if page.with_background_image %}
-    {% assign bg_info = page.with_background_image | prepend: '/assets/res/' %}
+
+    <!--二选一 要不header 要不full-->
+    {% if page.with_full_bg %}
+    {% assign full_bg_info = page.with_full_bg | prepend: '/assets/res/' %}
     {% endif %}
-    <body style="background:url('{{bg_info}}') no-repeat;background-size: cover;">
-        <header>
+    {% if page.with_header_bg %}
+    {% assign header_bg_info = page.with_header_bg | prepend: '/assets/res/' %}
+    {% endif %}
+    <body class="{% if page.with_header_bg %}full-bg{% endif %}" style="background: url('{{full_bg_info}}')">
+        <header class="{% if page.with_header_bg %}header-bg{% endif %}" style="background:url('{{header_bg_info}}')">
 
             <!-- Dropdown Structure -->
             <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
@@ -93,7 +98,7 @@
 
 
             <!--To make the navbar fixed-->
-            <div class="navbar-fixed frosted navbar-fixed-top">
+            <div class="navbar-fixed navbar-fixed-top">
                 <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
                 <!--然后在nav-wrapper同级加入nav-content-->
                 <nav>
