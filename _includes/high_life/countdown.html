@@ -46,7 +46,7 @@
             <!-- data-tooltip defines the tooltip text -->
             <li class="hoverable hide showList{{forloop.index0}} frosted radius10px">
                 <div class="collapsible-header">
-                    <span id="festival{{forloop.index0}}" class="tooltipped white-text" data-position="right"></span>
+                    <span id="festival{{forloop.index0}}" class="tooltipped black-text" data-position="right"></span>
                     <span class="badge" id="ddlDay{{forloop.index0}}"></span>
                     <div class="left-align">
                         <span class="badge">Days</span>
@@ -56,7 +56,7 @@
 
                 <!--不显示body 增加hide类 防止报错-->
                 <div class="collapsible-body">
-                    <h5 class="white-text" id="info{{forloop.index0}}"></h5>
+                    <h3 class="black-text" id="info{{forloop.index0}}"></h3>
                 </div>
             </li>
             {% endfor %}

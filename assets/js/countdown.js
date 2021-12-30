@@ -141,6 +141,7 @@ const handlerTime = (i) => {
     if (dateInfo[i].ddlDay) {
         $(".showList" + i).removeClass("hide");
     }
+    $(".showList" + i).css("background-color", "rgba(227,221,220,0.7)");
 
     ddlCSS("#ddl" + i, dateInfo[i].sort);
     ddlCSS("#ddlDay" + i, dateInfo[i].sort);
