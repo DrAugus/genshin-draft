@@ -172,3 +172,7 @@ span.badge {
 .hide-box-shadow {
     box-shadow: none !important;
 }
+
+blockquote {
+    font-size: unset;
+}
