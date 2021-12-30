@@ -1,0 +1,23 @@
+.user-pic img {
+    width: 100px;
+    height: auto;
+}
+
+.about-info {
+    -webkit-animation: titlescale 1s;
+    -moz-animation: titlescale 1s;
+    -o-animation: titlescale 1s;
+    -ms-animation: titlescale 1s;
+    animation: titlescale 1s;
+    text-align: center;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
+    line-height: 1.5;
+    color: #000;
+    font-size: 1.15em;
+}
+
+@media screen and (min-width: 768px) {
+    #page-header #site-subtitle {
+        font-size: 1.72em;
+    }
+}
