@@ -373,14 +373,14 @@ const eventsData = [
             no: 24,
             shortname: "申鹤",
             name: "「出尘入世」",
-            info: "红尘渺渺，因果烟消",
+            info: "虽为人类之身，却是仙家弟子。过去曾生活在远离璃月港的山野之间，以红绳缚魂，修身养性。气质淡雅如仙人，身上似乎藏有某些秘密。",
             pos: "40% 20%",
             start: "2022-01-05 11:00:00",
             end: "2022-01-25 15:59:59",
             url: "https://bbs.mihoyo.com/ys/article/?",
             ele: "cryo",
             id: "shenhe",
-            wishName: "",
+            wishName: "The Transcendent One Returns",
             image: 1
         },
         {
@@ -405,7 +405,7 @@ const eventsData = [
             name: "「陵薮市朝」",
             pos: "40% 5%",
             start: "2022-01-25 18:00:00",
-            end: "2022-02-14 15:59:59",
+            end: "2022-02-15 14:59:59",
             url: "https://bbs.mihoyo.com/ys/article/2878243",
             ele: "geo",
             id: "zhongli",
@@ -420,7 +420,7 @@ const eventsData = [
             info: "璃月七星的秘书，体内流淌着人类与仙兽的血脉。天性优雅娴静，但仙兽「麒麟」温柔的性情与坚定毅重的工作态度毫无冲突。毕竟，甘雨坚信自己所做的一切工作都是为了践行与帝君的契约，谋求璃月众生的最大福祉。",
             pos: "40% 15%",
             start: "2022-01-25 18:00:00",
-            end: "2022-02-14 15:59:59",
+            end: "2022-02-15 14:59:59",
             url: "https://bbs.mihoyo.com/ys/article/3661305",
             wish_2: true,
             ele: "cryo",
@@ -1112,7 +1112,7 @@ const futureWishInfo = () => {
     }
 
     for (let i = indexArr.length; i < 5; ++i) {
-        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/update.jpg";
+        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/genshin.png";
         document.getElementById("futureWish" + i).innerHTML = "敬请期待";
         document.getElementById("futureWishText" + i).innerHTML = "";
     }
