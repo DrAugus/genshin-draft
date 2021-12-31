@@ -3,29 +3,44 @@
     <div class="row">
         <div class="col s12">
             <h2>CONTACT</h2>
-            <p>
-                <a class="fab fa-qq" target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=980652196&site=qq&menu=yes"><span
-                        class="label">QQ </span></a>
-                <a href="mailto:bramlye@outlook.com" class="fa fa-envelope"><span class="label">Email </span></a>
-                <a href="https://github.com/DrAugus/draugus.github.io/issues/" class="fa fa-comment-dots">留言</a>
-            </p>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li class="hide-box-shadow hoverable">
+                    <div class="collapsible-header">
+                        <a class="fab fa-qq" target="_blank"
+                           href="https://wpa.qq.com/msgrd?v=3&uin=980652196&site=qq&menu=yes">QQ </a>
+                    </div>
+                </li>
+                <li class="hide-box-shadow hoverable">
+                    <div class="collapsible-header">
+                        <a href="mailto:bramlye@outlook.com" class="fa fa-envelope">Email</a>
+                    </div>
+                </li>
+                <li class="hide-box-shadow hoverable">
+                    <div class="collapsible-header">
+                        <a href="#gitalk-container" class="fa fa-comment-dots">留言</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 
     <div class="row">
         <div class="col s12">
             <h2>致谢</h2>
-            <ul>
+            <ul class="collapsible" data-collapsible="accordion">
                 {% for thanksInfo in site.data.thanks %}
-                <li>
-                    <a href="{{thanksInfo[1].url}}">{{thanksInfo[1].name}}</a>
-                    {% if thanksInfo[1].info %}
-                    : {{thanksInfo[1].info}}
-                    {% endif %}
+                <li class="hide-box-shadow hoverable">
+                    <div class="collapsible-header">
+                        <a href="{{thanksInfo[1].url}}">{{thanksInfo[1].name}}</a>
+                    </div>
+
+                    <div class="collapsible-body {% if thanksInfo[1].info == nil %}hide{% endif %}">
+                        {{thanksInfo[1].info}}
+                    </div>
                 </li>
                 {% endfor %}
 
-                <li>
+                <li class="hide-box-shadow hoverable">
                     <a href="https://www.jetbrains.com/?=augus" target="_parent">
                         <img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg"
                              alt="JetBrains Logo (Main) logo."/></a>
