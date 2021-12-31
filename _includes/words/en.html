@@ -1,3 +1,12 @@
-{% for words in site.data.words-en %}
-<p><i class="fas fa-horse"></i> {{words[0]}} {{words[1]}}</p>
-{% endfor %}
+<ul class="collapsible fa-ul" data-collapsible="accordion">
+    {% for words in site.data.words-en %}
+    <li class="hide-box-shadow hoverable">
+        <div class="collapsible-header">
+            <i class="fa fa-star"></i> {{words[0]}}
+        </div>
+        <div class="collapsible-body">
+            {{words[1]}}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
