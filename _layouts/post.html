@@ -19,6 +19,14 @@ js:
             发表于：{{page.date | date: "%Y-%m-%d"}}
         </div>
         <div id="page-meta-2">
+            <i class="fa fa-eye "></i>
+            <span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
+            <i class="fa fa-newspaper"></i>字数
+            <span>{{ page.content | strip_html | strip_newlines | remove: " " | size }}</span>
+            <i class="fa fa-clock"></i>
+            <span>阅读时长 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1}} 分钟</span>
+        </div>
+        <div id="page-meta-3">
             <i class="fa fa-hashtag tooltipped" data-position="left" data-delay="30"
                data-tooltip="Categories"></i>
             {% for cat in page.categories %}
@@ -39,14 +47,6 @@ js:
                 <div class="chip">{{tag}}</div>
             </a>
             {% endfor %}
-        </div>
-        <div id="page-meta-3">
-            <i class="fa fa-eye "></i>
-            <span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
-            <i class="fa fa-newspaper"></i>字数
-            <span>{{ page.content | strip_html | strip_newlines | remove: " " | size }}</span>
-            <i class="fa fa-clock"></i>
-            <span>阅读时长 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1}} 分钟</span>
         </div>
     </div>
 </div>
