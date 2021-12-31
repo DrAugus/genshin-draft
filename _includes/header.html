@@ -50,15 +50,16 @@
     {% if page.with_header_bg %}
     {% assign header_bg_info = page.with_header_bg | prepend: '/assets/res/' %}
     {% endif %}
-    <body class="{% if page.with_header_bg %}full-bg{% endif %}" style="background: url('{{full_bg_info}}')">
-        <header class="{% if page.with_header_bg %}header-bg{% endif %}" style="background:url('{{header_bg_info}}')">
+    <body class="{% if page.with_full_bg %}full-bg{% endif %}" style="background-image: url('{{full_bg_info}}')">
+        <header class="{% if page.with_header_bg %}header-bg{% endif %}"
+                style="background-image:url('{{header_bg_info}}')">
 
             <!-- Dropdown Structure -->
             <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
-                <li><a href="/index">Home</a></li>
-                <li><a href="/countdown">Countdown</a></li>
-                <li><a href="/genshin">Genshin</a></li>
-                <li><a href="/hedgehog">美食記</a></li>
+                <li><a href="/index">主页</a></li>
+                <li><a href="/countdown">倒计时</a></li>
+                <li><a href="/genshin">原神</a></li>
+                <li><a href="/hedgehog">小刺猬</a></li>
                 <li><a href="/food">外賣薦</a></li>
             </ul>
             <!-- Dropdown Structure -->
@@ -77,7 +78,6 @@
             <ul id="dropdown4" class="dropdown-content nav-dropdown-content">
                 <li><a href="/style-matter/index">Matter</a></li>
                 <li><a href="/editorial/index">Editorial</a></li>
-                <li><a href="/newpage">TEST</a></li>
                 <li><a href="/words_en">英语词汇</a></li>
                 <li><a href="/words_zh">汉语词汇</a></li>
             </ul>
@@ -112,12 +112,13 @@
                             <!--数组声明 用split切割字符串-->
                             {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog, fa-terminal" | split: ","
                             %}
-                            {% assign names = "HIGH,BLOG,ABOUT,ELSE,CODE" | split: "," %}
+                            {% assign names = "HIGH,ARTICLE,ABOUT,ELSE,CODE" | split: "," %}
                             {% for icon in icons %}
-                            <li><a class="dropdown-trigger" href="#!" data-target="dropdown{{forloop.index}}">
+                            <li><a class="dropdown-trigger" href="javascript:void(0);"
+                                   data-target="dropdown{{forloop.index}}">
                                 <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
-                                <!--                                <div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
-                                <!--                                <div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
+                                <!--<div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
+                                <!--<div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
                                 <div>{{names[forloop.index0]}}</div>
                             </a></li>
                             {% endfor %}

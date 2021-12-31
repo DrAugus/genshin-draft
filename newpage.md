@@ -1,5 +1,5 @@
 ---
-permalink: /newpage
+permalink: /test
 layout: page
 title: "newpage"
 ---
