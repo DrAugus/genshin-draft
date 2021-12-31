@@ -86,7 +86,16 @@ nav .nav-wrapper a:hover {
 
 .page-title {
     /*color: #52D9E5;*/
-    margin-top: 10px;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 80px;
+    margin-top: 0.5em;
+}
+
+#page-meta {
+    /*color: #777777;*/
+    font-size: 95%;
 }
 
 /*渐变图片*/
@@ -226,4 +235,12 @@ blockquote {
     -moz-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#page-info {
+    margin-top: 10px;
+    bottom: 5rem;
+    padding: 0 8%;
+    width: 100%;
+    text-align: center;
 }

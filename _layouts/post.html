@@ -9,50 +9,46 @@ js:
 - post.js
 - contents.js
 ---
-<div id="post-info">
+
+
+<div id="page-info">
     <h1 class="page-title">{{page.title}}</h1>
-    <ul class="collapsible hoverable" data-collapsible="accordion">
-        <li>
-            <div class="collapsible-header grey lighten-4">
-                <span>
-                  <i class="material-icons tooltipped" data-position="left" data-delay="30" data-tooltip="Date">date_range</i>
-                  {{page.date | date: "%H:%M:%S %a, %e %b %Y"}}
-                  <i id="indicate" class="right material-icons tooltipped" data-position="left" data-delay="30"
-                     data-tooltip="Show Extra Info">info</i>
-                </span>
-            </div>
-            <div class="collapsible-body">
-                <span>
-                  <i class="fa fa-hashtag tooltipped" data-position="left" data-delay="30"
-                     data-tooltip="Categories"></i>
-                  {% for cat in page.categories %}
-                  {% capture test %}{{cat | slice: 0}}{% endcapture %}
-                  {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
-                  <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
-                     target="_blank"><div class="chip">{{cat}}</div></a>
-                  {% endfor %}
-                </span>
-                <span>
-                  <i class="fa fa-tags tooltipped" data-position="left" data-delay="30" data-tooltip="Tags"></i>
-                  {% for tag in page.tags %}
-                  {% capture test %}{{tag | slice: 0}}{% endcapture %}
-                  {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
-                  <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
-                     target="_blank"><div class="chip">{{tag}}</div></a>
-                  {% endfor %}
-                </span>
-                <span>
-                     <i class="fa fa-hand-point-up tooltipped" data-position="left" data-delay="30"
-                        data-tooltip="点击量"></i>
-                     <div id="busuanzi_container_page_pv" style="display: inline;">
-                         <span id="busuanzi_value_page_pv" style="display: inline;"></span>次点击</div>
-                 </span>
-                <span>
-                 <i class="fa fa-calculator tooltipped" data-position="left" data-delay="30" data-tooltip="统计"></i>本文总共 {{ page.content | strip_html | strip_newlines | remove: " " | size }} 字 <b>·</b> 阅读全文大约需要 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 分钟
-                </span>
-            </div>
-        </li>
-    </ul>
+    <div id="page-meta">
+        <div id="page-meta-1">
+            <i class="fa fa-calendar-alt tooltipped" data-position="left" data-delay="30" data-tooltip="Date"></i>
+            发表于：{{page.date | date: "%Y-%m-%d"}}
+        </div>
+        <div id="page-meta-2">
+            <i class="fa fa-hashtag tooltipped" data-position="left" data-delay="30"
+               data-tooltip="Categories"></i>
+            {% for cat in page.categories %}
+            {% capture test %}{{cat | slice: 0}}{% endcapture %}
+            {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
+            <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
+               target="_blank">
+                <div class="chip">{{cat}}</div>
+            </a>
+            {% endfor %}
+
+            <i class="fa fa-tags tooltipped" data-position="left" data-delay="30" data-tooltip="Tags"></i>
+            {% for tag in page.tags %}
+            {% capture test %}{{tag | slice: 0}}{% endcapture %}
+            {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
+            <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
+               target="_blank">
+                <div class="chip">{{tag}}</div>
+            </a>
+            {% endfor %}
+        </div>
+        <div id="page-meta-3">
+            <i class="fa fa-eye "></i>
+            <span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
+            <i class="fa fa-newspaper"></i>字数
+            <span>{{ page.content | strip_html | strip_newlines | remove: " " | size }}</span>
+            <i class="fa fa-clock"></i>
+            <span>阅读时长 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1}} 分钟</span>
+        </div>
+    </div>
 </div>
 
 <div class="divider"></div>
