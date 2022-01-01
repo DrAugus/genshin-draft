@@ -376,7 +376,7 @@ const eventsData = [
             info: "虽为人类之身，却是仙家弟子。过去曾生活在远离璃月港的山野之间，以红绳缚魂，修身养性。气质淡雅如仙人，身上似乎藏有某些秘密。",
             pos: "40% 20%",
             start: "2022-01-05 11:00:00",
-            end: "2022-01-25 15:59:59",
+            end: "2022-01-25 17:59:59",
             url: "https://bbs.mihoyo.com/ys/article/?",
             ele: "cryo",
             id: "shenhe",
@@ -390,7 +390,7 @@ const eventsData = [
             info: "守护璃月港的「三眼五显仙人」之一，妙称「护法夜叉大将」。虽然外表看起来是一个少年人，但一些有关他的传说，已在古卷中流传千年。对望舒客栈中一道名为「杏仁豆腐」的菜颇为喜爱。究其原因，是因为「杏仁豆腐」的味道，与他曾经吞噬过的「美梦」十分相似。",
             pos: "40% 15%",
             start: "2022-01-05 11:00:00",
-            end: "2022-01-25 15:59:59",
+            end: "2022-01-25 17:59:59",
             url: "https://bbs.mihoyo.com/ys/article/4005715",
             version: "2.4",
             wish_2: true,
@@ -411,7 +411,7 @@ const eventsData = [
             id: "zhongli",
             wishName: "Gentry of Hermitage",
             info: "应「往生堂」邀请而来的神秘客卿。样貌俊美，举止高雅，拥有远超常人的学识。虽说来历不明，却知礼数、晓规矩。坐镇「往生堂」，能行天地万物之典仪。",
-            image: 1
+            image: 3
         },
         {
             no: 27,
@@ -426,7 +426,7 @@ const eventsData = [
             ele: "cryo",
             id: "ganyu",
             wishName: "Adrift in the Harbor",
-            image: 1
+            image: 2
         },
 
     ],
@@ -1061,7 +1061,7 @@ const updateCurrentWishInfo = () => {
         for (let w of wishColorClass) {
             w.style.color = elementColor[wishCharacters[index].ele];
         }
-        let imgSrc = wishCharacters[index].wishName.replace(" ", "_").replace("'", "").toLowerCase() + "_" + wishCharacters[index].image + ".jpg";
+        let imgSrc = wishCharacters[index].wishName.replace(/ /g, "_").replace(/'/g, "").toLowerCase() + "_" + wishCharacters[index].image + ".jpg";
         document.getElementById("showCurrentWishCharacter" + i).src = "/assets/res/genshin-impact/events/" + imgSrc;
     }
 
@@ -1107,7 +1107,9 @@ const futureWishInfo = () => {
 
         document.getElementById("futureElements" + i).src = "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png";
         document.getElementById("futureWishText" + i).innerHTML = wishCharacters[indexArr[i]].info;
-        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/characters/half/" + wishCharacters[indexArr[i]].id + ".png";
+
+        let imgSrc = wishCharacters[indexArr[i]].wishName.replace(/ /g, "_").replace(/'/g, "").toLowerCase() + "_" + wishCharacters[indexArr[i]].image + ".jpg";
+        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/" + imgSrc
         document.getElementById("futureWish" + i).innerHTML = nameZHInfo(indexArr[i]);
     }
 

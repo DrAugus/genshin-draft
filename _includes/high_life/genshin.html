@@ -1,5 +1,3 @@
-<p>原神相关的信息 目前只更新了角色up祈愿</p>
-
 <!--长度减1-->
 {% capture lenMonthList %}119{% endcapture %}
 {% capture lenAllDays %}3649{% endcapture %}
@@ -146,9 +144,9 @@
 <!--版本答案-->
 <div class="row">
     <h2>版本答案 队伍推荐</h2>
-    <ul class="collapsible popout" data-collapsible="accordion">
+    <ul class="collapsible" data-collapsible="accordion">
         {% for party in site.data.genshin.party-setup %}
-        <li class="z-depth-2 hoverable radius5px">
+        <li class="hoverable radius5px">
             <div class="collapsible-header">
                 <span>{{party.name}}</span>
             </div>
@@ -268,7 +266,7 @@
 <h2>原魔——全部怪物</h2>
 <div class="row">
     {% for monsters in site.data.genshin.monsters %}
-    <div class="col s4 m3 l2">
+    <div class="col s4 m3 l1">
         <div class="card radius10px">
             <div class="card-image waves-effect waves-block waves-light hoverable monster-avatar"
                  style="background-image: url('/assets/res/genshin-impact/monsters/{{monsters[0]}}.png');">
