@@ -1,7 +1,7 @@
 ---
 permalink: /genshin   
 layout: page   
-title: 原神  
+title: ''  
 css: genshin.css  
 js: genshin.js  
 with_header_bg : genshin-impact/bg/shenhe1.jpg
