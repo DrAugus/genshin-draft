@@ -1,166 +1,166 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>
-            {% if page.title %}
-            {{ page.title | escape }}
-            {% else %}
-            {{ site.title | escape }}
-            {% endif %}
-        </title>
-        <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="/assets/css/materialize.min.css">
-        <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
-        <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-        <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap.min.css">
-        <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-        <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="/assets/css/syntax.css"/>
-
-        {% for css in layout.css %}
-        {% if css contains "//" %}
-        <link rel="stylesheet" href="{{css}}"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        {% if page.title %}
+        {{ page.title | escape }}
         {% else %}
-        <link rel="stylesheet" href="/assets/css/{{css}}"/>
+        {{ site.title | escape }}
         {% endif %}
-        {% endfor %}
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap.min.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css"/>
 
-        {% for css in page.css %}
-        {% if css contains "//" %}
-        <link rel="stylesheet" href="{{css}}"/>
-        {% else %}
-        <link rel="stylesheet" href="/assets/css/{{css}}"/>
-        {% endif %}
-        {% endfor %}
-
-        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
-        {% seo title=false %}
-    </head>
-
-    <!--二选一 要不header 要不full-->
-    {% if page.with_full_bg %}
-    {% assign full_bg_info = page.with_full_bg | prepend: '/assets/res/' %}
+    {% for css in layout.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}"/>
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/{{css}}"/>
     {% endif %}
-    {% if page.with_header_bg %}
-    {% assign header_bg_info = page.with_header_bg | prepend: '/assets/res/' %}
+    {% endfor %}
+
+    {% for css in page.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}"/>
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/{{css}}"/>
     {% endif %}
-    <body class="{% if page.with_full_bg %}full-bg{% endif %}" style="background-image: url('{{full_bg_info}}')">
-        <header class="{% if page.with_header_bg %}header-bg{% endif %}"
-                style="background-image:url('{{header_bg_info}}')">
+    {% endfor %}
 
-            <!-- Dropdown Structure -->
-            <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
-                <li><a href="/index">主页</a></li>
-                <li><a href="/countdown">倒计时</a></li>
-                <li><a href="/hedgehog">小刺猬</a></li>
-                <li><a href="/food">外賣薦</a></li>
-                <li class="divider"></li>
-                <li><a href="/words_en">英语词汇</a></li>
-                <li><a href="/words_zh">汉语词汇</a></li>
-            </ul>
-            <!-- Dropdown Structure -->
-            <ul id="dropdown2" class="dropdown-content nav-dropdown-content">
-                <li><a href="/blog/index">Abstract</a></li>
-                <li><a href="/categories">Categories</a></li>
-                <li><a href="/tags">Tags</a></li>
-                <li class="divider"></li>
-                <li><a href="/style-matter/index">Matter</a></li>
-                <li><a href="/editorial/index">Editorial</a></li>
-            </ul>
-            <!-- Dropdown Structure -->
-            <ul id="dropdown3" class="dropdown-content nav-dropdown-content">
-                <li><a href="/genshin">原神</a></li>
-            </ul>
-            <!-- Dropdown Structure -->
-            <ul id="dropdown4" class="dropdown-content nav-dropdown-content">
-                <li><a href="/projects">Projects</a></li>
-                <li class="divider"></li>
-                <li><a href="/cpp">CPP</a></li>
-                <li><a href="/algorithm">algorithm</a></li>
-                <li><a href="/os">os</a></li>
-                <li><a href="/network_protocol">protocol</a></li>
-                <li><a href="/database">database</a></li>
-                <li><a href="/java">java</a></li>
-                <li><a href="/front_end">front_end</a></li>
-                <li><a href="/sys_design">sys_design</a></li>
-                <li><a href="/non_tech">non_tech</a></li>
-                <li class="divider"></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/style/index">Resume</a></li>
-                <li><a href="/contact-thanks">Contact</a></li>
-            </ul>
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
+    {% seo title=false %}
+</head>
+
+<!--二选一 要不header 要不full-->
+{% if page.with_full_bg %}
+{% assign full_bg_info = page.with_full_bg | prepend: '/assets/res/' %}
+{% endif %}
+{% if page.with_header_bg %}
+{% assign header_bg_info = page.with_header_bg | prepend: '/assets/res/' %}
+{% endif %}
+<body class="{% if page.with_full_bg %}full-bg{% endif %}" style="background-image: url('{{full_bg_info}}')">
+<header class="{% if page.with_header_bg %}header-bg{% endif %}"
+        style="background-image:url('{{header_bg_info}}')">
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
+        <li><a href="/index">主页</a></li>
+        <li><a href="/countdown">倒计时</a></li>
+        <li><a href="/hedgehog">小刺猬</a></li>
+        <li><a href="/food">外賣薦</a></li>
+        <li class="divider"></li>
+        <li><a href="/words_en">英语词汇</a></li>
+        <li><a href="/words_zh">汉语词汇</a></li>
+    </ul>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown2" class="dropdown-content nav-dropdown-content">
+        <li><a href="/blog/index">Abstract</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li class="divider"></li>
+        <li><a href="/style-matter/index">Matter</a></li>
+        <li><a href="/editorial/index">Editorial</a></li>
+    </ul>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown3" class="dropdown-content nav-dropdown-content">
+        <li><a href="/genshin">原神</a></li>
+    </ul>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown4" class="dropdown-content nav-dropdown-content">
+        <li><a href="/projects">Projects</a></li>
+        <li class="divider"></li>
+        <li><a href="/cpp">CPP</a></li>
+        <li><a href="/algorithm">algorithm</a></li>
+        <li><a href="/os">os</a></li>
+        <li><a href="/network_protocol">protocol</a></li>
+        <li><a href="/database">database</a></li>
+        <li><a href="/java">java</a></li>
+        <li><a href="/front_end">front_end</a></li>
+        <li><a href="/sys_design">sys_design</a></li>
+        <li><a href="/non_tech">non_tech</a></li>
+        <li class="divider"></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/style/index">Resume</a></li>
+        <li><a href="/contact-thanks">Contact</a></li>
+    </ul>
 
 
-            <!--To make the navbar fixed-->
-            <div class="hide-on-small-only navbar-fixed navbar-fixed-top">
-                <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
-                <!--然后在nav-wrapper同级加入nav-content-->
-                <nav>
-                    <div class="nav-wrapper">
-                        <a href="{{site.github.repository_url}}" class="brand-logo hide-on-small-only">
-                            <span> {{site.title}}</span>
-                            <i class=" fab fa-github"></i>
-                        </a>
-
-                        <ul class="right">
-                            <!--数组声明 用split切割字符串-->
-                            {% assign names = "LIFE,ARTICLE,GAMES,CODE" | split: "," %}
-                            {% for n in names %}
-                            <li><a class="dropdown-trigger" href="javascript:void(0);"
-                                   data-target="dropdown{{forloop.index}}">
-                                <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
-                                <!--<div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
-                                <!--<div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
-                                <div>{{names[forloop.index0]}}</div>
-                            </a></li>
-                            {% endfor %}
-                        </ul>
-
-                    </div>
-                </nav>
-            </div>
-            <div class="container hide-on-large-only">
-                <a href="#" data-target="slide-out" class="sidenav-trigger full">
-                    <i class="material-icons">menu</i>
+    <!--To make the navbar fixed-->
+    <div class="hide-on-small-only navbar-fixed navbar-fixed-top">
+        <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
+        <!--然后在nav-wrapper同级加入nav-content-->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{site.github.repository_url}}" class="brand-logo hide-on-small-only">
+                    <span> {{site.title}}</span>
+                    <i class=" fab fa-github"></i>
                 </a>
+
+                <ul class="right">
+                    <!--数组声明 用split切割字符串-->
+                    {% assign names = "LIFE,ARTICLE,GAMES,CODE" | split: "," %}
+                    {% for n in names %}
+                    <li><a class="dropdown-trigger" href="javascript:void(0);"
+                           data-target="dropdown{{forloop.index}}">
+                        <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
+                        <!--<div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
+                        <!--<div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
+                        <div>{{names[forloop.index0]}}</div>
+                    </a></li>
+                    {% endfor %}
+                </ul>
+
             </div>
-            <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg hide-on-large-only">
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a class="waves-effect" href="/index"><i class="fa fa-home"></i>Home</a></li>
-                <li><a class="waves-effect" href="/projects"><i class="fa fa-project-diagram"></i>Projects</a></li>
-                <li><a class="waves-effect" href="/categories"><i class="fa fa-list"></i>Categories</a></li>
-                <li><a class="waves-effect" href="/tags"><i class="fa fa-marker"></i>Tags</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a class="waves-effect" href="/countdown"><i class="fa fa-hourglass-half"></i>Countdown</a></li>
-                <li><a class="waves-effect" href="/genshin"><i class="fa fa-gamepad"></i>Genshin</a></li>
-                <li><a class="waves-effect" href="/hedgehog"><i class="fa fa-assistive-listening-systems"></i>Recommend</a>
-                </li>
-                <li><a class="waves-effect" href="/food"><i class="fa fa-utensils"></i>Food</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a class="waves-effect" href="/about"><i class="fa fa-user"></i>About</a></li>
-                <li><a class="waves-effect" href="/contact-thanks"><i
-                        class="fa fa-mail-bulk"></i>Contact&nbsp;Thanks</a></li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-                <li><a class="waves-effect" href="/index"><i class="fa fa-blog"></i>Blog</a></li>
-                <li><a class="waves-effect" href="/style-matter/index"><i class="fa fa-solar-panel"></i>Matter</a></li>
-                <li><a class="waves-effect" href="/editorial/index"><i class="fa fa-pager"></i>Editorial</a></li>
+        </nav>
+    </div>
+    <div class="container hide-on-large-only">
+        <a href="#" data-target="slide-out" class="sidenav-trigger full">
+            <i class="material-icons">menu</i>
+        </a>
+    </div>
+    <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg hide-on-large-only">
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="/index"><i class="fa fa-home"></i>Home</a></li>
+        <li><a class="waves-effect" href="/projects"><i class="fa fa-project-diagram"></i>Projects</a></li>
+        <li><a class="waves-effect" href="/categories"><i class="fa fa-list"></i>Categories</a></li>
+        <li><a class="waves-effect" href="/tags"><i class="fa fa-marker"></i>Tags</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="/countdown"><i class="fa fa-hourglass-half"></i>Countdown</a></li>
+        <li><a class="waves-effect" href="/genshin"><i class="fa fa-gamepad"></i>Genshin</a></li>
+        <li><a class="waves-effect" href="/hedgehog"><i class="fa fa-assistive-listening-systems"></i>Recommend</a>
+        </li>
+        <li><a class="waves-effect" href="/food"><i class="fa fa-utensils"></i>Food</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="/about"><i class="fa fa-user"></i>About</a></li>
+        <li><a class="waves-effect" href="/contact-thanks"><i
+                class="fa fa-mail-bulk"></i>Contact&nbsp;Thanks</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect" href="/index"><i class="fa fa-blog"></i>Blog</a></li>
+        <li><a class="waves-effect" href="/style-matter/index"><i class="fa fa-solar-panel"></i>Matter</a></li>
+        <li><a class="waves-effect" href="/editorial/index"><i class="fa fa-pager"></i>Editorial</a></li>
 
-            </ul>
+    </ul>
 
 
-        </header>
-        <main>
+</header>
+<main>
