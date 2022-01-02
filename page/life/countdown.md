@@ -7,4 +7,4 @@ js:
 - calendar.js  
 with_full_bg: xy/29.jpg
 ---
-{% include high_life/countdown.html %}
+{% include life/countdown.html %}
