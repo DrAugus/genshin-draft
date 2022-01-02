@@ -1,3 +1,7 @@
+<script>
+    const eventsData = {{site.data.genshin.wish.characters | jsonify}};
+</script>
+
 <div class="col s12 center-align">
     <img src="/assets/res/genshin-impact/ys.png">
 </div>
@@ -35,7 +39,7 @@
                 {% assign i = forloop.index0 %}
 
                 {% for characters in site.data.genshin.characters %}
-                {% if characters[1].id == wish.wish5star[0] %}
+                {% if characters[1].id == wish.wish5star %}
                 <div class="card event-item event-item-{{i}} event-item-background-{{characters[1].ele}} hide">
                     <div class="card-image waves-effect waves-block waves-light activator" style="height: 100%">
                         <div class="event-img responsive-img "
@@ -251,20 +255,6 @@
         </div>
     </div>
     {% endfor %}
-</div>
-
-<!--滚动版全部角色-->
-<div class="row">
-    <div class="carousel">
-        {% for characters in site.data.genshin.characters %}
-        {% if characters[0] == "shenhe" %}
-        {% break %}
-        {% endif %}
-        <a class="carousel-item" href="#">
-            <img src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
-        </a>
-        {% endfor %}
-    </div>
 </div>
 
 <h2>原魔——全部怪物</h2>
