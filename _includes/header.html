@@ -58,31 +58,27 @@
             <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
                 <li><a href="/index">主页</a></li>
                 <li><a href="/countdown">倒计时</a></li>
-                <li><a href="/genshin">原神</a></li>
                 <li><a href="/hedgehog">小刺猬</a></li>
                 <li><a href="/food">外賣薦</a></li>
+                <li class="divider"></li>
+                <li><a href="/words_en">英语词汇</a></li>
+                <li><a href="/words_zh">汉语词汇</a></li>
             </ul>
             <!-- Dropdown Structure -->
             <ul id="dropdown2" class="dropdown-content nav-dropdown-content">
                 <li><a href="/blog/index">Abstract</a></li>
                 <li><a href="/categories">Categories</a></li>
                 <li><a href="/tags">Tags</a></li>
+                <li class="divider"></li>
+                <li><a href="/style-matter/index">Matter</a></li>
+                <li><a href="/editorial/index">Editorial</a></li>
             </ul>
             <!-- Dropdown Structure -->
             <ul id="dropdown3" class="dropdown-content nav-dropdown-content">
-                <li><a href="/about">About</a></li>
-                <li><a href="/style/index">Resume</a></li>
-                <li><a href="/contact-thanks">Contact</a></li>
+                <li><a href="/genshin">原神</a></li>
             </ul>
             <!-- Dropdown Structure -->
             <ul id="dropdown4" class="dropdown-content nav-dropdown-content">
-                <li><a href="/style-matter/index">Matter</a></li>
-                <li><a href="/editorial/index">Editorial</a></li>
-                <li><a href="/words_en">英语词汇</a></li>
-                <li><a href="/words_zh">汉语词汇</a></li>
-            </ul>
-            <!-- Dropdown Structure -->
-            <ul id="dropdown5" class="dropdown-content nav-dropdown-content">
                 <li><a href="/projects">Projects</a></li>
                 <li class="divider"></li>
                 <li><a href="/cpp">CPP</a></li>
@@ -94,11 +90,15 @@
                 <li><a href="/front_end">front_end</a></li>
                 <li><a href="/sys_design">sys_design</a></li>
                 <li><a href="/non_tech">non_tech</a></li>
+                <li class="divider"></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/style/index">Resume</a></li>
+                <li><a href="/contact-thanks">Contact</a></li>
             </ul>
 
 
             <!--To make the navbar fixed-->
-            <div class="navbar-fixed navbar-fixed-top">
+            <div class="hide-on-small-only navbar-fixed navbar-fixed-top">
                 <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
                 <!--然后在nav-wrapper同级加入nav-content-->
                 <nav>
@@ -110,10 +110,8 @@
 
                         <ul class="right">
                             <!--数组声明 用split切割字符串-->
-                            {% assign icons = "fa-home, fa-hourglass-half, fa-user, fa-blog, fa-terminal" | split: ","
-                            %}
-                            {% assign names = "HIGH,ARTICLE,ABOUT,ELSE,CODE" | split: "," %}
-                            {% for icon in icons %}
+                            {% assign names = "LIFE,ARTICLE,GAMES,CODE" | split: "," %}
+                            {% for n in names %}
                             <li><a class="dropdown-trigger" href="javascript:void(0);"
                                    data-target="dropdown{{forloop.index}}">
                                 <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
@@ -127,26 +125,12 @@
                     </div>
                 </nav>
             </div>
-            <div class="container hide">
+            <div class="container hide-on-large-only">
                 <a href="#" data-target="slide-out" class="sidenav-trigger full">
                     <i class="material-icons">menu</i>
                 </a>
             </div>
-            <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg hide">
-                <li>
-                    <div class="userView">
-                        <div class="row">
-                            <div class="col s3">
-                                <a href="{{site.github_profile}}" target="_blank">
-                                    <img class="circle z-depth-2" src="/assets/res/user.jpg" width="64" alt=""></a>
-                            </div>
-                            <div class="col s9">
-                                {{site.user}}<br>
-                                <a href="mailto:{{site.user_email}}"><u class="email">{{site.user_email}}</u></a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+            <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg hide-on-large-only">
                 <li>
                     <div class="divider"></div>
                 </li>
