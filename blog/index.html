@@ -6,8 +6,11 @@ css: ["blog.css"]
 <!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
 <div class="row">
     {% for post in paginator.posts %}
-    <div class="col s12 l6">
+    <div class="col s12">
         <div class="card hoverable">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img loading="lazy" src="">
+            </div>
             <div class="card-content">
                 <span class="card-title">{{post.title}}</span>
                 <!--日期格式化网站 http://www.strfti.me/-->
