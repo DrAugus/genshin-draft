@@ -68,22 +68,88 @@ block:
 daily:
   food:
     0:
+      time:
+      info:
     1:
+      time:
+      info:
     2:
+      time:
+      info:
     3:
+      time:
+      info:
     4:
+      time:
+      info:
     5:
+      time:
+      info:
     6:
+      time:
+      info:
     7:
+      time:
+      info:
     8:
+      time:
+      info:
     9:
+      time:
+      info:
     10:
-    11: 土豆泥好吃 泡菜不好吃
-    12: 虾滑！但是这个！番茄味道好怪
+      time:
+      info:
+    11:
+      time: 2021-12-25 19:05:00
+      info: 土豆泥好吃 泡菜不好吃
+    12:
+      time: 2021-12-26 12:06:00
+      info: 虾滑！但是这个！番茄味道好怪
+    13:
+      time:
+      info:
+    14:
+      time:
+      info:
+    15:
+      time: 2021-12-29 18:04:00
+      info: 学校重制版！炒冷面
+    16:
+      time:
+      info:
+    17:
+      time:
+      info:
+    18:
+      time: 2021-12-30 18:15:00
+      info: 一个是甜点 地瓜条 和吮指原味鸡 和雪媚娘 和蛋挞哈哈哈哈哈
+    19:
+      time: 2021-12-30 22:22:00
+      info: 它看起来好像有点丑
+    20:
+      time:
+      info:
+    21:
+      time: 2021-12-31 11:47:00
+      info: 这居然是丝瓜 远看以为莴笋
+    22:
+      time: 2021-12-31 11:47:00
+      info: 大鸡腿！
+    23:
+      time: 2021-12-31 17:57:00
+      info:
+    24:
+      time: 2021-12-31 17:58:00
+      info:
+    25:
+      time: 2022-01-01 11:50:00
+      info:
   snack:
     0:
     1:
     2:
+    3:
   tea:
     0:
     1:

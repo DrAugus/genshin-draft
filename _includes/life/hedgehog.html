@@ -1,10 +1,7 @@
-<div class="row">
-    <div class="col s12 ">
-        <div class="parallax-container">
-            <div class="parallax">
-                <img src="/assets/res/xy/40.jpg" loading="lazy">
-            </div>
-        </div>
+<h2 class="center-align">相见の日子</h2>
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light hoverable">
+        <img class="materialboxed" src="/assets/res/date1.jpg" loading="lazy">
     </div>
 </div>
 
@@ -59,16 +56,6 @@
 
     </ul>
 
-</div>
-
-<div class="row">
-    <div class="col s12 ">
-        <div class="parallax-container">
-            <div class="parallax">
-                <img src="/assets/res/xy/32.jpg" loading="lazy">
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="row">
@@ -149,7 +136,7 @@
     <h2>小刺猬の日常</h2>
 
     <!--FOOD-->
-    {% for i in (0..12) %}
+    {% for i in (0..25) %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
@@ -158,9 +145,9 @@
 
             {% for dailyFood in site.data.hedgehog.daily.food %}
             {% if i == forloop.index0 %}
-            {% if dailyFood[1] != nil %}
+            {% if dailyFood[1].info != nil %}
             <div class="card-content valign-wrapper center-align activator">
-                <span class="activator grey-text text-darken-1">{{dailyFood[1]}}</span>
+                <span class="activator grey-text text-darken-1">{{dailyFood[1].info}}</span>
             </div>
             {% endif %}
             {% endif %}
@@ -170,7 +157,7 @@
     {% endfor %}
 
     <!--TEA-->
-    {% for i in (0..3) %}
+    {% for i in (0..4) %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
@@ -191,7 +178,7 @@
     {% endfor %}
 
     <!--SNACK-->
-    {% for i in (0..2) %}
+    {% for i in (0..3) %}
     <div class="col s12 m4 l3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light hoverable">
@@ -215,3 +202,15 @@
 
 
 
+<div class="row">
+    <h2>小刺猬の生活</h2>
+    {% for i in (0..53) %}
+    <div class="col s12 m4 l3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img src="/assets/res/xy/{{i}}.jpg" loading="lazy">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
