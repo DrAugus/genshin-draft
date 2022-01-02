@@ -1,14 +1,11 @@
-<h2 class="center">跟着小猫一起学词语</h2>
-
-<ul class="collapsible popout fa-ul" data-collapsible="accordion">
+<ul class="collapsible popout" data-collapsible="accordion">
     {% for wordInfo in site.data.words-zh %}
     {% if wordInfo.words != nil %}
     <li class="hide-box-shadow hoverable">
-        <i class="fa-li fas fa-cat"></i>
         <div class="collapsible-header">
+            <i class="fas fa-cat"></i>
             <span> {{wordInfo.words}} ⌈ {{wordInfo.pinyin}} ⌋ </span>
         </div>
-
         <div class="collapsible-body">
             {% if wordInfo.basicInterpretation != nil %}
             <span>基本释义： {{wordInfo.basicInterpretation}} </span><br> {% endif %}
