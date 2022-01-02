@@ -10,9 +10,9 @@
 </blockquote>
 
 
-<div class="row">
+<div class="col s12">
     <h2>外卖推荐</h2>
-    <ul class="collapsible popout fa-ul" data-collapsible="accordion">
+    <ul class="collapsible" data-collapsible="accordion">
         {% for bestFood in site.data.food-list.bestFood %}
         {% if bestFood.name != nil %}
         <li class="hoverable">
@@ -42,9 +42,9 @@
 </div>
 
 <!--block-->
-<div class="row">
+<div class="col s12">
     <h2>拉黑商家 - 非常难吃</h2>
-    <ul class="collapsible popout fa-ul" data-collapsible="accordion">
+    <ul class="collapsible popout" data-collapsible="accordion">
         {% for blackFood in site.data.food-list.blackFood %}
         {% if blackFood.name != nil %}
         <li class="hoverable">
@@ -64,9 +64,9 @@
 </div>
 
 <!--店里吃-->
-<div class="row">
+<div class="col s12">
     <h2>去店里吃</h2>
-    <ul class="collapsible popout fa-ul" data-collapsible="accordion">
+    <ul class="collapsible popout" data-collapsible="accordion">
         {% for info in site.data.food-list.restaurant %}
         {% if info.name != nil %}
         <li class="hoverable">
