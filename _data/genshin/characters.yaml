@@ -442,10 +442,11 @@ shenhe:
 yunjin:
   id: yunjin
   name: 云堇
+  prefix: 红毹婵娟
   element: 岩
   star: 4
   event_exclusive: false
-  intro: 红毹婵娟，庄谐并举
+  intro: 「云翰社」现任当家，集剧作与演唱能力于一身的璃月戏曲名角。风格自成一派，雅致柔美，恰如其人。
   city: Liyue
   ele: geo
 
