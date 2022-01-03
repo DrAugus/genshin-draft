@@ -249,19 +249,31 @@
     {% endfor %}
 </div>
 
-<h2>原神——全部角色</h2>
+<h2>原神——<a href="javascript:showAll()">全部角色</a></h2>
+<div class="row center-align">
+    {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
+    {% for e in eleName %}
+    <button class="waves-effect waves-light" id="{{e}}" type="submit">
+        <img src="/assets/res/genshin-impact/elements/{{e}}.png" loading="lazy">
+    </button>
+    {% endfor %}
+</div>
+
 <div class="row">
+    {% for e in eleName %}
     {% for characters in site.data.genshin.characters %}
-    <div class="col s4 m3 l1">
+    {% if characters[1].ele == e %}
+    <div class="col s4 m3 l1  hide show-{{characters[1].ele}}">
         <div class="card radius10px">
             <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
             <div class="card-image waves-effect waves-block waves-light hoverable character-avatar"
                  style="background-image: url('/assets/res/genshin-impact/characters/{{characters[1].id}}.png');">
-                <!--                <img src="/assets/res/genshin-impact/elements/{{characters[1].ele}}.png" loading="lazy">-->
                 <span class=" center-align valign-wrapper ele-text-{{characters[1].ele}}"> {{characters[1].name}}</span>
             </div>
         </div>
     </div>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
 </div>
 
