@@ -41,37 +41,46 @@
                 {% for characters in site.data.genshin.characters %}
                 {% if characters[1].id == wish.wish5star %}
                 <div class="card event-item event-item-{{i}} event-item-background-{{characters[1].ele}} hide">
-                    <div class="card-image waves-effect waves-block waves-light activator" style="height: 100%">
-                        <div class="event-img responsive-img "
-                             style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
-                        </div>
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 100%">
+                        <!-- Modal Trigger -->
+                        <a class="modal-trigger" href="#modal{{i}}">
+                            <div class="event-img responsive-img"
+                                 style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
+                            </div>
+                        </a>
                         <span class="left-align timeline-character-text ele-text-{{characters[1].ele}}">{{characters[1].name}}</span>
                     </div>
 
-                    <div class="card-reveal">
-                            <span class="card-title ele-text-{{characters[1].ele}}">
-                                <i class="material-icons right">close</i>
-                                {{wish.name}}-{{wish.shortName}}
-                            </span>
-                        <!--downcase转换小写 并用_替换空格 append其他标记-->
-                        <img alt="" loading="lazy"
-                             src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
+                    <!-- Modal Structure -->
+                    <div id="modal{{i}}" class="modal modal-fixed-footer radius10px">
+                        <div class="card">
 
-                        <p class="ele-text-{{characters[1].ele}}">{{characters[1].intro-content}}</p>
+                            <div class="card-content valign-wrapper center-align">
+                                <h4 class="center-align"> {{wish.wishName}} -
+                                    {{site.data.genshin.characters[wish.wish5star].name}}</h4>
+                            </div>
+                            <!--downcase转换小写 并用_替换空格 append其他标记-->
+                            <!--replace
+                            Replaces all occurrences of a string with a substring.-->
+                            <div class="card-image waves-effect waves-block waves-light hoverable">
+                                <img alt="" loading="lazy"
+                                     src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
+                            </div>
 
-                        <button class="btn waves-effect waves-light ele-{{characters[1].ele}}">
-                            <i class="material-icons">share</i>
-                        </button>
-                        <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                            <div class="card-action valign-wrapper center-align">
+                                <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
+                            </div>
+                            <div class="card-action">
+                                <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {% break %}
                 {% endif %}
                 {% endfor %}
-
                 {% endfor %}
-
             </div>
 
             {% for i in (0..lenAllDays) %}
@@ -79,7 +88,6 @@
                 <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
             </div>
             {% endfor %}
-
         </div>
     </div>
 </div>
