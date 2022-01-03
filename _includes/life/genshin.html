@@ -264,11 +264,29 @@
     {% for characters in site.data.genshin.characters %}
     {% if characters[1].ele == e %}
     <div class="col s4 m3 l1  hide show-{{characters[1].ele}}">
-        <div class="card radius10px">
-            <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
-            <div class="card-image waves-effect waves-block waves-light hoverable character-avatar"
-                 style="background-image: url('/assets/res/genshin-impact/characters/{{characters[1].id}}.png');">
-                <span class=" center-align valign-wrapper ele-text-{{characters[1].ele}}"> {{characters[1].name}}</span>
+        <a class="modal-trigger" href="#modal{{characters[1].id}}">
+            <div class="card radius10px">
+                <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
+                <div class="card-image waves-effect waves-block waves-light hoverable character-avatar"
+                     style="background-image: url('/assets/res/genshin-impact/characters/{{characters[1].id}}.png');">
+                    <span class=" center-align valign-wrapper ele-text-{{characters[1].ele}}"> {{characters[1].name}}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal{{characters[1].id}}" class="modal modal-fixed-footer radius10px">
+        <div class="card">
+            <div class="card-content valign-wrapper center-align">
+                <h4 class="center-align"> {{characters[1].prefix}} - {{characters[1].name}}</h4>
+            </div>
+            <div class="card-image waves-effect waves-block waves-light hoverable">
+                <img alt="" loading="lazy"
+                     src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+            </div>
+            <div class="card-action valign-wrapper center-align">
+                <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
             </div>
         </div>
     </div>
