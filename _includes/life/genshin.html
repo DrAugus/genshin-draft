@@ -53,25 +53,22 @@
 
                     <!-- Modal Structure -->
                     <div id="modal{{i}}" class="modal modal-fixed-footer radius10px">
-                        <div class="card">
-
-                            <div class="card-content valign-wrapper center-align">
-                                <h4 class="center-align"> {{wish.wishName}} -
-                                    {{site.data.genshin.characters[wish.wish5star].name}}</h4>
-                            </div>
-                            <!--downcase转换小写 并用_替换空格 append其他标记-->
-                            <!--replace
-                            Replaces all occurrences of a string with a substring.-->
-                            <div class="card-image waves-effect waves-block waves-light hoverable">
-                                <img alt="" loading="lazy"
-                                     src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
-                            </div>
-
-                            <div class="card-action valign-wrapper center-align">
-                                <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
-                            </div>
-                            <div class="card-action">
-                                <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                        <div class="modal-content auto-height hide-box-shadow hide-border">
+                            <div class="card hide-box-shadow hide-border">
+                                <div class="card-content valign-wrapper center-align">
+                                    <h4 class="center-align"> {{wish.wishName}} -
+                                        {{site.data.genshin.characters[wish.wish5star].name}}</h4>
+                                </div>
+                                <!--downcase转换小写 并用_替换空格 append其他标记-->
+                                <!--replace
+                                Replaces all occurrences of a string with a substring.-->
+                                <div class="card-image waves-effect waves-block waves-light hoverable">
+                                    <img alt="" loading="lazy"
+                                         src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
+                                </div>
+                                <div class="card-action">
+                                    <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -284,7 +281,7 @@
 
     <!-- Modal Structure -->
     <div id="modal{{characters[1].id}}" class="modal modal-fixed-footer radius10px">
-        <div class="modal-content auto-height">
+        <div class="modal-content auto-height hide-box-shadow hide-border">
             <div class="card hide-box-shadow hide-border">
                 <div class="card-content">
                     <h4 class="center-align"> {{characters[1].prefix}} - {{characters[1].name}}</h4>
