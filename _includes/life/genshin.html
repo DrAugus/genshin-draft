@@ -249,11 +249,18 @@
     {% endfor %}
 </div>
 
+<style>
+    button:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0);
+    }
+</style>
+
 <h2>原神——<a href="javascript:showAll()">全部角色</a></h2>
 <div class="row center-align">
     {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
     {% for e in eleName %}
-    <button class="waves-effect waves-light" id="{{e}}" type="submit">
+    <button class="waves-effect waves-light hoverable hide-border" id="{{e}}" type="submit">
         <img src="/assets/res/genshin-impact/elements/{{e}}.png" loading="lazy">
     </button>
     {% endfor %}
@@ -277,16 +284,18 @@
 
     <!-- Modal Structure -->
     <div id="modal{{characters[1].id}}" class="modal modal-fixed-footer radius10px">
-        <div class="card">
-            <div class="card-content valign-wrapper center-align">
-                <h4 class="center-align"> {{characters[1].prefix}} - {{characters[1].name}}</h4>
-            </div>
-            <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img alt="" loading="lazy"
-                     src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
-            </div>
-            <div class="card-action valign-wrapper center-align">
-                <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
+        <div class="modal-content auto-height">
+            <div class="card hide-box-shadow hide-border">
+                <div class="card-content">
+                    <h4 class="center-align"> {{characters[1].prefix}} - {{characters[1].name}}</h4>
+                </div>
+                <div class="card-action valign-wrapper">
+                    <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
+                </div>
+                <div class="card-image waves-effect waves-block waves-light hoverable">
+                    <img alt="" loading="lazy"
+                         src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+                </div>
             </div>
         </div>
     </div>

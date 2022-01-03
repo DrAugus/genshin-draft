@@ -99,7 +99,7 @@ nav .nav-wrapper a:hover {
     margin-top: 0.5em;
 }
 
-#page-meta {
+.page-meta {
     /*color: #777777;*/
     font-size: 95%;
 }
@@ -156,6 +156,10 @@ nav .nav-wrapper a:hover {
     border-radius: 10px;
 }
 
+.auto-height {
+    height: auto !important;
+}
+
 .collapsible.popout > li {
     margin: 3px 24px
 }
@@ -182,6 +186,10 @@ span.badge {
 
 .modal {
     bottom: auto;
+}
+
+.hide-border {
+    border: none !important;
 }
 
 .hide-box-shadow {
@@ -247,7 +255,7 @@ blockquote {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#page-info {
+.page-info {
     margin-top: 10px;
     bottom: 5rem;
     padding: 0 8%;
