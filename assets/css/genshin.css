@@ -316,13 +316,11 @@
 .character-avatar {
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 100%;
     border-radius: 10px;
 }
 
 .monster-avatar {
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 100%;
     border-radius: 10px;
 }

@@ -20,7 +20,6 @@ const showEle = (show) => {
 };
 const showAll = () => {
     for (let e of eleArr) {
-        console.log(e);
         $(".show-" + e).removeClass("hide");
     }
 };
