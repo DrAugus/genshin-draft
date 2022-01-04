@@ -11,7 +11,7 @@ const elementColor = {
 const colorWeapon = "#FFAA4B";
 
 
-const eleArr = ["dendro", "geo", "electro", "hydro", "pyro", "anemo", "cryo",];
+const eleArr = ["dendro", "geo", "electro", "hydro", "pyro", "anemo", "cryo"];
 const showEle = (show) => {
     for (let e of eleArr) {
         if (e === show) $(".show-" + e).removeClass("hide");
@@ -268,6 +268,12 @@ setInterval("setTodayTime()", 1000);
 //---------------------------------------------------------------------------
 
 
+//替换空格 转小写----------------
+//因为liquid没找到'如何替换 此处不再替换'
+const replaceAndLow = str => str.replace(/ /g, "_").toLowerCase();
+
+//----------------------------
+
 let objWish = {
     haveWish: true,//0无祈愿 1有祈愿
     wishIndex: [],//索引集 一个为当前祈愿或者即将开放的祈愿 两个为双复刻池
@@ -405,7 +411,7 @@ const updateCurrentWishInfo = () => {
         for (let w of wishColorClass) {
             w.style.color = elementColor[wishCharacters[index].ele];
         }
-        let imgSrc = wishCharacters[index].name.replace(/ /g, "_").replace(/'/g, "").toLowerCase() + "_" + wishCharacters[index].image + ".jpg";
+        let imgSrc = replaceAndLow(wishCharacters[index].name) + "_" + wishCharacters[index].image + ".jpg";
         document.getElementById("showCurrentWishCharacter" + i).src = "/assets/res/genshin-impact/events/" + imgSrc;
     }
 
@@ -452,7 +458,7 @@ const futureWishInfo = () => {
         document.getElementById("futureElements" + i).src = "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png";
         document.getElementById("futureWishText" + i).innerHTML = wishCharacters[indexArr[i]].info;
 
-        let imgSrc = wishCharacters[indexArr[i]].name.replace(/ /g, "_").replace(/'/g, "").toLowerCase() + "_" + wishCharacters[indexArr[i]].image + ".jpg";
+        let imgSrc = replaceAndLow(wishCharacters[indexArr[i]].name) + "_" + wishCharacters[indexArr[i]].image + ".jpg";
         document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/" + imgSrc;
         document.getElementById("futureWish" + i).innerHTML = "";
     }
