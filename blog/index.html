@@ -1,6 +1,5 @@
 ---
 layout: page
-css: blog.css
 js: blog.js
 ---
 
@@ -25,7 +24,7 @@ js: blog.js
     {% for post in paginator.posts %}
     {% if post.daily %}
     <div class="col s12 hide show-daily">
-        <div class="card hoverable">
+        <div class="card waves-effect waves-block waves-light hoverable radius10px">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img loading="lazy" src="">
             </div>
@@ -42,7 +41,7 @@ js: blog.js
     </div>
     {% else %}
     <div class="col s12 hide show-blog">
-        <div class="card hoverable">
+        <div class="card waves-effect waves-block waves-light hoverable radius10px">
             <div class="card-image waves-effect waves-block waves-light hoverable">
                 <img loading="lazy" src="">
             </div>
