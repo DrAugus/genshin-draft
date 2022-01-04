@@ -1,48 +1,14 @@
 ---
+
 ---
-main
-  div
-    .row
-      margin-top: 20px
-
-  ul
-    &:not(.browser-default)
-      &.pagination
-        padding-left: 0
-
-        li
-          a
-            &:hover
-              text-decoration: none
-
 
 .card
   position: relative
   margin: 0.5rem 0 1rem 0
   background-color: #fff
   -webkit-transition: -webkit-box-shadow .25s
-  transition: -webkit-box-shadow .25s
-  transition: box-shadow .25s
   transition: box-shadow .25s, -webkit-box-shadow .25s
   border-radius: 10px
-  //background: -webkit-linear-gradient(10deg, rgba(91, 210, 87, 0.5) 10%, rgba(231, 73, 139, 0.5) 90%)
-  //background: linear-gradient(10deg, rgba(91, 210, 87, 0.5) 10%, rgba(231, 73, 139, 0.5) 90%)
-
-.card1
-  background-color: #98e628 !important
-.card2
-  background-color: #e2b032 !important
-.card3
-  background-color: #fca7ff !important
-.card4
-  background-color: #03ddfe !important
-.card5
-  background-color: #fa5d3e !important
-.card6
-  background-color: #4cf3b6 !important
-.card7
-  background-color: #a6fdfd !important
-
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating)
   color: #ffab40
@@ -50,14 +16,3 @@ main
 //方法重写
 .card .card-action:last-child
   border-radius: 0 0 10px 10px
-
-
-.image.main
-  display: block
-  margin: 0 0 3em 0
-  width: 100%
-.image.main img
-  width: 100%
-@media screen and (max-width: 736px)
-.image.main
-  margin: 0 0 2em 0
