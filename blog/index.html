@@ -68,12 +68,12 @@ js: blog.js
             <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
                 {% if paginator.previous_page %}
                 {% if paginator.previous_page == 1 %}
-                <a href="/blog/"> <i class="material-icons">chevron_left</i></a>
+                <a href="/blog/"> <i class="fa fa-angle-left"></i></a>
                 {% else %}
-                <a href="/blog/page{{paginator.previous_page}}"> <i class="material-icons">chevron_left</i></a>
+                <a href="/blog/page{{paginator.previous_page}}"> <i class="fa fa-angle-left"></i></a>
                 {% endif %}
                 {% else %}
-                <a href="#!"> <i class="material-icons">chevron_left</i></a>
+                <a href="#!"> <i class="fa fa-angle-left"></i></a>
                 {% endif %}
             </li>
             {% if paginator.page == 1 %}
@@ -90,9 +90,9 @@ js: blog.js
             {% endfor %}
             <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
                 {% if paginator.next_page %}
-                <a href="/blog/page{{paginator.next_page}}"> <i class="material-icons">chevron_right</i></a>
+                <a href="/blog/page{{paginator.next_page}}"> <i class="fa fa-angle-right"></i></a>
                 {% else %}
-                <a href="#!"> <i class="material-icons">chevron_right</i></a>
+                <a href="#!"> <i class="fa fa-angle-right"></i></a>
                 {% endif %}
             </li>
         </ul>

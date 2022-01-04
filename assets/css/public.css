@@ -262,3 +262,12 @@ blockquote {
     width: 100%;
     text-align: center;
 }
+
+.pagination li i {
+    font-size: unset !important;
+}
+
+.pagination > li > a, .pagination > li > span {
+    padding: 0 10px;
+    line-height: 3rem;
+}
