@@ -38,9 +38,6 @@ contact_url: "https://github.com/DrAugus"
 disqus_shortname: "Augus"
 
 # Build settings
-theme: jekyll-theme-cayman
-markdown: kramdown
-highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-paginate
