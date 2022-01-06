@@ -1,0 +1,20 @@
+<div class="col s12">
+
+    <div class="article-sort-title">日记</div>
+    <div class="article-sort">
+        <div class="article-sort-item year">2022</div>
+        {% for post in site.documents %}
+        {% if post.daily %}
+        <div class="article-sort-item">
+            <a class="" href="{{post.url}}" target="_parent">
+                {{post.title}}
+                <small class="post-date">{{post.date | date_to_string}}</small>
+            </a>
+        </div>
+
+
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
