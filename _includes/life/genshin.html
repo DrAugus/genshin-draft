@@ -1,6 +1,6 @@
 <script>
     //这样获取时 需要在对应的时间后面加上utc+8
-    const eventsData = {{site.data.genshin.wish.characters | jsonify}};
+    const eventsData = {{site.data.genshin.wish.characters | jsonify}}
 </script>
 
 <div class="col s12 center-align">
@@ -45,8 +45,8 @@
                     <div class="card-image waves-effect waves-block waves-light" style="height: 100%">
                         <!-- Modal Trigger -->
                         <a class="modal-trigger" href="#modal{{i}}">
-                            <div class="event-img responsive-img"
-                                 style="background-image: url('/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png')">
+                            <div class="event-img responsive-img lazy"
+                                 data-original="/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png">
                             </div>
                         </a>
                         <span class="left-align timeline-character-text ele-text-{{characters[1].ele}}">{{characters[1].name}}</span>
