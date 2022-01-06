@@ -50,9 +50,8 @@
 {% if page.with_header_bg %}
 {% assign header_bg_info = page.with_header_bg | prepend: '/assets/res/' %}
 {% endif %}
-<body class="{% if page.with_full_bg %}full-bg{% endif %}" style="background-image: url('{{full_bg_info}}')">
-<header class="{% if page.with_header_bg %}header-bg{% endif %}"
-        style="background-image:url('{{header_bg_info}}')">
+<body class="{% if page.with_full_bg %}full-bg lazy{% endif %}" data-original="{{full_bg_info}}">
+<header class="{% if page.with_header_bg %}header-bg lazy{% endif %}" data-original="{{header_bg_info}}">
 
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content nav-dropdown-content">
