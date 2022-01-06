@@ -10,6 +10,8 @@ excerpt:
 
 liquid获取`_data`数据时，需要在time上加上时区，不然即使`_config.yml`设置了时区，也是使用默认utc。
 
+> 标准化————防止出现此类错误，所有`_data`路径下的数据文件，出现时间即加上utc+0800
+
 
 尝试在头部加入`daily`字段，效果不佳。在自带的`categories`里实现会更好。下标0存放的是key，下标1存放的是此`categories`的所有文章。
 
