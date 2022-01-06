@@ -3,6 +3,27 @@
     const eventsData = {{site.data.genshin.wish.characters | jsonify}}
 </script>
 
+
+<style>
+    button:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .slider .indicators .indicator-item {
+        background: #fff url("/assets/res/genshin-impact/primogem.png") no-repeat;
+        background-size: cover;
+    }
+
+    /*修改slider按钮颜色*/
+    .slider .indicators .indicator-item.active {
+        background: #fff url("/assets/res/genshin-impact/intertwined_fate.png") no-repeat;
+        background-size: cover;
+    }
+
+</style>
+
+
 <div class="col s12 center-align">
     <img src="/assets/res/genshin-impact/ys.png">
 </div>
@@ -246,13 +267,6 @@
     </div>
     {% endfor %}
 </div>
-
-<style>
-    button:focus {
-        outline: none;
-        background-color: rgba(255, 255, 255, 0);
-    }
-</style>
 
 <h2>原神——<a href="javascript:showAll()">全部角色</a></h2>
 <div class="row center-align">
