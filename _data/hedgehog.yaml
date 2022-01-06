@@ -48,11 +48,6 @@ recommend:
     info:
     img:
 tea:
-  - name: 杨枝甘露经典版
-    restaurant: 沪上阿姨
-    info:
-    img:
-      - tea/2.jpg
   - name: 豆乳芝士奶豆腐
     restaurant: 茶乙己
   - name: 布蕾和奶盖和奥利奥
@@ -185,7 +180,7 @@ daily:
       info:
     2:
       time:
-      info:
+      info: 杨枝甘露经典版 沪上阿姨 一般嘿嘿
     3:
       time:
       info: 这咖啡有点酸酸的
