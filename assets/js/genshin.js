@@ -96,14 +96,14 @@ const autoPlayVoice = () => {
     };
 
     let index = getVoiceIndex(hour);
-    document.getElementById("hutao-voice").src = voiceHuTao[index].src;
-    document.getElementById("hutao-text").innerHTML = voiceHuTao[index].text;
+    $("#hutao-voice").attr("src", voiceHuTao[index].src);
+    $("#hutao-text").text(voiceHuTao[index].text);
 };
 autoPlayVoice();
 //填充所有胡桃语音
 for (let i = 0; i < voiceHuTao.length; ++i) {
-    document.getElementById("hutao-voice-" + i).src = voiceHuTao[i].src;
-    document.getElementById("hutao-text-" + i).innerHTML = voiceHuTao[i].text;
+    $("#hutao-voice-" + i).attr("src", voiceHuTao[i].src);
+    $("#hutao-text-" + i).text(voiceHuTao[i].text);
 }
 
 
@@ -230,26 +230,19 @@ const setTimeAxis = () => {
         $(".left-day-" + i).removeClass("hide");
         //圆圈timeline-index的width为30
         $(".left-day-" + i).css("left", ((dayWidth - 30) * i) + "px");
-        document.getElementById("timelineDay" + i).innerHTML = dates[i];
+        $("#timelineDay" + i).text(dates[i]);
     }
 
     for (let i = 0; i < monthList.length; ++i) {
         $(".timeline-month-left-" + i).removeClass("hide");
         $(".timeline-month-left-" + i).css("left", (dayWidth * monthList[i][1].offset) + "px");
-
-        let widthClass = document.getElementsByClassName("timeline-month-width-" + i);
-        for (let wClass of widthClass) {
-            wClass.style.width = (dayWidth * monthList[i][1].total) + "px";
-        }
-        document.getElementById("timelineMonthName" + i).innerHTML = monthList[i][0];
+        $(".timeline-month-width-" + i).css("width", (dayWidth * monthList[i][1].total) + "px");
+        $("#timelineMonthName" + i).text(monthList[i][0]);
     }
 
     let todayOffset = Math.abs(firstDay.diff(today, "day", true));
-    let leftToday = document.getElementsByClassName("timeline-today-line-pos");
-    for (let l of leftToday) {
-        //timeline-index的width为30
-        l.style.left = todayOffset * dayWidth + 30 + "px";
-    }
+    //timeline-index的width为30
+    $(".timeline-today-line-pos").css("left", todayOffset * dayWidth + 30 + "px");
 };
 setTimeAxis();
 
@@ -262,7 +255,7 @@ setCurrentPos();
 
 const setTodayTime = () => {
     const d = dayjs();
-    document.getElementById("currentTime").innerHTML = d.format("HH:mm:ss");
+    $("#currentTime").text(d.format("HH:mm:ss"));
 };
 setInterval("setTodayTime()", 1000);
 //---------------------------------------------------------------------------
@@ -344,7 +337,8 @@ const wishInfo = () => {
             "width": wishCharacters[i].duration * dayWidth + "px",
             "left": duration * dayWidth + 30 + "px"
         });
-        if (wishCharacters[i].wish_2) $(".event-item-" + i).css("marginTop", "160px");
+        if (wishCharacters[i].wish_2)
+            $(".event-item-" + i).css("marginTop", "160px");
 
         //left-t
         $(".left-t" + i).css("left", (350 * i) + "px");
@@ -354,13 +348,9 @@ wishInfo();
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
-    let reprintWish = objWish.reprint;
     if (!objWish.haveWish) {
-        document.getElementById("noWishInfo").innerHTML = "暂无祈愿，敬请期待";
-        let currentHaveNoWish = document.getElementsByClassName("no-wish");
-        for (let n of currentHaveNoWish) {
-            n.style.display = "none";
-        }
+        $("#noWishInfo").text("暂无祈愿，敬请期待");
+        $(".no-wish").css("display", "none");
         return;
     }
     let len = objWish.wishIndex.length;
@@ -382,17 +372,14 @@ const updateCurrentWishInfo = () => {
         ];
         let index = 0;
         for (let i = len; i < 4; ++i, ++index) {
-            document.getElementById("showCurrentWishCharacter" + i).src = "/assets/res/genshin-impact/" + imgSrc[index];
-            document.getElementById("currentCharacter" + i).innerHTML = info[index][0];
-            document.getElementById("currentWishText" + i).innerHTML = info[index][1];
-            let wishColorClass = document.getElementsByClassName("current-wish-color-" + i);
-            for (let w of wishColorClass) {
-                let showColor = co[index];
-                if (showColor === "") continue;
-                w.style.color = "#000";
-                w.style.textShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
-                    showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
-            }
+            $("#showCurrentWishCharacter" + i).attr("src", "/assets/res/genshin-impact/" + imgSrc[index]);
+            $("#currentCharacter" + i).text(info[index][0]);
+            $("#currentWishText" + i).text(info[index][1]);
+            let showColor = co[index];
+            if (showColor === "") continue;
+            let tShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
+                showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
+            $(".current-wish-color-" + i).css({"color": "#000", "textShadow": tShadow});
         }
     }
 
@@ -400,19 +387,16 @@ const updateCurrentWishInfo = () => {
     for (let i = 0; i < len; ++i) {
         let index = objWish.wishIndex[i];
         //最新祈愿的起止时间
-        document.getElementById("timeStartCurrentCharacter").innerHTML = dayjs(wishCharacters[index].start).format("MM-DD HH:mm:ss");
-        document.getElementById("timeEndCurrentCharacter").innerHTML = dayjs(wishCharacters[index].end).format("MM-DD HH:mm:ss");
+        $("#timeStartCurrentCharacter").text(dayjs(wishCharacters[index].start).format("MM-DD HH:mm:ss"));
+        $("#timeEndCurrentCharacter").text(dayjs(wishCharacters[index].end).format("MM-DD HH:mm:ss"));
         //最新的祈愿
-        document.getElementById("currentCharacter" + i).innerHTML = "";
+        $("#currentCharacter" + i).text("");
         //祈愿角色信息
-        document.getElementById("currentWishText" + i).innerHTML = "";
+        $("#currentWishText" + i).text("");
         //color显示
-        let wishColorClass = document.getElementsByClassName("current-wish-color-" + index);
-        for (let w of wishColorClass) {
-            w.style.color = elementColor[wishCharacters[index].ele];
-        }
+        $(".current-wish-color-" + index).css("color", elementColor[wishCharacters[index].ele]);
         let imgSrc = replaceAndLow(wishCharacters[index].name) + "_" + wishCharacters[index].image + ".jpg";
-        document.getElementById("showCurrentWishCharacter" + i).src = "/assets/res/genshin-impact/events/" + imgSrc;
+        $("#showCurrentWishCharacter" + i).attr("src", "/assets/res/genshin-impact/events/" + imgSrc);
     }
 
 };
@@ -423,11 +407,8 @@ const futureWishInfo = () => {
     let indexArr = [];
 
     if (!objWish.comingIndex.length && !objWish.isFuture) {
-        document.getElementById("futureWishInfo").innerHTML = "未来祈愿，等待更新";
-        let futureWish = document.getElementsByClassName("future-wish");
-        for (let n of futureWish) {
-            n.style.display = "none";
-        }
+        $("#futureWishInfo").text("未来祈愿，等待更新");
+        $(".future-wish").css("display", "none");
         return;
     }
 
@@ -442,31 +423,26 @@ const futureWishInfo = () => {
 
     console.log("coming soon: ", indexArr);
     for (let i = 0; i < indexArr.length; ++i) {
-
-        let wishColorClass = document.getElementsByClassName("future-wish-color-" + i);
         let showColor = elementColor [wishCharacters[indexArr[i]].ele];
-        for (let w of wishColorClass) {
-            w.style.color = "#000";
-            w.style.textShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
-                showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
-        }
-        let eventWishBGColorClass = document.getElementsByClassName("future-wish-bg-color-" + i);
-        for (let eWishColor of eventWishBGColorClass) {
-            eWishColor.style.backgroundColor = showColor + "59";//59 35%透明度
-        }
+        let tShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
+            showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
+        $(".future-wish-color-" + i).css({"color": "#000", "textShadow": tShadow});
 
-        document.getElementById("futureElements" + i).src = "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png";
-        document.getElementById("futureWishText" + i).innerHTML = wishCharacters[indexArr[i]].info;
+        $(".future-wish-bg-color-" + i).css("backgroundColor", showColor + "59");//59 35%透明度
+
+        $("#futureElements" + i).attr("src", "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png");
+        $("#futureWishText" + i).text(wishCharacters[indexArr[i]].info);
 
         let imgSrc = replaceAndLow(wishCharacters[indexArr[i]].name) + "_" + wishCharacters[indexArr[i]].image + ".jpg";
-        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/" + imgSrc;
-        document.getElementById("futureWish" + i).innerHTML = "";
+        $("#futureWishBG" + i).attr("src", "/assets/res/genshin-impact/events/" + imgSrc);
+        $("#futureWish" + i).text("ssssssssss");
+
     }
 
     for (let i = indexArr.length; i < 5; ++i) {
-        document.getElementById("futureWishBG" + i).src = "/assets/res/genshin-impact/events/genshin.png";
-        document.getElementById("futureWish" + i).innerHTML = "敬请期待";
-        document.getElementById("futureWishText" + i).innerHTML = "";
+        $("#futureWishBG" + i).attr("src", "/assets/res/genshin-impact/events/genshin.png");
+        $("#futureWish" + i).text("敬请期待");
+        $("#futureWishText" + i).text("");
     }
 };
 futureWishInfo();
