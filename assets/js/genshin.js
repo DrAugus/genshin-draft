@@ -365,7 +365,7 @@ const updateCurrentWishInfo = () => {
     }
     let len = objWish.wishIndex.length;
 
-    if (!reprintWish) {
+    if (true) {
 
         let imgSrc = [
             "wish/character/Wanderlust Invocation 1.png",
