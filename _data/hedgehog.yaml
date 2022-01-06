@@ -9,8 +9,8 @@ recommend:
   - name: 鸡翅玉米
     info:
     img:
-      - chicken_wings_corn_1.JPG
-      - chicken_wings_corn_2.JPG
+      - chicken_wings_corn_1.jpg
+      - chicken_wings_corn_2.jpg
   - name: 美式·牛肉汉堡
     info: 牛约堡
     img:
@@ -55,6 +55,13 @@ tea:
       - tea/2.jpg
   - name: 豆乳芝士奶豆腐
     restaurant: 茶乙己
+  - name: 布蕾和奶盖和奥利奥
+    restaurant:
+    info:
+    img:
+      - tea/4.jpg
+
+
 block:
   - name: 古早蛋糕 芝士味
     reason: 不好吃 有点咸
@@ -65,6 +72,8 @@ block:
   - name:
     reason:
     img:
+
+
 daily:
   food:
     0:
@@ -147,13 +156,39 @@ daily:
       info:
   snack:
     0:
+      time:
+      info:
     1:
+      time:
+      info:
     2:
+      time:
+      info:
     3:
+      time:
+      info:
     4:
+      time:
+      info:
     5:
+      time:
+      info:
+    6:
+      time:
+      info:
   tea:
     0:
+      time:
+      info:
     1:
+      time:
+      info:
     2:
-    3: 这咖啡有点酸酸的
+      time:
+      info:
+    3:
+      time:
+      info: 这咖啡有点酸酸的
+    4:
+      time:
+      info: 蛮好喝的它的布蕾和奶盖和奥利奥
