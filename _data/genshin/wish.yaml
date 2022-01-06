@@ -4,8 +4,8 @@ characters:
   - name: Ballad in Goblets
     image: 1
     shortName: Venti
-    start: 2020-09-28 00:00:00
-    end: 2020-10-18 17:59:59
+    start: 2020-09-28 00:00:00 +0800
+    end: 2020-10-18 17:59:59 +0800
     version: 1.0
     wish5star: venti
     wishName: 「杯装之诗」
@@ -13,16 +13,16 @@ characters:
   - name: Sparkling Steps
     image: 1
     shortName: Klee
-    start: 2020-10-20 18:00:00
-    end: 2020-11-09 17:59:59
+    start: 2020-10-20 18:00:00 +0800
+    end: 2020-11-09 17:59:59 +0800
     wish5star: klee
     wishName: 「闪焰的驻足」
     url: https://bbs.mihoyo.com/ys/article/2277693
   - name: Farewell of Snezhnaya
     image: 1
     shortName: Tartaglia
-    start: 2020-11-11 11:00:00
-    end: 2020-12-01 15:59:59
+    start: 2020-11-11 11:00:00 +0800
+    end: 2020-12-01 15:59:59 +0800
     version: 1.1
     wish5star: tartaglia
     wishName: 「暂别冬都」
@@ -30,16 +30,16 @@ characters:
   - name: Gentry of Hermitage
     image: 1
     shortName: Zhongli
-    start: 2020-12-01 18:00:00
-    end: 2020-12-22 14:59:59
+    start: 2020-12-01 18:00:00 +0800
+    end: 2020-12-22 14:59:59 +0800
     wish5star: zhongli
     wishName: 「陵薮市朝」
     url: https://bbs.mihoyo.com/ys/article/2878243
   - name: Secretum Secretorum
     image: 1
     shortName: Albedo
-    start: 2020-12-23 11:00:00
-    end: 2021-01-12 15:59:59
+    start: 2020-12-23 11:00:00 +0800
+    end: 2021-01-12 15:59:59 +0800
     version: 1.2
     wish5star: albedo
     wishName: 「深秘之息」
@@ -47,16 +47,16 @@ characters:
   - name: Adrift in the Harbor
     image: 1
     shortName: Ganyu
-    start: 2021-01-12 18:00:00
-    end: 2021-02-02 14:59:59
+    start: 2021-01-12 18:00:00 +0800
+    end: 2021-02-02 14:59:59 +0800
     wish5star: ganyu
     wishName: 「浮生孰来」
     url: https://bbs.mihoyo.com/ys/article/3661305
   - name: Invitation to Mundane Life
     image: 1
     shortName: Xiao
-    start: 2021-02-03 11:00:00
-    end: 2021-02-17 15:59:59
+    start: 2021-02-03 11:00:00 +0800
+    end: 2021-02-17 15:59:59 +0800
     version: 1.3
     wish5star: xiao
     wishName: 「烟火之邀」
@@ -64,24 +64,24 @@ characters:
   - name: Dance of Lanterns
     image: 1
     shortName: Keqing
-    start: 2021-02-17 18:00:00
-    end: 2021-03-02 15:59:59
+    start: 2021-02-17 18:00:00 +0800
+    end: 2021-03-02 15:59:59 +0800
     wish5star: keqing
     wishName: 「鱼龙灯昼」
     url: https://bbs.mihoyo.com/ys/article/4005720
   - name: Moment of Bloom
     image: 1
     shortName: Hu Tao
-    start: 2021-03-02 18:00:00
-    end: 2021-03-16 14:59:59
+    start: 2021-03-02 18:00:00 +0800
+    end: 2021-03-16 14:59:59 +0800
     wish5star: hu_tao
     wishName: 「赤团开时」
     url: https://bbs.mihoyo.com/ys/article/4701165
   - name: Ballad in Goblets
     image: 2
     shortName: Venti
-    start: 2021-03-17 11:00:00
-    end: 2021-04-06 15:59:59
+    start: 2021-03-17 11:00:00 +0800
+    end: 2021-04-06 15:59:59 +0800
     wish5star: venti
     wish4star:
       - sucrose
@@ -93,8 +93,8 @@ characters:
   - name: Farewell of Snezhnaya
     image: 2
     shortName: Tartaglia
-    start: 2021-04-06 18:00:00
-    end: 2021-04-27 14:59:59
+    start: 2021-04-06 18:00:00 +0800
+    end: 2021-04-27 14:59:59 +0800
     color: 50A3C0
     wish5star: tartaglia
     wish4star:
@@ -106,8 +106,8 @@ characters:
   - name: Gentry of Hermitage
     image: 2
     shortName: Zhongli
-    start: 2021-04-28 11:00:00
-    end: 2021-05-18 17:59:59
+    start: 2021-04-28 11:00:00 +0800
+    end: 2021-05-18 17:59:59 +0800
     color: D1A55C
     wish5star: zhongli
     wish4star:
@@ -120,8 +120,8 @@ characters:
   - name: Born of Ocean Swell
     image: 1
     shortName: Eula
-    start: 2021-05-18 18:00:00
-    end: 2021-06-08 14:59:59
+    start: 2021-05-18 18:00:00 +0800
+    end: 2021-06-08 14:59:59 +0800
     wish5star: eula
     wish4star:
       - xingqiu
@@ -132,8 +132,8 @@ characters:
   - name: Sparkling Steps
     image: 2
     shortName: Klee
-    start: 2021-06-09 11:00:00
-    end: 2021-06-29 17:59:59
+    start: 2021-06-09 11:00:00 +0800
+    end: 2021-06-29 17:59:59 +0800
     wish5star: klee
     wish4star:
       - fischl
@@ -145,8 +145,8 @@ characters:
   - name: Leaves in the Wind
     image: 1
     shortName: Kazuha
-    start: 2021-06-29 18:00:00
-    end: 2021-07-20 14:59:59
+    start: 2021-06-29 18:00:00 +0800
+    end: 2021-07-20 14:59:59 +0800
     wish5star: kaedehara_kazuha
     wish4star:
       - bennett
@@ -157,8 +157,8 @@ characters:
   - name: The Herons Court
     image: 1
     shortName: Ayaka
-    start: 2021-07-21 11:00:00
-    end: 2021-08-10 17:59:59
+    start: 2021-07-21 11:00:00 +0800
+    end: 2021-08-10 17:59:59 +0800
     wish5star: kamisato_ayaka
     wish4star:
       - chongyun
@@ -170,8 +170,8 @@ characters:
   - name: Tapestry of Golden Flames
     image: 1
     shortName: Yoimiya
-    start: 2021-08-10 18:00:00
-    end: 2021-08-31 14:59:59
+    start: 2021-08-10 18:00:00 +0800
+    end: 2021-08-31 14:59:59 +0800
     wish5star: yoimiya
     wish4star:
       - sayu
@@ -182,8 +182,8 @@ characters:
   - name: Reign of Serenity
     image: 1
     shortName: Raiden Shogun
-    start: 2021-09-01 11:00:00
-    end: 2021-09-21 17:59:59
+    start: 2021-09-01 11:00:00 +0800
+    end: 2021-09-21 17:59:59 +0800
     wish5star: raiden_shogun
     wish4star:
       - xiangling
@@ -195,8 +195,8 @@ characters:
   - name: Drifting Luminescence
     image: 1
     shortName: Sangonomiya Kokomi
-    start: 2021-09-21 18:00:00
-    end: 2021-10-12 14:59:59
+    start: 2021-09-21 18:00:00 +0800
+    end: 2021-10-12 14:59:59 +0800
     wish5star: sangonomiya_kokomi
     wish4star:
       - rosaria
@@ -207,8 +207,8 @@ characters:
   - name: Farewell of Snezhnaya
     image: 3
     shortName: Tartaglia
-    start: 2021-10-13 11:00:00
-    end: 2021-11-02 17:59:59
+    start: 2021-10-13 11:00:00 +0800
+    end: 2021-11-02 17:59:59 +0800
     wish5star: tartaglia
     wish4star:
       - ningguang
@@ -220,8 +220,8 @@ characters:
   - name: Moment of Bloom
     image: 2
     shortName: Hu Tao
-    start: 2021-11-02 18:00:00
-    end: 2021-11-23 14:59:59
+    start: 2021-11-02 18:00:00 +0800
+    end: 2021-11-23 14:59:59 +0800
     wish5star: hu_tao
     wish4star:
       - thoma
@@ -232,8 +232,8 @@ characters:
   - name: Secretum Secretorum
     image: 2
     shortName: Albedo
-    start: 2021-11-24 11:00:00
-    end: 2021-12-14 17:59:59
+    start: 2021-11-24 11:00:00 +0800
+    end: 2021-12-14 17:59:59 +0800
     wish5star: albedo
     wish4star:
       - bennett
@@ -245,8 +245,8 @@ characters:
   - name: Born of Ocean Swell
     image: 2
     shortName: Eula
-    start: 2021-11-24 11:00:00
-    end: 2021-12-14 17:59:59
+    start: 2021-11-24 11:00:00 +0800
+    end: 2021-12-14 17:59:59 +0800
     wish5star: eula
     wish4star:
       - bennett
@@ -258,8 +258,8 @@ characters:
   - name: Oni's Royale
     image: 1
     shortName: Arataki Itto
-    start: 2021-12-14 18:00:00
-    end: 2022-01-04 14:59:59
+    start: 2021-12-14 18:00:00 +0800
+    end: 2022-01-04 14:59:59 +0800
     wish5star: arataki_itto
     wish4star:
       - gorou
@@ -270,8 +270,8 @@ characters:
   - name: The Transcendent One Returns
     image: 1
     shortName: Shenhe
-    start: 2022-01-05 11:00:00
-    end: 2022-01-25 17:59:59
+    start: 2022-01-05 11:00:00 +0800
+    end: 2022-01-25 17:59:59 +0800
     color: 2BE3F8
     wish5star: shenhe
     wish4star:
@@ -284,8 +284,8 @@ characters:
   - name: Invitation to Mundane Life
     image: 2
     shortName: Xiao
-    start: 2022-01-05 11:00:00
-    end: 2022-01-25 17:59:59
+    start: 2022-01-05 11:00:00 +0800
+    end: 2022-01-25 17:59:59 +0800
     wish5star: xiao
     wish4star:
       - yunjin
@@ -297,8 +297,8 @@ characters:
   - name: Gentry of Hermitage
     image: 3
     shortName: Zhongli
-    start: 2022-01-25 18:00:00
-    end: 2022-02-15 14:59:59
+    start: 2022-01-25 18:00:00 +0800
+    end: 2022-02-15 14:59:59 +0800
     wish5star: zhongli
     wish4star:
       - yanfei
@@ -309,8 +309,8 @@ characters:
   - name: Adrift in the Harbor
     image: 2
     shortName: Ganyu
-    start: 2022-01-25 18:00:00
-    end: 2022-02-15 14:59:59
+    start: 2022-01-25 18:00:00 +0800
+    end: 2022-02-15 14:59:59 +0800
     wish5star: ganyu
     wish4star:
       - yanfei
@@ -323,8 +323,8 @@ characters:
 weapons:
   - name: Epitome Invocation
     image: 1
-    start: 2020-09-28 00:00:00
-    end: 2020-10-18 18:00:00
+    start: 2020-09-28 00:00:00 +0800
+    end: 2020-10-18 18:00:00 +0800
     shortName: Amos
     color: f54e42
     version: true
@@ -334,8 +334,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/1748393
   - name: Epitome Invocation
     image: 2
-    start: 2020-10-20 18:00:00
-    end: 2020-11-10 16:00:00
+    start: 2020-10-20 18:00:00 +0800
+    end: 2020-11-10 16:00:00 +0800
     shortName: Lost Prayer
     color: f5c242
     wish5star:
@@ -344,8 +344,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/2277850
   - name: Epitome Invocation
     image: 3
-    start: 2020-11-11 06:00:00
-    end: 2020-12-01 16:00:00
+    start: 2020-11-11 06:00:00 +0800
+    end: 2020-12-01 16:00:00 +0800
     shortName: Skyward
     color: f5ef42
     version: true
@@ -355,8 +355,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/2563554
   - name: Epitome Invocation
     image: 4
-    start: 2020-12-01 18:00:00
-    end: 2020-12-22 15:00:00
+    start: 2020-12-01 18:00:00 +0800
+    end: 2020-12-22 15:00:00 +0800
     shortName: Vortex
     color: 7ef542
     wish5star:
@@ -365,8 +365,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/2878254
   - name: Epitome Invocation
     image: 5
-    start: 2020-12-23 06:00:00
-    end: 2021-01-12 16:00:00
+    start: 2020-12-23 06:00:00 +0800
+    end: 2021-01-12 16:00:00 +0800
     shortName: Summit
     color: 42ecf5
     version: true
@@ -376,8 +376,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/3236902
   - name: Epitome Invocation
     image: 6
-    start: 2021-01-12 18:00:00
-    end: 2021-02-02 15:00:00
+    start: 2021-01-12 18:00:00 +0800
+    end: 2021-02-02 15:00:00 +0800
     shortName: Amos
     color: 424ef5
     wish5star:
@@ -386,8 +386,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/3661310
   - name: Epitome Invocation
     image: 7
-    start: 2021-02-03 06:00:00
-    end: 2021-02-23 16:00:00
+    start: 2021-02-03 06:00:00 +0800
+    end: 2021-02-23 16:00:00 +0800
     shortName: Primordial
     color: b042f5
     version: true
@@ -397,16 +397,16 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/4005726
   - name: Epitome Invocation
     image: 8
-    start: 2021-02-23 18:00:00
-    end: 2021-03-16 15:00:00
+    start: 2021-02-23 18:00:00 +0800
+    end: 2021-03-16 15:00:00 +0800
     shortName: Homa
     color: f542c8
     wish5star: wolfs_gravestone staff_of_homa
     url: https://bbs.mihoyo.com/ys/article/4571433
   - name: Epitome Invocation
     image: 9
-    start: 2021-03-17 06:00:00
-    end: 2021-04-06 16:00:00
+    start: 2021-03-17 06:00:00 +0800
+    end: 2021-04-06 16:00:00 +0800
     shortName: Elegy
     color: f54e42
     version: true
@@ -415,8 +415,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/4959533
   - name: Epitome Invocation
     image: 10
-    start: 2021-04-06 18:00:00
-    end: 2021-04-27 15:00:00
+    start: 2021-04-06 18:00:00 +0800
+    end: 2021-04-27 15:00:00 +0800
     shortName: Skyward
     color: f5c242
     wish5star: skyward_harp lost_prayer_to_the_sacred_winds
@@ -424,8 +424,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/5305224
   - name: Epitome Invocation
     image: 11
-    start: 2021-04-28 06:00:00
-    end: 2021-05-18 17:59:59
+    start: 2021-04-28 06:00:00 +0800
+    end: 2021-05-18 17:59:59 +0800
     shortName: Summit
     color: f5ef42
     version: true
@@ -434,8 +434,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/5726196
   - name: Epitome Invocation
     image: 12
-    start: 2021-05-18 18:00:00
-    end: 2021-06-08 15:00:00
+    start: 2021-05-18 18:00:00 +0800
+    end: 2021-06-08 15:00:00 +0800
     shortName: Pines
     color: 7ef542
     wish5star: song_of_broken_pines aquila_favonia
@@ -443,8 +443,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/6179334
   - name: Epitome Invocation
     image: 13
-    start: 2021-06-09 06:00:00
-    end: 2021-06-29 17:59:59
+    start: 2021-06-09 06:00:00 +0800
+    end: 2021-06-29 17:59:59 +0800
     shortName: Lost Prayer
     color: 42ecf5
     wish5star: lost_prayer_to_the_sacred_winds skyward_pride
@@ -453,8 +453,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/6634464
   - name: Epitome Invocation
     image: 14
-    start: 2021-06-29 18:00:00
-    end: 2021-07-20 14:59:59
+    start: 2021-06-29 18:00:00 +0800
+    end: 2021-07-20 14:59:59 +0800
     shortName: Freedom-Sworn
     color: 424ef5
     wish5star: freedom-sworn skyward_atlas
@@ -462,8 +462,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/7067773
   - name: Epitome Invocation
     image: 15
-    start: 2021-07-21 06:00:00
-    end: 2021-08-10 17:59:59
+    start: 2021-07-21 06:00:00 +0800
+    end: 2021-08-10 17:59:59 +0800
     shortName: Mistsplitter
     color: b042f5
     wish5star: mistsplitter_reforged skyward_spine
@@ -472,8 +472,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/7578979
   - name: Epitome Invocation
     image: 16
-    start: 2021-08-10 18:00:00
-    end: 2021-08-31 14:59:59
+    start: 2021-08-10 18:00:00 +0800
+    end: 2021-08-31 14:59:59 +0800
     shortName: Thundering Pulse
     color: f542c8
     wish5star: thundering_pulse skyward_blade
@@ -481,8 +481,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/8275803
   - name: Epitome Invocation
     image: 17
-    start: 2021-09-01 06:00:00
-    end: 2021-09-21 17:59:59
+    start: 2021-09-01 06:00:00 +0800
+    end: 2021-09-21 17:59:59 +0800
     shortName: Engulfing
     color: b042f5
     wish5star: engulfing_lightning the_unforged
@@ -491,8 +491,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/9004345
   - name: Epitome Invocation
     image: 18
-    start: 2021-09-21 18:00:00
-    end: 2021-10-12 14:59:59
+    start: 2021-09-21 18:00:00 +0800
+    end: 2021-10-12 14:59:59 +0800
     shortName: Moonglow
     color: 424ef5
     wish5star: primordial_jade_cutter everlasting_moonglow
@@ -500,8 +500,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/9679285
   - name: Epitome Invocation
     image: 19
-    start: 2021-10-13 06:00:00
-    end: 2021-11-02 17:59:59
+    start: 2021-10-13 06:00:00 +0800
+    end: 2021-11-02 17:59:59 +0800
     shortName: Polar Star
     color: f542c8
     wish5star: polar_star memory_of_dust
@@ -510,8 +510,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/10755907
   - name: Epitome Invocation
     image: 20
-    start: 2021-11-02 18:00:00
-    end: 2021-11-23 14:59:59
+    start: 2021-11-02 18:00:00 +0800
+    end: 2021-11-23 14:59:59 +0800
     shortName: Homa
     color: b042f5
     wish5star: staff_of_homa elegy_for_the_end
@@ -519,8 +519,8 @@ weapons:
     url: https://bbs.mihoyo.com/ys/article/11444617
   - name: Epitome Invocation
     image: 22
-    start: 2021-12-14 18:00:00
-    end: 2022-01-04 17:59:59
+    start: 2021-12-14 18:00:00 +0800
+    end: 2022-01-04 17:59:59 +0800
     shortName: Redhorn
     color: b042f5
     featured: redhorn_stonethresher skyward_harp
