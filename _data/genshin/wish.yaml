@@ -95,7 +95,6 @@ characters:
     shortName: Tartaglia
     start: 2021-04-06 18:00:00 +0800
     end: 2021-04-27 14:59:59 +0800
-    color: 50A3C0
     wish5star: tartaglia
     wish4star:
       - rosaria
@@ -108,7 +107,6 @@ characters:
     shortName: Zhongli
     start: 2021-04-28 11:00:00 +0800
     end: 2021-05-18 17:59:59 +0800
-    color: D1A55C
     wish5star: zhongli
     wish4star:
       - yanfei
@@ -272,7 +270,6 @@ characters:
     shortName: Shenhe
     start: 2022-01-05 11:00:00 +0800
     end: 2022-01-25 17:59:59 +0800
-    color: 2BE3F8
     wish5star: shenhe
     wish4star:
       - yunjin
@@ -319,6 +316,55 @@ characters:
     wishName: 「浮生孰来」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
+  - name: x
+    image: 1
+    shortName: Yae Miko
+    start: 2022-02-16 11:00:00 +0800
+    end: 2022-03-08 17:59:59 +0800
+    wish5star: yae_miko
+    wish4star:
+    version: 2.5
+    wishName: 「」
+    url: https://bbs.mihoyo.com/ys/article/?
+  - name: Reign of Serenity
+    image: 1
+    shortName: Raiden Shogun
+    start: 2022-02-16 11:00:00 +0800
+    end: 2022-03-08 17:59:59 +0800
+    wish5star: raiden_shogun
+    wish4star:
+      - xiangling
+      - sucrose
+      - kujou_sara
+    version: 2.1
+    wishName: 「影寂天下人」
+    wish_2: true
+    url: https://bbs.mihoyo.com/ys/article/?
+  - name: Leaves in the Wind
+    image: 1
+    shortName: Kazuha
+    start: 2022-03-08 18:00:00 +0800
+    end: 2022-03-28 14:59:59 +0800
+    wish5star: kaedehara_kazuha
+    wish4star:
+      - bennett
+      - razor
+      - rosaria
+    wishName: 「叶落风随」
+    url: https://bbs.mihoyo.com/ys/article/7067772
+  - name: The Herons Court
+    image: 1
+    shortName: Ayaka
+    start: 2022-03-08 18:00:00 +0800
+    end: 2022-03-28 14:59:59 +0800
+    wish5star: kamisato_ayaka
+    wish4star:
+      - chongyun
+      - ningguang
+      - yanfei
+    wishName: 「白鹭之庭」
+    wish_2: true
+    url: https://bbs.mihoyo.com/ys/article/7578978
 
 weapons:
   - name: Epitome Invocation
@@ -326,8 +372,6 @@ weapons:
     start: 2020-09-28 00:00:00 +0800
     end: 2020-10-18 18:00:00 +0800
     shortName: Amos
-    color: f54e42
-    version: true
     wish5star:
       - aquila_favonia
       - amos_bow
@@ -337,7 +381,6 @@ weapons:
     start: 2020-10-20 18:00:00 +0800
     end: 2020-11-10 16:00:00 +0800
     shortName: Lost Prayer
-    color: f5c242
     wish5star:
       - lost_prayer_to_the_sacred_winds
       - wolfs_gravestone
@@ -347,8 +390,6 @@ weapons:
     start: 2020-11-11 06:00:00 +0800
     end: 2020-12-01 16:00:00 +0800
     shortName: Skyward
-    color: f5ef42
-    version: true
     wish5star:
       - skyward_harp
       - memory_of_dust
@@ -358,7 +399,6 @@ weapons:
     start: 2020-12-01 18:00:00 +0800
     end: 2020-12-22 15:00:00 +0800
     shortName: Vortex
-    color: 7ef542
     wish5star:
       - vortex_vanquisher
       - the_unforged
@@ -368,7 +408,6 @@ weapons:
     start: 2020-12-23 06:00:00 +0800
     end: 2021-01-12 16:00:00 +0800
     shortName: Summit
-    color: 42ecf5
     version: true
     wish5star:
       - summit_shaper
@@ -379,7 +418,6 @@ weapons:
     start: 2021-01-12 18:00:00 +0800
     end: 2021-02-02 15:00:00 +0800
     shortName: Amos
-    color: 424ef5
     wish5star:
       - amos_bow
       - skyward_pride
@@ -389,7 +427,6 @@ weapons:
     start: 2021-02-03 06:00:00 +0800
     end: 2021-02-23 16:00:00 +0800
     shortName: Primordial
-    color: b042f5
     version: true
     wish5star:
       - primordial_jade_winged-spear
@@ -400,7 +437,6 @@ weapons:
     start: 2021-02-23 18:00:00 +0800
     end: 2021-03-16 15:00:00 +0800
     shortName: Homa
-    color: f542c8
     wish5star: wolfs_gravestone staff_of_homa
     url: https://bbs.mihoyo.com/ys/article/4571433
   - name: Epitome Invocation
@@ -408,8 +444,6 @@ weapons:
     start: 2021-03-17 06:00:00 +0800
     end: 2021-04-06 16:00:00 +0800
     shortName: Elegy
-    color: f54e42
-    version: true
     wish5star: elegy_for_the_end skyward_blade
     wish4star: the_alley_flash wine_and_song favonius_greatsword favonius_warbow dragons_bane
     url: https://bbs.mihoyo.com/ys/article/4959533
@@ -418,7 +452,6 @@ weapons:
     start: 2021-04-06 18:00:00 +0800
     end: 2021-04-27 15:00:00 +0800
     shortName: Skyward
-    color: f5c242
     wish5star: skyward_harp lost_prayer_to_the_sacred_winds
     wish4star: alley_hunter favonius_codex favonius_lance sacrificial_greatsword favonius_sword
     url: https://bbs.mihoyo.com/ys/article/5305224
@@ -427,8 +460,6 @@ weapons:
     start: 2021-04-28 06:00:00 +0800
     end: 2021-05-18 17:59:59 +0800
     shortName: Summit
-    color: f5ef42
-    version: true
     wish5star: summit_shaper memory_of_dust
     wish4star: lithic_blade lithic_spear sacrificial_bow eye_of_perception the_flute
     url: https://bbs.mihoyo.com/ys/article/5726196
@@ -437,7 +468,6 @@ weapons:
     start: 2021-05-18 18:00:00 +0800
     end: 2021-06-08 15:00:00 +0800
     shortName: Pines
-    color: 7ef542
     wish5star: song_of_broken_pines aquila_favonia
     wish4star: rust sacrificial_fragments dragons_bane rainslasher sacrificial_sword
     url: https://bbs.mihoyo.com/ys/article/6179334
@@ -446,7 +476,6 @@ weapons:
     start: 2021-06-09 06:00:00 +0800
     end: 2021-06-29 17:59:59 +0800
     shortName: Lost Prayer
-    color: 42ecf5
     wish5star: lost_prayer_to_the_sacred_winds skyward_pride
     wish4star: mitternachts_waltz lions_roar the_bell favonius_lance the_widsith
     version: true
@@ -456,7 +485,6 @@ weapons:
     start: 2021-06-29 18:00:00 +0800
     end: 2021-07-20 14:59:59 +0800
     shortName: Freedom-Sworn
-    color: 424ef5
     wish5star: freedom-sworn skyward_atlas
     wish4star: the_alley_flash wine_and_song alley_hunter favonius_greatsword dragons_bane
     url: https://bbs.mihoyo.com/ys/article/7067773
@@ -465,7 +493,6 @@ weapons:
     start: 2021-07-21 06:00:00 +0800
     end: 2021-08-10 17:59:59 +0800
     shortName: Mistsplitter
-    color: b042f5
     wish5star: mistsplitter_reforged skyward_spine
     wish4star: favonius_sword sacrificial_greatsword favonius_lance favonius_codex the_stringless
     version: true
@@ -475,7 +502,6 @@ weapons:
     start: 2021-08-10 18:00:00 +0800
     end: 2021-08-31 14:59:59 +0800
     shortName: Thundering Pulse
-    color: f542c8
     wish5star: thundering_pulse skyward_blade
     wish4star: sacrificial_sword rainslasher dragons_bane sacrificial_fragments favonius_warbow
     url: https://bbs.mihoyo.com/ys/article/8275803
@@ -484,7 +510,6 @@ weapons:
     start: 2021-09-01 06:00:00 +0800
     end: 2021-09-21 17:59:59 +0800
     shortName: Engulfing
-    color: b042f5
     wish5star: engulfing_lightning the_unforged
     wish4star: lions_roar the_bell favonius_lance the_widsith sacrificial_bow
     version: true
@@ -494,7 +519,6 @@ weapons:
     start: 2021-09-21 18:00:00 +0800
     end: 2021-10-12 14:59:59 +0800
     shortName: Moonglow
-    color: 424ef5
     wish5star: primordial_jade_cutter everlasting_moonglow
     wish4star: the_flute favonius_greatsword dragons_bane favonius_codex the_stringless
     url: https://bbs.mihoyo.com/ys/article/9679285
@@ -503,7 +527,6 @@ weapons:
     start: 2021-10-13 06:00:00 +0800
     end: 2021-11-02 17:59:59 +0800
     shortName: Polar Star
-    color: f542c8
     wish5star: polar_star memory_of_dust
     wish4star: akuoumaru favonius_sword favonius_lance eye_of_perception rust
     version: true
@@ -513,7 +536,6 @@ weapons:
     start: 2021-11-02 18:00:00 +0800
     end: 2021-11-23 14:59:59 +0800
     shortName: Homa
-    color: b042f5
     wish5star: staff_of_homa elegy_for_the_end
     wish4star: wavebreakers_fin mouuns_moon sacrificial_sword rainslasher the_widsith
     url: https://bbs.mihoyo.com/ys/article/11444617
@@ -522,7 +544,6 @@ weapons:
     start: 2021-12-14 18:00:00 +0800
     end: 2022-01-04 17:59:59 +0800
     shortName: Redhorn
-    color: b042f5
     featured: redhorn_stonethresher skyward_harp
     featuredRare: the_alley_flash mitternachts_waltz the_bell favonius_lance sacrificial_fragments
     timezoneDependent: true
