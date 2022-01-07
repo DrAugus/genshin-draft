@@ -3,18 +3,7 @@ layout: page
 js: blog.js
 ---
 
-<div class="row">
-    <div class="col s12 center-align">
-        <button class="btn waves-effect waves-light red" id="daily" type="submit">
-            <i class="fa fa-calendar-day"> DAILY</i>
-        </button>
-        <button class="btn waves-effect waves-light blue" id="blog" type="submit">
-            <i class="fa fa-blog"> BLOG</i>
-        </button>
-    </div>
-</div>
-
-<div class="divider"></div>
+<h2 class="center-align">文</h2>
 
 <!--paginator只能用于index.html但可以用子文件下的index.html-->
 <!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
@@ -22,24 +11,6 @@ js: blog.js
 <!--更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}} github不可用-->
 <div class="row">
     {% for post in paginator.posts %}
-    {% if post.daily %}
-    <div class="col s12 hide show-daily">
-        <div class="card waves-effect waves-block waves-light hoverable radius10px">
-            <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img loading="lazy" src="">
-            </div>
-            <div class="card-content">
-                <span class="card-title">{{post.title}}</span>
-
-                <p><i class="fa fa-calendar-check"></i>写于: {{post.date | date: "%Y-%m-%d"}}</p>
-                <span>{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
-            </div>
-            <div class="card-action">
-                <span><a href="{{post.url}}">READ MORE</a></span>
-            </div>
-        </div>
-    </div>
-    {% else %}
     <div class="col s12 hide show-blog">
         <div class="card waves-effect waves-block waves-light hoverable radius10px">
             <div class="card-image waves-effect waves-block waves-light hoverable">
@@ -57,7 +28,6 @@ js: blog.js
             </div>
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 
 
