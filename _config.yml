@@ -58,6 +58,8 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - run.bat
+  - .idea
+  - .github
 sass:
   style: compressed
 
