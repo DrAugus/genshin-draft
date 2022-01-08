@@ -180,7 +180,7 @@
 <div class="row">
     <h2>版本答案 队伍推荐</h2>
     <ul class="collapsible" data-collapsible="accordion">
-        {% for party in site.data.genshin.party-setup %}
+        {% for party in site.data.genshin.party_setup %}
         <li class="hoverable radius5px">
             <div class="collapsible-header">
                 <span>{{party.name}}</span>
@@ -238,36 +238,7 @@
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
 
-<h2>观月推荐</h2>
-
-<div class="row">
-    {% for artifacts in site.data.genshin.artifacts-collocation %}
-    <div class="col s12 m6 l4 ">
-        <div class="card ">
-            <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img class="activator" src="/assets/res/genshin-impact/characters/half/{{artifacts[0]}}.png"
-                     loading="lazy">
-            </div>
-
-            <div class="card-reveal">
-                <span class="card-title">{{artifacts[1].name}}圣遗物</span>
-                {% if artifacts[1].artifacts != "" %} 推荐：{{artifacts[1].artifacts}}<br>{% endif %}
-
-                {% if artifacts[1].main.sands != nil or artifacts[1].main.goblet != nil
-                or artifacts[1].main.circlet != nil %}
-                主词条：沙漏【{{artifacts[1].main.sands}}】 杯子【{{artifacts[1].main.goblet}}】
-                头【{{artifacts[1].main.circlet}}】<br>
-                {% endif %}
-
-                {% if artifacts[1].sub != "" %} 副词条：{{artifacts[1].sub}}<br>{% endif %}
-                {% if artifacts[1].tips != nil %} TIPS：{{artifacts[1].tips}}<br>{% endif %}
-            </div>
-
-        </div>
-    </div>
-    {% endfor %}
-</div>
-
+<!--全部角色 信息 圣遗物 武器-->
 <h2>原神——<a href="javascript:showAll()">全部角色</a></h2>
 <div class="row center-align">
     {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
@@ -303,8 +274,24 @@
                 <div class="card-action valign-wrapper">
                     <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
                 </div>
-                <div class="card-image waves-effect waves-block waves-light hoverable">
-                    <img alt="" loading="lazy"
+                {% for artifacts in site.data.genshin.artifacts_collocation %}
+                {% if artifacts[0] == characters[1].id %}
+                <div class="card-action valign-wrapper">
+                    {% if artifacts[1].artifacts != nil %} 圣遗物推荐：{{artifacts[1].artifacts}}<br>{% endif %}
+                    {% if artifacts[1].weapons != nil %} 武器推荐：{{artifacts[1].weapons}}<br>{% endif %}
+                    {% if artifacts[1].talent != nil %} 天赋推荐：{{artifacts[1].talent}}<br>{% endif %}
+                    {% if artifacts[1].main.sands != nil or artifacts[1].main.goblet != nil
+                    or artifacts[1].main.circlet != nil %}
+                    主词条：沙漏【{{artifacts[1].main.sands}}】 杯子【{{artifacts[1].main.goblet}}】
+                    头【{{artifacts[1].main.circlet}}】<br>
+                    {% endif %}
+                    {% if artifacts[1].sub != nil %} 副词条：{{artifacts[1].sub}}<br>{% endif %}
+                    {% if artifacts[1].tips != nil %} TIPS：{{artifacts[1].tips}}<br>{% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="card-action valign-wrapper center-align">
+                    <img alt="" loading="lazy" class=" responsive-img"
                          src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
                 </div>
             </div>

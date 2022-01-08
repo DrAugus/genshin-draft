@@ -1,8 +1,20 @@
 # weapon 靠前的为 最推荐
 # artifact 靠前的为 最推荐
 # sub 靠前的为 最推荐
+yunjin:
+  weapons: 决斗、西风、喜多院
+  talent: 1-8-8
+  artifacts:
+    - 华冠梦醒形骸记4件
+  main:
+    sands: 充能
+    goblet: 防御
+    circlet: 防御
+  sub:
+    - 防御
+    - 充能
+  tips: 建议充能不低于220%
 thoma:
-  name: 托马
   weapons:
   talent:
   artifacts:
@@ -16,7 +28,6 @@ thoma:
     - 百分比生命值
   tips: 如果选择生命值武器，那么时之沙主属性选择充能效率；如果选择充能武器，那么时之沙主属性选择生命值。
 kujou_sara:
-  name: 九条裟罗
   weapons:
     - 天空之翼
     - 祭礼弓
@@ -39,7 +50,6 @@ kujou_sara:
     - 充能
   tips:
 xiangling:
-  name: 香菱
   weapons:
   talent:
   artifacts:
@@ -51,7 +61,6 @@ xiangling:
   sub:
   tips:
 zhongli:
-  name: 钟离
   weapons:
   talent:
   artifacts:
@@ -67,7 +76,6 @@ zhongli:
     - 攻击
   tips:
 bennett:
-  name: 班尼特
   weapons:
   talent:
   artifacts:
@@ -81,7 +89,6 @@ bennett:
     - 攻击
   tips:
 arataki_itto:
-  name: 荒泷一斗
   weapons:
   talent:
   artifacts:
