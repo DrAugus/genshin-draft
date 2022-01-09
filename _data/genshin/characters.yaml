@@ -117,6 +117,17 @@ xiangling:
   intro: 「万民堂」的新任大厨兼跑堂，对料理之道极具热情，最拿手的是麻辣菜肴。年纪尚轻，但厨艺精湛，在吃虎岩的老饕之中颇有名气。如果她要请你进行新品试吃，大可放心品尝，绝不会辜负你的期待，真的。
   city: Mondstadt
   ele: pyro
+  cultivate:
+    weapons:
+    talent:
+    artifacts:
+      - 绝缘之旗印4件
+    main:
+      sands:
+      goblet:
+      circlet:
+    sub:
+    tips:
 
 beidou:
   id: beidou
@@ -177,6 +188,21 @@ zhongli:
   intro: 应「往生堂」邀请而来的神秘客卿。样貌俊美，举止高雅，拥有远超常人的学识。虽说来历不明，却知礼数、晓规矩。坐镇「往生堂」，能行天地万物之典仪。
   city: Liyue
   ele: geo
+  cultivate:
+    weapons:
+    talent:
+    artifacts:
+      - 千岩固牢2件 + 宗室2件
+    main:
+      sands: 生命值
+      goblet: 岩伤
+      circlet: 暴击/暴伤
+    sub:
+      - 暴击
+      - 暴伤
+      - 生命
+      - 攻击
+    tips:
 
 fischl:
   id: fischl
@@ -197,6 +223,19 @@ bennett:
   intro: 蒙德城冒险家协会为数不多的年轻冒险家，一直被莫名的「不幸」所纠缠。他所创立的「班尼冒险团」，在「不幸」的影响下不断有成员长期告假，目前仅有团长一人在队活动，已处于解散边缘。但在班尼特诚恳的请求下，蒙德城冒险家协会接待员凯瑟琳小姐为他保留了「班尼冒险团」的编制，同时，也向他隐瞒了其他成员早已跳槽的事实。
   city: Mondstadt
   ele: pyro
+  cultivate:
+    weapons:
+    talent:
+    artifacts:
+      - 宗室4件
+    main:
+      sands: 充能
+      goblet: 生命
+      circlet: 治疗
+    sub:
+      - 充能
+      - 攻击
+    tips:
 
 tartaglia:
   id: tartaglia
@@ -387,6 +426,28 @@ kujou_sara:
   intro: 天领奉行的将领。行如风，言如誓，是位魄力过人的女性。她有着「神的笃信者」之名，将全部忠心都奉献给了雷电将军。将军所追求的「永恒」，也是她愿意为之而战的信念。
   city: Inazuma
   ele: electro
+  cultivate:
+    weapons:
+      - 天空之翼
+      - 祭礼弓
+      - 绝弦
+    talent:
+      - 1
+      - 8
+      - 8
+    artifacts:
+      - 宗室4件
+      - 绝缘之旗印4件
+    main:
+      sands: 充能
+      goblet: 雷伤
+      circlet: 暴击/暴伤
+    sub:
+      - 暴击
+      - 暴伤
+      - 攻击
+      - 充能
+    tips:
 
 aloy:
   id: aloy
@@ -407,6 +468,19 @@ thoma:
   intro: 社奉行神里家的家政官，同时也是活跃在稻妻的「地头蛇」。为人友善又富有亲和力，不论身处何处都能轻易融入人群。乍看似乎是个非常随性的人，实际上却很有责任感。无论对待工作或人际都有着格外认真的一面。
   city: Inazuma
   ele: pyro
+  cultivate:
+    weapons:
+    talent:
+    artifacts:
+      - 千岩固牢2件 + 绝缘之旗印2件
+    main:
+      sands: 生命值/充能效率
+      goblet: 生命值/充能效率
+      circlet: 生命值
+    sub:
+      - 充能效率
+      - 百分比生命值
+    tips: 如果选择生命值武器，那么时之沙主属性选择充能效率；如果选择充能武器，那么时之沙主属性选择生命值。
 
 arataki_itto:
   id: arataki_itto
@@ -417,6 +491,21 @@ arataki_itto:
   intro: 鬼族后裔，性格豪爽热血的快意男儿。如风一般迅猛，也如雷一般夺目。
   city: Inazuma
   ele: geo
+  cultivate:
+    weapons:
+    talent:
+    artifacts:
+      - 华冠梦醒形骸记4件
+    main:
+      sands: 防御
+      goblet: 岩伤
+      circlet: 暴击/暴伤
+    sub:
+      - 暴击
+      - 暴伤
+      - 防御
+      - 攻击
+    tips:
 
 gorou:
   id: gorou
@@ -449,6 +538,19 @@ yunjin:
   intro: 「云翰社」现任当家，集剧作与演唱能力于一身的璃月戏曲名角。风格自成一派，雅致柔美，恰如其人。
   city: Liyue
   ele: geo
+  cultivate:
+    weapons: 决斗、西风、喜多院
+    talent: 1-8-8
+    artifacts:
+      - 华冠梦醒形骸记4件
+    main:
+      sands: 充能
+      goblet: 防御
+      circlet: 防御
+    sub:
+      - 防御
+      - 充能
+    tips: 建议充能不低于220%
 
 yae_miko:
   id: yae_miko

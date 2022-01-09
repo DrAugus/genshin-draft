@@ -274,22 +274,20 @@
                 <div class="card-action valign-wrapper">
                     <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
                 </div>
-                {% for artifacts in site.data.genshin.artifacts_collocation %}
-                {% if artifacts[0] == characters[1].id %}
+                {% if characters[1].cultivate != nil %}
                 <div class="card-action valign-wrapper">
-                    {% if artifacts[1].artifacts != nil %} 圣遗物推荐：{{artifacts[1].artifacts}}<br>{% endif %}
-                    {% if artifacts[1].weapons != nil %} 武器推荐：{{artifacts[1].weapons}}<br>{% endif %}
-                    {% if artifacts[1].talent != nil %} 天赋推荐：{{artifacts[1].talent}}<br>{% endif %}
-                    {% if artifacts[1].main.sands != nil or artifacts[1].main.goblet != nil
-                    or artifacts[1].main.circlet != nil %}
-                    主词条：沙漏【{{artifacts[1].main.sands}}】 杯子【{{artifacts[1].main.goblet}}】
-                    头【{{artifacts[1].main.circlet}}】<br>
+                    {% if characters[1].cultivate.artifacts != nil %} 圣遗物推荐：{{characters[1].cultivate.artifacts}}<br>{% endif %}
+                    {% if characters[1].cultivate.weapons != nil %} 武器推荐：{{characters[1].cultivate.weapons}}<br>{% endif %}
+                    {% if characters[1].cultivate.talent != nil %} 天赋推荐：{{characters[1].cultivate.talent}}<br>{% endif %}
+                    {% if characters[1].cultivate.main.sands != nil or characters[1].cultivate.main.goblet != nil
+                    or characters[1].cultivate.main.circlet != nil %}
+                    主词条：沙漏【{{characters[1].cultivate.main.sands}}】 杯子【{{characters[1].cultivate.main.goblet}}】
+                    头【{{characters[1].cultivate.main.circlet}}】<br>
                     {% endif %}
-                    {% if artifacts[1].sub != nil %} 副词条：{{artifacts[1].sub}}<br>{% endif %}
-                    {% if artifacts[1].tips != nil %} TIPS：{{artifacts[1].tips}}<br>{% endif %}
+                    {% if characters[1].cultivate.sub != nil %} 副词条：{{characters[1].cultivate.sub}}<br>{% endif %}
+                    {% if characters[1].cultivate.tips != nil %} TIPS：{{characters[1].cultivate.tips}}<br>{% endif %}
                 </div>
                 {% endif %}
-                {% endfor %}
                 <div class="card-action valign-wrapper center-align">
                     <img alt="" loading="lazy" class=" responsive-img"
                          src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
