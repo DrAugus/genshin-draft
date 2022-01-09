@@ -37,8 +37,44 @@
 
 {% capture lenElements %}6{% endcapture %}
 
+<!--当前祈愿-->
+<div class="col s12">
+
+    <h2 class="center-align" id="noWishInfo"></h2>
+    <div class="no-wish">
+
+        <h4 class="center">旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h4>
+        <h2 class="center-align">
+            <span class="tooltipped" id="deadline" data-position="left" data-delay="30" data-tooltip="倒计时"></span>
+        </h2>
+        <h3 class="center-align">
+            <span class="tooltipped" id="time_str" data-position="left" data-delay="30" data-tooltip="NOW"></span>
+        </h3>
+
+        <h3 class="center">当前祈愿信息</h3>
+        <h4 class="center-align">
+            祈愿周期为：<span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span>
+        </h4>
+        <div class="slider">
+            <ul class="slides">
+                {% for i in (0..3) %}
+                <li>
+                    <img id="showCurrentWishCharacter{{i}}" loading="lazy">
+                    <div class="caption left-align">
+                        <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
+                        <h4 class="light current-wish-color-{{i}}" id="currentWishText{{i}}"></h4>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</div>
+
 <!--时间轴-->
 <div class="col s12">
+    <h2 class="center-align">开服至今祈愿信息</h2>
     <div class="timeline-scroll-x" id="setNowPos">
 
         <div class="timeline-month">
@@ -132,52 +168,8 @@
     </div>
 </div>
 
-<!--当前祈愿-->
-<div class="col s12">
-
-    <h2 id="noWishInfo"></h2>
-    <div class="no-wish">
-
-        <div class="row ">
-            <h3 class="center">旅行者可以在活动祈愿中获得更多角色与武器，组建强大的队伍！</h3>
-            <ul class="collapsible popout" data-collapsible="accordion">
-
-                <li class="z-depth-2 hoverable radius5px">
-                    <div class="collapsible-header">祈愿倒计时：<span id="deadline"></span></div>
-                    <div class="collapsible-body hide"></div>
-                </li>
-                <li class="z-depth-2 hoverable radius5px">
-                    <div class="collapsible-header">当前时间为：<span id="time_str"></span></div>
-                    <div class="collapsible-body hide"></div>
-                </li>
-                <li class="z-depth-2 hoverable radius5px">
-                    <div class="collapsible-header">当前祈愿周期为：
-                        <span id="timeStartCurrentCharacter"></span> ~ <span id="timeEndCurrentCharacter"></span>
-                    </div>
-                    <div class="collapsible-body hide"></div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="slider">
-            <ul class="slides">
-                {% for i in (0..3) %}
-                <li>
-                    <img id="showCurrentWishCharacter{{i}}" loading="lazy">
-                    <div class="caption left-align">
-                        <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
-                        <h4 class="light current-wish-color-{{i}}" id="currentWishText{{i}}"></h4>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-
-    </div>
-</div>
-
 <!--版本答案-->
-<div class="row">
+<div class="col s12">
     <h2>版本答案 队伍推荐</h2>
     <ul class="collapsible" data-collapsible="accordion">
         {% for party in site.data.genshin.party_setup %}
@@ -207,7 +199,7 @@
 </div>
 
 <!--即将发布-->
-<div class="row">
+<div class="col s12">
 
     <h2>即将发布</h2>
 

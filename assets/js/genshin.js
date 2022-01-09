@@ -431,12 +431,10 @@ const futureWishInfo = () => {
         $(".future-wish-bg-color-" + i).css("backgroundColor", showColor + "59");//59 35%透明度
 
         $("#futureElements" + i).attr("src", "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png");
-        $("#futureWishText" + i).text(wishCharacters[indexArr[i]].info);
 
         let imgSrc = replaceAndLow(wishCharacters[indexArr[i]].name) + "_" + wishCharacters[indexArr[i]].image + ".jpg";
         $("#futureWishBG" + i).attr("src", "/assets/res/genshin-impact/events/" + imgSrc);
-        $("#futureWish" + i).text("ssssssssss");
-
+        $("#futureWish" + i).text("");
     }
 
     for (let i = indexArr.length; i < 5; ++i) {
