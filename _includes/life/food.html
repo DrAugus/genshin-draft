@@ -1,36 +1,53 @@
-<p>让你能够更快速的决定今天吃什么</p>
+<p class="center-align">今天吃什么呢</p>
 
-<blockquote>
-    温馨提示：评级在商家上 | 味道评级在商品上
-    <ul>
-        <li class="stars-5">5星</li>
-        <li class="stars-4">4星</li>
-        <li class="stars-3">3星</li>
+<div class="col s12">
+    <h2>在日程上了</h2>
+    <ul class="collapsible popout" data-collapsible="accordion">
+        {% for future in site.data.food-list.future %}
+        {% if future.name != nil %}
+        <li class="hoverable">
+            <div class="collapsible-header">
+                <div> {{future.name}}</div>
+            </div>
+
+            <div class="collapsible-body {% if future.recommend == nil %}hide{% endif %}">
+                {% if future.recommend != nil %}
+                {% for info in future.recommend %}
+                <p>{{info}}</p>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+        </li>
+        {% endif %}
+        {% endfor %}
     </ul>
-</blockquote>
+</div>
 
-
+<!--外卖推荐-->
 <div class="col s12">
     <h2>外卖推荐</h2>
     <ul class="collapsible" data-collapsible="accordion">
         {% for bestFood in site.data.food-list.bestFood %}
         {% if bestFood.name != nil %}
         <li class="hoverable">
-            <div class="collapsible-header stars-{{bestFood.satisfaction}}">
+            <div class="collapsible-header stars-{{bestFood.rate}}">
                 <div> {{bestFood.name}}</div>
                 <span class="badge right">
-                        {% for food in bestFood.food %}
-                        ￥{{food.price}}
-                        {% break %}
-                        {% endfor %}
+                    {% for food in bestFood.recommend %}
+                    {% assign price = food | split: "," %}
+                    <!--price 0是商品 1是价钱-->
+                    ￥{{price[1]}}
+                    {% break %}
+                    {% endfor %}
                     </span>
             </div>
             <div class="collapsible-body">
-                {% for food in bestFood.food %}
-                <p class="chip stars-{{food.food_rate}}">{{food.name}}</p><br>
-                <p class="chip">￥{{food.price}}</p><br>
-                {% if food.note != nil %}
-                <p class="chip"> TIPS: {{food.note}}</p><br>
+                {% for food in bestFood.recommend %}
+                <p class="chip stars-{{bestFood.rate}}">{{price[0]}}</p><br>
+                <p class="chip">￥{{price[1]}}</p><br>
+                {% if bestFood.tip != nil %}
+                <p class="chip"> TIPS: {{bestFood.tip}}</p><br>
                 {% endif %}
                 {% endfor %}
             </div>
@@ -74,7 +91,7 @@
                 <div> {{info.name}}</div>
             </div>
 
-            <div class="collapsible-body {% if info.recommend == nil and info.not-recommend == nil %}hide{% endif %}">
+            <div class="collapsible-body {% if info.recommend == nil and info.not_recommend == nil %}hide{% endif %}">
                 {% if info.recommend != nil %}
                 <p>
                     推荐菜品：
@@ -83,11 +100,11 @@
                     {% endfor %}
                 </p>
                 {% endif %}
-                {% if info.not-recommend != nil %}
+                {% if info.not_recommend != nil %}
                 <p>
                     拉黑菜品：
-                    {% for not-recommend in info.not-recommend %}
-                    {{not-recommend}}，
+                    {% for not_recommend in info.not_recommend %}
+                    {{not_recommend}}，
                     {% endfor %}
                 </p>
                 {% endif %}

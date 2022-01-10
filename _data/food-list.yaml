@@ -1,191 +1,159 @@
 bestFood:
-  - name: 汉库麻辣香锅(紫金港店)
-    type: mala_xiang_guo
-    satisfaction: 3
-    food:
-      - name: 香辣-六荤五素单人豪华餐 | 土豆粉 | 雪碧
-        food_rate: 5
-        price: 18.67
-        note: 下午会饿 偶现胃痛
-
-  - name: 华莱士·全鸡汉堡(浙港广场店)
-    type: eu_cuisine
-    satisfaction: 4
-    food:
-      - name: 六件自助-黑胶嫩牛五方+牛气冲天堡+脆皮全腿+鸡米花+香芋派+中可
-        food_rate: 5
-        price: 23.8
-        note:
-
-  - name: 胖次打面团.烤包.拌粉(城西银泰店)
-    type: fen_mian
-    satisfaction: 4
-    food:
-      - name: 双主食烤包自选豪华四件套-招牌香酥鸡炭火烤包+铁板烤肉拌粉+可乐+无小食
-        food_rate: 5
-        price: 24.8
-        note: 下午会饿
-
-  - name: 小孔哥湖南津市牛肉粉(太合店)
-    type: fen_mian
-    satisfaction: 3
-    food:
-      - name: 招牌辣椒炒肉汤粉-微辣 | 卤鸡腿
-        food_rate: 4
-        price: 17.99
-        note: 16:30会饿
-
-  - name: 黔缘花溪·苗家牛肉粉(紫金港店)
-    type: fen_mian
-    satisfaction: 4
-    food:
-      - name: 金汤肥牛汤粉 | 椒盐炸脆菇 | 公牛肉饼
-        food_rate: 5
-        price: 21
-        note: 下午会饿
-
-  - name: 漠漠家.胡辣汤.焖面.肉夹馍(杭州城西店)
-    type: fen_mian
-    satisfaction: 4
-    food:
-      - name: 焖面自选 | 可乐 | 韭菜盒子 | 加香菜葱花
-        food_rate: 5
-        price: 15.79
-        note: 会腻 切忌连续食用 忌香辣焖面
-
-      - name: 自选焖面单人餐+配胡辣汤 | 藕夹 | 韭菜盒子
-        food_rate: 5
-        price: 14.89
-        note: 会腻 切忌连续食用 忌香辣焖面
-
-  - name: 芝根披萨PIZZA
-    type: eu_cuisine
-    satisfaction: 5
-    food:
-      - name: mini自选-精选芝士披萨
-        food_rate: 5
-        price: 9.9
-        note: 仅作小食
-
-  - name: 杜小姐在西北·凉皮·肉夹馍·酸辣粉(太和中心店)
-    type: fen_mian
-    satisfaction: 5
-    food:
-      - name: 岐山臊子面 | 老潼关肉夹馍
-        food_rate: 5
-        price: 23.8
-        note:
-
-  - name: 徐记手撕鸭坊(五洲店)
-    type: fried_chicken
-    satisfaction: 5
-    food:
-      - name: 一人份手撕鸭+随机铁板菜+米饭 | 可口可乐
-        food_rate: 5
-        price: 19
-        note:
-
-  - name: 川哥哥.香辣爆炒
-    type: dishes
-    satisfaction: 3
-    food:
-      - name: 尖椒豆皮 | 香芹爆牛肉
-        food_rate: 5
-        price: 20.8
-        note: 很辣
-
-  - name: 椒花麻辣香锅(紫金港店)
-    type: mala_xiang_guo
-    satisfaction: 4
-    food:
-      - name: 5荤5素套餐 | 土豆粉 | 盲盒随机混搭 | 加香菜中辣
-        food_rate: 5
-        price: 20.68
-        note: 下午会饿
-
-  - name: 蜜哆哆韩式炸鸡(紫金港店)
-    type: fried_chicken
-    satisfaction: 5
-    food:
-      - name: 豪华半只鸡套餐-飘香芝士味 | 套餐加量-去骨鸡腿肉2块
-        food_rate: 5
-        price: 22.59
-        note:
-
-  - name: 有间拉面(紫金港店)
-    type: fen_mian
-    satisfaction: 5
-    food:
-      - name: 酸汤牛腩拉面-加猪排 | 荷包蛋
-        food_rate: 5
-        price: 20.48
-        note: 下午会饿
-
-  - name: 好口味新疆大盘鸡(拱墅万达店)
-    type: fried_chicken
-    satisfaction: 5
-    food:
-      - name: 大盘鸡加肉伴馒头(2个馒头)-微辣
-        food_rate: 5
-        price: 18.56
-        note:
-
-  - name: 西北狼只用鲜鸡大盘鸡(紫金港店)
-    type: fried_chicken
-    satisfaction: 4
-    food:
-      - name: 单人份大盘鸡+宽面-香辣味 | 馒头2个 | 网红锅贴3个
-        food_rate: 5
-        price: 17.28
-        note: 下午会饿 偶现胃痛
-
   - name:
+    recommend:
+      -
+    not_recommend:
+      -
+    tip:
+    rate:
     type:
-    satisfaction: 0
-    food:
-      - name:
-        food_rate: 0
-        price:
-        note:
-
+  - name: 汉库麻辣香锅(紫金港店)
+    recommend:
+      - 香辣-六荤五素单人豪华餐 | 土豆粉 | 雪碧,18.67
+    not_recommend:
+    tip: 下午会饿 偶现胃痛
+    rate: 8
+    type: 麻辣香锅
+  - name: 华莱士
+    recommend:
+      - 六件自助-黑胶嫩牛五方+牛气冲天堡+脆皮全腿+鸡米花+香芋派+中可,23.8
+    not_recommend:
+    tip:
+    rate: 8
+    type:
+  - name: 胖次打面团.烤包.拌粉(城西银泰店)
+    recommend:
+      - 双主食烤包自选豪华四件套-招牌香酥鸡炭火烤包+铁板烤肉拌粉+可乐+无小食,24.8
+    not_recommend:
+    tip:
+    rate: 9
+    type:
+  - name: 小孔哥湖南津市牛肉粉(太合店)
+    recommend:
+      - 招牌辣椒炒肉汤粉-微辣 | 卤鸡腿,17.99
+    not_recommend:
+    tip:
+    rate: 8
+    type:
+  - name: 黔缘花溪·苗家牛肉粉(紫金港店)
+    recommend:
+      - 金汤肥牛汤粉 | 椒盐炸脆菇 | 公牛肉饼,21
+    not_recommend:
+    tip:
+    rate: 8
+    type:
+  - name: 漠漠家.胡辣汤.焖面.肉夹馍(杭州城西店)
+    recommend:
+      - 自选焖面单人餐+配胡辣汤 | 藕夹 | 韭菜盒子,15.79
+    not_recommend:
+      - 香辣焖面
+    tip: 会腻 切忌连续食用
+    rate: 9
+    type:
+  - name: 芝根披萨PIZZA
+    recommend:
+      - mini自选-精选芝士披萨,9.9
+    not_recommend:
+      -
+    tip:
+    rate:
+    type:
+  - name: 杜小姐在西北·凉皮·肉夹馍·酸辣粉(太和中心店)
+    recommend:
+      - 岐山臊子面 | 老潼关肉夹馍,23.8
+    not_recommend:
+      -
+    tip: 有时候的外卖包装很差 需要注意
+    rate:
+    type:
+  - name: 徐记手撕鸭坊(五洲店)
+    recommend:
+      - 一人份手撕鸭+随机铁板菜+米饭 | 可口可乐,19
+    not_recommend:
+      -
+    tip:
+    rate:
+    type:
+  - name: 川哥哥.香辣爆炒
+    recommend:
+      - 尖椒豆皮 | 香芹爆牛肉,20.8
+    not_recommend:
+      -
+    tip:
+    rate:
+    type:
+  - name: 椒花麻辣香锅(紫金港店)
+    recommend:
+      - 5荤5素套餐 | 土豆粉 | 盲盒随机混搭 | 加香菜中辣,20.68
+    not_recommend:
+      -
+    tip:
+    rate:
+    type:
+  - name: 蜜哆哆韩式炸鸡(紫金港店)
+    recommend:
+      - 豪华半只鸡套餐-飘香芝士味 | 套餐加量-去骨鸡腿肉2块,22.59
+    not_recommend:
+      -
+    tip:
+    rate:
+    type:
+  - name: 有间拉面(紫金港店)
+    recommend:
+      - 酸汤牛腩拉面-加猪排 | 荷包蛋,20.48
+    not_recommend:
+      -
+    tip:
+    rate:
+    type:
+  - name: 好口味新疆大盘鸡(拱墅万达店)
+    recommend:
+      - 大盘鸡加肉拌馒头(2个馒头)-微辣,18.56
+    not_recommend:
+      -
+    tip:
+    rate: 9
+    type:
+  - name: 西北狼只用鲜鸡大盘鸡(紫金港店)
+    recommend:
+      - 单人份大盘鸡+宽面-香辣味 | 馒头2个 | 网红锅贴3个,17.28
+    not_recommend:
+      -
+    tip: 没有好口味的好吃
+    rate: 7
+    type:
 
 blackFood:
   - name: 河南大烩菜
     reason:
     food:
-
   - name: 陕老顺.油泼面.凉皮.肉夹馍(祥符街道店)
     reason:
     food:
-
   - name: 私町Osaka食堂外带寿司(五洲国际广场店)
     reason:
     food:
-
   - name: 遇膳•黄焖鸡米饭•过桥米线(美林湾店)
     reason:
     food:
-
   - name: 东北饺子坊-凉皮凉面
     reason:
     food:
-
   - name: 秦小二油泼面肉夹馍凉皮臊子面
     reason:
     food:
-
   - name: 牛一锅牛肉焖饭(运河上街店)
     reason: 特辣特辣
     food:
-
   - name: 谭嘴巴酸辣粉·渔粉·凉皮(同人精华店)
     reason: 鱼刺过多 粉很少 腻
     food: 招牌渔粉
-
   - name: 豫顺园·蒸面烩面胡辣汤
     reason: 只有两片五花肉 非常干 极其难吃
     food: 豆角五花肉蒸香面
-    
+  - name: 臻师傅•大碗猪脚饭(文一西路店)
+    reason:
+    food:
 
 restaurant:
   - name: 肉本家·碳烤肉
@@ -196,8 +164,24 @@ restaurant:
       - 校村原味炸鸡
       - 仁川海鲜葱饼
       - 春川炸酱面
-    not-recommend:
+    not_recommend:
       - 济州岛黑猪五花肉(超厚)
       - 白玉泡菜汤
       - 超满足牛肉拌饭
       - 烧酒全不推荐
+
+
+future:
+  - name:
+    recommend:
+      -
+  - name:
+    recommend:
+      -
+  - name:
+    recommend:
+
+
+recommend:
+  - name:
+    flow:
