@@ -289,3 +289,7 @@ ol:not(.browser-default) {
 ul:not(.browser-default).table-of-contents {
     list-style-type: none;
 }
+
+nav ul:not(.browser-default) {
+    list-style-type: none;
+}
