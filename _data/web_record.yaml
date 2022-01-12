@@ -44,12 +44,23 @@ good:
   - url: https://shields.io/
     name: 各种标签
     tip:
-  - url:
-    name:
+  - url: https://datatracker.ietf.org/doc/html/rfc6265
+    name: HTTP State Management Mechanism
+    tip:
+  - url: https://github.com/zmap/zmap
+    name: 快速扫描端口：ZMap is a fast single packet network scanner designed for Internet-wide network surveys.
+    tip:
+  - url: https://www.cnblogs.com/coderzh/
+    name: 玩转Google开源C++单元测试框架Google Test系列
+    tip:
+  - url: http://caibaojian.com/interview-map/frontend/
+    name: js前端面试之道
     tip:
   - url:
     name:
     tip:
+
+
 backup:
   - url: https://blog.csdn.net/LaineGates/article/details/108242803
     name: cmake:add_library详解
@@ -68,6 +79,15 @@ backup:
     tip:
   - url: https://zhuanlan.zhihu.com/p/137646370
     name: c++20速览
+    tip:
+  - url: https://www.macrumors.com/roundup/macbook-pro/
+    name: Apple新款预测
+    tip:
+  - url: https://www.maigoo.com/
+    name: 一个神奇的排行榜网站
+    tip:
+  - url: https://hk.v2ex.com/
+    name: 一个程序员社区似乎需要科学工具
     tip:
   - url:
     name:
