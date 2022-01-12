@@ -1,14 +1,49 @@
 ---
-title:  linux记录
-layout: post
-date:   '2021-12-07 09:32:11'
-categories: 编程
-tags: linux
-excerpt: linux使用记录
+title:  linux记录  
+layout: post  
+date:   2021-12-07 09:32:11  
+categories: 编程  
+tags: linux  
+excerpt: linux使用记录  
 ---
 
+## linux系统分类
 
-<h4>linux使用记录</h4>
+一般来说linux系统基本上分两大类：
+
+* RedHat系列：Redhat、Centos、Fedora等
+* Debian系列：Debian、Ubuntu等
+
+### RedHat 系列
+
+* 常见的安装包格式 rpm包,安装rpm包的命令是“rpm -参数”
+* 包管理工具 `yum`
+* 支持tar包
+
+### Debian系列
+
+* 常见的安装包格式 deb包,安装deb包的命令是“dpkg -参数”
+* 包管理工具 `apt-get`
+* 支持tar包
+
+
+## Linux 安装PCRE库
+
+```shell
+cd /usr/local/
+#下载
+wget https://netix.dl.sourceforge.net/project/pcre/pcre/8.40/pcre-8.40.tar.gz
+#解压安装包:
+tar -zxvf pcre-8.40.tar.gz
+#进入安装包目录
+cd pcre-8.40
+#编译安装  
+./configure
+# 如果报错:configure: error: You need a C++ compiler for C++ support.则表示[系统缺少c++环境]，需要先安装:yum install -y gcc gcc-c++
+make && make install
+#查看pcre版本
+pcre-config --version 
+```
 
 
 <details>
@@ -19,7 +54,6 @@ excerpt: linux使用记录
             <div class="collapsible-header">
                 <span>下载 <code>git clone https://github.com/tomasr/molokai</code></span>
             </div>
-
             <div class="collapsible-body">
                 <ol>
                     <li>git clone https://github.com/tomasr/molokai</li>
@@ -31,7 +65,6 @@ excerpt: linux使用记录
             <div class="collapsible-header">
                 <span>安装</span>
             </div>
-
             <div class="collapsible-body">
                 更改所有用户的vim配色方案
                 <ol>
@@ -40,7 +73,6 @@ excerpt: linux使用记录
                     </li>
                     <li>vim /etc/vimrc进行编辑，加上<code>colorscheme molokai</code>后保存退出即安装molokai插件成功。</li>
                 </ol>
-
                 <details>
                     <summary>只想更改自己/当前用户的配色</summary>
                     <ol>
@@ -57,16 +89,10 @@ excerpt: linux使用记录
 
 <details>
     <summary><u><i>Linux中用gdb查看代码堆栈的信息</i></u></summary>
-
     <h2>Linux中用gdb查看代码堆栈的信息</h2>
-
     <blockquote>core dump 一般是在segmentation fault（段错误）的情况下产生的文件，需要通过ulimit来设置才会得到的。</blockquote>
-
     <p>调试的话输入： <code>gdb filename core</code></p>
-
     <blockquote>filename就是产生core文件的可执行文件，core就是产生的dump文件</blockquote>
-
-
     <h3>查看栈信息</h3>
     当程序被停住了，你需要做的第一件事就是查看程序是在哪里停住的。当你的程序调用了一个函数，函数的地址，函数参数，函数内的局部变量都会被压入“栈”（Stack）中。你可以用GDB命令来查看当前的栈中的信息。<br>
     下面是一些查看函数调用栈信息的GDB命令：<br>
@@ -82,27 +108,21 @@ excerpt: linux使用记录
     #2 0x400409ed in __libc_start_main () from /lib/libc.so.6
     {% endhighlight %}
     从上可以看出函数的调用栈信息：<code>__libc_start_main --> main()--> func()</code>
-
     {% highlight linenos %}
     backtrace n
     bt n
     n是一个正整数，表示只打印栈顶上n层的栈信息。
-
     backtrace <-n>
     bt <-n>
     -n表一个负整数，表示只打印栈底下n层的栈信息。
     {% endhighlight %}
-
     如果你要查看某一层的信息，你需要在切换当前的栈，一般来说，程序停止时，最顶层的栈就是当前栈，如果你要查看栈下面层的详细信息，首先要做的是切换当前栈。<br>
-
     {% highlight linenos %}
     frame n
     f n
     n是一个从0开始的整数，是栈中的层编号。比如：frame 0，表示栈顶，frame 1，表示栈的第二层。
-
     up
     表示向栈的上面移动n层，可以不打n，表示向上移动一层。
-
     down
     表示向栈的下面移动n层，可以不打n，表示向下移动一层。
     {% endhighlight %}
@@ -112,13 +132,11 @@ excerpt: linux使用记录
     up-silently 对应于 up 命令。
     down-silently 对应于 down 命令。
     {% endhighlight %}
-
     查看当前栈层的信息，你可以用以下GDB命令：
     {% highlight linenos %}
     frame 或 f
     {% endhighlight %}
     会打印出这些信息：栈的层编号，当前的函数名，函数参数值，函数所在文件及行号，函数执行到的语句。
-
     {% highlight linenos %}
     info frame
     info f
@@ -135,24 +153,19 @@ excerpt: linux使用记录
     Saved registers:
     ebp at 0xbffff5d4, eip at 0xbffff5d8
     {% endhighlight %}
-
     {% highlight linenos %}
     info args
     打印出当前函数的参数名及其值。
-
     info locals
     打印出当前函数中所有局部变量及其值。
-
     info catch
     打印出当前的函数中的异常处理信息。
     {% endhighlight %}
-
     <h3>查看源程序</h3>
     <ul>
         <li>一、显示源代码</li>
         GDB
         可以打印出所调试程序的源代码，当然，在程序编译时一定要加上-g的参数，把源程序信息编译到执行文件中。不然就看不到源程序了。当程序停下来以后，GDB会报告程序停在了那个文件的第几行上。你可以用list命令来打印程序的源代码。还是来看一看查看源代码的GDB命令吧。<br>
-
         <details>
             <summary>list 随后重新整理</summary>
             list
@@ -701,7 +714,6 @@ excerpt: linux使用记录
     scheme Use the Scheme language
     于是你可以在set language后跟上被列出来的程序语言名，来设置当前的语言环境
     {% endhighlight %}
-
 </details>
 
 
