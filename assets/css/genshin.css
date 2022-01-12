@@ -324,3 +324,12 @@
     background-position: center;
     border-radius: 10px;
 }
+
+ul:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+ul:not(.browser-default) > li {
+    list-style-type: none;
+}
