@@ -272,24 +272,3 @@ blockquote {
     padding: 0 10px;
     line-height: 3rem;
 }
-
-ul:not(.browser-default) {
-    padding-left: 1.5rem;
-    list-style-type: unset;
-}
-
-ul:not(.browser-default) > li {
-    list-style-type: unset;
-}
-
-ol:not(.browser-default) {
-    padding-left: 1.5rem;
-}
-
-ul:not(.browser-default).table-of-contents {
-    list-style-type: none;
-}
-
-nav ul:not(.browser-default) {
-    list-style-type: none;
-}
