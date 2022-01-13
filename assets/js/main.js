@@ -65,3 +65,9 @@ $(".pushpin-demo-nav").each(function () {
 $(document).ready(function () {
     $(".modal").modal();
 });
+
+
+// highlight js
+hljs.initHighlightingOnLoad();
+hljs.highlightAll();
+
