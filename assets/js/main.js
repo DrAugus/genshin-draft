@@ -68,6 +68,5 @@ $(document).ready(function () {
 
 
 // highlight js
-hljs.initHighlightingOnLoad();
 hljs.highlightAll();
 
