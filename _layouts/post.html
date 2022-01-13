@@ -11,20 +11,6 @@ js:
 ---
 
 
-<!--日记模块-->
-{% if page.daily %}
-<div class="page-info">
-    <h1 class="page-title">{{page.title}}</h1>
-    <div class="page-meta">
-        <i class="fa fa-calendar-alt tooltipped" data-position="left" data-delay="30" data-tooltip="Date"></i>
-        写于：{{page.date | date: "%Y-%m-%d %H:%M:%S"}}
-    </div>
-</div>
-<div class="divider"></div>
-<div class="col s12">
-    {{ content }}
-</div>
-{% else %}
 <div class="page-info">
     <h1 class="page-title">{{page.title}}</h1>
     <div class="page-meta">
@@ -76,7 +62,6 @@ js:
         <ul id="post-contents" class="section table-of-contents"></ul>
     </div>
 </div>
-{% endif %}
 
 <div class="divider"></div>
 
