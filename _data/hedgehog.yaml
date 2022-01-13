@@ -1,7 +1,4 @@
 recommend:
-  - name: 达美乐比萨
-    info:
-    img:
   - name: 汤圆裹黄豆粉
     info: 驮滚汤圆
     img:
@@ -11,42 +8,27 @@ recommend:
     img:
       - chicken_wings_corn_1.jpg
       - chicken_wings_corn_2.jpg
-  - name: 美式·牛肉汉堡
-    info: 牛约堡
+  - name: 火锅
+    info: 哥老官重庆美蛙鱼头特色火锅 海底捞
     img:
-  - name: 哥老官
-    info: 哥老官重庆美蛙鱼头特色火锅
-    img:
-  - name: 海底捞
-    info:
-    img:
-  - name: 酸菜鱼黄焖鸡肥牛椰子鸡烫菜
-    info:
-    img:
-  - name: 黄焖鸡
-    info:
-    img:
-  - name: 肥牛
-    info:
-    img:
-  - name: 椰子鸡
-    info:
-    img:
-  - name: 烫菜
+  - name: 酸菜鱼 肥牛 烫菜
     info:
     img:
   - name: 韩式的汤
     info:
     img:
-  - name: 海南鸡
+  - name: 海南鸡 柠檬鸡 黄焖鸡 椰子鸡
     info:
     img:
-  - name: 柠檬鸡
+  - name: 虾滑 米线 麻辣烫 香锅 拌粉 拌饭 拉面 寿司 汉堡 披萨 粥 卤肉饭
+    info: 牛约堡 达美乐比萨
+    img:
+  - name: 粤菜的烧腊 煲仔饭 肠粉
     info:
     img:
-  - name: 虾滑米线麻辣烫拌粉拌饭拉面寿司汉堡披萨粥肠粉卤肉饭
-    info:
-    img:
+
+
+
 tea:
   - name: 豆乳芝士奶豆腐
     restaurant: 茶乙己
@@ -155,6 +137,13 @@ daily:
     27:
       time: 2022-01-06 18:50:00
       info:
+    28:
+    29:
+    30:
+    31:
+      time: 2022-01-12 22:44:00
+      info: 学期室友聚
+    32:
   snack:
     0:
       time:
@@ -178,8 +167,11 @@ daily:
       time:
       info:
     7:
+    8:
+    9:
+    10:
       time:
-      info:
+      info: 好吃 汤好喝
   tea:
     0:
       time:
