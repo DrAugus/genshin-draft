@@ -109,4 +109,18 @@ To get a default installation of Lua and LuaRocks under `/usr/local`
 1. 先安装`luarocks install luasocket`安装成功后 再安装 busted
 2. `luarocks install busted`
 
-安装`luarocks install rapidjson`
+### 安装 rapidjson
+
+`luarocks install rapidjson`
+
+### 安装 Lrexlib-PCRE2
+
+`luarocks install Lrexlib-PCRE2`
+
+出现错误
+> Could not find header file for PCRE2
+
+![](/assets/res/post/lua/install_pcre.png)
+
+安装 `pcre2`
+`yum -y install pcre2-devel`
