@@ -3,18 +3,25 @@
     <div class="article-sort-title">日记</div>
     <div class="article-sort">
         <div class="article-sort-item year">2022</div>
-        {% for post in site.documents %}
-        {% if post.daily %}
+        {% assign emoticon = "0.png,1.png,2.png" | split: "," %}
+        {% for page in site.pages %}
+        {% if page.layout == "daily" %}
+        {% assign eIndex = forloop.index0 | plus: emoticon.size | modulo: emoticon.size %}
+
         <div class="article-sort-item">
-            <a class="" href="{{post.url}}" target="_parent">
-                {{post.title}}
-                <small class="post-date">{{post.date | date_to_string}}</small>
+            <a class="article-sort-item-img" href="{{page.url}}" target="_parent">
+                <img src="/assets/res/genshin-impact/emoticon/{{emoticon[eIndex]}}">
             </a>
+            <div class="article-sort-item-info">
+                <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i>
+                    {{page.date | date_to_string}}
+                </div>
+                <a class="" href="{{page.url}}" target="_parent">
+                    {{page.title}}
+                </a>
+            </div>
         </div>
-
-
         {% endif %}
         {% endfor %}
-
     </div>
 </div>
