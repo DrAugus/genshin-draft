@@ -124,3 +124,15 @@ To get a default installation of Lua and LuaRocks under `/usr/local`
 
 安装 `pcre2`
 `yum -y install pcre2-devel`
+
+应该安装so库
+`yum -y install pcre2-static`
+
+`find / -name "*pcre2.so*"`
+
+```shell
+#输出路径
+/usr/local/lib/lua/5.1/rex_pcre2.so
+```
+
+拷贝至lua目录
