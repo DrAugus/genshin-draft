@@ -1,5 +1,7 @@
 ---
+
 ---
+
 
 @mixin transition($args...)
   -webkit-transition: $args
@@ -21,6 +23,27 @@
   -ms-transform: $args
   -o-transform: $args
   transform: $args
+
+@mixin animation($args...)
+  animation: $args
+  -webkit-animation: $args
+  -moz-animation: $args
+  -ms-animation: $args
+  -o-animation: $args
+
+@mixin animation-iteration-count($args...)
+  animation-iteration-count: $args
+  -webkit-animation-iteration-count: $args
+  -moz-animation-iteration-count: $args
+  -ms-animation-iteration-count: $args
+  -o-animation-iteration-count: $args
+
+@mixin background-size($args...)
+  background-size: $args
+  -webkit-background-size: $args
+  -moz-background-size: $args
+  -ms-background-size: $args
+  -o-background-size: $args
 
 /*本页移除全局box*/
 *, *:before, *:after
