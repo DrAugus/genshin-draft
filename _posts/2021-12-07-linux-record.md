@@ -45,6 +45,28 @@ make && make install
 pcre-config --version 
 ```
 
+## 卸载安装包
+
+### RedHat 系列
+
+```shell
+yum list installed
+yum -y remove vsftpd
+```
+
+### Debian系列
+
+```shell
+# 使用apt 列出已经安装的程序包：
+sudo apt list --installed
+# 卸载程序包
+sudo apt remove vsftpd
+# 添加 --purge选项，卸载 把程序包的配置文件也删掉。
+sudo apt remove --purge vsftpd
+```
+
+
+## 其他
 
 <details>
     <summary><u><i>修改Linux上Vim的molokai配色方案</i></u></summary>
