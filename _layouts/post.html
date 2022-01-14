@@ -20,8 +20,10 @@ js:
         <div id="page-meta-2">
             <i class="fa fa-eye "></i>
             <span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
+            &nbsp;&bull;&nbsp;
             <i class="fa fa-newspaper"></i>字数
             <span>{{ page.content | strip_html | strip_newlines | remove: " " | size }}</span>
+            &nbsp;&bull;&nbsp;
             <i class="fa fa-clock"></i>
             <span>阅读时长 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1}} 分钟</span>
         </div>
@@ -31,20 +33,25 @@ js:
             {% for cat in page.categories %}
             {% capture test %}{{cat | slice: 0}}{% endcapture %}
             {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
-            <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
-               target="_blank">
-                <div class="chip">{{cat}}</div>
-            </a>
+            <div class="chip">
+                <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
+                   target="_blank">
+                    {{cat}}
+                </a>
+            </div>
             {% endfor %}
-
+        </div>
+        <div id="page-meta-4">
             <i class="fa fa-tags tooltipped" data-position="left" data-delay="30" data-tooltip="Tags"></i>
             {% for tag in page.tags %}
             {% capture test %}{{tag | slice: 0}}{% endcapture %}
             {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
-            <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
-               target="_blank">
-                <div class="chip">{{tag}}</div>
-            </a>
+            <div class="chip">
+                <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
+                   target="_blank">
+                    {{tag}}
+                </a>
+            </div>
             {% endfor %}
         </div>
     </div>
