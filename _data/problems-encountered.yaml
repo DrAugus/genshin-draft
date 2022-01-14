@@ -25,4 +25,5 @@
 - problem: slice不会改变原始数组
   reason:
 
-
+- problem: jQuery $ .# 区别
+  reason: html自带标签 直接写标签 类用. id用#
