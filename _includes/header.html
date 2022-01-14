@@ -22,7 +22,10 @@
     <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
     <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap-theme.min.css">
     <!--代码高亮 https://highlightjs.org/static/demo/-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark-reasonable.min.css">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark-reasonable.min.css">
+    <!--  global  -->
+    <link rel="stylesheet" href="/assets/css/main.css">
 
     {% for css in layout.css %}
     {% if css contains "//" %}
@@ -96,60 +99,114 @@
 
 
     <!--To make the navbar fixed-->
-    <div class="hide-on-small-only navbar-fixed navbar-fixed-top">
-        <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
-        <!--然后在nav-wrapper同级加入nav-content-->
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{{site.github.repository_url}}" class="brand-logo hide-on-small-only">
-                    <span> {{site.title}}</span>
-                    <i class=" fab fa-github"></i>
-                </a>
-
-                <ul class="right">
-                    <!--数组声明 用split切割字符串-->
-                    {% assign names = "LIFE,ARTICLE,GAMES,CODE" | split: "," %}
-                    {% for n in names %}
-                    <li><a class="dropdown-trigger" href="javascript:void(0);"
-                           data-target="dropdown{{forloop.index}}">
-                        <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
-                        <!--<div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
-                        <!--<div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
-                        <div>{{names[forloop.index0]}}</div>
-                    </a></li>
-                    {% endfor %}
-                </ul>
-
+    <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
+    <!--然后在nav-wrapper同级加入nav-content-->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
             </div>
-        </nav>
-    </div>
-    <div class="container hide-on-large-only">
-        <a href="#" data-target="slide-out" class="sidenav-trigger full">
-            <i class="material-icons">menu</i>
-        </a>
-    </div>
-    <ul id="slide-out" class="sidenav sidenav-fixed page-left-bg hide-on-large-only">
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="waves-effect" href="/index"><i class="fa fa-home"></i>Home</a></li>
-        <li><a class="waves-effect" href="/projects"><i class="fa fa-project-diagram"></i>Projects</a></li>
-        <li><a class="waves-effect" href="/categories"><i class="fa fa-list"></i>Categories</a></li>
-        <li><a class="waves-effect" href="/tags"><i class="fa fa-marker"></i>Tags</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="waves-effect" href="/countdown"><i class="fa fa-hourglass-half"></i>倒计时</a></li>
-        <li><a class="waves-effect" href="/genshin"><i class="fa fa-gamepad"></i>Genshin</a></li>
-        <li><a class="waves-effect" href="/hedgehog"><i class="fa fa-assistive-listening-systems"></i>小刺猬</a></li>
-        <li><a class="waves-effect" href="/food"><i class="fa fa-utensils"></i>Food</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a class="waves-effect" href="/about"><i class="fa fa-user"></i>About</a></li>
-        <li><a class="waves-effect" href="/style/index"><i class="fa fa-info"></i>Resume</a></li>
-        <li><a class="waves-effect" href="/contact-thanks"><i class="fa fa-mail-bulk"></i>Contact</a></li>
-    </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{ site.baseurl }}/">Home</a>
+                        </li>
+
+                        <!--数组声明 用split切割字符串-->
+                        {% assign names = "LIFE,ARTICLE,GAMES,CODE" | split: "," %}
+                        {% for n in names %}
+                        <li><a class="dropdown-trigger" href="javascript:void(0);"
+                               data-target="dropdown{{forloop.index}}">
+                            <!--图标只在手机上显示 图标暂时隐藏 等找到好看图标再显示-->
+                            <!--<div class="hide-on-med-and-up"><i class="fa {{icon}}"></i></div>-->
+                            <!--<div class="hide-on-small-only">{{names[forloop.index0]}}</div>-->
+                            <div>{{names[forloop.index0]}}</div>
+                        </a></li>
+                        {% endfor %}
+
+                        <li class="search-icon">
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{site.github.repository_url}}">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector(".navbar-toggle");
+        var $navbar = document.querySelector("#huxblog_navbar");
+        var $collapse = document.querySelector(".navbar-collapse");
+
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf("in") < 0) {
+                        $collapse.style.height = "0px";
+                    }
+                }, 400);
+            },
+            open: function () {
+                $collapse.style.height = "auto";
+                $navbar.className += " in";
+            }
+        };
+
+        // Bind Event
+        $toggle.addEventListener("click", function (e) {
+            if ($navbar.className.indexOf("in") > 0) {
+                __HuxNav__.close();
+            } else {
+                __HuxNav__.open();
+            }
+        });
+
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from
+         * $toggle/$collapse will break global delegation.
+         *
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener("click", function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == "icon-bar") return;
+            __HuxNav__.close();
+        });
+
+    </script>
 
 
 </header>
