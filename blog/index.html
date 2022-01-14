@@ -1,6 +1,7 @@
 ---
 layout: page
 js: blog.js
+css: blog.css
 ---
 
 <h2 class="center-align">文</h2>
@@ -11,20 +12,18 @@ js: blog.js
 <!--更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}} github不可用-->
 <div class="row">
     {% for post in paginator.posts %}
-    <div class="col s12 hide show-blog">
+    <div class="col s12">
         <div class="card waves-effect waves-block waves-light hoverable radius10px">
             <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img loading="lazy" src="">
+                <img src="/assets/res/xy/29.jpg">
             </div>
+            <!--日期格式化网站 http://www.strfti.me/-->
+            <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
             <div class="card-content">
-                <span class="card-title">{{post.title}}</span>
-                <!--日期格式化网站 http://www.strfti.me/-->
-                <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
-                <p><i class="fa fa-calendar-check"></i>发表于: {{post.date | date: "%Y-%m-%d"}}</p>
+                <a href="{{post.url}}" class="card-title valign-wrapper">{{post.title}}</a>
+                <i class="fa fa-calendar-check"></i>发表于: {{post.date | date: "%Y-%m-%d"}}
+                <br>
                 <span>{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
-            </div>
-            <div class="card-action">
-                <span><a href="{{post.url}}">READ MORE</a></span>
             </div>
         </div>
     </div>
