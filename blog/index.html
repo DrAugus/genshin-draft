@@ -14,8 +14,11 @@ css: blog.css
     {% for post in paginator.posts %}
     <div class="col s12">
         <div class="card waves-effect waves-block waves-light hoverable radius10px">
-            <div class="card-image waves-effect waves-block waves-light hoverable">
-                <img src="/assets/res/xy/29.jpg">
+            <!--图片 奇偶 显示位置调换-->
+            {% assign index = forloop.index0 | modulo: 2 %}
+            {% if index == 0 %}
+            <div class="card-image waves-effect waves-block waves-light">
+                <img src="/assets/res/xy/{{forloop.index0}}.jpg">
             </div>
             <!--日期格式化网站 http://www.strfti.me/-->
             <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
@@ -25,10 +28,20 @@ css: blog.css
                 <br>
                 <span>{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
             </div>
+            {% else %}
+            <div class="card-content">
+                <a href="{{post.url}}" class="card-title valign-wrapper">{{post.title}}</a>
+                <i class="fa fa-calendar-check"></i>发表于: {{post.date | date: "%Y-%m-%d"}}
+                <br>
+                <span>{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
+            </div>
+            <div class="card-image waves-effect waves-block waves-light">
+                <img src="/assets/res/xy/{{forloop.index0}}.jpg">
+            </div>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
-
 
     <!--分页-->
     <div class="col s12 center-align">

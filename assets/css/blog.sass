@@ -1,4 +1,5 @@
 ---
+
 ---
 
 
@@ -46,7 +47,7 @@
 
 
 .card-image
-  height: 10em
+  height: 100%
   width: 50%
   overflow-x: hidden
   background: #00acc1
@@ -54,16 +55,6 @@
   i
     color: #fff
     padding: 10px
-
-.card-image:before
-  position: absolute
-  top: 0
-  left: 0
-  display: block
-  width: 100%
-  height: 100%
-  //background-color: rgba(0, 0, 0, .5)
-  content: ''
 
 
 .card-image img
@@ -76,10 +67,15 @@
 .card-image img:hover
   @include transform(scale(1.1))
 
+@media only screen and (max-width: 600px)
+  .card
+    height: 20em
+
 
 .card
   margin-bottom: 20px
   display: flex
+  height: 15em
 
   .card-content
     height: 90%
