@@ -1,11 +1,18 @@
 ---
+
 ---
+
 @mixin transition($args...)
   -webkit-transition: $args
   -moz-transition: $args
   -ms-transition: $args
   -o-transition: $args
   transition: $args
+
+
+a:focus, a:hover
+  text-decoration: none
+
 
 .tag-chip
   color: #616161

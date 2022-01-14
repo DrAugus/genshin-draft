@@ -33,25 +33,20 @@ js:
             {% for cat in page.categories %}
             {% capture test %}{{cat | slice: 0}}{% endcapture %}
             {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
-            <div class="chip">
-                <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
-                   target="_blank">
-                    {{cat}}
-                </a>
-            </div>
+            <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
+               target="_blank">
+                <div class="chip">{{cat}}</div>
+            </a>
             {% endfor %}
-        </div>
-        <div id="page-meta-4">
+
             <i class="fa fa-tags tooltipped" data-position="left" data-delay="30" data-tooltip="Tags"></i>
             {% for tag in page.tags %}
             {% capture test %}{{tag | slice: 0}}{% endcapture %}
             {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
-            <div class="chip">
-                <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
-                   target="_blank">
-                    {{tag}}
-                </a>
-            </div>
+            <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
+               target="_blank">
+                <div class="chip">{{tag}}</div>
+            </a>
             {% endfor %}
         </div>
     </div>

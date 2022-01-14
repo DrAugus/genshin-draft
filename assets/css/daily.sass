@@ -1,0 +1,173 @@
+---
+---
+
+@mixin transition($args...)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
+@mixin box-sizing($args...)
+  -webkit-box-sizing: $args
+  -moz-box-sizing: $args
+  -ms-box-sizing: $args
+  -o-box-sizing: $args
+  box-sizing: $args
+
+@mixin transform($args...)
+  -webkit-transform: $args
+  -moz-transform: $args
+  -ms-transform: $args
+  -o-transform: $args
+  transform: $args
+
+/*本页移除全局box*/
+*, *:before, *:after
+  @include box-sizing(unset)
+
+.article-sort
+  margin-left: 1rem
+  padding-left: 2rem
+  border-left: 2px solid #d28a57
+
+.article-sort-title
+  position: relative
+  margin-left: 1rem
+  padding-bottom: 2rem
+  padding-left: 2rem
+  font-size: 1.72em
+
+.article-sort-title:hover:before
+  border-color: #e5b6d0
+
+.article-sort-title:before
+  position: absolute
+  top: calc(((100% - 1.8rem) / 2))
+  left: -0.9rem
+  z-index: 1
+  width: 1rem
+  height: 1rem
+  border: 0.5rem solid #d9a87f
+  border-radius: 1rem
+  background: #fff
+  content: ''
+  line-height: 1rem
+  @include transition(all 0.2s ease-in-out)
+
+
+.article-sort-title:after
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 0
+  width: 0.2rem
+  height: 1.5em
+  background: #d28a57
+  content: ''
+
+
+.article-sort-item
+  position: relative
+  display: -webkit-box
+  display: -moz-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -moz-box-align: center
+  -o-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+  margin: 0 0 1rem 0.5rem
+  @include transition(all 0.2s ease-in-out)
+
+
+.article-sort-item:hover:before
+  border-color: #e5b6d0
+
+
+.article-sort-item:before
+  position: absolute
+  left: -3.3rem
+  width: 0.6rem
+  height: 0.6rem
+  border: 0.3rem solid #d9a87f
+  border-radius: 0.6rem
+  background: #fff
+  content: ''
+  @include transition(all 0.2s ease-in-out)
+
+
+.article-sort-item.no-article-cover
+  height: 80px
+
+
+.article-sort-item.no-article-cover .article-sort-item-info
+  padding: 0
+
+
+.article-sort-item.year
+  font-size: 1.43em
+
+
+.article-sort-item.year:hover:before
+  border-color: #d9a87f
+
+
+.article-sort-item.year:before
+  border-color: #e5b6d0
+
+
+.article-sort-item-time
+  color: #858585
+  font-size: 95%
+
+
+.article-sort-item-time time
+  padding-left: 0.3rem
+  cursor: default
+
+
+.article-sort-item-title
+  color: #000
+  font-size: 1.1em
+  @include transition(all 0.3s)
+  -webkit-line-clamp: 2
+
+
+.article-sort-item-title:hover
+  color: #d9a87f
+  -webkit-transform: translateX(10px)
+  -moz-transform: translateX(10px)
+  -o-transform: translateX(10px)
+  -ms-transform: translateX(10px)
+  transform: translateX(10px)
+
+
+.article-sort-item-img
+  overflow: hidden
+  width: 80px
+  height: 80px
+
+
+.article-sort-item-img img
+  width: 100%
+  height: 100%
+  @include transition(all 0.6s)
+  object-fit: cover
+
+
+.article-sort-item-img img:hover
+  @include transform(scale(1.1))
+
+.article-sort-item-info
+  -webkit-box-flex: 1
+  -moz-box-flex: 1
+  -o-box-flex: 1
+  box-flex: 1
+  -webkit-flex: 1
+  -ms-flex: 1
+  flex: 1
+  padding: 0 0.8rem
