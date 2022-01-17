@@ -47,7 +47,131 @@
 
 
 html
-  font-family: Merriweather, Cambria, Cochin, Georgia, Times, JetBrains Mono, serif
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif
+
+
+// PC
+//header, main, footer
+//  padding-left: 300px
+
+header
+  height: 60px
+
+  #slide-out
+    background: #eff9fa !important
+
+  a:hover
+    text-decoration: none
+
+  .background
+    background: -webkit-linear-gradient(90deg, rgba(149, 210, 87, 0.2) 10%, rgba(225, 73, 231, 0.32) 90%)
+    background: linear-gradient(90deg, rgba(149, 210, 87, 0.2) 10%, rgba(225, 73, 231, 0.32) 90%)
+
+  .userView
+    //background: -webkit-linear-gradient(90deg, rgba(84, 225, 221, 0.8) 10%, rgba(107, 241, 227, 0.8) 90%)
+    //background: linear-gradient(90deg, rgba(84, 225, 221, 0.8) 10%, rgba(107, 241, 227, 0.8) 90%)
+    //background: #4cf3b6
+    margin-top: 36px
+    line-height: initial
+
+    .circle
+      border-style: solid
+      border-color: #efaf4a
+      border-width: 1px
+
+  nav
+
+    &.top-nav
+      position: relative
+      height: 240px
+      background-color: #4bd0df !important
+      //background: -webkit-linear-gradient(-30deg, rgba(109, 246, 105, 0.8) 30%, rgba(176, 248, 134, 0.8) 60%)
+
+      .head-bg-wrapper
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-position: center center
+        background-repeat: no-repeat
+        -webkit-background-size: cover
+        -moz-background-size: cover
+        background-size: 100% 100%
+        overflow: hidden
+
+    .head-message
+      margin: 0
+      font-size: 30px
+      font-weight: bold
+      line-height: initial
+      text-shadow: #E2B032FF -1px -1px 4px, #E2B032FF 1px -1px 4px, #E2B032FF -1px 1px 4px, #E2B032FF 1px 1px 4px, #E2B032FF 0px 0px 10px
+
+    .head-bar
+      margin: 0.5em
+      font-size: 16px
+      font-weight: bold
+
+main
+  flex: 1 0 auto
+  z-index: 1
+
+  div
+    .row
+      margin-top: 32px
+
+
+#return-top
+  border-radius: 100%
+  width: 50px
+  height: 50px
+  color: #313131
+  padding: 3px 10px
+  background-color: #00000000
+
+.opacity-icon
+  opacity: 60% !important
+
+
+footer
+  &.page-footer
+    margin-top: 10px
+    background-color: #9494
+  //background: -webkit-linear-gradient(-30deg, #d28a57 30%, #7e49e7 60%)
+  //background: linear-gradient(60deg, rgba(229, 222, 100, 0.6) 30%, rgba(183, 241, 127, 0.6) 70%)
+
+  &.footer-copyright
+    .a
+      color: #f44336 !important
+
+  .row
+    margin-bottom: 0
+
+  p
+    margin-top: 5px
+
+  .footer-message
+    font-family: cursive
+    font-size: 1.6rem
+    font-weight: bold
+    margin: 0
+
+  .visit-statistics
+    margin-top: 5px
+
+
+@media only screen and (max-width: 992px)
+  header, main, footer
+    padding-left: 0
+
+@media only screen and (max-width: 600px)
+  footer
+    .search
+      .search-input
+        width: 80%
+
+      .search-results
+        width: 80%
 
 
 body
@@ -56,9 +180,22 @@ body
   flex-direction: column
   background-color: #f6f6f6
 
+//目录
+#all-contents-info
+  table, th, td
+    border: 1px solid #ccc
 
-header
-  height: 60px
+  table
+    thead
+      tr
+        background: #e7e8e9
+
+      th
+        text-align: center
+
+    tbody
+      tr:nth-child(2n + 1)
+        background: #f7f7f7
 
 
 /*所有列表都透明*/
@@ -143,6 +280,7 @@ nav .nav-wrapper a:hover
   display: inline-block
   font-size: 36px
   margin-top: 0.5em
+  color: #404040
 
 
 .page-meta
