@@ -1,33 +1,24 @@
 ---
 layout: default
 css:
-- post.css
-- page.css
-js:
-- post.js
-- contents.js
+- daily.css
 ---
-
 
 <!--日记模块-->
 <div class="page-info">
     <h1 class="page-title">{{page.title}}</h1>
     <div class="page-meta">
-        <i class="fa fa-calendar-alt tooltipped" data-position="left" data-delay="30" data-tooltip="Date"></i>
-        写于：{{page.date | date: "%Y-%m-%d %H:%M:%S"}}
+        Written by {{site.name}} on {{page.date | date_to_string}}
     </div>
 </div>
-<div class="divider"></div>
+
 <div class="col s12 center-align">
     {{ content }}
 </div>
 
 
-<div class="divider"></div>
-
 <div><i class="fa fa-comments"></i><span> 评论</span></div>
 <div id="gitalk-container"></div>
-
 <div>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
     <script>

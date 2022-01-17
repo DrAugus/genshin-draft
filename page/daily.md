@@ -1,7 +1,6 @@
 ---
 permalink: /daily  
-layout: page  
+layout: daily  
 title: 散记  
-css: daily.css
 ---
 {% include daily.html %}
