@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>
+        {% if page.title %}
+        {{ page.title | escape }}
+        {% else %}
+        {{ site.title | escape }}
+        {% endif %}
+    </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap.min.css">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="/assets/css/bootstrap-3.4.1-dist/bootstrap-theme.min.css">
+    <!--代码高亮 https://highlightjs.org/static/demo/-->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark-reasonable.min.css">
+    <!--  global  -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    {% for css in layout.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}"/>
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/{{css}}"/>
+    {% endif %}
+    {% endfor %}
+
+    {% for css in page.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}"/>
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/{{css}}"/>
+    {% endif %}
+    {% endfor %}
+
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
+    {% seo title=false %}
+</head>
