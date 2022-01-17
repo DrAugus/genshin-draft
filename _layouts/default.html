@@ -1,7 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+
+{% include head.html %}
+
+<!--二选一 要不header 要不full-->
+{% if page.with_full_bg %}
+{% assign full_bg_info = page.with_full_bg | prepend: '/assets/res/' %}
+{% endif %}
+{% if page.with_header_bg %}
+{% assign header_bg_info = page.with_header_bg | prepend: '/assets/res/' %}
+{% endif %}
+<body class="{% if page.with_full_bg %}full-bg lazy{% endif %}" data-original="{{full_bg_info}}">
+
 {% include header.html %}
 
-<div class="container">
-    {{ content }}
-</div>
+{% include search.html %}
+
+<main>
+    <div class="container">
+        {{ content }}
+    </div>
+</main>
 
 {% include footer.html %}
+
+</body>
+</html>

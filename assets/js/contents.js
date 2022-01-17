@@ -23,7 +23,11 @@ const contents_main = () => {
 
             console.log(node.innerText);
 
-            _a.innerText = node.innerText;
+            let text = node.innerText;
+            if (text.length > 8) {
+                text = text.substr(0, 8) + "...";
+            }
+            _a.innerText = text;
             // 为标题设置跳转链接
             _a.href = "#" + node.id;
             _li.appendChild(_a);

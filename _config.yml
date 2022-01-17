@@ -22,11 +22,12 @@
 # https://shopify.dev/api/liquid/
 #
 title: AUGUS
+name: AUGUS
 description: > # webpage description
 #  Welcome to my personal website
 url: "https://draugus.github.io"
 permalink: /:year/:month/:day/:title
-paginate: 12
+paginate: 10
 # paginate只在index.html下有效 https://jekyllrb.com/docs/variables/#paginator
 paginate_path: "blog/page:num/"
 
@@ -44,6 +45,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-last-modified-at
+  - simple-jekyll-search
 
 # Exclude from processing.
 # The following items will not be processed, by default.
