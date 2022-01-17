@@ -316,55 +316,47 @@ characters:
     wishName: 「浮生孰来」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
-  - name: x
+  - name: Yae Miko
     image: 1
     shortName: Yae Miko
     start: 2022-02-16 11:00:00 +0800
-    end: 2022-03-08 17:59:59 +0800
+    end: 2022-03-09 17:59:59 +0800
     wish5star: yae_miko
     wish4star:
     version: 2.5
     wishName: 「」
     url: https://bbs.mihoyo.com/ys/article/?
-  - name: Reign of Serenity
-    image: 1
-    shortName: Raiden Shogun
+  - name: Leaves in the Wind
+    image: 2
+    shortName: Kazuha
     start: 2022-02-16 11:00:00 +0800
-    end: 2022-03-08 17:59:59 +0800
+    end: 2022-03-09 17:59:59 +0800
+    wish5star: kaedehara_kazuha
+    wish4star:
+    wishName: 「叶落风随」
+    wish_2: true
+    url: https://bbs.mihoyo.com/ys/article/?
+  - name: Drifting Luminescence
+    image: 2
+    shortName: Sangonomiya Kokomi
+    start: 2022-03-09 18:00:00 +0800
+    end: 2022-03-30 14:59:59 +0800
+    wish5star: sangonomiya_kokomi
+    wish4star:
+    wishName: 「浮岳虹珠」
+    url: https://bbs.mihoyo.com/ys/article/?
+  - name: Reign of Serenity
+    image: 2
+    shortName: Raiden Shogun
+    start: 2022-03-09 18:00:00 +0800
+    end: 2022-03-30 14:59:59 +0800
     wish5star: raiden_shogun
     wish4star:
-      - xiangling
-      - sucrose
-      - kujou_sara
-    version: 2.1
     wishName: 「影寂天下人」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
-  - name: Leaves in the Wind
-    image: 1
-    shortName: Kazuha
-    start: 2022-03-08 18:00:00 +0800
-    end: 2022-03-28 14:59:59 +0800
-    wish5star: kaedehara_kazuha
-    wish4star:
-      - bennett
-      - razor
-      - rosaria
-    wishName: 「叶落风随」
-    url: https://bbs.mihoyo.com/ys/article/7067772
-  - name: The Herons Court
-    image: 1
-    shortName: Ayaka
-    start: 2022-03-08 18:00:00 +0800
-    end: 2022-03-28 14:59:59 +0800
-    wish5star: kamisato_ayaka
-    wish4star:
-      - chongyun
-      - ningguang
-      - yanfei
-    wishName: 「白鹭之庭」
-    wish_2: true
-    url: https://bbs.mihoyo.com/ys/article/7578978
+
+
 
 weapons:
   - name: Epitome Invocation
