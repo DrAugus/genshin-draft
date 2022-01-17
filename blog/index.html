@@ -44,39 +44,19 @@ css: blog.css
     {% endfor %}
 
     <!--分页-->
-    <div class="col s12 center-align">
-        <ul class="pagination">
-            <li class="{% unless paginator.previous_page %}disabled{% else %}waves-effect{% endunless %}">
-                {% if paginator.previous_page %}
-                {% if paginator.previous_page == 1 %}
-                <a href="/blog/"> <i class="fa fa-angle-left"></i></a>
-                {% else %}
-                <a href="/blog/page{{paginator.previous_page}}"> <i class="fa fa-angle-left"></i></a>
-                {% endif %}
-                {% else %}
-                <a href="#!"> <i class="fa fa-angle-left"></i></a>
-                {% endif %}
-            </li>
-            {% if paginator.page == 1 %}
-            <li class="active orange accent-3"><a href="#!">1</a></li>
-            {% else %}
-            <li class="waves-effect"><a href="/blog/">1</a></li>
-            {% endif %}
-            {% for count in (2..paginator.total_pages) %}
-            {% if count == paginator.page %}
-            <li class="active orange accent-3"><a href="#!">{{count}}</a></li>
-            {% else %}
-            <li class="waves-effect"><a href="/blog/page{{count}}">{{count}}</a></li>
-            {% endif %}
-            {% endfor %}
-            <li class="{% unless paginator.next_page %}disabled{% else %}waves-effect{% endunless %}">
-                {% if paginator.next_page %}
-                <a href="/blog/page{{paginator.next_page}}"> <i class="fa fa-angle-right"></i></a>
-                {% else %}
-                <a href="#!"> <i class="fa fa-angle-right"></i></a>
-                {% endif %}
-            </li>
-        </ul>
-    </div>
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
 
 </div>
