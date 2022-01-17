@@ -10,41 +10,60 @@ css: blog.css
 <!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
 <!--日期格式化网站 http://www.strfti.me/-->
 <!--更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}} github不可用-->
-<div class="row">
-    {% for post in paginator.posts %}
-    <div class="col s12">
-        <div class="card waves-effect waves-block waves-light hoverable radius10px">
-            <!--图片 奇偶 显示位置调换-->
-            {% assign index = forloop.index0 | modulo: 2 %}
-            {% if index == 0 %}
-            <div class="card-image waves-effect waves-block waves-light">
-                <img src="/assets/res/xy/{{forloop.index0}}.jpg">
-            </div>
-            <!--日期格式化网站 http://www.strfti.me/-->
-            <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
-            <div class="card-content">
-                <a href="{{post.url}}" class="card-title valign-wrapper">{{post.title}}</a>
-                <i class="fa fa-calendar-check"></i>发表于: {{post.date | date: "%Y-%m-%d"}}
-                <br>
-                <span>{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
-            </div>
-            {% else %}
-            <div class="card-content">
-                <a href="{{post.url}}" class="card-title valign-wrapper">{{post.title}}</a>
-                <i class="fa fa-calendar-check"></i>发表于: {{post.date | date: "%Y-%m-%d"}}
-                <br>
-                <span>{{post.excerpt | remove: '<p>' | remove: '</p>'}}</span>
-            </div>
-            <div class="card-image waves-effect waves-block waves-light">
-                <img src="/assets/res/xy/{{forloop.index0}}.jpg">
-            </div>
-            {% endif %}
-        </div>
-    </div>
-    {% endfor %}
 
-    <!--分页-->
-    {% if paginator.total_pages > 1 %}
+{% for post in paginator.posts %}
+<div class="col s12">
+    <div class="card waves-effect waves-block waves-light radius10px">
+        <!--图片 奇偶 显示位置调换-->
+        {% assign index = forloop.index0 | modulo: 2 %}
+        {% if index == 0 %}
+        <div class="card-image waves-effect waves-block waves-light">
+            <img src="/assets/res/xy/{{forloop.index0}}.jpg">
+        </div>
+        <!--日期格式化网站 http://www.strfti.me/-->
+        <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
+        <div class="card-content">
+            <a href="{{post.url}}">
+                <div class="card-title valign-wrapper">{{post.title}}</div>
+                <div class="page-excerpt">
+                    {% if post.lang == 'en' %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {% else %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:200 }}
+                    {% endif %}
+                </div>
+            </a>
+            <div class="page-date">
+                Written by {{site.name}} on {{post.date | date_to_string}}
+            </div>
+        </div>
+        {% else %}
+        <div class="card-content">
+            <a href="{{post.url}}">
+                <div class="card-title valign-wrapper">{{post.title}}</div>
+                <div class="page-excerpt">
+                    {% if post.lang == 'en' %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {% else %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:200 }}
+                    {% endif %}
+                </div>
+            </a>
+            <div class="page-date">
+                Written by {{site.name}} on {{post.date | date_to_string}}
+            </div>
+        </div>
+        <div class="card-image waves-effect waves-block waves-light">
+            <img src="/assets/res/xy/{{forloop.index0}}.jpg">
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<!--分页-->
+{% if paginator.total_pages > 1 %}
+<div class="col s12">
     <ul class="pager">
         {% if paginator.previous_page %}
         <li class="previous">
@@ -57,6 +76,6 @@ css: blog.css
         </li>
         {% endif %}
     </ul>
-    {% endif %}
-
 </div>
+{% endif %}
+
