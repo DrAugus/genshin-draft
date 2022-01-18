@@ -4,10 +4,11 @@
     <div class="article-sort">
         <div class="article-sort-item year">2022</div>
         {% assign emoticon = "0.png,1.png,2.png" | split: "," %}
-        {% for page in site.pages %}
+        {% assign pages = site.pages | sort: 'date' | reverse  %}
+        {% for page in pages %}
         {% if page.layout == "daily" %}
         {% assign eIndex = forloop.index0 | plus: emoticon.size | modulo: emoticon.size %}
-
+        {% assign dateYear = page.date | date: "%Y" %}
         <div class="article-sort-item">
             <a class="article-sort-item-img" href="{{page.url}}" target="_parent">
                 <img src="/assets/res/genshin-impact/emoticon/{{emoticon[eIndex]}}">
