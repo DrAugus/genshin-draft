@@ -1,11 +1,11 @@
 :root {
     --ele-denro: #98e628;
     --ele-geo: #e2b032;
-    --ele-electro: #fca7ff;
+    --ele-electro: #d296fc;
     --ele-hydro: #03ddfe;
     --ele-pyro: #fa5d3e;
-    --ele-anemo: #4cf3b6;
-    --ele-cryo: #a6fdfd;
+    --ele-anemo: #57dcb0;
+    --ele-cryo: #84c2e6;
 }
 
 /*元素背景色*/
@@ -323,4 +323,17 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
+}
+
+
+.slider .slides {
+    background-color: unset;
+}
+
+.slider .slides li img {
+    height: 100%;
+    width: 100%;
+    background-size: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
 }
