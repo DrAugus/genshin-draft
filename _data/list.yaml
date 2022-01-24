@@ -1,0 +1,77 @@
+about:
+  - h: About
+    url: /about
+    intro: 关于自己
+  - h: Resume
+    url: /style/index
+    intro: 简历
+  - h: Contact
+    url: /contact-thanks
+    intro: 致谢
+article:
+  - h: Abstract
+    url: /blog/index
+    intro: 博文目录
+  - h: Categories
+    url: /categories
+    intro: 博文类别
+  - h: Tags
+    url: /tags
+    intro: 博文标签
+code:
+  - h: projects
+    url: /projects
+    intro: Github所有项目
+  - h: cpp
+    url: /cpp
+    intro: 一些面试题——C++
+  - h: algorithm
+    url: /algorithm
+    intro: 一些面试题——算法
+  - h: os
+    url: /os
+    intro: 一些面试题——操作系统
+  - h: network_protocol
+    url: /network_protocol
+    intro: 一些面试题——网络协议
+  - h: database
+    url: /database
+    intro: 一些面试题——数据库
+  - h: java
+    url: /java
+    intro: 一些面试题——JAVA
+  - h: front_end
+    url: /front_end
+    intro: 一些面试题——前端
+  - h: sys_design
+    url: /sys_design
+    intro: 一些面试题——系统设计
+  - h: non_tech
+    url: /non_tech
+    intro: 一些面试题——非技术问题
+life:
+  - h: 日记
+    url: /daily
+    intro: 偶尔的日常小记
+  - h: 倒计时
+    url: /countdown
+    intro: 一个无用的倒计时界面
+  - h: 小刺猬
+    url: /hedgehog
+    intro: 一个不认识的人
+  - h: 外賣薦
+    url: /food
+    intro: 外卖收集 但已停更
+  - h: 英语词汇
+    url: /words_en
+    intro: 不断学习的英文
+  - h: 汉语词汇
+    url: /words_zh
+    intro: 不断学习的中文
+  - h: 中国年代史
+    url: /history_cn
+    intro: 正在施工中的年代史
+
+
+
+
