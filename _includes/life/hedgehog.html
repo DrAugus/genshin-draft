@@ -110,12 +110,12 @@
 <!--小刺猬の日常-->
 <div class="row">
     <h2>小刺猬の日常</h2>
-    {% for dailyXY in site.data.hedgehog.daily %}
-    {% if dailyXY[0] != block %}
-    <!--types are: FOOD TEA SNACK-->
-    {% for type in dailyXY[1] %}
-    <div class="col s12 m4 l3 radius10px">
-        <div class="waves-effect waves-block waves-light hoverable xy-img radius10px">
+    <div class="carousel">
+        {% for dailyXY in site.data.hedgehog.daily %}
+        {% if dailyXY[0] != block %}
+        <!--types are: FOOD TEA SNACK-->
+        {% for type in dailyXY[1] %}
+        <div class="carousel-item xy-img radius10px">
             <img class="radius10px" src="/assets/res/hedgehog/{{dailyXY[0]}}/{{type[0]}}.jpg">
             {% if type[1].info != nil %}
             <div class="xy-info center-align">
@@ -123,24 +123,22 @@
             </div>
             {% endif %}
         </div>
-        <div class="xy-img-division"></div>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
     </div>
-    {% endfor %}
-    {% endif %}
-    {% endfor %}
 </div>
 
 <!--小刺猬の生活-->
 <div class="row">
     <h2>小刺猬の生活</h2>
-    {% for i in (0..51) %}
-    <div class="col s12 m4 l3">
-        <div class="xy-img radius10px">
+    <div class="carousel">
+        {% for i in (0..51) %}
+        <div class="carousel-item xy-img radius10px">
             <img class="radius10px" src="/assets/res/xy/{{i}}.jpg">
         </div>
-        <div class="xy-img-division"></div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 <div class="divider"></div>
