@@ -59,9 +59,6 @@ life:
   - h: 小刺猬
     url: /hedgehog
     intro: 一个不认识的人
-  - h: 外賣薦
-    url: /food
-    intro: 外卖收集 但已停更
   - h: 英语词汇
     url: /words_en
     intro: 不断学习的英文
