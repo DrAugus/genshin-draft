@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col s12 center">
-        <a href="/genshin/timeline" class="chip">时间轴</a>
-        <a href="/genshin/wish" class="chip">当前祈愿信息</a>
-        <a href="/genshin/characters" class="chip">角色信息</a>
-        <a href="/genshin/party" class="chip">版本配队</a>
+        {% for genshin in site.data.list.genshin %}
+        <a href="{{genshin.url}}" class="chip"> {{genshin.h}} </a>
+        {% endfor %}
     </div>
 </div>
