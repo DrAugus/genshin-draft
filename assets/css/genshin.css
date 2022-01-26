@@ -337,3 +337,20 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.slider .indicators .indicator-item {
+    background: #fff url("/assets/res/genshin-impact/primogem.png") no-repeat;
+    background-size: cover;
+}
+
+/*修改slider按钮颜色*/
+.slider .indicators .indicator-item.active {
+    background: #fff url("/assets/res/genshin-impact/intertwined_fate.png") no-repeat;
+    background-size: cover;
+}
+
+button:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+

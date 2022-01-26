@@ -1,0 +1,74 @@
+<!--全部角色 信息 圣遗物 武器-->
+<h2>原神——<a href="javascript:showAll()">全部角色</a></h2>
+<div class="row center-align">
+    {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
+    {% for e in eleName %}
+    <button class="waves-effect waves-light hoverable hide-border" id="{{e}}" type="submit">
+        <img src="/assets/res/genshin-impact/elements/{{e}}.png" loading="lazy">
+    </button>
+    {% endfor %}
+</div>
+
+<div class="row">
+    {% for e in eleName %}
+    {% for characters in site.data.genshin.characters %}
+    {% if characters[1].ele == e %}
+    <div class="col s3 m2 l1  hide show-{{characters[1].ele}}">
+        <a class="modal-trigger" href="#modal{{characters[1].id}}">
+            <div class="card radius10px">
+                <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
+                <div class="card-image waves-effect waves-block waves-light hoverable character-avatar">
+                    <img src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png" loading="lazy">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal{{characters[1].id}}" class="modal modal-fixed-footer radius10px">
+        <div class="modal-content auto-height hide-box-shadow hide-border">
+            <div class="card hide-box-shadow hide-border">
+                <div class="card-content">
+                    <h4 class="center-align"> {{characters[1].prefix}} - {{characters[1].name}}</h4>
+                </div>
+                <div class="card-action valign-wrapper">
+                    <span class="ele-text-{{characters[1].ele}}">{{characters[1].intro}}</span>
+                </div>
+                {% if characters[1].cultivate != nil %}
+                <div class="card-action valign-wrapper">
+                    {% if characters[1].cultivate.artifacts != nil %} 圣遗物推荐：{{characters[1].cultivate.artifacts}}<br>{% endif %}
+                    {% if characters[1].cultivate.weapons != nil %} 武器推荐：{{characters[1].cultivate.weapons}}<br>{% endif %}
+                    {% if characters[1].cultivate.talent != nil %} 天赋推荐：{{characters[1].cultivate.talent}}<br>{% endif %}
+                    {% if characters[1].cultivate.main.sands != nil or characters[1].cultivate.main.goblet != nil
+                    or characters[1].cultivate.main.circlet != nil %}
+                    主词条：沙漏【{{characters[1].cultivate.main.sands}}】 杯子【{{characters[1].cultivate.main.goblet}}】
+                    头【{{characters[1].cultivate.main.circlet}}】<br>
+                    {% endif %}
+                    {% if characters[1].cultivate.sub != nil %} 副词条：{{characters[1].cultivate.sub}}<br>{% endif %}
+                    {% if characters[1].cultivate.tips != nil %} TIPS：{{characters[1].cultivate.tips}}<br>{% endif %}
+                </div>
+                {% endif %}
+                <div class="card-action valign-wrapper center-align">
+                    <img alt="" loading="lazy" class=" responsive-img"
+                         src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</div>
+
+<h2>原魔——全部怪物</h2>
+<div class="row">
+    {% for monsters in site.data.genshin.monsters %}
+    <div class="col s3 m2 l1">
+        <div class="card radius10px">
+            <div class="card-image waves-effect waves-block waves-light hoverable monster-avatar">
+                <img src="/assets/res/genshin-impact/monsters/{{monsters[0]}}.png" loading="lazy">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

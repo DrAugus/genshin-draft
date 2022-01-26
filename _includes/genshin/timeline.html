@@ -1,0 +1,83 @@
+<script>
+    //这样获取时 需要在对应的时间后面加上utc+8
+    const eventsData = {{site.data.genshin.wish.characters | jsonify}}
+</script>
+
+<!--长度减1-->
+{% capture lenMonthList %}119{% endcapture %}
+{% capture lenAllDays %}3649{% endcapture %}
+
+<!--时间轴-->
+<div class="col s12">
+    <h2 class="center-align">开服至今祈愿信息</h2>
+    <div class="timeline-scroll-x" id="setNowPos">
+
+        <div class="timeline-month">
+            {% for i in (0..lenMonthList) %}
+            <div class="timeline-month-left-{{i}} hide">
+                <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="timeline-day">
+
+            <div class="timeline-today-line-pos" id="findNowPos">
+                <div id="currentTime"></div>
+            </div>
+
+            <div class="timeline-wish">
+
+                {% for wish in site.data.genshin.wish.characters %}
+                {% assign i = forloop.index0 %}
+
+                {% for characters in site.data.genshin.characters %}
+                {% if characters[1].id == wish.wish5star %}
+                <div class="card event-item event-item-{{i}} event-item-background-{{characters[1].ele}} hide">
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 100%">
+                        <!-- Modal Trigger -->
+                        <a class="modal-trigger" href="#modal{{i}}">
+                            <div class="event-img responsive-img lazy"
+                                 data-original="/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png">
+                            </div>
+                        </a>
+                        <span class="left-align timeline-character-text ele-text-{{characters[1].ele}}">{{characters[1].name}}</span>
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div id="modal{{i}}" class="modal modal-fixed-footer radius10px">
+                        <div class="modal-content auto-height hide-box-shadow hide-border">
+                            <div class="card hide-box-shadow hide-border">
+                                <div class="card-content valign-wrapper center-align">
+                                    <h4 class="center-align"> {{wish.wishName}} -
+                                        {{site.data.genshin.characters[wish.wish5star].name}}</h4>
+                                </div>
+                                <!--downcase转换小写 并用_替换空格 append其他标记-->
+                                <!--replace
+                                Replaces all occurrences of a string with a substring.-->
+                                <div class="card-image waves-effect waves-block waves-light hoverable">
+                                    <img alt="" loading="lazy"
+                                         src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
+                                </div>
+                                <div class="card-action">
+                                    <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% break %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </div>
+
+            {% for i in (0..lenAllDays) %}
+            <div class="timeline-wrapper left-day-{{i}} hide">
+                <div class="timeline-index"><span id="timelineDay{{i}}"></span></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
