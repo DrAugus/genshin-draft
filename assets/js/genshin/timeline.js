@@ -1,7 +1,4 @@
-import {dates, events, firstDay, monthList, processEvent} from "./event_handle";
-import {dayWidth} from "./utils";
-
-
+const DAY_WIDTH = 35;
 let today = dayjs();
 
 processEvent();
@@ -19,20 +16,20 @@ const setTimeAxis = () => {
     for (let i = 0; i < dates.length; ++i) {
         $(".left-day-" + i).removeClass("hide");
         //圆圈timeline-index的width为30
-        $(".left-day-" + i).css("left", ((dayWidth - 30) * i) + "px");
+        $(".left-day-" + i).css("left", ((DAY_WIDTH - 30) * i) + "px");
         $("#timelineDay" + i).text(dates[i]);
     }
 
     for (let i = 0; i < monthList.length; ++i) {
         $(".timeline-month-left-" + i).removeClass("hide");
-        $(".timeline-month-left-" + i).css("left", (dayWidth * monthList[i][1].offset) + "px");
-        $(".timeline-month-width-" + i).css("width", (dayWidth * monthList[i][1].total) + "px");
+        $(".timeline-month-left-" + i).css("left", (DAY_WIDTH * monthList[i][1].offset) + "px");
+        $(".timeline-month-width-" + i).css("width", (DAY_WIDTH * monthList[i][1].total) + "px");
         $("#timelineMonthName" + i).text(monthList[i][0]);
     }
 
     let todayOffset = Math.abs(firstDay.diff(today, "day", true));
     //timeline-index的width为30
-    $(".timeline-today-line-pos").css("left", todayOffset * dayWidth + 30 + "px");
+    $(".timeline-today-line-pos").css("left", todayOffset * DAY_WIDTH + 30 + "px");
 };
 setTimeAxis();
 
@@ -61,8 +58,8 @@ const wishInfo = () => {
         //动态设置各个角色的css
         $(".event-item-" + i).removeClass("hide");
         $(".event-item-" + i).css({
-            "width": wishCharacters[i].duration * dayWidth + "px",
-            "left": duration * dayWidth + 30 + "px"
+            "width": wishCharacters[i].duration * DAY_WIDTH + "px",
+            "left": duration * DAY_WIDTH + 30 + "px"
         });
         if (wishCharacters[i].wish_2)
             $(".event-item-" + i).css("marginTop", "160px");

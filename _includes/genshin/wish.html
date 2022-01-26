@@ -1,3 +1,9 @@
+<script>
+    //这样获取时 需要在对应的时间后面加上utc+8
+    const eventsData = {{site.data.genshin.wish.characters | jsonify}}
+</script>
+
+
 <div class="col s12 center-align">
     <img src="/assets/res/genshin-impact/ys.png">
 </div>
@@ -61,35 +67,6 @@
     </div>
 </div>
 
-<!--版本答案-->
-<div class="col s12">
-    <h2>版本答案 队伍推荐</h2>
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for party in site.data.genshin.party_setup %}
-        <li class="hoverable radius5px">
-            <div class="collapsible-header">
-                <span>{{party.name}}</span>
-            </div>
-
-            <div class="collapsible-body">
-                <p>
-                    {% for i in (0..party.party.size) %}
-                    <!--跳过最大的 index从0起 包含了size-->
-                    {% if i >= party.party.size %}
-                    {% break %}
-                    {% endif %}
-                    <span>{{party.party[i]}}<span class="chip">{{party.constellation[i]}}</span></span>
-                    {% endfor %}
-                </p>
-                <p>{{party.party}}
-                    {% if party.advantage != nil %}<br>优势：{{party.advantage}} {% endif %}
-                    {% if party.disadvantage != nil %} <br>缺陷：{{party.disadvantage}} {% endif %}
-                </p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
 
 <!--即将发布-->
 <div class="col s12">

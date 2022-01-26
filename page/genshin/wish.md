@@ -3,7 +3,16 @@ permalink: /genshin/wish
 layout: page   
 title: ''  
 css: genshin.css  
-js: genshin/wish.js  
+js:
+
+- genshin/event.js
+- genshin/wish.js
+- genshin/hutao.js
+
 with_header_bg : genshin-impact/bg/shenhe1.jpg
+
 ---
+
+{% include genshin/list.html %}
+
 {% include genshin/wish.html %}

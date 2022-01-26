@@ -1,5 +1,13 @@
-import {events} from "./event_handle";
-import {elementColor} from "./utils";
+const ELEMENT_COLOR = {
+    dendro: "#98e628",//草
+    geo: "#e2b032",//岩
+    electro: "#fca7ff",//雷
+    hydro: "#03ddfe",//水
+    pyro: "#fa5d3e",//火
+    anemo: "#4cf3b6",//风
+    cryo: "#a6fdfd"//冰
+};
+
 
 let wishCharacters = events;
 let wishLength = wishCharacters.length;
@@ -114,7 +122,7 @@ const updateCurrentWishInfo = () => {
         //祈愿角色信息
         $("#currentWishText" + i).text("");
         //color显示
-        $(".current-wish-color-" + index).css("color", elementColor[wishCharacters[index].ele]);
+        $(".current-wish-color-" + index).css("color", ELEMENT_COLOR[wishCharacters[index].ele]);
         let imgSrc = replaceAndLow(wishCharacters[index].name) + "_" + wishCharacters[index].image + ".jpg";
         $("#showCurrentWishCharacter" + i).attr("src", "/assets/res/genshin-impact/events/" + imgSrc);
     }
@@ -143,7 +151,7 @@ const futureWishInfo = () => {
 
     console.log("coming soon: ", indexArr);
     for (let i = 0; i < indexArr.length; ++i) {
-        let showColor = elementColor [wishCharacters[indexArr[i]].ele];
+        let showColor = ELEMENT_COLOR [wishCharacters[indexArr[i]].ele];
         let tShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
             showColor + " -1px 1px 4px, " + showColor + " 1px 1px 4px, " + showColor + " 0 0 10px";
         $(".future-wish-color-" + i).css({"color": "#000", "textShadow": tShadow});

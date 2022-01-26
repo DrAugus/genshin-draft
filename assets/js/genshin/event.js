@@ -1,11 +1,11 @@
-const padding = 10;
+const TIMELINE_PADDING = 10;
 let lastEventTime = dayjs().year(2000);
-export let firstDay = dayjs();
-export let dates = [];
+let firstDay = dayjs();
+let dates = [];
 let years = [];
-export let yearList = [];
-export let monthList = [];
-export let events = [];
+let yearList = [];
+let monthList = [];
+let events = [];
 
 
 const convertToDate = (e, i) => {
@@ -24,7 +24,7 @@ const convertToDate = (e, i) => {
     };
 };
 
-export const processEvent = () => {
+const processEvent = () => {
     events = eventsData.map((e, i) => {
         if (Array.isArray(e)) {
             return e.map((item) => convertToDate(item, i));
@@ -51,9 +51,9 @@ export const processEvent = () => {
             // i为0是角色祈愿 找到第一个角色祈愿的开始时间 提前padding天 设为firstDay
             if (i === 0) {
                 if (Array.isArray(e)) {
-                    firstDay = e[0].start.set("hour", 0).set("minute", 0).set("second", 0).subtract(padding, "day");
+                    firstDay = e[0].start.set("hour", 0).set("minute", 0).set("second", 0).subtract(TIMELINE_PADDING, "day");
                 } else {
-                    firstDay = e.start.set("hour", 0).set("minute", 0).set("second", 0).subtract(padding, "day");
+                    firstDay = e.start.set("hour", 0).set("minute", 0).set("second", 0).subtract(TIMELINE_PADDING, "day");
                 }
             }
 
@@ -68,7 +68,7 @@ export const processEvent = () => {
             }
         });
 
-    const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, "day", true))) + 2 * padding;
+    const dayTotal = Math.abs(Math.ceil(firstDay.diff(lastEventTime, "day", true))) + 2 * TIMELINE_PADDING;
 
     for (let i = 0; i < dayTotal; i++) {
         const year = firstDay.add(i, "day").format("YYYY");
@@ -97,3 +97,5 @@ export const processEvent = () => {
 
     dates = [...new Array(dayTotal)].map((_, i) => firstDay.add(i, "day").date());
 };
+
+processEvent();

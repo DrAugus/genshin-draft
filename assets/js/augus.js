@@ -1,3 +1,13 @@
+// functionNamesLikeThis
+// variableNamesLikeThis
+// ClassNamesLikeThis
+// EnumNamesLikeThis
+// methodNamesLikeThis
+// CONSTANT_VALUES_LIKE_THIS
+// foo.namespaceNamesLikeThis.bar
+// filenameslikethis.js
+
+
 const obj2arr = (obj) => {
     const arr = [];
     for (const key in obj) {
