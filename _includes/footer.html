@@ -12,9 +12,13 @@
     <!-- 版权 -->
     <div class="footer-copyright">
         <div class="container black-text">
-            <!--            <span id="busuanzi_container_site_pv"> Views:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;times</span>.&nbsp;-->
-            &#xA9;2021&nbsp;-&nbsp;{{"now" | date: "%Y"}}&nbsp;{{site.title}}.&nbsp;All rights reserved.&nbsp;Designed
-            by XYYY & <a href="https://github.com/DrAugus">Augus</a>.
+            <div class="row">
+                <div class="col s12">
+                    <!--            <span id="busuanzi_container_site_pv"> Views:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;times</span>.&nbsp;-->
+                    &#xA9;2021&nbsp;-&nbsp;{{"now" | date: "%Y"}}&nbsp;{{site.title}}.&nbsp;All rights reserved.&nbsp;Designed
+                    by XYYY & <a href="https://github.com/DrAugus">Augus</a>.
+                </div>
+            </div>
         </div>
     </div>
 
@@ -36,140 +40,3 @@
     </div>
 
 </footer>
-
-<!-- Compiled and minified JavaScript -->
-
-<!-- 公共部分的js -->
-<!--The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source. Read more at srihash.org-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!--bootstrap依赖jQuery-->
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="/assets/js/bootstrap-3.4.1-dist/bootstrap.min.js"></script>
-<script src="/assets/js/jquery.tablesorter.min.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-<script src="/assets/js/materialize.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
-<!--background effect-->
-<!--canvas_ribbon-->
-<!--
-size: 彩带宽度, 默认: 90.
-alpha: 彩带透明度, 默认: 0.6.
-zIndex: 彩带html标签的z-index属性, 默认: -1.
--->
-<!--<script id="ribbon" mobile="false" alpha="0.3" size="75"-->
-<!--        src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js"></script>-->
-<!--canvas_nest-->
-<!--<script id="canvas_nest" defer="defer" color="0,188,212" opacity="0.7" zIndex="-1" count="99" mobile="false"-->
-<!--        src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script>-->
-<!--click-heart-->
-<!--<script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js"-->
-<!--        async="async" mobile="false"></script>-->
-<script src="/assets/js/jquery.lazyload.min.js"></script>
-<script src="/assets/js/jquery.scrollstop.min.js"></script>
-<!--代码高亮-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
-<!---->
-<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-
-<!--公共自定义js-->
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/change-color.js"></script>
-<script src="/assets/js/time.js"></script>
-
-<!-- all layout js -->
-{% for js in layout.js %}
-{% if js contains "//" %}
-<script src="{{js}}"></script>
-{% else %}
-<script src="/assets/js/{{js}}"></script>
-{% endif %}
-{% endfor %}
-
-<!-- all page js -->
-{% for js in page.js %}
-{% if js contains "//" %}
-<script src="{{js}}"></script>
-{% else %}
-<script src="/assets/js/{{js}}"></script>
-{% endif %}
-{% endfor %}
-
-<script type="text/javascript">
-    //表格排序
-    $(function () {
-        $("#myTableSort").tablesorter();
-    });
-    //全局懒加载
-    $(".img").addClass("lazy");
-    //图片懒加载
-    $(".lazy").lazyload({
-        placeholder: "img/image_pp.jpg", // 用图片提前占位，值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
-        effect: "fadeIn", // 载入使用何种效果，effect(特效),值有show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
-        threshold: 200, // 提前开始加载，值为数字,代表页面高度.如设置为200,表示滚动条在离目标位置还有200的高度时就开始加载图片,可以做到不让用户察觉
-        // event: 'click',  // 事件触发时才加载，值有click(点击),mouseover(鼠标划过),sporty(运动的),foobar(…).可以实现鼠标莫过或点击图片才开始加载,后两个值未测试…
-        // container: $("#container"), // 对某容器中的图片实现效果，值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
-        failurelimit: 10, // 图片排序混乱时，值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
-    });
-
-
-    <!-- Simple Jekyll Search -->
-    // https://stackoverflow.com/questions/1912501/unescape-html-entities-in-javascript
-    function htmlDecode(input) {
-        var e = document.createElement("textarea");
-        e.innerHTML = input;
-        // handle case of empty input
-        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-    }
-
-    SimpleJekyllSearch({
-        searchInput: document.getElementById("search-input"),
-        resultsContainer: document.getElementById("search-results"),
-        json: "/search.json",
-        searchResultTemplate: "<div><a href=\"{url}\"><h3>{title}</h3><h3 class=\"page-meta\">{excerpt}</h3><hr></a></div>",
-        noResultsText: "No results",
-        limit: 50,
-        fuzzy: false,
-        // a hack to get escaped subtitle unescaped. for some reason,
-        // post.subtitle w/o escape filter nuke entire search.
-        templateMiddleware: function (prop, value, template) {
-            if (prop === "subtitle" || prop === "title") {
-                if (value.indexOf("code")) {
-                    return htmlDecode(value);
-                } else {
-                    return value;
-                }
-            }
-        }
-    });
-
-    $(document).ready(function () {
-        var $searchPage = $(".search-page");
-        var $searchOpen = $(".search-icon");
-        var $searchClose = $(".search-icon-close");
-        var $searchInput = $("#search-input");
-        var $body = $("body");
-
-        $searchOpen.on("click", function (e) {
-            e.preventDefault();
-            $searchPage.toggleClass("search-active");
-            var prevClasses = $body.attr("class") || "";
-            setTimeout(function () {
-                $body.addClass("no-scroll");
-            }, 400);
-
-            if ($searchPage.hasClass("search-active")) {
-                $searchClose.on("click", function (e) {
-                    e.preventDefault();
-                    $searchPage.removeClass("search-active");
-                    $body.attr("class", prevClasses);  // from closure
-                });
-                $searchInput.focus();
-            }
-        });
-    });
-
-
-</script>

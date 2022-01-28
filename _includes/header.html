@@ -21,7 +21,7 @@
                 <div class="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <!--数组声明 用split切割字符串-->
-                        {% assign nav_list = "life,article,原神,About,Code" | split: "," %}
+                        {% assign nav_list = "life,article,genshin,About,Code" | split: "," %}
                         {% assign nav_list_url = "list/life,list/article,list/genshin,list/about,list/code" | split: "," %}
                         {% for li in nav_list %}
                         <li><a href="/{{nav_list_url[forloop.index0]}}">{{li | upcase }}</a></li>
