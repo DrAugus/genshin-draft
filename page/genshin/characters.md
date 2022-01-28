@@ -1,7 +1,6 @@
 ---
 permalink: /genshin/characters   
-layout: page   
-title: ''  
+layout: page  
 css: genshin.css  
 js:
 

@@ -1,5 +1,5 @@
 <!--全部角色 信息 圣遗物 武器-->
-<h2>原神——<a href="javascript:showAll()">全部角色</a></h2>
+<h2>原神<a href="javascript:showAll()"> <span class="title-intro">全部角色</span> </a></h2>
 <div class="row center-align">
     {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
     {% for e in eleName %}
@@ -36,9 +36,14 @@
                 </div>
                 {% if characters[1].cultivate != nil %}
                 <div class="card-action valign-wrapper">
-                    {% if characters[1].cultivate.artifacts != nil %} 圣遗物推荐：{{characters[1].cultivate.artifacts}}<br>{% endif %}
-                    {% if characters[1].cultivate.weapons != nil %} 武器推荐：{{characters[1].cultivate.weapons}}<br>{% endif %}
-                    {% if characters[1].cultivate.talent != nil %} 天赋推荐：{{characters[1].cultivate.talent}}<br>{% endif %}
+                    {% if characters[1].cultivate.artifacts != nil %}
+                    圣遗物推荐：{{characters[1].cultivate.artifacts}}<br>
+                    {% endif %}
+                    {% if characters[1].cultivate.weapons != nil %}
+                    武器推荐：{{characters[1].cultivate.weapons}}<br>
+                    {% endif %}
+                    {% if characters[1].cultivate.talent != nil %}
+                    天赋推荐：{{characters[1].cultivate.talent}}<br>{% endif %}
                     {% if characters[1].cultivate.main.sands != nil or characters[1].cultivate.main.goblet != nil
                     or characters[1].cultivate.main.circlet != nil %}
                     主词条：沙漏【{{characters[1].cultivate.main.sands}}】 杯子【{{characters[1].cultivate.main.goblet}}】
@@ -49,7 +54,8 @@
                 </div>
                 {% endif %}
                 <div class="card-action valign-wrapper center-align">
-                    <img class="responsive-img" src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+                    <img class="responsive-img"
+                         src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
                 </div>
             </div>
         </div>
@@ -59,7 +65,7 @@
     {% endfor %}
 </div>
 
-<h2>原魔——全部怪物</h2>
+<h2>原魔 <span class="title-intro">全部怪物</span></h2>
 <div class="row">
     {% for monsters in site.data.genshin.monsters %}
     <div class="col s3 m2 l1">

@@ -1,7 +1,6 @@
 ---
 permalink: /genshin/timeline   
-layout: page   
-title: ''  
+layout: page  
 css: genshin.css  
 js:
 
