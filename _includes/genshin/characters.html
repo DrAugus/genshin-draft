@@ -3,9 +3,9 @@
 <div class="row center-align">
     {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
     {% for e in eleName %}
-    <button class="waves-effect waves-light hoverable hide-border" id="{{e}}" type="submit">
-        <img src="/assets/res/genshin-impact/elements/{{e}}.png" loading="lazy">
-    </button>
+    <a href="javascript:showEle('{{e}}')">
+        <img src="/assets/res/genshin-impact/elements/{{e}}.png">
+    </a>
     {% endfor %}
 </div>
 
@@ -18,7 +18,7 @@
             <div class="card radius10px">
                 <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
                 <div class="card-image waves-effect waves-block waves-light hoverable character-avatar">
-                    <img src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png" loading="lazy">
+                    <img src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png">
                 </div>
             </div>
         </a>
@@ -49,8 +49,7 @@
                 </div>
                 {% endif %}
                 <div class="card-action valign-wrapper center-align">
-                    <img alt="" loading="lazy" class=" responsive-img"
-                         src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+                    <img class="responsive-img" src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
                 </div>
             </div>
         </div>
@@ -66,7 +65,7 @@
     <div class="col s3 m2 l1">
         <div class="card radius10px">
             <div class="card-image waves-effect waves-block waves-light hoverable monster-avatar">
-                <img src="/assets/res/genshin-impact/monsters/{{monsters[0]}}.png" loading="lazy">
+                <img src="/assets/res/genshin-impact/monsters/{{monsters[0]}}.png">
             </div>
         </div>
     </div>

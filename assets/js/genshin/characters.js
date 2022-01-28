@@ -11,8 +11,3 @@ const showAll = () => {
 };
 //默认 展示所有
 showAll();
-for (let e of ELEMENT_NAME) {
-    $("#" + e).click(() => {
-        showEle(e);
-    });
-}
