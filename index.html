@@ -1,77 +1,81 @@
-<!DOCTYPE HTML>
+---
+layout: page
+js: blog.js
+css: blog.css
+---
 
-<html>
-    <head>
-        <title>AUGUS</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-        <link rel="stylesheet" href="/assets/aerial/css/main.css"/>
-        <link rel="shortcut icon" type="image/x-icon" href="/assets/res/augus.ico"/>
-        <noscript>
-            <link rel="stylesheet" href="/assets/aerial/css/noscript.css"/>
-        </noscript>
-    </head>
-    <body class="is-preload">
-        <div id="wrapper">
-            <div>
-                <img src="/assets/res/xy/20.jpg" class="animation-cover-image" alt="">
-            </div>
+<h2 class="center-align">文</h2>
 
-<!--            <div id="bg"></div>-->
-            <div id="overlay"></div>
-            <div id="main">
+<!--paginator只能用于index.html但可以用子文件下的index.html-->
+<!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
+<!--日期格式化网站 http://www.strfti.me/-->
+<!--更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}} github不可用-->
 
-                <!-- Header -->
-                <header id="header">
-                    <h1>AUGUS</h1>
-                    <p>BACK-END &nbsp;&bull;&nbsp; DATA &nbsp;&bull;&nbsp; GAME</p>
-                    <nav>
-                        <ul>
-                            <li><a href="https://wpa.qq.com/msgrd?v=3&uin=980652196&site=qq&menu=yes" target="_blank"
-                                   class="icon brands fa-qq"><span class="label">QQ</span></a></li>
-                            <li><a href="https://github.com/DrAugus" class="icon brands style2 fa-github"><span
-                                    class="label">GitHub</span></a></li>
-                        </ul>
-                    </nav>
-
-                    <p>
-                        <!-- 各页面跳转 -->
-                        <a href="/blog/index" target="_parent">Blog</a>
-                        &nbsp;&bull;&nbsp;
-                        <a href="/list/genshin" target="_parent">Genshin</a>
-                        &nbsp;&bull;&nbsp;
-                        <a href="/hedgehog" target="_parent">Hedgehog</a>
-                        &nbsp;&bull;&nbsp;
-                        <a href="/countdown" target="_parent">Countdown</a>
-                        &nbsp;&bull;&nbsp;
-                        <a href="/style/index" target="_parent">Resume</a>
-                    </p>
-
-
-                </header>
-
-                <!-- Footer -->
-                <footer id="footer">
-                    <p class="copyright">&#xA9; 2021-<span id="currentFullYear"></span>. All rights reserved.
-                        Design: XYYY & <a href="https://github.com/DrAugus">AUGUS</a>.</p>
-                    <script type="text/javascript">
-                        var currentFullYear = (new Date()).getFullYear();
-                        document.getElementById("currentFullYear").innerHTML = currentFullYear;
-                    </script>
-                </footer>
-
+{% for post in paginator.posts %}
+<div class="col s12">
+    <div class="card waves-effect waves-block waves-light radius10px">
+        <!--图片 奇偶 显示位置调换-->
+        {% assign index = forloop.index0 | modulo: 2 %}
+        {% if index == 0 %}
+        <div class="card-image waves-effect waves-block waves-light">
+            <img src="/assets/res/xy/{{forloop.index0}}.jpg">
+        </div>
+        <!--日期格式化网站 http://www.strfti.me/-->
+        <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
+        <div class="card-content">
+            <a href="{{post.url}}">
+                <div class="card-title valign-wrapper">{{post.title}}</div>
+                <div class="page-excerpt">
+                    {% if post.lang == 'en' %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {% else %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:200 }}
+                    {% endif %}
+                </div>
+            </a>
+            <div class="page-date">
+                Written by {{site.name}} on {{post.date | date_to_string}}
             </div>
         </div>
-        <script>
-            window.onload = function () {
-                document.body.classList.remove("is-preload");
-            };
-            window.ontouchmove = function () {
-                return false;
-            };
-            window.onorientationchange = function () {
-                document.body.scrollTop = 0;
-            };
-        </script>
-    </body>
-</html>
+        {% else %}
+        <div class="card-content">
+            <a href="{{post.url}}">
+                <div class="card-title valign-wrapper">{{post.title}}</div>
+                <div class="page-excerpt">
+                    {% if post.lang == 'en' %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {% else %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:200 }}
+                    {% endif %}
+                </div>
+            </a>
+            <div class="page-date">
+                Written by {{site.name}} on {{post.date | date_to_string}}
+            </div>
+        </div>
+        <div class="card-image waves-effect waves-block waves-light">
+            <img src="/assets/res/xy/{{forloop.index0}}.jpg">
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<!--分页-->
+{% if paginator.total_pages > 1 %}
+<div class="col s12">
+    <ul class="pager">
+        {% if paginator.previous_page %}
+        <li class="previous">
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="next">
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}
+
