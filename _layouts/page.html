@@ -5,7 +5,7 @@ css:
 js:
 - contents.js
 ---
-<div class="page-info {% if {{page.title}} == '' or {{page.title}} == nil %}hide{% endif%}">
+<div class="page-info {% if page.title == '' or page.title == nil %}hide{% endif %}">
     <h1 class="page-title">{{page.title}}</h1>
 </div>
 
