@@ -2,9 +2,9 @@
 layout: page
 js: blog.js
 css: blog.css
+with_header_bg: list/code.jpg
 ---
 
-<h2 class="center-align">文</h2>
 
 <!--paginator只能用于index.html但可以用子文件下的index.html-->
 <!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
@@ -67,12 +67,16 @@ css: blog.css
     <ul class="pager">
         {% if paginator.previous_page %}
         <li class="previous">
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                &larr; Newer Posts
+            </a>
         </li>
         {% endif %}
         {% if paginator.next_page %}
         <li class="next">
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                Older Posts &rarr;
+            </a>
         </li>
         {% endif %}
     </ul>
