@@ -154,7 +154,7 @@ characters:
     url: https://bbs.mihoyo.com/ys/article/7067772
   - name: The Herons Court
     image: 1
-    shortName: Ayaka
+    shortName: Kamisato Ayaka
     start: 2021-07-21 11:00:00 +0800
     end: 2021-08-10 17:59:59 +0800
     wish5star: kamisato_ayaka
@@ -326,15 +326,14 @@ characters:
     version: 2.5
     wishName: 「」
     url: https://bbs.mihoyo.com/ys/article/?
-  - name: Leaves in the Wind
+  - name: Reign of Serenity
     image: 2
-    shortName: Kazuha
-    start: 2022-02-16 11:00:00 +0800
-    end: 2022-03-09 17:59:59 +0800
-    wish5star: kaedehara_kazuha
+    shortName: Raiden Shogun
+    start: 2022-03-09 18:00:00 +0800
+    end: 2022-03-30 14:59:59 +0800
+    wish5star: raiden_shogun
     wish4star:
-    wishName: 「叶落风随」
-    wish_2: true
+    wishName: 「影寂天下人」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Drifting Luminescence
     image: 2
@@ -344,18 +343,18 @@ characters:
     wish5star: sangonomiya_kokomi
     wish4star:
     wishName: 「浮岳虹珠」
-    url: https://bbs.mihoyo.com/ys/article/?
-  - name: Reign of Serenity
-    image: 2
-    shortName: Raiden Shogun
-    start: 2022-03-09 18:00:00 +0800
-    end: 2022-03-30 14:59:59 +0800
-    wish5star: raiden_shogun
-    wish4star:
-    wishName: 「影寂天下人」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
-
+  - name: Kamisato Ayato
+    image: 1
+    shortName: Kamisato Ayato
+    start: 2022-03-31 11:00:00 +0800
+    end: 2022-04-20 17:59:59 +0800
+    wish5star: kamisato_ayato
+    wish4star:
+    version: 2.6
+    wishName: 「」
+    url: https://bbs.mihoyo.com/ys/article/?
 
 
 weapons:

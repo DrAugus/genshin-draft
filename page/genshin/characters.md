@@ -7,7 +7,7 @@ js:
 - genshin/utils.js
 - genshin/characters.js
 
-with_header_bg : genshin-impact/bg/shenhe1.jpg
+with_header_bg : genshin-impact/bg/5.jpg
 
 ---
 

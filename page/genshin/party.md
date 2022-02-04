@@ -2,7 +2,7 @@
 permalink: /genshin/party   
 layout: page  
 css: genshin.css  
-with_header_bg : genshin-impact/bg/shenhe1.jpg
+with_header_bg : genshin-impact/bg/3.jpg
 ---
 
 {% include genshin/list.html %}

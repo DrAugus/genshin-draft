@@ -563,12 +563,13 @@ yae_miko:
   city: Inazuma
   ele: electro
 
-shenlilingren:
-  id: shenlilingren
+kamisato_ayato:
+  id: kamisato_ayato
   name: 神里凌人
-  element: 冰
+  prefix: 磐祭叶守
+  element: 水
   star: 5
   event_exclusive: true
-  intro:
+  intro: 表面上看，他处世低调，优雅得体，不爱出现在公众面前，也绝少显山露水。
   city: Inazuma
   ele: cryo

@@ -7,7 +7,7 @@ js:
 - genshin/event.js
 - genshin/timeline.js
 
-with_header_bg : genshin-impact/bg/shenhe1.jpg
+with_header_bg : genshin-impact/bg/6.jpg
 
 ---
 

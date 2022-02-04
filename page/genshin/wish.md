@@ -8,7 +8,7 @@ js:
 - genshin/wish.js
 - genshin/hutao.js
 
-with_header_bg : genshin-impact/bg/shenhe1.jpg
+with_header_bg : genshin-impact/bg/4.jpg
 
 ---
 
