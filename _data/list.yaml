@@ -81,5 +81,8 @@ genshin:
   - h: 版本配队
     url: /genshin/party
     intro: 当前版本的队伍搭配
+  - h: 0 ~ 60级
+    url: /genshin/level
+    intro: 等级所需经验值
 
 

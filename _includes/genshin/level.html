@@ -1,0 +1,21 @@
+<div class="col s1">
+    <div class="input-group ">
+        <label>
+            <input id="lv1" type="number" class="form-control" placeholder="Level1" aria-describedby="basic-addon1"
+                   oninput="if(value>59)value=59;if(value.length>4)value=value.slice(0,4);if(value<0)value=0">
+            <input id="lv2" type="number" class="form-control" placeholder="Level2" aria-describedby="basic-addon1"
+                   oninput="if(value>60)value=60;if(value.length>4)value=value.slice(0,4);if(value<0)value=0">
+        </label>
+    </div>
+</div>
+
+<!--    <input type="submit" value="Submit" href="javascript:showEXP()"/>-->
+
+<div class="col s12">
+    <a href="javascript:showEXP()">点击查询所需经验值</a>
+    <span class="center" id="need-exp"></span>
+</div>
+
+
+
+
