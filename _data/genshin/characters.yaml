@@ -443,6 +443,28 @@ raiden_shogun:
   city: Inazuma
   ele: electro
   weapon: polearm
+  cultivate:
+    weapons:
+      - 稻光
+      - 天空
+      - 鱼叉
+      - 西风
+    talent:
+      - 1
+      - 8
+      - 10
+    artifacts:
+      - 绝缘之旗印4件
+    main:
+      sands: 充能
+      goblet: 雷伤
+      circlet: 暴击/暴伤
+    sub:
+      - 充能
+      - 暴击
+      - 暴伤
+      - 攻击
+    tips:
 
 sangonomiya_kokomi:
   id: sangonomiya_kokomi
