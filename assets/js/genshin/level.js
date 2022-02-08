@@ -16,7 +16,11 @@ const EXP = [
 //8min恢复一个原脆树脂
 const RENEW = 8;
 //一天180个树脂
-const TOTAL_DAY = 24 * 60 / RENEW;
+const TOTAL_DAY_RENEW = 24 * 60 / RENEW;
+//每日任务1500
+const DAILY_TASK = 1500;
+//总计
+const TOTAL_DAY = DAILY_TASK + TOTAL_DAY_RENEW;
 //氪佬 每天最多买6次 一次60树脂
 const TU_HAO = [0, 50, 100, 100, 150, 200, 200];
 //经验树脂比 为4:1
@@ -98,5 +102,7 @@ const showEXP = () => {
     let lv2 = $("#lv2").val();
     let money = $("#tu_hao").val();
     let haveGot = $("#have_got").val();
+    if (!money) money = 0;
+    if (!haveGot) haveGot = 0;
     $("#need-exp").text(getEXP(lv1, lv2, haveGot, money));
 };
