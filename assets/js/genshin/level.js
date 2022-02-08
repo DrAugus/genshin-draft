@@ -19,8 +19,6 @@ const RENEW = 8;
 const TOTAL_DAY_RENEW = 24 * 60 / RENEW;
 //每日任务1500
 const DAILY_TASK = 1500;
-//总计
-const TOTAL_DAY = DAILY_TASK + TOTAL_DAY_RENEW;
 //氪佬 每天最多买6次 一次60树脂
 const TU_HAO = [0, 50, 100, 100, 150, 200, 200];
 //经验树脂比 为4:1
@@ -35,9 +33,8 @@ const getDaySpend = (exp, money) => {
         }
         resinPlus = 60 * money;
     }
-
-    let resinDayTotal = TOTAL_DAY + resinPlus;
-    let dayEXPTotal = resin2exp(resinDayTotal);
+    let resinDayTotal = TOTAL_DAY_RENEW + resinPlus;
+    let dayEXPTotal = resin2exp(resinDayTotal) + DAILY_TASK;
     let daySpend = Math.ceil(exp / dayEXPTotal);
     console.info("exp", exp, "resin", resinDayTotal, "daySpend", daySpend);
     return {
