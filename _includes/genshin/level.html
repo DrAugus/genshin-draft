@@ -1,13 +1,19 @@
-<h3>参考值：一单648全买体力 = 48480经验</h3>
-<blockquote>
-    其他参考：每日任务合计<u>1500</u>经验值；树脂经验值换算为<u>1树脂:5经验值</u>
-</blockquote>
-
+<div class="col s12">
+    <blockquote>
+        提示及参考：
+        <ol>
+            <li>每日任务合计<u>1500</u>经验值</li>
+            <li>树脂经验值换算为<u>1树脂:5经验值</u></li>
+            <li>氪佬只能氪6次50, 100, 100, 150, 200, 200</li>
+            <li>不计算除每日任务外其他任务的奖励</li>
+        </ol>
+    </blockquote>
+</div>
 
 <div class="col s12 m3 l3">
     <div class="input-group">
         <label>
-            <input id="tu_hao" type="number" class="form-control" placeholder="氪吗？每天氪多少单？默认白嫖(0-6)"
+            <input id="tu_hao" type="number" class="form-control" placeholder="氪吗？每天氪多少(0-6)单？默认白嫖"
                    aria-describedby="basic-addon1"
                    oninput="if(value>6)value=6;if(value.length>4)value=value.slice(0,4);if(value<0)value=0">
             <input id="lv1" type="number" class="form-control" placeholder="输入起始等级"
