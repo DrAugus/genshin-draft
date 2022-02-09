@@ -142,7 +142,7 @@ characters:
     url: https://bbs.mihoyo.com/ys/article/6634463
   - name: Leaves in the Wind
     image: 1
-    shortName: Kazuha
+    shortName: Kaedehara Kazuha
     start: 2021-06-29 18:00:00 +0800
     end: 2021-07-20 14:59:59 +0800
     wish5star: kaedehara_kazuha
@@ -354,6 +354,25 @@ characters:
     wish4star:
     version: 2.6
     wishName: 「」
+    url: https://bbs.mihoyo.com/ys/article/?
+  - name: The Herons Court
+    image: 1
+    shortName: Kamisato Ayaka
+    start: 2022-04-20 18:00:00 +0800
+    end: 2021-05-11 14:59:59 +0800
+    wish5star: kamisato_ayaka
+    wish4star:
+    wishName: 「白鹭之庭」
+    url: https://bbs.mihoyo.com/ys/article/?
+  - name: Leaves in the Wind
+    image: 1
+    shortName: Kaedehara Kazuha
+    start: 2022-04-20 18:00:00 +0800
+    end: 2021-05-11 14:59:59 +0800
+    wish5star: kaedehara_kazuha
+    wish4star:
+    wishName: 「叶落风随」
+    wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
 
 
