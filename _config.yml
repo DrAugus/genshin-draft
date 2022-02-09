@@ -62,6 +62,13 @@ exclude:
   - run.bat
   - .idea
   - .github
+
+defaults:
+  - scope:
+      path: "assets/res"
+    values:
+      image: true
+
 sass:
   style: compressed
 
