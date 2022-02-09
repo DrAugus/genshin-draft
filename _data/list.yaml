@@ -10,7 +10,7 @@ about:
     intro: 致谢
 article:
   - h: Abstract
-    url: /blog/index
+    url: /
     intro: 博文目录
   - h: Categories
     url: /categories
