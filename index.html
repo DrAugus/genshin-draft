@@ -16,8 +16,7 @@ with_header_bg: list/code.jpg
     <div class="card waves-effect waves-block waves-light radius10px">
         <!--图片 奇偶 显示位置调换-->
         {% assign index = forloop.index0 | modulo: 2 %}
-        {% if index == 0 %}
-        <div class="card-image waves-effect waves-block waves-light">
+        <div class="card-image waves-effect waves-block waves-light top-img {% if index == 0 %} right-img {% endif %}">
             <img src="/assets/res/xy/{{forloop.index0}}.jpg">
         </div>
         <!--日期格式化网站 http://www.strfti.me/-->
@@ -37,26 +36,6 @@ with_header_bg: list/code.jpg
                 Written by {{site.name}} on {{post.date | date_to_string}}
             </div>
         </div>
-        {% else %}
-        <div class="card-content">
-            <a href="{{post.url}}">
-                <div class="card-title valign-wrapper">{{post.title}}</div>
-                <div class="page-excerpt">
-                    {% if post.lang == 'en' %}
-                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
-                    {% else %}
-                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:200 }}
-                    {% endif %}
-                </div>
-            </a>
-            <div class="page-date">
-                Written by {{site.name}} on {{post.date | date_to_string}}
-            </div>
-        </div>
-        <div class="card-image waves-effect waves-block waves-light">
-            <img src="/assets/res/xy/{{forloop.index0}}.jpg">
-        </div>
-        {% endif %}
     </div>
 </div>
 {% endfor %}

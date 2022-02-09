@@ -1,0 +1,142 @@
+---
+---
+
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin box-sizing($args...) {
+  -webkit-box-sizing: $args;
+  -moz-box-sizing: $args;
+  -ms-box-sizing: $args;
+  -o-box-sizing: $args;
+  box-sizing: $args;
+}
+
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin animation($args...) {
+  animation: $args;
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+}
+
+@mixin animation-iteration-count($args...) {
+  animation-iteration-count: $args;
+  -webkit-animation-iteration-count: $args;
+  -moz-animation-iteration-count: $args;
+  -ms-animation-iteration-count: $args;
+  -o-animation-iteration-count: $args;
+}
+
+@mixin background-size($args...) {
+  background-size: $args;
+  -webkit-background-size: $args;
+  -moz-background-size: $args;
+  -ms-background-size: $args;
+  -o-background-size: $args;
+}
+
+
+.card {
+  margin-bottom: 20px;
+  display: flex;
+  height: 15em;
+}
+
+.card .card-content {
+  height: 90%;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.7;
+  width: 50%;
+}
+
+.card .card-content span {
+  width: 100%;
+  height: 100%;
+}
+
+.card .card-content a {
+  font-weight: bold;
+  color: #404040;
+  width: 50%;
+  height: 100%;
+  line-height: 100%;
+  justify-content: center;
+}
+
+.card .card-content a:hover, a:focus {
+  text-decoration: none;
+  color: #0085a1;
+}
+
+.card .card-image {
+  height: 100%;
+  width: 50%;
+  overflow-x: hidden;
+  background: #00acc1;
+}
+
+.card .card-image i {
+  color: #fff;
+  padding: 10px;
+}
+
+.card .card-image img {
+  width: 100%;
+  height: 100%;
+  @include transition(all 0.6s);
+  object-fit: cover;
+}
+
+.card .card-image img:hover {
+  @include transform(scale(1.1))
+}
+
+
+.right-img {
+  -webkit-box-ordinal-group: 2;
+  -moz-box-ordinal-group: 2;
+  -o-box-ordinal-group: 2;
+  -ms-flex-order: 2;
+  -webkit-order: 2;
+  order: 2;
+}
+
+@media only screen and (max-width: 600px) {
+  .top-img {
+    -webkit-box-ordinal-group: 1 !important;
+    -moz-box-ordinal-group: 1 !important;
+    -o-box-ordinal-group: 1 !important;
+    -ms-flex-order: 1 !important;
+    -webkit-order: 1 !important;
+    order: 1 !important;
+  }
+
+  .card {
+    height: auto;
+    display: unset;
+  }
+
+  .card .card-image {
+    width: 100%;
+  }
+
+  .card .card-content {
+    width: 100%;
+  }
+}
