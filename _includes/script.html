@@ -1,18 +1,16 @@
 <!-- Compiled and minified JavaScript -->
 
 <!-- 公共部分的js -->
-<!--The integrity and crossorigin attributes are used for Subresource Integrity (SRI) checking. This allows browsers to ensure that resources hosted on third-party servers have not been tampered with. Use of SRI is recommended as a best-practice, whenever libraries are loaded from a third-party source. Read more at srihash.org-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{{site.baseurl}}/assets/js/jquery-3.6.0.min.js"></script>
 <!--bootstrap依赖jQuery-->
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="/assets/js/bootstrap-3.4.1-dist/bootstrap.min.js"></script>
-<script src="/assets/js/jquery.tablesorter.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/bootstrap-3.4.1-dist/bootstrap.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/jquery.tablesorter.min.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-<script src="/assets/js/materialize.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/dayjs.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/materialize.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/typed.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/gitalk.min.js"></script>
 <!--background effect-->
 <!--canvas_ribbon-->
 <!--
@@ -28,24 +26,24 @@ zIndex: 彩带html标签的z-index属性, 默认: -1.
 <!--click-heart-->
 <!--<script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js"-->
 <!--        async="async" mobile="false"></script>-->
-<script src="/assets/js/jquery.lazyload.min.js"></script>
-<script src="/assets/js/jquery.scrollstop.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/jquery.lazyload.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/jquery.scrollstop.min.js"></script>
 <!--代码高亮-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/highlight.min.js"></script>
 <!---->
-<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/simple-jekyll-search.min.js"></script>
 
 <!--公共自定义js-->
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/change-color.js"></script>
-<script src="/assets/js/time.js"></script>
+<script src="{{site.baseurl}}/assets/js/main.js"></script>
+<script src="{{site.baseurl}}/assets/js/change-color.js"></script>
+<script src="{{site.baseurl}}/assets/js/time.js"></script>
 
 <!-- all layout js -->
 {% for js in layout.js %}
 {% if js contains "//" %}
 <script src="{{js}}"></script>
 {% else %}
-<script src="/assets/js/{{js}}"></script>
+<script src="{{site.baseurl}}/assets/js/{{js}}"></script>
 {% endif %}
 {% endfor %}
 
@@ -54,7 +52,7 @@ zIndex: 彩带html标签的z-index属性, 默认: -1.
 {% if js contains "//" %}
 <script src="{{js}}"></script>
 {% else %}
-<script src="/assets/js/{{js}}"></script>
+<script src="{{site.baseurl}}/assets/js/{{js}}"></script>
 {% endif %}
 {% endfor %}
 
