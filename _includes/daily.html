@@ -3,7 +3,7 @@
     <div class="article-sort-title">日记</div>
     <div class="article-sort">
         <div class="article-sort-item year">2022</div>
-        {% assign emoticon = "0.png,1.png,2.png" | split: "," %}
+        {% assign emoticon = "0,1,2,4,5,6,8,10,12,13,14,15" | split: "," %}
         {% assign pages = site.pages | sort: 'date' | reverse  %}
         {% for page in pages %}
         {% if page.layout == "daily" %}
@@ -11,7 +11,7 @@
         {% assign dateYear = page.date | date: "%Y" %}
         <div class="article-sort-item">
             <a class="article-sort-item-img" href="{{page.url}}" target="_parent">
-                <img src="/assets/res/genshin-impact/emoticon/{{emoticon[eIndex]}}">
+                <img src="/assets/res/genshin-impact/emoticon/{{emoticon[eIndex]}}.png">
             </a>
             <div class="article-sort-item-info">
                 <div class="article-sort-item-time"><i class="far fa-calendar-alt"></i>
