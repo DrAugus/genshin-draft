@@ -67,7 +67,7 @@
 <!--即将发布-->
 <div class="col s12">
 
-    <h2>即将发布</h2>
+    <h2 class="center">即将发布</h2>
 
     <span id="futureWishInfo"></span>
     <div class="future-wish">
@@ -92,6 +92,23 @@
 
     </div>
 </div>
+
+
+<!--八重-->
+<div class="col s12">
+    <p class="center">作者<a href="https://space.bilibili.com/5174878" target="_blank">viki_arna</a> pix:viki_arna(侵权删) </p>
+    <div class="slider">
+        <ul class="slides">
+            {% assign pos = "diluc,ganyu_blue,ganyu_red,ganyu_wish,jean,keqing,mona,qiqi" | split: "," %}
+            {% for info in pos %}
+            <li>
+                <img src="/assets/res/genshin-impact/draw/yae_miko_{{info}}.png">
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
 
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>
