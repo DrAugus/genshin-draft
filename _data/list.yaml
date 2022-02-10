@@ -66,7 +66,7 @@ life:
     url: /words_zh
     intro: 不断学习的中文
   - h: 中国年代史
-    url: /history_cn
+    url: /history
     intro: 正在施工中的年代史
 genshin:
   - h: 时间轴
