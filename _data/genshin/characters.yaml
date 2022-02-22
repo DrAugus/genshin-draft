@@ -641,4 +641,16 @@ kamisato_ayato:
   intro: 表面上看，他处世低调，优雅得体，不爱出现在公众面前，也绝少显山露水。
   city: Inazuma
   ele: cryo
-  weapon: polearm
+  weapon: sword
+
+yelan:
+  id: yelan
+  name: 夜阑
+  prefix:
+  element: 水
+  star: 5
+  event_exclusive: true
+  intro:
+  city: Liyue
+  ele: cryo
+  weapon: bow
