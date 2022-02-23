@@ -12,7 +12,7 @@ js:
     <h1 class="page-title  {% if page.title == '' or page.title == nil %}hide{% endif %} ">{{page.title}}</h1>
     <div class="page-meta">
         <div id="page-meta-1">
-            <i class="fa fa-calendar-alt tooltipped" data-position="left" data-delay="30" data-tooltip="Date"></i>
+            <i class="fa fa-calendar-alt"></i>
             发表于：{{page.date | date: "%Y-%m-%d"}}
         </div>
         <div id="page-meta-2">
@@ -23,25 +23,20 @@ js:
             <span>阅读时长&nbsp;{{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1}} 分钟</span>
         </div>
         <div id="page-meta-3">
-            <i class="fa fa-hashtag tooltipped" data-position="left" data-delay="30"
-               data-tooltip="Categories"></i>
+            <i class="fa fa-hashtag"></i>
             {% for cat in page.categories %}
             {% capture test %}{{cat | slice: 0}}{% endcapture %}
             {% capture testup %}{{cat | slice: 0 | upcase}}{% endcapture %}
             <a href="/categories#{{cat | slugify}}{% if test == testup %}_cap{% endif %}"
-               target="_blank">
-                <div class="chip">{{cat}}</div>
-            </a>
+               target="_blank"><span>{{cat}}</span></a>
             {% endfor %}
 
-            <i class="fa fa-tags tooltipped" data-position="left" data-delay="30" data-tooltip="Tags"></i>
+            <i class="fa fa-tags"></i>
             {% for tag in page.tags %}
             {% capture test %}{{tag | slice: 0}}{% endcapture %}
             {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
             <a href="/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"
-               target="_blank">
-                <div class="chip">{{tag}}</div>
-            </a>
+               target="_blank"><span>{{tag}}</span></a>
             {% endfor %}
         </div>
     </div>
@@ -49,9 +44,7 @@ js:
 <div class="divider"></div>
 <div id="all-contents-info" class="row">
     <div class="col s12 m9 l10">
-        <div class="col s12">
-            {{ content }}
-        </div>
+        {{ content }}
     </div>
 
     <div class="col hide-on-small-only m3 l2">
@@ -60,51 +53,29 @@ js:
 </div>
 
 
-<!-- Pager -->
-<ul class="pager">
-    {% if page.previous.url %}
-    <li class="previous">
-        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
-           data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-            Previous<br>
-            <span>{{page.previous.title}}</span>
-        </a>
-    </li>
-    {% endif %}
-    {% if page.next.url %}
-    <li class="next">
-        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
-           data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-            Next<br>
-            <span>{{page.next.title}}</span>
-        </a>
-    </li>
-    {% endif %}
-</ul>
-
-<div id="gitalk-container"></div>
-
-<div>
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
-    <script>
-        const initGitalk = () => {
-            const gitalk = new Gitalk({
-                clientID: "5301328d56cf49a6d68e",
-                clientSecret: "dd04918e1a0267bc6eeaf27c1f7c9cc65832db57",
-                repo: "draugus.github.io",
-                owner: "draugus",
-                admin: ["draugus"],
-                id: "{{page.title}}",
-                language: "zh-CN",
-                perPage: 10,
-                distractionFreeMode: false,
-                pagerDirection: "last",
-                createIssueManually: false
-                // updateCountCallback: commentCount
-            });
-
-            gitalk.render("gitalk-container");
-        };
-        initGitalk();
-    </script>
+<div class="row">
+    <!-- Pager -->
+    <ul class="pager">
+        {% if page.previous.url %}
+        <li class="previous post-card">
+            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+               data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                Previous<br>
+                <span>{{page.previous.title}}</span>
+            </a>
+        </li>
+        {% endif %}
+        {% if page.next.url %}
+        <li class="next post-card">
+            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+               data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                Next<br>
+                <span>{{page.next.title}}</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
 </div>
+
+
+{% include gitalk.html %}

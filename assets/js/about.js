@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".user-intro h4").removeClass("hide");
+    // $(".user-intro h4").removeClass("hide");
     $("#js-rotating").Morphext({
         animation: "flip",
         separator: ",",

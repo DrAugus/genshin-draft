@@ -61,6 +61,13 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #404040;
+  overflow-x: hidden;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -194,7 +201,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #f6f6f6;
 }
 
 #all-contents-info table, #all-contents-info th, #all-contents-info td {
@@ -820,11 +826,6 @@ blockquote {
   letter-spacing: 0.5px;
 }
 
-.pager {
-  margin: 20px 0 0 !important;
-  padding: 0 !important;
-}
-
 .pager li > a,
 .pager li > span {
   /* Hux learn from
@@ -847,6 +848,13 @@ blockquote {
   .pager li > span {
     font-size: 14px;
     padding: 15px 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .pager li {
+    width: 100%;
+    margin: 0.5rem 0 0 0;
   }
 }
 

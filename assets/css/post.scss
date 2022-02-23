@@ -1,6 +1,35 @@
 ---
 ---
 
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
 .table-of-contents a {
   display: inline-table;
+}
+
+a {
+  color: #404040;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #0085a1;
+}
+
+.post-card {
+  position: relative;
+  background-color: #fff;
+  @include transition(box-shadow .25s);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);;
+}
+
+.post-card .post-content{
+  margin: 2rem 0 2rem 0;
 }

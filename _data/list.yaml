@@ -1,16 +1,16 @@
 about:
   - h: About
     url: /about
-    intro: 关于自己
+    intro: about me
   - h: Resume
-    url: /style/index
+    url: /style/index#resume
     intro: 简历
   - h: Contact
     url: /contact-thanks
     intro: 致谢
 article:
   - h: Abstract
-    url: /
+    url: /blog
     intro: 博文目录
   - h: Categories
     url: /categories

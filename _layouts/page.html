@@ -29,36 +29,5 @@ js:
 
 
 {% if page.with_comment %}
-<div class="col s12">
-    <h2>
-        <span>留言</span><i class="fa fa-comments"></i>
-    </h2>
-</div>
-<div class="divider"></div>
-<div id="gitalk-container"></div>
-
-<div>
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script>
-    <script>
-        const initGitalk = () => {
-            const gitalk = new Gitalk({
-                clientID: "5301328d56cf49a6d68e",
-                clientSecret: "dd04918e1a0267bc6eeaf27c1f7c9cc65832db57",
-                repo: "draugus.github.io",
-                owner: "draugus",
-                admin: ["draugus"],
-                id: "{{page.title}}",
-                language: "zh-CN",
-                perPage: 10,
-                distractionFreeMode: false,
-                pagerDirection: "last",
-                createIssueManually: false
-                // updateCountCallback: commentCount
-            });
-
-            gitalk.render("gitalk-container");
-        };
-        initGitalk();
-    </script>
-</div>
+{% include gitalk.html %}
 {% endif %}

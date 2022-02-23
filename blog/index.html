@@ -6,7 +6,7 @@ with_header_bg: list/code.jpg
 ---
 
 
-<!--paginator只能用于index.html但可以用子文件下的index.html-->
+<!--paginator只能用于index.html但可以用子文件(目前测试发现只能用于根目录下的一级子文件夹)下的index.html-->
 <!--These are only available in index files, however they can be located in a subdirectory, such as /blog/index.html.-->
 <!--日期格式化网站 http://www.strfti.me/-->
 <!--更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}} github不可用-->
@@ -23,18 +23,26 @@ with_header_bg: list/code.jpg
         <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
         <div class="card-content">
             <a href="{{post.url}}">
-                <div class="card-title valign-wrapper">{{post.title}}</div>
-                <div class="page-excerpt">
+                <div class="card-title valign-wrapper">
                     {% if post.lang == 'en' %}
-                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {{ post.title | strip_html | strip_newlines | remove: " " | truncate:20 }}
                     {% else %}
-                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:200 }}
+                    {{ post.title | strip_html | strip_newlines | remove: " " | truncate:10 }}
                     {% endif %}
                 </div>
             </a>
             <div class="page-date">
                 Written by {{site.name}} on {{post.date | date_to_string}}
             </div>
+            <a href="{{post.url}}">
+                <div class="page-excerpt">
+                    {% if post.lang == 'en' %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {% else %}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:150 }}
+                    {% endif %}
+                </div>
+            </a>
         </div>
     </div>
 </div>
