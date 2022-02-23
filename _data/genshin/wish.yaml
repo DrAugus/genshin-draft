@@ -316,21 +316,24 @@ characters:
     wishName: 「浮生孰来」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
-  - name: Yae Miko
+  - name: Everbloom Violet
     image: 1
     shortName: Yae Miko
     start: 2022-02-16 11:00:00 +0800
-    end: 2022-03-09 17:59:59 +0800
+    end: 2022-03-08 17:59:59 +0800
     wish5star: yae_miko
     wish4star:
+      - thoma
+      - diona
+      - fischl
     version: 2.5
-    wishName: 「」
+    wishName: 「华紫樱绯」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Reign of Serenity
     image: 2
     shortName: Raiden Shogun
-    start: 2022-03-09 18:00:00 +0800
-    end: 2022-03-30 14:59:59 +0800
+    start: 2022-03-08 18:00:00 +0800
+    end: 2022-03-29 14:59:59 +0800
     wish5star: raiden_shogun
     wish4star:
     wishName: 「影寂天下人」
@@ -338,8 +341,8 @@ characters:
   - name: Drifting Luminescence
     image: 2
     shortName: Sangonomiya Kokomi
-    start: 2022-03-09 18:00:00 +0800
-    end: 2022-03-30 14:59:59 +0800
+    start: 2022-03-08 18:00:00 +0800
+    end: 2022-03-29 14:59:59 +0800
     wish5star: sangonomiya_kokomi
     wish4star:
     wishName: 「浮岳虹珠」
@@ -348,7 +351,7 @@ characters:
   - name: Kamisato Ayato
     image: 1
     shortName: Kamisato Ayato
-    start: 2022-03-31 11:00:00 +0800
+    start: 2022-03-30 11:00:00 +0800
     end: 2022-04-20 17:59:59 +0800
     wish5star: kamisato_ayato
     wish4star:

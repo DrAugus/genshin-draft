@@ -1,8 +1,4 @@
-<script>
-    //这样获取时 需要在对应的时间后面加上utc+8
-    const eventsData = {{site.data.genshin.wish.characters | jsonify}}
-</script>
-
+{% include genshin/script.html %}
 
 <!--无法动态设置slider将该长度设置为5 其他填充为敬请期待-->
 {% capture lenFuture %}4{% endcapture %}
@@ -29,7 +25,7 @@
             <ul class="slides">
                 {% for i in (0..3) %}
                 <li>
-                    <img id="showCurrentWishCharacter{{i}}" loading="lazy">
+                    <img id="showCurrentWishCharacter{{i}}" alt="">
                     <div class="caption left-align">
                         <h5 class="current-wish-color-{{i}}" id="currentCharacter{{i}}"></h5>
                         <h4 class="light current-wish-color-{{i}}" id="currentWishText{{i}}"></h4>
@@ -77,13 +73,12 @@
                 {% assign pos = "right-align, left-align, center-align, left-align, center-align" | split: "," %}
                 {% for i in (0..lenFuture) %}
                 <li class="future-wish-bg-color-{{i}}">
-                    <img id="futureWishBG{{i}}" loading="lazy">
+                    <img id="futureWishBG{{i}}">
 
                     <div class="caption {{pos[forloop.index0]}}">
                         <h4 class="light future-wish-color-{{i}}" id="futureWish{{i}}"></h4>
                         <h5 class="future-wish-color-{{i}}" id="futureWishText{{i}}"></h5>
-                        <img class="z-depth-0 responsive-img hide" id="futureElements{{i}}"
-                             loading="lazy">
+                        <img class="z-depth-0 responsive-img hide" id="futureElements{{i}}">
                     </div>
                 </li>
                 {% endfor %}
@@ -92,23 +87,6 @@
 
     </div>
 </div>
-
-
-<!--八重-->
-<div class="col s12">
-    <p class="center">作者<a href="https://space.bilibili.com/5174878" target="_blank">viki_arna</a> pix:viki_arna(侵权删) </p>
-    <div class="slider">
-        <ul class="slides">
-            {% assign pos = "diluc,ganyu_blue,ganyu_red,ganyu_wish,jean,keqing,mona,qiqi" | split: "," %}
-            {% for info in pos %}
-            <li>
-                <img src="/assets/res/genshin-impact/draw/yae_miko_{{info}}.png">
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
-
 
 <!--空行分割-->
 <div class="col s12"> &nbsp;</div>

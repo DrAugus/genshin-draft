@@ -1,7 +1,4 @@
-<script>
-    //这样获取时 需要在对应的时间后面加上utc+8
-    const eventsData = {{site.data.genshin.wish.characters | jsonify}}
-</script>
+{% include genshin/script.html %}
 
 <!--长度减1-->
 {% capture lenMonthList %}119{% endcapture %}
