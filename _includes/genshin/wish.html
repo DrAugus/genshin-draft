@@ -38,28 +38,6 @@
     </div>
 </div>
 
-<!--语音暂不显示-->
-<div class="hide">
-    <div class="col s12">
-        AUTOPLAY<p id="hutao-text"></p>
-        <audio id="hutao-voice" controls="controls" autoplay="autoplay"></audio>
-    </div>
-
-    <div class="col s12">
-        <details>
-            <summary>展开所有语音</summary>
-            <ul>
-                {% for i in (0..6) %}
-                <li><p id="hutao-text-{{i}}"></p>
-                    <audio id="hutao-voice-{{i}}" controls="controls" preload="none"></audio>
-                </li>
-                {% endfor %}
-            </ul>
-        </details>
-    </div>
-</div>
-
-
 <!--即将发布-->
 <div class="col s12">
 
@@ -78,7 +56,6 @@
                     <div class="caption {{pos[forloop.index0]}}">
                         <h4 class="light future-wish-color-{{i}}" id="futureWish{{i}}"></h4>
                         <h5 class="future-wish-color-{{i}}" id="futureWishText{{i}}"></h5>
-                        <img class="z-depth-0 responsive-img hide" id="futureElements{{i}}">
                     </div>
                 </li>
                 {% endfor %}

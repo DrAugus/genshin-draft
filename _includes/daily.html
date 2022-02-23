@@ -2,9 +2,10 @@
 
     <div class="article-sort-title">日记</div>
     <div class="article-sort">
+        <!--TODO 年份动态-->
         <div class="article-sort-item year">2022</div>
         {% assign emoticon = "0,1,2,4,5,6,8,10,12,13,14,15" | split: "," %}
-        {% assign pages = site.pages | sort: 'date' | reverse  %}
+        {% assign pages = site.pages | sort: 'date' | reverse %}
         {% for page in pages %}
         {% if page.layout == "daily" %}
         {% assign eIndex = forloop.index0 | plus: emoticon.size | modulo: emoticon.size %}
