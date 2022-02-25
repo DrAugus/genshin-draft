@@ -4,7 +4,6 @@ layout: post
 date:   '2021-12-07 17:32:11'
 categories: 编程
 tags: lua
-excerpt: Lua可视化流程
 ---
 
 
@@ -26,14 +25,28 @@ excerpt: Lua可视化流程
         width: auto;
         background-color: rgba(255, 255, 255, 0);
     }
+
+    .chip {
+        font-size: unset;
+    }
+
+    .tabs .tab {
+        line-height: 32px;
+        height: 32px;
+    }
 </style>
 
-<h3>WARING: <span class="red-text lighten-3">本页面未启用手机适配</span> 手机端<u>速速</u>退出 或者 <a
-        href="https://github.com/DrAugus/draugus.github.io">完善此页面</a></h3>
+<div class="col s12">
+
+    <h2 class="center">WARING: <span class="red-text lighten-3">本页面未启用手机适配</span> 手机端<u>速速</u>退出 或者 <a
+            href="https://github.com/DrAugus/draugus.github.io">完善此页面</a></h2>
+
+    <h3 class="green-text"><i>policy_administrator:evaluate</i></h3>
+
+</div>
 
 
-<h3><i>policy_administrator:evaluate</i></h3>
-<div class="row">
+<div class="col s12">
     <div class="chip green-text">初始化所有主客体及行为</div>
     <br>
     <div class="chip green-text">格式化所有主客体属性</div>
@@ -266,11 +279,11 @@ excerpt: Lua可视化流程
                                                 如果是 敏感sql 直接return
                                             </div>
                                             <br>
-                                            <div class="chip teal accent-1"> 处理 误删除</div>
+                                            <div class="chip teal accent-1"> 填充 误删除</div>
                                             <br>
-                                            <div class="chip teal accent-1"> 处理 更新删除行控</div>
+                                            <div class="chip teal accent-1"> 填充 更新删除行控</div>
                                             <br>
-                                            <div class="chip teal accent-1"> 处理 查询行控</div>
+                                            <div class="chip teal accent-1"> 填充 查询行控</div>
                                             <br>
 
                                             <div class="chip teal accent-1"> 如果response_非eval_result_pending填充脱敏obs
