@@ -2,7 +2,7 @@ const DAY_WIDTH = 35;
 let today = dayjs();
 
 const eventObj = processEvent();
-$("#event-err").text(JSON.stringify(eventObj, null, 4));
+
 let wishCharacters = eventObj.events;
 let dates = eventObj.dates;
 let monthList = eventObj.monthList;

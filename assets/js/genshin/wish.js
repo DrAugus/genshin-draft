@@ -10,7 +10,6 @@ const ELEMENT_COLOR = {
 
 const eventObj = processEvent();
 
-$("#event-err").text(JSON.stringify(eventObj, null, 4));
 let wishCharacters = eventObj.events;
 let wishLength = wishCharacters.length;
 
