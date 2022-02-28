@@ -1,11 +1,6 @@
 const TIMELINE_PADDING = 10;
 let lastEventTime = dayjs().year(2000);
 let firstDay = dayjs();
-let dates = [];
-let years = [];
-let yearList = [];
-let monthList = [];
-let events = [];
 
 const convertToDate = (e, i) => {
     let start = dayjs(e.start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
@@ -24,7 +19,13 @@ const convertToDate = (e, i) => {
 };
 
 const processEvent = () => {
-    events = eventsData.map((e, i) => {
+
+    let dates = [];
+    let years = [];
+    let yearList = [];
+    let monthList = [];
+
+    let events = eventsData.map((e, i) => {
         if (Array.isArray(e)) {
             return e.map((item) => convertToDate(item, i));
         }
