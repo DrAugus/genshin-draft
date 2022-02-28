@@ -1,6 +1,8 @@
 const DAY_WIDTH = 35;
 let today = dayjs();
 
+processEvent();
+
 let wishCharacters = events;
 let wishLength = wishCharacters.length;
 
@@ -47,31 +49,24 @@ setInterval("setTodayTime()", 1000);
 
 //祈愿角色信息
 const wishInfo = () => {
+    for (let i = 0; i < wishLength; ++i) {
+        let start = firstDay;
+        const end = dayjs(wishCharacters[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+        const duration = end.diff(start, "day", true);
+        // console.log(i, duration)
 
-    try {
-        for (let i = 0; i < wishLength; ++i) {
-            let start = firstDay;
-            const end = dayjs(wishCharacters[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
-            const duration = end.diff(start, "day", true);
-            // console.log(i, duration)
+        //动态设置各个角色的css
+        $(".event-item-" + i).removeClass("hide");
+        $(".event-item-" + i).css({
+            "width": wishCharacters[i].duration * DAY_WIDTH + "px",
+            "left": duration * DAY_WIDTH + 30 + "px"
+        });
+        if (wishCharacters[i].wish_2)
+            $(".event-item-" + i).css("marginTop", "160px");
 
-            //动态设置各个角色的css
-            $(".event-item-" + i).removeClass("hide");
-            $(".event-item-" + i).css({
-                "width": wishCharacters[i].duration * DAY_WIDTH + "px",
-                "left": duration * DAY_WIDTH + 30 + "px"
-            });
-            if (wishCharacters[i].wish_2)
-                $(".event-item-" + i).css("marginTop", "160px");
-
-            //left-t
-            $(".left-t" + i).css("left", (350 * i) + "px");
-        }
-    } catch (e) {
-        $("#timeline-err").text(e);
+        //left-t
+        $(".left-t" + i).css("left", (350 * i) + "px");
     }
-
-
 };
 wishInfo();
 

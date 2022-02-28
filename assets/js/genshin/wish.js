@@ -8,8 +8,7 @@ const ELEMENT_COLOR = {
     cryo: "#a6fdfd"//冰
 };
 
-
-let str_err = "";
+processEvent();
 
 let wishCharacters = events;
 let wishLength = wishCharacters.length;
@@ -30,57 +29,52 @@ let objWish = {
 //找出当前在哪个祈愿时间段
 const getWishObj = () => {
 
-    try {
-        let obj = {};
-        obj.wishIndex = [];
-        obj.haveWish = true;
-        obj.isFuture = false;
-        obj.comingIndex = [];
-        //当前时间所处的祈愿时间段
-        for (let e of wishCharacters) {
-            //当前时间在祈愿起始时间后
-            let startAfter = dayjs().isAfter(e.start, "second");
-            //当前时间在祈愿结束时间前
-            let endBefore = dayjs().isBefore(e.end, "second");
-            if (startAfter && endBefore) {
-                obj.wishIndex.push(e.index);
-            }
+
+    let obj = {};
+    obj.wishIndex = [];
+    obj.haveWish = true;
+    obj.isFuture = false;
+    obj.comingIndex = [];
+    //当前时间所处的祈愿时间段
+    for (let e of wishCharacters) {
+        //当前时间在祈愿起始时间后
+        let startAfter = dayjs().isAfter(e.start, "second");
+        //当前时间在祈愿结束时间前
+        let endBefore = dayjs().isBefore(e.end, "second");
+        if (startAfter && endBefore) {
+            obj.wishIndex.push(e.index);
         }
-        //如果没有找到
-        if (!obj.wishIndex.length) {
-            obj.haveWish = false;
-            for (let i = 1; i < wishLength; ++i) {
-                //介于前一个结束时间后 后一个开始时间前
-                let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, "second");
-                let startBefore = dayjs().isBefore(wishCharacters[i].start, "second");
-                if (endAfter && startBefore) {
-                    obj.wishIndex.push(wishCharacters[i].index);
-                    obj.isFuture = true;
-                }
-            }
-        }
-
-        obj.reprint = obj.wishIndex.length > 1;
-
-        //存放所有未来的祈愿
-        if (obj.wishIndex.length) {
-            let startIndex = obj.wishIndex[obj.wishIndex.length - 1];
-            if (obj.isFuture) obj.comingIndex.push(startIndex);
-            else ++startIndex;
-            for (let i = startIndex; i < wishLength; ++i) {
-                obj.comingIndex.push(i);
-            }
-        }
-        return obj;
-
-    } catch (e) {
-        str_err += "getWishObj==" + e + "#####";
-
     }
+    //如果没有找到
+    if (!obj.wishIndex.length) {
+        obj.haveWish = false;
+        for (let i = 1; i < wishLength; ++i) {
+            //介于前一个结束时间后 后一个开始时间前
+            let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, "second");
+            let startBefore = dayjs().isBefore(wishCharacters[i].start, "second");
+            if (endAfter && startBefore) {
+                obj.wishIndex.push(wishCharacters[i].index);
+                obj.isFuture = true;
+            }
+        }
+    }
+
+    obj.reprint = obj.wishIndex.length > 1;
+
+    //存放所有未来的祈愿
+    if (obj.wishIndex.length) {
+        let startIndex = obj.wishIndex[obj.wishIndex.length - 1];
+        if (obj.isFuture) obj.comingIndex.push(startIndex);
+        else ++startIndex;
+        for (let i = startIndex; i < wishLength; ++i) {
+            obj.comingIndex.push(i);
+        }
+    }
+    return obj;
+
 };
 objWish = getWishObj();
 console.log("objWish", objWish);
-str_err += JSON.stringify(objWish, null, 4);
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
@@ -158,7 +152,6 @@ const futureWishInfo = () => {
     }
 
     console.log("coming soon: ", indexArr);
-    str_err += "coming soon: " + indexArr;
     for (let i = 0; i < indexArr.length; ++i) {
         let showColor = ELEMENT_COLOR [wishCharacters[indexArr[i]].ele];
         let tShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
@@ -196,6 +189,3 @@ const ddlHandle = () => {
 setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000);
 //结束当前祈愿时间
 setInterval(ddlHandle, 1000);
-
-
-$("#wish-err").text(str_err);

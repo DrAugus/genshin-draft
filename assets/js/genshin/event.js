@@ -7,7 +7,6 @@ let yearList = [];
 let monthList = [];
 let events = [];
 
-
 const convertToDate = (e, i) => {
     let start = dayjs(e.start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
     const end = dayjs(e.end, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
@@ -97,8 +96,3 @@ const processEvent = () => {
 
     dates = [...new Array(dayTotal)].map((_, i) => firstDay.add(i, "day").date());
 };
-
-processEvent();
-
-
-$("#event-err").text(JSON.stringify(events, null, 4));
