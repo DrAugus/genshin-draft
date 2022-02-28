@@ -101,4 +101,4 @@ const processEvent = () => {
 processEvent();
 
 
-$("#event-err").text(events);
+$("#event-err").text(JSON.stringify(events, null, 4));

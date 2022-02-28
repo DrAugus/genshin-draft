@@ -71,18 +71,16 @@ const getWishObj = () => {
                 obj.comingIndex.push(i);
             }
         }
+        return obj;
 
     } catch (e) {
         str_err += "getWishObj==" + e + "#####";
 
     }
-
-
-    return obj;
 };
 objWish = getWishObj();
 console.log("objWish", objWish);
-str_err += objWish;
+str_err += JSON.stringify(objWish, null, 4);
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
