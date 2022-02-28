@@ -4,6 +4,8 @@ let today = dayjs();
 const eventObj = processEvent();
 $("#event-err").text(JSON.stringify(eventObj, null, 4));
 let wishCharacters = eventObj.events;
+let dates = eventObj.dates;
+let monthList = eventObj.monthList;
 let wishLength = wishCharacters.length;
 
 //设置时间轴
