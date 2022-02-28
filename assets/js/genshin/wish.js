@@ -9,6 +9,8 @@ const ELEMENT_COLOR = {
 };
 
 
+let str_err = ''
+
 let wishCharacters = events;
 let wishLength = wishCharacters.length;
 
@@ -27,46 +29,56 @@ let objWish = {
 };
 //找出当前在哪个祈愿时间段
 const getWishObj = () => {
-    let obj = {};
-    obj.wishIndex = [];
-    obj.haveWish = true;
-    obj.isFuture = false;
-    obj.comingIndex = [];
-    //当前时间所处的祈愿时间段
-    for (let e of wishCharacters) {
-        //当前时间在祈愿起始时间后
-        let startAfter = dayjs().isAfter(e.start, "second");
-        //当前时间在祈愿结束时间前
-        let endBefore = dayjs().isBefore(e.end, "second");
-        if (startAfter && endBefore) {
-            obj.wishIndex.push(e.index);
-        }
-    }
-    //如果没有找到
-    if (!obj.wishIndex.length) {
-        obj.haveWish = false;
-        for (let i = 1; i < wishLength; ++i) {
-            //介于前一个结束时间后 后一个开始时间前
-            let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, "second");
-            let startBefore = dayjs().isBefore(wishCharacters[i].start, "second");
-            if (endAfter && startBefore) {
-                obj.wishIndex.push(wishCharacters[i].index);
-                obj.isFuture = true;
+
+    try {
+        let obj = {};
+        obj.wishIndex = [];
+        obj.haveWish = true;
+        obj.isFuture = false;
+        obj.comingIndex = [];
+        //当前时间所处的祈愿时间段
+        for (let e of wishCharacters) {
+            //当前时间在祈愿起始时间后
+            let startAfter = dayjs().isAfter(e.start, "second");
+            //当前时间在祈愿结束时间前
+            let endBefore = dayjs().isBefore(e.end, "second");
+            if (startAfter && endBefore) {
+                obj.wishIndex.push(e.index);
             }
         }
-    }
-
-    obj.reprint = obj.wishIndex.length > 1;
-
-    //存放所有未来的祈愿
-    if (obj.wishIndex.length) {
-        let startIndex = obj.wishIndex[obj.wishIndex.length - 1];
-        if (obj.isFuture) obj.comingIndex.push(startIndex);
-        else ++startIndex;
-        for (let i = startIndex; i < wishLength; ++i) {
-            obj.comingIndex.push(i);
+        //如果没有找到
+        if (!obj.wishIndex.length) {
+            obj.haveWish = false;
+            for (let i = 1; i < wishLength; ++i) {
+                //介于前一个结束时间后 后一个开始时间前
+                let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, "second");
+                let startBefore = dayjs().isBefore(wishCharacters[i].start, "second");
+                if (endAfter && startBefore) {
+                    obj.wishIndex.push(wishCharacters[i].index);
+                    obj.isFuture = true;
+                }
+            }
         }
+
+        obj.reprint = obj.wishIndex.length > 1;
+
+        //存放所有未来的祈愿
+        if (obj.wishIndex.length) {
+            let startIndex = obj.wishIndex[obj.wishIndex.length - 1];
+            if (obj.isFuture) obj.comingIndex.push(startIndex);
+            else ++startIndex;
+            for (let i = startIndex; i < wishLength; ++i) {
+                obj.comingIndex.push(i);
+            }
+        }
+
+    }catch (e) {
+        str_err += e;
+        $("#wish-err").text(e);
     }
+
+
+
 
     return obj;
 };
