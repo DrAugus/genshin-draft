@@ -9,7 +9,7 @@ const ELEMENT_COLOR = {
 };
 
 
-let str_err = ''
+let str_err = "";
 
 let wishCharacters = events;
 let wishLength = wishCharacters.length;
@@ -72,19 +72,17 @@ const getWishObj = () => {
             }
         }
 
-    }catch (e) {
-        str_err += e;
-        $("#wish-err").text(e);
+    } catch (e) {
+        str_err += "getWishObj==" + e + "#####";
+
     }
-
-
 
 
     return obj;
 };
 objWish = getWishObj();
 console.log("objWish", objWish);
-
+str_err += objWish;
 
 //当前祈愿信息
 const updateCurrentWishInfo = () => {
@@ -162,6 +160,7 @@ const futureWishInfo = () => {
     }
 
     console.log("coming soon: ", indexArr);
+    str_err += "coming soon: " + indexArr;
     for (let i = 0; i < indexArr.length; ++i) {
         let showColor = ELEMENT_COLOR [wishCharacters[indexArr[i]].ele];
         let tShadow = showColor + " -1px -1px 4px, " + showColor + " 1px -1px 4px, " +
@@ -201,3 +200,4 @@ setInterval("time_str.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss');", 1000)
 setInterval(ddlHandle, 1000);
 
 
+$("#wish-err").text(str_err);

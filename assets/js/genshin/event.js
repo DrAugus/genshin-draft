@@ -99,3 +99,6 @@ const processEvent = () => {
 };
 
 processEvent();
+
+
+$("#event-err").text(events);
