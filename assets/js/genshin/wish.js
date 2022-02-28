@@ -8,9 +8,9 @@ const ELEMENT_COLOR = {
     cryo: "#a6fdfd"//冰
 };
 
-processEvent();
+const eventObj = processEvent();
 
-let wishCharacters = events;
+let wishCharacters = eventObj.events;
 let wishLength = wishCharacters.length;
 
 //替换空格 转小写----------------

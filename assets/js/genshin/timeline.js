@@ -1,9 +1,9 @@
 const DAY_WIDTH = 35;
 let today = dayjs();
 
-processEvent();
+const eventObj = processEvent();
 
-let wishCharacters = events;
+let wishCharacters = eventObj.events;
 let wishLength = wishCharacters.length;
 
 //设置时间轴
