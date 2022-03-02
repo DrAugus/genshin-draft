@@ -1,0 +1,18 @@
+<div class="col s12">
+    {% for ww2 in site.data.world_war.II %}
+    {% assign info = ww2[1] %}
+    <div class="event-info">
+        <div class="event-title">
+            {{info.name}}
+        </div>
+        <div class="event-date">
+            {{info.date}}
+        </div>
+
+        <div class="event-excerpt">
+            {{info.intro | replace: ')', ')<br>' | replace: '）', '）<br>' }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
