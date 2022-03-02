@@ -68,6 +68,13 @@ life:
   - h: 中国年代史
     url: /history
     intro: 正在施工中的年代史
+  - h: World War I
+    url: /world_war_1
+    intro: 当时的人们没有想到，要在⌈世界大战⌋之前，加上⌈第一次⌋
+  - h: World War II
+    url: /world_war_2
+    intro: 二战概要
+
 genshin:
   - h: 时间轴
     url: /genshin/timeline
