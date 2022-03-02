@@ -25,7 +25,7 @@ title: AUGUS
 name: AUGUS
 description: > # webpage description
 #  Welcome to my personal website
-url: "https://draugus.github.io"
+url: "https://augusmeow.cn/"
 permalink: /:year/:month/:day/:title
 paginate: 10
 # paginate只在index.html下有效 https://jekyllrb.com/docs/variables/#paginator
