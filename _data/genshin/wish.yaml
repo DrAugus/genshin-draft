@@ -1,5 +1,6 @@
 # shortname去character里找其他名字
 # url应该不太准确
+# 上半差值 20 下半差值 21
 characters:
   - name: Ballad in Goblets
     image: 1
@@ -322,10 +323,7 @@ characters:
     start: 2022-02-16 11:00:00 +0800
     end: 2022-03-08 17:59:59 +0800
     wish5star: yae_miko
-    wish4star:
-      - thoma
-      - diona
-      - fischl
+    wish4star: [ thoma,diona,fischl ]
     version: 2.5
     wishName: 「华紫樱绯」
     url: https://bbs.mihoyo.com/ys/article/?
@@ -335,7 +333,7 @@ characters:
     start: 2022-03-08 18:00:00 +0800
     end: 2022-03-29 14:59:59 +0800
     wish5star: raiden_shogun
-    wish4star:
+    wish4star: [ bennett,xinyan,kujou_sara ]
     wishName: 「影寂天下人」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Drifting Luminescence
@@ -344,7 +342,7 @@ characters:
     start: 2022-03-08 18:00:00 +0800
     end: 2022-03-29 14:59:59 +0800
     wish5star: sangonomiya_kokomi
-    wish4star:
+    wish4star: [ bennett,xinyan,kujou_sara ]
     wishName: 「浮岳虹珠」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
@@ -352,7 +350,7 @@ characters:
     image: 1
     shortName: Kamisato Ayato
     start: 2022-03-30 11:00:00 +0800
-    end: 2022-04-20 17:59:59 +0800
+    end: 2022-04-19 17:59:59 +0800
     wish5star: kamisato_ayato
     wish4star:
     version: 2.6
@@ -361,8 +359,8 @@ characters:
   - name: The Herons Court
     image: 1
     shortName: Kamisato Ayaka
-    start: 2022-04-20 18:00:00 +0800
-    end: 2022-05-11 14:59:59 +0800
+    start: 2022-04-19 18:00:00 +0800
+    end: 2022-05-10 14:59:59 +0800
     wish5star: kamisato_ayaka
     wish4star:
     wishName: 「白鹭之庭」
@@ -370,8 +368,8 @@ characters:
   - name: Ballad in Goblets
     image: 2
     shortName: Venti
-    start: 2022-04-20 18:00:00 +0800
-    end: 2022-05-11 14:59:59 +0800
+    start: 2022-04-19 18:00:00 +0800
+    end: 2022-05-10 14:59:59 +0800
     wish5star: venti
     wish4star:
     wishName: 「杯装之诗」
@@ -380,8 +378,8 @@ characters:
   - name: Yelan
     image: 1
     shortName: Yelan
-    start: 2022-05-12 11:00:00 +0800
-    end: 2022-06-01 17:59:59 +0800
+    start: 2022-05-11 11:00:00 +0800
+    end: 2022-05-31 17:59:59 +0800
     wish5star: yelan
     wish4star:
     version: 2.7
@@ -390,8 +388,8 @@ characters:
   - name: Tapestry of Golden Flames
     image: 1
     shortName: Yoimiya
-    start: 2022-06-01 18:00:00 +0800
-    end: 2022-06-22 14:59:59 +0800
+    start: 2022-05-31 18:00:00 +0800
+    end: 2022-06-21 14:59:59 +0800
     wish5star: yoimiya
     wish4star:
     wishName: 「焰色天河」
@@ -399,8 +397,8 @@ characters:
   - name: Leaves in the Wind
     image: 1
     shortName: Kaedehara Kazuha
-    start: 2022-06-01 18:00:00 +0800
-    end: 2022-06-22 14:59:59 +0800
+    start: 2022-05-31 18:00:00 +0800
+    end: 2022-06-21 14:59:59 +0800
     wish5star: kaedehara_kazuha
     wish4star:
     wishName: 「叶落风随」
@@ -409,8 +407,8 @@ characters:
   - name: Sparkling Steps
     image: 1
     shortName: Klee
-    start: 2022-06-23 11:00:00 +0800
-    end: 2022-07-14 17:59:59 +0800
+    start: 2022-06-22 11:00:00 +0800
+    end: 2022-07-12 17:59:59 +0800
     wish5star: klee
     wish4star:
     version: 2.8
