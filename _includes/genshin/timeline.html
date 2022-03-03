@@ -4,10 +4,11 @@
 {% capture lenMonthList %}119{% endcapture %}
 {% capture lenAllDays %}3649{% endcapture %}
 
-<!--时间轴-->
-<div class="col s12">
+
+<!--时间轴 电脑版-->
+<div class="col s12 hide-on-small-only">
     <h2 class="center-align">祈愿信息</h2>
-    <p class="center">也许有未实装、未确定的虚假信息，图个乐子即可</p>
+    <p class="center">也许有未实装、未确定的虚假信息</p>
     <div class="timeline-scroll-x" id="setNowPos">
 
         <div class="timeline-month">
@@ -47,8 +48,9 @@
                         <div class="modal-content auto-height hide-box-shadow hide-border">
                             <div class="card hide-box-shadow hide-border">
                                 <div class="card-content valign-wrapper center-align">
-                                    <h4 class="center-align"> {{wish.wishName}} -
-                                        {{site.data.genshin.characters[wish.wish5star].name}}</h4>
+                                    <h4 class="center-align ele-text-{{characters[1].ele}}">
+                                        {{wish.wishName}}{{site.data.genshin.characters[wish.wish5star].name}}
+                                    </h4>
                                 </div>
                                 <!--downcase转换小写 并用_替换空格 append其他标记-->
                                 <!--replace
@@ -77,4 +79,61 @@
             {% endfor %}
         </div>
     </div>
+</div>
+
+<!--时间轴 手机端-->
+<div class="col s12 hide-on-large-only">
+    <h2 class="center-align">祈愿信息</h2>
+    <p class="center">也许有未实装、未确定的虚假信息</p>
+
+    {% assign wish_source = site.data.genshin.wish.characters | reverse %}
+    {% for wish in wish_source %}
+    {% assign i = forloop.index0 %}
+
+    {% for characters in site.data.genshin.characters %}
+    {% if characters[1].id == wish.wish5star %}
+    <span class="event-date">
+        {{wish.start | date_to_string }}&nbsp;~&nbsp;{{wish.end | date_to_string}}
+    </span>
+
+    <div class="card event-item-background-{{characters[1].ele}} radius10px">
+        <div class="card-image waves-effect waves-block waves-light timeline-character-image radius10px">
+            <!-- Modal Trigger -->
+            <a class="modal-trigger" href="#modal_mobile_{{i}}">
+                <div class="event-img responsive-img lazy"
+                     data-original="/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png">
+                </div>
+            </a>
+            <span class="left-align timeline-character-text ele-text-{{characters[1].ele}}">{{characters[1].name}}</span>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal_mobile_{{i}}" class="modal modal-fixed-footer radius10px">
+            <div class="modal-content auto-height hide-box-shadow hide-border">
+                <div class="card hide-box-shadow hide-border">
+                    <div class="card-content valign-wrapper center-align">
+                        <h4 class="center-align ele-text-{{characters[1].ele}}">
+                            {{wish.wishName}}{{site.data.genshin.characters[wish.wish5star].name}}
+                        </h4>
+                    </div>
+                    <!--downcase转换小写 并用_替换空格 append其他标记-->
+                    <!--replace
+                    Replaces all occurrences of a string with a substring.-->
+                    <div class="card-image waves-effect waves-block waves-light hoverable">
+                        <img src="/assets/res/genshin-impact/events/{{ wish.name | downcase | replace: ' ', '_' | append: '_' | append: wish.image | append: '.jpg'  }}">
+                    </div>
+                    <div class="card-action">
+                        <a class="right ele-text-{{characters[1].ele}}" href="#" target="_blank">官方信息:TODO接入href</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% break %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+
 </div>
