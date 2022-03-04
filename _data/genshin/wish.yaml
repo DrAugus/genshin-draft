@@ -428,7 +428,7 @@ weapons:
   - name: Epitome Invocation
     image: 2
     start: 2020-10-20 18:00:00 +0800
-    end: 2020-11-10 16:00:00 +0800
+    end: 2020-11-09 17:59:59 +0800
     shortName: Lost Prayer
     wish5star:
       - lost_prayer_to_the_sacred_winds
@@ -589,11 +589,51 @@ weapons:
     wish4star: wavebreakers_fin mouuns_moon sacrificial_sword rainslasher the_widsith
     url: https://bbs.mihoyo.com/ys/article/11444617
   - name: Epitome Invocation
+    image: 21
+    start: 2021-11-24 11:00:00 +0800
+    end: 2021-12-14 17:59:59 +0800
+    shortName:
+    wish5star: ['freedom-sworn', 'song_of_broken_pines']
+    wish4star: ['wine_and_song', 'alley_hunter', 'lions_roar', 'sacrificial_greatsword', 'dragons_bane']
+    url: https://bbs.mihoyo.com/ys/article/11444617
+  - name: Epitome Invocation
     image: 22
     start: 2021-12-14 18:00:00 +0800
     end: 2022-01-04 17:59:59 +0800
     shortName: Redhorn
-    featured: redhorn_stonethresher skyward_harp
-    featuredRare: the_alley_flash mitternachts_waltz the_bell favonius_lance sacrificial_fragments
+    wish5star: redhorn_stonethresher skyward_harp
+    wish4star: the_alley_flash mitternachts_waltz the_bell favonius_lance sacrificial_fragments
     timezoneDependent: true
     url: https://ys.mihoyo.com/main/news/detail/18668
+  - name: Epitome Invocation
+    image: 23
+    start: 2022-01-05 11:00:00 +0800
+    end: 2022-01-25 17:59:59 +0800
+    shortName: Queller
+    wish5star: [ calamity_queller,primordial_jade_winged-spear ]
+    wish4star: [ lithic_spear,the_flute,favonius_greatsword,the_widsith,favonius_warbow ]
+    url: https://ys.mihoyo.com/main/news/detail/
+  - name: Epitome Invocation
+    image: 24
+    start: 2022-01-25 18:00:00 +0800
+    end: 2022-02-15 14:59:59 +0800
+    shortName: Amos
+    wish5star: [ amos_bow,vortex_vanquisher ]
+    wish4star: [ lithic_blade,favonius_sword,dragons_bane,favonius_codex,sacrificial_bow ]
+    url: https://ys.mihoyo.com/main/news/detail/
+  - name: Epitome Invocation
+    image: 25
+    start: 2022-02-16 11:00:00 +0800
+    end: 2022-03-08 17:59:59 +0800
+    shortName:
+    wish5star: [ kaguras_verity,primordial_jade_cutter ]
+    wish4star: [ wavebreakers_fin,sacrificial_sword,rainslasher,eye_of_perception,the_stringless ]
+    url: https://ys.mihoyo.com/main/news/detail/
+  - name: Epitome Invocation
+    image: 26
+    start: 2022-03-08 18:00:00 +0800
+    end: 2022-03-29 14:59:59 +0800
+    shortName:
+    wish5star: [ engulfing_lightning,everlasting_moonglow ]
+    wish4star: [ akuoumaru,mouun's_moon,lion's_roar,favonius_lance,sacrificial_fragments ]
+    url: https://ys.mihoyo.com/main/news/detail/

@@ -3,15 +3,17 @@ let today = dayjs();
 
 const eventObj = processEvent();
 
-let wishCharacters = eventObj.events;
+let wishCharacters = eventObj.events[0];
+let wishWeapons = eventObj.events[1];
+let wishCharacterLength = wishCharacters.length;
+let wishWeaponLength = wishWeapons.length;
 let dates = eventObj.dates;
 let monthList = eventObj.monthList;
-let wishLength = wishCharacters.length;
 
 //设置时间轴
 const setTimeAxis = () => {
     let startD = dayjs(wishCharacters[0].start).subtract(7, "day").format("YYYY-MM-DD HH:mm:ss");
-    let endD = dayjs(wishCharacters[wishLength - 1].end).add(7, "day").format("YYYY-MM-DD HH:mm:ss");
+    let endD = dayjs(wishCharacters[wishCharacterLength - 1].end).add(7, "day").format("YYYY-MM-DD HH:mm:ss");
     const allDays = getDuration("day", startD, endD);
     const countDays = allDays.length;
 
@@ -50,28 +52,47 @@ setInterval("setTodayTime()", 1000);
 //---------------------------------------------------------------------------
 
 //祈愿角色信息
-const wishInfo = () => {
-    for (let i = 0; i < wishLength; ++i) {
+const wishCharacterInfo = () => {
+    for (let i = 0; i < wishCharacterLength; ++i) {
         let start = firstDay;
         const end = dayjs(wishCharacters[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
         const duration = end.diff(start, "day", true);
         // console.log(i, duration)
 
         //动态设置各个角色的css
-        $(".event-item-" + i).removeClass("hide");
-        $(".event-item-" + i).css({
+        $(".event-item-character-" + i).removeClass("hide");
+        $(".event-item-character-" + i).css({
             "width": wishCharacters[i].duration * DAY_WIDTH + "px",
             "left": duration * DAY_WIDTH + 30 + "px"
         });
         if (wishCharacters[i].wish_2)
-            $(".event-item-" + i).css("marginTop", "140px");
+            $(".event-item-character-" + i).css("marginTop", "140px");
 
         //left-t
         $(".left-t" + i).css("left", (350 * i) + "px");
     }
 };
-wishInfo();
+wishCharacterInfo();
+//祈愿武器信息
+const wishWeaponInfo = () => {
+    for (let i = 0; i < wishWeaponLength; ++i) {
+        let start = firstDay;
+        const end = dayjs(wishWeapons[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+        const duration = end.diff(start, "day", true);
+        // console.log(i, duration)
 
+        //动态设置各个角色的css
+        $(".event-item-weapon-" + i).removeClass("hide");
+        $(".event-item-weapon-" + i).css({
+            "width": wishWeapons[i].duration * DAY_WIDTH + "px",
+            "left": duration * DAY_WIDTH + 30 + "px"
+        });
+
+        //left-t
+        $(".left-t" + i).css("left", (350 * i) + "px");
+    }
+};
+wishWeaponInfo();
 
 $(".lazy").lazyload({
     placeholder: "assets/res/genshin-impact/characters/kamisato_ayaka.png", // 用图片提前占位，值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏

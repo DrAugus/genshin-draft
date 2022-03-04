@@ -6,6 +6,7 @@
     --ele-pyro: #fa5d3e;
     --ele-anemo: #57dcb0;
     --ele-cryo: #84c2e6;
+    --event-height: 128px;
 }
 
 /*元素背景色*/
@@ -221,7 +222,7 @@
     border-radius: 20px;
     opacity: 1;
     right: 0;
-    height: 128px;
+    height: var(--event-height);
 }
 
 .event-item-background-dendro {
@@ -278,7 +279,7 @@
     overflow-y: hidden;
     overflow-x: scroll;
     /*display: flex;*/
-    height: 350px;
+    height: calc(var(--event-height) * 4);
 }
 
 .timeline-scroll-x::-webkit-scrollbar { /*滚动条整体样式*/
@@ -313,14 +314,21 @@
 .timeline-day {
     display: flex;
     margin-top: 20px;
-    height: 350px;
+    height: calc(var(--event-height) * 4);
     position: relative;
 }
 
-.timeline-wish {
+.timeline-wish-event-weapon {
     display: flex;
     position: absolute;
-    z-index: 3
+    z-index: 3;
+}
+
+.timeline-wish-event-character {
+    top: calc(var(--event-height) + 10px);
+    display: flex;
+    position: absolute;
+    z-index: 3;
 }
 
 -webkit-scrollbar {
@@ -336,7 +344,6 @@
     overflow: hidden;
 }
 
-
 .character-avatar {
     background-repeat: no-repeat;
     background-position: center;
@@ -348,7 +355,6 @@
     background-position: center;
     border-radius: 10px;
 }
-
 
 .slider .slides {
     background-color: unset;

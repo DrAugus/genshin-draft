@@ -25,7 +25,11 @@ const processEvent = () => {
     let yearList = [];
     let monthList = [];
 
-    let events = eventsData.map((e, i) => {
+    let eventsDataInfo = [];
+    eventsDataInfo[0] = eventsData["characters"];
+    eventsDataInfo[1] = eventsData["weapons"];
+
+    let events = eventsDataInfo.map((e, i) => {
         if (Array.isArray(e)) {
             return e.map((item) => convertToDate(item, i));
         }

@@ -10,7 +10,7 @@ const ELEMENT_COLOR = {
 
 const eventObj = processEvent();
 
-let wishCharacters = eventObj.events;
+let wishCharacters = eventObj.events[0];
 let wishLength = wishCharacters.length;
 
 //替换空格 转小写----------------
@@ -28,7 +28,6 @@ let objWish = {
 };
 //找出当前在哪个祈愿时间段
 const getWishObj = () => {
-
 
     let obj = {};
     obj.wishIndex = [];
