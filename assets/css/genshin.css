@@ -118,15 +118,20 @@
     z-index: 2;
 }
 
+.timeline-today-line-pos-text {
+    margin-top: -15px;
+}
+
 .timeline-index {
     position: absolute;
+    margin-top: -25px;
     margin-left: -15px;
     text-align: center;
     width: 30px;
-    background: #ff5454;
-    border-radius: 25px;
-    font-size: 20px;
-    color: #fff3e0;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #4e4e4e;
 }
 
 .timeline-date {
@@ -192,8 +197,22 @@
     text-align: left;
 }
 
+.timeline-wish-name {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.timeline-character-prefix {
+    font-size: 3rem;
+}
+
+.timeline-character-name {
+    font-size: 3rem;
+}
+
 .timeline-character-text {
-    font-size: 4rem;
+    font-size: 3rem;
+    margin-top: 10px;
     margin-left: 10px;
 }
 
@@ -202,7 +221,6 @@
     border-radius: 20px;
     opacity: 1;
     right: 0;
-    margin-top: 32px;
     height: 128px;
 }
 
@@ -284,11 +302,17 @@
 
 .timeline-month {
     display: flex;
-    top: 20px;
+}
+
+.timeline-month-text {
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 20px;
 }
 
 .timeline-day {
     display: flex;
+    margin-top: 20px;
     height: 350px;
     position: relative;
 }

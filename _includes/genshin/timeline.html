@@ -14,7 +14,9 @@
         <div class="timeline-month">
             {% for i in (0..lenMonthList) %}
             <div class="timeline-month-left-{{i}} hide">
-                <div class="timeline-month-width-{{i}}"><span id="timelineMonthName{{i}}"></span></div>
+                <div class="timeline-month-width-{{i}}">
+                    <span class="timeline-month-text" id="timelineMonthName{{i}}"></span>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -22,7 +24,7 @@
         <div class="timeline-day">
 
             <div class="timeline-today-line-pos" id="findNowPos">
-                <div id="currentTime"></div>
+                <div class="timeline-today-line-pos-text" id="currentTime"></div>
             </div>
 
             <div class="timeline-wish">
@@ -40,7 +42,19 @@
                                  data-original="/assets/res/genshin-impact/characters/half/{{characters[1].id}}.png">
                             </div>
                         </a>
-                        <span class="left-align timeline-character-text ele-text-{{characters[1].ele}}">{{characters[1].name}}</span>
+                        <div class="left-align timeline-character-text ele-text-{{characters[1].ele}}">
+                            <div class="timeline-wish-name">
+                                {{wish.wishName}}
+                            </div>
+                            <div>
+                               <span class="timeline-character-prefix">
+                                   {{site.data.genshin.characters[wish.wish5star].prefix}}
+                               </span>
+                                <span class="timeline-character-name">
+                                   {{characters[1].name}}
+                               </span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Modal Structure -->
@@ -49,7 +63,7 @@
                             <div class="card hide-box-shadow hide-border">
                                 <div class="card-content valign-wrapper center-align">
                                     <h4 class="center-align ele-text-{{characters[1].ele}}">
-                                        {{wish.wishName}}{{site.data.genshin.characters[wish.wish5star].name}}
+                                        {{wish.wishName}}{{site.data.genshin.characters[wish.wish5star].prefix}}&nbsp;·&nbsp;{{characters[1].name}}
                                     </h4>
                                 </div>
                                 <!--downcase转换小写 并用_替换空格 append其他标记-->
@@ -104,10 +118,13 @@
                 </div>
             </a>
             <div class="left-align timeline-character-text ele-text-{{characters[1].ele}}">
-                {{wish.wishName}}
-            </div>
-            <div class="left-align timeline-character-text ele-text-{{characters[1].ele}}">
-                &nbsp;·&nbsp;{{site.data.genshin.characters[wish.wish5star].prefix}}{{characters[1].name}}
+                <div class="timeline-wish-name">
+                    {{wish.wishName}}
+                </div>
+                <div>
+                    <span class="timeline-character-prefix">{{site.data.genshin.characters[wish.wish5star].prefix}}</span>
+                    <span class="timeline-character-name">{{characters[1].name}}</span>
+                </div>
             </div>
         </div>
 
@@ -117,7 +134,7 @@
                 <div class="card hide-box-shadow hide-border">
                     <div class="card-content valign-wrapper center-align">
                         <h4 class="center-align ele-text-{{characters[1].ele}}">
-                            {{wish.wishName}}{{site.data.genshin.characters[wish.wish5star].name}}
+                            {{wish.wishName}}{{site.data.genshin.characters[wish.wish5star].prefix}}&nbsp;·&nbsp;{{characters[1].name}}
                         </h4>
                     </div>
                     <!--downcase转换小写 并用_替换空格 append其他标记-->

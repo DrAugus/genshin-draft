@@ -64,7 +64,7 @@ const wishInfo = () => {
             "left": duration * DAY_WIDTH + 30 + "px"
         });
         if (wishCharacters[i].wish_2)
-            $(".event-item-" + i).css("marginTop", "160px");
+            $(".event-item-" + i).css("marginTop", "140px");
 
         //left-t
         $(".left-t" + i).css("left", (350 * i) + "px");
