@@ -357,7 +357,7 @@ characters:
     wishName: 「」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: The Herons Court
-    image: 1
+    image: 2
     shortName: Kamisato Ayaka
     start: 2022-04-19 18:00:00 +0800
     end: 2022-05-10 14:59:59 +0800
@@ -366,7 +366,7 @@ characters:
     wishName: 「白鹭之庭」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Ballad in Goblets
-    image: 2
+    image: 3
     shortName: Venti
     start: 2022-04-19 18:00:00 +0800
     end: 2022-05-10 14:59:59 +0800
@@ -386,7 +386,7 @@ characters:
     wishName: 「」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Tapestry of Golden Flames
-    image: 1
+    image: 2
     shortName: Yoimiya
     start: 2022-05-31 18:00:00 +0800
     end: 2022-06-21 14:59:59 +0800
@@ -395,7 +395,7 @@ characters:
     wishName: 「焰色天河」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Leaves in the Wind
-    image: 1
+    image: 2
     shortName: Kaedehara Kazuha
     start: 2022-05-31 18:00:00 +0800
     end: 2022-06-21 14:59:59 +0800
@@ -405,7 +405,7 @@ characters:
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Sparkling Steps
-    image: 1
+    image: 3
     shortName: Klee
     start: 2022-06-22 11:00:00 +0800
     end: 2022-07-12 17:59:59 +0800

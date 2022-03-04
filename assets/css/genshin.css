@@ -372,12 +372,18 @@ a:focus, a:hover {
     font-size: 2rem
 }
 
+.event-name {
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 2rem
+}
+
 @media only screen and (max-width: 600px) {
     .timeline-character-text {
         font-size: 2rem;
     }
 
     .timeline-character-image {
-        height: 5rem;
+        height: 10rem;
     }
 }

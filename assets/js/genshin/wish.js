@@ -126,7 +126,7 @@ const updateCurrentWishInfo = () => {
         //color显示
         $(".current-wish-color-" + index).css("color", ELEMENT_COLOR[wishCharacters[index].ele]);
         let imgSrc = replaceAndLow(wishCharacters[index].name) + "_" + wishCharacters[index].image + ".jpg";
-        $("#showCurrentWishCharacter" + i).attr("src", "/assets/res/genshin-impact/events/" + imgSrc);
+        $("#showCurrentWishCharacter" + i).attr("src", "/assets/res/genshin-impact/wish/" + imgSrc);
     }
 
 };
@@ -163,7 +163,7 @@ const futureWishInfo = () => {
         $("#futureElements" + i).attr("src", "/assets/res/genshin-impact/elements/" + wishCharacters[indexArr[i]].ele + ".png");
 
         let imgSrc = replaceAndLow(wishCharacters[indexArr[i]].name) + "_" + wishCharacters[indexArr[i]].image + ".jpg";
-        $("#futureWishBG" + i).attr("src", "/assets/res/genshin-impact/events/" + imgSrc);
+        $("#futureWishBG" + i).attr("src", "/assets/res/genshin-impact/wish/" + imgSrc);
         $("#futureWish" + i).text("");
     }
 
