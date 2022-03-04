@@ -13,11 +13,15 @@ with_header_bg: list/code.jpg
 
 {% for post in paginator.posts %}
 <div class="col s12">
+    <!--当前页*每页的博文数+索引 模 总共祈愿的长度-->
+    {% assign img_index = paginator.page | times: paginator.per_page | plus: forloop.index0 | modulo:
+    site.data.genshin.wish.characters.size %}
+    {% assign wish_name = site.data.genshin.wish.characters[img_index].wish5star %}
     <div class="card waves-effect waves-block waves-light radius10px">
         <!--图片 奇偶 显示位置调换-->
         {% assign index = forloop.index0 | modulo: 2 %}
         <div class="card-image waves-effect waves-block waves-light top-img {% if index == 0 %} right-img {% endif %}">
-            <img src="/assets/res/xy/{{forloop.index0}}.jpg">
+            <img src="/assets/res/genshin-impact/characters/half/{{wish_name}}.png">
         </div>
         <!--日期格式化网站 http://www.strfti.me/-->
         <!--          <i class="material-icons">update</i>更新日期 {{ post.last_modified_at | date: "%H:%M:%S %a, %B %d, %Y"}}<br>-->
@@ -25,7 +29,7 @@ with_header_bg: list/code.jpg
             <a href="{{post.url}}">
                 <div class="card-title valign-wrapper">
                     {% if post.lang == 'en' %}
-                    {{ post.title | strip_html | strip_newlines | remove: " " | truncate:20 }}
+                    {{ post.title | strip_html | strip_newlines | remove: " " | truncate:30 }}
                     {% else %}
                     {{ post.title | strip_html | strip_newlines | remove: " " | truncate:10 }}
                     {% endif %}
@@ -37,7 +41,7 @@ with_header_bg: list/code.jpg
             <a href="{{post.url}}">
                 <div class="page-excerpt">
                     {% if post.lang == 'en' %}
-                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:300 }}
+                    {{ post.content | strip_html | strip_newlines | remove: " " | truncate:450 }}
                     {% else %}
                     {{ post.content | strip_html | strip_newlines | remove: " " | truncate:150 }}
                     {% endif %}
