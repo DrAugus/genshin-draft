@@ -41,7 +41,7 @@ const getWishObj = () => {
         //当前时间在祈愿结束时间前
         let endBefore = dayjs().isBefore(e.end, "second");
         if (startAfter && endBefore) {
-            obj.wishIndex.push(e.index);
+            obj.wishIndex.push(e.index2);
         }
     }
     //如果没有找到
@@ -52,7 +52,7 @@ const getWishObj = () => {
             let endAfter = dayjs().isAfter(wishCharacters[i - 1].end, "second");
             let startBefore = dayjs().isBefore(wishCharacters[i].start, "second");
             if (endAfter && startBefore) {
-                obj.wishIndex.push(wishCharacters[i].index);
+                obj.wishIndex.push(wishCharacters[i].index2);
                 obj.isFuture = true;
             }
         }

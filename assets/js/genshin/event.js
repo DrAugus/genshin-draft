@@ -2,7 +2,7 @@ const TIMELINE_PADDING = 10;
 let lastEventTime = dayjs().year(2000);
 let firstDay = dayjs();
 
-const convertToDate = (e, i) => {
+const convertToDate = (e, i, j) => {
     let start = dayjs(e.start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
     const end = dayjs(e.end, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
     const duration = end.diff(start, "day", true);
@@ -12,6 +12,7 @@ const convertToDate = (e, i) => {
     return {
         ...e,
         index: i,
+        index2: j,//2022-3-4改进为数组event故而取index2
         start,
         end,
         duration
@@ -31,10 +32,10 @@ const processEvent = () => {
 
     let events = eventsDataInfo.map((e, i) => {
         if (Array.isArray(e)) {
-            return e.map((item) => convertToDate(item, i));
+            return e.map((item, j) => convertToDate(item, i, j));
         }
 
-        return convertToDate(e, i);
+        return convertToDate(e, i, i);
     });
 
     events
@@ -64,7 +65,6 @@ const processEvent = () => {
             if (Array.isArray(e)) {
                 for (let j = 0; j < e.length; j++) {
                     const current = e[j];
-
                     events[current.index][j].offset = Math.abs(firstDay.diff(events[current.index][j].start, "day", true));
                 }
             } else {
