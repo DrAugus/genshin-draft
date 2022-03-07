@@ -3,6 +3,7 @@
 :root {
   --augus-black: #444;
   --augus-grey: #e0e0e0;
+  --a-foucs-cover: #ff5722;
 }
 
 @mixin transition($args...) {
@@ -167,7 +168,7 @@ footer .footer-copyright a {
 
 footer .footer-copyright a:hover, footer .footer-copyright a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: var(--a-foucs-cover);
 }
 
 footer .row {
@@ -522,7 +523,7 @@ blockquote {
 
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
+    color: var(--a-foucs-cover);
   }
 
   .navbar-custom.is-fixed .nav li a {
@@ -531,7 +532,7 @@ blockquote {
 
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
+    color: var(--a-foucs-cover);
   }
 
   .navbar-custom.is-visible {
@@ -737,7 +738,7 @@ blockquote {
 
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus {
-  color: #0085a1;
+  color: var(--a-foucs-cover);
 }
 
 .search-page {
@@ -872,8 +873,8 @@ blockquote {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: var(--a-foucs-cover);
+  border: 1px solid var(--a-foucs-cover);
 }
 
 .pager li > a:hover > span,
@@ -889,5 +890,3 @@ blockquote {
   background-color: #404040;
   cursor: not-allowed;
 }
-
-/*# sourceMappingURL=main.css.map */
