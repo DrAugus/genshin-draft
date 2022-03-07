@@ -124,9 +124,16 @@
     {% for characters in site.data.genshin.characters %}
     {% if characters[1].id == wish.wish5star %}
     <div class="event-date">
-        <span>{{wish.start | date_to_string }}&nbsp;~&nbsp;{{wish.end | date_to_string}}</span>
+        <span><u>
+            {% if wish.version != nil %}
+            {{wish.version | prepend :"Version: "}}
+            {% endif %}
+        </u></span>
     </div>
-    <div class="card event-item-background-{{characters[1].ele}} radius10px">
+    <div class="event-date">
+        <span>{{wish.start | date: "%H:%M:%S %b %d, %Y" }}&nbsp;~&nbsp;{{wish.end | date: "%H:%M:%S %b %d, %Y"}}</span>
+    </div>
+    <div class="card event-item-background-{{characters[1].ele}} no-publish radius10px">
         <div class="card-image waves-effect waves-block waves-light timeline-character-image radius10px">
             <!-- Modal Trigger -->
             <a class="modal-trigger" href="#modal_mobile_{{i}}">
