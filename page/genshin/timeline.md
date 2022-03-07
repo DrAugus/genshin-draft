@@ -13,4 +13,6 @@ with_header_bg : genshin-impact/bg/6.jpg
 
 {% include genshin/list.html %}
 
+{% include genshin/script.html %}
+
 {% include genshin/timeline.html %}
