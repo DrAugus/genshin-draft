@@ -22,6 +22,9 @@ code:
   - h: projects
     url: /projects
     intro: Github所有项目
+  - h: Coding Problems
+    url: /code/problems
+    intro: 编程遇到的种种问题
   - h: cpp
     url: /cpp
     intro: 一些面试题——C++
@@ -71,7 +74,6 @@ life:
   - h: Conflict RUS UKR
     url: /conflict/rus_ukr
     intro: 俄乌冲突
-
 genshin:
   - h: 时间轴
     url: /genshin/timeline
@@ -88,5 +90,4 @@ genshin:
   - h: 0 ~ 60级
     url: /genshin/level
     intro: 等级所需经验值
-
 
