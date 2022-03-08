@@ -102,3 +102,5 @@ $(".lazy").lazyload({
     container: $(".timeline-scroll-x"), // 对某容器中的图片实现效果，值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
     failurelimit: 5, // 图片排序混乱时，值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
 });
+
+$(".container").css("width", "99%");

@@ -3,6 +3,7 @@
   "title": "augus",
   "author": "augus",
   "version": "0.0.0",
+  "license": "AGPL-3.0",
   "homepage": "https://draugus.github.io/",
   "repository": {
     "type": "git",
@@ -13,5 +14,8 @@
     "begin": "bundle exec jekyll serve --trace",
     "push": "git push",
     "pull": "git pull"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.8"
   }
 }

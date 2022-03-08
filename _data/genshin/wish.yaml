@@ -1,6 +1,6 @@
 # shortname去character里找其他名字
 # url应该不太准确
-# 上半差值 20 下半差值 21
+# 祈愿时间一个版本 上半差值 20天 下半差值 21天 开服时不符合此规则
 characters:
   - name: Ballad in Goblets
     image: 1
