@@ -2,14 +2,23 @@
 
     <div class="article-sort-title">日记</div>
     <div class="article-sort">
-        <!--TODO 年份动态-->
-        <div class="article-sort-item year">2022</div>
+        <!-- 变量声明 -->
         {% assign emoticon = "0,1,2,4,5,6,8,10,12,13,14,15" | split: "," %}
         {% assign pages = site.pages | sort: 'date' | reverse %}
+        {% assign date_year = 2000 %}
+
         {% for page in pages %}
         {% if page.layout == "daily" %}
         {% assign eIndex = forloop.index0 | plus: emoticon.size | modulo: emoticon.size %}
-        {% assign dateYear = page.date | date: "%Y" %}
+
+        <!-- TODO 按年份折叠 -->
+        <!-- 动态更新年份 -->
+        {% assign year = page.date | date: "%Y" %}
+        {% if date_year != year %}
+        {% assign date_year = year %}
+        <div class="article-sort-item year">{{date_year}}</div>
+        {% endif %}
+
         <div class="article-sort-item">
             <a class="article-sort-item-img" href="{{page.url}}" target="_parent">
                 <img class="circle" src="/assets/res/genshin-impact/emoticon/{{emoticon[eIndex]}}.png">
