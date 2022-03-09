@@ -104,3 +104,7 @@ $(".lazy").lazyload({
 });
 
 $(".container").css("width", "99%");
+
+$(".no-publish").css("background", "linear-gradient(to left, #444, rgb(0 0 0 / 0%)) no-repeat");
+
+$(".grey-no-publish").css("filter", "grayscale(100%) brightness(1) contrast(.5)");
