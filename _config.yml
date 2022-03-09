@@ -46,6 +46,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at
   - simple-jekyll-search
+  - jekyll-timeago
 
 # Exclude from processing.
 # The following items will not be processed, by default.
