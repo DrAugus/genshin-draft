@@ -56,10 +56,12 @@ good:
   - url: http://caibaojian.com/interview-map/frontend/
     name: js前端面试之道
     tip:
+  - url: https://www.levels.fyi/
+    name: Helping people make better career decisions
+    tip:
   - url:
     name:
     tip:
-
 
 backup:
   - url: https://blog.csdn.net/LaineGates/article/details/108242803
