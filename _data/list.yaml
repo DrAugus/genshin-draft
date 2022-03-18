@@ -56,6 +56,9 @@ life:
   - h: 日记
     url: /daily
     intro: 偶尔的日常小记
+  - h: 花
+    url: /flower
+    intro: 花儿对你笑
   - h: 英语词汇
     url: /words_en
     intro: 不断学习的英文
