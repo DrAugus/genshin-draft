@@ -74,9 +74,9 @@ life:
   - h: World War II
     url: /world_war/2
     intro: 二战概要
-  - h: Conflict RUS UKR
-    url: /conflict/rus_ukr
-    intro: 俄乌冲突
+  - h: World War III
+    url: /world_war/3
+    intro: 三战概要
 genshin:
   - h: 时间轴
     url: /genshin/timeline
