@@ -44,31 +44,31 @@ js:
 
 <div class="divider"></div>
 
-{% include contents.html %}
-
-<div class="row">
-    <!-- Pager -->
-    <ul class="pager">
-        {% if page.previous.url %}
-        <li class="previous post-card">
-            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
-               data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                Previous<br>
-                <span>{{page.previous.title}}</span>
-            </a>
-        </li>
-        {% endif %}
-        {% if page.next.url %}
-        <li class="next post-card">
-            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
-               data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                Next<br>
-                <span>{{page.next.title}}</span>
-            </a>
-        </li>
-        {% endif %}
-    </ul>
+<div id="post-article-content">
+    {% include contents.html %}
 </div>
+
+<!-- Pager -->
+<ul class="pager">
+    {% if page.previous.url %}
+    <li class="previous post-card">
+        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"
+           data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+            Previous<br>
+            <span>{{page.previous.title}}</span>
+        </a>
+    </li>
+    {% endif %}
+    {% if page.next.url %}
+    <li class="next post-card">
+        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}"
+           data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+            Next<br>
+            <span>{{page.next.title}}</span>
+        </a>
+    </li>
+    {% endif %}
+</ul>
 
 
 {% include gitalk.html %}

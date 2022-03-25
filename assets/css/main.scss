@@ -133,13 +133,13 @@ header nav .head-bar {
   font-weight: bold;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: "Lora", "Times New Roman", serif;
+}
+
 main {
   flex: 1 0 auto;
   z-index: 1;
-}
-
-main div .row {
-  margin-top: 32px;
 }
 
 #return-top {
@@ -306,8 +306,15 @@ nav .nav-wrapper a:hover {
   background-color: #fff0;
 }
 
+.page-info {
+  width: 100%;
+  padding: 0 0 1rem 0;
+}
+
 .page-title {
   display: inline-block;
+  font-family: "Lora", "Times New Roman", serif;
+  font-style: italic;
   font-size: 36px;
   margin-top: 0.5em;
   color: #404040;
@@ -423,10 +430,6 @@ span.badge {
   box-shadow: none !important;
 }
 
-blockquote {
-  font-size: unset;
-}
-
 .header-bg {
   animation: header-effect 1s;
   -webkit-animation: header-effect 1s;
@@ -473,14 +476,6 @@ blockquote {
 
 .full-bg:before {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.page-info {
-  margin-top: 10px;
-  bottom: 5rem;
-  padding: 0 8%;
-  width: 100%;
-  text-align: center;
 }
 
 .pagination li i {
