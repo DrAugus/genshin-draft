@@ -154,9 +154,16 @@ blackFood:
   - name: 臻师傅•大碗猪脚饭(文一西路店)
     reason:
     food:
+  - name: 赠李白
+    reason:
+    food:
+  - name:
+    reason:
+    food:
 
 restaurant:
-  - name: 肉本家·碳烤肉
+  肉本家:
+    name: 肉本家·碳烤肉
     recommend:
       - 安格斯牛肋条
       - 肉本家冠军组合(如果有五花肉就不要点 几乎全是油)
@@ -169,19 +176,26 @@ restaurant:
       - 白玉泡菜汤
       - 超满足牛肉拌饭
       - 烧酒全不推荐
-
-
-future:
-  - name:
+  吴兴状元楼:
+    name: 吴兴状元楼
     recommend:
-      -
-  - name:
+      - 酒酿圆子
+      - 蟹粉豆腐
+      - 虾仁烩蹄筋
+      - 糯米仔排
+      - 状元神仙鸡
+    not_recommend:
+  胡集酒肆:
+    name: 胡集酒肆
     recommend:
-      -
-  - name:
+      - 蕃王金锅炖牛腩
+      - 风味焗蛋黄菌菇
+      - 黄金脆皮豆腐
+      - 芥末秋葵
+      - 牛肉串
+      - 掌中宝
+    not_recommend:
+  null:
+    name:
     recommend:
-
-
-recommend:
-  - name:
-    flow:
+    not_recommend:
