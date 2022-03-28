@@ -346,15 +346,15 @@ characters:
     wishName: 「浮岳虹珠」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
-  - name: Kamisato Ayato
+  - name: Azure Excursion
     image: 1
     shortName: Kamisato Ayato
     start: 2022-03-30 11:00:00 +0800
     end: 2022-04-19 17:59:59 +0800
     wish5star: kamisato_ayato
-    wish4star: [sucrose, xiangling, yunjin]
+    wish4star: [ sucrose, xiangling, yunjin ]
     version: 2.6
-    wishName: 「」
+    wishName: 「苍流踏花」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Ballad in Goblets
     image: 3
@@ -362,7 +362,7 @@ characters:
     start: 2022-03-30 11:00:00 +0800
     end: 2022-04-19 17:59:59 +0800
     wish5star: venti
-    wish4star: [sucrose, xiangling, yunjin]
+    wish4star: [ sucrose, xiangling, yunjin ]
     wishName: 「杯装之诗」
     wish_2: true
     url: https://bbs.mihoyo.com/ys/article/?
@@ -593,8 +593,8 @@ weapons:
     start: 2021-11-24 11:00:00 +0800
     end: 2021-12-14 17:59:59 +0800
     shortName:
-    wish5star: ['freedom-sworn', 'song_of_broken_pines']
-    wish4star: ['wine_and_song', 'alley_hunter', 'lions_roar', 'sacrificial_greatsword', 'dragons_bane']
+    wish5star: [ 'freedom-sworn', 'song_of_broken_pines' ]
+    wish4star: [ 'wine_and_song', 'alley_hunter', 'lions_roar', 'sacrificial_greatsword', 'dragons_bane' ]
     url: https://bbs.mihoyo.com/ys/article/11444617
   - name: Epitome Invocation
     image: 22
@@ -636,4 +636,12 @@ weapons:
     shortName:
     wish5star: [ engulfing_lightning,everlasting_moonglow ]
     wish4star: [ akuoumaru,mouun's_moon,lion's_roar,favonius_lance,sacrificial_fragments ]
+    url: https://ys.mihoyo.com/main/news/detail/
+  - name: Epitome Invocation
+    image: 27
+    start: 2022-03-30 11:00:00 +0800
+    end: 2022-04-19 17:59:59 +0800
+    shortName:
+    wish5star:
+    wish4star:
     url: https://ys.mihoyo.com/main/news/detail/
