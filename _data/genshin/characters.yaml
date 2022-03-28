@@ -123,6 +123,7 @@ venti:
 xiangling:
   id: xiangling
   name: 香菱
+  prefix: 万民百味
   element: 火
   star: 4
   event_exclusive: false
@@ -360,6 +361,7 @@ keqing:
 sucrose:
   id: sucrose
   name: 砂糖
+  prefix: 无害甜度
   element: 风
   star: 4
   event_exclusive: false
@@ -646,8 +648,8 @@ kamisato_ayato:
 
 yelan:
   id: yelan
-  name: 夜阑
-  prefix:
+  name: 夜兰
+  prefix: 兰生幽谷
   element: 水
   star: 5
   event_exclusive: true
@@ -655,3 +657,15 @@ yelan:
   city: Liyue
   ele: cryo
   weapon: bow
+
+久岐忍:
+  id: 久岐忍
+  name: 久岐忍
+  prefix: 烦恼刈除
+  element: 雷
+  star: 4
+  event_exclusive: false
+  intro:
+  city: Inazuma
+  ele: electro
+  weapon: sword
