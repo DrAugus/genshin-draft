@@ -24,7 +24,7 @@
 title: AUGUS
 name: AUGUS
 description: > # webpage description
-#  Welcome to my personal website
+  爱情总是敌不过命运
 url: "https://augusmeow.cn/"
 permalink: /:year/:month/:day/:title
 paginate: 10
