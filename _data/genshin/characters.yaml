@@ -643,7 +643,7 @@ kamisato_ayato:
   event_exclusive: true
   intro: 社奉行神里家现任家主。总有办法以周全的手段实现自身目的。不过，鲜少有人知道他如今最在意的「目的」是什么。
   city: Inazuma
-  ele: cryo
+  ele: hydro
   weapon: sword
 
 yelan:
@@ -655,7 +655,7 @@ yelan:
   event_exclusive: true
   intro:
   city: Liyue
-  ele: cryo
+  ele: hydro
   weapon: bow
 
 久岐忍:
