@@ -9,6 +9,57 @@ with_contents: 1
 
 # else
 
+## 'C++11 feels like a new language'
+
+> [page29](https://www.stroustrup.com/hopl20main-p5-p-bfc9cd4--final.pdf)
+
+C++11 introduced a bewildering number of language features, including:
+* memory model - an efficient low level-model of modern hardware as a foundation for
+concurrency (ğ4.1.1)
+* auto and decltype - avoiding redundant repetition of type names (ğ4.2.1)
+* range-for - simple linear traversal of ranges (ğ4.2.2)
+* move semantics and rvalue references - minimizing copying of data (ğ4.2.3)
+* uniform initialization - an (almost) completely general syntax and semantics for initializing
+objects of all kinds and types (ğ4.2.5)
+* nullptr - a name for the null pointer (ğ4.2.6)
+* constexpr functions - compile-time evaluated functions (ğ4.2.7)
+* user-defined literals - literals for user-defined types (ğ4.2.8)
+* raw string literals - literals where escape characters are not needed, mostly for regular
+expressions (ğ4.2.9)
+* attributes - associating essentially arbitrary information with a name (ğ4.2.10)
+* lambdas - unnamed function objects (ğ4.3.1)
+* variadic templates - templates that can handle an arbitrary number of arguments of
+arbitrary types (ğ4.3.2)
+* template aliases - the ability to rename a template and to bind some template arguments for
+the new name (ğ4.3.3)
+* noexcept - a way of ensuring that an exception isn’t thrown from a function (ğ4.5.3)
+* override and final - explicit syntax for managing large class hierarchies
+* static_assert - compile-time assertions
+* long long - a longer integer type
+* default member initializers - give a data member a default value that can be superseded by
+initialization in a constructor
+* enum classes - strongly typed enumerations with scoped enumerators
+
+And here is a list of the major standard-library components (ğ4.6):
+
+* unique_ptr and shared_ptr - resource-management pointers (ğ4.2.4) relying on RAII
+(ğ2.2.1)
+* memory model and atomic variables (ğ4.1.1)
+* thread, mutex, condition_variable, etc. - type-safe and portable support for basic system-
+level concurrency (ğ4.1.2)
+* future, promise, and packaged_task, etc. - slightly higher-level concurrency (ğ4.1.3)
+* tuple - unnamed simple composite types (ğ4.3.4)
+* type traits - testable properties of types for use in metaprogramming (ğ4.5.1)
+* regular expression matching (ğ4.6)
+* random numbers - with many generators (engines) and distributions (ğ4.6)
+* Time - time_point and duration (ğ4.6)
+* unordered_map, etc. - hash tables
+* forward_list - a singly-linked list
+* array - a fixed-constant-sized array that knows its size
+* emplace operations - construct objects right within a container to avoid copying
+* exception_ptr - enables transfer of exceptions between threads
+
+
 - C 和 C++ 的区别
     * 简单版本
         - C++是面向对象的语言，而C是面向过程的语言

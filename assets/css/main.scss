@@ -73,6 +73,7 @@ body {
 
 header {
   height: 60px;
+  margin-bottom: 1rem;
 }
 
 header #slide-out {
@@ -336,6 +337,7 @@ nav .nav-wrapper a:hover {
   font-style: italic;
   font-weight: 300;
   font-size: 16px;
+  text-decoration: underline;
 }
 
 .page-excerpt {

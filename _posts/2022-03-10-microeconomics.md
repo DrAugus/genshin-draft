@@ -16,9 +16,13 @@ tags: 经济学 微观经济学
 
 > 机会成本(opportunity cost)： 一种东西的机会成本是为了得到这种东西所放弃的东西
 
-### 1.1.3 原理三 理性人考虑边际量
+### 1.1.3 原理三 理性人考虑边际量 Rational people think at the margin
 
 > 理性人(rational people)：系统而有目的地尽最大努力实现其目标的人
+> A rational people is aiming as maximizing personal interests
+
+People make decisions by comparing costs and benefits at the margin  
+人们作决策时需要比较边际成本和边际利益
 
 ### 1.1.4 原理四 人们会对激励做出反应
 
