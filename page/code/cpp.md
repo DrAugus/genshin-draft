@@ -1,11 +1,9 @@
 ---
-permalink: /cpp
-layout: page
-title: cpp
+permalink: /cpp  
+layout: page  
+title: cpp  
 with_contents: 1
 ---
-
-
 
 # else
 
@@ -14,39 +12,35 @@ with_contents: 1
 > [page29](https://www.stroustrup.com/hopl20main-p5-p-bfc9cd4--final.pdf)
 
 C++11 introduced a bewildering number of language features, including:
-* memory model - an efficient low level-model of modern hardware as a foundation for
-concurrency (ğ4.1.1)
+
+* memory model - an efficient low level-model of modern hardware as a foundation for concurrency (ğ4.1.1)
 * auto and decltype - avoiding redundant repetition of type names (ğ4.2.1)
 * range-for - simple linear traversal of ranges (ğ4.2.2)
 * move semantics and rvalue references - minimizing copying of data (ğ4.2.3)
-* uniform initialization - an (almost) completely general syntax and semantics for initializing
-objects of all kinds and types (ğ4.2.5)
+* uniform initialization - an (almost) completely general syntax and semantics for initializing objects of all kinds and
+  types (ğ4.2.5)
 * nullptr - a name for the null pointer (ğ4.2.6)
 * constexpr functions - compile-time evaluated functions (ğ4.2.7)
 * user-defined literals - literals for user-defined types (ğ4.2.8)
-* raw string literals - literals where escape characters are not needed, mostly for regular
-expressions (ğ4.2.9)
+* raw string literals - literals where escape characters are not needed, mostly for regular expressions (ğ4.2.9)
 * attributes - associating essentially arbitrary information with a name (ğ4.2.10)
 * lambdas - unnamed function objects (ğ4.3.1)
-* variadic templates - templates that can handle an arbitrary number of arguments of
-arbitrary types (ğ4.3.2)
-* template aliases - the ability to rename a template and to bind some template arguments for
-the new name (ğ4.3.3)
+* variadic templates - templates that can handle an arbitrary number of arguments of arbitrary types (ğ4.3.2)
+* template aliases - the ability to rename a template and to bind some template arguments for the new name (ğ4.3.3)
 * noexcept - a way of ensuring that an exception isn’t thrown from a function (ğ4.5.3)
 * override and final - explicit syntax for managing large class hierarchies
 * static_assert - compile-time assertions
 * long long - a longer integer type
-* default member initializers - give a data member a default value that can be superseded by
-initialization in a constructor
+* default member initializers - give a data member a default value that can be superseded by initialization in a
+  constructor
 * enum classes - strongly typed enumerations with scoped enumerators
 
 And here is a list of the major standard-library components (ğ4.6):
 
 * unique_ptr and shared_ptr - resource-management pointers (ğ4.2.4) relying on RAII
-(ğ2.2.1)
+  (ğ2.2.1)
 * memory model and atomic variables (ğ4.1.1)
-* thread, mutex, condition_variable, etc. - type-safe and portable support for basic system-
-level concurrency (ğ4.1.2)
+* thread, mutex, condition_variable, etc. - type-safe and portable support for basic system- level concurrency (ğ4.1.2)
 * future, promise, and packaged_task, etc. - slightly higher-level concurrency (ğ4.1.3)
 * tuple - unnamed simple composite types (ğ4.3.4)
 * type traits - testable properties of types for use in metaprogramming (ğ4.5.1)
@@ -59,6 +53,35 @@ level concurrency (ğ4.1.2)
 * emplace operations - construct objects right within a container to avoid copying
 * exception_ptr - enables transfer of exceptions between threads
 
+##   
+
+C++17 had about 21 new language features (depending on how you count), including:
+
+* Constructor template argument deduction - simplify object definitions (ğ8.1)
+* Deduction guides - an explicit notation for resolving constructor template argument deduction ambiguities (ğ8.1)
+* Structured bindings - simplify notation and eliminate a source of uninitialized variables
+  (ğ8.2)
+* inline variables - simplify the use of statically allocated variables in header-only libraries
+* Fold expressions - simplify some uses of variadic templates
+* Explicit test in conditions - a bit like conditions in for-statements (ğ8.7)
+* Guaranteed copy elision - eliminate many redundant copy operations
+* Stricter expression evaluation order - prevents some subtle order-of-evaluation mistakes
+* auto as a template argument type - type deduction for value template arguments
+* Standard attributes to catch common mistakes - [[maybe_unused]], [[nodiscard]], and
+  [[fallthrough]]
+* Hexadecimal floating-point literals
+* Constant expression if - simplify compile-time evaluated code
+
+The C++17 standard-library added about 13 new features plus many minor modifications:
+
+* optional, variant, and any - standard-library types for expressing alternatives (ğ8.3)
+* shared_mutex and shared_lock (reader-writer locks) and scoped_lock (ğ8.4)
+* parallel STL - multi-threaded and/or vectorized versions of standard-library algorithms (ğ8.5)
+* file system - the ability to portably manipulate file-system paths and directories (ğ8.6)
+* string_view - a non-owning reference to an immutable sequence of characters
+* Mathematical special functions - including Laguerre and Legendre polynomials, beta func- tions, Riemann zeta function
+
+## other
 
 - C 和 C++ 的区别
     * 简单版本
@@ -127,7 +150,8 @@ level concurrency (ğ4.1.2)
 - 左值和右值
 - malloc 和 new，free 和 delete 的区别
 
-  malloc是函数，而new是关键字。然后new作为C++中动态对象创建的基石，除了完成堆空间的分配操作以外还要完成一些初始化操作，及new的过程中会调用对象的构造函数去初始化，而malloc不会。最后要明确的是malloc分配的内存只能用free来释放，而new分配的地址只能用delete来释放，如果new分配的是数组，则需要delete[ ]来释放，否则会出现未定义行为。
+  malloc是函数，而new是关键字。然后new作为C++中动态对象创建的基石，除了完成堆空间的分配操作以外还要完成一些初始化操作，及new的过程中会调用对象的构造函数去初始化，而malloc不会。最后要明确的是malloc分配的内存只能用free来释放，而new分配的地址只能用delete来释放，如果new分配的是数组，则需要delete[ ]
+  来释放，否则会出现未定义行为。
 
   `delete`会调用对象的析构函数,和`new`对应`free`
   只会释放内存，new调用构造函数。malloc与free是C++/C语言的标准库函数，new/delete是C++的运算符。它们都可用于申请动态内存和释放内存。对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。因此C++语言需要一个能完成动态内存分配和初始化工作的运算符new，以及一个能完成清理与释放内存工作的运算符delete。注意new/delete不是库函数。
@@ -320,7 +344,7 @@ level concurrency (ğ4.1.2)
     * `int` `if(a==0)`
     * `float` `const EXPRESSION EXP = 0.000001; if ( a < EXP && a > -EXP)`
     * `pointer`  `if ( a != NULL)` or `if(a == NULL)`
-    
+
 - 哪些类型的对象不可以作为union的成员？为什么有这种限制？
     * 标准规定，凡是具有`non-trivial constructor`、`non-trivial destructor`、`non-trivial copy constructor`
       、`non-trivial assignment operator`的class对象都不能作为union的成员。 即是说，这个class的以上四种成员必须均经由编译器合成且该class无虚函数和虚基类。 有这种限制是为了兼容C。
@@ -363,17 +387,15 @@ level concurrency (ğ4.1.2)
 - const关键字的使用
 - define和online的区别
 - main函数执行以前，还会执行什么代码？
-  - 全局对象的构造函数会在main函数之前执行
+    - 全局对象的构造函数会在main函数之前执行
 - C++是不是类型安全的？
-  - 不是。两个不同类型的指针之间可以强制转换（用reinterpret cast)。C#是类型安全的。
+    - 不是。两个不同类型的指针之间可以强制转换（用reinterpret cast)。C#是类型安全的。
 - 有哪几种情况只能用initialization list而不能用assignment?
-  - 当类中含const、reference成员变量；基类的构造函数都需要初始化表。
+    - 当类中含const、reference成员变量；基类的构造函数都需要初始化表。
 - 结构（struct）与联合（union）的区别
-  - 结构和联合都是由多个不同的数据类型成员组成, 但在任何同一时刻, 联合中只存放了一个被选中的成员（所有成员共用一块地址空间）, 而结构的所有成员都存在（不同成员的存放地址不同）。 
-  - 对于联合的不同成员赋值, 将会对其它成员重写, 原来成员的值就不存在了, 而对于结构的不同成员赋值是互不影响的。
-- 
-
-
+    - 结构和联合都是由多个不同的数据类型成员组成, 但在任何同一时刻, 联合中只存放了一个被选中的成员（所有成员共用一块地址空间）, 而结构的所有成员都存在（不同成员的存放地址不同）。
+    - 对于联合的不同成员赋值, 将会对其它成员重写, 原来成员的值就不存在了, 而对于结构的不同成员赋值是互不影响的。
+-
 
 # 引用
 
@@ -793,8 +815,6 @@ C++程序设计中使用堆内存是非常频繁的操作。C++11中引入了`�
 
   解答：str1,str2,str3,str4是数组变量，它们有各自的内存空间；而str5,str6,str7,str8是指针，它们指向相同的常量区域。
 
-
-
 # 一些程序题
 
 1.
@@ -848,4 +868,5 @@ int main()
     return 0;
 }
 ```
+
 3 3 5 3 6 5 8 9 
