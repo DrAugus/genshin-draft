@@ -372,7 +372,7 @@ characters:
     start: 2022-04-19 18:00:00 +0800
     end: 2022-05-10 14:59:59 +0800
     wish5star: kamisato_ayaka
-    wish4star:
+    wish4star: [ razor,rosaria,sayu ]
     wishName: 「白鹭之庭」
     url: https://bbs.mihoyo.com/ys/article/?
   - name: Yelan
@@ -642,6 +642,14 @@ weapons:
     start: 2022-03-30 11:00:00 +0800
     end: 2022-04-19 17:59:59 +0800
     shortName:
-    wish5star:
-    wish4star:
+    wish5star: [ haran_geppaku_futsu, elegy_for_the_end ]
+    wish4star: [ the_flute, sacrificial_greatsword, dragons_bane, the_widsith, rust ]
+    url: https://ys.mihoyo.com/main/news/detail/
+  - name: Epitome Invocation
+    image: 28
+    start: 2022-04-19 18:00:00 +0800
+    end: 2022-05-10 14:59:59 +0800
+    shortName:
+    wish5star: [ Mistsplitter Reforged ,The Unforged ]
+    wish4star: [ Favonius Sword , The Bell , Favonius Lance , Favonius Codex , and Favonius Warbow ]
     url: https://ys.mihoyo.com/main/news/detail/

@@ -90,6 +90,7 @@ diluc:
 razor:
   id: razor
   name: 雷泽
+  prefix: 狼少年
   element: 雷
   star: 4
   event_exclusive: false
@@ -384,6 +385,7 @@ xinyan:
 rosaria:
   id: rosaria
   name: 罗莎莉亚
+  prefix: 棘冠恩典
   element: 冰
   star: 4
   event_exclusive: false
@@ -417,6 +419,7 @@ yoimiya:
 sayu:
   id: sayu
   name: 早柚
+  prefix: 忍里之貉
   element: 风
   star: 4
   event_exclusive: false
@@ -428,6 +431,7 @@ sayu:
 kamisato_ayaka:
   id: kamisato_ayaka
   name: 神里绫华
+  prefix: 白鹭霜华
   element: 冰
   star: 5
   event_exclusive: true
