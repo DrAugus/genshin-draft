@@ -11,9 +11,16 @@ with_contents: 1
 <ul>
     {% for good in site.data.web_record.good %}
     {% assign href = good.url %}
-    {% assign title = good.tip %}
+    {% assign tip = good.tip %}
     {% assign name = good.name %}
-    <li><a href="{{href}}" title="{{title}}" target="_blank">{{name}}</a></li>
+    {% if href != nil %}
+    <li>
+        <span>
+            <a href="{{href}}" title="{{tip}}" target="_blank">{{name}}</a>
+            {% if tip != nil %}: {{tip}}{% endif %}
+        </span>
+    </li>
+    {% endif %}
     {% endfor %}
 </ul>
 
@@ -21,9 +28,16 @@ with_contents: 1
 <ul>
     {% for backup in site.data.web_record.backup %}
     {% assign href = backup.url %}
-    {% assign title = backup.tip %}
+    {% assign tip = backup.tip %}
     {% assign name = backup.name %}
-    <li><a href="{{href}}" title="{{title}}" target="_blank">{{name}}</a></li>
+    {% if href != nil %}
+    <li>
+        <span>
+            <a href="{{href}}" title="{{tip}}" target="_blank">{{name}}</a>
+            {% if tip != nil %}: {{tip}}{% endif %}
+        </span>
+    </li>
+    {% endif %}
     {% endfor %}
 </ul>
 

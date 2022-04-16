@@ -59,6 +59,39 @@ good:
   - url: https://www.levels.fyi/
     name: Helping people make better career decisions
     tip:
+  - url: https://www.boost.org/
+    name: Boost C++ libraries
+    tip: ree peer-reviewed portable C++ source libraries that are candidates for the future C++ Standard
+  - url: https://www.agner.org/optimize/
+    name: Software optimization resources by Agner Fog
+    tip: excellent resources for optimizations, including but not limited to C++
+  - url: https://www.manning.com/books/functional-programming-in-c-plus-plus
+    name: Functional Programming in C++ by Ivan Čukić
+    tip:
+  - url: https://www.stroustrup.com/
+    name: Bjarne Stroustrup’s C++ page
+    tip:
+  - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3337.pdf
+    name: Draft C++11 standard
+    tip:
+  - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3690.pdf
+    name: Draft C++14 standard
+    tip:
+  - url: https://web.archive.org/web/20170325025026/http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4660.pdf
+    name: Draft C++17 standard
+    tip:
+  - url: https://isocpp.org/files/papers/N4860.pdf
+    name: Draft C++20 standard
+    tip:
+  - url: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+    name: C++ core guidelines
+    tip:
+  - url: https://isocpp.org/
+    name: Standard C++
+    tip:
+  - url: http://www.free-culture.cc/
+    name: Free Culture
+    tip:
   - url:
     name:
     tip:
