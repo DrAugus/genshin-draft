@@ -1,10 +1,23 @@
 const TIMELINE_PADDING = 10;
 let lastEventTime = dayjs().year(2000);
 let firstDay = dayjs();
+const userAgent = navigator.userAgent;
+const isSafari = userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") == -1; //判断是否Safari浏览器
+console.info(isSafari ? "now is safari" : "I am not safari");
 
 const convertToDate = (e, i, j) => {
-    let start = dayjs(e.start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
-    const end = dayjs(e.end, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+
+    let start, end;
+    if (isSafari) {
+        e.start = e.start.replace(/-/g, "/");
+        e.end = e.end.replace(/-/g, "/");
+        start = dayjs(e.start, "YYYY/MM/DD HH:mm:ss").subtract(0, "minute");
+        end = dayjs(e.end, "YYYY/MM/DD HH:mm:ss").subtract(0, "minute");
+    } else {
+        start = dayjs(e.start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+        end = dayjs(e.end, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+    }
+
     const duration = end.diff(start, "day", true);
 
     if (lastEventTime < end) lastEventTime = end;
