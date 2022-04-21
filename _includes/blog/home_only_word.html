@@ -1,0 +1,22 @@
+{% for post in paginator.posts %}
+<div class="col s12">
+    <div class="blog-body ">
+        <div>
+            <a href="{{post.url}}" class="blog-title">
+                {{post.title}}
+            </a>
+        </div>
+
+        <div class="blog-date">
+            Written by {{site.name}} on {{post.date | date_to_string}}
+        </div>
+
+        <div>
+            <a href="{{post.url}}" class="blog-excerpt">
+                {{post.content | strip_html | strip_newlines | remove: " " | remove: "#" | truncate:200}}
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endfor %}

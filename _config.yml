@@ -85,3 +85,4 @@ profile: true
 
 port: 40000
 
+show_blog_home_picture: false

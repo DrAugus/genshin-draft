@@ -50,6 +50,42 @@
   -o-background-size: $args;
 }
 
+.blog-body {
+  height: 15rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-body a {
+  font-weight: bold;
+  color: #404040;
+  width: 50%;
+  height: 100%;
+  line-height: 100%;
+  justify-content: center;
+}
+
+.blog-body a:hover, a:focus {
+  text-decoration: none;
+  color: var(--a-foucs-cover);
+}
+
+.blog-body .blog-title {
+  font-size: 24px;
+}
+
+.blog-body .blog-date {
+  font-family: "Lora", "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.blog-body .blog-excerpt {
+  font-weight: 300;
+  font-size: 15px;
+  //line-height: 1.7rem;
+}
 
 .card {
   margin-bottom: 20px;
