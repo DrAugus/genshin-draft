@@ -1,4 +1,4 @@
-const DAY_WIDTH = 35;
+const DAY_WIDTH = 25;
 let today = dayjs();
 
 const eventObj = processEvent();
