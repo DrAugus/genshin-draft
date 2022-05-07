@@ -19,37 +19,37 @@ article:
     url: /tags
     intro: 博文标签
 code:
-  - h: projects
+  - h: PROJECTS
     url: /projects
     intro: Github所有项目
   - h: Coding Problems
     url: /code/problems
     intro: 编程遇到的种种问题
-  - h: cpp
+  - h: C++
     url: /cpp
     intro: 一些面试题——C++
-  - h: algorithm
+  - h: 算法
     url: /algorithm
     intro: 一些面试题——算法
-  - h: os
+  - h: 操作系统
     url: /os
     intro: 一些面试题——操作系统
-  - h: network_protocol
+  - h: 网络协议
     url: /network_protocol
     intro: 一些面试题——网络协议
-  - h: database
+  - h: 数据库
     url: /database
     intro: 一些面试题——数据库
-  - h: java
+  - h: Java
     url: /java
     intro: 一些面试题——JAVA
-  - h: front_end
+  - h: 前端
     url: /front_end
     intro: 一些面试题——前端
-  - h: sys_design
+  - h: 系统设计
     url: /sys_design
     intro: 一些面试题——系统设计
-  - h: non_tech
+  - h: 非技术面试
     url: /non_tech
     intro: 一些面试题——非技术问题
 life:
