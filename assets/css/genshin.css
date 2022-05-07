@@ -7,6 +7,7 @@
     --ele-anemo: #57dcb0;
     --ele-cryo: #84c2e6;
     --event-height: 128px;
+    --event-number: 5;
 }
 
 /*元素背景色*/
@@ -278,7 +279,7 @@
     overflow-y: hidden;
     overflow-x: scroll;
     /*display: flex;*/
-    height: calc(var(--event-height) * 4);
+    height: calc(var(--event-height) * var(--event-number));
 }
 
 .timeline-scroll-x::-webkit-scrollbar { /*滚动条整体样式*/
@@ -313,7 +314,7 @@
 .timeline-day {
     display: flex;
     margin-top: 20px;
-    height: calc(var(--event-height) * 4);
+    height: calc(var(--event-height) * var(--event-number));
     position: relative;
 }
 
