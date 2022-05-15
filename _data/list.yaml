@@ -93,4 +93,7 @@ genshin:
   - h: 0 ~ 60级
     url: /genshin/level
     intro: 等级所需经验值
+  - h: 提瓦特文字
+    url: /genshin/teyvat/language
+    intro: 提瓦特语言文字教程
 
