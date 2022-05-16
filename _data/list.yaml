@@ -69,13 +69,13 @@ life:
     url: /history
     intro: 正在施工中的年代史
   - h: World War I
-    url: /world_war/1
+    url: /war/world_war/1
     intro: 当时的人们没有想到，要在 ⌈ 世界大战 ⌋ 之前，加上 ⌈ 第一次 ⌋
   - h: World War II
-    url: /world_war/2
+    url: /war/world_war/2
     intro: 二战概要
   - h: World War III
-    url: /world_war/3
+    url: /war/world_war/3
     intro: 三战概要
 genshin:
   - h: 时间轴
