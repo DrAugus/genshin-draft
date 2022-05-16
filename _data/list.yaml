@@ -68,6 +68,13 @@ life:
   - h: 中国年代史
     url: /history
     intro: 正在施工中的年代史
+  - h: APPLE
+    url: /list/apple
+    intro: APPLE INFO
+  - h: WAR
+    url: /list/war
+    intro: WAR INFO
+war:
   - h: World War I
     url: /war/world_war/1
     intro: 当时的人们没有想到，要在 ⌈ 世界大战 ⌋ 之前，加上 ⌈ 第一次 ⌋
@@ -77,6 +84,10 @@ life:
   - h: World War III
     url: /war/world_war/3
     intro: 三战概要
+apple:
+  - h: apple calendars
+    url: /apple/calendars
+    intro: all kinds of calendars
 genshin:
   - h: 时间轴
     url: /genshin/timeline
