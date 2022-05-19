@@ -41,4 +41,6 @@ Jekyll requires the following:
 
 ## QA
 
-- 无法启动时，可尝试修改`_config.yml`内的端口 [port](./_config.yml)
+- When it fails to start, you can try to modify the [port](./_config.yml) in _config.yml 
+
+
