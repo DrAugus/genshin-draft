@@ -13,6 +13,7 @@ kaedehara_kazuha:
 yanfei:
   id: yanfei
   name: 烟绯
+  prefix: 智明无邪
   element: 火
   star: 4
   event_exclusive: false
@@ -57,6 +58,7 @@ lisa:
 barbara:
   id: barbara
   name: 芭芭拉
+  prefix: 闪耀偶像
   element: 水
   star: 4
   event_exclusive: false
@@ -169,6 +171,7 @@ xingqiu:
 xiao:
   id: xiao
   name: 魈
+  prefix: 护法夜叉
   element: 风
   star: 5
   event_exclusive: true
@@ -274,6 +277,7 @@ tartaglia:
 noelle:
   id: noelle
   name: 诺艾尔
+  prefix: 未授勋之花
   element: 岩
   star: 4
   event_exclusive: false
