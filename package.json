@@ -10,6 +10,7 @@
     "url": "https://github.com/DrAugus/draugus.github.io"
   },
   "scripts": {
+    "install": "bundle install",
     "start": "bundle exec jekyll serve -w -l --host 0.0.0.0",
     "begin": "bundle exec jekyll serve --trace",
     "push": "git push",
