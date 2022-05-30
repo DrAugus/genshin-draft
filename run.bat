@@ -1,1 +1,0 @@
-cmd /c "cd . & bundle exec jekyll serve --trace"
