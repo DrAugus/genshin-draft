@@ -3,7 +3,7 @@
     <!--To make the navbar fixed-->
     <!--如果你想加入更多信息 可以设置nav的class为 extended navbar-->
     <!--然后在nav-wrapper同级加入nav-content-->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top hide-box-shadow">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top hide-box-shadow is-visible is-fixed">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -21,8 +21,8 @@
                 <div class="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <!--数组声明 用split切割字符串-->
-                        {% assign nav_list = "life,article,genshin,About,Code" | split: "," %}
-                        {% assign nav_list_url = "list/life,list/article,list/genshin,list/about,list/code" | split: "," %}
+                        {% assign nav_list = "life,article,genshin,About" | split: "," %}
+                        {% assign nav_list_url = "list/life,list/article,list/genshin,list/about" | split: "," %}
                         {% for li in nav_list %}
                         <li><a href="/{{nav_list_url[forloop.index0]}}">{{li | upcase }}</a></li>
                         {% endfor %}

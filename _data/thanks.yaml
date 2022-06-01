@@ -1,3 +1,7 @@
+jekyll:
+  name: jekyll
+  url: https://jekyllrb.com/
+  info:
 matjek:
   name: matjek
   url: https://github.com/ShawnTeoh/matjek/
@@ -10,10 +14,6 @@ materializecss:
   name: Materialize.css
   url: https://materializecss.com/
   info: Famous materialize css style library.
-github_pages:
-  name: GitHub Pages
-  url: https://pages.github.com/
-  info:
 material_icons:
   name: Material Icons
   url: https://www.wp2.cn/material_icons/
@@ -30,7 +30,3 @@ highlighter:
   name: Code highlighter
   url: https://github.com/rouge-ruby/rouge/
   info: A pure Ruby code highlighter that is compatible with Pygments
-xyyy:
-  name: XYYY 网友 给予的设计想法
-  url:
-  info:

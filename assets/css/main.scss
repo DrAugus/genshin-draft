@@ -709,7 +709,7 @@ span.badge {
   }
 
   .navbar-custom .nav li a {
-    color: var(--augus-grey);
+    color: var(--augus-black);
     padding: 20px;
   }
 
@@ -728,11 +728,12 @@ span.badge {
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-  background-color: var(--augus-grey);
+  background-color: var(--augus-black);
 }
 
 .navbar-custom .navbar-brand {
-  color: var(--augus-grey);
+  color: var(--augus-black);
+  text-shadow: unset;
 }
 
 .navbar-custom .navbar-brand:hover,

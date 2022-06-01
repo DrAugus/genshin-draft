@@ -1,10 +1,4 @@
 about:
-  - h: About
-    url: /about
-    intro: about me
-  - h: Resume
-    url: /style/index#resume
-    intro: 简历
   - h: Contact
     url: /contact-thanks
     intro: 致谢
@@ -18,10 +12,6 @@ article:
   - h: Tags
     url: /tags
     intro: 博文标签
-code:
-  - h: PROJECTS
-    url: /projects
-    intro: Github所有项目
 life:
   - h: 日记
     url: /daily
@@ -54,10 +44,6 @@ war:
   - h: World War III
     url: /war/world_war/3
     intro: 三战概要
-apple:
-  - h: apple calendars
-    url: /apple/calendars
-    intro: all kinds of calendars
 genshin:
   - h: 时间轴
     url: /genshin/timeline
