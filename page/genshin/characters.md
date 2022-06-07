@@ -11,6 +11,5 @@ with_header_bg : genshin-impact/bg/5.jpg
 
 ---
 
-{% include genshin/list.html %}
 
 {% include genshin/characters.html %}

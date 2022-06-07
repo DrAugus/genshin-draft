@@ -11,7 +11,6 @@ with_header_bg : genshin-impact/bg/4.jpg
 
 ---
 
-{% include genshin/list.html %}
 
 {% include genshin/script.html %}
 

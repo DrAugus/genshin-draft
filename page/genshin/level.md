@@ -7,7 +7,6 @@ js: genshin/level.js
 with_header_bg : genshin-impact/bg/3.jpg
 ---
 
-{% include genshin/list.html %}
 
 {% include genshin/level.html %}
 

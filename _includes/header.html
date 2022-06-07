@@ -21,10 +21,10 @@
                 <div class="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <!--数组声明 用split切割字符串-->
-                        {% assign nav_list = "life,article,genshin,About" | split: "," %}
+                        {% assign nav_list = site.data.list.genshin %}
                         {% assign nav_list_url = "list/life,list/article,list/genshin,list/about" | split: "," %}
-                        {% for li in nav_list %}
-                        <li><a href="/{{nav_list_url[forloop.index0]}}">{{li | upcase }}</a></li>
+                        {% for genshin_info in nav_list %}
+                        <li><a href="{{ genshin_info.url }}">{{genshin_info.h | upcase }}</a></li>
                         {% endfor %}
 
                         <li class="search-icon">

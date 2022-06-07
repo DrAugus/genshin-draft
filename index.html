@@ -1,12 +1,12 @@
 ---
 layout: page
-with_full_bg: bg/home.png
-js: index.js
+css: genshin.css
+js:
+- genshin/event.js
+- genshin/wish.js
 ---
 
-<div class="col s12">
-    <h2 class="center">一些页面<span id="dotdot"></span></h2>
-    <h3 class="center"><a href="https://augusmeow.cn/">AUGUSMEOW</a></h3>
-    <h3 class="center"><a href="https://augusmeow.cn/RoyalFamily">Royal Family</a></h3>
-    <h3 class="center"><a href="https://augusmeow.cn/Augus">New Site</a></h3>   
-</div>
+
+{% include genshin/script.html %}
+
+{% include genshin/wish.html %}
