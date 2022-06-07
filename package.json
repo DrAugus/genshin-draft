@@ -15,8 +15,5 @@
     "begin": "bundle exec jekyll serve --trace",
     "push": "git push",
     "pull": "git pull"
-  },
-  "dependencies": {
-    "dayjs": "^1.10.8"
   }
 }
