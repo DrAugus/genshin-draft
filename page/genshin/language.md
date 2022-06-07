@@ -5,8 +5,6 @@ css: genshin.css
 with_header_bg : genshin-impact/bg/15.jpg
 ---
 
-{% include genshin/list.html %}
-
 {% include genshin/language.html %}
 
 # 提瓦特通用文字

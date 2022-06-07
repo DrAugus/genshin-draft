@@ -1,49 +1,13 @@
-about:
-  - h: Contact
-    url: /contact-thanks
-    intro: 致谢
-article:
-  - h: Abstract
-    url: /blog
-    intro: 博文目录
-  - h: Categories
-    url: /categories
-    intro: 博文类别
-  - h: Tags
-    url: /tags
-    intro: 博文标签
 life:
   - h: 日记
     url: /daily
     intro: 偶尔的日常小记
-  - h: 花
-    url: /flower
-    intro: 花儿对你笑
   - h: 英语词汇
     url: /words_en
     intro: 不断学习的英文
   - h: 汉语词汇
     url: /words_zh
     intro: 不断学习的中文
-  - h: 中国年代史
-    url: /history
-    intro: 正在施工中的年代史
-  - h: APPLE
-    url: /list/apple
-    intro: APPLE INFO
-  - h: WAR
-    url: /list/war
-    intro: WAR INFO
-war:
-  - h: World War I
-    url: /war/world_war/1
-    intro: 当时的人们没有想到，要在 ⌈ 世界大战 ⌋ 之前，加上 ⌈ 第一次 ⌋
-  - h: World War II
-    url: /war/world_war/2
-    intro: 二战概要
-  - h: World War III
-    url: /war/world_war/3
-    intro: 三战概要
 genshin:
   - h: 时间轴
     url: /genshin/timeline
