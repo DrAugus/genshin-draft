@@ -25,7 +25,7 @@ title: AUGUS
 name: AUGUS
 description: > # webpage description
   爱情总是敌不过命运
-url: "https://augusmeow.cn/"
+url: "https://augusmeow.cn/genshin/"
 permalink: /:year/:month/:day/:title
 paginate: 10
 # paginate只在index.html下有效 https://jekyllrb.com/docs/variables/#paginator
