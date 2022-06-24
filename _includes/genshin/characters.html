@@ -4,7 +4,7 @@
     {% assign eleName = "dendro,geo,electro,hydro,pyro,anemo,cryo" | split: "," %}
     {% for e in eleName %}
     <a href="javascript:showEle('{{e}}')">
-        <img src="/assets/res/genshin-impact/elements/{{e}}.png">
+        <img src="https://github.com/DrAugus/data/blob/master/game/genshin/elements/{{e}}.png?raw=true">
     </a>
     {% endfor %}
 </div>
@@ -18,7 +18,7 @@
             <div class="card radius10px">
                 <!--设置背景时发现高度为0 增加 padding-bottom 即可显示 上面时间轴在父级设置height100%也行-->
                 <div class="card-image waves-effect waves-block waves-light hoverable character-avatar">
-                    <img src="/assets/res/genshin-impact/characters/{{characters[1].id}}.png">
+                    <img src="https://github.com/DrAugus/data/blob/master/game/genshin/characters/{{characters[1].id}}.png?raw=true">
                 </div>
             </div>
         </a>
@@ -55,7 +55,7 @@
                 {% endif %}
                 <div class="card-action valign-wrapper center-align">
                     <img class="responsive-img"
-                         src="/assets/res/genshin-impact/characters/full/{{characters[1].id}}.png">
+                         src="https://github.com/DrAugus/data/blob/master/game/genshin/characters/full/{{characters[1].id}}.png?raw=true">
                 </div>
             </div>
         </div>
