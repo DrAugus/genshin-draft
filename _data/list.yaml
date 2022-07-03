@@ -12,9 +12,6 @@ genshin:
   - h: 时间轴
     url: /genshin/timeline
     intro: 开服至今、甚至是未来的祈愿信息
-  - h: 当前祈愿信息
-    url: /genshin/wish
-    intro: 当前祈愿信息及版本后续祈愿预测
   - h: 角色信息
     url: /genshin/characters
     intro: 所有原神、原魔信息
