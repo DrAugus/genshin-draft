@@ -1,5 +1,5 @@
 ---
-permalink: /genshin/wish   
+permalink: /wish   
 layout: page    
 css: genshin.css  
 js:
@@ -7,7 +7,6 @@ js:
 - genshin/event.js
 - genshin/wish.js
 
-with_header_bg : genshin-impact/bg/4.jpg
 
 ---
 

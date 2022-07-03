@@ -5,7 +5,6 @@
         <a href="{{site.github.repository_url}}" class="brand-logo right"><i class="bi-github"></i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <!--数组声明 用split切割字符串-->
-
             {% for genshin_info in page_list %}
             <li><a href="{{ genshin_info.url }}">{{genshin_info.h | upcase }}</a></li>
             {% endfor %}

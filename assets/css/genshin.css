@@ -370,13 +370,15 @@
 
 .slider .indicators .indicator-item {
     /*background: #fff url("/assets/res/genshin-impact/primogem.png") no-repeat;*/
-    background-size: cover;
+    /*background-size: cover;*/
+    background-color: #00acc1;
 }
 
 /*修改slider按钮颜色*/
 .slider .indicators .indicator-item.active {
     /*background: #fff url("/assets/res/genshin-impact/intertwined_fate.png") no-repeat;*/
-    background-size: cover;
+    /*background-size: cover;*/
+    background-color: #0f9d58;
 }
 
 button:focus {

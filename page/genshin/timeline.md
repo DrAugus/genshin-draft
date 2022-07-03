@@ -1,5 +1,5 @@
 ---
-permalink: /genshin/timeline   
+permalink: /timeline   
 layout: page  
 css: genshin.css  
 js:
@@ -7,7 +7,6 @@ js:
 - genshin/event.js
 - genshin/timeline.js
 
-with_header_bg : genshin-impact/bg/6.jpg
 
 ---
 
