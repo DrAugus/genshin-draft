@@ -21,22 +21,25 @@
 # More Liquid Language, here are some quick references:
 # https://shopify.dev/api/liquid/
 #
+version: 4.2.2
 title: AUGUS
 name: AUGUS
 description: > # webpage description
   爱情总是敌不过命运
-url: "https://draugus.github.io/genshin/"
+#url: https://draugus.github.io/genshin/
+baseurl: /genshin
+repository: https://github.com/DrAugus/genshin
 permalink: /:year/:month/:day/:title
 paginate: 10
 # paginate只在index.html下有效 https://jekyllrb.com/docs/variables/#paginator
-paginate_path: "blog/page:num/"
+paginate_path: blog/page:num/
 
 # specific configurations
-github_profile: "https://github.com/DrAugus"
-user: "Augus"
-user_email: "bramlye@outlook.com"
-contact_url: "https://github.com/DrAugus"
-disqus_shortname: "Augus"
+github_profile: https://github.com/DrAugus
+user: Augus
+user_email: bramlye@outlook.com
+contact_url: https://github.com/DrAugus
+disqus_shortname: Augus
 
 # Build settings
 plugins:
@@ -66,7 +69,7 @@ exclude:
 
 defaults:
   - scope:
-      path: "assets/res"
+      path: assets/res
     values:
       image: true
 
