@@ -428,3 +428,8 @@ span.badge {
   margin: 5px;
   top: 5px;
 }
+
+.container {
+  max-width: unset !important;
+  width: 100%;
+}

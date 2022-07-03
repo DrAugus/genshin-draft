@@ -10,7 +10,7 @@ life:
     intro: 不断学习的中文
 genshin:
   - h: 时间轴
-    url: /genshin/timeline
+    url: /genshin/
     intro: 开服至今、甚至是未来的祈愿信息
   - h: 角色信息
     url: /genshin/characters
