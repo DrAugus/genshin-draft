@@ -63,8 +63,8 @@ const getWishObj = () => {
     //存放所有未来的祈愿
     if (obj.wishIndex.length) {
         let startIndex = obj.wishIndex[obj.wishIndex.length - 1];
-        if (obj.isFuture) obj.comingIndex.push(startIndex);
-        else ++startIndex;
+        obj.comingIndex.push(startIndex);
+        ++startIndex;
         for (let i = startIndex; i < wishLength; ++i) {
             obj.comingIndex.push(i);
         }
