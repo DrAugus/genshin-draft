@@ -534,7 +534,11 @@
       "start": "2022-07-13 11:00:00 +0800",
       "end": "2022-08-03 17:59:59 +0800",
       "wish5star": "kaedehara_kazuha",
-      "wish4star": ["shikanoin_heizou", "ningguang", "thoma"],
+      "wish4star": [
+        "shikanoin_heizou",
+        "ningguang",
+        "thoma"
+      ],
       "version": 2.8,
       "wishName": "「叶落风随」",
       "url": "https://bbs.mihoyo.com/ys/article/?"
@@ -546,7 +550,11 @@
       "start": "2022-07-13 11:00:00 +0800",
       "end": "2022-08-03 17:59:59 +0800",
       "wish5star": "klee",
-      "wish4star": ["shikanoin_heizou", "ningguang", "thoma"],
+      "wish4star": [
+        "shikanoin_heizou",
+        "ningguang",
+        "thoma"
+      ],
       "wishName": "「闪焰的驻足」",
       "wish_2": true,
       "url": "https://bbs.mihoyo.com/ys/article/?"
@@ -560,6 +568,53 @@
       "wish5star": "yoimiya",
       "wish4star": "",
       "wishName": "「焰色天河」",
+      "url": "https://bbs.mihoyo.com/ys/article/?"
+    },
+    {
+      "name": "tighnari",
+      "image": 1,
+      "shortName": "Tighnari",
+      "start": "2022-08-25 11:00:00 +0800",
+      "end": "2022-09-15 14:59:59 +0800",
+      "wish5star": "tighnari",
+      "wish4star": [
+        "collei",
+        "bennett",
+        "beidou"
+      ],
+      "version": 3.0,
+      "wishName": "「幽蔓狐生」",
+      "url": "https://bbs.mihoyo.com/ys/article/?"
+    },
+    {
+      "name": "Gentry of Hermitage",
+      "image": 4,
+      "shortName": "Zhongli",
+      "start": "2022-09-15 18:00:00 +0800",
+      "end": "2022-10-05 14:59:59 +0800",
+      "wish5star": "zhongli",
+      "wish4star": [
+        "dori",
+        "xingqiu",
+        "xiangling"
+      ],
+      "wishName": "「陵薮市朝」",
+      "url": "https://bbs.mihoyo.com/ys/article/?"
+    },
+    {
+      "name": "Adrift in the Harbor",
+      "image": 3,
+      "shortName": "Ganyu",
+      "start": "2022-09-15 18:00:00 +0800",
+      "end": "2022-10-05 14:59:59 +0800",
+      "wish5star": "ganyu",
+      "wish4star": [
+        "dori",
+        "xingqiu",
+        "xiangling"
+      ],
+      "wishName": "「浮生孰来」",
+      "wish_2": true,
       "url": "https://bbs.mihoyo.com/ys/article/?"
     }
   ],
