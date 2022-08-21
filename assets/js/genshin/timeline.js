@@ -29,6 +29,8 @@ const setTimeAxis = () => {
         $(".timeline-month-left-" + i).css("left", (DAY_WIDTH * monthList[i][1].offset) + "px");
         $(".timeline-month-width-" + i).css("width", (DAY_WIDTH * monthList[i][1].total) + "px");
         $("#timelineMonthName" + i).text(monthList[i][0]);
+        // console.log("l:", DAY_WIDTH * monthList[i][1].offset);
+        // console.log("w:", DAY_WIDTH * monthList[i][1].total);
     }
 
     let todayOffset = Math.abs(firstDay.diff(today, "day", true));
@@ -57,7 +59,7 @@ const wishCharacterInfo = () => {
         let start = firstDay;
         const end = dayjs(wishCharacters[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
         const duration = end.diff(start, "day", true);
-        console.log(i, duration);
+        // console.log(i, duration);
 
         //动态设置各个角色的css
         $(".event-item-character-" + i).removeClass("hide");
@@ -72,15 +74,16 @@ const wishCharacterInfo = () => {
         $(".left-t" + i).css("left", (350 * i) + "px");
     }
 };
-console.log("======== wish character ========");
+// console.log("======== wish character ========");
 wishCharacterInfo();
 //祈愿武器信息
 const wishWeaponInfo = () => {
     for (let i = 0; i < wishWeaponLength; ++i) {
         let start = firstDay;
         const end = dayjs(wishWeapons[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
+        // console.log(start, end);
         const duration = end.diff(start, "day", true);
-        console.log(i, duration);
+        // console.log(i, duration);
 
         //动态设置各个角色的css
         $(".event-item-weapon-" + i).removeClass("hide");
@@ -93,7 +96,7 @@ const wishWeaponInfo = () => {
         $(".left-t" + i).css("left", (350 * i) + "px");
     }
 };
-console.log("======== wish weapon ========");
+// console.log("======== wish weapon ========");
 wishWeaponInfo();
 
 $(".lazy").lazyload({
