@@ -57,7 +57,7 @@ const wishCharacterInfo = () => {
         let start = firstDay;
         const end = dayjs(wishCharacters[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
         const duration = end.diff(start, "day", true);
-        // console.log(i, duration)
+        console.log(i, duration);
 
         //动态设置各个角色的css
         $(".event-item-character-" + i).removeClass("hide");
@@ -72,6 +72,7 @@ const wishCharacterInfo = () => {
         $(".left-t" + i).css("left", (350 * i) + "px");
     }
 };
+console.log("======== wish character ========");
 wishCharacterInfo();
 //祈愿武器信息
 const wishWeaponInfo = () => {
@@ -79,7 +80,7 @@ const wishWeaponInfo = () => {
         let start = firstDay;
         const end = dayjs(wishWeapons[i].start, "YYYY-MM-DD HH:mm:ss").subtract(0, "minute");
         const duration = end.diff(start, "day", true);
-        // console.log(i, duration)
+        console.log(i, duration);
 
         //动态设置各个角色的css
         $(".event-item-weapon-" + i).removeClass("hide");
@@ -92,6 +93,7 @@ const wishWeaponInfo = () => {
         $(".left-t" + i).css("left", (350 * i) + "px");
     }
 };
+console.log("======== wish weapon ========");
 wishWeaponInfo();
 
 $(".lazy").lazyload({
@@ -102,7 +104,6 @@ $(".lazy").lazyload({
     container: $(".timeline-scroll-x"), // 对某容器中的图片实现效果，值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
     failurelimit: 5, // 图片排序混乱时，值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
 });
-
 
 
 $(".no-publish").css("background", "linear-gradient(to left, #444, rgb(0 0 0 / 0%)) no-repeat");
