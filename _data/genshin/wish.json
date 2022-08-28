@@ -571,18 +571,14 @@
       "url": "https://bbs.mihoyo.com/ys/article/?"
     },
     {
-      "name": "tighnari",
+      "name": "Viridescent Vigil",
       "image": 1,
       "shortName": "Tighnari",
-      "start": "2022-08-25 11:00:00 +0800",
-      "end": "2022-09-15 14:59:59 +0800",
+      "start": "2022-08-24 11:00:00 +0800",
+      "end": "2022-09-09 17:59:59 +0800",
       "wish5star": "tighnari",
-      "wish4star": [
-        "collei",
-        "bennett",
-        "beidou"
-      ],
-      "version": 3.0,
+      "wish4star": ["collei", "diona ", "fischl"],
+      "version": "3.0",
       "wishName": "「幽蔓狐生」",
       "url": "https://bbs.mihoyo.com/ys/article/?"
     },
@@ -590,30 +586,34 @@
       "name": "Gentry of Hermitage",
       "image": 4,
       "shortName": "Zhongli",
-      "start": "2022-09-15 18:00:00 +0800",
-      "end": "2022-10-05 14:59:59 +0800",
+      "start": "2022-08-24 11:00:00 +0800",
+      "end": "2022-09-09 17:59:59 +0800",
       "wish5star": "zhongli",
-      "wish4star": [
-        "dori",
-        "xingqiu",
-        "xiangling"
-      ],
+      "wish4star": ["collei", "diona ", "fischl"],
       "wishName": "「陵薮市朝」",
+      "wish_2": true,
       "url": "https://bbs.mihoyo.com/ys/article/?"
     },
     {
       "name": "Adrift in the Harbor",
       "image": 3,
       "shortName": "Ganyu",
-      "start": "2022-09-15 18:00:00 +0800",
-      "end": "2022-10-05 14:59:59 +0800",
+      "start": "2022-09-09 18:00:00 +0800",
+      "end": "2022-09-27 14:59:59 +0800",
       "wish5star": "ganyu",
-      "wish4star": [
-        "dori",
-        "xingqiu",
-        "xiangling"
-      ],
+      "wish4star": ["dori", "xingqiu", "xiangling"],
       "wishName": "「浮生孰来」",
+      "url": "https://bbs.mihoyo.com/ys/article/?"
+    },
+    {
+      "name": "Drifting Luminescence",
+      "image": 3,
+      "shortName": "Sangonomiya Kokomi",
+      "start": "2022-09-09 18:00:00 +0800",
+      "end": "2022-09-27 14:59:59 +0800",
+      "wish5star": "sangonomiya_kokomi",
+      "wish4star": ["dori", "xingqiu", "xiangling"],
+      "wishName": "「浮岳虹珠」",
       "wish_2": true,
       "url": "https://bbs.mihoyo.com/ys/article/?"
     }
