@@ -40,8 +40,8 @@ const processEvent = () => {
     let monthList = [];
 
     let eventsDataInfo = [];
-    eventsDataInfo[0] = eventsData["characters"];
-    eventsDataInfo[1] = eventsData["weapons"];
+    eventsDataInfo[0] = eventsData.characters
+    eventsDataInfo[1] = eventsData.weapons;
 
     let events = eventsDataInfo.map((e, i) => {
         if (Array.isArray(e)) {
