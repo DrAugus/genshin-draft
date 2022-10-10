@@ -1,6 +1,6 @@
 # [AUGUS](https://draugus.github.io/genshin)
 
-Personal website powered by Bootstrap, Material, Jekyll, and GitHub Pages: https://draugus.github.io/genshin
+Personal website powered by Bootstrap, Material, Jekyll, and GitHub Pages: https://draugus.github.io/<project-name>
 
 ## [Quickstart](https://jekyllrb.com/docs/)
 
