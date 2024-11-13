@@ -300,7 +300,7 @@ GEM
       tzinfo (>= 1.0.0)
     unicode-display_width (1.8.0)
     uri (1.0.1)
-    wdm (0.1.1)
+    wdm (0.2.0)
     webrick (1.9.0)
 
 PLATFORMS
@@ -315,7 +315,7 @@ DEPENDENCIES
   jekyll-timeago
   tzinfo (~> 2.0)
   tzinfo-data
-  wdm (~> 0.1.1)
+  wdm (~> 0.2.0)
   webrick (~> 1.7)
 
 BUNDLED WITH
